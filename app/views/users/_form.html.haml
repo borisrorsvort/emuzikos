@@ -1,54 +1,58 @@
-- form_for @user do |f|
+= form_for @user do |f|
   = f.error_messages
+
+  %h2= t(:'users.musician_infos')
   %p
-    = f.label :username
-    %br
-    = f.text_field :username
-  %p
-    = f.label :email
-    %br
-    = f.text_field :email
-  %p
-    = f.label :password
-    %br
-    = f.password_field :password
-  %p
-    = f.label :password_confirmation
-    %br
-    = f.password_field :password_confirmation
-  %h2 Addtionnal Infos
-  %p
-    = f.label :instruments
-    %br
-    - f.object.instruments ||= []
-    - User::INSTRUMENTS.each do |instrument|
-      = t(:"instruments.#{instrument}")
-      = check_box_tag('user[instruments][]', instrument, f.object.instruments.include?(instrument), :id => "instrument_#{instrument}")
-  
-  %p
-    = f.label :type
+    = f.label :user_type, t(:'activerecord.attributes.user.user_type')
     %br
     = select :user, :user_type, User::USER_TYPES
   %p
-    = f.label :references
+    = f.label t(:'activerecord.attributes.user.instruments')
     %br
-    = f.text_field :references
+    - f.object.instruments ||= []
+    - User::INSTRUMENTS.each do |instrument|
+      = check_box_tag('user[instruments][]', instrument, f.object.instruments.include?(instrument), :id => "instrument_#{instrument}")
+      = t(:"instruments.#{instrument}")
   %p
-    = f.label :zip
-    %br
-    = f.text_field :zip
-  %p
-    = f.label :country
-    %br
-    = localized_country_select(:user, :country, [], :include_blank => 'Please choose...')
-  %p
-    = f.label :searching_for
+    = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
     %br
     = select :user, :searching_for, User::USER_TYPES
   %p
-    = f.label :request_message
+    = f.label :references, t(:'activerecord.attributes.user.references')
+    %br
+    = f.text_field :references
+  %p
+    = f.label :request_message, t(:'activerecord.attributes.user.request_message')
     %br
     = f.text_area :request_message
-  
+
+  %h2= t(:'users.location')
   %p
-    = f.submit
+    = f.label :zip, t(:'activerecord.attributes.user.zip')
+    %br
+    = f.text_field :zip
+  %p
+    = f.label :country, t(:'activerecord.attributes.user.country')
+    %br
+    = localized_country_select(:user, :country, [], :include_blank => 'Please choose...')
+  
+  %h2= t(:'users.credentials')
+  %p
+    = f.label :username, t(:'activerecord.attributes.user.username')
+    %br
+    = f.text_field :username
+  %p
+    = f.label :email, t(:'activerecord.attributes.user.email')
+    %br
+    = f.text_field :email
+  %p
+    = f.label :password, t(:'activerecord.attributes.user.password')
+    %br
+    = f.password_field :password
+  %p
+    = f.label :password_confirmation, t(:'activerecord.attributes.user.password_confirmation')
+    %br
+    = f.password_field :password_confirmation
+
+  %p
+    = f.submit(t(:'buttons.update'), :type => "submit")

@@ -2,6 +2,14 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+
+  buttons:
+    update: Update
+    create: Create
+    edit: Edit
+    delete: Delete
+    login: Login
+
   instruments:
     guitar: guitar
     bass: bass
@@ -23,3 +31,13 @@ en:
     ocarina: ocarina
     congas: congas
 
+  users:
+    musician_infos: Musician Infos
+    location: Location
+    credentials: Credentials
+    index:
+      title: Users Listing
+      no_users: "There are no user registered yet" 
+    edit:
+      titles:
+        title: Edit your profile

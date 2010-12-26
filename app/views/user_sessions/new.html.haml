@@ -1,16 +1,17 @@
 - title "Login"
 
-- form_for @user_session, :url => { :action => "create" } do |f|
+= form_for @user_session, :url => { :action => "create" } do |f|
   = f.error_messages
   %p
-    = f.label :username
+    = f.label :username, t(:'activerecord.attributes.user.username')
     %br
     = f.text_field :username
   %p
-    = f.label :password
+    = f.label :password, t(:'activerecord.attributes.user.password')
     %br
     = f.password_field :password
   %p
-    = f.submit
+    = f.submit(t(:'buttons.login'), :type => "submit")
+
 
 
