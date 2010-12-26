@@ -1,5 +1,9 @@
 Emuzikos::Application.routes.draw do
-  devise_for :users
+  match "login" => "user_sessions#new", :as => :login
+  match "logout" => "user_sessions#destroy", :as => :logout
+  resources :user_sessions
+
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
