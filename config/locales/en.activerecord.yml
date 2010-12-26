@@ -55,8 +55,9 @@ en:
         username: Username
         user_type: User Type
         email: Email
+        genre: Music genre
         instruments: Instruments
-        searching_for: Searching for
+        searching_for: Searching for a
         references: References
         request_message: Request message
         password: Password

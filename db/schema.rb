@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101226145021) do
+ActiveRecord::Schema.define(:version => 20101226174430) do
 
   create_table "user_sessions", :force => true do |t|
     t.string   "username"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20101226145021) do
     t.boolean  "keyboard"
     t.boolean  "ocarina"
     t.boolean  "congas"
+    t.string   "genre"
   end
 
 end

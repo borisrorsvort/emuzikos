@@ -13,7 +13,10 @@
     - User::INSTRUMENTS.each do |instrument|
       = f.check_box(instrument)
       = f.label(instrument, t(:"instruments.#{instrument}"))
-
+  %p
+    = f.label :genre, t(:'activerecord.attributes.user.genre')
+    %br
+    = select :user, :genre, User::MUSIC_GENRES
   %p
     = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
     %br
