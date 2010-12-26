@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101226004938) do
+ActiveRecord::Schema.define(:version => 20101226145021) do
 
   create_table "user_sessions", :force => true do |t|
     t.string   "username"
@@ -28,12 +28,30 @@ ActiveRecord::Schema.define(:version => 20101226004938) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_type"
-    t.string   "instruments"
     t.string   "references"
     t.string   "zip"
     t.string   "country"
     t.string   "searching_for"
     t.text     "request_message"
+    t.boolean  "guitar"
+    t.boolean  "bass"
+    t.boolean  "double_bass"
+    t.boolean  "drums"
+    t.boolean  "violin"
+    t.boolean  "flute"
+    t.boolean  "piano"
+    t.boolean  "percussions"
+    t.boolean  "voice"
+    t.boolean  "turntables"
+    t.boolean  "banjo"
+    t.boolean  "cithar"
+    t.boolean  "bouzouki"
+    t.boolean  "mandolin"
+    t.boolean  "whistles"
+    t.boolean  "spoons"
+    t.boolean  "keyboard"
+    t.boolean  "ocarina"
+    t.boolean  "congas"
   end
 
 end

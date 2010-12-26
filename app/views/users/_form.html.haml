@@ -7,12 +7,13 @@
     %br
     = select :user, :user_type, User::USER_TYPES
   %p
-    = f.label t(:'activerecord.attributes.user.instruments')
+    = f.label :instruments, t(:'activerecord.attributes.user.instruments')
     %br
-    - f.object.instruments ||= []
+
     - User::INSTRUMENTS.each do |instrument|
-      = check_box_tag('user[instruments][]', instrument, f.object.instruments.include?(instrument), :id => "instrument_#{instrument}")
-      = t(:"instruments.#{instrument}")
+      = f.check_box(instrument)
+      = f.label(instrument, t(:"instruments.#{instrument}"))
+
   %p
     = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
     %br

@@ -6,11 +6,18 @@
       -for user in @users
         %tr
           %td= user.username
-          %td= user.instruments if user.instruments
+          %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ') if user.instruments
+          %td= user.zip
+          %td= user.country
+          %td= user.references
     %thead
       %tr
-        %th
-          =  t(:'activerecord.attributes.user.username')
+        %th= t(:'activerecord.attributes.user.username')
+        %th= t(:'activerecord.attributes.user.instruments')
+        %th= t(:'activerecord.attributes.user.zip')
+        %th= t(:'activerecord.attributes.user.country')
+        %th= t(:'activerecord.attributes.user.references')
+         
 -else
   =t(:'.no_users')
 
