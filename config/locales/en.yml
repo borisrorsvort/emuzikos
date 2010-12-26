@@ -2,4 +2,24 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  instruments:
+    guitar: guitar
+    bass: bass
+    double_bass: doule bass
+    drums: drums
+    violin: violin
+    flute: flute
+    piano: piano
+    percussions: percussions
+    voice: voice
+    turntables: turntables
+    banjo: banjo
+    cithar: cithar
+    bouzouki: bouzouki
+    mandolin: mandolin
+    whistles: whistles
+    spoons: spoons
+    keyboard: keyboard
+    ocarina: ocarina
+    congas: congas
+

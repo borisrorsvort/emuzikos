@@ -16,5 +16,39 @@
     = f.label :password_confirmation
     %br
     = f.password_field :password_confirmation
+  %h2 Addtionnal Infos
+  %p
+    = f.label :instruments
+    %br
+    - f.object.instruments ||= []
+    - User::INSTRUMENTS.each do |instrument|
+      = t(:"instruments.#{instrument}")
+      = check_box_tag('user[instruments][]', instrument, f.object.instruments.include?(instrument), :id => "instrument_#{instrument}")
+  
+  %p
+    = f.label :type
+    %br
+    = select :user, :user_type, User::USER_TYPES
+  %p
+    = f.label :references
+    %br
+    = f.text_field :references
+  %p
+    = f.label :zip
+    %br
+    = f.text_field :zip
+  %p
+    = f.label :country
+    %br
+    = localized_country_select(:user, :country, [], :include_blank => 'Please choose...')
+  %p
+    = f.label :searching_for
+    %br
+    = select :user, :searching_for, User::USER_TYPES
+  %p
+    = f.label :request_message
+    %br
+    = f.text_area :request_message
+  
   %p
     = f.submit
