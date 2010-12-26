@@ -40,6 +40,8 @@ en:
     index:
       title: Users Listing
       no_users: "There are no user registered yet" 
+    show:
+      title: "%{username}'s profile"
     edit:
       titles:
         title: Edit your profile

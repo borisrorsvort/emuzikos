@@ -69,33 +69,30 @@ body {
   font-size: 14px;
 }
 
-/* line 20, ../../../app/stylesheets/grid.scss */
+/* line 21, ../../../app/stylesheets/grid.scss */
 a {
   color: blue;
 }
-/* line 22, ../../../app/stylesheets/grid.scss */
+/* line 23, ../../../app/stylesheets/grid.scss */
 a img {
   border: none;
 }
 
-/* line 25, ../../../app/stylesheets/grid.scss */
+/* line 26, ../../../app/stylesheets/grid.scss */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 30, ../../../app/stylesheets/grid.scss */
+/* line 31, ../../../app/stylesheets/grid.scss */
 #container {
-  width: 75%;
-  margin: 0 auto;
+  padding: 20px;
   background: white;
-  padding: 20px 40px;
   border: solid 1px black;
-  margin-top: 20px;
 }
 
-/* line 40, ../../../app/stylesheets/grid.scss */
+/* line 38, ../../../app/stylesheets/grid.scss */
 #flash_notice,
 #flash_error,
 #flash_alert {
@@ -103,25 +100,25 @@ a img {
   margin: 10px 0;
 }
 
-/* line 44, ../../../app/stylesheets/grid.scss */
+/* line 42, ../../../app/stylesheets/grid.scss */
 #flash_notice {
   background-color: #ccffcc;
   border: solid 1px #66cc66;
 }
 
-/* line 49, ../../../app/stylesheets/grid.scss */
+/* line 47, ../../../app/stylesheets/grid.scss */
 #flash_error,
 #flash_alert {
   background-color: #ffcccc;
   border: solid 1px #cc6666;
 }
 
-/* line 53, ../../../app/stylesheets/grid.scss */
+/* line 51, ../../../app/stylesheets/grid.scss */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 56, ../../../app/stylesheets/grid.scss */
+/* line 54, ../../../app/stylesheets/grid.scss */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -130,11 +127,11 @@ a img {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 63, ../../../app/stylesheets/grid.scss */
+/* line 61, ../../../app/stylesheets/grid.scss */
 .error_messages font {
   size: 12px;
 }
-/* line 65, ../../../app/stylesheets/grid.scss */
+/* line 63, ../../../app/stylesheets/grid.scss */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -142,27 +139,27 @@ a img {
   background-color: #cc0000;
   color: white;
 }
-/* line 69, ../../../app/stylesheets/grid.scss */
+/* line 67, ../../../app/stylesheets/grid.scss */
 .error_messages h2 font {
   weight: bold;
   size: 12px;
 }
-/* line 74, ../../../app/stylesheets/grid.scss */
+/* line 72, ../../../app/stylesheets/grid.scss */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 76, ../../../app/stylesheets/grid.scss */
+/* line 74, ../../../app/stylesheets/grid.scss */
 .error_messages ul {
   margin: 0;
 }
 
-/* line 78, ../../../app/stylesheets/grid.scss */
+/* line 76, ../../../app/stylesheets/grid.scss */
 #user_nav {
   float: right;
   font-size: 12px;
 }
 
-/* line 83, ../../../app/stylesheets/grid.scss */
+/* line 81, ../../../app/stylesheets/grid.scss */
 .wide {
   width: 100%;
 }

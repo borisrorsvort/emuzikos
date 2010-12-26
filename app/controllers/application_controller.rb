@@ -1,8 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :get_variables
 
   helper :all
   helper_method :current_user_session, :current_user
+
+  def get_variables
+    @current_path = "#{params[:controller]}_#{params[:action]}"
+  end
   
   private
     def current_user_session
@@ -41,5 +46,5 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
-  
+     
 end
