@@ -161,3 +161,8 @@ a img {
   float: right;
   font-size: 12px;
 }
+
+/* line 83, ../../../app/stylesheets/grid.scss */
+.wide {
+  width: 100%;
+}
