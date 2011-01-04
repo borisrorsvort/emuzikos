@@ -6,10 +6,10 @@
       -for user in @users
         %tr
           %td=link_to "#{user.username}", user_url(user)
-          %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ') if user.instruments
-          %td= user.genre          
+          %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
+          %td= user.genre
           %td= user.zip
-          %td= user.country
+          %td= I18n.t user.country, :scope => 'countries'
           %td= user.references
     %thead
       %tr
