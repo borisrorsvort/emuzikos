@@ -7,6 +7,14 @@ gem "haml"
 gem "compass"
 gem "compass-960-plugin"
 gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+
+group :test do
+  gem 'factory_girl_rails'
+  gem "cucumber-rails"
+  gem "shoulda"
+  gem "rspec-rails", "2.0.0.beta.12"
+end
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

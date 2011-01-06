@@ -1,0 +1,15 @@
+-title t(:'.title')
+
+%p= t(:'.instructions')
+
+= form_tag password_reset_path, :method => :put do
+
+  %p
+    = label :password, t(:'activerecord.attributes.user.password')
+    %br
+    = password_field_tag :password
+  %p
+    = label :password_confirmation, t(:'activerecord.attributes.user.password_confirmation')
+    %br
+    = password_field_tag :password_confirmation
+  = submit_tag t(:'buttons.update')

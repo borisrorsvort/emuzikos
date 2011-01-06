@@ -2,15 +2,29 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  common:
+    required: Required
+    please_choose: 'Please choose ...'
+### TABLES
+### ______________________________________________________
+
   tables:
     headings:
       actions: Actions
+
+### BUTTONS
+### ______________________________________________________
+
   buttons:
     update: Update
     create: Create
     edit: Edit
     delete: Delete
     login: Login
+    submit: Submit
+
+### INSTRUMENTS
+### ______________________________________________________
 
   instruments:
     guitar: guitar
@@ -33,6 +47,9 @@ en:
     ocarina: ocarina
     congas: congas
 
+### USERS
+### ______________________________________________________
+
   users:
     musician_infos: Musician Infos
     location: Location
@@ -45,3 +62,16 @@ en:
     edit:
       titles:
         title: Edit your profile
+    new:
+      title: "New User"
+
+### PASSWORD RESETS
+### ______________________________________________________
+
+  password_resets:
+    edit:
+      title: Update your password
+      instructions: Please enter the new password below and then press "Update Password".
+    new:
+      title: Reset your password
+      instructions: Please enter your email address below and then press "Reset Password".

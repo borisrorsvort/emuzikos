@@ -2,6 +2,7 @@ Emuzikos::Application.routes.draw do
   match "login" => "user_sessions#new", :as => :login
   match "logout" => "user_sessions#destroy", :as => :logout
   resources :user_sessions
+  resources :password_resets, :only => [ :new, :create, :edit, :update ]
 
   resources :users
 

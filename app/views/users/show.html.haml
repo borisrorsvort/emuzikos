@@ -1,7 +1,21 @@
 - title t(:'.title', :username => @user.username)
 
-= @user.username
-
+-if !@user.blank?
+  %table.display.wide
+    %tbody
+      %tr
+        %td= @user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
+        %td= @user.genre
+        %td= @user.zip
+        %td= I18n.t @user.country, :scope => 'countries'
+        %td= @user.references
+    %thead
+      %tr
+        %th= t(:'activerecord.attributes.user.instruments')
+        %th= t(:'activerecord.attributes.user.genre')
+        %th= t(:'activerecord.attributes.user.zip')
+        %th= t(:'activerecord.attributes.user.country')
+        %th= t(:'activerecord.attributes.user.references')
 
 
 

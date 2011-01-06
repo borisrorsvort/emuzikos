@@ -1,24 +1,26 @@
 = form_for @user do |f|
   = f.error_messages
-
   %h2= t(:'users.musician_infos')
+
   %p
-    = f.label :user_type, t(:'activerecord.attributes.user.user_type')
+    = f.label :user_type, t(:'activerecord.attributes.user.user_type') 
+    %span.required ( #{t(:'common.required')} )
     %br
     = select :user, :user_type, User::USER_TYPES
   %p
     = f.label :instruments, t(:'activerecord.attributes.user.instruments')
     %br
-
     - User::INSTRUMENTS.each do |instrument|
       = f.check_box(instrument)
       = f.label(instrument, t(:"instruments.#{instrument}"))
   %p
     = f.label :genre, t(:'activerecord.attributes.user.genre')
+    %span.required ( #{t(:'common.required')} )
     %br
     = select :user, :genre, User::MUSICAL_GENRES
   %p
     = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
+    %span.required ( #{t(:'common.required')} )
     %br
     = select :user, :searching_for, User::USER_TYPES
   %p
@@ -31,16 +33,20 @@
     = f.text_area :request_message
 
   %h2= t(:'users.location')
+
   %p
     = f.label :zip, t(:'activerecord.attributes.user.zip')
+    %span.required ( #{t(:'common.required')} )
     %br
     = f.text_field :zip
   %p
     = f.label :country, t(:'activerecord.attributes.user.country')
+    %span.required ( #{t(:'common.required')} )
     %br
-    = localized_country_select(:user, :country, [], :include_blank => 'Please choose...')
+    = localized_country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
   
   %h2= t(:'users.credentials')
+
   %p
     = f.label :username, t(:'activerecord.attributes.user.username')
     %br

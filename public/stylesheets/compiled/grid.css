@@ -163,3 +163,11 @@ a img {
 .wide {
   width: 100%;
 }
+
+/* FORMS */
+/* line 86, ../../../app/stylesheets/grid.scss */
+.required {
+  display: inline-block;
+  font-style: italic;
+  opacity: 0.6;
+}

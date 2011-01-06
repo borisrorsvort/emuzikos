@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101226174430) do
+ActiveRecord::Schema.define(:version => 20110106080431) do
 
   create_table "user_sessions", :force => true do |t|
     t.string   "username"
@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(:version => 20101226174430) do
     t.boolean  "ocarina"
     t.boolean  "congas"
     t.string   "genre"
+    t.string   "perishable_token",  :default => "", :null => false
   end
+
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end
