@@ -20,6 +20,9 @@
         %th= t(:'activerecord.attributes.user.country')
         %th= t(:'activerecord.attributes.user.references')
         %th= t(:'tables.headings.actions')
+
+  = will_paginate @users
+  
 -else
   =t(:'.no_users')
 

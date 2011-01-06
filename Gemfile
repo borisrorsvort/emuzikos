@@ -8,6 +8,7 @@ gem "haml"
 gem "chriseppstein-compass"
 gem "compass-960-plugin"
 # gem "compass-fluid960-plugin", :git => 'git://github.com/jtoy/compass-fluid960-plugin.git'
+gem "will_paginate", "~> 3.0.pre2"
 
 group :development do
   gem "jammit"

@@ -3,10 +3,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
   validates_presence_of :username, :password, :email, :user_type, :genre, :zip, :country, :searching_for
   validates_size_of :username, :password, :within => 5..15
-  validates_format_of :email,
-    :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
-  validates_format_of :username, :with => /^\w+$/i,
-    :message => "can only contain letters and numbers."
+  validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
+  validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
   validates_confirmation_of :password
     
   USER_TYPES = %w(band musician)
@@ -30,5 +28,9 @@ class User < ActiveRecord::Base
   def deliver_password_reset_instructions!
     reset_perishable_token!
     Notifier.deliver_password_reset_instructions(self)
+  end
+  
+  def self.per_page
+    50
   end
 end
