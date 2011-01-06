@@ -1,0 +1,15 @@
+javascript_compressor: yui
+
+javascripts:
+  jquery:
+    - public/javascripts/jquery.min.js
+    - public/javascripts/jquery-ui.min.js
+  emuzikos:
+    - public/javascripts/rails.js
+    - public/javascripts/jquery.tipsy.js
+    - public/javascripts/application.js
+
+stylesheets:
+  common:
+    - public/stylesheets/compiled/grid.css
+    - public/stylesheets/compiled/text.css

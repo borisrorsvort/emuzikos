@@ -5,6 +5,13 @@ en:
   common:
     required: Required
     please_choose: 'Please choose ...'
+
+### TABLES
+### ______________________________________________________    
+  tooltips:
+    email: "Must be a valid email address"
+    password: "Must contains at least 5 characters"
+
 ### TABLES
 ### ______________________________________________________
 

@@ -62,6 +62,51 @@ a img {
   border: none;
 }
 
+/* line 1, ../../../app/stylesheets/_tipsy.scss */
+.tipsy {
+  padding: 5px;
+  font-size: 10px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  background-repeat: no-repeat;
+  background-image: url(/images/backgrounds/tipsy.gif);
+}
+
+/* line 2, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-inner {
+  padding: 5px 8px 4px 8px;
+  background-color: black;
+  color: white;
+  max-width: 200px;
+  text-align: center;
+}
+
+/* line 3, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-inner {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+/* line 4, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-north {
+  background-position: top center;
+}
+
+/* line 5, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-south {
+  background-position: bottom center;
+}
+
+/* line 6, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-east {
+  background-position: right center;
+}
+
+/* line 7, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-west {
+  background-position: left center;
+}
+
 /* line 15, ../../../app/stylesheets/grid.scss */
 body {
   background-color: #4b7399;

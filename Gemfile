@@ -1,11 +1,18 @@
 source 'http://rubygems.org'
+source 'http://gems.github.com'
 
 gem 'rails', '3.0.1'
 gem "jquery-rails"
 gem "nifty-generators"
 gem "haml"
-gem "compass"
+gem "chriseppstein-compass"
 gem "compass-960-plugin"
+# gem "compass-fluid960-plugin", :git => 'git://github.com/jtoy/compass-fluid960-plugin.git'
+
+group :development do
+  gem "jammit"
+end
+
 gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 
 group :test do
