@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
   end
   
   def self.per_page
-    50
+    5
   end
   
   def self.search(search, args = {})
