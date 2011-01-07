@@ -69,6 +69,7 @@ en:
         zip: Zip code
         country: Country
         password_confirmation: Password confirmation
+        avatar: Avatar
     models:
       user: User
       

@@ -18,6 +18,25 @@ class User < ActiveRecord::Base
   acts_as_authentic
   #attr_accessible :username, :email, :password, :password_confirmation, :user_type, :instruments, :references, :zip, :country, :searching_for, :request_message
   
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  
+  has_attached_file :avatar,
+    :url => "/system/avatar/:style/:id/:filename",
+    :styles => { :original => "460x460#", :normal => "300x300#", :thumb => "100x100#", :gallery => "20x20#" },
+    :storage => {
+          'development' => :filesystem, 
+          'production' => :s3
+        }[Rails.env],
+    :path => {
+          'development' => ":rails_root/public/system/avatar/:style/:id/:filename",
+          'production' => "system/avatar/:style/:id/:filename"
+        }[Rails.env],
+    :s3_credentials => "#{Rails.root}/config/s3.yml",
+    :s3_headers => {'Expires' => 1.year.from_now.httpdate}
+
+  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
+  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size  
+
   def instruments
     instruments = []
     INSTRUMENTS.each do |instrument|

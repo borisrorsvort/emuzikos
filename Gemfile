@@ -10,6 +10,8 @@ gem "compass-960-plugin"
 # gem "compass-fluid960-plugin", :git => 'git://github.com/jtoy/compass-fluid960-plugin.git'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'formtastic', '~> 1.1.0'
+gem "paperclip", "~> 2.3"
+
 group :development do
   gem "jammit"
 end

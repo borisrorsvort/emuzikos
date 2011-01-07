@@ -64,7 +64,7 @@ en:
     credentials: Credentials
     index:
       title: Users Listing
-      no_users: "There are no user registered yet" 
+      no_users: "We couldn't find any users corresponding to you search criterias" 
     show:
       title: "%{username}'s profile"
     edit:
