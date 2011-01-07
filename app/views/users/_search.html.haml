@@ -1,4 +1,6 @@
 = semantic_form_for :search, @search, :html => { :method => :get } do |f|
+  = hidden_field_tag :direction, params[:direction]
+  = hidden_field_tag :sort, params[:sort]
   %p
     I'm searching for a
     = f.select :user_type,  User::USER_TYPES, :include_blank => true

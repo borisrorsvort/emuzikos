@@ -17,11 +17,11 @@
     %thead
       %tr
         %th= t(:'activerecord.attributes.user.username')
-        %th= t(:'activerecord.attributes.user.user_type')
+        %th= sortable "user_type", t(:'activerecord.attributes.user.user_type')
         %th= t(:'activerecord.attributes.user.instruments')
-        %th= t(:'activerecord.attributes.user.genre')
-        %th= t(:'activerecord.attributes.user.zip')
-        %th= t(:'activerecord.attributes.user.country')
+        %th= sortable "genre ", t(:'activerecord.attributes.user.genre')
+        %th= sortable "zip", t(:'activerecord.attributes.user.zip')
+        %th= sortable "country", t(:'activerecord.attributes.user.country')
         %th= t(:'activerecord.attributes.user.references')
         %th= t(:'tables.headings.actions')
 

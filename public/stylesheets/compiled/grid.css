@@ -216,3 +216,21 @@ a img {
   font-style: italic;
   opacity: 0.6;
 }
+
+/* TABLES */
+/* line 94, ../../../app/stylesheets/grid.scss */
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+/* line 100, ../../../app/stylesheets/grid.scss */
+.pretty th .asc {
+  background-image: url(/images/up_arrow.gif);
+}
+
+/* line 104, ../../../app/stylesheets/grid.scss */
+.pretty th .desc {
+  background-image: url(/images/down_arrow.gif);
+}
