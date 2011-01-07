@@ -2,7 +2,13 @@ class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => [:show, :edit, :update]
   def index
-    @users = User.paginate :page => params[:page], :per_page => 2
+    @users = []
+    @search = Search.new(User, params[:search])
+    if is_search?
+      @users = User.search(@search, :page => params[:page], :per_page => 5 )
+    else
+      @users = User.paginate(:page => params[:page], :per_page => 5)
+    end
   end
   def new
     @user = User.new
@@ -31,5 +37,11 @@ class UsersController < ApplicationController
     else
       render :action => 'edit'
     end
+  end
+  
+  private
+  
+  def is_search?
+    @search.conditions
   end
 end

@@ -13,3 +13,5 @@ stylesheets:
   common:
     - public/stylesheets/compiled/grid.css
     - public/stylesheets/compiled/text.css
+    # - public/stylesheets/compiled/formtastic.css
+    # - public/stylesheets/compiled/formtastic_changes.css

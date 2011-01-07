@@ -5,7 +5,7 @@ en:
   common:
     required: Required
     please_choose: 'Please choose ...'
-
+    reset: Reset
 ### TABLES
 ### ______________________________________________________    
   tooltips:
@@ -29,6 +29,7 @@ en:
     delete: Delete
     login: Login
     submit: Submit
+    search: Search
 
 ### INSTRUMENTS
 ### ______________________________________________________

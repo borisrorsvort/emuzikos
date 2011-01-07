@@ -1,0 +1,12 @@
+= semantic_form_for :search, @search, :html => { :method => :get } do |f|
+  %p
+    I'm searching for a
+    = f.select :user_type,  User::USER_TYPES, :include_blank => true
+    who plays
+    = f.select :genre,  User::MUSICAL_GENRES, :include_blank => true
+    = f.select :instrument, User::INSTRUMENTS, :include_blank => true
+    in
+    = f.localized_country_select( :country, [], :include_blank => true)
+    = f.submit(t(:'buttons.search'), :type => "submit")
+    %span.reset_button
+      =link_to t(:'common.reset'), users_path

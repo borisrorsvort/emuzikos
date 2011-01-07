@@ -1,11 +1,14 @@
 - title t(:'.title')
 
+= render "search"
+
 -if !@users.blank?
   %table.display.wide
     %tbody
       -for user in @users
         %tr
           %td=link_to "#{user.username}", user_url(user)
+          %td= user.user_type
           %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
           %td= user.genre
           %td= user.zip
@@ -14,6 +17,7 @@
     %thead
       %tr
         %th= t(:'activerecord.attributes.user.username')
+        %th= t(:'activerecord.attributes.user.user_type')
         %th= t(:'activerecord.attributes.user.instruments')
         %th= t(:'activerecord.attributes.user.genre')
         %th= t(:'activerecord.attributes.user.zip')

@@ -33,4 +33,18 @@ class User < ActiveRecord::Base
   def self.per_page
     50
   end
+  
+  def self.search(search, args = {})
+    self.build_search_hash search, args
+    self.paginate(:all, @search_hash)
+  end
+
+  private
+
+  def self.build_search_hash(search, args = {})
+    @search_hash = {:conditions => search.conditions,
+                    :page => args[:page],
+                    :per_page => args[:per_page],
+                    :order => 'users.username'}
+  end
 end
