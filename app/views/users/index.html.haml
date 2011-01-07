@@ -4,18 +4,9 @@
 
 -if !@users.blank?
   %table.display.wide
-    %tbody
-      -for user in @users
-        %tr
-          %td=link_to "#{user.username}", user_url(user)
-          %td= user.user_type
-          %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
-          %td= user.genre
-          %td= user.zip
-          %td= I18n.t user.country, :scope => 'countries'
-          %td= user.references
     %thead
       %tr
+        %th= t(:'activerecord.attributes.user.avatar')
         %th= t(:'activerecord.attributes.user.username')
         %th= sortable "user_type", t(:'activerecord.attributes.user.user_type')
         %th= t(:'activerecord.attributes.user.instruments')
@@ -24,6 +15,23 @@
         %th= sortable "country", t(:'activerecord.attributes.user.country')
         %th= t(:'activerecord.attributes.user.references')
         %th= t(:'tables.headings.actions')
+    %tbody
+      -for user in @users
+        %tr
+          %td.avatar
+            - if user.avatar.present?
+              = link_to(image_tag(user.avatar.url(:gallery)), user_path(user))
+            -else
+              = link_to(image_tag("content/avatar-default.gif"), user_path(user))
+              
+          %td=link_to "#{user.username}", user_url(user)
+          %td= user.user_type
+          %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
+          %td= user.genre
+          %td= user.zip
+          %td= I18n.t user.country, :scope => 'countries'
+          %td= user.references
+          %td
 
   = will_paginate @users
   

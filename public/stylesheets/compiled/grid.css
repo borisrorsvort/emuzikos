@@ -107,7 +107,7 @@ a img {
   background-position: left center;
 }
 
-/* line 15, ../../../app/stylesheets/grid.scss */
+/* line 16, ../../../app/stylesheets/grid.scss */
 body {
   background-color: #4b7399;
   font-family: "Verdana", "Helvetica", "Arial";
@@ -218,19 +218,57 @@ a img {
 }
 
 /* TABLES */
-/* line 94, ../../../app/stylesheets/grid.scss */
-.pretty th .current {
+/* line 93, ../../../app/stylesheets/grid.scss */
+table {
+  width: 100%;
+  font-size: 12px;
+  background: #ccc;
+  margin: 8px 0 5px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  text-align: left;
+  width: 100%;
+}
+/* line 102, ../../../app/stylesheets/grid.scss */
+table th {
+  padding: 10px;
+  text-transform: uppercase;
+  color: #333;
+  text-align: left;
+  text-shadow: 0 0 1px #fff;
+}
+/* line 108, ../../../app/stylesheets/grid.scss */
+table th a {
+  text-decoration: underline;
+  color: #333;
+}
+/* line 112, ../../../app/stylesheets/grid.scss */
+table td {
+  border-bottom: 1px solid #CCCCCC;
+  background-color: #FFF;
+  color: #666666;
+  line-height: 20px;
+  padding: 10px;
+  vertical-align: top;
+}
+/* line 120, ../../../app/stylesheets/grid.scss */
+table tr.odd {
+  background: #E9E9E9;
+}
+
+/* line 123, ../../../app/stylesheets/grid.scss */
+th a.current {
   padding-right: 12px;
   background-repeat: no-repeat;
   background-position: right center;
 }
 
-/* line 100, ../../../app/stylesheets/grid.scss */
-.pretty th .asc {
+/* line 128, ../../../app/stylesheets/grid.scss */
+th a.asc {
   background-image: url(/images/up_arrow.gif);
 }
 
-/* line 104, ../../../app/stylesheets/grid.scss */
-.pretty th .desc {
+/* line 131, ../../../app/stylesheets/grid.scss */
+th a.desc {
   background-image: url(/images/down_arrow.gif);
 }

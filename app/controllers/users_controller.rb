@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     @users = []
     @search = Search.new(User, params[:search])
     if is_search?
-      @users = User.search(@search, :page => params[:page], :per_page => 4, :order => sort_column + " " + sort_direction )
+      @users = User.search(@search, :page => params[:page], :order => sort_column + " " + sort_direction )
     else
-      @users = User.paginate(:page => params[:page], :per_page => 4, :order => sort_column + " " + sort_direction)
+      @users = User.paginate(:page => params[:page], :order => sort_column + " " + sort_direction)
     end
   end
   
