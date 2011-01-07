@@ -24,11 +24,11 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
-    if @user.save
-      flash[:notice] = "Registration successful."
-      redirect_to root_url
+    if verify_recaptcha(@user) && @user.save!
+      flash[:notice] = "Registration successful. Don't forget to complete your profile to appear in search results"
+      redirect_to edit_user_url(@user)
     else
-      render :action => 'new'
+      render :action => 'new' # error shown in view
     end
   end
   
