@@ -2,20 +2,28 @@
   = hidden_field_tag :direction, params[:direction]
   = hidden_field_tag :sort, params[:sort]
   %p
-    I'm searching for a
+    = t(:'search_terms.iam')
+
     = f.select :user_type,  User::USER_TYPES, :include_blank => true
-    searching for a 
-    = f.select :searching_for,  User::USER_TYPES, :include_blank => true
+
+    = t(:'search_terms.who_plays')
     
-    who plays
-    =# f.select :genre,  User::MUSICAL_GENRES, :include_blank => true
-    %select{ :id => "search_genre", :name => "search[genre]", :include_blank => true }    
+    %select{ :id => "search_genre", :name => "search[genre]" }
       %option
       - User::MUSICAL_GENRES.each do |genre|
         = options_for_select([[t(:"musical_genres.#{genre}"), genre]], {:selected => ( params[:search][:genre] rescue 'None') })
+        
     = f.select :instrument, User::INSTRUMENTS, :include_blank => true
-    in
+    
+    = t(:'search_terms.who_search_for')    
+    = f.select :searching_for,  User::USER_TYPES, :include_blank => true
+    
+    = t(:'search_terms.in')
+    
     = f.localized_country_select( :country, [], :include_blank => true)
+
+
+    
     = f.submit(t(:'buttons.search'), :type => "submit")
     %span.reset_button
       =link_to t(:'common.reset'), users_path
