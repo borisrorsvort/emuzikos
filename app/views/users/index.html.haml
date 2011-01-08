@@ -9,6 +9,7 @@
         %th
         %th= t(:'activerecord.attributes.user.username')
         %th= sortable "user_type", t(:'activerecord.attributes.user.user_type')
+        %th= sortable "searching_for", t(:'activerecord.attributes.user.searching_for')
         %th= t(:'activerecord.attributes.user.instruments')
         %th= t(:'activerecord.attributes.user.genre')
         %th= sortable "zip", t(:'activerecord.attributes.user.zip')
@@ -27,8 +28,9 @@
               
           %td=link_to "#{user.username}", user_url(user)
           %td= user.user_type
+          %td= user.searching_for
           %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
-          %td= user.genre
+          %td= t(:"musical_genres.#{user.genre}")
           %td= user.zip
           %td= I18n.t user.country, :scope => 'countries'
           %td= user.references

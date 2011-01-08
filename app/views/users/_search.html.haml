@@ -4,8 +4,15 @@
   %p
     I'm searching for a
     = f.select :user_type,  User::USER_TYPES, :include_blank => true
+    searching for a 
+    = f.select :searching_for,  User::USER_TYPES, :include_blank => true
+    
     who plays
-    = f.select :genre,  User::MUSICAL_GENRES, :include_blank => true
+    =# f.select :genre,  User::MUSICAL_GENRES, :include_blank => true
+    %select{ :id => "search_genre", :name => "search[genre]", :include_blank => true }    
+      %option
+      - User::MUSICAL_GENRES.each do |genre|
+        = options_for_select([[t(:"musical_genres.#{genre}"), genre]], {:selected => ( params[:search][:genre] rescue 'None') })
     = f.select :instrument, User::INSTRUMENTS, :include_blank => true
     in
     = f.localized_country_select( :country, [], :include_blank => true)

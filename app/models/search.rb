@@ -9,6 +9,10 @@ class Search
   def user_type
     options[:user_type]
   end
+  
+  def searching_for
+    options[:searching_for]
+  end
 
   def country
     options[:country]
@@ -25,7 +29,11 @@ class Search
   def has_user_type?
     user_type.present?
   end
-
+  
+  def has_searching_for?
+    searching_for.present?
+  end
+  
   def has_country?
     country.present?
   end
@@ -47,6 +55,11 @@ class Search
     if has_user_type?
       conditions << "#{@model.table_name}.user_type LIKE ?"
       parameters << "%#{user_type}%"
+    end
+    
+    if has_searching_for?
+      conditions << "#{@model.table_name}.searching_for LIKE ?"
+      parameters << "%#{searching_for}%"
     end
     
     if has_country?

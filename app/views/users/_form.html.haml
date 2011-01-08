@@ -16,8 +16,10 @@
   %p
     = f.label :genre, t(:'activerecord.attributes.user.genre')
     %span.required ( #{t(:'common.required')} )
-    %br
-    = select :user, :genre, User::MUSICAL_GENRES
+    %br    
+    %select{ :id => "user_genre", :name => "user[genre]" }
+      - User::MUSICAL_GENRES.each do |genre|
+        = options_for_select([[t(:"musical_genres.#{genre}"), genre]], :selected => ( @user.genre))
   %p
     = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
     %span.required ( #{t(:'common.required')} )

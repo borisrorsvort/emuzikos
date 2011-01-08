@@ -23,7 +23,7 @@ en:
     all_users: All users
     logout: Lougout
     login: Login
-    rgister: Register
+    register: Register
     
 
 ### TABLES
@@ -44,6 +44,37 @@ en:
     login: Login
     submit: Submit
     search: Search
+
+### MUSICAL GENRES
+### ______________________________________________________
+ 
+  musical_genres:
+    alternative: Alternative
+    blues: Blues
+    children: Children
+    classical: Classical
+    comedy: Comedy
+    country: Country
+    dance: Dance
+    easy_listening: Easy Listening
+    electronic: Electronic
+    fusion: Fusion
+    gospel: Gospel
+    hip_hop: Hip Hop
+    instrumental: Instrumental
+    jazz: Jazz
+    latino: Latino
+    new_age: New Age
+    opera: Opera 
+    pop: Pop
+    r_and_b: "R&B" 
+    reggae: Reggae
+    rock: Rock
+    songwriter: Song Writer
+    soundtrack:  Soundtrack
+    spoken_word: Spoken Word
+    vocal: Vocal
+    world: World
 
 ### INSTRUMENTS
 ### ______________________________________________________

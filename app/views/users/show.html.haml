@@ -7,7 +7,7 @@
     %tbody
       %tr
         %td= @user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
-        %td= @user.genre
+        %td= t(:"musical_genres.#{@user.genre}")
         %td= @user.zip
         %td= I18n.t @user.country, :scope => 'countries'
         %td= @user.references
