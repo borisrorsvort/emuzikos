@@ -1,4 +1,16 @@
 .bundle
 db/*.sqlite3
+config/initializers/paperclip.rb
+nbproject
 log/*.log
+log/*.output
 tmp/**/*
+db/*.db
+db/*.bz2
+db/*.sql
+.DS_Store
+doc/api
+doc/app
+doc/plugins
+db/schema.rb
+system/**/*
