@@ -26,7 +26,11 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if verify_recaptcha(@user) && @user.save!
       flash[:notice] = "Registration successful. Don't forget to complete your profile to appear in search results"
-      redirect_to edit_user_url(@user)
+      if params[:user][:avatar].blank?  
+        redirect_to edit_user_url(@user)
+      else  
+        render :action => 'crop'  
+      end
     else
       render :action => 'new' # error shown in view
     end
@@ -40,7 +44,11 @@ class UsersController < ApplicationController
     @user = @current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated user."
-      redirect_to edit_user_url
+      if params[:user][:avatar].blank?  
+        redirect_to edit_user_url
+      else  
+        render :action => 'crop'  
+      end
     else
       render :action => 'edit'
     end

@@ -17,17 +17,16 @@ class User < ActiveRecord::Base
   MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r&b reggae rock songwriter soundtrack spoken_word vocal world )
   acts_as_authentic
   #attr_accessible :username, :email, :password, :password_confirmation, :user_type, :instruments, :references, :zip, :country, :searching_for, :request_message
-  
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  
+    
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
     :styles => { 
-      :original => "460x460#", 
-      :normal => "300x300#", 
+      :normal => "300>", 
       :thumb => "100x100#", 
       :gallery => "20x20#" 
     },  
+    :processors => [:cropper],
+    :whiny => true,
     :storage => {
           'development' => :filesystem, 
           'production' => :s3
@@ -37,8 +36,22 @@ class User < ActiveRecord::Base
           'production' => "system/avatar/:style/:id/:filename"
         }[Rails.env],
     :s3_credentials => "#{Rails.root}/config/s3.yml",
-    :s3_headers => {'Expires' => 1.year.from_now.httpdate}
+    :s3_headers => {'Expires' => 1.year.from_now.httpdate},
+    :default_url => '/images/backgrounds/no-image-:style.gif'
+    
+  
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  after_update :reprocess_avatar, :if => :cropping?
 
+  def cropping?
+    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  end
+
+  def avatar_geometry(style = :original)
+    @geometry ||= {}
+    @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))
+  end
+  
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size  
 
@@ -50,6 +63,7 @@ class User < ActiveRecord::Base
     return instruments
     
   end
+    
   def to_param
     "#{id}-#{username. parameterize}"
   end
@@ -74,6 +88,10 @@ class User < ActiveRecord::Base
 
   private
 
+  def reprocess_avatar
+    avatar.reprocess!
+  end
+  
   def self.build_search_hash(search, args = {})
     @search_hash = {:conditions => search.conditions,
                     :page => args[:page],

@@ -13,17 +13,19 @@
     #container
       #user_nav
         -if current_user
-          ="Hi #{current_user.username}!"
+          = "Hi #{current_user.username}!" 
           |
-          =link_to "Users", users_url
+          =link_to t(:'menu.profile.show'), user_url(current_user)
           |
-          =link_to "Edit profile", edit_user_path(:current)
+          =link_to t(:'menu.profile.edit'), edit_user_path(current_user)
           |
-          =link_to "Logout", logout_path
+          =link_to t(:'menu.all_users'), users_url
+          |
+          =link_to t(:'menu.logout'), logout_path
         -else
-          =link_to "Register",new_user_path
+          =link_to t(:'menu.register'),new_user_path
           |
-          =link_to "Login",login_path
+          =link_to t(:'menu.login'),login_path
 
       .clear
 
@@ -38,4 +40,4 @@
       #donation_widget
         
   = include_javascripts :jquery, :emuzikos
-    
+  = yield(:javascripts)  

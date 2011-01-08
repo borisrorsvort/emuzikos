@@ -48,8 +48,8 @@
   %h2= t(:'users.credentials')
   %p
     = f.label :avatar, t(:'activerecord.attributes.user.avatar')
-    - if @user.avatar?
-      .avatar
+    - if @user.avatar.present?
+      .avatar.small
         = image_tag @user.avatar.url(:gallery)
     = f.file_field :avatar
   %p

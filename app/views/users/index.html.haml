@@ -6,11 +6,11 @@
   %table.display.wide
     %thead
       %tr
-        %th= t(:'activerecord.attributes.user.avatar')
+        %th
         %th= t(:'activerecord.attributes.user.username')
         %th= sortable "user_type", t(:'activerecord.attributes.user.user_type')
         %th= t(:'activerecord.attributes.user.instruments')
-        %th= sortable "genre ", t(:'activerecord.attributes.user.genre')
+        %th= t(:'activerecord.attributes.user.genre')
         %th= sortable "zip", t(:'activerecord.attributes.user.zip')
         %th= sortable "country", t(:'activerecord.attributes.user.country')
         %th= t(:'activerecord.attributes.user.references')
@@ -18,11 +18,12 @@
     %tbody
       -for user in @users
         %tr
-          %td.avatar
-            - if user.avatar.present?
-              = link_to(image_tag(user.avatar.url(:gallery)), user_path(user))
-            -else
-              = link_to(image_tag("content/avatar-default.gif"), user_path(user))
+          %td
+            .avatar.small
+              - if user.avatar.present?
+                = link_to(image_tag(user.avatar.url(:gallery)), user_path(user))
+              -else
+                = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user))
               
           %td=link_to "#{user.username}", user_url(user)
           %td= user.user_type

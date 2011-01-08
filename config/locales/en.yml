@@ -13,6 +13,19 @@ en:
     email: "Must be a valid email address"
     password: "Must contains at least 5 characters"
 
+### MENU
+### ______________________________________________________
+
+  menu:
+    profile:
+      show: My Profile
+      edit: Edit my profile
+    all_users: All users
+    logout: Lougout
+    login: Login
+    rgister: Register
+    
+
 ### TABLES
 ### ______________________________________________________
 

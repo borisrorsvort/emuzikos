@@ -1,6 +1,6 @@
 - title t(:'.title', :username => @user.username)
 
-= image_tag @user.avatar.url
+= image_tag @user.avatar.url(:normal)
 
 -if !@user.blank?
   %table.display.wide
