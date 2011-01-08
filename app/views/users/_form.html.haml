@@ -6,7 +6,9 @@
     = f.label :user_type, t(:'activerecord.attributes.user.user_type') 
     %span.required ( #{t(:'common.required')} )
     %br
-    = select :user, :user_type, User::USER_TYPES
+    %select{ :id => "user_user_type", :name => "user[user_type]" }
+      -  User::USER_TYPES.each do |user_type|
+        = options_for_select([[t(:"users.types.#{user_type}"), user_type]], :selected => ( @user.user_type))
   %p
     = f.label :instruments, t(:'activerecord.attributes.user.instruments')
     %br
@@ -24,7 +26,10 @@
     = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
     %span.required ( #{t(:'common.required')} )
     %br
-    = select :user, :searching_for, User::USER_TYPES
+    %select{ :id => "user_searching_for", :name => "user[searching_for]" }
+      -  User::USER_TYPES.each do |searching_for|
+        = options_for_select([[t(:"users.types.#{searching_for}"), searching_for]], :selected => ( @user.searching_for))
+        
   %p
     = f.label :references, t(:'activerecord.attributes.user.references')
     %br

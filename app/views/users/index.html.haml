@@ -27,8 +27,8 @@
                 = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user))
               
           %td=link_to "#{user.username}", user_url(user)
-          %td= user.user_type
-          %td= user.searching_for
+          %td= t(:"users.types.#{user.user_type}") 
+          %td= t(:"users.types.#{user.searching_for}")
           %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
           %td= t(:"musical_genres.#{user.genre}")
           %td= user.zip

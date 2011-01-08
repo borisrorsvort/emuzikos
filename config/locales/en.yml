@@ -104,6 +104,9 @@ en:
 ### ______________________________________________________
 
   users:
+    types:
+      musician: Musician
+      band: Band
     musician_infos: Musician Infos
     location: Location
     credentials: Credentials

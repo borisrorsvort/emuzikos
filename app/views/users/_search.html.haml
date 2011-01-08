@@ -3,9 +3,11 @@
   = hidden_field_tag :sort, params[:sort]
   %p
     = t(:'search_terms.iam')
-
-    = f.select :user_type,  User::USER_TYPES, :include_blank => true
-
+    %select{ :id => "search_user_type", :name => "search[user_type]" }
+      %option
+      - User::USER_TYPES.each do |user_type|
+        = options_for_select([[t(:"users.types.#{user_type}"), user_type]], {:selected => ( params[:search][:user_type] rescue 'None') })
+        
     = t(:'search_terms.who_plays')
     
     %select{ :id => "search_genre", :name => "search[genre]" }
@@ -16,8 +18,11 @@
     = f.select :instrument, User::INSTRUMENTS, :include_blank => true
     
     = t(:'search_terms.who_search_for')    
-    = f.select :searching_for,  User::USER_TYPES, :include_blank => true
-    
+    %select{ :id => "search_searching_for", :name => "search[searching_for]" }
+      %option
+      - User::USER_TYPES.each do |searching_for|
+        = options_for_select([[t(:"users.types.#{searching_for}"), searching_for]], {:selected => ( params[:search][:searching_for] rescue 'None') })
+        
     = t(:'search_terms.in')
     
     = f.localized_country_select( :country, [], :include_blank => true)
