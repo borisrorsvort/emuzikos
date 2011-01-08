@@ -11,6 +11,7 @@ gem "compass-960-plugin"
 gem "will_paginate", "~> 3.0.pre2"
 gem 'formtastic', '~> 1.1.0'
 gem "paperclip", "~> 2.3"
+gem "settingslogic", "2.0.6"
 
 group :development do
   gem "jammit"

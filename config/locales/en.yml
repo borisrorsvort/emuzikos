@@ -6,6 +6,7 @@ en:
     required: Required
     please_choose: 'Please choose ...'
     reset: Reset
+
 ### TABLES
 ### ______________________________________________________    
   tooltips:

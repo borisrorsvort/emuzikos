@@ -1,0 +1,63 @@
+##
+# Common Settings
+common: &default_settings
+  version: 1
+  site:
+    results_per_page: 5
+    avatar:
+      normal:
+        size: 300
+      thumb:
+        size: 100
+      small:
+        size: 30
+  google:
+    analytics:
+      enabled: false
+      key: UA-4782653-1
+  email:
+    from: "Emuzikos <boris@emuzikos.com>"
+    do_not_reply_from: "Eumzikos <do-not-reply@emuzikos.com>"
+  addthis:
+    enabled: false 
+
+development:
+  <<: *default_settings
+  google:
+    analytics:
+      enabled: false
+  email:
+    from: "Emuzikos <boris@emuzikos.com>"
+    do_not_reply_from: "Eumzikos <do-not-reply@emuzikos.com>"
+
+staging:
+  <<: *default_settings
+  google:
+    analytics:
+      enabled: false
+  addthis:
+    enabled: true
+  email:
+    from: "Emuzikos <boris@emuzikos.com>"
+    do_not_reply_from: "Eumzikos <do-not-reply@emuzikos.com>"
+        
+production:
+  <<: *default_settings
+  google:
+    analytics:
+      enabled: true
+      key: UA-4782653-1 
+  addthis:
+    enabled: true 
+    
+test:
+  <<: *default_settings
+  google:
+    analytics:
+      enabled: false 
+      
+cucumber:
+  <<: *default_settings
+  google:
+    analytics:
+      enabled: false 

@@ -22,7 +22,12 @@ class User < ActiveRecord::Base
   
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
-    :styles => { :original => "460x460#", :normal => "300x300#", :thumb => "100x100#", :gallery => "20x20#" },
+    :styles => { 
+      :original => "460x460#", 
+      :normal => "300x300#", 
+      :thumb => "100x100#", 
+      :gallery => "20x20#" 
+    },  
     :storage => {
           'development' => :filesystem, 
           'production' => :s3
@@ -55,7 +60,7 @@ class User < ActiveRecord::Base
   end
   
   def self.per_page
-    5
+    AppConfig.site.results_per_page
   end
   
   def self.search(search, args = {})
