@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_user, :only => [:index, :show, :edit, :update]
   
   helper_method :sort_column, :sort_direction
   
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if verify_recaptcha(@user) && @user.save!
+      Notifier.registration_confirmation(@user).deliver
       flash[:notice] = "Registration successful. Don't forget to complete your profile to appear in search results"
       if params[:user][:avatar].blank?  
         redirect_to edit_user_url(@user)
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
         render :action => 'crop'  
       end
     else
+      logger.error(inspect)
       render :action => 'new' # error shown in view
     end
   end

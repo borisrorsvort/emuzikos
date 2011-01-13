@@ -10,7 +10,10 @@
     = yield(:head)
 
   %body
+    
     #container
+      = render :partial => "shared/paypal_widget"
+    
       #user_nav
         -if current_user
           = "Hi #{current_user.username}!" 
@@ -38,6 +41,5 @@
       = yield
     #footer
       #donation_widget
-        
   = include_javascripts :jquery, :emuzikos
   = yield(:javascripts)  
