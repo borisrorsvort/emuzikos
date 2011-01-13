@@ -38,6 +38,6 @@
       = yield
     #footer
       #donation_widget
-        
+  = render :partial => "shared/paypal_widget"
   = include_javascripts :jquery, :emuzikos
   = yield(:javascripts)  

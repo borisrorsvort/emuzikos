@@ -1,0 +1,12 @@
+%h1 Account creation Confirmation
+
+%p
+  You have successfully created your account. 
+  You can now access the full users list and contact anyone you would like to.
+  
+%p
+  You can now:
+%ul
+  %li= link_to "View users list", users_url
+  %li= link_to "Edit your profile", edit_user_url(@user)
+

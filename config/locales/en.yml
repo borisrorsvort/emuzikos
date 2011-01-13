@@ -140,3 +140,13 @@ en:
     new:
       title: Reset your password
       instructions: Please enter your email address below and then press "Reset Password".
+
+### CONTACT PAGE
+### ______________________________________________________
+  
+  pages:
+    contact:
+      title: Contact us
+      message: Message
+      address: Address
+      name: Name

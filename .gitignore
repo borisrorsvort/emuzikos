@@ -13,4 +13,4 @@ doc/api
 doc/app
 doc/plugins
 db/schema.rb
-system/**/*
+public/system/***/**/*
