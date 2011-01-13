@@ -220,66 +220,132 @@ a img {
 /* TABLES */
 /* line 93, ../../../app/stylesheets/grid.scss */
 table {
+  overflow: hidden;
+  border: 1px solid #d3d3d3;
+  background: #fefefe;
   width: 100%;
-  font-size: 12px;
-  background: #ccc;
-  margin: 8px 0 5px;
-  border: 1px solid #ccc;
-  border-bottom: none;
-  text-align: left;
-  width: 100%;
-}
-/* line 102, ../../../app/stylesheets/grid.scss */
-table th {
-  padding: 10px;
-  text-transform: uppercase;
-  color: #333;
-  text-align: left;
-  text-shadow: 0 0 1px #fff;
-}
-/* line 108, ../../../app/stylesheets/grid.scss */
-table th a {
-  text-decoration: underline;
-  color: #333;
-}
-/* line 112, ../../../app/stylesheets/grid.scss */
-table td {
-  border-bottom: 1px solid #CCCCCC;
-  background-color: #FFF;
-  color: #666666;
-  line-height: 20px;
-  padding: 10px;
-  vertical-align: top;
-}
-/* line 120, ../../../app/stylesheets/grid.scss */
-table tr.odd {
-  background: #E9E9E9;
+  margin: 5% auto 0;
+  -moz-border-radius: 5px;
+  /* FF1+ */
+  -webkit-border-radius: 5px;
+  /* Saf3-4 */
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-/* line 123, ../../../app/stylesheets/grid.scss */
+/* line 106, ../../../app/stylesheets/grid.scss */
+th, td {
+  padding: 18px 20px 18px;
+  text-align: left;
+}
+
+/* line 108, ../../../app/stylesheets/grid.scss */
+th {
+  padding-top: 22px;
+  text-shadow: 1px 1px 1px #fff;
+  background: #e8eaeb;
+}
+
+/* line 110, ../../../app/stylesheets/grid.scss */
+td {
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* line 112, ../../../app/stylesheets/grid.scss */
+tr.odd td {
+  background: #f6f6f6;
+}
+
+/* line 114, ../../../app/stylesheets/grid.scss */
+td.first, th.first {
+  text-align: left;
+}
+
+/* line 116, ../../../app/stylesheets/grid.scss */
+td.last {
+  border-right: none;
+}
+
+/*
+Background gradients are completely unnecessary but a neat effect.
+*/
+/* line 122, ../../../app/stylesheets/grid.scss */
+td {
+  background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
+  background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
+}
+
+/* line 127, ../../../app/stylesheets/grid.scss */
+tr.odd td {
+  background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
+  background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
+}
+
+/* line 132, ../../../app/stylesheets/grid.scss */
+th {
+  background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
+  background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
+}
+
+/*
+I know this is annoying, but we need additional styling so webkit will recognize rounded corners on background elements.  Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
+ 
+And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
+*/
+/* line 143, ../../../app/stylesheets/grid.scss */
+tr:first-child th.first {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  /* Saf3-4 */
+}
+
+/* line 148, ../../../app/stylesheets/grid.scss */
+tr:first-child th.last {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  /* Saf3-4 */
+}
+
+/* line 153, ../../../app/stylesheets/grid.scss */
+tr:last-child td.first {
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  /* Saf3-4 */
+}
+
+/* line 158, ../../../app/stylesheets/grid.scss */
+tr:last-child td.last {
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  /* Saf3-4 */
+}
+
+/* line 163, ../../../app/stylesheets/grid.scss */
 th a.current {
   padding-right: 12px;
   background-repeat: no-repeat;
   background-position: right center;
 }
 
-/* line 128, ../../../app/stylesheets/grid.scss */
+/* line 168, ../../../app/stylesheets/grid.scss */
 th a.asc {
   background-image: url(/images/up_arrow.gif);
 }
 
-/* line 131, ../../../app/stylesheets/grid.scss */
+/* line 171, ../../../app/stylesheets/grid.scss */
 th a.desc {
   background-image: url(/images/down_arrow.gif);
 }
 
 /* USER */
-/* line 135, ../../../app/stylesheets/grid.scss */
+/* line 175, ../../../app/stylesheets/grid.scss */
 .avatar {
   background: #ccc;
   display: block;
 }
-/* line 138, ../../../app/stylesheets/grid.scss */
+/* line 178, ../../../app/stylesheets/grid.scss */
 .avatar.small {
   height: 20px;
   width: 20px;
