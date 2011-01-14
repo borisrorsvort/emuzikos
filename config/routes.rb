@@ -1,11 +1,12 @@
 Emuzikos::Application.routes.draw do
-  resources :testimonials
 
   match "login" => "user_sessions#new", :as => :login
   match "logout" => "user_sessions#destroy", :as => :logout
   match "contact" => "pages#contact", :as => :contact
+  
   resources :user_sessions
   resources :password_resets, :only => [ :new, :create, :edit, :update ]
+  resources :testimonials
 
   resources :users
 

@@ -34,7 +34,13 @@ Emuzikos::Application.configure do
   #   :password => 'hc74jdf984jr'
   # }
 
+  config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)
   
+  if $0 == "irb"
+    config.logger = Logger.new(STDOUT)
+  else
+    config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)  
+  end
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
