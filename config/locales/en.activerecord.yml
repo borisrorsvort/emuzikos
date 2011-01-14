@@ -70,7 +70,11 @@ en:
         country: Country
         password_confirmation: Password confirmation
         avatar: Avatar
+        testimonials: "%{user}'s Testimonials"
+      testimonial:
+        body: Body
     models:
       user: User
+      testimonial: Testimonial
       
 

@@ -1,0 +1,13 @@
+- title "Testimonials"
+%table
+  %tr
+    %th Body
+    %th User
+  - for testimonial in @testimonials
+    %tr
+      %td= testimonial.body
+      %td= testimonial.user.username
+      %td= link_to "Show", testimonial
+      %td= link_to "Edit", edit_testimonial_path(testimonial)
+      %td= link_to "Destroy", testimonial, :confirm => 'Are you sure?', :method => :delete
+%p= link_to "New Testimonial", new_testimonial_path

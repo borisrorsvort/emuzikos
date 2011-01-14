@@ -1,0 +1,12 @@
+- title "Testimonial"
+%p
+  %strong Body:
+  = @testimonial.body
+%p
+  %strong User:
+  = @testimonial.user.username
+%p
+  = link_to "Edit", edit_testimonial_path(@testimonial)
+  |
+  \#{link_to "Destroy", @testimonial, :confirm => 'Are you sure?', :method => :delete} |
+  \#{link_to "View All", testimonials_path}

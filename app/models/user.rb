@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  
+  has_many :testimonials
   
   validates_presence_of :username, :email, :user_type, :genre, :zip, :country, :searching_for
   validates_presence_of :password, :if => :password_required?
