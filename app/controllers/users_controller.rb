@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:index, :show, :edit, :update]
+  before_filter :require_user, :only => [:show, :edit, :update]
   
   helper_method :sort_column, :sort_direction
   
