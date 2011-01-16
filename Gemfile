@@ -15,8 +15,8 @@ gem "compass"
 gem 'compass-960-plugin'
 
 group :development do
+  gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
   gem "nifty-generators"
-  gem "jammit"
   gem 'heroku_san'
   gem 'mysql2'
 end

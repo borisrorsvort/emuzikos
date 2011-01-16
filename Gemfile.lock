@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/documentcloud/jammit.git
+  revision: 0a2e1a9888c32c53c396663adeb66bf28219fb25
+  specs:
+    jammit (0.5.4)
+      closure-compiler (>= 0.1.0)
+      yui-compressor (>= 0.9.1)
+
+GIT
   remote: git://github.com/odorcicd/authlogic.git
   revision: a087ad0
   branch: rails3
@@ -78,9 +86,6 @@ GEM
     heroku_san (1.0.7)
       heroku
     i18n (0.5.0)
-    jammit (0.5.4)
-      closure-compiler (>= 0.1.0)
-      yui-compressor (>= 0.9.1)
     jquery-rails (0.2.6)
       rails (~> 3.0)
       thor (~> 0.14.4)
@@ -164,7 +169,7 @@ DEPENDENCIES
   haml
   heroku
   heroku_san
-  jammit
+  jammit!
   jquery-rails
   mocha
   mysql2
