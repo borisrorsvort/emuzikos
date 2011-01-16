@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_size_of :username, :within => 5..15
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
-    
+      
   USER_TYPES = %w(band musician)
   INSTRUMENTS = %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas)
   MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
@@ -20,43 +20,52 @@ class User < ActiveRecord::Base
     
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
-    :styles => { 
+    :styles => {
       :normal => "300>", 
+      :medium => "200x200#",
       :thumb => "100x100#", 
       :gallery => "20x20#" 
     },  
     :processors => [:cropper],
     :whiny => true,
     :storage => {
-          'development' => :filesystem, 
-          'production' => :s3
-        }[Rails.env],
+      'development' => :filesystem, 
+      'staging' => :s3, 
+      'production' => :s3,
+      'test' => :filesystem,
+      'cucumber' => :filesystem
+    }[Rails.env],
     :path => {
-          'development' => ":rails_root/public/system/avatar/:style/:id/:filename",
-          'production' => "system/avatar/:style/:id/:filename"
-        }[Rails.env],
+      'development' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
+      'staging' => "photos/avatars/:id/:id_:style.:extension",
+      'production' => "photos/avatars/:id/:id_:style.:extension",
+      'test' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
+      'cucumber' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension"
+    }[Rails.env],   
+    :url => {
+      'development' => "/photos/avatars/:id/:id_:style.:extension",
+      'staging' => ":s3_domain_url",
+      'production' => ":s3_domain_url",
+      'test' => "/photos/avatars/:id/:id_:style.:extension",
+      'cucumber' => "/photos/avatars/:id/:id_:style.:extension"
+    }[Rails.env],
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
     :default_url => '/images/backgrounds/no-image-:style.gif'
     
-  
+  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size,
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :reprocess_avatar, :if => :cropping?
 
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
-
-  # def avatar_geometry(style = :original)
-  #   @geometry ||= {}
-  #   @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))
-  # end
-  
   #Heroku read only fix
   def avatar_geometry(style = :original)
     @geometry ||= {}
     @geometry[style] ||= Paperclip::Geometry.from_file(avatar.to_file(style))
   end
+  
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size  
 
