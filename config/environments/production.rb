@@ -47,4 +47,5 @@ Emuzikos::Application.configure do
   config.active_support.deprecation = :notify
   
   Sass::Plugin.options[:template_location] = { 'app/stylesheets' => 'public/stylesheets/compiled' }
+  Sass::Plugin.options[:never_update] = true
 end
