@@ -14,9 +14,33 @@ Emuzikos::Application.configure do
   config.action_view.debug_rjs             = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send
+  # Don't care if the mailer can't send  
   config.action_mailer.raise_delivery_errors = false
 
+  config.active_support.deprecation = :notify
+  
+  ActionMailer::Base.delivery_method = :sendmail
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.default_charset = "utf-8"
+  config.action_mailer.default_url_options = { :host => "emuzikos.com" }
+
+
+  # ActionMailer::Base.smtp_settings = {
+  #   :address => "smtp.gmail.com",
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :user_name => "carmen@destockjeans.fr",
+  #   :password => 'hc74jdf984jr'
+  # }
+
+  config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)
+  
+  if $0 == "irb"
+    config.logger = Logger.new(STDOUT)
+  else
+    config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)  
+  end
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 

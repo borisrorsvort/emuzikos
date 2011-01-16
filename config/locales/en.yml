@@ -2,15 +2,82 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  common:
+    required: Required
+    please_choose: 'Please choose ...'
+    reset: Reset
+
+### TABLES
+### ______________________________________________________    
+  tooltips:
+    email: "Must be a valid email address"
+    password: "Must contains at least 5 characters"
+
+### MENU
+### ______________________________________________________
+
+  menu:
+    profile:
+      show: My Profile
+      edit: Edit my profile
+    all_users: All users
+    logout: Lougout
+    login: Login
+    register: Register
+    
+
+### TABLES
+### ______________________________________________________
+
   tables:
     headings:
       actions: Actions
+
+### BUTTONS
+### ______________________________________________________
+
   buttons:
     update: Update
     create: Create
     edit: Edit
     delete: Delete
     login: Login
+    submit: Submit
+    search: Search
+
+### MUSICAL GENRES
+### ______________________________________________________
+ 
+  musical_genres:
+    alternative: Alternative
+    blues: Blues
+    children: Children
+    classical: Classical
+    comedy: Comedy
+    country: Country
+    dance: Dance
+    easy_listening: Easy Listening
+    electronic: Electronic
+    fusion: Fusion
+    gospel: Gospel
+    hip_hop: Hip Hop
+    instrumental: Instrumental
+    jazz: Jazz
+    latino: Latino
+    new_age: New Age
+    opera: Opera 
+    pop: Pop
+    r_and_b: "R&B" 
+    reggae: Reggae
+    rock: Rock
+    songwriter: Song Writer
+    soundtrack:  Soundtrack
+    spoken_word: Spoken Word
+    vocal: Vocal
+    world: World
+
+### INSTRUMENTS
+### ______________________________________________________
 
   instruments:
     guitar: guitar
@@ -33,15 +100,53 @@ en:
     ocarina: ocarina
     congas: congas
 
+### USERS
+### ______________________________________________________
+
   users:
+    types:
+      musician: Musician
+      band: Band
     musician_infos: Musician Infos
     location: Location
     credentials: Credentials
     index:
       title: Users Listing
-      no_users: "There are no user registered yet" 
+      no_users: "We couldn't find any users corresponding to you search criterias" 
     show:
       title: "%{username}'s profile"
     edit:
       titles:
         title: Edit your profile
+    new:
+      title: "New User"
+
+### SEARCH TERMS
+### ______________________________________________________
+
+  search_terms:
+    iam: "I'm searching for a"
+    who_search_for: "and who's searching for a"
+    who_plays: who plays
+    in: in
+    
+### PASSWORD RESETS
+### ______________________________________________________
+
+  password_resets:
+    edit:
+      title: Update your password
+      instructions: Please enter the new password below and then press "Update Password".
+    new:
+      title: Reset your password
+      instructions: Please enter your email address below and then press "Reset Password".
+
+### CONTACT PAGE
+### ______________________________________________________
+  
+  pages:
+    contact:
+      title: Contact us
+      message: Message
+      address: Address
+      name: Name

@@ -62,37 +62,91 @@ a img {
   border: none;
 }
 
-/* line 15, ../../../app/stylesheets/grid.scss */
+/* line 1, ../../../app/stylesheets/_tipsy.scss */
+.tipsy {
+  padding: 5px;
+  font-size: 10px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  background-repeat: no-repeat;
+  background-image: url(/images/backgrounds/tipsy.gif);
+}
+
+/* line 2, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-inner {
+  padding: 5px 8px 4px 8px;
+  background-color: black;
+  color: white;
+  max-width: 200px;
+  text-align: center;
+}
+
+/* line 3, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-inner {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+/* line 4, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-north {
+  background-position: top center;
+}
+
+/* line 5, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-south {
+  background-position: bottom center;
+}
+
+/* line 6, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-east {
+  background-position: right center;
+}
+
+/* line 7, ../../../app/stylesheets/_tipsy.scss */
+.tipsy-west {
+  background-position: left center;
+}
+
+/* line 108, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: block;
+}
+
+/* line 17, ../../../app/stylesheets/grid.scss */
 body {
   background-color: #4b7399;
   font-family: "Verdana", "Helvetica", "Arial";
   font-size: 14px;
 }
 
-/* line 21, ../../../app/stylesheets/grid.scss */
+/* line 22, ../../../app/stylesheets/grid.scss */
 a {
   color: blue;
 }
-/* line 23, ../../../app/stylesheets/grid.scss */
+/* line 24, ../../../app/stylesheets/grid.scss */
 a img {
   border: none;
 }
 
-/* line 26, ../../../app/stylesheets/grid.scss */
+/* line 27, ../../../app/stylesheets/grid.scss */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 31, ../../../app/stylesheets/grid.scss */
+/* line 32, ../../../app/stylesheets/grid.scss */
 #container {
   padding: 20px;
   background: white;
   border: solid 1px black;
 }
 
-/* line 38, ../../../app/stylesheets/grid.scss */
+/* line 39, ../../../app/stylesheets/grid.scss */
 #flash_notice,
 #flash_error,
 #flash_alert {
@@ -100,25 +154,25 @@ a img {
   margin: 10px 0;
 }
 
-/* line 42, ../../../app/stylesheets/grid.scss */
+/* line 43, ../../../app/stylesheets/grid.scss */
 #flash_notice {
   background-color: #ccffcc;
   border: solid 1px #66cc66;
 }
 
-/* line 47, ../../../app/stylesheets/grid.scss */
+/* line 48, ../../../app/stylesheets/grid.scss */
 #flash_error,
 #flash_alert {
   background-color: #ffcccc;
   border: solid 1px #cc6666;
 }
 
-/* line 51, ../../../app/stylesheets/grid.scss */
+/* line 52, ../../../app/stylesheets/grid.scss */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 54, ../../../app/stylesheets/grid.scss */
+/* line 55, ../../../app/stylesheets/grid.scss */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -127,11 +181,11 @@ a img {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 61, ../../../app/stylesheets/grid.scss */
+/* line 62, ../../../app/stylesheets/grid.scss */
 .error_messages font {
   size: 12px;
 }
-/* line 63, ../../../app/stylesheets/grid.scss */
+/* line 64, ../../../app/stylesheets/grid.scss */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -139,27 +193,179 @@ a img {
   background-color: #cc0000;
   color: white;
 }
-/* line 67, ../../../app/stylesheets/grid.scss */
+/* line 68, ../../../app/stylesheets/grid.scss */
 .error_messages h2 font {
   weight: bold;
   size: 12px;
 }
-/* line 72, ../../../app/stylesheets/grid.scss */
+/* line 73, ../../../app/stylesheets/grid.scss */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 74, ../../../app/stylesheets/grid.scss */
+/* line 75, ../../../app/stylesheets/grid.scss */
 .error_messages ul {
   margin: 0;
 }
 
-/* line 76, ../../../app/stylesheets/grid.scss */
+/* line 77, ../../../app/stylesheets/grid.scss */
 #user_nav {
   float: right;
   font-size: 12px;
 }
 
-/* line 81, ../../../app/stylesheets/grid.scss */
+/* line 82, ../../../app/stylesheets/grid.scss */
 .wide {
   width: 100%;
+}
+
+/* FORMS */
+/* line 87, ../../../app/stylesheets/grid.scss */
+.required {
+  display: inline-block;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* TABLES */
+/* line 94, ../../../app/stylesheets/grid.scss */
+table {
+  overflow: hidden;
+  border: 1px solid #d3d3d3;
+  background: #fefefe;
+  width: 100%;
+  margin: 5% auto 0;
+  -moz-border-radius: 5px;
+  /* FF1+ */
+  -webkit-border-radius: 5px;
+  /* Saf3-4 */
+  border-radius: 5px;
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* line 107, ../../../app/stylesheets/grid.scss */
+th, td {
+  padding: 18px 20px 18px;
+  text-align: left;
+}
+
+/* line 109, ../../../app/stylesheets/grid.scss */
+th {
+  padding-top: 22px;
+  text-shadow: 1px 1px 1px #fff;
+  background: #e8eaeb;
+}
+
+/* line 111, ../../../app/stylesheets/grid.scss */
+td {
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+/* line 113, ../../../app/stylesheets/grid.scss */
+tr.odd td {
+  background: #f6f6f6;
+}
+
+/* line 115, ../../../app/stylesheets/grid.scss */
+td.first, th.first {
+  text-align: left;
+}
+
+/* line 117, ../../../app/stylesheets/grid.scss */
+td.last {
+  border-right: none;
+}
+
+/*
+Background gradients are completely unnecessary but a neat effect.
+*/
+/* line 123, ../../../app/stylesheets/grid.scss */
+td {
+  background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
+  background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
+}
+
+/* line 128, ../../../app/stylesheets/grid.scss */
+tr.odd td {
+  background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
+  background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
+}
+
+/* line 133, ../../../app/stylesheets/grid.scss */
+th {
+  background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
+  background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
+}
+
+/*
+I know this is annoying, but we need additional styling so webkit will recognize rounded corners on background elements.  Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
+ 
+And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
+*/
+/* line 144, ../../../app/stylesheets/grid.scss */
+tr:first-child th.first {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  /* Saf3-4 */
+}
+
+/* line 149, ../../../app/stylesheets/grid.scss */
+tr:first-child th.last {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  /* Saf3-4 */
+}
+
+/* line 154, ../../../app/stylesheets/grid.scss */
+tr:last-child td.first {
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  /* Saf3-4 */
+}
+
+/* line 159, ../../../app/stylesheets/grid.scss */
+tr:last-child td.last {
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  /* Saf3-4 */
+}
+
+/* line 164, ../../../app/stylesheets/grid.scss */
+th a.current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+/* line 169, ../../../app/stylesheets/grid.scss */
+th a.asc {
+  background-image: url(/images/up_arrow.gif);
+}
+
+/* line 172, ../../../app/stylesheets/grid.scss */
+th a.desc {
+  background-image: url(/images/down_arrow.gif);
+}
+
+/* FORMS */
+/* line 1, ../../../app/stylesheets/_forms.scss */
+select {
+  border: 1px solid #ccc;
+  -moz-box-shadow: #666666 0 1px 1px 0;
+  -webkit-box-shadow: #666666 0 1px 1px 0;
+  -o-box-shadow: #666666 0 1px 1px 0;
+  box-shadow: #666666 0 1px 1px 0;
+}
+
+/* USER */
+/* line 180, ../../../app/stylesheets/grid.scss */
+.avatar {
+  background: #ccc;
+  display: block;
+}
+/* line 183, ../../../app/stylesheets/grid.scss */
+.avatar.small {
+  height: 20px;
+  width: 20px;
 }

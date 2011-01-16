@@ -1,14 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :get_variables
+  before_filter :mailer_set_url_options
 
   helper :all
   helper_method :current_user_session, :current_user
 
   def get_variables
     @current_path = "#{params[:controller]}_#{params[:action]}"
+    @current_user = current_user
   end
-  
+  def mailer_set_url_options
+    ActionMailer::Base.default_url_options[:host] = request.host_with_port
+  end
+    
   private
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
@@ -46,5 +51,5 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
-     
+    
 end

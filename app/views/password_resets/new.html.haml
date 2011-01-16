@@ -1,0 +1,11 @@
+-title t(:'.title')
+
+%p= t(:'.instructions')
+
+= form_tag password_resets_path do
+  %p
+    = label :email, t(:'activerecord.attributes.user.email')
+    %br
+    = text_field_tag :email
+    
+  = submit_tag t(:'buttons.submit')

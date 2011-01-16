@@ -1,7 +1,12 @@
 Emuzikos::Application.routes.draw do
+
   match "login" => "user_sessions#new", :as => :login
   match "logout" => "user_sessions#destroy", :as => :logout
+  match "contact" => "pages#contact", :as => :contact
+  
   resources :user_sessions
+  resources :password_resets, :only => [ :new, :create, :edit, :update ]
+  resources :testimonials
 
   resources :users
 
@@ -54,7 +59,7 @@ Emuzikos::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "pages#about"
+  root :to => "users#index"
 
   # See how all your routes lay out with "rake routes"
 

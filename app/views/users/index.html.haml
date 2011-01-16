@@ -1,25 +1,43 @@
 - title t(:'.title')
 
+= render "search"
+
 -if !@users.blank?
   %table.display.wide
+    %thead
+      %tr
+        %th
+        %th= t(:'activerecord.attributes.user.username')
+        %th= sortable "user_type", t(:'activerecord.attributes.user.user_type')
+        %th= sortable "searching_for", t(:'activerecord.attributes.user.searching_for')
+        %th= t(:'activerecord.attributes.user.instruments')
+        %th= t(:'activerecord.attributes.user.genre')
+        %th= sortable "zip", t(:'activerecord.attributes.user.zip')
+        %th= sortable "country", t(:'activerecord.attributes.user.country')
+        %th= t(:'activerecord.attributes.user.references')
+        %th= t(:'tables.headings.actions')
     %tbody
       -for user in @users
         %tr
+          %td
+            .avatar.small
+              - if user.avatar.present?
+                = link_to(image_tag(user.avatar.url(:gallery)), user_path(user))
+              -else
+                = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user))
+              
           %td=link_to "#{user.username}", user_url(user)
+          %td= t(:"users.types.#{user.user_type}") 
+          %td= t(:"users.types.#{user.searching_for}")
           %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
-          %td= user.genre
+          %td= t(:"musical_genres.#{user.genre}")
           %td= user.zip
           %td= I18n.t user.country, :scope => 'countries'
           %td= user.references
-    %thead
-      %tr
-        %th= t(:'activerecord.attributes.user.username')
-        %th= t(:'activerecord.attributes.user.instruments')
-        %th= t(:'activerecord.attributes.user.genre')
-        %th= t(:'activerecord.attributes.user.zip')
-        %th= t(:'activerecord.attributes.user.country')
-        %th= t(:'activerecord.attributes.user.references')
-        %th= t(:'tables.headings.actions')
+          %td
+
+  = will_paginate @users
+  
 -else
   =t(:'.no_users')
 

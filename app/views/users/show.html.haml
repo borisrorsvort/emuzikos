@@ -1,9 +1,31 @@
 - title t(:'.title', :username => @user.username)
 
-= @user.username
+= image_tag @user.avatar.url(:normal)
 
+-if !@user.blank?
 
+  %h3= t(:'activerecord.attributes.user.instruments')
+  %p= @user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
 
+  %h3= t(:'activerecord.attributes.user.genre')
+  %p= t(:"musical_genres.#{@user.genre}")
+
+  %h3= t(:'activerecord.attributes.user.zip')
+  %p= @user.zip
+
+  %h3= t(:'activerecord.attributes.user.country')
+  %p= I18n.t @user.country, :scope => 'countries'
+
+  %h3= t(:'activerecord.attributes.user.references')
+  %p= @user.references
+
+  %h3= t(:'activerecord.attributes.user.testimonials', :user => @user.username)
+  %ul
+    - for testimonial in @testimonials do
+      %li.testimonial
+        = testimonial.created_at
+        %br
+        = testimonial.body
 
 
 

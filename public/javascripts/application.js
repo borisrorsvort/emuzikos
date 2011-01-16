@@ -1,2 +1,15 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(document).ready(function() {
+
+  // TIPSY
+  $('.form_guide').focus(function () {
+   $(this).tipsy({trigger: 'focus', gravity: 'w'});
+  });
+
+  // FORMS UTILS
+  var search_form = $('form.search')
+  search_form.find("input[type=submit]").hide();
+  search_form.change(function() {
+    $(this).submit();
+  });
+
+});
