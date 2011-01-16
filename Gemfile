@@ -11,14 +11,14 @@ gem "settingslogic", "2.0.6"
 gem 'aws-s3', :require => 'aws/s3'
 gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'heroku'
+gem "compass"
+gem 'compass-960-plugin'
 
 group :development do
   gem "nifty-generators"
   gem "jammit"
   gem 'heroku_san'
   gem 'mysql2'
-  gem "compass"
-  gem 'compass-960-plugin'
 end
 
 
