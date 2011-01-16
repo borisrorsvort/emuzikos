@@ -174,7 +174,7 @@ DEPENDENCIES
   mocha
   mysql2
   nifty-generators
-  paperclip (~> 2.3)
+  paperclip
   rails (= 3.0.3)
   rspec-rails (= 2.0.0.beta.12)
   settingslogic (= 2.0.6)
