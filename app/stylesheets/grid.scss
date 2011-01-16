@@ -10,6 +10,7 @@
 @import "compass/utilities";
 
 @import "tipsy";
+@include reset-html5;
 
 $primary_color: #4b7399;
 
@@ -171,6 +172,10 @@ th a.asc {
 th a.desc {
   background-image: url(/images/down_arrow.gif);}
   
+/* FORMS */
+
+@import "forms";
+
 /* USER */
 .avatar {
   background: #ccc;
