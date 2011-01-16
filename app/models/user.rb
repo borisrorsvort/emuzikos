@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
     :default_url => '/images/backgrounds/no-image-:style.gif'
     
-  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size,
+  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :reprocess_avatar, :if => :cropping?
 
