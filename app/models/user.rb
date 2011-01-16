@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
         }[Rails.env],
     :path => {
           'development' => ":rails_root/public/system/avatar/:style/:id/:filename",
-          'production' => "/:style/:filename"
+          'production' => "system/avatar/:style/:id/:filename"
         }[Rails.env],
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},

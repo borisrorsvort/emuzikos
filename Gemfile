@@ -7,7 +7,7 @@ gem "haml"
 gem 'heroku'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'formtastic', '~> 1.1.0'
-gem "paperclip", "~> 2.3"
+gem "paperclip"
 gem "settingslogic", "2.0.6"
 gem 'aws-s3', :require => 'aws/s3'
 gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
