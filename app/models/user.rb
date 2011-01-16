@@ -47,12 +47,17 @@ class User < ActiveRecord::Base
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
 
+  # def avatar_geometry(style = :original)
+  #   @geometry ||= {}
+  #   @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))
+  # end
+  
+  #Heroku read only fix
   def avatar_geometry(style = :original)
     @geometry ||= {}
-    @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))
+    @geometry[style] ||= Paperclip::Geometry.from_file(avatar.to_file(style))
   end
-  
-  #validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
+  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size  
 
   def instruments
