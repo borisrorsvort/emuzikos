@@ -7,8 +7,10 @@ Emuzikos::Application.routes.draw do
   resources :user_sessions
   resources :password_resets, :only => [ :new, :create, :edit, :update ]
   resources :testimonials
-
+  
+  
   resources :users
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

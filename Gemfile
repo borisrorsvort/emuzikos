@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
-
+source 'http://gemcutter.org'
 gem 'rails', '3.0.3'
 gem "jquery-rails"
 gem "haml"
@@ -15,6 +15,7 @@ gem "compass"
 gem 'compass-960-plugin'
 gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
 
+gem 'sitemap_generator', :git => "git://github.com/shinjikuwayama/sitemap_generator.git"
 
 group :development do
   gem "nifty-generators"
