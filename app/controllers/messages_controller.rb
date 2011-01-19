@@ -49,7 +49,8 @@ class MessagesController < ApplicationController
         }
         flash[:notice] = "Messages deleted"
       end
-      redirect_to user_message_path(@user, @messages)
+      #redirect_to user_messages_path(@user, @message)
+      redirect_to :back
     end
   end
   

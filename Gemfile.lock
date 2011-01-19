@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/documentcloud/jammit.git
-  revision: 0a2e1a9888c32c53c396663adeb66bf28219fb25
+  revision: 0a2e1a9
   specs:
     jammit (0.5.4)
       closure-compiler (>= 0.1.0)
