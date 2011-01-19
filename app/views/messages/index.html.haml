@@ -1,0 +1,5 @@
+= form_tag delete_selected_user_messages_path(@user), :html => {:method => :post} do
+  - if params[:mailbox] == "sent"
+    = render :partial => "sent"
+  - else
+    = render :partial => "inbox"

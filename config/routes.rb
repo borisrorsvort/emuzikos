@@ -1,5 +1,7 @@
 Emuzikos::Application.routes.draw do
 
+
+
   match "login" => "user_sessions#new", :as => :login
   match "logout" => "user_sessions#destroy", :as => :logout
   match "contact" => "pages#contact", :as => :contact
@@ -7,11 +9,13 @@ Emuzikos::Application.routes.draw do
   resources :user_sessions
   resources :password_resets, :only => [ :new, :create, :edit, :update ]
   resources :testimonials
-  
-  
-  resources :users
-
-
+  resources :users do
+             resources :messages do
+               collection do
+                 post :delete_selected
+               end
+             end
+           end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

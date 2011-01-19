@@ -1,0 +1,29 @@
+- title "Inbox"
+%table
+  %tr
+    %th Del?
+    %th Sent
+    %th Sender
+    %th Sent
+  - if @messages.size == 0
+    %tr
+      %td{:colspan => "4"}
+        No messages
+  - else
+    - for message in @messages
+      %tr
+        %td= check_box_tag "delete[]", message.id
+        %td
+          - if message.read?
+            = link_to h(message.subject), user_message_path(@user, message)
+          - else
+            = link_to "#{h(message.subject)} (unread)", user_message_path(@user, message)
+        %td= link_to h(message.sender.username), user_path(@user)
+        %td= h message.created_at.to_s(:long)
+    %tr
+      %td{:colspan => "4"}
+        = submit_tag "Delete"
+        
+= link_to "Sent", user_messages_path(@user, :mailbox => :sent)
+|
+=link_to "Compose", new_user_message_path(@user)}

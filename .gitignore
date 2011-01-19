@@ -14,3 +14,4 @@ doc/app
 doc/plugins
 db/schema.rb
 public/system/***/**/*
+public/photos/***/**/*

@@ -22,6 +22,8 @@
           |
           =link_to t(:'menu.profile.edit'), edit_user_path(current_user)
           |
+          =link_to t(:'menu.inbox'), user_messages_path(current_user)
+          |
           =link_to t(:'menu.all_users'), users_url
           |
           =link_to t(:'menu.logout'), logout_path

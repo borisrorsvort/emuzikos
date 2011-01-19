@@ -15,7 +15,7 @@ gem "compass"
 gem 'compass-960-plugin'
 gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
 
-gem 'sitemap_generator', :git => "git://github.com/shinjikuwayama/sitemap_generator.git"
+#gem 'sitemap_generator', :git => "git://github.com/shinjikuwayama/sitemap_generator.git"
 
 group :development do
   gem "nifty-generators"
