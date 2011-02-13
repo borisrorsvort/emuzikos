@@ -116,37 +116,38 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   display: block;
 }
 
-/* line 17, ../../../app/stylesheets/grid.scss */
+/* line 18, ../../../app/stylesheets/grid.scss */
 body {
   background-color: #4b7399;
   font-family: "Verdana", "Helvetica", "Arial";
   font-size: 14px;
+  color: #666;
 }
 
-/* line 22, ../../../app/stylesheets/grid.scss */
+/* line 24, ../../../app/stylesheets/grid.scss */
 a {
   color: blue;
 }
-/* line 24, ../../../app/stylesheets/grid.scss */
+/* line 26, ../../../app/stylesheets/grid.scss */
 a img {
   border: none;
 }
 
-/* line 27, ../../../app/stylesheets/grid.scss */
+/* line 29, ../../../app/stylesheets/grid.scss */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 32, ../../../app/stylesheets/grid.scss */
+/* line 34, ../../../app/stylesheets/grid.scss */
 #container {
   padding: 20px;
-  background: white;
+  background: #eee;
   border: solid 1px black;
 }
 
-/* line 39, ../../../app/stylesheets/grid.scss */
+/* line 41, ../../../app/stylesheets/grid.scss */
 #flash_notice,
 #flash_error,
 #flash_alert {
@@ -154,25 +155,25 @@ a img {
   margin: 10px 0;
 }
 
-/* line 43, ../../../app/stylesheets/grid.scss */
+/* line 45, ../../../app/stylesheets/grid.scss */
 #flash_notice {
   background-color: #ccffcc;
   border: solid 1px #66cc66;
 }
 
-/* line 48, ../../../app/stylesheets/grid.scss */
+/* line 50, ../../../app/stylesheets/grid.scss */
 #flash_error,
 #flash_alert {
   background-color: #ffcccc;
   border: solid 1px #cc6666;
 }
 
-/* line 52, ../../../app/stylesheets/grid.scss */
+/* line 54, ../../../app/stylesheets/grid.scss */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 55, ../../../app/stylesheets/grid.scss */
+/* line 57, ../../../app/stylesheets/grid.scss */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -181,11 +182,11 @@ a img {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 62, ../../../app/stylesheets/grid.scss */
+/* line 64, ../../../app/stylesheets/grid.scss */
 .error_messages font {
   size: 12px;
 }
-/* line 64, ../../../app/stylesheets/grid.scss */
+/* line 66, ../../../app/stylesheets/grid.scss */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -193,41 +194,33 @@ a img {
   background-color: #cc0000;
   color: white;
 }
-/* line 68, ../../../app/stylesheets/grid.scss */
+/* line 70, ../../../app/stylesheets/grid.scss */
 .error_messages h2 font {
   weight: bold;
   size: 12px;
 }
-/* line 73, ../../../app/stylesheets/grid.scss */
+/* line 75, ../../../app/stylesheets/grid.scss */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 75, ../../../app/stylesheets/grid.scss */
+/* line 77, ../../../app/stylesheets/grid.scss */
 .error_messages ul {
   margin: 0;
 }
 
-/* line 77, ../../../app/stylesheets/grid.scss */
+/* line 80, ../../../app/stylesheets/grid.scss */
 #user_nav {
   float: right;
   font-size: 12px;
 }
 
-/* line 82, ../../../app/stylesheets/grid.scss */
+/* line 85, ../../../app/stylesheets/grid.scss */
 .wide {
   width: 100%;
 }
 
-/* FORMS */
-/* line 87, ../../../app/stylesheets/grid.scss */
-.required {
-  display: inline-block;
-  font-style: italic;
-  opacity: 0.6;
-}
-
 /* TABLES */
-/* line 94, ../../../app/stylesheets/grid.scss */
+/* line 91, ../../../app/stylesheets/grid.scss */
 table {
   overflow: hidden;
   border: 1px solid #d3d3d3;
@@ -239,60 +232,55 @@ table {
   -webkit-border-radius: 5px;
   /* Saf3-4 */
   border-radius: 5px;
-  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
-/* line 107, ../../../app/stylesheets/grid.scss */
+/* line 102, ../../../app/stylesheets/grid.scss */
 th, td {
   padding: 18px 20px 18px;
   text-align: left;
 }
 
-/* line 109, ../../../app/stylesheets/grid.scss */
+/* line 104, ../../../app/stylesheets/grid.scss */
 th {
   padding-top: 22px;
   text-shadow: 1px 1px 1px #fff;
   background: #e8eaeb;
 }
 
-/* line 111, ../../../app/stylesheets/grid.scss */
+/* line 106, ../../../app/stylesheets/grid.scss */
 td {
   border-top: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
 }
 
-/* line 113, ../../../app/stylesheets/grid.scss */
+/* line 108, ../../../app/stylesheets/grid.scss */
 tr.odd td {
   background: #f6f6f6;
 }
 
-/* line 115, ../../../app/stylesheets/grid.scss */
+/* line 110, ../../../app/stylesheets/grid.scss */
 td.first, th.first {
   text-align: left;
 }
 
-/* line 117, ../../../app/stylesheets/grid.scss */
+/* line 112, ../../../app/stylesheets/grid.scss */
 td.last {
   border-right: none;
 }
 
-/*
-Background gradients are completely unnecessary but a neat effect.
-*/
-/* line 123, ../../../app/stylesheets/grid.scss */
+/* line 115, ../../../app/stylesheets/grid.scss */
 td {
   background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
   background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
 }
 
-/* line 128, ../../../app/stylesheets/grid.scss */
+/* line 120, ../../../app/stylesheets/grid.scss */
 tr.odd td {
   background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
   background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
 }
 
-/* line 133, ../../../app/stylesheets/grid.scss */
+/* line 125, ../../../app/stylesheets/grid.scss */
 th {
   background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
   background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
@@ -303,47 +291,47 @@ I know this is annoying, but we need additional styling so webkit will recognize
  
 And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
 */
-/* line 144, ../../../app/stylesheets/grid.scss */
+/* line 136, ../../../app/stylesheets/grid.scss */
 tr:first-child th.first {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   /* Saf3-4 */
 }
 
-/* line 149, ../../../app/stylesheets/grid.scss */
+/* line 141, ../../../app/stylesheets/grid.scss */
 tr:first-child th.last {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
   /* Saf3-4 */
 }
 
-/* line 154, ../../../app/stylesheets/grid.scss */
+/* line 146, ../../../app/stylesheets/grid.scss */
 tr:last-child td.first {
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
   /* Saf3-4 */
 }
 
-/* line 159, ../../../app/stylesheets/grid.scss */
+/* line 151, ../../../app/stylesheets/grid.scss */
 tr:last-child td.last {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
   /* Saf3-4 */
 }
 
-/* line 164, ../../../app/stylesheets/grid.scss */
+/* line 156, ../../../app/stylesheets/grid.scss */
 th a.current {
   padding-right: 12px;
   background-repeat: no-repeat;
   background-position: right center;
 }
 
-/* line 169, ../../../app/stylesheets/grid.scss */
+/* line 161, ../../../app/stylesheets/grid.scss */
 th a.asc {
   background-image: url(/images/up_arrow.gif);
 }
 
-/* line 172, ../../../app/stylesheets/grid.scss */
+/* line 164, ../../../app/stylesheets/grid.scss */
 th a.desc {
   background-image: url(/images/down_arrow.gif);
 }
@@ -358,13 +346,74 @@ select {
   box-shadow: #666666 0 1px 1px 0;
 }
 
+/* FORMS */
+/* line 8, ../../../app/stylesheets/_forms.scss */
+.field {
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* line 12, ../../../app/stylesheets/_forms.scss */
+label {
+  font-weight: bold;
+  display: block;
+}
+
+/* line 16, ../../../app/stylesheets/_forms.scss */
+.required {
+  display: block;
+  font-style: italic;
+  opacity: 0.6;
+  margin-bottom: 5px;
+}
+
+/* line 23, ../../../app/stylesheets/_forms.scss */
+input, textarea {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+/* line 28, ../../../app/stylesheets/_forms.scss */
+input:focus, input:active, textarea:focus, textarea:active {
+  -moz-box-shadow: #666666 0 0 3px 0;
+  -webkit-box-shadow: #666666 0 0 3px 0;
+  -o-box-shadow: #666666 0 0 3px 0;
+  box-shadow: #666666 0 0 3px 0;
+}
+
+/* USER PROFILE FORM */
+/* line 35, ../../../app/stylesheets/_forms.scss */
+.instrument_column {
+  width: 150px;
+  float: left;
+}
+/* line 38, ../../../app/stylesheets/_forms.scss */
+.instrument_column .instrument {
+  padding: 5px 0;
+}
+
+/* search_form */
+/* line 46, ../../../app/stylesheets/_forms.scss */
+#search_form .field {
+  float: left;
+  height: 50px;
+  min-width: 200px;
+  width: 16%;
+}
+
 /* USER */
-/* line 180, ../../../app/stylesheets/grid.scss */
+/* line 172, ../../../app/stylesheets/grid.scss */
 .avatar {
   background: #ccc;
   display: block;
 }
-/* line 183, ../../../app/stylesheets/grid.scss */
+/* line 175, ../../../app/stylesheets/grid.scss */
 .avatar.small {
   height: 20px;
   width: 20px;

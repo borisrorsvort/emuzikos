@@ -12,4 +12,26 @@ $(document).ready(function() {
     $(this).submit();
   });
 
+  
+  // UI STUFF
+
+	$('.button.submit').button({
+    icons: {
+      secondary: 'ui-icon-triangle-1-e'
+    },
+    text: true
+  });
+  $('.button.reset').button({
+    icons: {
+      primary: 'ui-icon-arrowreturnthick-1-w'
+    },
+    text: true
+  });
+  
+  $(".checkbox_set").buttonset();
+  $("select, input:checkbox, input.radio:radio, input:file").uniform();
+  
+  
+
+  
 });

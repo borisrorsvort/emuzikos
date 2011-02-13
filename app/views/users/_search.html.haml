@@ -1,34 +1,39 @@
-= semantic_form_for :search, @search, :html => { :method => :get } do |f|
-  = hidden_field_tag :direction, params[:direction]
-  = hidden_field_tag :sort, params[:sort]
-  %p
-    = t(:'search_terms.iam')
-    %select{ :id => "search_user_type", :name => "search[user_type]" }
-      %option
-      - User::USER_TYPES.each do |user_type|
-        = options_for_select([[t(:"users.types.#{user_type}"), user_type]], {:selected => ( params[:search][:user_type] rescue 'None') })
-        
-    = t(:'search_terms.who_plays')
-    
-    %select{ :id => "search_genre", :name => "search[genre]" }
-      %option
-      - User::MUSICAL_GENRES.each do |genre|
-        = options_for_select([[t(:"musical_genres.#{genre}"), genre]], {:selected => ( params[:search][:genre] rescue 'None') })
-        
-    = f.select :instrument, User::INSTRUMENTS, :include_blank => true
-    
-    = t(:'search_terms.who_search_for')    
-    %select{ :id => "search_searching_for", :name => "search[searching_for]" }
-      %option
-      - User::USER_TYPES.each do |searching_for|
-        = options_for_select([[t(:"users.types.#{searching_for}"), searching_for]], {:selected => ( params[:search][:searching_for] rescue 'None') })
-        
-    = t(:'search_terms.in')
-    
-    = f.localized_country_select( :country, [], :include_blank => true)
-
-
-    
-    = f.submit(t(:'buttons.search'), :type => "submit")
-    %span.reset_button
-      =link_to t(:'common.reset'), users_path
+#search_form
+  = semantic_form_for :search, @search, :html => { :method => :get } do |f|
+    = hidden_field_tag :direction, params[:direction]
+    = hidden_field_tag :sort, params[:sort]
+    .field
+      = t(:'search_terms.iam')
+      %select{ :id => "search_user_type", :name => "search[user_type]" }
+        %option
+        - User::USER_TYPES.each do |user_type|
+          = options_for_select([[t(:"users.types.#{user_type}"), user_type]], {:selected => ( params[:search][:user_type] rescue 'None') })
+      .clear
+    .field     
+      = t(:'search_terms.music_style')
+      %select{ :id => "search_genre", :name => "search[genre]" }
+        %option
+        - User::MUSICAL_GENRES.each do |genre|
+          = options_for_select([[t(:"musical_genres.#{genre}"), genre]], {:selected => ( params[:search][:genre] rescue 'None') })
+      .clear
+    .field     
+      = t(:'search_terms.who_plays')
+      = f.select :instrument, User::INSTRUMENTS, :include_blank => true
+      .clear
+    .field
+      = t(:'search_terms.who_search_for')    
+      %select{ :id => "search_searching_for", :name => "search[searching_for]" }
+        %option
+        - User::USER_TYPES.each do |searching_for|
+          = options_for_select([[t(:"users.types.#{searching_for}"), searching_for]], {:selected => ( params[:search][:searching_for] rescue 'None') })
+      .clear
+    .field     
+      = t(:'search_terms.in')
+      = f.localized_country_select( :country, [], :include_blank => true)
+      .clear
+    .field
+      = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit")
+      %span.reset_button
+        =link_to t(:'common.reset'), users_path, :class => "button reset"
+      .clear
+.clear

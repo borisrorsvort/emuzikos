@@ -2,3 +2,51 @@ select {
   border: 1px solid #ccc;
   @include box-shadow(#666,0, 1px, 1px);
 }
+
+/* FORMS */
+
+.field {
+  display:block;
+  margin-bottom: 15px; }
+
+label {
+  font-weight:bold;
+  display:block; }
+  
+.required {
+  display: block;
+  font-style:italic;
+  opacity: 0.6;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  @include border-radius(3px);
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  &:focus, &:active {
+    @include box-shadow(#666, 0, 0, 3px);
+  }
+}
+
+/* USER PROFILE FORM */
+
+.instrument_column {
+  width: 150px;
+  float:left;
+  .instrument {
+    padding: 5px 0;
+  }
+}
+
+/* search_form */
+
+#search_form {
+  .field {
+    float:left;
+    height: 50px;
+    min-width: 200px;
+    width: 16%;
+  }
+}
