@@ -6,7 +6,8 @@ en:
     required: Required
     please_choose: 'Please choose ...'
     reset: Reset
-
+    or: or
+    
 ### TABLES
 ### ______________________________________________________    
   tooltips:
@@ -25,6 +26,7 @@ en:
     login: Login
     register: Register
     inbox: My Inbox
+    sent_messages: "Sent Messages"
     
 
 ### TABLES
@@ -45,6 +47,8 @@ en:
     login: Login
     submit: Submit
     search: Search
+    compose: Compose
+    cancel: Cancel
 
 ### MUSICAL GENRES
 ### ______________________________________________________
@@ -121,6 +125,29 @@ en:
         title: Edit your profile
     new:
       title: "New User"
+    crop:
+      prewiew: "Preview"
+
+
+### MESSAGES
+### ______________________________________________________
+
+  messages:
+    delete: "Delete selected"
+    subject: Subject
+    sender: Send by
+    sent_on: Sent on
+    no_messages: You have no messages
+    to: To
+    message: Message
+    new:
+      title: New message
+    inbox:
+      title: Your Messages
+      subtitle: Inbox
+    sent:
+      title: Your Messages
+      subtitle: Sent Messages
 
 ### SEARCH TERMS
 ### ______________________________________________________

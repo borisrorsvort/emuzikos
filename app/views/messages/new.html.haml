@@ -1,18 +1,21 @@
+- title t(:'.title')
+
 = form_for @message, :url => user_messages_path(@user) do |f|
-  %p
-    To:
-    %br
+  = f.error_messages
+
+  .field
+    = f.label :to, t(:'messages.to')
     = f.text_field :to
-    = error_message_on @message, :to
-  %p
-    Subject:
-    %br
+
+  .field
+    = f.label :subject, t(:'messages.subject')
     = f.text_field :subject
-    = error_message_on @message, :subject
-  %p
-    Message
-    %br
+
+  .field
+    = f.label :body, t(:'messages.message')
     = f.text_area :body
-    = error_message_on @message, :body
-  %p
-    = submit_tag "Send"
+    
+  .field
+    = submit_tag t(:'buttons.submit'), :class => "button submit"
+    = t(:'common.or')
+    = link_to t(:'buttons.cancel'), user_messages_path(@user)

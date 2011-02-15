@@ -3,9 +3,7 @@
   %h2= t(:'users.musician_infos')
 
   .field
-    = f.label :user_type, t(:'activerecord.attributes.user.user_type') 
-    %span.required ( #{t(:'common.required')} )
-    
+    = f.label :user_type, t(:'activerecord.attributes.user.user_type')     
     .checkbox_set
       - User::USER_TYPES.each do |user_type|
         = radio_button(:user, :user_type, user_type)

@@ -22,7 +22,9 @@ module Professionalnerd # :nodoc:
             belongs_to :recipient,
                        :class_name => options[:class_name],
                        :foreign_key => 'recipient_id'
-
+            validates_presence_of :subject, :body
+            validates_presence_of :to, :on => :create, :message => "can't be blank"
+            
             extend ClassMethods 
             include InstanceMethods 
           end 

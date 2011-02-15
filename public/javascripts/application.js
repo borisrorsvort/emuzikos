@@ -15,10 +15,7 @@ $(document).ready(function() {
   
   // UI STUFF
 
-	$('.button.submit').button({
-    icons: {
-      secondary: 'ui-icon-triangle-1-e'
-    },
+	$('.button').button({
     text: true
   });
   $('.button.reset').button({
@@ -27,6 +24,8 @@ $(document).ready(function() {
     },
     text: true
   });
+
+  $( ".tabs" ).tabs();  
   
   $(".checkbox_set").buttonset();
   $("select, input:checkbox, input.radio:radio, input:file").uniform();

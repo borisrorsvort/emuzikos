@@ -84,3 +84,8 @@ address,
 fieldset {
   margin-bottom: 20px;
 }
+
+/* line 10, ../../../app/stylesheets/text.scss */
+h1 {
+  font-family: 'Droid Sans', arial, serif;
+}

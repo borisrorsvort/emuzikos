@@ -1,14 +1,21 @@
-- title "Inbox"
+- title t(:'.title')
+
+= link_to t(:'menu.inbox'), user_messages_path(@user) | 
+    
+= link_to t(:'menu.sent_messages'), user_messages_path(@user, :mailbox => :sent)
+
+%h2= t(:'.subtitle')
+
 %table
   %tr
-    %th Del?
-    %th Sent
-    %th Sender
-    %th Sent
+    %th= t(:'messages.delete')
+    %th= t(:'messages.subject')
+    %th= t(:'messages.sender')
+    %th= t(:'messages.sent_on')
   - if @messages.size == 0
     %tr
       %td{:colspan => "4"}
-        No messages
+        =t(:'messages.no_messages')
   - else
     - for message in @messages
       %tr
@@ -22,8 +29,8 @@
         %td= h message.created_at.to_s(:long)
     %tr
       %td{:colspan => "4"}
-        = submit_tag "Delete"
-        
-= link_to "Sent", user_messages_path(@user, :mailbox => :sent)
-|
-=link_to "Compose", new_user_message_path(@user)
+        = submit_tag t(:'buttons.delete'), :class => "button delete"
+
+
+
+=link_to t(:'buttons.compose'), new_user_message_path(@user), :class => "button submit"
