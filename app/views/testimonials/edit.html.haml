@@ -1,6 +1,6 @@
-- title "Edit Testimonial"
+- title t(:'title')
 = render 'form'
 %p
-  = link_to "Show", @testimonial
+  = link_to t(:'buttons.show'), @testimonial
   |
   \#{link_to "View All", testimonials_path}

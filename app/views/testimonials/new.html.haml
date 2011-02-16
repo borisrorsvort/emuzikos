@@ -1,3 +1,5 @@
-- title "New Testimonial"
+- title t(:'.title')
 = render 'form'
-%p= link_to "Back to List", testimonials_path
+.field
+  = t(:'common.or')
+  = link_to t(:'buttons.cancel'), testimonials_path

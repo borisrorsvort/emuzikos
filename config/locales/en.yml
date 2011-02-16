@@ -26,6 +26,7 @@ en:
     login: Login
     register: Register
     inbox: My Inbox
+    testimonials: Testimonials
     sent_messages: "Sent Messages"
     
 
@@ -49,7 +50,11 @@ en:
     search: Search
     compose: Compose
     cancel: Cancel
-
+    reply: Reply
+    testimonials:
+      all: Go back to Testimonials
+      create: Add a new testimonial
+    
 ### MUSICAL GENRES
 ### ______________________________________________________
  
@@ -128,7 +133,13 @@ en:
     crop:
       prewiew: "Preview"
 
+### MESSAGES
+### ______________________________________________________
 
+  user_sessions:
+    new: 
+      forgot_password: Forgot your password?
+  
 ### MESSAGES
 ### ______________________________________________________
 
@@ -136,6 +147,8 @@ en:
     delete: "Delete selected"
     subject: Subject
     sender: Send by
+    from: From
+    received: Received on
     sent_on: Sent on
     no_messages: You have no messages
     to: To
@@ -179,3 +192,12 @@ en:
       message: Message
       address: Address
       name: Name
+
+### TESTIMONIALS
+### ______________________________________________________
+
+  testimonials:
+    index:
+      title: Testimonials
+    new:
+      title: New testimonial
