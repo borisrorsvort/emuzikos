@@ -51,6 +51,7 @@ en:
     compose: Compose
     cancel: Cancel
     reply: Reply
+    all: View all
     testimonials:
       all: Go back to Testimonials
       create: Add a new testimonial
