@@ -52,6 +52,7 @@ en:
     cancel: Cancel
     reply: Reply
     all: View all
+    contact: Contact
     testimonials:
       all: Go back to Testimonials
       create: Add a new testimonial
@@ -145,7 +146,7 @@ en:
 ### ______________________________________________________
 
   messages:
-    delete: "Delete selected"
+    delete: "Delete"
     subject: Subject
     sender: Send by
     from: From
@@ -198,6 +199,7 @@ en:
 ### ______________________________________________________
 
   testimonials:
+    no_testimonials: "Sorry, you have'nt written any testominals. May be time for one :)"
     index:
       title: Testimonials
     new:

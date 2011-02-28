@@ -15,7 +15,8 @@
         %th= sortable "zip", t(:'activerecord.attributes.user.zip')
         %th= sortable "country", t(:'activerecord.attributes.user.country')
         %th= t(:'activerecord.attributes.user.references')
-        %th= t(:'tables.headings.actions')
+        -if @current_user
+          %th= t(:'tables.headings.actions')
     %tbody
       -for user in @users
         %tr
@@ -34,7 +35,8 @@
           %td= user.zip
           %td= I18n.t user.country, :scope => 'countries'
           %td= user.references
-          %td
+          -if @current_user
+            %td= link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => user.id)
 
   = will_paginate @users
   

@@ -9,4 +9,9 @@ class Message < ActiveRecord::Base
     # validates_presence_of :to
     # validates_presence_of :subject
     # validates_presence_of :body
+  
+  
+  scope :un_read, where(:read_at => nil)
+  
+  
 end

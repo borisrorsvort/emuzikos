@@ -16,7 +16,12 @@ class MessagesController < ApplicationController
   
   def new
     @message = Message.new
-
+    
+    if params[:to]
+      @reply_to = User.find(params[:to])
+      @message.to = @reply_to.username
+    end
+    
     if params[:reply_to]
       @reply_to = @user.received_messages.find(params[:reply_to])
       unless @reply_to.nil?
@@ -56,6 +61,6 @@ class MessagesController < ApplicationController
   
   private
     def set_user
-      @user = User.find(params[:user_id])
+      @user = @current_user
     end
 end

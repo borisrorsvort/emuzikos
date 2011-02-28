@@ -1,14 +1,19 @@
 - title t(:'.title')
-%table
-  %tr
-    %th=t(:'activerecord.attributes.testimonial.body')
-    %th=t(:'activerecord.attributes.testimonial.user')
-  - for testimonial in @testimonials
-    %tr
-      %td= testimonial.body
-      %td= testimonial.user.username
-      %td= link_to t(:'buttons.show'), testimonial
-      %td= link_to t(:'buttons.edit'), edit_testimonial_path(testimonial)
-      %td= link_to t(:'buttons.delete'), testimonial, :confirm => t(:'common.are_you_sure'), :method => :delete
 
+- if !@testimonials.blank?
+  %table
+    %tr
+      %th=t(:'activerecord.attributes.testimonial.body')
+      %th=t(:'activerecord.attributes.testimonial.user')
+    - for testimonial in @testimonials
+      %tr
+        %td= testimonial.body
+        %td= testimonial.user.username
+        %td= link_to t(:'buttons.show'), testimonial
+        %td= link_to t(:'buttons.edit'), edit_testimonial_path(testimonial)
+        %td= link_to t(:'buttons.delete'), testimonial, :confirm => t(:'common.are_you_sure'), :method => :delete
+-else
+
+  %p= t(:'testimonials.no_testimonials')
+  
 %p= link_to t(:'buttons.testimonials.create'), new_testimonial_path, :class => "button add"

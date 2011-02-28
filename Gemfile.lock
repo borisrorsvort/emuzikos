@@ -162,7 +162,7 @@ PLATFORMS
 DEPENDENCIES
   authlogic!
   aws-s3
-  compass
+  compass (= 0.10.6)
   compass-960-plugin
   cucumber-rails
   factory_girl_rails

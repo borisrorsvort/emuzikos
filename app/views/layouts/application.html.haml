@@ -15,7 +15,7 @@
   %body
     
     #container
-      = render :partial => "shared/paypal_widget"
+      /= render :partial => "shared/paypal_widget"
     
       #user_nav
         -if current_user
@@ -25,7 +25,7 @@
           |
           =link_to t(:'menu.profile.edit'), edit_user_path(current_user)
           |
-          =link_to t(:'menu.inbox'), user_messages_path(current_user)
+          =link_to "#{t(:'menu.inbox')} #{ ("(" + current_user.received_messages.un_read.count.to_s + ")") unless  current_user.received_messages.un_read.count == 0  }", user_messages_path(current_user)
           |
           =link_to t(:'menu.testimonials'), testimonials_path
           |

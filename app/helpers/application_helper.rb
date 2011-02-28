@@ -14,4 +14,7 @@ module ApplicationHelper
     AppConfig.site.devise
   end
   
+  def unread_bullet
+    "&bull;"
+  end
 end

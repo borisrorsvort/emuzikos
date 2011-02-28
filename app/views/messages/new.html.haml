@@ -2,10 +2,11 @@
 
 = form_for @message, :url => user_messages_path(@user) do |f|
   = f.error_messages
-
-  .field
-    = f.label :to, t(:'messages.to')
-    = f.text_field :to
+  
+  = f.hidden_field :to
+  / .field
+  /     = f.label :to, t(:'messages.to')
+  /     = f.text_field :to
 
   .field
     = f.label :subject, t(:'messages.subject')

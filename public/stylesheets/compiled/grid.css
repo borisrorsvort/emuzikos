@@ -2,7 +2,7 @@
  * Learn more ~ http://960.gs/
  * *
  * Licensed under GPL and MIT. */
-/* line 14, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 14, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,42 +22,42 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
   color: black;
   background: white;
 }
 
-/* line 19, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 19, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 21, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 21, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle;
 }
 
-/* line 23, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 23, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 25, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 25, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: "" "";
 }
-/* line 96, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 96, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
 }
 
-/* line 27, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 27, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
@@ -107,7 +107,7 @@ a img {
   background-position: left center;
 }
 
-/* line 108, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 108, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   margin: 0;
   padding: 0;
@@ -116,7 +116,14 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   display: block;
 }
 
-/* line 18, ../../../app/stylesheets/grid.scss */
+/* line 1, ../../../app/stylesheets/_base.scss */
+.unread_bullet {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+/* line 20, ../../../app/stylesheets/grid.scss */
 body {
   background-color: #4b7399;
   font-family: "Verdana", "Helvetica", "Arial";
@@ -124,30 +131,30 @@ body {
   color: #666;
 }
 
-/* line 24, ../../../app/stylesheets/grid.scss */
+/* line 26, ../../../app/stylesheets/grid.scss */
 a {
   color: blue;
 }
-/* line 26, ../../../app/stylesheets/grid.scss */
+/* line 28, ../../../app/stylesheets/grid.scss */
 a img {
   border: none;
 }
 
-/* line 29, ../../../app/stylesheets/grid.scss */
+/* line 31, ../../../app/stylesheets/grid.scss */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 34, ../../../app/stylesheets/grid.scss */
+/* line 36, ../../../app/stylesheets/grid.scss */
 #container {
   padding: 20px;
   background: #eee;
   border: solid 1px black;
 }
 
-/* line 41, ../../../app/stylesheets/grid.scss */
+/* line 43, ../../../app/stylesheets/grid.scss */
 #flash_notice,
 #flash_error,
 #flash_alert {
@@ -155,25 +162,25 @@ a img {
   margin: 10px 0;
 }
 
-/* line 45, ../../../app/stylesheets/grid.scss */
+/* line 47, ../../../app/stylesheets/grid.scss */
 #flash_notice {
   background-color: #ccffcc;
   border: solid 1px #66cc66;
 }
 
-/* line 50, ../../../app/stylesheets/grid.scss */
+/* line 52, ../../../app/stylesheets/grid.scss */
 #flash_error,
 #flash_alert {
   background-color: #ffcccc;
   border: solid 1px #cc6666;
 }
 
-/* line 54, ../../../app/stylesheets/grid.scss */
+/* line 56, ../../../app/stylesheets/grid.scss */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 57, ../../../app/stylesheets/grid.scss */
+/* line 59, ../../../app/stylesheets/grid.scss */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -182,11 +189,11 @@ a img {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 64, ../../../app/stylesheets/grid.scss */
+/* line 66, ../../../app/stylesheets/grid.scss */
 .error_messages font {
   size: 12px;
 }
-/* line 66, ../../../app/stylesheets/grid.scss */
+/* line 68, ../../../app/stylesheets/grid.scss */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -194,33 +201,33 @@ a img {
   background-color: #cc0000;
   color: white;
 }
-/* line 70, ../../../app/stylesheets/grid.scss */
+/* line 72, ../../../app/stylesheets/grid.scss */
 .error_messages h2 font {
   weight: bold;
   size: 12px;
 }
-/* line 75, ../../../app/stylesheets/grid.scss */
+/* line 77, ../../../app/stylesheets/grid.scss */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 77, ../../../app/stylesheets/grid.scss */
+/* line 79, ../../../app/stylesheets/grid.scss */
 .error_messages ul {
   margin: 0;
 }
 
-/* line 80, ../../../app/stylesheets/grid.scss */
+/* line 82, ../../../app/stylesheets/grid.scss */
 #user_nav {
   float: right;
   font-size: 12px;
 }
 
-/* line 85, ../../../app/stylesheets/grid.scss */
+/* line 87, ../../../app/stylesheets/grid.scss */
 .wide {
   width: 100%;
 }
 
 /* TABLES */
-/* line 91, ../../../app/stylesheets/grid.scss */
+/* line 93, ../../../app/stylesheets/grid.scss */
 table {
   overflow: hidden;
   border: 1px solid #d3d3d3;
@@ -234,56 +241,38 @@ table {
   border-radius: 5px;
 }
 
-/* line 102, ../../../app/stylesheets/grid.scss */
+/* line 104, ../../../app/stylesheets/grid.scss */
 th, td {
   padding: 18px 20px 18px;
   text-align: left;
 }
 
-/* line 104, ../../../app/stylesheets/grid.scss */
+/* line 106, ../../../app/stylesheets/grid.scss */
 th {
   padding-top: 22px;
   text-shadow: 1px 1px 1px #fff;
   background: #e8eaeb;
 }
 
-/* line 106, ../../../app/stylesheets/grid.scss */
+/* line 108, ../../../app/stylesheets/grid.scss */
 td {
   border-top: 1px solid #e0e0e0;
   border-right: 1px solid #e0e0e0;
 }
 
-/* line 108, ../../../app/stylesheets/grid.scss */
+/* line 110, ../../../app/stylesheets/grid.scss */
 tr.odd td {
   background: #f6f6f6;
 }
 
-/* line 110, ../../../app/stylesheets/grid.scss */
+/* line 112, ../../../app/stylesheets/grid.scss */
 td.first, th.first {
   text-align: left;
 }
 
-/* line 112, ../../../app/stylesheets/grid.scss */
+/* line 114, ../../../app/stylesheets/grid.scss */
 td.last {
   border-right: none;
-}
-
-/* line 115, ../../../app/stylesheets/grid.scss */
-td {
-  background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
-  background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
-}
-
-/* line 120, ../../../app/stylesheets/grid.scss */
-tr.odd td {
-  background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
-  background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
-}
-
-/* line 125, ../../../app/stylesheets/grid.scss */
-th {
-  background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
-  background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
 }
 
 /*
@@ -291,49 +280,60 @@ I know this is annoying, but we need additional styling so webkit will recognize
  
 And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
 */
-/* line 136, ../../../app/stylesheets/grid.scss */
+/* line 122, ../../../app/stylesheets/grid.scss */
 tr:first-child th.first {
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   /* Saf3-4 */
 }
 
-/* line 141, ../../../app/stylesheets/grid.scss */
+/* line 127, ../../../app/stylesheets/grid.scss */
 tr:first-child th.last {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
   /* Saf3-4 */
 }
 
-/* line 146, ../../../app/stylesheets/grid.scss */
+/* line 132, ../../../app/stylesheets/grid.scss */
 tr:last-child td.first {
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
   /* Saf3-4 */
 }
 
-/* line 151, ../../../app/stylesheets/grid.scss */
+/* line 137, ../../../app/stylesheets/grid.scss */
 tr:last-child td.last {
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
   /* Saf3-4 */
 }
 
-/* line 156, ../../../app/stylesheets/grid.scss */
+/* line 142, ../../../app/stylesheets/grid.scss */
 th a.current {
   padding-right: 12px;
   background-repeat: no-repeat;
   background-position: right center;
 }
 
-/* line 161, ../../../app/stylesheets/grid.scss */
+/* line 147, ../../../app/stylesheets/grid.scss */
 th a.asc {
   background-image: url(/images/up_arrow.gif);
 }
 
-/* line 164, ../../../app/stylesheets/grid.scss */
+/* line 150, ../../../app/stylesheets/grid.scss */
 th a.desc {
   background-image: url(/images/down_arrow.gif);
+}
+
+/* line 154, ../../../app/stylesheets/grid.scss */
+tr.unread td {
+  background-color: #eee;
+  font-weight: bold;
+}
+
+/* line 162, ../../../app/stylesheets/grid.scss */
+th.unread, th.delete_seleted {
+  width: 2px;
 }
 
 /* FORMS */
