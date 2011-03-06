@@ -3,7 +3,8 @@
 
   %head
     %title
-      = yield(:title) || "Untitled"
+      = yield(:title) || "Find a local musicians"
+      | Emuzikos
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
     = include_stylesheets :common, :media => 'all'
     
@@ -12,7 +13,7 @@
     = csrf_meta_tag
     = yield(:head)
 
-  %body
+  %body{:id => @body_id ? @body_id: controller.controller_name, :class => @body_class ? controller.action_name + " " + @body_class : controller.action_name}
     
     #container
       /= render :partial => "shared/paypal_widget"
@@ -46,8 +47,10 @@
         %h1= yield(:title)
 
       = yield
+      
     #footer
       #donation_widget
       
   = include_javascripts :jquery, :emuzikos
+  
   = yield(:javascripts)  

@@ -2,7 +2,7 @@
  * Learn more ~ http://960.gs/
  * *
  * Licensed under GPL and MIT. */
-/* line 14, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 14, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,42 +22,42 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
   color: black;
   background: white;
 }
 
-/* line 19, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 19, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 21, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 21, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle;
 }
 
-/* line 23, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 23, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 25, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 25, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: "" "";
 }
-/* line 96, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 96, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
 }
 
-/* line 27, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 27, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
@@ -107,7 +107,7 @@ a img {
   background-position: left center;
 }
 
-/* line 108, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 108, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   margin: 0;
   padding: 0;
@@ -233,7 +233,7 @@ table {
   border: 1px solid #d3d3d3;
   background: #fefefe;
   width: 100%;
-  margin: 5% auto 0;
+  margin: 20px auto 0;
   -moz-border-radius: 5px;
   /* FF1+ */
   -webkit-border-radius: 5px;
@@ -367,7 +367,12 @@ label {
   margin-bottom: 5px;
 }
 
-/* line 23, ../../../app/stylesheets/_forms.scss */
+/* line 22, ../../../app/stylesheets/_forms.scss */
+.inline {
+  display: inline;
+}
+
+/* line 25, ../../../app/stylesheets/_forms.scss */
 input, textarea {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -379,7 +384,7 @@ input, textarea {
   border: 1px solid #ccc;
   padding: 5px;
 }
-/* line 28, ../../../app/stylesheets/_forms.scss */
+/* line 30, ../../../app/stylesheets/_forms.scss */
 input:focus, input:active, textarea:focus, textarea:active {
   -moz-box-shadow: #666666 0 0 3px 0;
   -webkit-box-shadow: #666666 0 0 3px 0;
@@ -388,18 +393,18 @@ input:focus, input:active, textarea:focus, textarea:active {
 }
 
 /* USER PROFILE FORM */
-/* line 35, ../../../app/stylesheets/_forms.scss */
+/* line 37, ../../../app/stylesheets/_forms.scss */
 .instrument_column {
   width: 150px;
   float: left;
 }
-/* line 38, ../../../app/stylesheets/_forms.scss */
+/* line 40, ../../../app/stylesheets/_forms.scss */
 .instrument_column .instrument {
   padding: 5px 0;
 }
 
 /* search_form */
-/* line 46, ../../../app/stylesheets/_forms.scss */
+/* line 48, ../../../app/stylesheets/_forms.scss */
 #search_form .field {
   float: left;
   height: 50px;

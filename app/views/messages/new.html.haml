@@ -4,9 +4,6 @@
   = f.error_messages
   
   = f.hidden_field :to
-  / .field
-  /     = f.label :to, t(:'messages.to')
-  /     = f.text_field :to
 
   .field
     = f.label :subject, t(:'messages.subject')
@@ -19,4 +16,4 @@
   .field
     = submit_tag t(:'buttons.submit'), :class => "button submit"
     = t(:'common.or')
-    = link_to t(:'buttons.cancel'), user_messages_path(@user)
+    = link_to t(:'buttons.back', :model => t(:'messages.inbox.title')), user_messages_path(@user), :class => "button back"

@@ -5,6 +5,7 @@ en:
   common:
     required: Required
     please_choose: 'Please choose ...'
+    are_you_sure: Are you sure?
     reset: Reset
     or: or
     
@@ -44,7 +45,9 @@ en:
     update: Update
     create: Create
     edit: Edit
+    back: "Back to %{model}"
     delete: Delete
+    show: Show
     login: Login
     submit: Submit
     search: Search

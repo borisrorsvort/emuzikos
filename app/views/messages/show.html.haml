@@ -1,21 +1,20 @@
-%p
-  %label= t(:'messages.from')
-  %br
+-title h(@message.subject)
+.field
+  %label.inline= t(:'messages.from')  
   = @message.sender == @user ? link_to("You", user_path(@user)) : link_to(h(@message.sender.username), user_path(@user))
-%p
-  %label= t(:'messages.received')
-  %br   
-  = @message.created_at.to_s(:long)
-%p
-  %label= t(:'messages.to')
-  %br   
+
+  %label.inline= t(:'messages.to')   
   = @message.recipient == @user ? link_to("You", user_path(@user)) : link_to(h(@message.recipient.username), user_path(@user))
-%p
+  | 
+  %label.inline= t(:'messages.received')
+  = @message.created_at.to_s(:long)
+    
+.field
   %label= t(:'messages.message')
-  %br
+  
   = h @message.body
-%p
+.field
   - if @message.recipient == @user
     = link_to t(:'buttons.reply'), new_user_message_path(@user, :reply_to => @message), :class => "button reply"
     = t(:'common.or')
-  = link_to t(:'buttons.cancel'), user_messages_path(@user)
+  = link_to t(:'buttons.back', :model => t(:'messages.inbox.title')), user_messages_path(@user), :class => "button back"

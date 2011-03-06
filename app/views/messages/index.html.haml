@@ -1,8 +1,24 @@
 /= form_tag :url => delete_selected_user_messages_path(@user), :method => :post do
 = form_tag delete_selected_user_messages_path(@user, :method => :post)  do
-  
 
   - if params[:mailbox] == "sent"
     = render :partial => "sent"
   - else
     = render :partial => "inbox"
+
+= content_for :javascripts do 
+  :javascript
+    $(document).ready(function() {
+      if ($('#messages_table .checked').size() == 0) {
+        $('.button.delete').button( "option", "disabled", true );
+      }
+      $('#messages_table input[type=checkbox]').live('click', function(){
+        var checked_size = $('#messages_table .checked').size();
+        if ($('#messages_table .checked').size() == 0) {
+          $('.button.delete').button( "option", "disabled", true );
+        } else {
+          $('.button.delete').button( "option", "disabled", false );      
+        }
+      });    
+    });
+

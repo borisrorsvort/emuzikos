@@ -24,13 +24,17 @@ $(document).ready(function() {
     },
     text: true
   });
-
+  $('.button.back').button({
+    icons: {
+      primary: 'ui-icon-triangle-1-w'
+    },
+    text: true
+  });
+  
   $( ".tabs" ).tabs();  
   
   $(".checkbox_set").buttonset();
   $("select, input:checkbox, input.radio:radio, input:file").uniform();
   
-  
-
   
 });
