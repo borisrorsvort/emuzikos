@@ -5,7 +5,8 @@ gem 'rails', '3.0.3'
 gem "jquery-rails"
 gem "haml"
 gem 'heroku'
-gem "will_paginate", "~> 3.0.pre2"
+#gem "will_paginate", "~> 3.0.pre2"
+gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 gem 'formtastic', '~> 1.1.0'
 gem "paperclip"
 gem "settingslogic", "2.0.6"
