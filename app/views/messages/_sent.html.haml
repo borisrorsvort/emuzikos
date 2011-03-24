@@ -8,7 +8,7 @@
 
 
 
-%table#messages_table
+%table#messages_table.display.wide
   %tr
     %th= t(:'messages.delete')
     %th= t(:'messages.subject')
@@ -20,7 +20,7 @@
         =t(:'messages.no_messages')
   - else
     - for message in @messages
-      %tr
+      %tr{:class => cycle("odd", "even")}
         %td= check_box_tag "delete[]", message.id
         %td= link_to h(message.subject), user_message_path(@user, message)
         %td= link_to h(message.recipient.username), user_path(@user)

@@ -6,7 +6,7 @@
 
 %h2= t(:'.subtitle')
 
-%table#messages_table
+%table#messages_table.display.wide
   %tr
     %th{:class => "delete_seleted"}= t(:'messages.delete')
     %th{:class => "unread"}
@@ -20,7 +20,7 @@
         =t(:'messages.no_messages')
   - else
     - for message in @messages
-      %tr{:class => message.read? ? "unread" : nil}
+      %tr{:class => "#{cycle("odd", "even")} #{ !message.read? ? "unread" : nil}"}
         %td= check_box_tag "delete[]", message.id
         %td 
           - unless message.read?

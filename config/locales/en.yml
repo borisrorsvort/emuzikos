@@ -20,13 +20,13 @@ en:
 
   menu:
     profile:
-      show: My Profile
+      show: Profile
       edit: Edit my profile
-    all_users: All users
+    all_users: Search
     logout: Lougout
     login: Login
     register: Register
-    inbox: My Inbox
+    inbox: Messages
     testimonials: Testimonials
     sent_messages: "Sent Messages"
     

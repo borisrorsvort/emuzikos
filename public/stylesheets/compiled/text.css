@@ -1,91 +1,56 @@
-/* 960 Grid System ~ Text CSS.
- * Learn more ~ http://960.gs/
- * *
- * Licensed under GPL and MIT. */
-/* line 4, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-body {
-  font: 13px/1.5 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
-}
+/* TABLES
+---------------------------------------- */
+.unread_bullet { font-size: 20px; font-weight: bold; line-height: 1em; }
 
-/* line 6, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-a:focus {
-  outline: 1px dotted invert;
-}
+html { font-size: 100%; min-height: 101%; }
 
-/* line 8, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-hr {
-  border-color: #cccccc;
-  border-style: solid;
-  border-width: 1px 0 0;
-  clear: both;
-  height: 0;
-}
+body { background-color: #106090; font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif; font-size: 62.5%; color: #666; }
 
-/* line 14, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-h1 {
-  font-size: 25px;
-}
+a { color: blue; }
+a img { border: none; }
 
-/* line 16, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-h2 {
-  font-size: 23px;
-}
+.clear { clear: both; height: 0; overflow: hidden; }
 
-/* line 18, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-h3 {
-  font-size: 21px;
-}
+/* @TODO: Add docs to inset!
+*/
+/*HEADINGS
+-------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 { text-shadow: white 0 1px 1px; }
 
-/* line 20, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-h4 {
-  font-size: 19px;
-}
+h1 { color: #515151; font-size: 3em; margin-bottom: 0.6em; line-height: 1.2em; }
 
-/* line 22, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-h5 {
-  font-size: 17px;
-}
+h2 { color: #000; font-size: 2em; margin-bottom: 0.9em; line-height: 0.9em; }
 
-/* line 24, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-h6 {
-  font-size: 15px;
-}
+h3 { color: #000; font-size: 1.5em; margin-bottom: 1.2em; line-height: 1.2em; font-variant: small-caps; }
 
-/* line 26, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-ol {
-  list-style: decimal;
-}
+h4 { color: #000; font-size: 1.2em; margin-bottom: 1.5em; line-height: 1.5em; font-variant: small-caps; }
 
-/* line 28, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-ul {
-  list-style: square;
-}
+h5 { color: #000; font-size: 1em; margin-bottom: 1.8em; line-height: 1.8em; font-variant: small-caps; }
 
-/* line 30, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-li {
-  margin-left: 30px;
-}
+h6 { color: #000; font-size: 1em; margin-bottom: 1.8em; line-height: 1.8em; }
 
-/* line 32, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-p,
-dl,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ol,
-ul,
-pre,
-table,
-address,
-fieldset {
-  margin-bottom: 20px;
-}
+blockquote p { font-size: 1.2em !important; line-height: 1.5em !important; margin-bottom: 1.5em !important; font-style: italic; font-weight: bold; }
 
-/* line 10, ../../../app/stylesheets/text.scss */
-h1 {
-  font-family: 'Droid Sans', arial, serif;
-}
+blockquote p cite { font-style: normal; }
+
+.generic strong { font-variant: small-caps; }
+
+.generic em { font-style: italic; font-weight: inherit; }
+
+.amp { /* Give those ampersands a right sexy look */ font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif; font-style: italic; font-weight: normal; line-height: inherit; }
+
+abbr { border-bottom: 1px dotted #666; border-color: inherit; cursor: help; }
+
+ul { margin-bottom: 1.8em; list-style: square inside; }
+
+ul li { font-size: 1.2em; line-height: 1.5em; }
+
+ul li.caption { /* Apply this class to the first list item in a list to give it a caption */ font-variant: small-caps; list-style: none; color: #000; }
+
+li > ul, li > ol { margin-bottom: 0; margin-left: 5em; }
+
+li > ul li, li > ol li { font-size: 1em; }
+
+ol { margin-bottom: 1.8em; list-style: decimal inside; }
+
+ol li { font-size: 1.2em; line-height: 1.5em; }

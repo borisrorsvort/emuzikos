@@ -1,5 +1,32 @@
+
 .unread_bullet {
   font-size: 20px;
   font-weight:bold;
   line-height: 1em;
+}
+html{
+	font-size:100%;
+	min-height:101%;
+}
+body { 
+  background-color: darken($blue_dark, 10%);
+  font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
+  font-size:62.5%;
+  color:#666;
+}
+a { 
+  color: blue;
+  img {
+    border: none; }}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;}
+  
+/*
+  @TODO: Add docs to inset!
+*/
+@mixin inset($color) {
+  text-shadow: $color 0 1px 1px; 
 }

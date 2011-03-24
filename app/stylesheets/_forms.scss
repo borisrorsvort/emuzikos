@@ -1,6 +1,6 @@
 select {
   border        : 1px solid #ccc;
-  @include box-shadow(#666,0, 1px, 1px);
+  @include single-box-shadow(#666,0, 1px, 1px);
 }
 
 /* FORMS */
@@ -28,7 +28,7 @@ input, textarea {
   border        : 1px solid #ccc;
   padding       : 5px;
   &:focus, &:active {
-    @include box-shadow(#666, 0, 0, 3px);
+    @include single-box-shadow(#666, 0, 0, 3px);
   }
 }
 

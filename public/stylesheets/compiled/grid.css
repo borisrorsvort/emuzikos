@@ -1,425 +1,130 @@
-/* 960 Grid System ~ Core CSS.
- * Learn more ~ http://960.gs/
- * *
- * Licensed under GPL and MIT. */
-/* line 14, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-weight: inherit;
-  font-style: inherit;
-  font-size: 100%;
-  font-family: inherit;
-  vertical-align: baseline;
-}
+/* 960 Grid System ~ Core CSS. Learn more ~ http://960.gs/ * Licensed under GPL and MIT. */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
 
-/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-body {
-  line-height: 1;
-  color: black;
-  background: white;
-}
+body { line-height: 1; }
 
-/* line 19, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
+ol, ul { list-style: none; }
 
-/* line 21, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  vertical-align: middle;
-}
+table { border-collapse: collapse; border-spacing: 0; }
 
-/* line 23, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
 
-/* line 25, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: "" "";
-}
-/* line 96, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-}
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
 
-/* line 27, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
+a img { border: none; }
 
-/* line 1, ../../../app/stylesheets/_tipsy.scss */
-.tipsy {
-  padding: 5px;
-  font-size: 10px;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  background-repeat: no-repeat;
-  background-image: url(/images/backgrounds/tipsy.gif);
-}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 
-/* line 2, ../../../app/stylesheets/_tipsy.scss */
-.tipsy-inner {
-  padding: 5px 8px 4px 8px;
-  background-color: black;
-  color: white;
-  max-width: 200px;
-  text-align: center;
-}
+.tipsy { padding: 5px; font-size: 10px; opacity: 0.8; filter: alpha(opacity=80); background-repeat: no-repeat; background-image: url(/images/backgrounds/tipsy.gif); }
 
-/* line 3, ../../../app/stylesheets/_tipsy.scss */
-.tipsy-inner {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-}
+.tipsy-inner { padding: 5px 8px 4px 8px; background-color: black; color: white; max-width: 200px; text-align: center; }
 
-/* line 4, ../../../app/stylesheets/_tipsy.scss */
-.tipsy-north {
-  background-position: top center;
-}
+.tipsy-inner { -moz-border-radius: 3px; -webkit-border-radius: 3px; }
 
-/* line 5, ../../../app/stylesheets/_tipsy.scss */
-.tipsy-south {
-  background-position: bottom center;
-}
+.tipsy-north { background-position: top center; }
 
-/* line 6, ../../../app/stylesheets/_tipsy.scss */
-.tipsy-east {
-  background-position: right center;
-}
+.tipsy-south { background-position: bottom center; }
 
-/* line 7, ../../../app/stylesheets/_tipsy.scss */
-.tipsy-west {
-  background-position: left center;
-}
+.tipsy-east { background-position: right center; }
 
-/* line 108, ../../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  display: block;
-}
+.tipsy-west { background-position: left center; }
 
-/* line 1, ../../../app/stylesheets/_base.scss */
-.unread_bullet {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1em;
-}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 
-/* line 20, ../../../app/stylesheets/grid.scss */
-body {
-  background-color: #4b7399;
-  font-family: "Verdana", "Helvetica", "Arial";
-  font-size: 14px;
-  color: #666;
-}
+/* TABLES
+---------------------------------------- */
+.unread_bullet { font-size: 20px; font-weight: bold; line-height: 1em; }
 
-/* line 26, ../../../app/stylesheets/grid.scss */
-a {
-  color: blue;
-}
-/* line 28, ../../../app/stylesheets/grid.scss */
-a img {
-  border: none;
-}
+html { font-size: 100%; min-height: 101%; }
 
-/* line 31, ../../../app/stylesheets/grid.scss */
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
+body { background-color: #106090; font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif; font-size: 62.5%; color: #666; }
 
-/* line 36, ../../../app/stylesheets/grid.scss */
-#container {
-  padding: 20px;
-  background: #eee;
-  border: solid 1px black;
-}
+a { color: blue; }
+a img { border: none; }
 
-/* line 43, ../../../app/stylesheets/grid.scss */
-#flash_notice,
-#flash_error,
-#flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0;
-}
+.clear { clear: both; height: 0; overflow: hidden; }
 
-/* line 47, ../../../app/stylesheets/grid.scss */
-#flash_notice {
-  background-color: #ccffcc;
-  border: solid 1px #66cc66;
-}
-
-/* line 52, ../../../app/stylesheets/grid.scss */
-#flash_error,
-#flash_alert {
-  background-color: #ffcccc;
-  border: solid 1px #cc6666;
-}
-
-/* line 56, ../../../app/stylesheets/grid.scss */
-.fieldWithErrors {
-  display: inline;
-}
-
-/* line 59, ../../../app/stylesheets/grid.scss */
-.error_messages {
-  width: 400px;
-  border: 2px solid #cf0000;
-  padding: 0;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-/* line 66, ../../../app/stylesheets/grid.scss */
-.error_messages font {
-  size: 12px;
-}
-/* line 68, ../../../app/stylesheets/grid.scss */
-.error_messages h2 {
-  text-align: left;
-  padding: 5px 5px 5px 15px;
-  margin: 0;
-  background-color: #cc0000;
-  color: white;
-}
-/* line 72, ../../../app/stylesheets/grid.scss */
-.error_messages h2 font {
-  weight: bold;
-  size: 12px;
-}
-/* line 77, ../../../app/stylesheets/grid.scss */
-.error_messages p {
-  margin: 8px 10px;
-}
-/* line 79, ../../../app/stylesheets/grid.scss */
-.error_messages ul {
-  margin: 0;
-}
-
-/* line 82, ../../../app/stylesheets/grid.scss */
-#user_nav {
-  float: right;
-  font-size: 12px;
-}
-
-/* line 87, ../../../app/stylesheets/grid.scss */
-.wide {
-  width: 100%;
-}
-
-/* TABLES */
-/* line 93, ../../../app/stylesheets/grid.scss */
-table {
-  overflow: hidden;
-  border: 1px solid #d3d3d3;
-  background: #fefefe;
-  width: 100%;
-  margin: 20px auto 0;
-  -moz-border-radius: 5px;
-  /* FF1+ */
-  -webkit-border-radius: 5px;
-  /* Saf3-4 */
-  border-radius: 5px;
-}
-
-/* line 104, ../../../app/stylesheets/grid.scss */
-th, td {
-  padding: 18px 20px 18px;
-  text-align: left;
-}
-
-/* line 106, ../../../app/stylesheets/grid.scss */
-th {
-  padding-top: 22px;
-  text-shadow: 1px 1px 1px #fff;
-  background: #e8eaeb;
-}
-
-/* line 108, ../../../app/stylesheets/grid.scss */
-td {
-  border-top: 1px solid #e0e0e0;
-  border-right: 1px solid #e0e0e0;
-}
-
-/* line 110, ../../../app/stylesheets/grid.scss */
-tr.odd td {
-  background: #f6f6f6;
-}
-
-/* line 112, ../../../app/stylesheets/grid.scss */
-td.first, th.first {
-  text-align: left;
-}
-
-/* line 114, ../../../app/stylesheets/grid.scss */
-td.last {
-  border-right: none;
-}
-
-/*
-I know this is annoying, but we need additional styling so webkit will recognize rounded corners on background elements.  Nice write up of this issue: http://www.onenaught.com/posts/266/css-inner-elements-breaking-border-radius
- 
-And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
+/* @TODO: Add docs to inset!
 */
-/* line 122, ../../../app/stylesheets/grid.scss */
-tr:first-child th.first {
-  -moz-border-radius-topleft: 5px;
-  -webkit-border-top-left-radius: 5px;
-  /* Saf3-4 */
-}
+html { height: auto; }
 
-/* line 127, ../../../app/stylesheets/grid.scss */
-tr:first-child th.last {
-  -moz-border-radius-topright: 5px;
-  -webkit-border-top-right-radius: 5px;
-  /* Saf3-4 */
-}
+#header { padding: 20px; background: #157ebe; color: white; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #34afe0), color-stop(100%, #157ebe)); background-image: -moz-linear-gradient(#34afe0, #157ebe); background-image: linear-gradient(#34afe0, #157ebe); }
+#header a { color: white; text-decoration: none; }
+#header a:hover { text-decoration: underline; }
 
-/* line 132, ../../../app/stylesheets/grid.scss */
-tr:last-child td.first {
-  -moz-border-radius-bottomleft: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  /* Saf3-4 */
-}
+#container { margin: 0 auto; }
 
-/* line 137, ../../../app/stylesheets/grid.scss */
-tr:last-child td.last {
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  /* Saf3-4 */
-}
+#user_nav { float: right; font-size: 12px; }
 
-/* line 142, ../../../app/stylesheets/grid.scss */
-th a.current {
-  padding-right: 12px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
+#main_nav { position: relative; display: inline; float: left; width: 180px; margin-right: -180px; }
+#main_nav ul { padding: 20px; }
 
-/* line 147, ../../../app/stylesheets/grid.scss */
-th a.asc {
-  background-image: url(/images/up_arrow.gif);
-}
+#content { background: #efefef; padding: 20px; }
+#content.with_sidebar { background: #efefef url('/images/backgrounds/bg-sidebar.png?1300934992') left top repeat-y; padding-left: 200px; }
 
-/* line 150, ../../../app/stylesheets/grid.scss */
-th a.desc {
-  background-image: url(/images/down_arrow.gif);
-}
+.wide { width: 100%; }
 
-/* line 154, ../../../app/stylesheets/grid.scss */
-tr.unread td {
-  background-color: #eee;
-  font-weight: bold;
-}
+#flash_notice, #flash_error, #flash_alert { padding: 5px 8px; margin: 10px 0; }
 
-/* line 162, ../../../app/stylesheets/grid.scss */
-th.unread, th.delete_seleted {
-  width: 2px;
-}
+#flash_notice { background-color: #ccffcc; border: solid 1px #66cc66; }
+
+#flash_error, #flash_alert { background-color: #ffcccc; border: solid 1px #cc6666; }
+
+.fieldWithErrors { display: inline; }
+
+.error_messages { width: 400px; border: 2px solid #cf0000; padding: 0; padding-bottom: 12px; margin-bottom: 20px; background-color: #f0f0f0; }
+.error_messages font { size: 12px; }
+.error_messages h2 { text-align: left; padding: 5px 5px 5px 15px; margin: 0; background-color: #cc0000; color: white; }
+.error_messages h2 font { weight: bold; size: 12px; }
+.error_messages p { margin: 8px 10px; }
+.error_messages ul { margin: 0; }
+
+select { border: 1px solid #ccc; -moz-box-shadow: 0 1px 1px #666666; -webkit-box-shadow: 0 1px 1px #666666; -o-box-shadow: 0 1px 1px #666666; box-shadow: 0 1px 1px #666666; }
 
 /* FORMS */
-/* line 1, ../../../app/stylesheets/_forms.scss */
-select {
-  border: 1px solid #ccc;
-  -moz-box-shadow: #666666 0 1px 1px 0;
-  -webkit-box-shadow: #666666 0 1px 1px 0;
-  -o-box-shadow: #666666 0 1px 1px 0;
-  box-shadow: #666666 0 1px 1px 0;
-}
+.field { display: block; margin-bottom: 15px; }
 
-/* FORMS */
-/* line 8, ../../../app/stylesheets/_forms.scss */
-.field {
-  display: block;
-  margin-bottom: 15px;
-}
+label { font-weight: bold; display: block; }
 
-/* line 12, ../../../app/stylesheets/_forms.scss */
-label {
-  font-weight: bold;
-  display: block;
-}
+.required { display: block; font-style: italic; opacity: 0.6; margin-bottom: 5px; }
 
-/* line 16, ../../../app/stylesheets/_forms.scss */
-.required {
-  display: block;
-  font-style: italic;
-  opacity: 0.6;
-  margin-bottom: 5px;
-}
+.inline { display: inline; }
 
-/* line 22, ../../../app/stylesheets/_forms.scss */
-.inline {
-  display: inline;
-}
-
-/* line 25, ../../../app/stylesheets/_forms.scss */
-input, textarea {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  border-radius: 3px;
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 5px;
-}
-/* line 30, ../../../app/stylesheets/_forms.scss */
-input:focus, input:active, textarea:focus, textarea:active {
-  -moz-box-shadow: #666666 0 0 3px 0;
-  -webkit-box-shadow: #666666 0 0 3px 0;
-  -o-box-shadow: #666666 0 0 3px 0;
-  box-shadow: #666666 0 0 3px 0;
-}
+input, textarea { -moz-border-radius: 3px; -webkit-border-radius: 3px; -o-border-radius: 3px; -ms-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; background: #fff; border: 1px solid #ccc; padding: 5px; }
+input:focus, input:active, textarea:focus, textarea:active { -moz-box-shadow: 0 0 3px #666666; -webkit-box-shadow: 0 0 3px #666666; -o-box-shadow: 0 0 3px #666666; box-shadow: 0 0 3px #666666; }
 
 /* USER PROFILE FORM */
-/* line 37, ../../../app/stylesheets/_forms.scss */
-.instrument_column {
-  width: 150px;
-  float: left;
-}
-/* line 40, ../../../app/stylesheets/_forms.scss */
-.instrument_column .instrument {
-  padding: 5px 0;
-}
+.instrument_column { width: 150px; float: left; }
+.instrument_column .instrument { padding: 5px 0; }
 
 /* search_form */
-/* line 48, ../../../app/stylesheets/_forms.scss */
-#search_form .field {
-  float: left;
-  height: 50px;
-  min-width: 200px;
-  width: 16%;
-}
+#search_form .field { float: left; height: 50px; min-width: 200px; width: 16%; }
+
+table { border-top: #5b5b5b 1px solid; font-size: 1.2em; vertical-align: middle; color: #346a8a; }
+table thead { border: #5b5b5b 1px solid; }
+table tr.even { background-color: white; }
+table tr.odd { background-color: #f3f7fb; }
+table td { padding: 20px; }
+table td a { color: #346a8a; text-decoration: underline; }
+table td a:hover { color: #3b789d; }
+table th { padding: 6px 20px; background-color: #434242; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #797a79), color-stop(100%, #434242)); background-image: -moz-linear-gradient(#797a79, #434242); background-image: linear-gradient(#797a79, #434242); border-top: 1px solid #acadac; color: #d3d3d3; text-shadow: #333333 0 1px 1px; }
+table th a { color: #d3d3d3; text-decoration: none; text-shadow: black 0 1px 1px; }
+table th a:hover { color: #e0e0e0; }
+table th a:hover { text-decoration: underline; }
+
+/* USER NAV
+---------------------------------------- */
+#main_nav ul { padding: 0; }
+#main_nav li { display: block; float: left; width: 180px; border-bottom: 1px solid #424242; }
+#main_nav li.icon-user a { background-position: 20px -85px; }
+#main_nav li.icon-messages a { background-position: 20px -35px; }
+#main_nav li.icon-search a { background-position: 20px 15px; }
+#main_nav li a { text-shadow: #333333 0 1px 1px; color: #bababa; display: block; font-size: 14px; font-weight: bold; text-decoration: none; padding: 15px 20px 15px 50px; text-transform: uppercase; border-bottom: 1px solid #2d2d2d; background: transparent url("/images/icons/main-nav-icon-sprite.png") left top no-repeat; }
+#main_nav li a:hover, #main_nav li a.current { background-color: #3a3a3a; }
+
+.message_count { -moz-border-radius: 12px; -webkit-border-radius: 12px; -o-border-radius: 12px; -ms-border-radius: 12px; -khtml-border-radius: 12px; border-radius: 12px; -moz-box-shadow: 0 1px 2px #333333; -webkit-box-shadow: 0 1px 2px #333333; -o-box-shadow: 0 1px 2px #333333; box-shadow: 0 1px 2px #333333; padding: 1px 10px; margin-left: 5px; background-color: #ce2f2f; border: 1px solid #fff; font-size: 11px; color: #fff; font-weight: normal; text-shadow: none; position: relative; top: -1px; }
 
 /* USER */
-/* line 172, ../../../app/stylesheets/grid.scss */
-.avatar {
-  background: #ccc;
-  display: block;
-}
-/* line 175, ../../../app/stylesheets/grid.scss */
-.avatar.small {
-  height: 20px;
-  width: 20px;
-}
+.avatar { background: #ccc; display: block; }
+.avatar.small { height: 20px; width: 20px; }
