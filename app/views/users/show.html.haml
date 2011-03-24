@@ -14,7 +14,7 @@
   %p= @user.zip
 
   %h3= t(:'activerecord.attributes.user.country')
-  %p= I18n.t @user.country, :scope => 'countries'
+  %p= I18n.t(@user.country, :scope => "countries")
 
   %h3= t(:'activerecord.attributes.user.references')
   %p= @user.references

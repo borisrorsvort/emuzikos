@@ -4,6 +4,8 @@ $(document).ready(function() {
   $('.form_guide').focus(function () {
    $(this).tipsy({trigger: 'focus', gravity: 'w'});
   });
+  
+  $('.tipsy').tipsy({gravity: $.fn.tipsy.autoNS});
 
   // FORMS UTILS
   var search_form = $('form.search')
@@ -34,7 +36,7 @@ $(document).ready(function() {
   $( ".tabs" ).tabs();  
   
   $(".checkbox_set").buttonset();
-  $("select, input:checkbox, input.radio:radio, input:file").uniform();
+  $("select, input:checkbox, input.radio:radio, input:file").uniform(); 
   
   
 });

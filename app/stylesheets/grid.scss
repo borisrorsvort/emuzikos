@@ -2,14 +2,16 @@
  * Learn more ~ http://960.gs/
  * *
  * Licensed under GPL and MIT. */
+ 
 
 @import "compass/reset";
+@include reset-html5;
+
 @import "compass/css3";
 @import "compass/utilities";
 
 @import "tipsy";
 
-@include reset-html5;
 
 @import "colors";
 @import "base";
@@ -18,9 +20,6 @@
 @import "forms";
 @import "tables";
 
-
-/* USER NAV
----------------------------------------- */
 
 #main_nav {
   ul {
