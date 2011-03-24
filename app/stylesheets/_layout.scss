@@ -1,0 +1,48 @@
+html {
+  height: auto;
+}
+
+$sidebar_width: 180px;
+
+#header {
+  padding: 20px;
+  background: $blue_dark;
+  color: $header-data-color;
+  @include background-image(linear-gradient($blue_light, $blue_dark));
+  a {
+    @include link-colors($header-data-color);
+    @include hover-link;}
+}
+
+#container{ 
+  margin:0 auto;}
+  
+
+#user_nav {
+  float: right;
+  font-size:  12px;
+}
+
+#main_nav {
+  position:relative;
+  display:inline;
+  float:left;
+  width: $sidebar_width;
+  margin-right:-180px;
+  ul {
+    padding: 20px;
+  }
+}
+
+#content {
+  background:#efefef;
+  padding: 20px;
+  &.with_sidebar { 
+    background:#efefef image-url('backgrounds/bg-sidebar.png') left top  repeat-y;
+    padding-left: $sidebar_width + 20;
+  }
+}
+
+
+.wide {
+  width: 100%;}

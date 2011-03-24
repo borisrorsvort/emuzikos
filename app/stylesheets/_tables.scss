@@ -1,0 +1,37 @@
+table {
+  border-top: $table-top-border 1px solid;
+  font-size: 1.2em;
+  vertical-align: middle;
+  color: $table-data-color;
+  thead {
+    border: $table-top-border 1px solid;
+  }
+  tr {
+    &.even {
+      background-color: $table-color-even ;}
+    &.odd {
+      background-color: $table-color-odd ;}
+  }
+  td {
+    padding: 20px;
+    a {
+      @include link-colors($table-data-color, lighten($table-data-color, 5%));
+      text-decoration: underline;
+    }
+  }
+  th {
+    padding: 6px 20px;
+    background-color:$table-header-gb;
+    @include background-image(linear-gradient($table-header-gt, $table-header-gb));
+    
+    border-top: 1px solid lighten($table-header-gt, 20%);
+    color: $table-header-link;
+    @include inset(#333);
+    
+    a {
+      @include link-colors($table-header-link, lighten($table-header-link, 5%));
+      @include hover-link;
+      @include inset(#000);
+    }
+  }
+}
