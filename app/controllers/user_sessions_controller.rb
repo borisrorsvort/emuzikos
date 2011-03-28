@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      gflash :success => "Successfully logged in."
+      gflash :success => "Successfully logged in. Welcome back! "
       #flash[:notice] = "Successfully logged in."
       redirect_to users_url
     else

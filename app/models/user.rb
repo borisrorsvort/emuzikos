@@ -101,6 +101,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  scope :profile_complete, lambda { where("country != ? and user_type != ? and genre != ? and zip != ? " , "", "", "", "") }
+  
   private
 
   def reprocess_avatar

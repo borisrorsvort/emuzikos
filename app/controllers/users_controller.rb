@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     @users = []
     @search = Search.new(User, params[:search])
     if is_search?
-      @users = User.search(@search, :page => params[:page], :order => sort_column + " " + sort_direction )
+      @users = User.profile_complete.search(@search, :page => params[:page], :order => sort_column + " " + sort_direction )
     else
-      @users = User.paginate(:page => params[:page], :order => sort_column + " " + sort_direction)
+      @users = User.profile_complete.paginate(:page => params[:page], :order => sort_column + " " + sort_direction)
     end
   end
   
@@ -27,7 +27,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if verify_recaptcha(@user) && @user.save!
       Notifier.registration_confirmation(@user).deliver
-      gflash :error => "Registration successful. Don't forget to complete your profile to appear in search results"
+      gflash :success => "Registration successful. Don't forget to complete your profile to appear in search results",
+              :notice => "Don't forget to complete your profile to appear in search results"
       #flash[:notice] = "Registration successful. Don't forget to complete your profile to appear in search results"
       if params[:user][:avatar].blank?  
         redirect_to edit_user_url(@user)
@@ -47,10 +48,12 @@ class UsersController < ApplicationController
   def update
     @user = @current_user
     if @user.update_attributes(params[:user])
-      gflash :success => "Successfully updated user. Speical"
-      if params[:user][:avatar].blank?  
+      
+      if params[:user][:avatar].blank?
+        gflash :success => "Successfully updated your profile."
         redirect_to edit_user_url
-      else  
+      else
+        gflash :notice => "One more thing to do, you need to crop your avatar picture."
         render :action => 'crop'  
       end
     else

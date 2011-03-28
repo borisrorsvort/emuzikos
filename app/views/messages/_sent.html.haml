@@ -14,7 +14,7 @@
 -else
   %table#messages_table.display.wide
     %tr
-      %th= t(:'messages.delete')
+      %th{:class => "delete_seleted"}= t(:'messages.delete')
       %th= t(:'messages.subject')
       %th= t(:'messages.to')
       %th= t(:'messages.sent_on')
