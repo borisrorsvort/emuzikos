@@ -6,7 +6,7 @@
       -else
         = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user))
       
-  %td=link_to "#{user.username}", user_url(user)
+  %td= link_to "#{user.username}", user_url(user)
   %td= t(:"users.types.#{user.user_type}") 
   %td= t(:"users.types.#{user.searching_for}")
   %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
@@ -15,4 +15,4 @@
   %td= I18n.t(user.country, :scope => "countries")
   %td
     -if @current_user && @current_user != user
-      = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => user.id), :class => "button submit contact"
+      = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => user.id), :class => "button submit contact small"

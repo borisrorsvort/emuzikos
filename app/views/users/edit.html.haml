@@ -1,4 +1,13 @@
-- title t(:'.titles.title')
+- title t(:'.titles.title'), false
+
+- if @user == current_user
+  - content_for :sub_nav do
+    %ul#sub_sections
+      %li
+        = link_to t(:'menu.profile.edit'), edit_user_path(current_user), :class => "current"
+      %li
+        = link_to t(:'menu.profile.public'),  user_path(current_user)
+    .clear
 
 = render 'form'
 

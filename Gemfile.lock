@@ -81,6 +81,7 @@ GEM
       i18n (>= 0.4.0)
     gherkin (2.3.5)
       json (>= 1.4.6)
+    gritter (0.6.0)
     haml (3.1.0.alpha.147)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
@@ -173,6 +174,7 @@ DEPENDENCIES
   cucumber-rails
   factory_girl_rails
   formtastic (~> 1.1.0)
+  gritter
   haml (>= 3.1.alpha.50)
   haml-rails
   heroku

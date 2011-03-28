@@ -27,32 +27,34 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if verify_recaptcha(@user) && @user.save!
       Notifier.registration_confirmation(@user).deliver
-      flash[:notice] = "Registration successful. Don't forget to complete your profile to appear in search results"
+      gflash :error => "Registration successful. Don't forget to complete your profile to appear in search results"
+      #flash[:notice] = "Registration successful. Don't forget to complete your profile to appear in search results"
       if params[:user][:avatar].blank?  
         redirect_to edit_user_url(@user)
       else  
         render :action => 'crop'  
       end
     else
-      logger.error(inspect)
+      gflash :error => "Some informations need to be corrected"
       render :action => 'new' # error shown in view
     end
   end
   
-  def edit 
+  def edit
     @user = @current_user
   end
   
   def update
     @user = @current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Successfully updated user."
+      gflash :success => "Successfully updated user. Speical"
       if params[:user][:avatar].blank?  
         redirect_to edit_user_url
       else  
         render :action => 'crop'  
       end
     else
+      gflash :error => "Some informations need to be corrected"
       render :action => 'edit'
     end
   end

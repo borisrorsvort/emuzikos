@@ -1,8 +1,10 @@
+
 #flash_notice,
 #flash_error,
 #flash_alert{ 
-  padding: 5px 8px;
-  margin: 10px 0; }
+  padding: 20px;
+  font-size: 15px;
+  text-align:center; }
 
 #flash_notice{ 
   background-color: #ccffcc;
@@ -17,24 +19,19 @@
   display: inline; }
 
 .error_messages{ 
-  width: 400px;
-  border: 2px solid #cf0000;
-  padding: 0;
+  padding: 20px;
+  @include border-radius(8px);
   padding-bottom: 12px;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
-  font{  
-    size: 12px; }
+  background-color: $notice-error;
+  color:#fff;
   h2{ 
     text-align: left;
-    padding: 5px 5px 5px 15px;
     margin: 0;
-    font{  
-      weight: bold;
-      size: 12px; }
-    background-color: #cc0000;
-    color: white; }
+    color:#fff;
+    @include inset(#000);}
   p{ 
-    margin: 8px 10px;}
+    margin: 10px 0px;}
   ul{ 
-    margin: 0; } }
+    margin: 0; 
+    list-style: disc inside;} }

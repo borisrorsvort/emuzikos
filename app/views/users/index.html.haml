@@ -1,6 +1,7 @@
-- title t(:'.title')
+- title t(:'.title'), false
 
-= render "search"
+- content_for :sub_nav do
+  = render "search"
 
 -if !@users.blank?
   %table.display.wide
@@ -14,11 +15,9 @@
         %th= t(:'activerecord.attributes.user.genre')
         %th= sortable "zip", t(:'activerecord.attributes.user.zip')
         %th= sortable "country", t(:'activerecord.attributes.user.country')
-        -if @current_user
-          %th= t(:'tables.headings.actions')
+        %th
     %tbody
       = render :partial => 'user', :collection => @users
-
 
   = will_paginate @users
   

@@ -8,7 +8,8 @@ $header-data-color: #fff;
 /* TABLES
 ---------------------------------------- */
 
-$table-color-odd: #f3f7fb;
+/*$table-color-odd: #f3f7fb;*/
+$table-color-odd: darken(#fff, 4%);
 $table-color-even: #fff;
 
 $table-top-border: #5b5b5b;
@@ -18,3 +19,16 @@ $table-header-gb: #434242;
 $table-header-link: #d3d3d3;
 
 $table-data-color: #346a8a ;
+
+
+/* SUBNAV COLORS
+---------------------------------------- */
+
+$sub_nav_gradient_light: #e7e7e7 ;
+$sub_nav_gradient_dark: #d0d0d0 ;
+$sub-nav-color-base: #464646;
+
+/* NOTICES
+---------------------------------------- */
+
+$notice-error: #cf0000;

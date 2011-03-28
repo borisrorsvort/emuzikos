@@ -1,56 +1,192 @@
 /* TABLES
 ---------------------------------------- */
-.unread_bullet { font-size: 20px; font-weight: bold; line-height: 1em; }
+/*$table-color-odd: #f3f7fb;*/
+/* SUBNAV COLORS
+---------------------------------------- */
+/* NOTICES
+---------------------------------------- */
+/* line 1, ../../../app/stylesheets/_base.scss */
+html {
+  font-size: 100%;
+  min-height: 101%;
+}
 
-html { font-size: 100%; min-height: 101%; }
+/* line 5, ../../../app/stylesheets/_base.scss */
+body {
+  background-color: #cfcfcf;
+  font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
+  font-size: 62.5%;
+  color: #666;
+}
 
-body { background-color: #106090; font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif; font-size: 62.5%; color: #666; }
+/* line 11, ../../../app/stylesheets/_base.scss */
+a {
+  color: #157ebe;
+}
+/* line 13, ../../../app/stylesheets/_base.scss */
+a img {
+  border: none;
+}
 
-a { color: blue; }
-a img { border: none; }
+/* line 16, ../../../app/stylesheets/_base.scss */
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
 
-.clear { clear: both; height: 0; overflow: hidden; }
+/* line 21, ../../../app/stylesheets/_base.scss */
+.wide {
+  width: 100%;
+}
 
-/* @TODO: Add docs to inset!
-*/
+/* line 24, ../../../app/stylesheets/_base.scss */
+.unread_bullet {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+/* CSS ARROWS
+---------------------------------------- */
 /*HEADINGS
 -------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6 { text-shadow: white 0 1px 1px; }
+/* line 7, ../../../app/stylesheets/text.scss */
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: white 0 1px 1px;
+}
 
-h1 { color: #515151; font-size: 3em; margin-bottom: 0.6em; line-height: 1.2em; }
+/* line 11, ../../../app/stylesheets/text.scss */
+h1 {
+  color: #515151;
+  font-size: 3em;
+  margin-bottom: 0.6em;
+  line-height: 1.2em;
+}
 
-h2 { color: #000; font-size: 2em; margin-bottom: 0.9em; line-height: 0.9em; }
+/* line 17, ../../../app/stylesheets/text.scss */
+h2 {
+  color: #000;
+  font-size: 2em;
+  margin-bottom: 0.9em;
+  line-height: 0.9em;
+}
 
-h3 { color: #000; font-size: 1.5em; margin-bottom: 1.2em; line-height: 1.2em; font-variant: small-caps; }
+/* line 23, ../../../app/stylesheets/text.scss */
+h3 {
+  color: #000;
+  font-size: 1.5em;
+  margin-bottom: 1.2em;
+  line-height: 1.2em;
+  font-variant: small-caps;
+}
 
-h4 { color: #000; font-size: 1.2em; margin-bottom: 1.5em; line-height: 1.5em; font-variant: small-caps; }
+/* line 30, ../../../app/stylesheets/text.scss */
+h4 {
+  color: #000;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  line-height: 1.5em;
+  font-variant: small-caps;
+}
 
-h5 { color: #000; font-size: 1em; margin-bottom: 1.8em; line-height: 1.8em; font-variant: small-caps; }
+/* line 37, ../../../app/stylesheets/text.scss */
+h5 {
+  color: #000;
+  font-size: 1em;
+  margin-bottom: 1.8em;
+  line-height: 1.8em;
+  font-variant: small-caps;
+}
 
-h6 { color: #000; font-size: 1em; margin-bottom: 1.8em; line-height: 1.8em; }
+/* line 44, ../../../app/stylesheets/text.scss */
+h6 {
+  color: #000;
+  font-size: 1em;
+  margin-bottom: 1.8em;
+  line-height: 1.8em;
+}
 
-blockquote p { font-size: 1.2em !important; line-height: 1.5em !important; margin-bottom: 1.5em !important; font-style: italic; font-weight: bold; }
+/* line 51, ../../../app/stylesheets/text.scss */
+blockquote p {
+  font-size: 1.2em !important;
+  line-height: 1.5em !important;
+  margin-bottom: 1.5em !important;
+  font-style: italic;
+  font-weight: bold;
+}
 
-blockquote p cite { font-style: normal; }
+/* line 59, ../../../app/stylesheets/text.scss */
+blockquote p cite {
+  font-style: normal;
+}
 
-.generic strong { font-variant: small-caps; }
+/* line 62, ../../../app/stylesheets/text.scss */
+.generic strong {
+  font-variant: small-caps;
+}
 
-.generic em { font-style: italic; font-weight: inherit; }
+/* line 65, ../../../app/stylesheets/text.scss */
+.generic em {
+  font-style: italic;
+  font-weight: inherit;
+}
 
-.amp { /* Give those ampersands a right sexy look */ font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif; font-style: italic; font-weight: normal; line-height: inherit; }
+/* line 69, ../../../app/stylesheets/text.scss */
+.amp {
+  /* Give those ampersands a right sexy look */
+  font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
+  font-style: italic;
+  font-weight: normal;
+  line-height: inherit;
+}
 
-abbr { border-bottom: 1px dotted #666; border-color: inherit; cursor: help; }
+/* line 75, ../../../app/stylesheets/text.scss */
+abbr {
+  border-bottom: 1px dotted #666;
+  border-color: inherit;
+  cursor: help;
+}
 
-ul { margin-bottom: 1.8em; list-style: square inside; }
+/* line 81, ../../../app/stylesheets/text.scss */
+ul {
+  margin-bottom: 1.8em;
+  list-style: square inside;
+}
 
-ul li { font-size: 1.2em; line-height: 1.5em; }
+/* line 85, ../../../app/stylesheets/text.scss */
+ul li {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
 
-ul li.caption { /* Apply this class to the first list item in a list to give it a caption */ font-variant: small-caps; list-style: none; color: #000; }
+/* line 89, ../../../app/stylesheets/text.scss */
+ul li.caption {
+  /* Apply this class to the first list item in a list to give it a caption */
+  font-variant: small-caps;
+  list-style: none;
+  color: #000;
+}
 
-li > ul, li > ol { margin-bottom: 0; margin-left: 5em; }
+/* line 94, ../../../app/stylesheets/text.scss */
+li > ul, li > ol {
+  margin-bottom: 0;
+  margin-left: 5em;
+}
 
-li > ul li, li > ol li { font-size: 1em; }
+/* line 98, ../../../app/stylesheets/text.scss */
+li > ul li, li > ol li {
+  font-size: 1em;
+}
 
-ol { margin-bottom: 1.8em; list-style: decimal inside; }
+/* line 101, ../../../app/stylesheets/text.scss */
+ol {
+  margin-bottom: 1.8em;
+  list-style: decimal inside;
+}
 
-ol li { font-size: 1.2em; line-height: 1.5em; }
+/* line 105, ../../../app/stylesheets/text.scss */
+ol li {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}

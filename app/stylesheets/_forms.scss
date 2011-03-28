@@ -3,6 +3,10 @@ select {
   @include single-box-shadow(#666,0, 1px, 1px);
 }
 
+form {
+  vertical-align: top;
+}
+
 /* FORMS */
 
 .field {
@@ -11,7 +15,9 @@ select {
 
 label {
   font-weight   : bold;
-  display       : block; }
+  display       : block;
+  font-size: 1.2em;
+  margin-bottom: 5px; }
   
 .required {
   display       : block;
@@ -39,16 +45,21 @@ input, textarea {
   float         : left;
   .instrument {
     padding     : 5px 0;
-  }
-}
+    label {
+      padding-top: 5px; }}}
 
-/* search_form */
+/* SEARCH FORM */
 
+.reset_button {
+  float:left;
+  position:relative;
+  top: 5px;
+  margin-left: 10px;}
+  
 #search_form {
   .field {
     float       : left;
-    height      : 50px;
+    height      : 15px;
     min-width   : 200px;
-    width       : 16%;
   }
 }

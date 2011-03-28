@@ -5,7 +5,7 @@ source 'http://gemcutter.org'
 gem 'rails', '3.0.3'
 gem "jquery-rails"
 gem "will_paginate", "3.0.pre2"
-
+gem "gritter"
 
 gem "haml", ">= 3.1.alpha.50"
 gem 'haml-rails'

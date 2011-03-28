@@ -34,11 +34,11 @@
   .field
     = f.label :references, t(:'activerecord.attributes.user.references')
     
-    = f.text_field :references
+    = f.text_field :references, :size => 60
   .field
     = f.label :request_message, t(:'activerecord.attributes.user.request_message')
     
-    = f.text_area :request_message
+    = f.text_area :request_message, :size => "45x20"
 
   %h2= t(:'users.location')
 

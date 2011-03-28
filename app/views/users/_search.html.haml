@@ -1,39 +1,58 @@
+.quick_links
+  %ul
+    %li
+      %span= t(:'quick_links.title')
+    %li
+      = link_to t(:'quick_links.local_musicians'),  "#"
+      |
+    %li
+      = link_to t(:'quick_links.instruments_match'),  "#", :title => t(:'tooltips.search.match_instrument'), :class => "tooltip"
+      |
+    %li
+      = link_to t(:'quick_links.recent_subscriptions'),  "#"
+
+      
 #search_form
   = semantic_form_for :search, @search, :html => { :method => :get } do |f|
     = hidden_field_tag :direction, params[:direction]
     = hidden_field_tag :sort, params[:sort]
+    
     .field
-      = t(:'search_terms.iam')
+      
       %select{ :id => "search_user_type", :name => "search[user_type]" }
-        %option
+        %option{:value => ''}
+          = t(:'search_terms.iam')
         - User::USER_TYPES.each do |user_type|
           = options_for_select([[t(:"users.types.#{user_type}"), user_type]], {:selected => ( params[:search][:user_type] rescue 'None') })
       .clear
     .field     
-      = t(:'search_terms.music_style')
+      
       %select{ :id => "search_genre", :name => "search[genre]" }
-        %option
+        %option{:value => ''}
+          = t(:'search_terms.music_style')
         - User::MUSICAL_GENRES.each do |genre|
           = options_for_select([[t(:"musical_genres.#{genre}"), genre]], {:selected => ( params[:search][:genre] rescue 'None') })
       .clear
+      
     .field     
-      = t(:'search_terms.who_plays')
-      = f.select :instrument, User::INSTRUMENTS, :include_blank => true
+      = f.select :instrument, User::INSTRUMENTS, :include_blank => t(:'search_terms.who_plays')
       .clear
+      
     .field
-      = t(:'search_terms.who_search_for')    
       %select{ :id => "search_searching_for", :name => "search[searching_for]" }
-        %option
+        %option{:value => ''}
+          = t(:'search_terms.who_search_for')    
         - User::USER_TYPES.each do |searching_for|
           = options_for_select([[t(:"users.types.#{searching_for}"), searching_for]], {:selected => ( params[:search][:searching_for] rescue 'None') })
       .clear
+      
     .field     
-      = t(:'search_terms.in')
-      = f.localized_country_select( :country, [], :include_blank => true)
+      = f.localized_country_select( :country, [], :include_blank => t(:'search_terms.country'))
       .clear
-    .field
+      
       = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit")
-      %span.reset_button
-        =link_to t(:'common.reset'), users_path, :class => "button reset"
-      .clear
-.clear
+
+    %span.reset_button
+      =link_to t(:'common.reset'), users_path, :class => "button small reset"
+    .clear
+    .clear

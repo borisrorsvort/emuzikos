@@ -1,24 +1,27 @@
-- title t(:'.title')
+- title t(:'.title'), false
 
-= link_to t(:'menu.inbox'), user_messages_path(@user) | 
-    
-= link_to t(:'menu.sent_messages'), user_messages_path(@user, :mailbox => :sent)
+- content_for :sub_nav do
+  %ul#sub_sections
+    %li
+      = link_to t(:'menu.messages.inbox'), user_messages_path(@user), :class => "current"
+    %li
+      = link_to t(:'menu.messages.sent_messages'), user_messages_path(@user, :mailbox => :sent)
+  .clear
 
-%h2= t(:'.subtitle')
+- if @messages.size == 0
+  =t(:'messages.no_messages')
 
-%table#messages_table.display.wide
-  %tr
-    %th{:class => "delete_seleted"}= t(:'messages.delete')
-    %th{:class => "unread"}
-      %span.unread_bullet!=unread_bullet 
-    %th= t(:'messages.subject')
-    %th= t(:'messages.sender')
-    %th= t(:'messages.sent_on')
-  - if @messages.size == 0
+-else
+  
+  %table#messages_table.display.wide
     %tr
-      %td{:colspan => "5"}
-        =t(:'messages.no_messages')
-  - else
+      %th{:class => "delete_seleted"}= t(:'messages.delete')
+      %th{:class => "unread"}
+        %span.unread_bullet!=unread_bullet 
+      %th= t(:'messages.subject')
+      %th= t(:'messages.sender')
+      %th= t(:'messages.sent_on')
+      
     - for message in @messages
       %tr{:class => "#{cycle("odd", "even")} #{ !message.read? ? "unread" : nil}"}
         %td= check_box_tag "delete[]", message.id
@@ -30,4 +33,4 @@
         %td= h message.created_at.to_s(:long)
     %tr
       %td{:colspan => "5"}
-        = submit_tag t(:'buttons.delete'), :class => "button delete"
+        = submit_tag t(:'buttons.delete'), :class => "button delete" 

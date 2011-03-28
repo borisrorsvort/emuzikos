@@ -1,5 +1,15 @@
 - title t(:'.title', :username => @user.username)
 
+- if @user == current_user
+  - content_for :sub_nav do
+    %ul#sub_sections
+      %li
+        = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+      %li
+        = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
+    .clear
+
+
 = image_tag @user.avatar.url(:medium)
 
 -if !@user.blank?
@@ -14,7 +24,7 @@
   %p= @user.zip
 
   %h3= t(:'activerecord.attributes.user.country')
-  %p= I18n.t(@user.country, :scope => "countries")
+  %p= I18n.t(@user.country, :scope => "countries") rescue "N/A"
 
   %h3= t(:'activerecord.attributes.user.references')
   %p= @user.references

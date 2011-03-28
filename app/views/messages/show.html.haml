@@ -1,4 +1,10 @@
 -title h(@message.subject)
+- content_for :sub_nav do
+  %ul#sub_sections
+    %li
+      = link_to t(:'buttons.back', :model => t(:'messages.inbox.title')), user_messages_path(@user), :class => "button back"
+  .clear
+    
 .field
   %label.inline= t(:'messages.from')  
   = @message.sender == @user ? link_to("You", user_path(@user)) : link_to(h(@message.sender.username), user_path(@user))
@@ -16,5 +22,4 @@
 .field
   - if @message.recipient == @user
     = link_to t(:'buttons.reply'), new_user_message_path(@user, :reply_to => @message), :class => "button reply"
-    = t(:'common.or')
-  = link_to t(:'buttons.back', :model => t(:'messages.inbox.title')), user_messages_path(@user), :class => "button back"
+
