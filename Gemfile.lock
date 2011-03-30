@@ -1,9 +1,10 @@
 GIT
   remote: git://github.com/documentcloud/jammit.git
-  revision: 45fd7dd87719b416d34452c555f07c6977f77179
+  revision: 466aa5a0392ff76190fdc7c26f5ae185f48b8530
   specs:
     jammit (0.6.0)
       closure-compiler (>= 0.1.0)
+      uglifier (>= 0.4.0)
       yui-compressor (>= 0.9.3)
 
 GIT
@@ -53,7 +54,7 @@ GEM
       xml-simple
     builder (2.1.2)
     chunky_png (0.12.0)
-    closure-compiler (1.0.0)
+    closure-compiler (1.1.1)
     compass (0.11.beta.3)
       chunky_png (~> 0.12.0)
       sass (>= 3.1.0.alpha.249)
@@ -88,13 +89,14 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
-    heroku (1.18.3)
+    heroku (1.19.1)
+      activesupport (>= 2.1.0)
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
     heroku_san (1.1.0)
       heroku
       rails (>= 2)
-    i18n (0.4.2)
+    i18n (0.5.0)
     jquery-rails (0.2.7)
       rails (~> 3.0)
       thor (~> 0.14.4)
@@ -109,15 +111,15 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     mocha (0.9.12)
-    mysql2 (0.2.6)
-    nifty-generators (0.4.5)
+    mysql2 (0.2.7)
+    nifty-generators (0.4.6)
     nokogiri (1.4.4)
     paperclip (2.3.8)
       activerecord
       activesupport
     polyglot (0.3.1)
     rack (1.2.2)
-    rack-mount (0.6.13)
+    rack-mount (0.6.14)
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
@@ -152,17 +154,20 @@ GEM
     settingslogic (2.0.6)
     shoulda (2.11.3)
     term-ansicolor (1.0.5)
+    therubyracer (0.8.1)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.25)
+    uglifier (0.4.0)
+      therubyracer (~> 0.8.0)
     webrat (0.7.3)
       nokogiri (>= 1.2.0)
       rack (>= 1.0)
       rack-test (>= 0.5.3)
     will_paginate (3.0.pre2)
-    xml-simple (1.0.14)
-    yui-compressor (0.9.4)
+    xml-simple (1.0.15)
+    yui-compressor (0.9.5)
 
 PLATFORMS
   ruby
