@@ -1,33 +1,73 @@
-- title t(:'.title', :username => @user.username)
+- title t(:'.title', :username => @user.username), false
 
-= image_tag @user.avatar.url(:medium)
-
--if !@user.blank?
-
-  %h3= t(:'activerecord.attributes.user.instruments')
-  %p= @user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
-
-  %h3= t(:'activerecord.attributes.user.genre')
-  %p= t(:"musical_genres.#{@user.genre}")
-
-  %h3= t(:'activerecord.attributes.user.zip')
-  %p= @user.zip
-
-  %h3= t(:'activerecord.attributes.user.country')
-  %p= I18n.t @user.country, :scope => 'countries'
-
-  %h3= t(:'activerecord.attributes.user.references')
-  %p= @user.references
-
-  %h3= t(:'activerecord.attributes.user.testimonials', :user => @user.username)
-  %ul
-    - for testimonial in @testimonials do
-      %li.testimonial
-        = testimonial.created_at
-        %br
-        = testimonial.body
+- content_for :sub_nav do
+  - if @user == current_user
+    %ul#sub_sections
+      %li
+        = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+      %li
+        = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
+  
+  - else
+    %ul#sub_sections
+      %li
+        = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), users_path, :class => "button back"
+  .clear
 
 
 
+%section.left_drawer
+  = image_tag @user.avatar.url(:medium), :class => "profile_picture"
+  
+%section.right_drawer
+  -if !@user.blank?
+    %header 
+      %h1.username= t(:'.title', :username => @user.username)
+      %span.location_infos
+        =t(:"users.types.#{@user.user_type}")
+        =t(:'.from')
+        = @user.zip
+        = I18n.t(@user.country, :scope => "countries") rescue "N/A"
+        
+    %p.looking_for
+      = t(:'.is_looking_for')
+      = t(:"users.types.#{@user.searching_for}")
+      = t(:'.to_play')
+      = t(:"musical_genres.#{@user.genre}")
+      = t(:'.music')
+    
+    - unless @user.references.blank?
+      %h3= t(:'activerecord.attributes.user.instruments')
+      .instruments_tag_list
+        =# @user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
+        - @user.instruments.each do |instrument|
+          %span= t(:"instruments.#{instrument}")
+    
+    - unless @user.references.blank?   
+      %h3= t(:'activerecord.attributes.user.references')
+      %p= @user.references
+    
+    - unless @user.request_message.blank?
+      %h3= t(:'activerecord.attributes.user.request_message')
+      %p= @user.request_message
+    
+    - unless @testimonials.blank?
+      %h3= t(:'activerecord.attributes.user.testimonials', :user => @user.username)
+      %ul
+        - for testimonial in @testimonials do
+          %li.testimonial
+            = testimonial.created_at
+            %br
+            = testimonial.body
+            
+    / TODO make it work from profile
+    / -if @current_user && @current_user != @user
+    /     
+    /       = form_for @message, :as => :message, :url => user_message_path(@current_user, :to => @user.id) do |f|
+    /         = render :partial => "/messages/form", :object => f
+
+    = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button submit contact small"
+
+.clear
 
 

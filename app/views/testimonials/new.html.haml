@@ -1,3 +1,10 @@
-- title "New Testimonial"
+- title t(:'.title')
+
+- content_for :sub_nav do
+  %ul#sub_sections
+    %li
+      = link_to t(:'buttons.back', :model => t(:'activerecord.models.testimonials')), testimonials_path(@user), :class => "button back"
+  .clear
+
+
 = render 'form'
-%p= link_to "Back to List", testimonials_path

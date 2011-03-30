@@ -2,79 +2,79 @@
   = f.error_messages
   %h2= t(:'users.musician_infos')
 
-  %p
-    = f.label :user_type, t(:'activerecord.attributes.user.user_type') 
-    %span.required ( #{t(:'common.required')} )
-    %br
-    %select{ :id => "user_user_type", :name => "user[user_type]" }
-      -  User::USER_TYPES.each do |user_type|
-        = options_for_select([[t(:"users.types.#{user_type}"), user_type]], :selected => ( @user.user_type))
-  %p
+  .field
+    = f.label :user_type, t(:'activerecord.attributes.user.user_type')     
+    .checkbox_set
+      - User::USER_TYPES.each do |user_type|
+        = radio_button(:user, :user_type, user_type)
+        = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
+        
+  .field
     = f.label :instruments, t(:'activerecord.attributes.user.instruments')
-    %br
-    - User::INSTRUMENTS.each do |instrument|
-      = f.check_box(instrument)
-      = f.label(instrument, t(:"instruments.#{instrument}"))
-  %p
+    - User::INSTRUMENTS.in_groups_of(4, false) do |instruments|
+      .instrument_column
+        - for instrument in instruments
+          .instrument
+            = f.check_box(instrument)
+            = f.label(instrument, t(:"instruments.#{instrument}"))
+    .clear
+  .field
     = f.label :genre, t(:'activerecord.attributes.user.genre')
-    %span.required ( #{t(:'common.required')} )
-    %br    
     %select{ :id => "user_genre", :name => "user[genre]" }
       - User::MUSICAL_GENRES.each do |genre|
         = options_for_select([[t(:"musical_genres.#{genre}"), genre]], :selected => ( @user.genre))
-  %p
+  .field
     = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
-    %span.required ( #{t(:'common.required')} )
-    %br
-    %select{ :id => "user_searching_for", :name => "user[searching_for]" }
-      -  User::USER_TYPES.each do |searching_for|
-        = options_for_select([[t(:"users.types.#{searching_for}"), searching_for]], :selected => ( @user.searching_for))
+    
+    .checkbox_set
+      - User::USER_TYPES.each do |searching_for|
+        = radio_button(:user, :searching_for, searching_for)
+        = f.label "searching_for_" + searching_for, t(:"users.types.#{searching_for}")     
         
-  %p
+  .field
     = f.label :references, t(:'activerecord.attributes.user.references')
-    %br
-    = f.text_field :references
-  %p
+    
+    = f.text_field :references, :size => 60
+  .field
     = f.label :request_message, t(:'activerecord.attributes.user.request_message')
-    %br
-    = f.text_area :request_message
+    
+    = f.text_area :request_message, :size => "45x20"
 
   %h2= t(:'users.location')
 
-  %p
+  .field
     = f.label :zip, t(:'activerecord.attributes.user.zip')
-    %span.required ( #{t(:'common.required')} )
-    %br
+    
     = f.text_field :zip
-  %p
+  .field
     = f.label :country, t(:'activerecord.attributes.user.country')
-    %span.required ( #{t(:'common.required')} )
-    %br
+    
     = localized_country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
   
   %h2= t(:'users.credentials')
-  %p
+  .field
     = f.label :avatar, t(:'activerecord.attributes.user.avatar')
     - if @user.avatar.present?
       .avatar.small
         = image_tag @user.avatar.url(:gallery)
     = f.file_field :avatar
-  %p
+    .clear
+  .field
     = f.label :username, t(:'activerecord.attributes.user.username')
-    %br
+    
     = f.text_field :username
-  %p
+  .field
     = f.label :email, t(:'activerecord.attributes.user.email')
-    %br
+    
     = f.text_field :email
-  %p
+  .field
     = f.label :password, t(:'activerecord.attributes.user.password')
-    %br
+    
     = f.password_field :password, :class => 'form_guide', :title => t(:'tooltips.password')
-  %p
+  .field
     = f.label :password_confirmation, t(:'activerecord.attributes.user.password_confirmation')
-    %br
-    = f.password_field :password_confirmation
+    
+    = f.password_field :password_confirmation 
 
-  %p
-    = f.submit(t(:'buttons.update'), :type => "submit")
+  .field
+    =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"

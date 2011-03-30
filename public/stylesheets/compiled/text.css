@@ -1,86 +1,199 @@
-/* 960 Grid System ~ Text CSS.
- * Learn more ~ http://960.gs/
- * *
- * Licensed under GPL and MIT. */
-/* line 4, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
+/* TABLES
+---------------------------------------- */
+/*$table-color-odd: #f3f7fb;*/
+/* SUBNAV COLORS
+---------------------------------------- */
+/* NOTICES
+---------------------------------------- */
+/* line 1, ../../../app/stylesheets/_base.scss */
+html {
+  font-size: 100%;
+  min-height: 101%;
+}
+
+/* line 5, ../../../app/stylesheets/_base.scss */
 body {
-  font: 13px/1.5 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+  background-color: #cfcfcf;
+  font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
+  font-size: 62.5%;
+  color: #666;
 }
 
-/* line 6, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-a:focus {
-  outline: 1px dotted invert;
+/* line 11, ../../../app/stylesheets/_base.scss */
+a {
+  color: #157ebe;
+}
+/* line 13, ../../../app/stylesheets/_base.scss */
+a img {
+  border: none;
 }
 
-/* line 8, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-hr {
-  border-color: #cccccc;
-  border-style: solid;
-  border-width: 1px 0 0;
+/* line 16, ../../../app/stylesheets/_base.scss */
+.clear {
   clear: both;
   height: 0;
+  overflow: hidden;
 }
 
-/* line 14, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
+/* line 21, ../../../app/stylesheets/_base.scss */
+.wide {
+  width: 100%;
+}
+
+/* line 24, ../../../app/stylesheets/_base.scss */
+.unread_bullet {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+/* CSS ARROWS
+---------------------------------------- */
+/*HEADINGS
+-------------------------------------------------------- */
+/* line 7, ../../../app/stylesheets/text.scss */
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: white 0 1px 1px;
+}
+
+/* line 11, ../../../app/stylesheets/text.scss */
 h1 {
-  font-size: 25px;
+  color: #515151;
+  font-size: 3em;
+  margin-bottom: 0.6em;
+  line-height: 1.2em;
 }
 
-/* line 16, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
+/* line 17, ../../../app/stylesheets/text.scss */
 h2 {
-  font-size: 23px;
+  color: #515151;
+  font-size: 2em;
+  margin-bottom: 0.9em;
+  line-height: 0.9em;
 }
 
-/* line 18, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
+/* line 23, ../../../app/stylesheets/text.scss */
 h3 {
-  font-size: 21px;
+  color: #515151;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 3px;
+  line-height: 1.2em;
 }
 
-/* line 20, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
+/* line 30, ../../../app/stylesheets/text.scss */
 h4 {
-  font-size: 19px;
+  color: #000;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  line-height: 1.5em;
+  font-variant: small-caps;
 }
 
-/* line 22, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
+/* line 37, ../../../app/stylesheets/text.scss */
 h5 {
-  font-size: 17px;
+  color: #000;
+  font-size: 1em;
+  margin-bottom: 1.8em;
+  line-height: 1.8em;
+  font-variant: small-caps;
 }
 
-/* line 24, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
+/* line 44, ../../../app/stylesheets/text.scss */
 h6 {
-  font-size: 15px;
+  color: #000;
+  font-size: 1em;
+  margin-bottom: 1.8em;
+  line-height: 1.8em;
 }
 
-/* line 26, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-ol {
-  list-style: decimal;
+/* line 50, ../../../app/stylesheets/text.scss */
+p {
+  font-size: 1.2em;
+  line-height: 1.48em;
+  margin-bottom: 10px;
 }
 
-/* line 28, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
+/* line 55, ../../../app/stylesheets/text.scss */
+blockquote p {
+  font-size: 1.2em !important;
+  line-height: 1.5em !important;
+  margin-bottom: 1.5em !important;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 63, ../../../app/stylesheets/text.scss */
+blockquote p cite {
+  font-style: normal;
+}
+
+/* line 66, ../../../app/stylesheets/text.scss */
+.generic strong {
+  font-variant: small-caps;
+}
+
+/* line 69, ../../../app/stylesheets/text.scss */
+.generic em {
+  font-style: italic;
+  font-weight: inherit;
+}
+
+/* line 73, ../../../app/stylesheets/text.scss */
+.amp {
+  /* Give those ampersands a right sexy look */
+  font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
+  font-style: italic;
+  font-weight: normal;
+  line-height: inherit;
+}
+
+/* line 79, ../../../app/stylesheets/text.scss */
+abbr {
+  border-bottom: 1px dotted #666;
+  border-color: inherit;
+  cursor: help;
+}
+
+/* line 85, ../../../app/stylesheets/text.scss */
 ul {
-  list-style: square;
+  margin-bottom: 1.8em;
+  list-style: square inside;
 }
 
-/* line 30, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-li {
-  margin-left: 30px;
+/* line 89, ../../../app/stylesheets/text.scss */
+ul li {
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
 
-/* line 32, ../../../../../.rvm/gems/ruby-1.9.2-rc2/gems/compass-960-plugin-0.10.0/stylesheets/960/_text.sass */
-p,
-dl,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ol,
-ul,
-pre,
-table,
-address,
-fieldset {
-  margin-bottom: 20px;
+/* line 93, ../../../app/stylesheets/text.scss */
+ul li.caption {
+  /* Apply this class to the first list item in a list to give it a caption */
+  font-variant: small-caps;
+  list-style: none;
+  color: #000;
+}
+
+/* line 98, ../../../app/stylesheets/text.scss */
+li > ul, li > ol {
+  margin-bottom: 0;
+  margin-left: 5em;
+}
+
+/* line 102, ../../../app/stylesheets/text.scss */
+li > ul li, li > ol li {
+  font-size: 1em;
+}
+
+/* line 105, ../../../app/stylesheets/text.scss */
+ol {
+  margin-bottom: 1.8em;
+  list-style: decimal inside;
+}
+
+/* line 109, ../../../app/stylesheets/text.scss */
+ol li {
+  font-size: 1.2em;
+  line-height: 1.5em;
 }

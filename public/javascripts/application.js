@@ -1,9 +1,10 @@
 $(document).ready(function() {
 
   // TIPSY
-  $('.form_guide').focus(function () {
-   $(this).tipsy({trigger: 'focus', gravity: 'w'});
-  });
+
+  $('.tooltip').tipsy({trigger: 'hover', gravity: 's'});
+  
+  $('input.form_guide').tipsy({trigger: 'focus', gravity: 'w'});
 
   // FORMS UTILS
   var search_form = $('form.search')
@@ -12,4 +13,54 @@ $(document).ready(function() {
     $(this).submit();
   });
 
+  
+  // UI STUFF
+
+	$('.button').button({
+    text: true
+  });
+  
+  $('.button.submit').button({
+    icons: {
+      secondary: 'ui-icon-triangle-1-e'
+    },
+    text: true
+  });
+  
+  $('.button.reset').button({
+    icons: {
+      primary: 'ui-icon-arrowreturnthick-1-w'
+    },
+    text: true
+  });
+  
+  $('.button.back').button({
+    icons: {
+      primary: 'ui-icon-triangle-1-w'
+    },
+    text: true
+  });
+  
+  $( ".tabs" ).tabs();  
+  
+  $(".checkbox_set").buttonset();
+  
+  $("select, input:checkbox, input.radio:radio").uniform(); 
+  
+  
+  // CSS ARROWS
+  
+  $('#main_nav li a.current').append('<div class="main_nav_current_arrow"></div>');
+  $('#sub_sections li a.current').append('<div class="top_sub_nav_arrow"></div>');
+  
+  // NOISY STUFF
+  
+  $('body, #content, #header').noisy({
+      'intensity' : 1, 
+      'size' : 50, 
+      'opacity' : 0.04, 
+      'fallback' : '', 
+      'monochrome' : false
+  });
+  
 });

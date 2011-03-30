@@ -3,7 +3,7 @@
 common: &default_settings
   version: 1
   site:
-    results_per_page: 5
+    results_per_page: 3
     avatar:
       normal:
         size: 300

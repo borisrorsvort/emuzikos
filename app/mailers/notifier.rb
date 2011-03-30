@@ -1,6 +1,6 @@
 class Notifier < ActionMailer::Base
   default :from => "info@emuzikos.com"
-  
+  default :charset => "utf-8"  
   def password_reset_instructions(user)
     @user = user
     @edit_password_reset_url = edit_password_reset_url(user.perishable_token)

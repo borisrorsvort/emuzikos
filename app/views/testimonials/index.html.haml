@@ -1,13 +1,14 @@
-- title "Testimonials"
-%table
-  %tr
-    %th Body
-    %th User
-  - for testimonial in @testimonials
+- title t(:'.title')
+
+- if !@testimonials.blank?
+  %table.dispaly.wide
     %tr
-      %td= testimonial.body
-      %td= testimonial.user.username
-      %td= link_to "Show", testimonial
-      %td= link_to "Edit", edit_testimonial_path(testimonial)
-      %td= link_to "Destroy", testimonial, :confirm => 'Are you sure?', :method => :delete
-%p= link_to "New Testimonial", new_testimonial_path
+      %th=t(:'activerecord.attributes.testimonial.body')
+      %th=t(:'activerecord.attributes.testimonial.user')
+      %th
+    = render @testimonials
+-else
+
+  %p= t(:'testimonials.no_testimonials')
+%br 
+%p= link_to t(:'buttons.testimonials.create'), new_testimonial_path, :class => "button add"

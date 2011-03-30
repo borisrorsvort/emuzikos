@@ -5,26 +5,37 @@ en:
   common:
     required: Required
     please_choose: 'Please choose ...'
+    are_you_sure: Are you sure?
     reset: Reset
-
+    or: or
+    
 ### TABLES
 ### ______________________________________________________    
   tooltips:
     email: "Must be a valid email address"
     password: "Must contains at least 5 characters"
+    back_to_home: Back to Homepage
+    search:
+      match_instrument: Find users that match instruments in your profile
 
 ### MENU
 ### ______________________________________________________
 
   menu:
     profile:
-      show: My Profile
+      show: Profile
       edit: Edit my profile
-    all_users: All users
+      public: Public profile
+    all_users: Search
     logout: Lougout
     login: Login
     register: Register
-    
+    messages:
+      messages: Messages
+      inbox: Inbox
+      sent_messages: "Sent Messages"
+    testimonials: Testimonials
+    contact: "Contact us"
 
 ### TABLES
 ### ______________________________________________________
@@ -40,11 +51,21 @@ en:
     update: Update
     create: Create
     edit: Edit
+    back: "Back to %{model}"
     delete: Delete
+    show: Show
     login: Login
     submit: Submit
     search: Search
-
+    compose: Compose
+    cancel: Cancel
+    reply: Reply
+    all: View all
+    contact: Contact
+    testimonials:
+      all: Go back to Testimonials
+      create: Add a new testimonial
+    
 ### MUSICAL GENRES
 ### ______________________________________________________
  
@@ -115,20 +136,63 @@ en:
       no_users: "We couldn't find any users corresponding to you search criterias" 
     show:
       title: "%{username}'s profile"
+      from: from
+      is_looking_for: is looking for a
+      to_play: to play
+      music: music
+      
     edit:
       titles:
         title: Edit your profile
     new:
       title: "New User"
+    crop:
+      prewiew: "Preview"
+
+### MESSAGES
+### ______________________________________________________
+
+  user_sessions:
+    new: 
+      forgot_password: Forgot your password?
+  
+### MESSAGES
+### ______________________________________________________
+
+  messages:
+    delete: "Delete"
+    subject: Subject
+    sender: Send by
+    from: From
+    received: Received on
+    sent_on: Sent on
+    no_messages: You have no messages
+    to: To
+    message: Message
+    new:
+      title: New message
+    inbox:
+      title: Your Messages
+      subtitle: Inbox
+    sent:
+      title: Your Messages
+      subtitle: Sent Messages
 
 ### SEARCH TERMS
 ### ______________________________________________________
-
+  
+  quick_links:
+    title: "Quick links:"
+    local_musicians: Local musicians
+    recent_subscriptions: Recent subscriptions
+    instruments_match: Instruments match
+      
   search_terms:
     iam: "I'm searching for a"
-    who_search_for: "and who's searching for a"
-    who_plays: who plays
-    in: in
+    who_search_for: "who's searching for a"
+    who_plays: Instruments
+    music_style: Main musical genre
+    country: country
     
 ### PASSWORD RESETS
 ### ______________________________________________________
@@ -150,3 +214,13 @@ en:
       message: Message
       address: Address
       name: Name
+
+### TESTIMONIALS
+### ______________________________________________________
+
+  testimonials:
+    no_testimonials: "Sorry, you have'nt written any testominals. May be time for one :)"
+    index:
+      title: Testimonials
+    new:
+      title: New testimonial

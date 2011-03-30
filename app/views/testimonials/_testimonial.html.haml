@@ -1,0 +1,7 @@
+%tr
+  %td= testimonial.body
+  %td= testimonial.user.username
+  %td
+    = link_to t(:'buttons.show'), testimonial, :class => "button display"
+    = link_to t(:'buttons.edit'), edit_testimonial_path(testimonial), :class => "button edit"
+    = link_to t(:'buttons.delete'), testimonial, :confirm => t(:'common.are_you_sure'), :method => :delete, :class => "button delete"

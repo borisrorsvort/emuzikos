@@ -1,0 +1,62 @@
+html{
+	font-size:100%;
+	min-height:101%; }
+	
+body { 
+  background-color: #cfcfcf;
+  font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
+  font-size:62.5%;
+  color:#666; }
+  
+a { 
+  color: $blue_dark;
+  img {
+    border: none; }}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;}
+
+.wide {
+  width: 100%;}
+ 
+.unread_bullet {
+  font-size: 20px;
+  font-weight:bold;
+  line-height: 1em; }
+
+@mixin inset($color) {
+  text-shadow: $color 0 1px 1px; }
+
+/* CSS ARROWS
+---------------------------------------- */
+
+@mixin css-arrow($orientation: "top", $bg-color: #fff, $arrow-color: #ccc, $size: 10px) {
+  
+  font-size: 0px; 
+  line-height: 0%; 
+  width: 0px;
+  
+  @if $orientation == "top" {
+    border-top: $size solid $arrow-color;
+    border-left: $size solid $bg-color;
+    border-right: $size solid $bg-color; }
+  
+  @if $orientation == "bottom" {
+    border-bottom: $size solid $arrow-color;
+    border-left: $size solid $bg-color;
+    border-right: $size solid $bg-color; }
+  
+  @if $orientation == "left" {
+    border-left: $size solid $arrow-color;
+    border-top: $size solid $bg-color;
+    border-bottom: $size solid $bg-color; }
+  
+  @if $orientation == "right" {
+    border-right: $size solid $arrow-color;
+    border-top: $size solid $bg-color;
+    border-bottom: $size solid $bg-color; } }
+
+
+

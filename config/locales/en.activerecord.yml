@@ -73,8 +73,11 @@ en:
         testimonials: "%{user}'s Testimonials"
       testimonial:
         body: Body
+        user: User
     models:
-      user: User
-      testimonial: Testimonial
+      users: Users
+      testimonials: Testimonials
+      messages: Messages
+      search: Search
       
 

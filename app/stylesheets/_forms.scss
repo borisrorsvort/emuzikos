@@ -1,4 +1,65 @@
 select {
-  border: 1px solid #ccc;
-  @include box-shadow(#666,0, 1px, 1px);
+  border        : 1px solid #ccc;
+  @include single-box-shadow(#666,0, 1px, 1px);
+}
+
+form {
+  vertical-align: top;
+}
+
+/* FORMS */
+
+.field {
+  display       : block;
+  margin-bottom : 15px; }
+
+label {
+  font-weight   : bold;
+  display       : block;
+  font-size: 1.2em;
+  margin-bottom: 5px; }
+  
+.required {
+  display       : block;
+  font-style    : italic;
+  opacity       : 0.6;
+  margin-bottom : 5px; }
+  
+.inline {
+  display       : inline; }
+  
+input, textarea {
+  @include border-radius(3px);
+  background    : #fff;
+  border        : 1px solid #ccc;
+  padding       : 5px;
+  &:focus, &:active {
+    @include single-box-shadow(#666, 0, 0, 3px);
+  }
+}
+
+/* USER PROFILE FORM */
+
+.instrument_column {
+  width         : 150px;
+  float         : left;
+  .instrument {
+    padding     : 5px 0;
+    label {
+      padding-top: 5px; }}}
+
+/* SEARCH FORM */
+
+.reset_button {
+  float:left;
+  position:relative;
+  top: 5px;
+  margin-left: 10px;}
+  
+#search_form {
+  .field {
+    float       : left;
+    height      : 15px;
+    min-width   : 200px;
+  }
 }

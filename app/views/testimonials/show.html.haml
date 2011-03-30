@@ -1,12 +1,16 @@
 - title "Testimonial"
-%p
-  %strong Body:
+- content_for :sub_nav do
+  %ul#sub_sections
+    %li
+      = link_to t(:'buttons.back', :model => t(:'activerecord.models.testimonials')), testimonials_path(@user), :class => "button back"
+  .clear
+  
+.field
+  = label_tag :body, t(:'activerecord.attributes.testimonial.body')
   = @testimonial.body
-%p
-  %strong User:
+.field
+  = label_tag :username, t(:'activerecord.attributes.testimonial.user')
   = @testimonial.user.username
-%p
-  = link_to "Edit", edit_testimonial_path(@testimonial)
-  |
-  \#{link_to "Destroy", @testimonial, :confirm => 'Are you sure?', :method => :delete} |
-  \#{link_to "View All", testimonials_path}
+.field
+  = link_to t(:'buttons.edit'), edit_testimonial_path(@testimonial), :class => "button edit"
+  = link_to t(:'buttons.delete'), @testimonial, :confirm => 'Are you sure?', :method => :delete, :class => "button delete"
