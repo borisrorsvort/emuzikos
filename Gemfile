@@ -10,7 +10,7 @@ gem 'therubyracer-heroku', '0.8.1.pre3'
 
 gem "haml", ">= 3.1.alpha.50"
 gem 'haml-rails'
-gem "compass", "0.11.beta.3"
+#gem "compass", "0.11.beta.3"
 
 gem 'heroku'
 gem 'formtastic', '~> 1.1.0'
@@ -30,10 +30,10 @@ end
 
 
 group :test do
-  gem 'factory_girl_rails'
-  gem "cucumber-rails"
-  gem "shoulda"
-  gem "rspec-rails", "2.0.0.beta.12"
-  gem "mocha"
+  #gem 'factory_girl_rails'
+  #gem "cucumber-rails"
+  #gem "shoulda"
+  #gem "rspec-rails", "2.0.0.beta.12"
+  #gem "mocha"
 end
 

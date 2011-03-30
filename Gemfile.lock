@@ -53,11 +53,7 @@ GEM
       mime-types
       xml-simple
     builder (2.1.2)
-    chunky_png (0.12.0)
     closure-compiler (1.1.1)
-    compass (0.11.beta.3)
-      chunky_png (~> 0.12.0)
-      sass (>= 3.1.0.alpha.249)
     configuration (1.2.0)
     cucumber (0.10.2)
       builder (>= 2.1.2)
@@ -150,7 +146,6 @@ GEM
     rspec-rails (2.0.0.beta.12)
       rspec (= 2.0.0.beta.12)
       webrat (>= 0.7.0)
-    sass (3.1.0.alpha.252)
     settingslogic (2.0.6)
     shoulda (2.11.3)
     term-ansicolor (1.0.5)
@@ -176,7 +171,6 @@ PLATFORMS
 DEPENDENCIES
   authlogic!
   aws-s3
-  compass (= 0.11.beta.3)
   cucumber-rails
   factory_girl_rails
   formtastic (~> 1.1.0)
