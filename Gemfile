@@ -6,7 +6,7 @@ gem 'rails', '3.0.3'
 gem "jquery-rails"
 gem "will_paginate", "3.0.pre2"
 gem "gritter"
-gem 'therubyracer-heroku', '0.8.1.pre3'
+#gem 'therubyracer-heroku', '0.8.1.pre3'
 
 gem "haml", ">= 3.1.alpha.50"
 gem 'haml-rails'
