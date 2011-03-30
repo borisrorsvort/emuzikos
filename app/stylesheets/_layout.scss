@@ -98,3 +98,27 @@ $sub_nav_topbottom_padding: 15px;
     }
   }
 }
+
+
+/* HOMEPAGE
+---------------------------------------- */
+
+.centered_grid {
+  width: 960px;
+  margin: 0 auto;
+}
+
+
+/* PROFILE SHOW
+---------------------------------------- */
+
+$ld_width: 240px ;
+
+.left_drawer {
+  width: $ld_width ;
+  display:inline;
+  float:left;
+}
+.right_drawer {
+  padding-left: $ld_width;
+}

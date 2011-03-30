@@ -10,7 +10,7 @@ class TestimonialsController < ApplicationController
   def new
     @testimonial = Testimonial.new
   end
-  
+
   def create
     
     @testimonial = Testimonial.new(params[:testimonial])

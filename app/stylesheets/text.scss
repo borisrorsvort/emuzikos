@@ -15,17 +15,17 @@ h1{
 	line-height:1.2em;
 }
 h2{
-	color:#000;
+	color:#515151;
 	font-size:2em;
 	margin-bottom:0.9em;
 	line-height:0.9em;
 }
 h3{
-	color:#000;
-	font-size:1.5em;
-	margin-bottom:1.2em;
+	color:#515151;
+	font-size:1.3em;
+	font-weight:bold;
+	margin-bottom: 3px;
 	line-height:1.2em;
-	font-variant:small-caps;
 }
 h4{
 	color:#000;
@@ -47,7 +47,11 @@ h6{
 	margin-bottom:1.8em;
 	line-height:1.8em;
 }
-
+p {
+  font-size: 1.2em;
+  line-height: 1.48em;
+  margin-bottom: 10px;
+}
 blockquote p{
 	font-size:1.2em!important;
 	line-height:1.5em!important;

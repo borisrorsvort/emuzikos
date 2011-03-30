@@ -7,19 +7,5 @@
   .clear
 
 = form_for @message, :url => user_messages_path(@user) do |f|
-  = f.error_messages
-  
-  = f.hidden_field :to
 
-  .field
-    = f.label :subject, t(:'messages.subject')
-    = f.text_field :subject
-
-  .field
-    = f.label :body, t(:'messages.message')
-    = f.text_area :body
-    
-  .field
-    = submit_tag t(:'buttons.submit'), :class => "button submit"
-
-    
+  = render :partial => "messages/form", :object => f

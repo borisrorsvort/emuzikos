@@ -20,6 +20,8 @@
         %span.unread_bullet!=unread_bullet 
       %th= t(:'messages.subject')
       %th= t(:'messages.sender')
+      %th= t(:'activerecord.attributes.user.zip')
+      %th= t(:'activerecord.attributes.user.country')
       %th= t(:'messages.sent_on')
       
     - for message in @messages
@@ -30,6 +32,8 @@
             %span.unread_bullet!=unread_bullet 
         %td= link_to h(message.subject), user_message_path(@user, message)
         %td= link_to h(message.sender.username), user_path(@user)
+        %td= @user.zip
+        %td= I18n.t(@user.country, :scope => 'countries') rescue nil
         %td= h message.created_at.to_s(:long)
     %tr
       %td{:colspan => "5"}

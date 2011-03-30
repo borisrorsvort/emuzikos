@@ -17,6 +17,8 @@
       %th{:class => "delete_seleted"}= t(:'messages.delete')
       %th= t(:'messages.subject')
       %th= t(:'messages.to')
+      %th= t(:'activerecord.attributes.user.zip')
+      %th= t(:'activerecord.attributes.user.country')
       %th= t(:'messages.sent_on')
   
     - for message in @messages
@@ -24,6 +26,8 @@
         %td= check_box_tag "delete[]", message.id
         %td= link_to h(message.subject), user_message_path(@user, message)
         %td= link_to h(message.recipient.username), user_path(@user)
+        %td= @user.zip
+        %td= I18n.t(@user.country, :scope => 'countries') rescue nil
         %td= h message.created_at.to_s(:long)
     %tr
       %td{:colspan => "4"}

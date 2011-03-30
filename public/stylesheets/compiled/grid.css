@@ -416,6 +416,28 @@ a img {
   padding: 20px;
 }
 
+/* HOMEPAGE
+---------------------------------------- */
+/* line 106, ../../../app/stylesheets/_layout.scss */
+.centered_grid {
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* PROFILE SHOW
+---------------------------------------- */
+/* line 117, ../../../app/stylesheets/_layout.scss */
+.left_drawer {
+  width: 240px;
+  display: inline;
+  float: left;
+}
+
+/* line 122, ../../../app/stylesheets/_layout.scss */
+.right_drawer {
+  padding-left: 240px;
+}
+
 /* line 4, ../../../app/stylesheets/_notices.scss */
 #flash_notice,
 #flash_error,
@@ -769,4 +791,65 @@ body#messages .delete_seleted, body#messages .unread {
 .avatar.small {
   height: 20px;
   width: 20px;
+}
+
+/* USER SHOW
+---------------------------------------- */
+/* line 106, ../../../app/stylesheets/grid.scss */
+.profile_picture {
+  border: 8px solid #fff;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+  -moz-box-shadow: 0 1px 2px #999999;
+  -webkit-box-shadow: 0 1px 2px #999999;
+  -o-box-shadow: 0 1px 2px #999999;
+  box-shadow: 0 1px 2px #999999;
+}
+
+/* line 111, ../../../app/stylesheets/grid.scss */
+.looking_for {
+  text-transform: lowercase;
+  color: #1d8cc8;
+  font-weight: bold;
+  margin-top: 10px;
+  text-shadow: white 0 1px 1px;
+}
+
+/* line 118, ../../../app/stylesheets/grid.scss */
+h1.username {
+  margin-bottom: 3px;
+  display: inline;
+}
+
+/* line 122, ../../../app/stylesheets/grid.scss */
+.location_infos {
+  font-size: 1.3em;
+  margin-left: 10px;
+  color: #999;
+}
+
+/* line 127, ../../../app/stylesheets/grid.scss */
+.instruments_tag_list {
+  margin: 10px 0 20px;
+}
+/* line 129, ../../../app/stylesheets/grid.scss */
+.instruments_tag_list span {
+  padding: 4px 10px;
+  background-color: #1d8cc8;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  margin-right: 5px;
+  color: #fff;
+  -moz-box-shadow: 0 1px 2px white;
+  -webkit-box-shadow: 0 1px 2px white;
+  -o-box-shadow: 0 1px 2px white;
+  box-shadow: 0 1px 2px white;
 }

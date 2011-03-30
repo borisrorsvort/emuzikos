@@ -98,3 +98,40 @@
     height: 20px;
     width:20px;}
 }
+
+
+/* USER SHOW
+---------------------------------------- */
+
+.profile_picture {
+  border: 8px solid #fff;
+  @include border-radius(8px);
+  @include single-box-shadow(#999, 0, 1px, 2px );
+}
+.looking_for {
+  text-transform:lowercase;
+  color: $blue_basic;
+  font-weight:bold;
+  margin-top: 10px;
+  @include inset(#fff);
+}
+h1.username {
+  margin-bottom: 3px;
+  display:inline;
+}
+.location_infos {
+  font-size: 1.3em;
+  margin-left: 10px;
+  color: #999;
+}
+.instruments_tag_list {
+  margin: 10px 0 20px;
+  span {
+    padding: 4px 10px;
+    background-color: $blue_basic;
+    @include border-radius(3px);
+    margin-right: 5px;
+    color: #fff;
+    @include single-box-shadow(#fff, 0, 1px, 2px );
+  }
+}

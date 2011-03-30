@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
       :normal => "300>", 
       :medium => "200x200#",
       :thumb => "100x100#", 
-      :gallery => "20x20#" 
+      :gallery => "30x30#" 
     },  
     :processors => [:cropper],
     :whiny => true,
@@ -61,6 +61,7 @@ class User < ActiveRecord::Base
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
+  
   #Heroku read only fix
   def avatar_geometry(style = :original)
     @geometry ||= {}
@@ -101,7 +102,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  scope :profile_complete, lambda { where("country != ? and user_type != ? and genre != ? and zip != ? " , "", "", "", "") }
+  scope :profiles_completed, lambda { where("country != ? and user_type != ? and genre != ? and zip != ? " , "", "", "", "") }
   
   private
 
