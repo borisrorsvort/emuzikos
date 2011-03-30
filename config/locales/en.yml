@@ -14,22 +14,28 @@ en:
   tooltips:
     email: "Must be a valid email address"
     password: "Must contains at least 5 characters"
+    back_to_home: Back to Homepage
+    search:
+      match_instrument: Find users that match instruments in your profile
 
 ### MENU
 ### ______________________________________________________
 
   menu:
     profile:
-      show: My Profile
+      show: Profile
       edit: Edit my profile
-    all_users: All users
+      public: Public profile
+    all_users: Search
     logout: Lougout
     login: Login
     register: Register
-    inbox: My Inbox
+    messages:
+      messages: Messages
+      inbox: Inbox
+      sent_messages: "Sent Messages"
     testimonials: Testimonials
-    sent_messages: "Sent Messages"
-    
+    contact: "Contact us"
 
 ### TABLES
 ### ______________________________________________________
@@ -130,6 +136,11 @@ en:
       no_users: "We couldn't find any users corresponding to you search criterias" 
     show:
       title: "%{username}'s profile"
+      from: from
+      is_looking_for: is looking for a
+      to_play: to play
+      music: music
+      
     edit:
       titles:
         title: Edit your profile
@@ -169,13 +180,19 @@ en:
 
 ### SEARCH TERMS
 ### ______________________________________________________
-
+  
+  quick_links:
+    title: "Quick links:"
+    local_musicians: Local musicians
+    recent_subscriptions: Recent subscriptions
+    instruments_match: Instruments match
+      
   search_terms:
     iam: "I'm searching for a"
-    who_search_for: "and who's searching for a"
-    who_plays: who plays
-    music_style: "music style"
-    in: in
+    who_search_for: "who's searching for a"
+    who_plays: Instruments
+    music_style: Main musical genre
+    country: country
     
 ### PASSWORD RESETS
 ### ______________________________________________________

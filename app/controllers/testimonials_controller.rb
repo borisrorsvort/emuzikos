@@ -10,14 +10,15 @@ class TestimonialsController < ApplicationController
   def new
     @testimonial = Testimonial.new
   end
-  
+
   def create
     
     @testimonial = Testimonial.new(params[:testimonial])
     @testimonial.user = @current_user
     
     if @testimonial.save
-      flash[:notice] = "Successfully created testimonial."
+      gflash :success => "Successfully created testimonial"
+      #flash[:notice] = "Successfully created testimonial."
       redirect_to @testimonial
     else
       render :action => 'new'
@@ -31,7 +32,8 @@ class TestimonialsController < ApplicationController
   def update
     @testimonial = Testimonial.find(params[:id])
     if @testimonial.update_attributes(params[:testimonial])
-      flash[:notice] = "Successfully updated testimonial."
+      gflash :success => "Successfully updated testimonial"
+      #flash[:notice] = "Successfully updated testimonial."
       redirect_to @testimonial
     else
       render :action => 'edit'
@@ -41,7 +43,8 @@ class TestimonialsController < ApplicationController
   def destroy
     @testimonial = Testimonial.find(params[:id])
     @testimonial.destroy
-    flash[:notice] = "Successfully destroyed testimonial."
+    gflash :success => "Successfully destroyed testimonial"
+    #flash[:notice] = "Successfully destroyed testimonial."
     redirect_to testimonials_url
   end
 end

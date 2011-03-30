@@ -1,17 +1,14 @@
 - title t(:'.title')
 
 =form_for :email, :url => { :controller => 'pages', :action => 'contact' } do |f|
-  %p
+  .field
     = f.label :name, t(:'pages.contact.name')
-    %br
     = f.text_field :name, :size => 60
-  %p
+  .field
     = f.label :address, t(:'pages.contact.address')
-    %br
     = f.text_field :address, :size => 60
-  %p
+  .field
     = f.label :body, t(:'pages.contact.message')
-    %br
     = f.text_area :body, :rols => 10, :cols => 60
-
-  = submit_tag t(:'buttons.submit')
+  .field
+    = submit_tag t(:'buttons.submit'), :class => "button submit"

@@ -14,43 +14,50 @@
     = yield(:head)
 
   %body{:id => @body_id ? @body_id: controller.controller_name, :class => @body_class ? controller.action_name + " " + @body_class : controller.action_name}
-    
-    #container
-      /= render :partial => "shared/paypal_widget"
-    
+    %section#flash_messages
+      - flash.each do |name, msg|
+        = content_tag :div, msg, :id => "flash_#{name}"
+
+    %section#header
+      #logo
+        = link_to (@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home') do
+          = image_tag 'logo.png', :alt => "Emuzikos"
+          
       #user_nav
         -if current_user
           = "Hi #{current_user.username}!" 
-          |
-          =link_to t(:'menu.profile.show'), user_url(current_user)
-          |
-          =link_to t(:'menu.profile.edit'), edit_user_path(current_user)
-          |
-          =link_to "#{t(:'menu.inbox')} #{ ("(" + current_user.received_messages.un_read.count.to_s + ")") unless  current_user.received_messages.un_read.count == 0  }", user_messages_path(current_user)
-          |
+          = link_to t(:'menu.contact'), contact_path
           =link_to t(:'menu.testimonials'), testimonials_path
-          |
-          =link_to t(:'menu.all_users'), users_url
-          |
           =link_to t(:'menu.logout'), logout_path
+          
         -else
           =link_to t(:'menu.register'),new_user_path
-          |
           =link_to t(:'menu.login'),login_path
-
       .clear
+          
+    #container{:class => @current_user ? "with_sidebar" : nil}
+          
+      = render "/layouts/main_nav"  if @current_user
 
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
-      
-      - if show_title?
-        %h1= yield(:title)
+      %section#content
+        - if content_for? :sub_nav
+          %nav#sub_nav
+            = yield :sub_nav
+            
+        #inner_content
+          - if show_title?
+            %h1= yield(:title)
 
-      = yield
-      
+          = yield
+      .clear
     #footer
-      #donation_widget
+      .inner_footer
+        .header
+          
+        .footer_columns
+          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        #donation_widget
       
   = include_javascripts :jquery, :emuzikos
-  
-  = yield(:javascripts)  
+  = yield(:javascripts)
+  = gflash(:fade_in_speed => "fast", :fade_out_speed => "fast", :time => "fast")

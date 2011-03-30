@@ -1,0 +1,124 @@
+#logo {
+  float:left;}
+
+$sidebar_width: 180px;
+$sub_nav_topbottom_padding: 15px;
+
+#header {
+  padding: 15px 20px;
+  background: $blue_dark;
+  color: $header-data-color;
+  @include background-image(linear-gradient($blue_light, $blue_dark));
+  a {
+    @include link-colors($header-data-color);
+    @include hover-link;}
+}
+
+#container{ 
+  margin:0 auto;
+  &.with_sidebar{ 
+  padding-left: $sidebar_width ;
+  background:#efefef image-url('backgrounds/bg-sidebar.png') left top  repeat-y; }}
+
+#content {
+  border-left: $sidebar_width solid transparent;
+  float:left;
+  margin-left: 0 - $sidebar_width;
+  width: 100%; }  
+
+#user_nav {
+  float: right;
+  font-size:  12px;
+  a {
+    margin-left: 20px;}}
+
+#main_nav {
+  position:relative;
+  float:left;
+  width: $sidebar_width;
+  margin-left: 0 - $sidebar_width;
+  ul {
+    padding: 20px; }}
+
+#sub_nav {
+  background-color: $sub_nav_gradient_light;
+  @include background-image(linear-gradient($sub_nav_gradient_light, $sub_nav_gradient_dark));
+  padding: $sub_nav_topbottom_padding 20px;
+  border-bottom: #fff 1px solid; }
+
+#sub_sections {
+  @include horizontal-list(15px);
+  overflow: visible;
+  list-style: none;
+  padding-left: none;
+  a {
+    @include link-colors($sub-nav-color-base);
+    @include inset(#fff);
+    text-decoration:none;
+    position:relative;
+    display:block;
+    float:left;
+    overflow:visible;
+    &.current {
+      font-weight:bold; }}}
+
+.top_sub_nav_arrow {
+  $size: 5px;
+  @include css-arrow("bottom", $sub_nav_gradient_dark, #fff, $size );
+  position:absolute;
+  left: 45%;
+  z-index: 2;
+  bottom: 0 - $sub_nav_topbottom_padding; }
+
+
+#inner_content {
+  background:#efefef;
+  padding: 20px; }
+
+#footer {
+  padding: 20px;
+  .inner_footer {
+    $radius: 3px;
+    @include border-radius($radius);
+    background-color:#e6e6e6;
+    @include box-shadow(rgba(#fff, 1) 0 0 1px 1px inset);
+    border: 1px solid #b9b9b9;
+    .header {
+      @include border-top-radius($radius);
+      text-transform:uppercase;
+      @include box-shadow(rgba(#fff, 0.4) 0 0 1px 1px inset);
+      @include inset(#000);
+      color:#fff;
+      font-size: 14px;
+      font-weight:bold;
+      padding: 10px;
+      @include background-image(linear-gradient($blue_light, $blue_dark));}
+    .footer_columns {
+      padding: 20px;
+    }
+  }
+}
+
+
+/* HOMEPAGE
+---------------------------------------- */
+
+.centered_grid {
+  width: 960px;
+  margin: 0 auto;
+}
+
+
+/* PROFILE SHOW
+---------------------------------------- */
+
+$ld_width: 240px ;
+
+.left_drawer {
+  width: $ld_width ;
+  display:inline;
+  float:left;
+}
+.right_drawer {
+  padding-left: $ld_width;
+}
