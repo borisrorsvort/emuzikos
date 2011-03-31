@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/documentcloud/jammit.git
+  revision: aaaceb7373a5e193cd6c97b25400a08fbb8d8c5f
+  specs:
+    jammit (0.6.0)
+      yui-compressor (>= 0.9.3)
+
+GIT
   remote: git://github.com/odorcicd/authlogic.git
   revision: a087ad0cba3c165ba22fcf176c28b6f7517931e8
   branch: rails3
@@ -11,6 +18,10 @@ GEM
   remote: http://gems.github.com/
   remote: http://gemcutter.org/
   specs:
+    POpen4 (0.1.4)
+      Platform (>= 0.4.0)
+      open4
+    Platform (0.4.0)
     abstract (1.0.0)
     actionmailer (3.0.3)
       actionpack (= 3.0.3)
@@ -84,6 +95,7 @@ GEM
     mime-types (1.16)
     mysql2 (0.2.7)
     nifty-generators (0.4.6)
+    open4 (1.0.1)
     paperclip (2.3.8)
       activerecord
       activesupport
@@ -117,6 +129,8 @@ GEM
     tzinfo (0.3.25)
     will_paginate (3.0.pre2)
     xml-simple (1.0.15)
+    yui-compressor (0.9.6)
+      POpen4 (>= 0.1.4)
 
 PLATFORMS
   ruby
@@ -131,6 +145,7 @@ DEPENDENCIES
   haml-rails
   heroku
   heroku_san
+  jammit!
   jquery-rails
   mysql2
   nifty-generators

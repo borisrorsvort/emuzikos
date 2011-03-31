@@ -17,11 +17,11 @@ gem "paperclip"
 gem "settingslogic", "2.0.6"
 gem 'aws-s3', :require => 'aws/s3'
 gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-#gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
 
 #gem 'sitemap_generator', :git => "git://github.com/shinjikuwayama/sitemap_generator.git"
 
 group :development do
+  gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
   gem "nifty-generators"
   gem 'heroku_san'
   gem 'mysql2'
