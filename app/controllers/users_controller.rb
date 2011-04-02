@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    render :layout => "home"
   end
   
   def show
@@ -27,17 +28,17 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if verify_recaptcha(@user) && @user.save!
       Notifier.registration_confirmation(@user).deliver
-      gflash :success => "Registration successful. Don't forget to complete your profile to appear in search results",
-              :notice => "Don't forget to complete your profile to appear in search results"
-      #flash[:notice] = "Registration successful. Don't forget to complete your profile to appear in search results"
+      gflash :success => true, :notice => true
+      
       if params[:user][:avatar].blank?  
         redirect_to edit_user_url(@user)
       else  
         render :action => 'crop'  
       end
+      
     else
-      gflash :error => "Some informations need to be corrected"
-      render :action => 'new' # error shown in view
+      render :action => 'new', :layout => "home"
+      gflash :error => true
     end
   end
   
@@ -50,14 +51,14 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       
       if params[:user][:avatar].blank?
-        gflash :success => "Successfully updated your profile."
+        gflash :success => true
         redirect_to edit_user_url
       else
-        gflash :notice => "One more thing to do, you need to crop your avatar picture."
+        gflash :notice => true
         render :action => 'crop'  
       end
     else
-      gflash :error => "Some informations need to be corrected"
+      gflash :error => true
       render :action => 'edit'
     end
   end

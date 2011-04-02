@@ -47,8 +47,84 @@ a img {
   line-height: 1em;
 }
 
+/* line 29, ../../../app/stylesheets/_base.scss */
+.centered {
+  margin: 0 auto;
+}
+
+/* line 33, ../../../app/stylesheets/_base.scss */
+b {
+  font-weight: bold;
+}
+
 /* CSS ARROWS
 ---------------------------------------- */
+/* ANIMATION
+---------------------------------------- */
+@-webkit-keyframes slidingFromLeft {
+  /* line 74, ../../../app/stylesheets/_base.scss */
+  0% {
+    left: -1440px;
+    opacity: 0;
+  }
+
+  /* line 75, ../../../app/stylesheets/_base.scss */
+  50% {
+    left: 50px;
+    opacity: 0.5;
+  }
+
+  /* line 76, ../../../app/stylesheets/_base.scss */
+  60% {
+    left: 50px;
+    opacity: 0.5;
+  }
+
+  /* line 77, ../../../app/stylesheets/_base.scss */
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes movingarrow {
+  /* line 80, ../../../app/stylesheets/_base.scss */
+  0% {
+    top: -200px;
+    opacity: 0;
+  }
+
+  /* line 81, ../../../app/stylesheets/_base.scss */
+  50% {
+    top: 20px;
+    opacity: 0.5;
+  }
+
+  /* line 82, ../../../app/stylesheets/_base.scss */
+  60% {
+    top: 20px;
+    opacity: 0.5;
+  }
+
+  /* line 83, ../../../app/stylesheets/_base.scss */
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes opacity {
+  /* line 86, ../../../app/stylesheets/_base.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 87, ../../../app/stylesheets/_base.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
 /*HEADINGS
 -------------------------------------------------------- */
 /* line 7, ../../../app/stylesheets/text.scss */
@@ -77,7 +153,7 @@ h3 {
   color: #515151;
   font-size: 1.3em;
   font-weight: bold;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   line-height: 1.2em;
 }
 
@@ -108,10 +184,10 @@ h6 {
 }
 
 /* line 50, ../../../app/stylesheets/text.scss */
-p {
+p, ul {
   font-size: 1.2em;
   line-height: 1.48em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 /* line 55, ../../../app/stylesheets/text.scss */

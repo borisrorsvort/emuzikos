@@ -52,15 +52,22 @@ $(document).ready(function() {
   
   $('#main_nav li a.current').append('<div class="main_nav_current_arrow"></div>');
   $('#sub_sections li a.current').append('<div class="top_sub_nav_arrow"></div>');
+  $('#footer .inner_footer th').append('<div class="footer_headers_current_arrow"></div>');
   
   // NOISY STUFF
   
-  $('body, #content, #header').noisy({
+  // $('body, #content, #header').noisy({
+  //     'intensity' : 1, 
+  //     'size' : 50, 
+  //     'opacity' : 0.04, 
+  //     'fallback' : '', 
+  //     'monochrome' : false
+  // });
+  $('.homepage #content').noisy({
       'intensity' : 1, 
-      'size' : 50, 
-      'opacity' : 0.04, 
+      'size' : 150, 
+      'opacity' : 0.06, 
       'fallback' : '', 
-      'monochrome' : false
+      'monochrome' : true
   });
-  
 });

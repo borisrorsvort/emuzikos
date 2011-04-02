@@ -82,21 +82,7 @@ $sub_nav_topbottom_padding: 15px;
     @include border-radius($radius);
     background-color:#e6e6e6;
     @include box-shadow(rgba(#fff, 1) 0 0 1px 1px inset);
-    border: 1px solid #b9b9b9;
-    .header {
-      @include border-top-radius($radius);
-      text-transform:uppercase;
-      @include box-shadow(rgba(#fff, 0.4) 0 0 1px 1px inset);
-      @include inset(#000);
-      color:#fff;
-      font-size: 14px;
-      font-weight:bold;
-      padding: 10px;
-      @include background-image(linear-gradient($blue_light, $blue_dark));}
-    .footer_columns {
-      padding: 20px;
-    }
-  }
+    border: 1px solid #b9b9b9;}
 }
 
 

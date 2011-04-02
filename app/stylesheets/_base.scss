@@ -26,6 +26,13 @@ a {
   font-weight:bold;
   line-height: 1em; }
 
+.centered {
+  margin: 0 auto;
+}
+
+b {
+  font-weight:bold;
+}
 @mixin inset($color) {
   text-shadow: $color 0 1px 1px; }
 
@@ -60,3 +67,22 @@ a {
 
 
 
+/* ANIMATION
+---------------------------------------- */
+
+@-webkit-keyframes slidingFromLeft {
+  0% {left: -1440px;opacity: 0;}
+	50% {left: 50px;opacity: 0.5;}
+	60% {left: 50px;opacity: 0.5;}
+	100% {left: 0;opacity: 1;}
+} 
+@-webkit-keyframes movingarrow {
+  0% {top: -200px;opacity: 0;}
+	50% {top: 20px;opacity: 0.5;}
+	60% {top: 20px;opacity: 0.5;}
+	100% {top: 0;opacity: 1;}
+}
+@-webkit-keyframes opacity {
+	0% { opacity: 0;}
+	100% { opacity: 1;}
+}

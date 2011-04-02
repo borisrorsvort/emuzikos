@@ -1,0 +1,116 @@
+@import "colors";
+
+@import "base";
+@import "compass/css3";
+@import "compass/utilities";
+
+.logged_out {
+  #header {
+    background:none;
+    background-color:#000; }
+
+  #content {
+    background: $blue_dark;
+    color: $header-data-color;
+    @include background-image(linear-gradient($blue_light, $blue_dark)); }
+    
+  .halo {
+    text-align:center;
+    background: transparent url("/images/backgrounds/halo.png") center top no-repeat;
+    min-height: 400px; }
+    
+  #inner_content {
+    background: transparent url("/images/backgrounds/bg-music-notes.png") center top no-repeat;
+    padding: 0;}
+    
+  .icon_and_logo {
+    @extend .centered;
+    width: 346px;
+    padding-top: 20px; }
+    
+  #home_moto {
+    text-align:center;
+    margin-top: 20px;
+    color: #00496d;
+    @include inset(#bababa);
+    font-size: 4em; }
+    
+  .signup_button {
+    -webkit-animation:slidingFromLeft 2s ;
+    @extend .centered;
+    @include opacity(0.9);
+    display:block;
+    height: 70px;
+    width: 220px;
+    line-height: 70px;
+    margin-top: 20px;
+    text-transform:uppercase;
+    a {
+      text-decoration:none;
+      color:#604f1b;
+      position: relative;
+      &:hover {
+        color: lighten(#604f1b, 10%); }
+      &:active {
+        top: 1px; }}
+        
+    @include inset(#FFF);
+    font-weight:bold;
+    font-size: 1.5em;
+    position:relative;
+    background:transparent image-url('/images/buttons/signup_button/signup_bc.png') left top repeat-x;
+    $arrow-size: 25px;
+    
+    .bl {
+      left: 0 - $arrow-size;
+      position:absolute;
+      width: $arrow-size;
+      height: 70px;
+      background:transparent image-url('/images/buttons/signup_button/signup_bl.png') left top no-repeat;
+      display:block; }
+    .br {
+      @extend .bl;
+      left: 100%;
+      right: 0 - $arrow-size ;
+      background:transparent image-url('/images/buttons/signup_button/signup_br.png') left top no-repeat; }
+  }
+  #how_it_works {
+    background: #efefef;
+    border-top: 1px solid #fff;
+    padding: 20px;
+    font-size: 12px;
+    color:#666;
+    
+    #steps {
+      display:inline;
+      float:left;
+      width: 350px;
+      width: 60%; }
+      
+    #home_testimonials {
+      display:inline;
+      float:right;
+      width: 40%;
+      ul {
+        font-size: 11px;
+        list-style: none;
+        line-height: 1.48em;
+        li {
+          margin-bottom: 15px;
+          .author {
+            margin-bottom: 4px;
+            font-weight:bold; }}
+      }
+    }
+  }
+}
+
+#user_forms {
+  width: 350px;
+  padding: 20px;
+  margin: 20px auto;
+  background:#efefef;
+  color:#666;
+  @include border-radius(8px);
+  @include single-box-shadow(#666, 0, 0, 5px);
+}

@@ -24,7 +24,6 @@ class User < ActiveRecord::Base
     :styles => {
       :normal => "300>", 
       :medium => "200x200#",
-      :thumb => "100x100#", 
       :gallery => "30x30#" 
     },  
     :processors => [:cropper],

@@ -8,9 +8,11 @@ en:
     are_you_sure: Are you sure?
     reset: Reset
     or: or
+    by: by
     
 ### TABLES
 ### ______________________________________________________    
+
   tooltips:
     email: "Must be a valid email address"
     password: "Must contains at least 5 characters"
@@ -48,6 +50,7 @@ en:
 ### ______________________________________________________
 
   buttons:
+    home_signup: signup for free in 60 s. 
     update: Update
     create: Create
     edit: Edit
@@ -145,7 +148,7 @@ en:
       titles:
         title: Edit your profile
     new:
-      title: "New User"
+      title: "Signup"
     crop:
       prewiew: "Preview"
 
@@ -154,6 +157,7 @@ en:
 
   user_sessions:
     new: 
+      title: Login to your account
       forgot_password: Forgot your password?
   
 ### MESSAGES
@@ -209,6 +213,10 @@ en:
 ### ______________________________________________________
   
   pages:
+    homepage:
+      title: Find local musicians around the world
+      moto: "The first <b>easy</b> way to find <b>local</b> musicians"
+      latest_testimonials: "Latest musician's testimonials"
     contact:
       title: Contact us
       message: Message

@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
-  before_filter :require_no_user, :only => [:about]
+  
+  def homepage
+    @testimonials = Testimonial.last(3)
+    render :layout => "home"
+  end
   
   def about
     
@@ -8,7 +12,7 @@ class PagesController < ApplicationController
   def contact
     if request.post? 
       Notifier.contact_email(params[:email]).deliver
-      gflash :success => "Your message was successfully sent. Thanks for your support!"
+      gflash :success => true
       #flash[:notice] = "seuccessfully send your message"
     end
   end

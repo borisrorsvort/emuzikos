@@ -34,6 +34,10 @@ module Emuzikos
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
     # Configure the default encoding used in templates for Ruby 1.9.
+    
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :en
+    
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.

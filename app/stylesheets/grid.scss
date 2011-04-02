@@ -46,16 +46,14 @@
      border-bottom: 1px solid #2d2d2d;
      background:transparent url('/images/icons/main-nav-icon-sprite.png') left top no-repeat; 
      &:hover, &.current {
-       background-color:#3a3a3a; }}
-  }
-}
+       background-color:#3a3a3a; }}}}
 
 .main_nav_current_arrow {
   $size: 5px;
   @include css-arrow("left", #efefef, #3A3A3A, $size );
   position:absolute;
   right: 0 - $size;
-  top: 45%;}
+  top: 45%; }
 
 .message_count {
   @include border-radius(12px);
@@ -69,8 +67,7 @@
   font-weight:normal;
   text-shadow: none;
   position:relative;
-  top: -1px;
-}
+  top: -1px; }
 
 
 /* SEARCH
@@ -85,7 +82,7 @@
   a {
     @include hover-link;}
   span {
-    font-weight:bold;}}
+    font-weight:bold; }}
 
 
 /* USER
@@ -96,9 +93,7 @@
   display:block;
   &.small {
     height: 20px;
-    width:20px;}
-}
-
+    width:20px; }}
 
 /* USER SHOW
 ---------------------------------------- */
@@ -106,24 +101,24 @@
 .profile_picture {
   border: 8px solid #fff;
   @include border-radius(8px);
-  @include single-box-shadow(#999, 0, 1px, 2px );
-}
+  @include single-box-shadow(#999, 0, 1px, 2px ); }
+  
 .looking_for {
   text-transform:lowercase;
   color: $blue_basic;
   font-weight:bold;
   margin-top: 10px;
-  @include inset(#fff);
-}
+  @include inset(#fff); }
+  
 h1.username {
   margin-bottom: 3px;
-  display:inline;
-}
+  display:inline; }
+  
 .location_infos {
   font-size: 1.3em;
   margin-left: 10px;
-  color: #999;
-}
+  color: #999; }
+  
 .instruments_tag_list {
   margin: 10px 0 20px;
   span {
@@ -132,6 +127,36 @@ h1.username {
     @include border-radius(3px);
     margin-right: 5px;
     color: #fff;
-    @include single-box-shadow(#fff, 0, 1px, 2px );
+    @include single-box-shadow(#fff, 0, 1px, 2px ); }}
+    
+
+/* FOOTER
+---------------------------------------- */
+
+#footer {
+  table {
+    border: none;
+    th {
+      color:#fff;
+      font-size: .9em;
+      @include border-top-radius(3px);
+      text-transform:uppercase;
+      @include inset(#000);
+      font-size: 14px;
+      font-weight:bold;
+      padding: 15px 20px 15px;
+      @include background-image(linear-gradient($blue_light, $blue_dark));
+    }
+    td {
+      padding: 20px;
+      ul  {
+        font-size: 12px;
+        padding-left: 0; }}
+        
+    .footer_headers_current_arrow {
+      @include css-arrow("bottom", $blue_dark, #e6e6e6, 5px );
+      position: relative;
+      bottom: -15px;
+      left: 0px; }
   }
 }

@@ -1,0 +1,33 @@
+#footer
+  .inner_footer
+    %table.wide
+      %tr
+        %th About
+        %th Help
+        %th FAQ
+        %th Contact
+      %tr
+        %td 
+          %ul
+            %li item 1
+            %li item 1
+            %li item 1
+        %td 
+          %ul
+            %li item 1
+            %li item 1
+            %li item 1
+        %td 
+          %ul
+            %li item 1
+            %li item 1
+            %li item 1
+        %td 
+          %ul
+            %li item 1
+            %li item 1
+            %li item 1
+  
+= include_javascripts :jquery, :emuzikos
+= yield(:javascripts)
+= gflash(:fade_in_speed => 200, :fade_out_speed => 200, :time => 200)

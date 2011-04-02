@@ -15,10 +15,13 @@ javascripts:
 
 stylesheets:
   common:
-
     - public/stylesheets/jquery.Jcrop.css
     - public/stylesheets/ui-themes/Emuzikos/jquery-ui-1.8.7.custom.css
     - public/stylesheets/uniform-themes/uniform.emuzikos.css
     - public/stylesheets/compiled/grid.css
     - public/stylesheets/compiled/text.css  
     - public/stylesheets/gritter/jquery.gritter.css  
+  homepage:
+    - public/stylesheets/compiled/homepage.css  
+  
+  

@@ -4,8 +4,9 @@ Emuzikos::Application.routes.draw do
 
   match "login" => "user_sessions#new", :as => :login
   match "logout" => "user_sessions#destroy", :as => :logout
+  match "signup" => "users#new", :as => :signup
   match "contact" => "pages#contact", :as => :contact
-  
+  match "about" => "pages#about", :as => :about
   resources :user_sessions
   resources :password_resets, :only => [ :new, :create, :edit, :update ]
   resources :testimonials
@@ -65,10 +66,10 @@ Emuzikos::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "pages#about"
+  root :to => "pages#homepage"
 
   # See how all your routes lay out with "rake routes"
-
+  
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
