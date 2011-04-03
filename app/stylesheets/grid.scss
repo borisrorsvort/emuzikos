@@ -18,6 +18,7 @@
 @import "notices";
 @import "forms";
 @import "tables";
+@import "pagination";
 
 #main_nav {
   ul {
@@ -92,8 +93,8 @@
   background: #ccc;
   display:block;
   &.small {
-    height: 20px;
-    width:20px; }}
+    height: 30px;
+    width:30px; }}
 
 /* USER SHOW
 ---------------------------------------- */
@@ -128,8 +129,48 @@ h1.username {
     margin-right: 5px;
     color: #fff;
     @include single-box-shadow(#fff, 0, 1px, 2px ); }}
-    
 
+/* TESTIMONIALS
+---------------------------------------- */ 
+
+#testimonials {
+  clear: both;
+
+  .testimonial {
+    width: 190px;
+    padding: 15px;
+    font-size: 11px;
+    @include inset(#fff);
+    padding: 20px;
+    line-height: 1.50em;
+    background-color:#fff;
+    @include box-shadow(#666, 0, 0, 3px, 1px inset);
+    @include border-radius(5px);
+    margin: 0px 10px 10px 0px;
+    float:left;
+    .author {
+      font-weight:bold;
+    }
+    .avatar {
+      float:left; 
+      border: 3px solid #ccc;
+      @include border-radius(3px); }
+    .text {
+      padding-left: 50px;
+    }
+  }
+
+}
+.testimonials.wide .testimonial {
+ width: 225px !important; 
+}
+#testimonials:after {
+  clear: both;
+  content: '';
+  display: block;
+  height: 0px;
+  visibility: hidden;
+}
 /* FOOTER
 ---------------------------------------- */
 
@@ -150,8 +191,7 @@ h1.username {
     td {
       padding: 20px;
       ul  {
-        font-size: 12px;
-        padding-left: 0; }}
+        font-size: 12px; }}
         
     .footer_headers_current_arrow {
       @include css-arrow("bottom", $blue_dark, #e6e6e6, 5px );

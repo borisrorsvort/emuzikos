@@ -23,6 +23,7 @@
   @include border-radius(8px);
   padding-bottom: 12px;
   margin-bottom: 20px;
+  font-size: 11px;
   background-color: $notice-error;
   color:#fff;
   h2{ 
@@ -33,5 +34,6 @@
   p{ 
     margin: 10px 0px;}
   ul{ 
-    margin: 0; 
-    list-style: disc inside;} }
+    margin: 0;
+    font-size: 11px;
+    } }

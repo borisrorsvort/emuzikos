@@ -44,13 +44,17 @@ $sub_nav_topbottom_padding: 15px;
   background-color: $sub_nav_gradient_light;
   @include background-image(linear-gradient($sub_nav_gradient_light, $sub_nav_gradient_dark));
   padding: $sub_nav_topbottom_padding 20px;
-  border-bottom: #fff 1px solid; }
+  border-bottom: #fff 1px solid;
+  ul {
+    font-size:10px;
+    padding-left: 0; } }
 
 #sub_sections {
   @include horizontal-list(15px);
   overflow: visible;
   list-style: none;
   padding-left: none;
+  
   a {
     @include link-colors($sub-nav-color-base);
     @include inset(#fff);

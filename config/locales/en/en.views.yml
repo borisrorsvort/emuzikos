@@ -217,6 +217,10 @@ en:
       title: Find local musicians around the world
       moto: "The first <b>easy</b> way to find <b>local</b> musicians"
       latest_testimonials: "Latest musician's testimonials"
+      steps: 
+        profile: "Create an account <br> and fill in your profile"
+        search: "Search for musicians, <br> all around the globe"
+        contact: "Contact them <br> and make some music!"
     contact:
       title: Contact us
       message: Message

@@ -70,4 +70,10 @@ $(document).ready(function() {
       'fallback' : '', 
       'monochrome' : true
   });
+  
+  // MASONRY
+  $(".testimonials").masonry({ singleMode: true,resizeable: true,animate: true,itemSelector: '.testimonial' });
+  
+  // BOXY MODAL CONFIG
+  $("a[rel=boxy]").boxy({modal: true, closeable: true, center: true, title: "EMUZIKOS" , closetext: "[close]"});
 });

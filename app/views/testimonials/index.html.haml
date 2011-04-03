@@ -1,14 +1,12 @@
 - title t(:'.title')
-
-- if !@testimonials.blank?
-  %table.dispaly.wide
-    %tr
-      %th=t(:'activerecord.attributes.testimonial.body')
-      %th=t(:'activerecord.attributes.testimonial.user')
-      %th
+-if @current_user
+  %p= link_to t(:'buttons.testimonials.create'), new_testimonial_path, :class => "button add"
+.testimonials{ :class => (@current_user ? nil : "wide")}
+  - if !@testimonials.blank?
     = render @testimonials
--else
-
-  %p= t(:'testimonials.no_testimonials')
-%br 
-%p= link_to t(:'buttons.testimonials.create'), new_testimonial_path, :class => "button add"
+   
+  -else
+    %p= t(:'testimonials.no_testimonials')
+.pagination
+  = will_paginate @testimonials
+.clear 

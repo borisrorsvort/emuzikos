@@ -39,7 +39,7 @@ class MessagesController < ApplicationController
 
     if @message.save
       gflash :success => true
-      #flash[:notice] = "Message sent"
+      gflash :notice => t(:'gflash.testimonials.please_write')
       redirect_to user_messages_path(@user)
     else
       render :action => :new

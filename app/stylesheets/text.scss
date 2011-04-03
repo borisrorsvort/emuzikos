@@ -52,6 +52,7 @@ p, ul {
   line-height: 1.48em;
   margin-bottom: 15px;
 }
+
 blockquote p{
 	font-size:1.2em!important;
 	line-height:1.5em!important;
@@ -84,7 +85,8 @@ abbr{
 
 ul{
 	margin-bottom:1.8em;
-	list-style:square inside;
+	list-style: disc outside;
+  padding-left: 20px;
 }
 ul li{
 	font-size:1.2em;

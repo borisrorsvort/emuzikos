@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_no_user, :only => [:new, :create,:show]
+  before_filter :require_user, :only => [:index, :edit, :update]
   
   helper_method :sort_column, :sort_direction
   
@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     @users = []
     @search = Search.new(User, params[:search])
     if is_search?
-      @users = User.profiles_completed.search(@search, :page => params[:page], :order => sort_column + " " + sort_direction )
+      @users = User.profiles_completed.search(@search, :page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction )
     else
-      @users = User.profiles_completed.paginate(:page => params[:page], :order => sort_column + " " + sort_direction)
+      @users = User.profiles_completed.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction)
     end
   end
   

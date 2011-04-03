@@ -1,9 +1,7 @@
 = render "/layouts/head"
 
 %body{:id => @body_id ? @body_id: controller.controller_name, :class => @body_class ? controller.action_name + " " + @body_class : controller.action_name}
-  %section#flash_messages
-    - flash.each do |name, msg|
-      = content_tag :div, msg, :id => "flash_#{name}"
+
 
   %section#header
     #logo
@@ -14,12 +12,13 @@
       -if current_user
         = "Hi #{current_user.username}!" 
         = link_to t(:'menu.contact'), contact_path
-        =link_to t(:'menu.testimonials'), testimonials_path
-        =link_to t(:'menu.logout'), logout_path
+        = link_to t(:'menu.testimonials'), testimonials_path
+        = link_to t(:'menu.logout'), logout_path
         
       -else
-        =link_to t(:'menu.register'),new_user_path
-        =link_to t(:'menu.login'),login_path
+        =link_to t(:'menu.testimonials'), testimonials_path
+        = link_to t(:'menu.register'),new_user_path
+        = link_to t(:'menu.login'),login_path
     .clear
         
   #container{:class => @current_user ? "with_sidebar" : nil}

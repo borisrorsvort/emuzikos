@@ -5,6 +5,8 @@
 ---------------------------------------- */
 /* NOTICES
 ---------------------------------------- */
+/* PAGINATION
+---------------------------------------- */
 /* line 1, ../../../app/stylesheets/_base.scss */
 html {
   font-size: 100%;
@@ -52,7 +54,12 @@ a img {
   margin: 0 auto;
 }
 
-/* line 33, ../../../app/stylesheets/_base.scss */
+/* line 32, ../../../app/stylesheets/_base.scss */
+.hidden {
+  display: none;
+}
+
+/* line 35, ../../../app/stylesheets/_base.scss */
 b {
   font-weight: bold;
 }
@@ -62,25 +69,25 @@ b {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes slidingFromLeft {
-  /* line 74, ../../../app/stylesheets/_base.scss */
+  /* line 76, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 75, ../../../app/stylesheets/_base.scss */
+  /* line 77, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 76, ../../../app/stylesheets/_base.scss */
+  /* line 78, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 77, ../../../app/stylesheets/_base.scss */
+  /* line 79, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -88,25 +95,25 @@ b {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 80, ../../../app/stylesheets/_base.scss */
+  /* line 82, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 81, ../../../app/stylesheets/_base.scss */
+  /* line 83, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 82, ../../../app/stylesheets/_base.scss */
+  /* line 84, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 83, ../../../app/stylesheets/_base.scss */
+  /* line 85, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -114,12 +121,12 @@ b {
 }
 
 @-webkit-keyframes opacity {
-  /* line 86, ../../../app/stylesheets/_base.scss */
+  /* line 88, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 87, ../../../app/stylesheets/_base.scss */
+  /* line 89, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -190,7 +197,7 @@ p, ul {
   margin-bottom: 15px;
 }
 
-/* line 55, ../../../app/stylesheets/text.scss */
+/* line 56, ../../../app/stylesheets/text.scss */
 blockquote p {
   font-size: 1.2em !important;
   line-height: 1.5em !important;
@@ -199,23 +206,23 @@ blockquote p {
   font-weight: bold;
 }
 
-/* line 63, ../../../app/stylesheets/text.scss */
+/* line 64, ../../../app/stylesheets/text.scss */
 blockquote p cite {
   font-style: normal;
 }
 
-/* line 66, ../../../app/stylesheets/text.scss */
+/* line 67, ../../../app/stylesheets/text.scss */
 .generic strong {
   font-variant: small-caps;
 }
 
-/* line 69, ../../../app/stylesheets/text.scss */
+/* line 70, ../../../app/stylesheets/text.scss */
 .generic em {
   font-style: italic;
   font-weight: inherit;
 }
 
-/* line 73, ../../../app/stylesheets/text.scss */
+/* line 74, ../../../app/stylesheets/text.scss */
 .amp {
   /* Give those ampersands a right sexy look */
   font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
@@ -224,26 +231,27 @@ blockquote p cite {
   line-height: inherit;
 }
 
-/* line 79, ../../../app/stylesheets/text.scss */
+/* line 80, ../../../app/stylesheets/text.scss */
 abbr {
   border-bottom: 1px dotted #666;
   border-color: inherit;
   cursor: help;
 }
 
-/* line 85, ../../../app/stylesheets/text.scss */
+/* line 86, ../../../app/stylesheets/text.scss */
 ul {
   margin-bottom: 1.8em;
-  list-style: square inside;
+  list-style: disc outside;
+  padding-left: 20px;
 }
 
-/* line 89, ../../../app/stylesheets/text.scss */
+/* line 91, ../../../app/stylesheets/text.scss */
 ul li {
   font-size: 1.2em;
   line-height: 1.5em;
 }
 
-/* line 93, ../../../app/stylesheets/text.scss */
+/* line 95, ../../../app/stylesheets/text.scss */
 ul li.caption {
   /* Apply this class to the first list item in a list to give it a caption */
   font-variant: small-caps;
@@ -251,24 +259,24 @@ ul li.caption {
   color: #000;
 }
 
-/* line 98, ../../../app/stylesheets/text.scss */
+/* line 100, ../../../app/stylesheets/text.scss */
 li > ul, li > ol {
   margin-bottom: 0;
   margin-left: 5em;
 }
 
-/* line 102, ../../../app/stylesheets/text.scss */
+/* line 104, ../../../app/stylesheets/text.scss */
 li > ul li, li > ol li {
   font-size: 1em;
 }
 
-/* line 105, ../../../app/stylesheets/text.scss */
+/* line 107, ../../../app/stylesheets/text.scss */
 ol {
   margin-bottom: 1.8em;
   list-style: decimal inside;
 }
 
-/* line 109, ../../../app/stylesheets/text.scss */
+/* line 111, ../../../app/stylesheets/text.scss */
 ol li {
   font-size: 1.2em;
   line-height: 1.5em;

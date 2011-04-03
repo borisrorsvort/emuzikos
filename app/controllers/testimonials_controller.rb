@@ -1,6 +1,6 @@
 class TestimonialsController < ApplicationController
   def index
-    @testimonials = Testimonial.all
+    @testimonials = Testimonial.order("created_at DESC").paginate(:page => params[:page], :per_page => 50)
   end
   
   def show
@@ -18,7 +18,7 @@ class TestimonialsController < ApplicationController
     
     if @testimonial.save
       gflash :success => true
-      redirect_to @testimonial
+      redirect_to testimonials_url
     else
       render :action => 'new'
     end

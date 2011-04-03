@@ -77,7 +77,7 @@
   #how_it_works {
     background: #efefef;
     border-top: 1px solid #fff;
-    padding: 20px;
+    padding: 30px 20px 20px;
     font-size: 12px;
     color:#666;
     
@@ -85,21 +85,40 @@
       display:inline;
       float:left;
       width: 350px;
-      width: 60%; }
+      width: 53%;
+      margin-left: 2%;
+      }
       
     #home_testimonials {
       display:inline;
-      float:right;
-      width: 40%;
+      float:left;
+      width: 45%;
       ul {
-        font-size: 11px;
         list-style: none;
+        padding-left: 0;
+        font-size: 10px;
         line-height: 1.48em;
         li {
           margin-bottom: 15px;
+          display:block;
+          vertical-align: middle;
+          @include inset(#fff);
+          padding: 10px;
+          background-color:#fff;
+          @include box-shadow(#666, 0, 0, 3px, 1px inset);
+          @include border-radius(5px);
+
+          .text {
+            font-size: 11px;
+            padding-left: 50px;
+          }
           .author {
-            margin-bottom: 4px;
-            font-weight:bold; }}
+            font-weight:bold;
+          }
+          .avatar {
+            float:left; 
+            border: 3px solid #ccc;
+            @include border-radius(3px); }}
       }
     }
   }
@@ -113,4 +132,48 @@
   color:#666;
   @include border-radius(8px);
   @include single-box-shadow(#666, 0, 0, 5px);
+}
+
+.step {
+  float: left;
+  width: 30%;
+  min-width: 200px;
+  margin-bottom: 20px;
+  margin-right: 3%;
+  font-size: 1em;
+  font-weight:bold;
+  color:#828282;
+  position:relative;
+  @include inset(#fff);
+  top: -37px;
+  .app_sample {
+    display: block;
+    position:relative;
+    width: 154px; }
+    
+  .app_sample_image {
+    width: 130px;
+    height: 130px;
+    border: 5px solid desaturate(lighten($blue_basic, 40%), 30%);
+    background-color:#FFF;
+    @include border-radius(4px); }
+    
+  .flag {
+    text-align:center;
+    color:#fff;
+    @include  inset(#000);
+    font-size: 22px;
+    line-height: 62px; 
+    width: 49px;
+    height: 62px;
+    margin-bottom: 10px;
+    background:transparent image-url('/images/backgrounds/flag.png') center center no-repeat;
+  }
+  .zoom_icon {
+    position:absolute;
+    top:-10px;
+    right:0;
+    width: 31px;
+    height: 31px;
+    background:transparent image-url('/images/icons/zoom-icon.png') center center no-repeat; }
 }

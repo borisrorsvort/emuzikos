@@ -33,3 +33,16 @@ $sub-nav-color-base: #464646;
 ---------------------------------------- */
 
 $notice-error: #cf0000;
+
+
+/* PAGINATION
+---------------------------------------- */
+
+$paginate-normal-bg: #fff ;
+$paginate-normal-color: $blue_basic;
+
+$paginate-disabled-bg: $paginate-normal-bg ;
+$paginate-disabled-color: $paginate-normal-color;
+
+$paginate-current-bg: $blue_basic;
+$paginate-current-color: $paginate-normal-bg;
