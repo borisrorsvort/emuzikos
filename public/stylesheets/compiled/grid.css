@@ -355,20 +355,36 @@ b {
 #user_nav a {
   margin-left: 20px;
 }
+/* line 34, ../../../app/stylesheets/_layout.scss */
+#user_nav a.logout {
+  background: #157ebe;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px 10px;
+}
+/* line 38, ../../../app/stylesheets/_layout.scss */
+#user_nav a.logout:hover {
+  text-decoration: none;
+  background: #106090;
+}
 
-/* line 35, ../../../app/stylesheets/_layout.scss */
+/* line 44, ../../../app/stylesheets/_layout.scss */
 #main_nav {
   position: relative;
   float: left;
   width: 180px;
   margin-left: -180px;
 }
-/* line 40, ../../../app/stylesheets/_layout.scss */
+/* line 49, ../../../app/stylesheets/_layout.scss */
 #main_nav ul {
   padding: 20px;
 }
 
-/* line 43, ../../../app/stylesheets/_layout.scss */
+/* line 52, ../../../app/stylesheets/_layout.scss */
 #sub_nav {
   background-color: #e7e7e7;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e7e7e7), color-stop(100%, #d0d0d0));
@@ -377,13 +393,13 @@ b {
   padding: 15px 20px;
   border-bottom: #fff 1px solid;
 }
-/* line 48, ../../../app/stylesheets/_layout.scss */
+/* line 57, ../../../app/stylesheets/_layout.scss */
 #sub_nav ul {
   font-size: 10px;
   padding-left: 0;
 }
 
-/* line 52, ../../../app/stylesheets/_layout.scss */
+/* line 61, ../../../app/stylesheets/_layout.scss */
 #sub_sections {
   margin: 0;
   padding: 0;
@@ -417,7 +433,7 @@ b {
 #sub_sections li.last {
   padding-right: 0;
 }
-/* line 58, ../../../app/stylesheets/_layout.scss */
+/* line 67, ../../../app/stylesheets/_layout.scss */
 #sub_sections a {
   color: #464646;
   text-shadow: white 0 1px 1px;
@@ -427,12 +443,12 @@ b {
   float: left;
   overflow: visible;
 }
-/* line 66, ../../../app/stylesheets/_layout.scss */
+/* line 75, ../../../app/stylesheets/_layout.scss */
 #sub_sections a.current {
   font-weight: bold;
 }
 
-/* line 69, ../../../app/stylesheets/_layout.scss */
+/* line 78, ../../../app/stylesheets/_layout.scss */
 .top_sub_nav_arrow {
   font-size: 0px;
   line-height: 0%;
@@ -446,17 +462,17 @@ b {
   bottom: -15px;
 }
 
-/* line 78, ../../../app/stylesheets/_layout.scss */
+/* line 87, ../../../app/stylesheets/_layout.scss */
 #inner_content {
   background: #efefef;
   padding: 20px;
 }
 
-/* line 82, ../../../app/stylesheets/_layout.scss */
+/* line 91, ../../../app/stylesheets/_layout.scss */
 #footer {
   padding: 20px;
 }
-/* line 84, ../../../app/stylesheets/_layout.scss */
+/* line 94, ../../../app/stylesheets/_layout.scss */
 #footer .inner_footer {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -471,10 +487,26 @@ b {
   box-shadow: white 0 0 1px 1px inset;
   border: 1px solid #b9b9b9;
 }
+/* line 101, ../../../app/stylesheets/_layout.scss */
+#footer.light .inner_footer {
+  padding: 20px;
+}
+/* line 105, ../../../app/stylesheets/_layout.scss */
+#footer .left_links {
+  float: left;
+}
+/* line 107, ../../../app/stylesheets/_layout.scss */
+#footer .left_links a {
+  margin-right: 20px;
+}
+/* line 111, ../../../app/stylesheets/_layout.scss */
+#footer .copyright {
+  float: right;
+}
 
 /* HOMEPAGE
 ---------------------------------------- */
-/* line 96, ../../../app/stylesheets/_layout.scss */
+/* line 120, ../../../app/stylesheets/_layout.scss */
 .centered_grid {
   width: 960px;
   margin: 0 auto;
@@ -482,14 +514,14 @@ b {
 
 /* PROFILE SHOW
 ---------------------------------------- */
-/* line 107, ../../../app/stylesheets/_layout.scss */
+/* line 131, ../../../app/stylesheets/_layout.scss */
 .left_drawer {
   width: 240px;
   display: inline;
   float: left;
 }
 
-/* line 112, ../../../app/stylesheets/_layout.scss */
+/* line 136, ../../../app/stylesheets/_layout.scss */
 .right_drawer {
   padding-left: 240px;
 }
@@ -846,7 +878,7 @@ body#messages .delete_seleted, body#messages .unread {
   -webkit-box-shadow: 0 1px 2px #333333;
   -o-box-shadow: 0 1px 2px #333333;
   box-shadow: 0 1px 2px #333333;
-  padding: 1px 10px;
+  padding: 1px 7px;
   margin-left: 5px;
   background-color: #ce2f2f;
   border: 1px solid #fff;

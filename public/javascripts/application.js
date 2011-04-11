@@ -15,7 +15,12 @@ $(document).ready(function() {
 
   
   // UI STUFF
-
+  
+  $("a[rel='external']").click( function() {
+    window.open( $(this).attr('href') );
+    return false;
+  });
+  
 	$('.button').button({
     text: true
   });

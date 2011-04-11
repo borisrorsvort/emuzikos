@@ -3,13 +3,14 @@
 
 en:
   common:
+    home: Home
     required: Required
     please_choose: 'Please choose ...'
     are_you_sure: Are you sure?
     reset: Reset
     or: or
     by: by
-    
+    created_by: Created by
 ### TABLES
 ### ______________________________________________________    
 

@@ -22,34 +22,37 @@
 %section.right_drawer
   %header 
     %h1.username= t(:'.title', :username => @user.username)
-    %span.location_infos
-      =t(:"users.types.#{@user.user_type}")
-      =t(:'.from')
-      = @user.zip
-      = I18n.t(@user.country, :scope => "countries") rescue "N/A"
-      
-  %p.looking_for
-    = t(:'.is_looking_for')
-    = t(:"users.types.#{@user.searching_for}")
-    = t(:'.to_play')
-    = t(:"musical_genres.#{@user.genre}")
-    = t(:'.music')
-  
+    
+    - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
+      %span.location_infos
+        =t(:"users.types.#{@user.user_type}")
+        =t(:'.from')
+        = @user.zip
+        = I18n.t(@user.country, :scope => "countries") rescue "N/A"
+
+  - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
+    %p.looking_for
+      = t(:'.is_looking_for')
+      = t(:"users.types.#{@user.searching_for}")
+      = t(:'.to_play')
+      = t(:"musical_genres.#{@user.genre}")
+      = t(:'.music')
+
   - unless @user.instruments.blank?
     %h3= t(:'activerecord.attributes.user.instruments')
     .instruments_tag_list
       =# @user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
       - @user.instruments.each do |instrument|
         %span= t(:"instruments.#{instrument}")
-  
+
   - unless @user.references.blank?   
     %h3= t(:'activerecord.attributes.user.references')
     %p= @user.references
-  
+
   - unless @user.request_message.blank?
     %h3= t(:'activerecord.attributes.user.request_message')
     %p= @user.request_message
-
+  
           
   / TODO make it work from profile
   / -if @current_user && @current_user != @user

@@ -21,18 +21,21 @@
       = link_to "#profile_zoomed", :class => "app_sample", :rel => "boxy" do
         .zoom_icon
         .app_sample_image
+          =image_tag('app-samples/profile-thumb.jpg')
     .step#search
       .flag 2
       %p= t(:'.steps.search').html_safe
       = link_to "#search_zoomed", :class => "app_sample", :rel => "boxy" do
         .zoom_icon
         .app_sample_image
+          =image_tag('app-samples/search-thumb.jpg')
     .step#contact
       .flag 3
       %p= t(:'.steps.contact').html_safe
       = link_to "#contact_zoomed", :class => "app_sample", :rel => "boxy" do
         .zoom_icon
         .app_sample_image
+          =image_tag('app-samples/contact-thumb.jpg')
         
       =image_tag('app-samples/profile.jpg', :id => "profile_zoomed", :class => "hidden", :title => t(:'.steps.profile').html_safe)
       =image_tag('app-samples/search.jpg', :id => "search_zoomed", :class => "hidden", :title => t(:'.steps.profile').html_safe)

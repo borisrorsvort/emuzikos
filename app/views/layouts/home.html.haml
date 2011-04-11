@@ -11,18 +11,8 @@
         = image_tag 'logo.png', :alt => "Emuzikos"
         
     #user_nav
-      -if current_user
-        = "Hi #{current_user.username}!" 
-        = link_to t(:'menu.contact'), contact_path
-        =link_to t(:'menu.testimonials'), testimonials_path
-        =link_to t(:'menu.logout'), logout_path
-        
-      -else
-        =link_to t(:'menu.testimonials'), testimonials_path
-        =link_to t(:'menu.register'),new_user_path
-        =link_to t(:'menu.login'),login_path
+      = render "/layouts/top_nav"
     .clear
-        
   #container
         
     %section#content
