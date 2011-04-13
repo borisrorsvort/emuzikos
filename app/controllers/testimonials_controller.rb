@@ -1,6 +1,6 @@
 class TestimonialsController < ApplicationController
   def index
-    @testimonials = Testimonial.order("created_at DESC").paginate(:page => params[:page], :per_page => 50)
+    @testimonials = Testimonial.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
   
   def show

@@ -4,9 +4,9 @@ class MessagesController < ApplicationController
   
   def index
     if params[:mailbox] == "sent"
-      @messages = @user.sent_messages
+      @messages = @user.sent_messages.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page)
     else
-      @messages = @user.received_messages
+      @messages = @user.received_messages.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page)
     end
   end
   

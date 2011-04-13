@@ -1,11 +1,16 @@
-
+-if !@messages.blank?
+  .page_entries
+    = page_entries_info @messages
+    
 = form_tag delete_selected_user_messages_path(@user, :method => :post)  do
-
+  
   - if params[:mailbox] == "sent"
     = render :partial => "sent"
   - else
     = render :partial => "inbox"
-
+  
+  = will_paginate @messages
+  
 = content_for :javascripts do 
   :javascript
     $(document).ready(function() {

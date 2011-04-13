@@ -1,19 +1,20 @@
 - title t(:'.title', :username => @user.username), false
 
-- content_for :sub_nav do
-  - if @user == current_user
-    %ul#sub_sections
-      %li
-        = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
-      %li
-        = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
-  
-  - else
-    %ul#sub_sections
-      %li
-        = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), users_path, :class => "button back"
-  .clear
+-if current_user
+  - content_for :sub_nav do
+    - if @user == current_user
+      %ul#sub_sections
+        %li
+          = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+        %li
+          = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
 
+    - else
+      %ul#sub_sections
+        %li
+          = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), users_path, :class => "button back"
+    .clear
+  
 
 
 %section.left_drawer
@@ -61,7 +62,8 @@
   /         = render :partial => "/messages/form", :object => f
   -if @current_user && @current_user != @user
     = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button submit contact small"
-
+  -elsif !@current_user
+    = link_to t(:'buttons.home_signup'), signup_path, :class => "button submit contact small"
 .clear
 
 

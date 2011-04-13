@@ -11,8 +11,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       gflash :success => true
-      #flash[:notice] = "Successfully logged in."
-      redirect_to users_url
+      redirect_to root_path
     else
       render :action => 'new', :layout => "home"
     end
