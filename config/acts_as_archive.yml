@@ -1,3 +1,0 @@
-User:
-  - class: User::Archive
-    table: archived_users

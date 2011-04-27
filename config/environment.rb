@@ -11,3 +11,5 @@ I18n.backend.store_translations :en, :messages_count => {
   :one => 'you have 1 unread message',
   :other => 'You have %{count} unread messages'
 }
+
+
