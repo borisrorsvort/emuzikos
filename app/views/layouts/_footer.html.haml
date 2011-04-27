@@ -1,0 +1,50 @@
+#footer.light 
+  .inner_footer
+    .left_links
+      = link_to t(:'common.home'), root_path
+      -if current_user
+        = link_to t(:'menu.contact'), contact_path
+        =link_to t(:'menu.testimonials'), testimonials_path
+        =link_to t(:'menu.logout'), logout_path, :class => "logout"
+
+      -else
+        =link_to t(:'menu.testimonials'), testimonials_path
+        =link_to t(:'menu.register'),new_user_path
+        =link_to t(:'menu.login'),login_path
+      
+    .copyright
+      Emuzikos #{Time.now.year} | #{ t(:'common.created_by')} #{ link_to "Boris Rorsvort", "http://www.rorsvort.com", :rel => "external"}
+    .clear
+/ #footer
+/   .inner_footer
+/     %table.wide
+/       %tr
+/         %th About
+/         %th Help
+/         %th FAQ
+/         %th Contact
+/       %tr
+/         %td 
+/           %ul
+/             %li item 1
+/             %li item 1
+/             %li item 1
+/         %td 
+/           %ul
+/             %li item 1
+/             %li item 1
+/             %li item 1
+/         %td 
+/           %ul
+/             %li item 1
+/             %li item 1
+/             %li item 1
+/         %td 
+/           %ul
+/             %li item 1
+/             %li item 1
+/             %li item 1
+  
+= include_javascripts :jquery, :emuzikos
+= yield(:javascripts)
+= gflash(:fade_in_speed => 200, :fade_out_speed => 200, :time => 200)

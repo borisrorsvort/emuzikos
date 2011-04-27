@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:show, :edit, :update]
+  before_filter :require_user, :only => [:index, :edit, :update]
   
   helper_method :sort_column, :sort_direction
   
@@ -8,14 +8,15 @@ class UsersController < ApplicationController
     @users = []
     @search = Search.new(User, params[:search])
     if is_search?
-      @users = User.profiles_completed.search(@search, :page => params[:page], :order => sort_column + " " + sort_direction )
+      @users = User.profiles_completed.search(@search, :page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction )
     else
-      @users = User.profiles_completed.paginate(:page => params[:page], :order => sort_column + " " + sort_direction)
+      @users = User.profiles_completed.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction)
     end
   end
   
   def new
     @user = User.new
+    render :layout => "home"
   end
   
   def show
@@ -27,17 +28,17 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if verify_recaptcha(@user) && @user.save!
       Notifier.registration_confirmation(@user).deliver
-      gflash :success => "Registration successful. Don't forget to complete your profile to appear in search results",
-              :notice => "Don't forget to complete your profile to appear in search results"
-      #flash[:notice] = "Registration successful. Don't forget to complete your profile to appear in search results"
+      gflash :success => true, :notice => true
+      
       if params[:user][:avatar].blank?  
         redirect_to edit_user_url(@user)
       else  
         render :action => 'crop'  
       end
+      
     else
-      gflash :error => "Some informations need to be corrected"
-      render :action => 'new' # error shown in view
+      render :action => 'new', :layout => "home"
+      gflash :error => true
     end
   end
   
@@ -50,14 +51,14 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       
       if params[:user][:avatar].blank?
-        gflash :success => "Successfully updated your profile."
+        gflash :success => true
         redirect_to edit_user_url
       else
-        gflash :notice => "One more thing to do, you need to crop your avatar picture."
+        gflash :notice => true
         render :action => 'crop'  
       end
     else
-      gflash :error => "Some informations need to be corrected"
+      gflash :error => true
       render :action => 'edit'
     end
   end

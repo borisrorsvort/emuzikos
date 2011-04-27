@@ -9,7 +9,6 @@
         = t(:'menu.messages.messages')
         = unread_messages_count unless  current_user.received_messages.un_read.count == 0
         
-                    
     %li.icon-user
       =link_to t(:'menu.profile.show'), edit_user_url(current_user), 
         :class => (current_page?(user_path(current_user)) || current_page?(edit_user_path(current_user))) ? "current" : nil

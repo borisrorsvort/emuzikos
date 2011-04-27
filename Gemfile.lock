@@ -124,11 +124,15 @@ GEM
     sass (3.1.0.alpha.252)
     settingslogic (2.0.6)
     thor (0.14.6)
+    tolk (1.0)
+      will_paginate (= 3.0.pre)
+      ya2yaml (~> 0.26)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.25)
-    will_paginate (3.0.pre2)
+    will_paginate (3.0.pre)
     xml-simple (1.0.15)
+    ya2yaml (0.30)
     yui-compressor (0.9.6)
       POpen4 (>= 0.1.4)
 
@@ -152,4 +156,5 @@ DEPENDENCIES
   paperclip
   rails (= 3.0.3)
   settingslogic (= 2.0.6)
-  will_paginate (= 3.0.pre2)
+  tolk
+  will_paginate (= 3.0.pre)

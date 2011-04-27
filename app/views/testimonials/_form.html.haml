@@ -1,6 +1,5 @@
 = form_for @testimonial do |f|
   = f.error_messages
   .field
-    = f.label :body
     = f.text_area :body
-  %p= f.submit :class => "button sumbit"
+  %p= f.submit t(:'buttons.submit'), :class => "button sumbit"

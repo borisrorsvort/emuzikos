@@ -6,44 +6,18 @@ class Search
     @options = options || {}
   end
   
-  def user_type
-    options[:user_type]
+  key_filters = %w(user_type searching_for country genre instrument)
+  
+  key_filters.each do |key_filter|
+    define_method key_filter do
+      options[key_filter.to_sym]
+    end
   end
   
-  def searching_for
-    options[:searching_for]
-  end
-
-  def country
-    options[:country]
-  end
-  
-  def genre
-    options[:genre]
-  end
-  
-  def instrument
-    options[:instrument]
-  end
-  
-  def has_user_type?
-    user_type.present?
-  end
-  
-  def has_searching_for?
-    searching_for.present?
-  end
-  
-  def has_country?
-    country.present?
-  end
-  
-  def has_genre?
-    genre.present?
-  end
-  
-  def has_instrument?
-    instrument.present?
+  key_filters.each do |key_filter|
+    define_method "has_#{key_filter}?" do
+      send(key_filter).present?
+    end
   end
   
   def conditions

@@ -1,0 +1,28 @@
+- content_for :stylesheets do
+  = include_stylesheets :homepage, :media => 'all'
+  
+= render "/layouts/head"
+
+%body.logged_out{:id => @body_id ? @body_id: controller.controller_name, :class => @body_class ? controller.action_name + " " + @body_class : controller.action_name}
+
+  %section#header
+    #logo
+      = link_to (@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home') do
+        = image_tag 'logo.png', :alt => "Emuzikos"
+        
+    #user_nav
+      = render "/layouts/top_nav"
+    .clear
+  #container
+        
+    %section#content
+      - if content_for? :sub_nav
+        %nav#sub_nav
+          = yield :sub_nav
+          
+      #inner_content
+
+        = yield
+    .clear
+  
+  =render "/layouts/footer"

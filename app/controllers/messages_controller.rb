@@ -4,9 +4,9 @@ class MessagesController < ApplicationController
   
   def index
     if params[:mailbox] == "sent"
-      @messages = @user.sent_messages
+      @messages = @user.sent_messages.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page)
     else
-      @messages = @user.received_messages
+      @messages = @user.received_messages.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page)
     end
   end
   
@@ -38,8 +38,8 @@ class MessagesController < ApplicationController
     @message.recipient = User.find_by_username(params[:message][:to])
 
     if @message.save
-      gflash :success => "Your Message was successfully sent"
-      #flash[:notice] = "Message sent"
+      gflash :success => true
+      gflash :notice => t(:'gflash.testimonials.please_write', :link => new_testimonial_url) # if @current_user.testimonials.empty?
       redirect_to user_messages_path(@user)
     else
       render :action => :new
@@ -53,10 +53,8 @@ class MessagesController < ApplicationController
           @message = Message.find(:first, :conditions => ["messages.id = ? AND (sender_id = ? OR recipient_id = ?)", id, @user, @user])
           @message.mark_deleted(@user) unless @message.nil?
         }
-        #flash[:notice] = "Messages deleted"
-        gflash :success => "Your Message was successfully delete"
+        gflash :success => true
       end
-      #redirect_to user_messages_path(@user, @message)
       redirect_to :back
     end
   end

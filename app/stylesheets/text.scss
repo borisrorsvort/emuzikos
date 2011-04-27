@@ -24,7 +24,7 @@ h3{
 	color:#515151;
 	font-size:1.3em;
 	font-weight:bold;
-	margin-bottom: 3px;
+	margin-bottom: 5px;
 	line-height:1.2em;
 }
 h4{
@@ -47,11 +47,12 @@ h6{
 	margin-bottom:1.8em;
 	line-height:1.8em;
 }
-p {
+p, ul {
   font-size: 1.2em;
   line-height: 1.48em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
+
 blockquote p{
 	font-size:1.2em!important;
 	line-height:1.5em!important;
@@ -84,7 +85,8 @@ abbr{
 
 ul{
 	margin-bottom:1.8em;
-	list-style:square inside;
+	list-style: disc outside;
+  padding-left: 20px;
 }
 ul li{
 	font-size:1.2em;

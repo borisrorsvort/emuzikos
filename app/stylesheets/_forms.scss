@@ -11,12 +11,14 @@ form {
 
 .field {
   display       : block;
-  margin-bottom : 15px; }
+  margin-bottom : 15px;
+  font-size: 1.2em;
+  line-height: 1.48em; }
 
 label {
   font-weight   : bold;
   display       : block;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 5px; }
   
 .required {

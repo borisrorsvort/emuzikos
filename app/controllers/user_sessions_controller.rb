@@ -4,23 +4,22 @@ class UserSessionsController < ApplicationController
   
   def new
     @user_session = UserSession.new
+    render :layout => "home"
   end
   
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      gflash :success => "Successfully logged in. Welcome back! "
-      #flash[:notice] = "Successfully logged in."
-      redirect_to users_url
+      gflash :success => true
+      redirect_to root_path
     else
-      render :action => 'new'
+      render :action => 'new', :layout => "home"
     end
   end
   
   def destroy
     current_user_session.destroy
-    gflash :success => "Successfully logged out."
-    #flash[:notice] = "Successfully logged out."
+    gflash :success => true
     redirect_to root_url
   end
 end

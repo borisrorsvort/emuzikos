@@ -1,7 +1,18 @@
-%tr
-  %td= testimonial.body
-  %td= testimonial.user.username
-  %td
-    = link_to t(:'buttons.show'), testimonial, :class => "button display"
-    = link_to t(:'buttons.edit'), edit_testimonial_path(testimonial), :class => "button edit"
-    = link_to t(:'buttons.delete'), testimonial, :confirm => t(:'common.are_you_sure'), :method => :delete, :class => "button delete"
+.testimonial
+  / = t(:'common.by')
+  / =testimonial.user.username
+  / %br
+  / =testimonial.body
+
+  %span.avatar.small
+    - if testimonial.user.avatar.present?
+      = image_tag(testimonial.user.avatar.url(:gallery))
+    -else
+      = image_tag("backgrounds/avatar-default.gif")
+
+  %div.text
+    .span.author
+      = testimonial.created_at.strftime('%b %d, %Y')
+      = t(:'common.by')
+      = testimonial.user.username
+    = testimonial.body

@@ -1,6 +1,6 @@
 class TestimonialsController < ApplicationController
   def index
-    @testimonials = Testimonial.all
+    @testimonials = Testimonial.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
   end
   
   def show
@@ -17,9 +17,8 @@ class TestimonialsController < ApplicationController
     @testimonial.user = @current_user
     
     if @testimonial.save
-      gflash :success => "Successfully created testimonial"
-      #flash[:notice] = "Successfully created testimonial."
-      redirect_to @testimonial
+      gflash :success => true
+      redirect_to testimonials_url
     else
       render :action => 'new'
     end
@@ -32,8 +31,7 @@ class TestimonialsController < ApplicationController
   def update
     @testimonial = Testimonial.find(params[:id])
     if @testimonial.update_attributes(params[:testimonial])
-      gflash :success => "Successfully updated testimonial"
-      #flash[:notice] = "Successfully updated testimonial."
+      gflash :success => true
       redirect_to @testimonial
     else
       render :action => 'edit'
@@ -43,8 +41,7 @@ class TestimonialsController < ApplicationController
   def destroy
     @testimonial = Testimonial.find(params[:id])
     @testimonial.destroy
-    gflash :success => "Successfully destroyed testimonial"
-    #flash[:notice] = "Successfully destroyed testimonial."
+    gflash :success => true
     redirect_to testimonials_url
   end
 end

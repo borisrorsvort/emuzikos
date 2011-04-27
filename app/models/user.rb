@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   
   validates_length_of :password, :minimum => 6, :if => :password_required?, :allow_blank => true
   validates_confirmation_of :password, :unless => Proc.new { |a| a.password.blank? }
-  validates_size_of :username, :within => 5..15
+  validates_size_of :username, :within => 3..15
   validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
       
@@ -24,7 +24,6 @@ class User < ActiveRecord::Base
     :styles => {
       :normal => "300>", 
       :medium => "200x200#",
-      :thumb => "100x100#", 
       :gallery => "30x30#" 
     },  
     :processors => [:cropper],
@@ -88,9 +87,9 @@ class User < ActiveRecord::Base
     reset_perishable_token!
     Notifier.password_reset_instructions(self).deliver
   end
-  
-  def self.per_page
-    AppConfig.site.results_per_page
+
+  def is_admin?
+    self.is_admin == true
   end
   
   def self.search(search, args = {})

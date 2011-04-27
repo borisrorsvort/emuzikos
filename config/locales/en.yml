@@ -1,226 +1,182 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# US English translations for Ruby on Rails
+#
+# Use this as the base for the locale file of your language.
 
 en:
-  common:
-    required: Required
-    please_choose: 'Please choose ...'
-    are_you_sure: Are you sure?
-    reset: Reset
-    or: or
-    
-### TABLES
-### ______________________________________________________    
-  tooltips:
-    email: "Must be a valid email address"
-    password: "Must contains at least 5 characters"
-    back_to_home: Back to Homepage
-    search:
-      match_instrument: Find users that match instruments in your profile
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
 
-### MENU
-### ______________________________________________________
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
 
-  menu:
-    profile:
-      show: Profile
-      edit: Edit my profile
-      public: Public profile
-    all_users: Search
-    logout: Lougout
-    login: Login
-    register: Register
-    messages:
-      messages: Messages
-      inbox: Inbox
-      sent_messages: "Sent Messages"
-    testimonials: Testimonials
-    contact: "Contact us"
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    order:
+      - :year
+      - :month
+      - :day
 
-### TABLES
-### ______________________________________________________
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "am"
+    pm: "pm"
 
-  tables:
-    headings:
-      actions: Actions
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " and "
+      last_word_connector: ", and "
 
-### BUTTONS
-### ______________________________________________________
+    select:
+      prompt: "Please select"
 
-  buttons:
-    update: Update
-    create: Create
-    edit: Edit
-    back: "Back to %{model}"
-    delete: Delete
-    show: Show
-    login: Login
-    submit: Submit
-    search: Search
-    compose: Compose
-    cancel: Cancel
-    reply: Reply
-    all: View all
-    contact: Contact
-    testimonials:
-      all: Go back to Testimonials
-      create: Add a new testimonial
-    
-### MUSICAL GENRES
-### ______________________________________________________
- 
-  musical_genres:
-    alternative: Alternative
-    blues: Blues
-    children: Children
-    classical: Classical
-    comedy: Comedy
-    country: Country
-    dance: Dance
-    easy_listening: Easy Listening
-    electronic: Electronic
-    fusion: Fusion
-    gospel: Gospel
-    hip_hop: Hip Hop
-    instrumental: Instrumental
-    jazz: Jazz
-    latino: Latino
-    new_age: New Age
-    opera: Opera 
-    pop: Pop
-    r_and_b: "R&B" 
-    reggae: Reggae
-    rock: Rock
-    songwriter: Song Writer
-    soundtrack:  Soundtrack
-    spoken_word: Spoken Word
-    vocal: Vocal
-    world: World
+  number:
+    format:
+      separator: "."
+      delimiter: ","
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
 
-### INSTRUMENTS
-### ______________________________________________________
+    currency:
+      format:
+        format: "%u%n"
+        unit: "$"
+        separator: "."
+        delimiter: ","
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
 
-  instruments:
-    guitar: guitar
-    bass: bass
-    double_bass: doule bass
-    drums: drums
-    violin: violin
-    flute: flute
-    piano: piano
-    percussions: percussions
-    voice: voice
-    turntables: turntables
-    banjo: banjo
-    cithar: cithar
-    bouzouki: bouzouki
-    mandolin: mandolin
-    whistles: whistles
-    spoons: spoons
-    keyboard: keyboard
-    ocarina: ocarina
-    congas: congas
+    percentage:
+      format:
+        delimiter: ""
 
-### USERS
-### ______________________________________________________
+    precision:
+      format:
+        delimiter: ""
 
-  users:
-    types:
-      musician: Musician
-      band: Band
-    musician_infos: Musician Infos
-    location: Location
-    credentials: Credentials
-    index:
-      title: Users Listing
-      no_users: "We couldn't find any users corresponding to you search criterias" 
-    show:
-      title: "%{username}'s profile"
-      from: from
-      is_looking_for: is looking for a
-      to_play: to play
-      music: music
-      
-    edit:
-      titles:
-        title: Edit your profile
-    new:
-      title: "New User"
-    crop:
-      prewiew: "Preview"
+    human:
+      format:
+        delimiter: ""
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: Thousand
+          million: Million
+          billion: Billion
+          trillion: Trillion
+          quadrillion: Quadrillion
 
-### MESSAGES
-### ______________________________________________________
+  datetime:
+    distance_in_words:
+      half_a_minute: "half a minute"
+      less_than_x_seconds:
+        one:   "less than 1 second"
+        other: "less than %{count} seconds"
+      x_seconds:
+        one:   "1 second"
+        other: "%{count} seconds"
+      less_than_x_minutes:
+        one:   "less than a minute"
+        other: "less than %{count} minutes"
+      x_minutes:
+        one:   "1 minute"
+        other: "%{count} minutes"
+      about_x_hours:
+        one:   "about 1 hour"
+        other: "about %{count} hours"
+      x_days:
+        one:   "1 day"
+        other: "%{count} days"
+      about_x_months:
+        one:   "about 1 month"
+        other: "about %{count} months"
+      x_months:
+        one:   "1 month"
+        other: "%{count} months"
+      about_x_years:
+        one:   "about 1 year"
+        other: "about %{count} years"
+      over_x_years:
+        one:   "over 1 year"
+        other: "over %{count} years"
+      almost_x_years:
+        one:   "almost 1 year"
+        other: "almost %{count} years"
+    prompts:
+      year:   "Year"
+      month:  "Month"
+      day:    "Day"
+      hour:   "Hour"
+      minute: "Minute"
+      second: "Seconds"
 
-  user_sessions:
-    new: 
-      forgot_password: Forgot your password?
-  
-### MESSAGES
-### ______________________________________________________
+  helpers:
+    select:
+      prompt: "Please select"
 
-  messages:
-    delete: "Delete"
-    subject: Subject
-    sender: Send by
-    from: From
-    received: Received on
-    sent_on: Sent on
-    no_messages: You have no messages
-    to: To
-    message: Message
-    new:
-      title: New message
-    inbox:
-      title: Your Messages
-      subtitle: Inbox
-    sent:
-      title: Your Messages
-      subtitle: Sent Messages
+    submit:
+      create: 'Create %{model}'
+      update: 'Update %{model}'
+      submit: 'Save %{model}'
 
-### SEARCH TERMS
-### ______________________________________________________
-  
-  quick_links:
-    title: "Quick links:"
-    local_musicians: Local musicians
-    recent_subscriptions: Recent subscriptions
-    instruments_match: Instruments match
-      
-  search_terms:
-    iam: "I'm searching for a"
-    who_search_for: "who's searching for a"
-    who_plays: Instruments
-    music_style: Main musical genre
-    country: country
-    
-### PASSWORD RESETS
-### ______________________________________________________
+  errors:
+    format: "%{attribute} %{message}"
 
-  password_resets:
-    edit:
-      title: Update your password
-      instructions: Please enter the new password below and then press "Update Password".
-    new:
-      title: Reset your password
-      instructions: Please enter your email address below and then press "Reset Password".
+    messages: &errors_messages
+      inclusion: "is not included in the list"
+      exclusion: "is reserved"
+      invalid: "is invalid"
+      confirmation: "doesn't match confirmation"
+      accepted: "must be accepted"
+      empty: "can't be empty"
+      blank: "can't be blank"
+      too_long: "is too long (maximum is %{count} characters)"
+      too_short: "is too short (minimum is %{count} characters)"
+      wrong_length: "is the wrong length (should be %{count} characters)"
+      not_a_number: "is not a number"
+      not_an_integer: "must be an integer"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      equal_to: "must be equal to %{count}"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      odd: "must be odd"
+      even: "must be even"
 
-### CONTACT PAGE
-### ______________________________________________________
-  
-  pages:
-    contact:
-      title: Contact us
-      message: Message
-      address: Address
-      name: Name
+  activerecord:
+    errors:
+      template:
+        header:
+          one:    "1 error prohibited this %{model} from being saved"
+          other:  "%{count} errors prohibited this %{model} from being saved"
+        body: "There were problems with the following fields:"
 
-### TESTIMONIALS
-### ______________________________________________________
+      messages:
+        taken: "has already been taken"
+        record_invalid: "Validation failed: %{errors}"
+        <<: *errors_messages
 
-  testimonials:
-    no_testimonials: "Sorry, you have'nt written any testominals. May be time for one :)"
-    index:
-      title: Testimonials
-    new:
-      title: New testimonial
+      full_messages:
+        format: "%{attribute}%{message}"
