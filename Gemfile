@@ -7,6 +7,7 @@ gem "jquery-rails"
 gem "will_paginate", "3.0.pre"
 gem "gritter"
 
+gem "sass"
 gem "haml", ">= 3.1.alpha.50"
 gem 'haml-rails'
 gem "compass", "0.11.beta.3"
@@ -22,11 +23,13 @@ gem 'tolk'
 
 #gem 'sitemap_generator', :git => "git://github.com/shinjikuwayama/sitemap_generator.git"
 
+gem 'mysql2', '< 0.3'
+
+
 group :development do
   gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
   gem "nifty-generators"
   gem 'heroku_san'
-  gem 'mysql2'
 end
 
 
