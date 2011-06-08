@@ -187,7 +187,7 @@ b {
   font-weight: bold;
   font-size: 1.5em;
   position: relative;
-  background: transparent url('/images/buttons/signup_button/signup_bc.png?1303988570') left top repeat-x;
+  background: transparent url('/images/buttons/signup_button/signup_bc.png?1303908836') left top repeat-x;
 }
 /* line 48, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button a {
@@ -209,14 +209,14 @@ b {
   position: absolute;
   width: 25px;
   height: 70px;
-  background: transparent url('/images/buttons/signup_button/signup_bl.png?1303988570') left top no-repeat;
+  background: transparent url('/images/buttons/signup_button/signup_bl.png?1303908836') left top no-repeat;
   display: block;
 }
 /* line 71, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button .br {
   left: 100%;
   right: -25px;
-  background: transparent url('/images/buttons/signup_button/signup_br.png?1303988570') left top no-repeat;
+  background: transparent url('/images/buttons/signup_button/signup_br.png?1303908836') left top no-repeat;
 }
 /* line 77, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works {
@@ -349,7 +349,7 @@ b {
   width: 49px;
   height: 62px;
   margin-bottom: 10px;
-  background: transparent url('/images/backgrounds/flag.png?1303988570') center center no-repeat;
+  background: transparent url('/images/backgrounds/flag.png?1303908836') center center no-repeat;
 }
 /* line 172, ../../../app/stylesheets/homepage.scss */
 .step .zoom_icon {
@@ -358,5 +358,5 @@ b {
   right: 0;
   width: 31px;
   height: 31px;
-  background: transparent url('/images/icons/zoom-icon.png?1303988570') center center no-repeat;
+  background: transparent url('/images/icons/zoom-icon.png?1303908836') center center no-repeat;
 }
