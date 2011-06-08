@@ -29,13 +29,7 @@ class UsersController < ApplicationController
     if verify_recaptcha(@user) && @user.save!
       Notifier.registration_confirmation(@user).deliver
       gflash :success => true, :notice => true
-      
-      if params[:user][:avatar].blank?  
-        redirect_to edit_user_url(@user)
-      else  
-        render :action => 'crop'  
-      end
-      
+      redirect_to edit_user_path(@user)
     else
       render :action => 'new', :layout => "home"
       gflash :error => true

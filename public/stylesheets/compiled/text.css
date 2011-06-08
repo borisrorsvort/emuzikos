@@ -199,9 +199,9 @@ p, ul {
 
 /* line 56, ../../../app/stylesheets/text.scss */
 blockquote p {
-  font-size: 1.2em !important;
-  line-height: 1.5em !important;
-  margin-bottom: 1.5em !important;
+  font-size: 1.2em!important;
+  line-height: 1.5em!important;
+  margin-bottom: 1.5em!important;
   font-style: italic;
   font-weight: bold;
 }

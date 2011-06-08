@@ -3,14 +3,9 @@ class User < ActiveRecord::Base
   has_private_messages
   
   validates_presence_of :username, :email
-  validates_presence_of :password, :if => :password_required?
-  
-  validates_uniqueness_of :username, :email
-  
+  validates_presence_of :password, :if => :password_required?  
   validates_length_of :password, :minimum => 6, :if => :password_required?, :allow_blank => true
   validates_confirmation_of :password, :unless => Proc.new { |a| a.password.blank? }
-  validates_size_of :username, :within => 3..15
-  validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
       
   USER_TYPES = %w(band musician)

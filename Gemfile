@@ -7,10 +7,9 @@ gem "jquery-rails"
 gem "will_paginate", "3.0.pre"
 gem "gritter"
 
-gem "sass"
-gem "haml", ">= 3.1.alpha.50"
-gem 'haml-rails'
-gem "compass", "0.11.beta.3"
+gem "sass", ">= 3.1.2"
+gem "haml", ">= 3.1.1"
+gem "compass", ">= 0.11.1"
 
 gem 'heroku'
 gem 'formtastic', '~> 1.1.0'

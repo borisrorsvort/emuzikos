@@ -142,7 +142,9 @@ b {
   background: #157ebe;
   color: white;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #34afe0), color-stop(100%, #157ebe));
+  background-image: -webkit-linear-gradient(#34afe0, #157ebe);
   background-image: -moz-linear-gradient(#34afe0, #157ebe);
+  background-image: -o-linear-gradient(#34afe0, #157ebe);
   background-image: linear-gradient(#34afe0, #157ebe);
 }
 /* line 17, ../../../app/stylesheets/homepage.scss */
