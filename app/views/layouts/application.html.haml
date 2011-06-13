@@ -13,10 +13,13 @@
     .clear
     
   #container{:class => @current_user ? "with_sidebar" : nil}
-        
+      
     = render "/layouts/main_nav"  if @current_user
 
     %section#content
+      - flash.each do |key, message|
+        = content_tag(:div, message, :class => "flash #{key}")
+        
       - if content_for? :sub_nav
         %nav#sub_nav
           = yield :sub_nav

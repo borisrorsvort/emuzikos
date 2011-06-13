@@ -61,6 +61,7 @@ en:
         references: References
         request_message: Request message
         password: Password
+        current_password: Current password
         last_updater: Last updater
         last_active: Recent activity
         created_at: Created at

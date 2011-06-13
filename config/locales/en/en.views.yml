@@ -11,6 +11,7 @@ en:
     or: or
     by: by
     created_by: Created by
+    leave_blank: (leave blank if you don't want to change it)
 ### TABLES
 ### ______________________________________________________    
 
@@ -26,9 +27,10 @@ en:
 
   menu:
     profile:
-      show: Profile
+      show: Account
       edit: Edit my profile
       public: Public profile
+      account: Edit my account
     all_users: Search
     logout: Lougout
     login: Login
@@ -69,6 +71,8 @@ en:
     testimonials:
       all: Go back to Testimonials
       create: Add a new testimonial
+    registrations:
+      cancel_my_account: Cancel my account
     
 ### MUSICAL GENRES
 ### ______________________________________________________
@@ -148,18 +152,20 @@ en:
     edit:
       titles:
         title: Edit your profile
-    new:
-      title: "Signup"
     crop:
       prewiew: "Preview"
 
 ### MESSAGES
 ### ______________________________________________________
 
-  user_sessions:
-    new: 
-      title: Login to your account
-      forgot_password: Forgot your password?
+  devise:
+    registrations:
+      new:
+        title: "Signup"
+    sessions:
+      new: 
+        title: Sign in to your account
+        forgot_password: Forgot your password?
   
 ### MESSAGES
 ### ______________________________________________________

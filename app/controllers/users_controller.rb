@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => [:index, :edit, :update]
+  before_filter :authenticate_user!
   
   helper_method :sort_column, :sort_direction
   
@@ -14,33 +13,22 @@ class UsersController < ApplicationController
     end
   end
   
-  def new
-    @user = User.new
-    render :layout => "home"
-  end
-  
   def show
     @user = User.find(params[:id])
     @testimonials = @user.testimonials
   end
   
-  def create
-    @user = User.new(params[:user])
-    if verify_recaptcha(@user) && @user.save!
-      Notifier.registration_confirmation(@user).deliver
-      gflash :success => true, :notice => true
-      
-      if params[:user][:avatar].blank?  
-        redirect_to edit_user_url(@user)
-      else  
-        render :action => 'crop'  
-      end
-      
-    else
-      render :action => 'new', :layout => "home"
-      gflash :error => true
-    end
-  end
+  # def create
+  #   @user = User.new(params[:user])
+  #   if verify_recaptcha(@user) && @user.save!
+  #     Notifier.registration_confirmation(@user).deliver
+  #     gflash :success => true, :notice => true
+  #     redirect_to edit_user_path(@user)
+  #   else
+  #     render :action => 'new', :layout => "home"
+  #     gflash :error => true
+  #   end
+  # end
   
   def edit
     @user = @current_user

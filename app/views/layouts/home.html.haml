@@ -19,7 +19,10 @@
       - if content_for? :sub_nav
         %nav#sub_nav
           = yield :sub_nav
-          
+
+      - flash.each do |key, message|
+        = content_tag(:div, message, :class => "flash #{key}")
+
       #inner_content
 
         = yield
