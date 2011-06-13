@@ -52,7 +52,6 @@ $(document).ready(function() {
   
   $("select, input:checkbox, input.radio:radio").uniform(); 
   
-  
   // CSS ARROWS
   
   $('#main_nav li a.current').append('<div class="main_nav_current_arrow"></div>');
@@ -61,13 +60,6 @@ $(document).ready(function() {
   
   // NOISY STUFF
   
-  // $('body, #content, #header').noisy({
-  //     'intensity' : 1, 
-  //     'size' : 50, 
-  //     'opacity' : 0.04, 
-  //     'fallback' : '', 
-  //     'monochrome' : false
-  // });
   $('.homepage #content').noisy({
       'intensity' : 1, 
       'size' : 150, 
@@ -77,7 +69,7 @@ $(document).ready(function() {
   });
   
   // MASONRY
-  $(".testimonials").masonry({ singleMode: true,resizeable: true,animate: true,itemSelector: '.testimonial' });
+  $(".testimonials").masonry({ singleMode: true,resizeable: true, animate: true,itemSelector: '.testimonial' });
   
   // BOXY MODAL CONFIG
   $("a[rel=boxy]").boxy({modal: true, closeable: true, center: true, title: "EMUZIKOS" , closetext: "[close]"});

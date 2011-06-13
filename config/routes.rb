@@ -2,21 +2,25 @@ Emuzikos::Application.routes.draw do
 
 
 
-  match "login" => "user_sessions#new", :as => :login
-  match "logout" => "user_sessions#destroy", :as => :logout
-  match "signup" => "users#new", :as => :signup
+
+  # devise_scope :user do
+  #   get "/login" => "devise/sessions#new"
+  #   get "/logout" => "devise/sessions#destroy"
+  # end
+  devise_for :users
+  
+  # match "logout" => "devise/sessions#destroy", :as => :logout
+  # match "signup" => "devise/user_registration#new", :as => :signup
   match "contact" => "pages#contact", :as => :contact
   match "about" => "pages#about", :as => :about
-  resources :user_sessions
-  resources :password_resets, :only => [ :new, :create, :edit, :update ]
   resources :testimonials
   resources :users do
-             resources :messages do
-               collection do
-                 post :delete_selected
-               end
-             end
-           end
+    resources :messages do
+      collection do
+        post :delete_selected
+      end
+    end
+   end
 
 
 

@@ -7,6 +7,8 @@
         = link_to t(:'menu.profile.edit'), edit_user_path(current_user), :class => "current"
       %li
         = link_to t(:'menu.profile.public'),  user_path(current_user)
+      %li
+        = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
     .clear
 
 = render 'form'

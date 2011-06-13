@@ -611,8 +611,12 @@ form {
   font-size: 1.2em;
   line-height: 1.48em;
 }
+/* line 17, ../../../app/stylesheets/_forms.scss */
+.field i {
+  display: block;
+}
 
-/* line 18, ../../../app/stylesheets/_forms.scss */
+/* line 20, ../../../app/stylesheets/_forms.scss */
 label {
   font-weight: bold;
   display: block;
@@ -620,7 +624,7 @@ label {
   margin-bottom: 5px;
 }
 
-/* line 24, ../../../app/stylesheets/_forms.scss */
+/* line 26, ../../../app/stylesheets/_forms.scss */
 .required {
   display: block;
   font-style: italic;
@@ -628,12 +632,12 @@ label {
   margin-bottom: 5px;
 }
 
-/* line 30, ../../../app/stylesheets/_forms.scss */
+/* line 32, ../../../app/stylesheets/_forms.scss */
 .inline {
   display: inline;
 }
 
-/* line 33, ../../../app/stylesheets/_forms.scss */
+/* line 35, ../../../app/stylesheets/_forms.scss */
 input, textarea {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -645,7 +649,7 @@ input, textarea {
   border: 1px solid #ccc;
   padding: 5px;
 }
-/* line 38, ../../../app/stylesheets/_forms.scss */
+/* line 40, ../../../app/stylesheets/_forms.scss */
 input:focus, input:active, textarea:focus, textarea:active {
   -moz-box-shadow: 0 0 3px #666666;
   -webkit-box-shadow: 0 0 3px #666666;
@@ -654,22 +658,22 @@ input:focus, input:active, textarea:focus, textarea:active {
 }
 
 /* USER PROFILE FORM */
-/* line 45, ../../../app/stylesheets/_forms.scss */
+/* line 47, ../../../app/stylesheets/_forms.scss */
 .instrument_column {
   width: 150px;
   float: left;
 }
-/* line 48, ../../../app/stylesheets/_forms.scss */
+/* line 50, ../../../app/stylesheets/_forms.scss */
 .instrument_column .instrument {
   padding: 5px 0;
 }
-/* line 50, ../../../app/stylesheets/_forms.scss */
+/* line 52, ../../../app/stylesheets/_forms.scss */
 .instrument_column .instrument label {
   padding-top: 5px;
 }
 
 /* SEARCH FORM */
-/* line 55, ../../../app/stylesheets/_forms.scss */
+/* line 57, ../../../app/stylesheets/_forms.scss */
 .reset_button {
   float: left;
   position: relative;
@@ -677,7 +681,7 @@ input:focus, input:active, textarea:focus, textarea:active {
   margin-left: 10px;
 }
 
-/* line 62, ../../../app/stylesheets/_forms.scss */
+/* line 64, ../../../app/stylesheets/_forms.scss */
 #search_form .field {
   float: left;
   height: 15px;
