@@ -530,35 +530,35 @@ b {
   padding-left: 240px;
 }
 
-/* line 4, ../../../app/stylesheets/_notices.scss */
-#flash_notice,
-#flash_error,
-#flash_alert {
+/* line 1, ../../../app/stylesheets/_notices.scss */
+.flash {
   padding: 20px;
   font-size: 15px;
   text-align: center;
+  text-shadow: white 0 1px 1px;
 }
-
-/* line 9, ../../../app/stylesheets/_notices.scss */
-#flash_notice {
-  background-color: #ccffcc;
-  border: solid 1px #66cc66;
+/* line 6, ../../../app/stylesheets/_notices.scss */
+.flash.notice {
+  background-color: #e5f5fb;
+  color: #10516b;
+  -moz-box-shadow: #666666, 1px, 1px, 1px, inset;
+  -webkit-box-shadow: #666666, 1px, 1px, 1px, inset;
+  -o-box-shadow: #666666, 1px, 1px, 1px, inset;
+  box-shadow: #666666, 1px, 1px, 1px, inset;
+}
+/* line 10, ../../../app/stylesheets/_notices.scss */
+.flash.alert, .flash.error {
+  background-color: #ffcccc;
+  color: #cc0000;
 }
 
 /* line 14, ../../../app/stylesheets/_notices.scss */
-#flash_error,
-#flash_alert {
-  background-color: #ffcccc;
-  border: solid 1px #cc6666;
-}
-
-/* line 18, ../../../app/stylesheets/_notices.scss */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 21, ../../../app/stylesheets/_notices.scss */
-.error_messages {
+/* line 17, ../../../app/stylesheets/_notices.scss */
+.error_messages, #error_explanation {
   padding: 20px;
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -572,19 +572,21 @@ b {
   background-color: #cf0000;
   color: #fff;
 }
-/* line 29, ../../../app/stylesheets/_notices.scss */
-.error_messages h2 {
+/* line 25, ../../../app/stylesheets/_notices.scss */
+.error_messages h2, #error_explanation h2 {
   text-align: left;
   margin: 0;
   color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.5em;
   text-shadow: black 0 1px 1px;
 }
-/* line 34, ../../../app/stylesheets/_notices.scss */
-.error_messages p {
+/* line 32, ../../../app/stylesheets/_notices.scss */
+.error_messages p, #error_explanation p {
   margin: 10px 0px;
 }
-/* line 36, ../../../app/stylesheets/_notices.scss */
-.error_messages ul {
+/* line 34, ../../../app/stylesheets/_notices.scss */
+.error_messages ul, #error_explanation ul {
   margin: 0;
   font-size: 11px;
 }
