@@ -35,7 +35,7 @@ module Emuzikos
 
     # Configure the default encoding used in templates for Ruby 1.9.
     
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
     
     config.encoding = "utf-8"
