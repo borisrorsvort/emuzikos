@@ -1,0 +1,23 @@
+en:
+    
+### MESSAGES
+### ______________________________________________________
+
+  messages:
+    delete: "Delete"
+    subject: Subject
+    sender: Send by
+    from: From
+    received: Received on
+    sent_on: Sent on
+    no_messages: You have no messages
+    to: To
+    message: Message
+    new:
+      title: New message
+    inbox:
+      title: Your Messages
+      subtitle: Inbox
+    sent:
+      title: Your Messages
+      subtitle: Sent Messages

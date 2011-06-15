@@ -1,0 +1,11 @@
+en:
+  
+### TESTIMONIALS
+### ______________________________________________________
+
+  testimonials:
+    no_testimonials: "Sorry, you have'nt written any testominals. May be time for one :)"
+    index:
+      title: Testimonials
+    new:
+      title: New testimonial

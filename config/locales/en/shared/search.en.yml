@@ -1,0 +1,17 @@
+en:
+
+### SEARCH TERMS
+### ______________________________________________________
+
+  quick_links:
+    title: "Quick links:"
+    local_musicians: Local musicians
+    recent_subscriptions: Recent subscriptions
+    instruments_match: Instruments match
+
+  search_terms:
+    iam: "I'm searching for a"
+    who_search_for: "who's searching for a"
+    who_plays: Instruments
+    music_style: Main musical genre
+    country: country

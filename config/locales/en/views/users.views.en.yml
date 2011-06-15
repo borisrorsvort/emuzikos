@@ -1,0 +1,27 @@
+en:
+
+### USERS
+### ______________________________________________________
+
+  users:
+    types:
+      musician: Musician
+      band: Band
+    musician_infos: Musician Infos
+    location: Location
+    credentials: Credentials
+    index:
+      title: Users Listing
+      no_users: "We couldn't find any users corresponding to you search criterias" 
+    show:
+      title: "%{username}'s profile"
+      from: from
+      is_looking_for: is looking for a
+      to_play: to play
+      music: music
+
+    edit:
+      titles:
+        title: Edit your profile
+    crop:
+      prewiew: "Preview"

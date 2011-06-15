@@ -1,0 +1,93 @@
+en:
+  common:
+    home: Home
+    required: Required
+    please_choose: 'Please choose ...'
+    are_you_sure: Are you sure?
+    reset: Reset
+    or: or
+    by: by
+    created_by: Created by
+    leave_blank: (leave blank if you don't want to change it)
+  
+### MENU
+### ______________________________________________________
+
+  menu:
+    profile:
+      show: Account
+      edit: Edit my profile
+      public: Public profile
+      account: Edit my account
+    all_users: Search
+    logout: Lougout
+    login: Login
+    register: Register
+    messages:
+      messages: Messages
+      inbox: Inbox
+      sent_messages: "Sent Messages"
+    testimonials: Testimonials
+    contact: "Contact us"
+
+### TABLES
+### ______________________________________________________
+
+  tables:
+    headings:
+      actions: Actions
+      
+### MUSICAL GENRES
+### ______________________________________________________
+
+  musical_genres:
+    alternative: Alternative
+    blues: Blues
+    children: Children
+    classical: Classical
+    comedy: Comedy
+    country: Country
+    dance: Dance
+    easy_listening: Easy Listening
+    electronic: Electronic
+    fusion: Fusion
+    gospel: Gospel
+    hip_hop: Hip Hop
+    instrumental: Instrumental
+    jazz: Jazz
+    latino: Latino
+    new_age: New Age
+    opera: Opera 
+    pop: Pop
+    r_and_b: "R&B" 
+    reggae: Reggae
+    rock: Rock
+    songwriter: Song Writer
+    soundtrack:  Soundtrack
+    spoken_word: Spoken Word
+    vocal: Vocal
+    world: World
+
+### INSTRUMENTS
+### ______________________________________________________
+
+  instruments:
+    guitar: guitar
+    bass: bass
+    double_bass: doule bass
+    drums: drums
+    violin: violin
+    flute: flute
+    piano: piano
+    percussions: percussions
+    voice: voice
+    turntables: turntables
+    banjo: banjo
+    cithar: cithar
+    bouzouki: bouzouki
+    mandolin: mandolin
+    whistles: whistles
+    spoons: spoons
+    keyboard: keyboard
+    ocarina: ocarina
+    congas: congas
