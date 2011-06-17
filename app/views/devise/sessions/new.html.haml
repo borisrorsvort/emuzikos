@@ -7,8 +7,8 @@
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     = devise_error_messages!
     .field
-      = f.label :username, t(:'activerecord.attributes.user.username')
-      = f.text_field :username
+      = f.label :email, t(:'activerecord.attributes.user.email')
+      = f.text_field :email
     .field
       = f.label :password, t(:'activerecord.attributes.user.password')
       = f.password_field :password
