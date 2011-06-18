@@ -49,7 +49,7 @@
 
   .field
     = f.label :country, t(:'activerecord.attributes.user.country')
-    = localized_country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
+    = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
   
   %h2= t(:'users.credentials')
   .field

@@ -65,6 +65,7 @@ GEM
       xml-simple
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    carmen (0.2.8)
     chunky_png (1.2.0)
     compass (0.11.1)
       chunky_png (~> 1.1)
@@ -168,6 +169,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   aws-s3
+  carmen
   compass (>= 0.11.1)
   devise
   formtastic (~> 1.1.0)

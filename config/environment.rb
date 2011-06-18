@@ -12,4 +12,5 @@ I18n.backend.store_translations :en, :messages_count => {
   :other => 'You have %{count} unread messages'
 }
 
-
+# Set default locale for country_select
+Carmen.default_locale = :en
