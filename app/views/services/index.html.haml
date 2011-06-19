@@ -1,0 +1,40 @@
+- title t(:'.title')
+
+/- if @user == current_user
+- content_for :sub_nav do
+  %ul#sub_sections
+    %li
+      = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+    %li
+      = link_to t(:'menu.profile.public'),  user_path(current_user)
+    %li
+      = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
+    %li 
+      = link_to t(:'menu.profile.authentications'), services_path, :class => "current"
+  .clear
+
+%section#deviseauth
+  #currservices
+    %h3
+      The following #{@services.count == 1 ? 'account is' : 'accounts are'} connected with your local account at CommunityGuides:
+    - @services.each do |service|
+      .services_used
+        = image_tag "icons/authbuttons/#{service.provider}_64.png", :size => "64x64"
+        .user
+          .line1
+            Name: #{service.uname} (ID: #{service.uid})
+          .line2
+            Email: #{service.uemail != '' ? service.uemail : 'not set'}
+          .line3
+            - @services.count == 1 ? @msg = 'Removing the last account linked might lock you out of your account if you do not know the email/password sign-in of your local account!' : @msg = ''
+            = link_to "Remove this service", service, :confirm => 'Are you sure you want to remove this authentication service? ' + @msg, :method => :delete, :class => "remove"
+  #availableservices
+    %h3 You can connect more services to your account:
+    #services
+      %a.services{:href => "/auth/facebook"}
+        = image_tag "icons/authbuttons/facebook_32.png",  :alt => "Facebook"
+        
+      %a.services{:href => "/auth/twitter"}
+        = image_tag "icons/authbuttons/twitter_32.png",  :alt => "Twitter"
+        
+    %h3 If you signed-up for CommunityGuides via an authentication service a random password has been set for the local password. You can request a new password using the "Forgot your Password?" link on the sign-in page.

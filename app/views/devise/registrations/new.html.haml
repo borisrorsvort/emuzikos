@@ -22,5 +22,14 @@
     /   = recaptcha_tags
     .field
       = f.submit(t(:'buttons.submit'), :type => "submit", :class => "button submit")
+      
+      
+  #remote
+    #terms.box
+      = link_to "Terms of Service", "#"
+    #services.box
+      = link_to image_tag("icons/authbuttons/facebook_32.png"), "/auth/facebook"
+      = link_to image_tag("icons/authbuttons/twitter_32.png"), "/auth/twitter"
+      
   = render :partial => "devise/shared/links"
 

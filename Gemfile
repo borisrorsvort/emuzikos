@@ -30,6 +30,8 @@ gem 'tolk', :git => "git@github.com:borisrorsvort/tolk.git", :branch => 'rails3'
 
 gem 'mysql2', '< 0.3'
 
+gem 'omniauth'
+
 
 group :development do
   gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
