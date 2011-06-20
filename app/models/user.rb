@@ -1,11 +1,12 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  after_update :reprocess_avatar, :if => :cropping?
   
   has_many :services, :dependent => :destroy
   has_many :testimonials
@@ -13,6 +14,7 @@ class User < ActiveRecord::Base
   
   validates_confirmation_of :password, :unless => Proc.new { |a| a.password.blank? }
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
+  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
       
   USER_TYPES = %w(band musician)
   INSTRUMENTS = %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas)
@@ -51,10 +53,11 @@ class User < ActiveRecord::Base
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
     :default_url => '/images/backgrounds/no-image-:style.gif'
-    
-  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
-  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
-  after_update :reprocess_avatar, :if => :cropping?
+  
+
+  scope :profiles_completed, where( "country != ? and user_type != ? and genre != ? and zip != ? " , "", "", "", "" )
+  scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
+
 
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
@@ -65,9 +68,7 @@ class User < ActiveRecord::Base
     @geometry ||= {}
     @geometry[style] ||= Paperclip::Geometry.from_file(avatar.to_file(style))
   end
-  
-  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
-  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size  
+
 
   def instruments
     instruments = []
@@ -82,17 +83,7 @@ class User < ActiveRecord::Base
     "#{id}-#{username. parameterize}"
   end
   
-  def deliver_password_reset_instructions!
-    reset_perishable_token!
-    Notifier.password_reset_instructions(self).deliver
-  end
-
-  def is_admin?
-    self.is_admin == true
-  end
-  
   def password_required?  
-    # (authentications.empty? || 
    !password.blank? && super  
   end
   
@@ -104,8 +95,6 @@ class User < ActiveRecord::Base
       scoped
     end
   end
-
-  scope :profiles_completed, lambda { where("country != ? and user_type != ? and genre != ? and zip != ? " , "", "", "", "") }
   
   private
 

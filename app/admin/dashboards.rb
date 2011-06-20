@@ -8,14 +8,14 @@ ActiveAdmin::Dashboards.build do
   # Here is an example of a simple dashboard section
   #
   section "Recent Users" do
+    @users = User
+    @users_complete_profile = @users.profiles_completed.all
+    @signed_in_users = @users.currently_signed_in.count
     div do
-      render :partial => "users_numbers"
+      render :partial => "users_numbers", :locals => {  :users => @users, 
+                                                        :users_complete_profile => @users_complete_profile,
+                                                        :signed_in_users => @signed_in_users} 
     end
-    # ul do
-    #       User.profiles_completed.limit(5).collect do |user|
-    #         li link_to(user.username, admin_user_path(user))
-    #       end
-    #     end
   end
   
   # == Render Partial Section
