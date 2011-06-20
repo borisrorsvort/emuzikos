@@ -1,4 +1,8 @@
 en:
   services:
-      index:
-        title: Authentication Services - Setting
+    index:
+      title: Authentication services - Settings
+      subtitle: "The following %{account} connected with your local account at Emuzikos:"
+      account: 
+        singular: account is
+        plural: account are
