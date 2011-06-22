@@ -1,5 +1,25 @@
 = form_for @user, :html => { :multipart => true } do |f|
   = f.error_messages
+  
+  %h2= t(:'users.location')
+
+  .field
+    = f.label :zip, t(:'activerecord.attributes.user.zip')    
+    = f.text_field :zip
+
+  .field
+    = f.label :country, t(:'activerecord.attributes.user.country')
+    = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
+  
+  %h2= t(:'users.credentials')
+  .field
+    = f.label :avatar, t(:'activerecord.attributes.user.avatar')
+    - if @user.avatar.present?
+      .avatar.small
+        = image_tag @user.avatar.url(:gallery)
+    = f.file_field :avatar
+    .clear
+  
   %h2= t(:'users.musician_infos')
 
   .field
@@ -41,24 +61,7 @@
     = f.label :request_message, t(:'activerecord.attributes.user.request_message')
     = f.text_area :request_message, :size => "45x20"
 
-  %h2= t(:'users.location')
-
-  .field
-    = f.label :zip, t(:'activerecord.attributes.user.zip')    
-    = f.text_field :zip
-
-  .field
-    = f.label :country, t(:'activerecord.attributes.user.country')
-    = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
-  
-  %h2= t(:'users.credentials')
-  .field
-    = f.label :avatar, t(:'activerecord.attributes.user.avatar')
-    - if @user.avatar.present?
-      .avatar.small
-        = image_tag @user.avatar.url(:gallery)
-    = f.file_field :avatar
-    .clear
+  .clear
     
 
   

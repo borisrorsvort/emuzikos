@@ -10,6 +10,7 @@ en:
         searching_for: Searching for a
         references: References
         request_message: Request message
+        new_password: New password
         password: Password
         current_password: Current password
         last_updater: Last updater

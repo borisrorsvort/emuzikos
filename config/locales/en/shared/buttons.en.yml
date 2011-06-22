@@ -24,3 +24,5 @@ en:
       create: Add a new testimonial
     registrations:
       cancel_my_account: Cancel my account
+    send_password: Send the password reset email
+    change_password: Save new password

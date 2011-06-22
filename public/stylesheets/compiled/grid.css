@@ -958,16 +958,29 @@ body#messages .delete_seleted, body#messages .unread {
 .avatar {
   background: #ccc;
   display: block;
+  float: left;
 }
-/* line 95, ../../../app/stylesheets/grid.scss */
+/* line 96, ../../../app/stylesheets/grid.scss */
 .avatar.small {
   height: 30px;
   width: 30px;
+  border: 2px solid #fff;
+  -moz-box-shadow: 0px 0px 3px #cccccc;
+  -webkit-box-shadow: 0px 0px 3px #cccccc;
+  -o-box-shadow: 0px 0px 3px #cccccc;
+  box-shadow: 0px 0px 3px #cccccc;
+  margin-right: 10px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -khtml-border-radius: 2px;
+  border-radius: 2px;
 }
 
 /* USER SHOW
 ---------------------------------------- */
-/* line 102, ../../../app/stylesheets/grid.scss */
+/* line 107, ../../../app/stylesheets/grid.scss */
 .profile_picture {
   border: 8px solid #fff;
   -moz-border-radius: 8px;
@@ -982,7 +995,7 @@ body#messages .delete_seleted, body#messages .unread {
   box-shadow: 0 1px 2px #999999;
 }
 
-/* line 107, ../../../app/stylesheets/grid.scss */
+/* line 112, ../../../app/stylesheets/grid.scss */
 .looking_for {
   text-transform: lowercase;
   color: #1d8cc8;
@@ -991,24 +1004,24 @@ body#messages .delete_seleted, body#messages .unread {
   text-shadow: white 0 1px 1px;
 }
 
-/* line 114, ../../../app/stylesheets/grid.scss */
+/* line 119, ../../../app/stylesheets/grid.scss */
 h1.username {
   margin-bottom: 3px;
   display: inline;
 }
 
-/* line 118, ../../../app/stylesheets/grid.scss */
+/* line 123, ../../../app/stylesheets/grid.scss */
 .location_infos {
   font-size: 1.3em;
   margin-left: 10px;
   color: #999;
 }
 
-/* line 123, ../../../app/stylesheets/grid.scss */
+/* line 128, ../../../app/stylesheets/grid.scss */
 .instruments_tag_list {
   margin: 10px 0 20px;
 }
-/* line 125, ../../../app/stylesheets/grid.scss */
+/* line 130, ../../../app/stylesheets/grid.scss */
 .instruments_tag_list span {
   padding: 4px 10px;
   background-color: #1d8cc8;
@@ -1028,11 +1041,11 @@ h1.username {
 
 /* TESTIMONIALS
 ---------------------------------------- */
-/* line 136, ../../../app/stylesheets/grid.scss */
+/* line 141, ../../../app/stylesheets/grid.scss */
 #testimonials {
   clear: both;
 }
-/* line 139, ../../../app/stylesheets/grid.scss */
+/* line 144, ../../../app/stylesheets/grid.scss */
 #testimonials .testimonial {
   width: 190px;
   padding: 15px;
@@ -1054,11 +1067,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 151, ../../../app/stylesheets/grid.scss */
+/* line 156, ../../../app/stylesheets/grid.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 154, ../../../app/stylesheets/grid.scss */
+/* line 159, ../../../app/stylesheets/grid.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -1069,17 +1082,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 158, ../../../app/stylesheets/grid.scss */
+/* line 163, ../../../app/stylesheets/grid.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 164, ../../../app/stylesheets/grid.scss */
+/* line 169, ../../../app/stylesheets/grid.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 167, ../../../app/stylesheets/grid.scss */
+/* line 172, ../../../app/stylesheets/grid.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -1090,11 +1103,11 @@ h1.username {
 
 /* FOOTER
 ---------------------------------------- */
-/* line 178, ../../../app/stylesheets/grid.scss */
+/* line 183, ../../../app/stylesheets/grid.scss */
 #footer table {
   border: none;
 }
-/* line 180, ../../../app/stylesheets/grid.scss */
+/* line 185, ../../../app/stylesheets/grid.scss */
 #footer table th {
   color: #fff;
   font-size: .9em;
@@ -1121,15 +1134,15 @@ h1.username {
   background-image: -o-linear-gradient(#34afe0, #157ebe);
   background-image: linear-gradient(#34afe0, #157ebe);
 }
-/* line 191, ../../../app/stylesheets/grid.scss */
+/* line 196, ../../../app/stylesheets/grid.scss */
 #footer table td {
   padding: 20px;
 }
-/* line 193, ../../../app/stylesheets/grid.scss */
+/* line 198, ../../../app/stylesheets/grid.scss */
 #footer table td ul {
   font-size: 12px;
 }
-/* line 196, ../../../app/stylesheets/grid.scss */
+/* line 201, ../../../app/stylesheets/grid.scss */
 #footer table .footer_headers_current_arrow {
   font-size: 0px;
   line-height: 0%;
