@@ -1,0 +1,37 @@
+<div id="messages_chart" style="width: 380px; height: 300px;">
+  
+</div>
+
+<script type="text/javascript">
+  $(function () {  
+    new Highcharts.Chart({  
+      chart: {
+         renderTo: 'messages_chart', 
+         defaultSeriesType: 'line' },
+      title: { text: 'Messages per Day' },  
+      xAxis: { type: 'datetime' },  
+      yAxis: {  
+        title: { text: 'Messages'}  
+      },  
+      tooltip: {  
+        formatter: function () {  
+          return Highcharts.dateFormat("%B %e %Y", this.x) + ': ' + Highcharts.numberFormat(this.y, 0) + " messages"
+        }  
+      },
+      plotOptions: {
+        line: {
+          dataLabels: {
+            enabled: true 
+          },
+          enableMouseTracking: false
+        }
+      },
+      series: [{  
+        name: "Messages per Day",
+        pointInterval: <%= 1.day * 1000 %>,  
+        pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,  
+        data: <%= (4.weeks.ago.to_date..Date.today).map { |date| Message.total_on(date).to_f}.inspect %>  
+       }] 
+    });  
+  });
+</script>

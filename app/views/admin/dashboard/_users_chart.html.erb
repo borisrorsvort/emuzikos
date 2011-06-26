@@ -1,0 +1,52 @@
+
+<div id="users_chart" style="width: 380px; height: 300px;">
+  
+</div>
+
+<div class="users_numbers" style="margin-top: 20px;">
+  
+  <p>Total users: <%= users.count %></p>
+  <p>Total users with completed profile: <%= users_complete_profile.count %> (<%= (users_complete_profile.count.to_f / users.count.to_f) * 100 %> %)</p>
+  <p>Total signed in users: <%= signed_in_users %></p>
+
+</div>
+
+<script type="text/javascript">
+  $(function () {  
+    new Highcharts.Chart({  
+      chart: {
+         renderTo: 'users_chart', 
+         defaultSeriesType: 'line' },
+      title: { text: 'Users per Day' },  
+      xAxis: { type: 'datetime' },  
+      yAxis: {  
+        title: { text: 'Users'}  
+      },  
+      tooltip: {  
+        formatter: function () {  
+          return Highcharts.dateFormat("%B %e %Y", this.x) + ': ' + Highcharts.numberFormat(this.y, 0) + " users"
+        }  
+      },
+      plotOptions: {
+        line: {
+          dataLabels: {
+            enabled: true 
+          },
+          enableMouseTracking: false
+        }
+      },
+      series: [{  
+        name: "Profile completed same day",
+        pointInterval: <%= 1.day * 1000 %>,  
+        pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,  
+        data: <%= (4.weeks.ago.to_date..Date.today).map { |date| User.profiles_completed.total_on(date).to_f}.inspect %>  
+       },
+       {  
+         name: "Total Users",
+         pointInterval: <%= 1.day * 1000 %>,  
+         pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,  
+         data: <%= (4.weeks.ago.to_date..Date.today).map { |date| User.total_on(date).to_f}.inspect %>  
+       }] 
+    });  
+  });
+</script>
