@@ -5,7 +5,8 @@ javascripts:
     - public/javascripts/jquery.min.js
     - public/javascripts/jquery-ui-1.8.9.custom.min.js
     - public/javascripts/jquery.uniform.min.js
-    
+  statistics:
+    - public/javascripts/highcharts.js
   emuzikos:
     - public/javascripts/rails.js
     - public/javascripts/jquery.tipsy.js
