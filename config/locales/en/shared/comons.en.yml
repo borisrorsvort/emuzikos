@@ -15,7 +15,7 @@ en:
 
   menu:
     profile:
-      show: Account
+      show: Profile
       edit: Edit my profile
       public: Public profile
       account: Edit my account

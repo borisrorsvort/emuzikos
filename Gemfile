@@ -24,7 +24,7 @@ gem 'activeadmin'
 #replacement for country_select
 gem "carmen" 
 
-gem 'tolk', :git => "git@github.com:borisrorsvort/tolk.git", :branch => 'rails3'
+gem 'tolk', :git => "git://github.com/borisrorsvort/tolk.git", :branch => 'rails3'
 
 #gem 'sitemap_generator', :git => "git://github.com/shinjikuwayama/sitemap_generator.git"
 

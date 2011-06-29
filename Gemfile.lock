@@ -1,18 +1,18 @@
 GIT
-  remote: git://github.com/documentcloud/jammit.git
-  revision: caf1c68
-  specs:
-    jammit (0.6.0)
-      yui-compressor (>= 0.9.3)
-
-GIT
-  remote: git@github.com:borisrorsvort/tolk.git
+  remote: git://github.com/borisrorsvort/tolk.git
   revision: 9589f0b02c1a11721559a7abdb7ea26d93793f77
   branch: rails3
   specs:
     tolk (1.0)
       will_paginate (= 3.0.pre2)
       ya2yaml (~> 0.26)
+
+GIT
+  remote: git://github.com/documentcloud/jammit.git
+  revision: caf1c68
+  specs:
+    jammit (0.6.0)
+      yui-compressor (>= 0.9.3)
 
 GEM
   remote: http://rubygems.org/
