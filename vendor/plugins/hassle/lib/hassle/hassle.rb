@@ -1,7 +1,7 @@
+require 'active_support/time'
+
 class Hassle
   def initialize(app)
-    require 'sass'
-    require 'sass/plugin'
     @app = app
     @compiler = Hassle::Compiler.new
     @compiler.compile
@@ -19,8 +19,9 @@ class Hassle
       length = "".respond_to?(:bytesize) ? content.bytesize.to_s : content.size.to_s
       [200, {'Content-Type' => 'text/css',
              'Content-Length' => length,
+             'Last-Modified' => File.mtime(stylesheet_path).httpdate,
              'Cache-Control' => "public, max-age=#{60 * 60 * 24 * 365}",
-             'Expires' => (Time.now + 1.hour).rfc2822}, [content]]
+             'Expires' => (Time.now + 1.year).httpdate}, [content]]
       
     else
       # Not a request Hassle cares about

@@ -1,5 +1,4 @@
-require File.dirname(__FILE__) + '/base'
-require 'active_support'
+require 'base'
 
 describe Hassle do
   include Rack::Test::Methods
@@ -7,7 +6,7 @@ describe Hassle do
   def app
     Rack::Builder.new do
       use Hassle
-      run Proc.new {|env| [200, {"Content-Type" => "text/html"}, "hello!"]}
+      run Proc.new {|env| [200, {"Content-Type" => "text/html"}, ["hello!"]]}
     end
   end
 
