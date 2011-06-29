@@ -8,7 +8,7 @@
   %section#header
     #logo
       = link_to (@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home') do
-      = image_tag 'logo.png', :alt => "Emuzikos"
+        = image_tag 'logo.png', :alt => "Emuzikos"
         
     #user_nav
       = render "/layouts/top_nav"
