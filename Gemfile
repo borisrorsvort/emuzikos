@@ -7,16 +7,15 @@ gem "jquery-rails"
 #gem "will_paginate", ">= 3.0.pre2"
 gem "gritter"
 
-gem "sass", ">= 3.1.2"
-gem "haml", ">= 3.1.1"
-gem "compass", ">= 0.11.1"
+gem "sass", "3.1.2"
+gem "haml", "3.1.2"
+gem "compass", "0.11.1"
 
 gem 'heroku'
-gem 'formtastic', '~> 1.1.0'
+gem 'formtastic', '1.1.0'
 gem "paperclip", "2.3.11"
 gem "settingslogic", "2.0.6"
 gem 'aws-s3', :require => 'aws/s3'
-#gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 
 gem "devise"
 gem 'activeadmin'
@@ -24,11 +23,13 @@ gem 'activeadmin'
 #replacement for country_select
 gem "carmen" 
 
-gem 'tolk', :git => "git@github.com:borisrorsvort/tolk.git", :branch => 'rails3'
+gem 'tolk', :git => "git://github.com/borisrorsvort/tolk.git", :branch => 'rails3'
 
 #gem 'sitemap_generator', :git => "git://github.com/shinjikuwayama/sitemap_generator.git"
 
 gem 'mysql2', '< 0.3'
+
+gem 'omniauth'
 
 
 group :development do

@@ -11,4 +11,4 @@
         
     %li.icon-user
       =link_to t(:'menu.profile.show'), edit_user_url(current_user), 
-        :class => (current_page?(user_path(current_user)) || current_page?(edit_user_path(current_user)) || current_page?(edit_user_registration_path(current_user))) ? "current" : nil
+        :class => (current_page?(user_path(current_user)) || current_page?(edit_user_path(current_user)) || current_page?(edit_user_registration_path(current_user)) || current_page?(services_path)) ? "current" : nil

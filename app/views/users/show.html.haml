@@ -10,6 +10,8 @@
           = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
         %li
           = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
+        %li 
+          = link_to t(:'menu.profile.authentications'), services_path
       .clear  
       
     - else
@@ -61,7 +63,7 @@
 
   - unless @user.request_message.blank?
     %h3= t(:'activerecord.attributes.user.request_message')
-    %p= @user.request_message
+    %p= simple_format(@user.request_message)
   
         
 .clear

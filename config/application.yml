@@ -3,7 +3,7 @@
 common: &default_settings
   version: 1
   site:
-    results_per_page: 20
+    results_per_page: 6
     avatar:
       normal:
         size: 300
@@ -17,7 +17,7 @@ common: &default_settings
       key: UA-4782653-1
   email:
     from: "Emuzikos <boris@emuzikos.com>"
-    do_not_reply_from: "Eumzikos <do-not-reply@emuzikos.com>"
+    do_not_reply_from: "Eumzikos <noreply@emuzikos.com>"
   addthis:
     enabled: false 
 
@@ -28,7 +28,7 @@ development:
       enabled: false
   email:
     from: "Emuzikos <boris@emuzikos.com>"
-    do_not_reply_from: "Eumzikos <do-not-reply@emuzikos.com>"
+    do_not_reply_from: "Eumzikos <noreply@emuzikos.com>"
 
 staging:
   <<: *default_settings
@@ -39,7 +39,7 @@ staging:
     enabled: true
   email:
     from: "Emuzikos <boris@emuzikos.com>"
-    do_not_reply_from: "Eumzikos <do-not-reply@emuzikos.com>"
+    do_not_reply_from: "Eumzikos <noreply@emuzikos.com>"
         
 production:
   <<: *default_settings

@@ -7,17 +7,29 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-  section "Recent Users" do
+  
+  section "Users charts", :priority => 1 do
     div do
-      render :partial => "users_numbers"
+      @users = User
+      @users_complete_profile = @users.profiles_completed.all
+      @signed_in_users = @users.currently_signed_in.count
+      render :partial => "users_chart", :locals => {  :users => @users, 
+                                                        :users_complete_profile => @users_complete_profile,
+                                                        :signed_in_users => @signed_in_users}
     end
-    # ul do
-    #       User.profiles_completed.limit(5).collect do |user|
-    #         li link_to(user.username, admin_user_path(user))
-    #       end
-    #     end
   end
   
+  section "Messages charts", :priority => 2 do
+    div do
+      render :partial => "messages_chart" 
+    end
+  end
+  
+  section "Testimonial charts", :priority => 3 do
+    div do
+      render :partial => "testimonials_chart" 
+    end
+  end
   # == Render Partial Section
   # The block is rendererd within the context of the view, so you can
   # easily render a partial rather than build content in ruby.

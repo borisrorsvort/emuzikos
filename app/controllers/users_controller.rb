@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:show]
   
   helper_method :sort_column, :sort_direction
   
@@ -17,18 +17,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @testimonials = @user.testimonials
   end
-  
-  # def create
-  #   @user = User.new(params[:user])
-  #   if verify_recaptcha(@user) && @user.save!
-  #     Notifier.registration_confirmation(@user).deliver
-  #     gflash :success => true, :notice => true
-  #     redirect_to edit_user_path(@user)
-  #   else
-  #     render :action => 'new', :layout => "home"
-  #     gflash :error => true
-  #   end
-  # end
   
   def edit
     @user = @current_user
@@ -58,7 +46,7 @@ class UsersController < ApplicationController
   end
   
   def sort_column
-    User.column_names.include?(params[:sort]) ? params[:sort] : "username"
+    User.column_names.include?(params[:sort]) ? params[:sort] : "last_sign_in_at"
   end
   
   def sort_direction

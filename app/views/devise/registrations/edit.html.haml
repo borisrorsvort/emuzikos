@@ -9,6 +9,9 @@
         = link_to t(:'menu.profile.public'),  user_path(current_user)
       %li
         = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user), :class => "current"
+      %li
+        = link_to t(:'menu.profile.authentications'), services_path
+      
     .clear
     
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|

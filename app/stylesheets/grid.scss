@@ -92,9 +92,14 @@
 .avatar {
   background: #ccc;
   display:block;
+  float:left;
   &.small {
     height: 30px;
-    width:30px; }}
+    width:30px;
+    border: 2px solid #fff;
+    @include box-shadow(#ccc, 0px, 0px, 3px);
+    margin-right: 10px;
+    @include border-radius(2px); }}
 
 /* USER SHOW
 ---------------------------------------- */
