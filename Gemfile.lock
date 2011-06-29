@@ -225,11 +225,11 @@ DEPENDENCIES
   activeadmin
   aws-s3
   carmen
-  compass (>= 0.11.1)
+  compass (= 0.11.1)
   devise
-  formtastic (~> 1.1.0)
+  formtastic (= 1.1.0)
   gritter
-  haml (>= 3.1.1)
+  haml (= 3.1.2)
   heroku
   heroku_san
   jammit!
@@ -239,6 +239,6 @@ DEPENDENCIES
   omniauth
   paperclip (= 2.3.11)
   rails (= 3.0.3)
-  sass (>= 3.1.2)
+  sass (= 3.1.2)
   settingslogic (= 2.0.6)
   tolk!

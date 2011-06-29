@@ -7,16 +7,15 @@ gem "jquery-rails"
 #gem "will_paginate", ">= 3.0.pre2"
 gem "gritter"
 
-gem "sass", ">= 3.1.2"
-gem "haml", ">= 3.1.1"
-gem "compass", ">= 0.11.1"
+gem "sass", "3.1.2"
+gem "haml", "3.1.2"
+gem "compass", "0.11.1"
 
 gem 'heroku'
-gem 'formtastic', '~> 1.1.0'
+gem 'formtastic', '1.1.0'
 gem "paperclip", "2.3.11"
 gem "settingslogic", "2.0.6"
 gem 'aws-s3', :require => 'aws/s3'
-#gem "authlogic", :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 
 gem "devise"
 gem 'activeadmin'
