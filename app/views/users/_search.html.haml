@@ -47,7 +47,7 @@
       .clear
       
     .field     
-      = f.localized_country_select( :country, [], :include_blank => t(:'search_terms.country'))
+      = f.country_select( :country, [], :include_blank => t(:'search_terms.country'))
       .clear
       
       = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit")
