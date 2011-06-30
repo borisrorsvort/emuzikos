@@ -18,6 +18,7 @@ javascripts:
 
 stylesheets:
   common:
+    - public/stylesheets/admin/active_admin.css
     - public/stylesheets/jquery.Jcrop.css
     - public/stylesheets/ui-themes/Emuzikos/jquery-ui-1.8.7.custom.css
     - public/stylesheets/uniform-themes/uniform.emuzikos.css
