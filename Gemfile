@@ -11,7 +11,6 @@ gem "sass", "3.1.2"
 gem "haml", "3.1.2"
 gem "compass", "0.11.1"
 
-gem 'heroku'
 gem 'formtastic', '1.1.0'
 gem "paperclip", "2.3.11"
 gem "settingslogic", "2.0.6"
