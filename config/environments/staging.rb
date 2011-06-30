@@ -12,6 +12,27 @@ Emuzikos::Application.configure do
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
 
+
+  # Don't care if the mailer can't send  
+  config.action_mailer.raise_delivery_errors = false
+
+  config.active_support.deprecation = :notify
+  
+  ActionMailer::Base.delivery_method = :sendmail
+  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.perform_deliveries = true
+  #config.action_mailer.default_url_options = { :host => "emuzikos.com" }
+  config.action_mailer.default_url_options = { :host => "beta.emuzikos.com" }
+
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :authentication => :plain,
+    :user_name => "noreply@emuzikos.com",
+    :password => '3muz1k0sn0r3ply'
+  }
+
+
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
