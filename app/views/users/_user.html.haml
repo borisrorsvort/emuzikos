@@ -12,7 +12,7 @@
   %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
   %td= t(:"musical_genres.#{user.genre}")
   %td= user.zip
-  %td= I18n.t(user.country, :scope => 'countries') rescue nil
+  %td= Carmen::country_name(user.country) rescue nil
   %td
     -if @current_user && @current_user != user
       = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => user.id), :class => "button submit contact small"
