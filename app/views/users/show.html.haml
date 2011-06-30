@@ -40,7 +40,7 @@
         =t(:"users.types.#{@user.user_type}")
         =t(:'.from')
         = @user.zip
-        = I18n.t(@user.country, :scope => "countries") rescue "N/A"
+        = Carmen::country_name(@user.country) rescue "N/A"
 
   - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
     %p.looking_for
