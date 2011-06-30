@@ -28,13 +28,13 @@ Emuzikos::Application.configure do
   #config.action_mailer.default_url_options = { :host => "emuzikos.com" }
   config.action_mailer.default_url_options = { :host => "emuzikos.dev" }
 
-  # ActionMailer::Base.smtp_settings = {
-  #   :address => "smtp.gmail.com",
-  #   :port => 587,
-  #   :authentication => :plain,
-  #   :user_name => "carmen@destockjeans.fr",
-  #   :password => 'hc74jdf984jr'
-  # }
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :authentication => :plain,
+    :user_name => "noreply@emuzikos.com",
+    :password => '3muz1k0sn0r3ply'
+  }
 
   config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)
   
