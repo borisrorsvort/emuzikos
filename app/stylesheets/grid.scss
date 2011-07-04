@@ -88,7 +88,10 @@
 
 /* USER
 ---------------------------------------- */
-
+#map_container, #gmaps4rails_map {
+  width: 300px  !important;
+  height: 300px  !important;
+}
 .avatar {
   background: #ccc;
   display:block;

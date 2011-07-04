@@ -65,7 +65,16 @@
     %h3= t(:'activerecord.attributes.user.request_message')
     = simple_format(@user.request_message)
   
-        
+  - if @user.geocoded?
+    %h3= t(:'activerecord.attributes.user.location')
+    = gmaps("map_options" => {"center_latitude" => @user.latitude, "center_longitude" => @user.longitude, "zoom" => 11},"markers" => { "data" => @user_map })
+    .clear
+  / -if @users_nearby
+  /     - for user in @users_nearby.nearbys(10)
+  /       = link_to user.username, user_path(user) 
+  /       (#{user.distance.round(2)} miles)
+  
+  
 .clear
 
 

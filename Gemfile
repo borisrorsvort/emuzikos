@@ -31,6 +31,9 @@ gem 'mysql2', '< 0.3'
 gem 'omniauth'
 gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
 
+gem 'geocoder'
+gem 'gmaps4rails'
+
 group :development do
   gem "bullet"
   gem "nifty-generators"

@@ -23,6 +23,7 @@ en:
         password_confirmation: Password confirmation
         avatar: Avatar
         testimonials: "%{user}'s Testimonials"
+        location: Location
       testimonial:
         body: Body
         user: User
