@@ -32,6 +32,7 @@ gem 'omniauth'
 gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
 
 group :development do
+  gem "bullet"
   gem "nifty-generators"
   gem 'heroku_san'
 end

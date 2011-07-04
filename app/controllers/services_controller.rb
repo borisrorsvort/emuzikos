@@ -78,7 +78,7 @@ def create
               #user.skip_confirmation! dont need cause i usually don't confirm the user
               user.save!
               #user.confirm! dont need cause i usually don't confirm the user
-
+              
               # flash and sign in
               flash[:myinfo] = t(:'services.account_created', :provider => provider.capitalize, :link => edit_user_registration_path(current_user))
               

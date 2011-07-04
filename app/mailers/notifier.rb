@@ -1,16 +1,9 @@
 class Notifier < ActionMailer::Base
-  default :from => "info@emuzikos.com"
   default :charset => "utf-8"  
-  def password_reset_instructions(user)
-    @user = user
-    @edit_password_reset_url = edit_password_reset_url(user.perishable_token)
-    mail(:to => "#{user.username} <#{user.email}>", :subject => "Password Reset Instructions", :from => "noreply@emuzikos.com" )
-  end
-  
-  def registration_confirmation(user)
-    @user = user
-    mail(:to => "#{user.username} <#{user.email}>", :subject => "Registration confirmation", :from => "noreply@emuzikos.com" )         
-  end
+  default :from => AppConfig.email.from, :charset => 'utf-8', :reply_to => AppConfig.email.do_not_reply_from
+  default_url_options[:host] = "emuzikos.com"
+  layout 'notifier'
+  helper :users
   
   def contact_email(email_params)
       # You only need to customize @recipients.
@@ -20,6 +13,13 @@ class Notifier < ActionMailer::Base
       @name = email_params[:name]
       @sender_email = email_params[:address]
       mail(:to => "Solar <info@emuzikos.com>", :subject => "Contact form", :from => "#{email_params[:name]} <#{email_params[:address]}>" )
+  end
+  def user_message(message, user, recipient)
+    @sender = user.username
+    @recipient = recipient
+    @message_url = user_message_url(recipient, message)
+    mail(:to => @recipient.email,
+          :subject => "Contact from a memeber of Emuzikos.com")
   end
   
 end

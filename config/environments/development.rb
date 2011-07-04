@@ -23,18 +23,43 @@ Emuzikos::Application.configure do
   config.active_support.deprecation = :notify
   
   ActionMailer::Base.delivery_method = :sendmail
-  ActionMailer::Base.raise_delivery_errors = true
+  ActionMailer::Base.raise_delivery_errors = false
   ActionMailer::Base.perform_deliveries = true
-  #config.action_mailer.default_url_options = { :host => "emuzikos.com" }
-  config.action_mailer.default_url_options = { :host => "emuzikos.dev" }
+  ##config.action_mailer.default_url_options = { :host => "emuzikos.com" }
+  #onfig.action_mailer.delivery_method = :smtpconfig.action_mailer.default_url_options = { :host => "emuzikos.com" }
 
-  ActionMailer::Base.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :authentication => :plain,
-    :user_name => "noreply@emuzikos.com",
-    :password => '3muz1k0sn0r3ply'
-  }
+  # ActionMailer::Base.smtp_settings = {
+  #   :address => "smtp.gmail.com",
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :user_name => "noreply@emuzikos.com",
+  #   :password => '3muz1k0sn0r3ply'
+  # }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'emuzikos.dev',
+    :user_name            => 'noreply@emuzikos.com',
+    :password             => '3muz1k0sn0r3ply',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+  
+
+
+  config.after_initialize do
+    Bullet.enable = false
+    Bullet.alert = false
+    Bullet.bullet_logger = true
+    #Bullet.console = true
+    Bullet.rails_logger = true
+    Bullet.disable_browser_cache = true
+    begin
+       require 'ruby-growl'
+       Bullet.growl = true
+     rescue MissingSourceFile, Exception
+     end
+  end
 
   config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)
   

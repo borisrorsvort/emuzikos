@@ -18,7 +18,7 @@
 
     %section#content
       - flash.each do |key, message|
-        = content_tag(:div, message, :class => "flash #{key}")
+        = content_tag(:div, raw(message), :class => "flash #{key}")
         
       - if content_for? :sub_nav
         %nav#sub_nav

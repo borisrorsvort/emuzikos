@@ -21,8 +21,7 @@ Emuzikos::Application.configure do
   ActionMailer::Base.delivery_method = :sendmail
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.perform_deliveries = true
-  #config.action_mailer.default_url_options = { :host => "emuzikos.com" }
-  config.action_mailer.default_url_options = { :host => "beta.emuzikos.com" }
+  config.action_mailer.default_url_options = { :host => "emuzikos.com" }
 
   ActionMailer::Base.smtp_settings = {
     :address => "smtp.gmail.com",

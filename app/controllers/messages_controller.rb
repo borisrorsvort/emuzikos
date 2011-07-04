@@ -40,6 +40,7 @@ class MessagesController < ApplicationController
     if @message.save
       gflash :success => true
       gflash :notice => t(:'gflash.testimonials.please_write', :link => new_testimonial_url) if @current_user.testimonials.first.nil?
+      Notifier.user_message(@message, @user, @message.recipient).deliver
       redirect_to user_messages_path(@user)
     else
       render :action => :new

@@ -9,10 +9,11 @@ class User < ActiveRecord::Base
   after_update :reprocess_avatar, :if => :cropping?
   
   has_many :services, :dependent => :destroy
-  has_many :testimonials
+  has_many :testimonials, :dependent => :destroy
   has_private_messages
   
-  validates_confirmation_of :password, :unless => Proc.new { |a| a.password.blank? }
+  validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
+    
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
       
@@ -83,9 +84,9 @@ class User < ActiveRecord::Base
     "#{id}-#{username. parameterize}"
   end
   
-  def password_required?  
-   !password.blank? && super  
-  end
+  # def password_required?  
+  #  !password.blank? && super  
+  # end
   
   def self.search(search, args = {})
     if search

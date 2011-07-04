@@ -63,7 +63,7 @@
 
   - unless @user.request_message.blank?
     %h3= t(:'activerecord.attributes.user.request_message')
-    %p= simple_format(@user.request_message)
+    = simple_format(@user.request_message)
   
         
 .clear
