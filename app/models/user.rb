@@ -133,7 +133,7 @@ class User < ActiveRecord::Base
   
     def address
       if country.present? || zip.present?
-        return "#{zip} #{country}"
+        return "#{zip} #{Carmen::country_name(country)}"
       end
     end
     
