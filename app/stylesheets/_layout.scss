@@ -16,14 +16,10 @@ $sub_nav_topbottom_padding: 15px;
 
 #container{ 
   margin:0 auto;
-  &.with_sidebar{ 
-  padding-left: $sidebar_width ;
-  background:#efefef image-url('backgrounds/bg-sidebar.png') left top  repeat-y; }}
+}
 
 #content {
-  border-left: $sidebar_width solid transparent;
   float:left;
-  margin-left: 0 - $sidebar_width;
   width: 100%; }  
 
 #user_nav {
@@ -44,10 +40,16 @@ $sub_nav_topbottom_padding: 15px;
 #main_nav {
   position:relative;
   float:left;
-  width: $sidebar_width;
-  margin-left: 0 - $sidebar_width;
+  display:inline;
+  width: 100%;
+  background: $main_nav_color_default;
+  
+/*  height: 52px;
+*/  
   ul {
-    padding: 20px; }}
+    padding: 20px;
+    display:block;
+    width: 100%; }}
 
 #sub_nav {
   background-color: $sub_nav_gradient_light;
@@ -56,10 +58,15 @@ $sub_nav_topbottom_padding: 15px;
   border-bottom: #fff 1px solid;
   ul {
     font-size:10px;
-    padding-left: 0; } }
+    padding-left: 0;
+    li {
+      position:relative;
+      padding: 0;
+      margin-right: 40px; }}}
 
 #sub_sections {
   @include horizontal-list(15px);
+  display:block;
   overflow: visible;
   list-style: none;
   padding-left: none;
@@ -126,13 +133,16 @@ $sub_nav_topbottom_padding: 15px;
 /* PROFILE SHOW
 ---------------------------------------- */
 
-$ld_width: 240px ;
-
 .left_drawer {
-  width: $ld_width ;
+  width: 27%;
   display:inline;
   float:left;
+  /*clear: left; for iphone view */ 
+  
 }
 .right_drawer {
-  padding-left: $ld_width;
+  float: right;
+  display:inline;
+  margin-left: 20px;
+  width: 70%;
 }

@@ -3,11 +3,16 @@ html{
 	min-height:101%; }
 	
 body { 
-  background-color: #cfcfcf;
+  background-color: $body_bg_default;
   font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
-  font-size:62.5%;
-  color:#666; }
-  
+  font-size: 100%;
+  color:#666; 
+  line-height:18px;}
+
+img {
+  width: 100%;
+}
+
 a { 
   color: $blue_dark;
   img {

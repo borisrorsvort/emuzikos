@@ -54,9 +54,9 @@ $(document).ready(function() {
   
   // CSS ARROWS
   
-  $('#main_nav li a.current').append('<div class="main_nav_current_arrow"></div>');
-  $('#sub_sections li a.current').append('<div class="top_sub_nav_arrow"></div>');
-  $('#footer .inner_footer th').append('<div class="footer_headers_current_arrow"></div>');
+  $('#main_nav li a.current').after('<div class="main_nav_current_arrow"></div>');
+  $('#sub_sections li a.current').after('<div class="top_sub_nav_arrow"></div>');
+  $('#footer .inner_footer th').after('<div class="footer_headers_current_arrow"></div>');
   
   // NOISY STUFF
   

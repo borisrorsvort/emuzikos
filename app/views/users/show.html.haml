@@ -26,11 +26,6 @@
   
 
 
-%section.left_drawer
-  - if @user.avatar
-    = image_tag @user.avatar.url(:medium), :class => "profile_picture" 
-  - else
-    = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture"
 %section.right_drawer
   %header 
     %h1.username= t(:'.title', :username => @user.username)
@@ -50,6 +45,15 @@
       = t(:"musical_genres.#{@user.genre}")
       = t(:'.music')
 
+  .spread
+    .twshare.left
+      %a.twitter-share-button.left{"data-count" => "horizontal", :href => "http://twitter.com/share"} Tweet
+      %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+    .fshare.left
+      %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"}
+      %fb:like{:layout => "button_count", :show_faces => "false", :width => "50"}
+    .clear
+
   - unless @user.instruments.blank?
     %h3= t(:'activerecord.attributes.user.instruments')
     .instruments_tag_list
@@ -65,15 +69,21 @@
     %h3= t(:'activerecord.attributes.user.request_message')
     = simple_format(@user.request_message)
   
-  - if @user.geocoded?
-    %h3= t(:'activerecord.attributes.user.location')
-    = gmaps("map_options" => {"center_latitude" => @user.latitude, "center_longitude" => @user.longitude, "zoom" => 11},"markers" => { "data" => @user_map })
+  
     .clear
   / -if @users_nearby
   /     - for user in @users_nearby.nearbys(10)
   /       = link_to user.username, user_path(user) 
   /       (#{user.distance.round(2)} miles)
-  
+
+%section.left_drawer
+  - if @user.avatar
+    = image_tag @user.avatar.url(:medium), :class => "profile_picture" 
+  - else
+    = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture"
+  - if @user.geocoded?
+    = gmaps("map_options" => {"center_latitude" => @user.latitude, "center_longitude" => @user.longitude, "zoom" => 11},"markers" => { "data" => @user_map })
+
   
 .clear
 

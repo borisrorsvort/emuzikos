@@ -33,7 +33,7 @@
     margin-top: 20px;
     color: #00496d;
     @include inset(#bababa);
-    font-size: 4em; }
+    font-size: 2.6em; }
     
   .signup_button {
     -webkit-animation:slidingFromLeft 2s ;
@@ -42,10 +42,11 @@
     display:block;
     height: 70px;
     width: 220px;
-    line-height: 70px;
+    line-height: 65px;
     margin-top: 20px;
     text-transform:uppercase;
     a {
+      font-size: 0.65em;
       text-decoration:none;
       color:#604f1b;
       position: relative;

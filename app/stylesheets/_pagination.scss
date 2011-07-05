@@ -1,10 +1,12 @@
 .page_entries {
   padding: 0 10px 15px 0;
+  font-size: 0.75em;
   @include inset(#fff); }
 
 .pagination {
   padding: 15px 0;
-  
+  font-size: 0.70em;
+  line-height: 1em;
   a, span, em {
     padding: 5px;
     display: block;

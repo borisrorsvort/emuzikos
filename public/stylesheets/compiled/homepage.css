@@ -1,6 +1,7 @@
 /* TABLES
 ---------------------------------------- */
 /*$table-color-odd: #f3f7fb;*/
+/* MAIN NAV */
 /* SUBNAV COLORS
 ---------------------------------------- */
 /* NOTICES
@@ -17,49 +18,55 @@ html {
 body {
   background-color: #cfcfcf;
   font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
-  font-size: 62.5%;
+  font-size: 100%;
   color: #666;
+  line-height: 18px;
 }
 
-/* line 11, ../../../app/stylesheets/_base.scss */
+/* line 12, ../../../app/stylesheets/_base.scss */
+img {
+  width: 100%;
+}
+
+/* line 16, ../../../app/stylesheets/_base.scss */
 a {
   color: #157ebe;
 }
-/* line 13, ../../../app/stylesheets/_base.scss */
+/* line 18, ../../../app/stylesheets/_base.scss */
 a img {
   border: none;
 }
 
-/* line 16, ../../../app/stylesheets/_base.scss */
+/* line 21, ../../../app/stylesheets/_base.scss */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 21, ../../../app/stylesheets/_base.scss */
+/* line 26, ../../../app/stylesheets/_base.scss */
 .wide {
   width: 100%;
 }
 
-/* line 24, ../../../app/stylesheets/_base.scss */
+/* line 29, ../../../app/stylesheets/_base.scss */
 .unread_bullet {
   font-size: 20px;
   font-weight: bold;
   line-height: 1em;
 }
 
-/* line 29, ../../../app/stylesheets/_base.scss */
+/* line 34, ../../../app/stylesheets/_base.scss */
 .centered, .logged_out .icon_and_logo, .logged_out .signup_button {
   margin: 0 auto;
 }
 
-/* line 32, ../../../app/stylesheets/_base.scss */
+/* line 37, ../../../app/stylesheets/_base.scss */
 .hidden {
   display: none;
 }
 
-/* line 35, ../../../app/stylesheets/_base.scss */
+/* line 40, ../../../app/stylesheets/_base.scss */
 b {
   font-weight: bold;
 }
@@ -69,25 +76,25 @@ b {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes slidingFromLeft {
-  /* line 76, ../../../app/stylesheets/_base.scss */
+  /* line 81, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 77, ../../../app/stylesheets/_base.scss */
+  /* line 82, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 78, ../../../app/stylesheets/_base.scss */
+  /* line 83, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 79, ../../../app/stylesheets/_base.scss */
+  /* line 84, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -95,25 +102,25 @@ b {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 82, ../../../app/stylesheets/_base.scss */
+  /* line 87, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 83, ../../../app/stylesheets/_base.scss */
+  /* line 88, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 84, ../../../app/stylesheets/_base.scss */
+  /* line 89, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 85, ../../../app/stylesheets/_base.scss */
+  /* line 90, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -121,12 +128,12 @@ b {
 }
 
 @-webkit-keyframes opacity {
-  /* line 88, ../../../app/stylesheets/_base.scss */
+  /* line 93, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 89, ../../../app/stylesheets/_base.scss */
+  /* line 94, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -169,7 +176,7 @@ b {
   margin-top: 20px;
   color: #00496d;
   text-shadow: #bababa 0 1px 1px;
-  font-size: 4em;
+  font-size: 2.6em;
 }
 /* line 38, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button {
@@ -180,7 +187,7 @@ b {
   display: block;
   height: 70px;
   width: 220px;
-  line-height: 70px;
+  line-height: 65px;
   margin-top: 20px;
   text-transform: uppercase;
   text-shadow: white 0 1px 1px;
@@ -191,19 +198,20 @@ b {
 }
 /* line 48, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button a {
+  font-size: 0.65em;
   text-decoration: none;
   color: #604f1b;
   position: relative;
 }
-/* line 52, ../../../app/stylesheets/homepage.scss */
+/* line 53, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button a:hover {
   color: #887026;
 }
-/* line 54, ../../../app/stylesheets/homepage.scss */
+/* line 55, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button a:active {
   top: 1px;
 }
-/* line 64, ../../../app/stylesheets/homepage.scss */
+/* line 65, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button .bl, .logged_out .signup_button .br {
   left: -25px;
   position: absolute;
@@ -212,13 +220,13 @@ b {
   background: transparent url('/images/buttons/signup_button/signup_bl.png?1303908836') left top no-repeat;
   display: block;
 }
-/* line 71, ../../../app/stylesheets/homepage.scss */
+/* line 72, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button .br {
   left: 100%;
   right: -25px;
   background: transparent url('/images/buttons/signup_button/signup_br.png?1303908836') left top no-repeat;
 }
-/* line 77, ../../../app/stylesheets/homepage.scss */
+/* line 78, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works {
   background: #efefef;
   border-top: 1px solid #fff;
@@ -226,7 +234,7 @@ b {
   font-size: 12px;
   color: #666;
 }
-/* line 84, ../../../app/stylesheets/homepage.scss */
+/* line 85, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works #steps {
   display: inline;
   float: left;
@@ -234,20 +242,20 @@ b {
   width: 53%;
   margin-left: 2%;
 }
-/* line 92, ../../../app/stylesheets/homepage.scss */
+/* line 93, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works #home_testimonials {
   display: inline;
   float: left;
   width: 45%;
 }
-/* line 96, ../../../app/stylesheets/homepage.scss */
+/* line 97, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works #home_testimonials ul {
   list-style: none;
   padding-left: 0;
   font-size: 10px;
   line-height: 1.48em;
 }
-/* line 101, ../../../app/stylesheets/homepage.scss */
+/* line 102, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works #home_testimonials ul li {
   margin-bottom: 15px;
   display: block;
@@ -266,16 +274,16 @@ b {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 111, ../../../app/stylesheets/homepage.scss */
+/* line 112, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works #home_testimonials ul li .text {
   font-size: 11px;
   padding-left: 50px;
 }
-/* line 115, ../../../app/stylesheets/homepage.scss */
+/* line 116, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works #home_testimonials ul li .author {
   font-weight: bold;
 }
-/* line 118, ../../../app/stylesheets/homepage.scss */
+/* line 119, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works #home_testimonials ul li .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -287,7 +295,7 @@ b {
   border-radius: 3px;
 }
 
-/* line 127, ../../../app/stylesheets/homepage.scss */
+/* line 128, ../../../app/stylesheets/homepage.scss */
 #user_forms {
   width: 350px;
   padding: 20px;
@@ -306,7 +314,7 @@ b {
   box-shadow: 0 0 5px #666666;
 }
 
-/* line 137, ../../../app/stylesheets/homepage.scss */
+/* line 138, ../../../app/stylesheets/homepage.scss */
 .step {
   float: left;
   width: 30%;
@@ -320,13 +328,13 @@ b {
   text-shadow: white 0 1px 1px;
   top: -37px;
 }
-/* line 149, ../../../app/stylesheets/homepage.scss */
+/* line 150, ../../../app/stylesheets/homepage.scss */
 .step .app_sample {
   display: block;
   position: relative;
   width: 154px;
 }
-/* line 154, ../../../app/stylesheets/homepage.scss */
+/* line 155, ../../../app/stylesheets/homepage.scss */
 .step .app_sample_image {
   width: 130px;
   height: 130px;
@@ -339,7 +347,7 @@ b {
   -khtml-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 161, ../../../app/stylesheets/homepage.scss */
+/* line 162, ../../../app/stylesheets/homepage.scss */
 .step .flag {
   text-align: center;
   color: #fff;
@@ -351,7 +359,7 @@ b {
   margin-bottom: 10px;
   background: transparent url('/images/backgrounds/flag.png?1303908836') center center no-repeat;
 }
-/* line 172, ../../../app/stylesheets/homepage.scss */
+/* line 173, ../../../app/stylesheets/homepage.scss */
 .step .zoom_icon {
   position: absolute;
   top: -10px;

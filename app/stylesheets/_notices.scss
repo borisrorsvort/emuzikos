@@ -1,6 +1,6 @@
 .flash{ 
   padding: 20px;
-  font-size: 15px;
+  font-size: 1em;
   text-align:center;
   @include inset(#fff);
   &.notice{ 
@@ -19,7 +19,7 @@
   @include border-radius(8px);
   padding-bottom: 12px;
   margin-bottom: 20px;
-  font-size: 11px;
+  font-size: 1em;
   background-color: $notice-error;
   color:#fff;
   h2 { 
@@ -35,3 +35,7 @@
     margin: 0;
     font-size: 11px;
     } }
+
+.gritter-item p {
+  font-size: 1em;
+}
