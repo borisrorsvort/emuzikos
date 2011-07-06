@@ -18,8 +18,13 @@
     .field
       = f.label :password_confirmation, t(:'activerecord.attributes.user.password_confirmation')
       = f.password_field :password_confirmation  
-    / .field
-    /   = recaptcha_tags
+    .field
+      = f.label :zip, t(:'activerecord.attributes.user.zip')    
+      = f.text_field :zip
+
+    .field
+      = f.label :country, t(:'activerecord.attributes.user.country')
+      = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
     .field
       = f.submit(t(:'buttons.submit'), :type => "submit", :class => "button submit")
       
