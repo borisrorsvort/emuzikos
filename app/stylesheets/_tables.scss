@@ -9,6 +9,8 @@ table {
     border: $table-top-border 1px solid; }*/
     
   tr {
+    -webkit-animation: fadeIn 2s ;
+    
     &.even {
       background-color: $table-color-even ;}
     &.odd {
