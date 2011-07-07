@@ -78,7 +78,7 @@
 
 %section.left_drawer
   - if @user.avatar
-    = image_tag @user.avatar.url(:medium), :class => "profile_picture" 
+    = image_tag @user.avatar.url(:normal), :class => "profile_picture" 
   - else
     = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture"
   - if @user.geocoded?

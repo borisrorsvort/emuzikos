@@ -6,7 +6,7 @@ class Search
     @options = options || {}
   end
   
-  key_filters = %w(user_type searching_for country genre instrument)
+  key_filters = %w(user_type searching_for country genre instrument zip)
   
   key_filters.each do |key_filter|
     define_method key_filter do
@@ -34,6 +34,11 @@ class Search
     if has_searching_for?
       conditions << "#{@model.table_name}.searching_for LIKE ?"
       parameters << "%#{searching_for}%"
+    end
+    
+    if has_zip?
+      conditions << "#{@model.table_name}.zip LIKE ?"
+      parameters << "%#{zip}%"
     end
     
     if has_country?

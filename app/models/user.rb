@@ -1,22 +1,21 @@
 class User < ActiveRecord::Base
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
   attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :reprocess_avatar, :if => :cropping?
-  
+
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   has_many :services, :dependent => :destroy
   has_many :testimonials, :dependent => :destroy
   has_private_messages
+  geocoded_by :address
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?, 
                     :address => "address", :normalized_address => "address", 
                     :msg => "Sorry, not even Google could figure out where that is"
   
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
-    
+  validates_uniqueness_of :username
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
   
@@ -24,10 +23,7 @@ class User < ActiveRecord::Base
   INSTRUMENTS = %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas)
   MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
   
-  geocoded_by :address
   after_validation :geocode, :if => :address_changed?
-  
-  
   
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
@@ -67,9 +63,6 @@ class User < ActiveRecord::Base
   scope :profiles_completed, where( "country != ? and user_type != ? and genre != ? and zip != ? " , "", "", "", "" )
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
 
-
-
-  
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
@@ -79,7 +72,6 @@ class User < ActiveRecord::Base
     @geometry ||= {}
     @geometry[style] ||= Paperclip::Geometry.from_file(avatar.to_file(style))
   end
-
 
   def instruments
     instruments = []
@@ -93,10 +85,6 @@ class User < ActiveRecord::Base
   def to_param
     "#{id}-#{username. parameterize}"
   end
-  
-  # def password_required?  
-  #  !password.blank? && super  
-  # end
   
   def self.search(search, args = {})
     if search

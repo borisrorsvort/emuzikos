@@ -247,26 +247,38 @@ b {
 ---------------------------------------- */
 /* ANIMATION
 ---------------------------------------- */
-@-webkit-keyframes slidingFromLeft {
+@-webkit-keyframes fadeIn {
   /* line 81, ../../../app/stylesheets/_base.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 82, ../../../app/stylesheets/_base.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slidingFromLeft {
+  /* line 86, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 82, ../../../app/stylesheets/_base.scss */
+  /* line 87, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 83, ../../../app/stylesheets/_base.scss */
+  /* line 88, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 84, ../../../app/stylesheets/_base.scss */
+  /* line 89, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -274,25 +286,25 @@ b {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 87, ../../../app/stylesheets/_base.scss */
+  /* line 92, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 88, ../../../app/stylesheets/_base.scss */
+  /* line 93, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 89, ../../../app/stylesheets/_base.scss */
+  /* line 94, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 90, ../../../app/stylesheets/_base.scss */
+  /* line 95, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -300,12 +312,12 @@ b {
 }
 
 @-webkit-keyframes opacity {
-  /* line 93, ../../../app/stylesheets/_base.scss */
+  /* line 98, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 94, ../../../app/stylesheets/_base.scss */
+  /* line 99, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -696,15 +708,11 @@ input:focus, input:active, textarea:focus, textarea:active {
 }
 
 /* SEARCH FORM */
-/* line 57, ../../../app/stylesheets/_forms.scss */
-.reset_button {
-  float: left;
-  position: relative;
-  top: 5px;
-  margin-left: 10px;
+/* line 59, ../../../app/stylesheets/_forms.scss */
+#search_form .button.search {
+  font-size: 11px;
 }
-
-/* line 64, ../../../app/stylesheets/_forms.scss */
+/* line 63, ../../../app/stylesheets/_forms.scss */
 #search_form .field {
   float: left;
   height: 40px;
@@ -712,14 +720,19 @@ input:focus, input:active, textarea:focus, textarea:active {
   min-width: 170px;
 }
 /* line 69, ../../../app/stylesheets/_forms.scss */
+#search_form .field input#search_zip {
+  padding: 5px 8px;
+  margin-top: 3px;
+}
+/* line 74, ../../../app/stylesheets/_forms.scss */
 #search_form .field .selector {
   width: 154px;
 }
-/* line 71, ../../../app/stylesheets/_forms.scss */
+/* line 76, ../../../app/stylesheets/_forms.scss */
 #search_form .field .selector span {
   width: 131px;
 }
-/* line 73, ../../../app/stylesheets/_forms.scss */
+/* line 78, ../../../app/stylesheets/_forms.scss */
 #search_form .field .selector span select {
   width: 140px;
 }
@@ -734,19 +747,23 @@ table {
   /*  thead {
       border: $table-top-border 1px solid; }*/
 }
-/* line 12, ../../../app/stylesheets/_tables.scss */
+/* line 11, ../../../app/stylesheets/_tables.scss */
+table tr {
+  -webkit-animation: fadeIn 2s;
+}
+/* line 14, ../../../app/stylesheets/_tables.scss */
 table tr.even {
   background-color: white;
 }
-/* line 14, ../../../app/stylesheets/_tables.scss */
+/* line 16, ../../../app/stylesheets/_tables.scss */
 table tr.odd {
   background-color: #f5f5f5;
 }
-/* line 17, ../../../app/stylesheets/_tables.scss */
+/* line 19, ../../../app/stylesheets/_tables.scss */
 table td {
   padding: 20px;
 }
-/* line 19, ../../../app/stylesheets/_tables.scss */
+/* line 21, ../../../app/stylesheets/_tables.scss */
 table td a {
   color: #346a8a;
   text-decoration: underline;
@@ -755,7 +772,7 @@ table td a {
 table td a:hover {
   color: #3b789d;
 }
-/* line 22, ../../../app/stylesheets/_tables.scss */
+/* line 24, ../../../app/stylesheets/_tables.scss */
 table th {
   padding: 6px 20px;
   background-color: #434242;
@@ -768,7 +785,7 @@ table th {
   color: #d3d3d3;
   text-shadow: #333333 0 1px 1px;
 }
-/* line 32, ../../../app/stylesheets/_tables.scss */
+/* line 34, ../../../app/stylesheets/_tables.scss */
 table th a {
   color: #d3d3d3;
   text-decoration: none;
@@ -783,7 +800,7 @@ table th a:hover {
   text-decoration: underline;
 }
 
-/* line 42, ../../../app/stylesheets/_tables.scss */
+/* line 44, ../../../app/stylesheets/_tables.scss */
 body#messages .delete_seleted, body#messages .unread {
   width: 10px;
 }
@@ -869,7 +886,7 @@ html.js .page_entries {
 #pageless-loader {
   background: #ccc;
   width: 200px  !important;
-  margin: 20px 0 0 70%  !important;
+  margin-top: 20px !important;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
@@ -881,9 +898,10 @@ html.js .page_entries {
 /* line 59, ../../../app/stylesheets/_pagination.scss */
 #pageless-loader .msg {
   font-size: 12px  !important;
-  color: #333  !important;
+  color: #666  !important;
+  text-shadow: white 0 1px 1px;
 }
-/* line 63, ../../../app/stylesheets/_pagination.scss */
+/* line 64, ../../../app/stylesheets/_pagination.scss */
 #pageless-loader img {
   width: 32px;
   height: 32px;

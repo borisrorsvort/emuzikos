@@ -7,11 +7,11 @@ $(document).ready(function() {
   $('input.form_guide').tipsy({trigger: 'focus', gravity: 'w'});
 
   // FORMS UTILS
-  var search_form = $('form.search')
-  search_form.find("input[type=submit]").hide();
-  search_form.change(function() {
-    $(this).submit();
-  });
+  // var search_form = $('form.search')
+  // search_form.find("input[type=submit]").hide();
+  // search_form.change(function() {
+  //   $(this).submit();
+  // });
 
   
   // UI STUFF
@@ -78,24 +78,12 @@ $(document).ready(function() {
     var selector = $(this).attr('href');
     $(selector).modal({
       overlayCss: {backgroundColor:"#000"},
-      autoResize: true,
+      autoResize: false,
       autoPosition: true,
       overlayClose: true,
-      maxWidth: '80%',
+      maxWidth: 380,
       maxHeight: '80%'
     });
   });
   
-  // PAGELESS
-  
-  // $('#inner_content table.display.wide').pageless({ totalPages: 10
-  //   , url: '/users/'
-  //   , loaderMsg: 'Loading more results'
-  //   , loaderImage: '/images/icons/load.gif'
-  //   , complete: "setButton"
-  // });
-  // 
-  // $.fn.setButton = function() {
-  //   $('.button.submit').button({ icons: {  secondary: 'ui-icon-triangle-1-e' }, text: true });
-  // };
 });
