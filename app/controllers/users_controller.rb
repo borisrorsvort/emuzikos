@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     else
       @users = User.profiles_completed.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction)
     end
+    if request.xhr?
+      sleep(10) # make request a little bit slower to see loader :-)
+      render :partial => @users
+    end
   end
   
   def show

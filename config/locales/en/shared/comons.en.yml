@@ -34,6 +34,12 @@ en:
 ### TABLES
 ### ______________________________________________________
 
+
+  pagination: 
+    loading_more_results: Loading more result
+### TABLES
+### ______________________________________________________
+
   tables:
     headings:
       actions: Actions

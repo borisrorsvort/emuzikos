@@ -72,5 +72,30 @@ $(document).ready(function() {
   $(".testimonials").masonry({ singleMode: true,resizeable: true, animate: true,itemSelector: '.testimonial' });
   
   // BOXY MODAL CONFIG
-  $("a[rel=boxy]").boxy({modal: true, closeable: true, center: true, title: "EMUZIKOS" , closetext: "[close]"});
+  //$("a[rel=boxy]").boxy({modal: true, closeable: true, center: true, title: "EMUZIKOS" , closetext: "[close]"});
+  
+  $('a[rel=boxy]').click(function(){
+    var selector = $(this).attr('href');
+    $(selector).modal({
+      overlayCss: {backgroundColor:"#000"},
+      autoResize: true,
+      autoPosition: true,
+      overlayClose: true,
+      maxWidth: '80%',
+      maxHeight: '80%'
+    });
+  });
+  
+  // PAGELESS
+  
+  // $('#inner_content table.display.wide').pageless({ totalPages: 10
+  //   , url: '/users/'
+  //   , loaderMsg: 'Loading more results'
+  //   , loaderImage: '/images/icons/load.gif'
+  //   , complete: "setButton"
+  // });
+  // 
+  // $.fn.setButton = function() {
+  //   $('.button.submit').button({ icons: {  secondary: 'ui-icon-triangle-1-e' }, text: true });
+  // };
 });

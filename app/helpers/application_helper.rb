@@ -17,4 +17,18 @@ module ApplicationHelper
   def unread_bullet
     "&bull;"
   end
+  
+  def pageless(total_pages, url=nil, container=nil)
+    opts = {
+      :totalPages => total_pages,
+      :url        => url,
+      :loaderMsg  => t(:'pagination.loading_more_results'),
+      :pagination => ".pagination",
+      :loaderImage => "/images/icons/ajax-loader-pagiantion.gif"
+    }
+    
+    container && opts[:container] ||= container
+    
+    javascript_tag("$('#inner_content table.display.wide').pageless(#{opts.to_json});")
+  end
 end

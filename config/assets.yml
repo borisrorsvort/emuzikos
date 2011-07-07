@@ -1,8 +1,10 @@
 javascript_compressor: yui
 
 javascripts:
+  polyfills:
+    - public/javascripts/modernizr-2.0.6.js
   jquery:
-    - public/javascripts/jquery.min.js
+    - public/javascripts/jquery-1.5.min.js
     - public/javascripts/jquery-ui-1.8.9.custom.min.js
     - public/javascripts/jquery.uniform.min.js
   statistics:
@@ -12,8 +14,9 @@ javascripts:
     - public/javascripts/jquery.tipsy.js
     - public/javascripts/jquery.noisy.min.js
     - public/javascripts/gritter/jquery.gritter.min.js  
-    - public/javascripts/jquery.boxy.js
     - public/javascripts/jquery.masonry.min.js
+    - public/javascripts/jquery.simplemodal.1.4.1.min.js
+    - public/javascripts/jquery.pageless.js
     - public/javascripts/application.js
 
 stylesheets:

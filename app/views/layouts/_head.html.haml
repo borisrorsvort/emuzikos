@@ -1,5 +1,5 @@
 !!!
-%html
+%html.no-js
 
   %head
     %title
@@ -11,5 +11,8 @@
     %link{:href => 'http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold', :rel => 'stylesheet', :type => 'text/css'}
     
     = csrf_meta_tag
+    
+    = include_javascripts :polyfills
+    
     = yield :stylesheets
     = yield :head

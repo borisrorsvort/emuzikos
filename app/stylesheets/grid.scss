@@ -73,6 +73,21 @@
  }
 
 
+/* MODAL BOX
+---------------------------------------- */
+
+#simplemodal-container a.modalCloseImg {
+	background:url("/images/icons/close.png") no-repeat; /* adjust url as required */
+	width:27px;
+	height:27px;
+	display:inline;
+	z-index:3200;
+	position:absolute;
+	top:-15px;
+	right:-18px;
+	cursor:pointer;
+}
+
 /* SEARCH
 ---------------------------------------- */
 

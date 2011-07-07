@@ -789,39 +789,44 @@ body#messages .delete_seleted, body#messages .unread {
 }
 
 /* line 1, ../../../app/stylesheets/_pagination.scss */
-.page_entries {
+html.no-js .page_entries {
   padding: 0 10px 15px 0;
   font-size: 0.75em;
   text-shadow: white 0 1px 1px;
 }
 
 /* line 6, ../../../app/stylesheets/_pagination.scss */
+html.js .page_entries {
+  display: none;
+}
+
+/* line 10, ../../../app/stylesheets/_pagination.scss */
 .pagination {
   padding: 15px 0;
   font-size: 0.70em;
   line-height: 1em;
   /* self-clearing method: */
 }
-/* line 10, ../../../app/stylesheets/_pagination.scss */
+/* line 14, ../../../app/stylesheets/_pagination.scss */
 .pagination a, .pagination span, .pagination em {
   padding: 5px;
   display: block;
   float: left;
   margin-right: 3px;
 }
-/* line 16, ../../../app/stylesheets/_pagination.scss */
+/* line 20, ../../../app/stylesheets/_pagination.scss */
 .pagination em {
   font-weight: bold;
   background: #1d8cc8;
   color: white;
 }
-/* line 21, ../../../app/stylesheets/_pagination.scss */
+/* line 25, ../../../app/stylesheets/_pagination.scss */
 .pagination span.disabled {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
-/* line 23, ../../../app/stylesheets/_pagination.scss */
+/* line 27, ../../../app/stylesheets/_pagination.scss */
 .pagination a, .pagination em, .pagination span {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -830,20 +835,20 @@ body#messages .delete_seleted, body#messages .unread {
   -khtml-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 25, ../../../app/stylesheets/_pagination.scss */
+/* line 29, ../../../app/stylesheets/_pagination.scss */
 .pagination a {
   text-decoration: none;
   background-color: white;
   color: #1d8cc8;
   text-shadow: white 0 1px 1px;
 }
-/* line 30, ../../../app/stylesheets/_pagination.scss */
+/* line 34, ../../../app/stylesheets/_pagination.scss */
 .pagination a:hover, .pagination a:focus {
   color: white;
   background-color: #1d8cc8;
   text-shadow: #666666 0 1px 1px;
 }
-/* line 36, ../../../app/stylesheets/_pagination.scss */
+/* line 40, ../../../app/stylesheets/_pagination.scss */
 .pagination:after {
   content: ".";
   display: block;
@@ -851,13 +856,37 @@ body#messages .delete_seleted, body#messages .unread {
   clear: both;
   visibility: hidden;
 }
-/* line 43, ../../../app/stylesheets/_pagination.scss */
+/* line 47, ../../../app/stylesheets/_pagination.scss */
 * html .pagination {
   height: 1%;
 }
-/* line 45, ../../../app/stylesheets/_pagination.scss */
+/* line 49, ../../../app/stylesheets/_pagination.scss */
 *:first-child + html .pagination {
   overflow: hidden;
+}
+
+/* line 53, ../../../app/stylesheets/_pagination.scss */
+#pageless-loader {
+  background: #ccc;
+  width: 200px  !important;
+  margin: 20px 0 0 70%  !important;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+/* line 59, ../../../app/stylesheets/_pagination.scss */
+#pageless-loader .msg {
+  font-size: 12px  !important;
+  color: #333  !important;
+}
+/* line 63, ../../../app/stylesheets/_pagination.scss */
+#pageless-loader img {
+  width: 32px;
+  height: 32px;
 }
 
 /* line 26, ../../../app/stylesheets/grid.scss */
@@ -938,9 +967,25 @@ body#messages .delete_seleted, body#messages .unread {
   text-shadow: none;
 }
 
-/* SEARCH
+/* MODAL BOX
 ---------------------------------------- */
 /* line 79, ../../../app/stylesheets/grid.scss */
+#simplemodal-container a.modalCloseImg {
+  background: url("/images/icons/close.png") no-repeat;
+  /* adjust url as required */
+  width: 27px;
+  height: 27px;
+  display: inline;
+  z-index: 3200;
+  position: absolute;
+  top: -15px;
+  right: -18px;
+  cursor: pointer;
+}
+
+/* SEARCH
+---------------------------------------- */
+/* line 94, ../../../app/stylesheets/grid.scss */
 .quick_links {
   margin: 0;
   padding: 0;
@@ -975,11 +1020,11 @@ body#messages .delete_seleted, body#messages .unread {
 .quick_links li.last {
   padding-right: 0;
 }
-/* line 86, ../../../app/stylesheets/grid.scss */
+/* line 101, ../../../app/stylesheets/grid.scss */
 .quick_links ul li {
   margin-right: 5px  !important;
 }
-/* line 90, ../../../app/stylesheets/grid.scss */
+/* line 105, ../../../app/stylesheets/grid.scss */
 .quick_links a {
   text-decoration: none;
 }
@@ -987,14 +1032,14 @@ body#messages .delete_seleted, body#messages .unread {
 .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 92, ../../../app/stylesheets/grid.scss */
+/* line 107, ../../../app/stylesheets/grid.scss */
 .quick_links span {
   font-weight: bold;
 }
 
 /* USER
 ---------------------------------------- */
-/* line 98, ../../../app/stylesheets/grid.scss */
+/* line 113, ../../../app/stylesheets/grid.scss */
 #gmaps4rails_map {
   margin-top: 20px;
   border: 8px solid #fff;
@@ -1012,13 +1057,13 @@ body#messages .delete_seleted, body#messages .unread {
   height: 300px  !important;
 }
 
-/* line 106, ../../../app/stylesheets/grid.scss */
+/* line 121, ../../../app/stylesheets/grid.scss */
 .avatar {
   background: #ccc;
   display: block;
   float: left;
 }
-/* line 110, ../../../app/stylesheets/grid.scss */
+/* line 125, ../../../app/stylesheets/grid.scss */
 .avatar.small {
   height: 30px;
   width: 30px;
@@ -1038,7 +1083,7 @@ body#messages .delete_seleted, body#messages .unread {
 
 /* USER SHOW
 ---------------------------------------- */
-/* line 121, ../../../app/stylesheets/grid.scss */
+/* line 136, ../../../app/stylesheets/grid.scss */
 .profile_picture {
   border: 8px solid #fff;
   -moz-border-radius: 8px;
@@ -1054,7 +1099,7 @@ body#messages .delete_seleted, body#messages .unread {
   width: 90%;
 }
 
-/* line 127, ../../../app/stylesheets/grid.scss */
+/* line 142, ../../../app/stylesheets/grid.scss */
 .looking_for {
   text-transform: lowercase;
   color: #1d8cc8;
@@ -1064,34 +1109,34 @@ body#messages .delete_seleted, body#messages .unread {
   margin-bottom: 1em;
 }
 
-/* line 135, ../../../app/stylesheets/grid.scss */
+/* line 150, ../../../app/stylesheets/grid.scss */
 h1.username {
   margin-bottom: 3px;
   display: inline;
 }
 
-/* line 139, ../../../app/stylesheets/grid.scss */
+/* line 154, ../../../app/stylesheets/grid.scss */
 .location_infos {
   font-size: 0.8125em;
   margin-left: 10px;
   color: #999;
 }
 
-/* line 144, ../../../app/stylesheets/grid.scss */
+/* line 159, ../../../app/stylesheets/grid.scss */
 .spread {
   margin-bottom: 1.5em;
 }
-/* line 146, ../../../app/stylesheets/grid.scss */
+/* line 161, ../../../app/stylesheets/grid.scss */
 .spread .left {
   float: left;
   margin-right: 10px;
 }
 
-/* line 151, ../../../app/stylesheets/grid.scss */
+/* line 166, ../../../app/stylesheets/grid.scss */
 .instruments_tag_list {
   margin: 10px 0 20px;
 }
-/* line 153, ../../../app/stylesheets/grid.scss */
+/* line 168, ../../../app/stylesheets/grid.scss */
 .instruments_tag_list span {
   font-size: 0.75em;
   padding: 4px 10px;
@@ -1112,11 +1157,11 @@ h1.username {
 
 /* TESTIMONIALS
 ---------------------------------------- */
-/* line 165, ../../../app/stylesheets/grid.scss */
+/* line 180, ../../../app/stylesheets/grid.scss */
 #testimonials {
   clear: both;
 }
-/* line 168, ../../../app/stylesheets/grid.scss */
+/* line 183, ../../../app/stylesheets/grid.scss */
 #testimonials .testimonial {
   width: 190px;
   padding: 15px;
@@ -1138,11 +1183,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 180, ../../../app/stylesheets/grid.scss */
+/* line 195, ../../../app/stylesheets/grid.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 183, ../../../app/stylesheets/grid.scss */
+/* line 198, ../../../app/stylesheets/grid.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -1153,17 +1198,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 187, ../../../app/stylesheets/grid.scss */
+/* line 202, ../../../app/stylesheets/grid.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 193, ../../../app/stylesheets/grid.scss */
+/* line 208, ../../../app/stylesheets/grid.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 196, ../../../app/stylesheets/grid.scss */
+/* line 211, ../../../app/stylesheets/grid.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -1173,19 +1218,19 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 205, ../../../app/stylesheets/grid.scss */
+/* line 220, ../../../app/stylesheets/grid.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 209, ../../../app/stylesheets/grid.scss */
+/* line 224, ../../../app/stylesheets/grid.scss */
 #services img {
   width: 32px;
 }
 
 /* FOOTER
 ---------------------------------------- */
-/* line 217, ../../../app/stylesheets/grid.scss */
+/* line 232, ../../../app/stylesheets/grid.scss */
 #footer {
   font-size: 0.70em;
 }

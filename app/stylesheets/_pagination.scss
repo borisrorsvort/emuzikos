@@ -1,7 +1,11 @@
-.page_entries {
+html.no-js .page_entries {
   padding: 0 10px 15px 0;
   font-size: 0.75em;
   @include inset(#fff); }
+  
+html.js .page_entries {
+  display:none;
+}
 
 .pagination {
   padding: 15px 0;
@@ -44,3 +48,20 @@
     height: 1%; }
   *:first-child+html & {
     overflow: hidden; } }
+
+
+#pageless-loader {  
+  background: #ccc;
+  width: 200px  !important;
+  margin: 20px 0 0 70%  !important;
+  @include border-radius(10px);
+  padding: 10px;
+  .msg {
+    font-size: 12px  !important;
+    color:#333  !important;
+  }
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}

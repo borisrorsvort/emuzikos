@@ -3,6 +3,9 @@
 - content_for :sub_nav do
   = render "search"
 
+- content_for :scripts do
+  = pageless(@users.total_pages, users_path)
+
 -if !@users.blank?
   .page_entries
     = page_entries_info @users
@@ -24,7 +27,8 @@
       = render :partial => 'user', :collection => @users
 
   = will_paginate @users
-    
+  
+  
     
 -else
   =t(:'.no_users')
