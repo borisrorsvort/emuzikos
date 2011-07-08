@@ -73,13 +73,6 @@
     %h3= t(:'activerecord.attributes.user.request_message')
     = simple_format(@user.request_message)
   
-  -if @user ==  current_user
-    %h2 Friends
-    %ul
-      -for friendship in @user.friendships
-        %li
-          =h friendship.friend.username
-          (#{link_to "remove", friendship, :method => :delete})
     .clear
   / -if @users_nearby
   /     - for user in @users_nearby.nearbys(10)
