@@ -17,15 +17,6 @@ en:
     common: 
       require_user: "You must be logged in to access this page"
       require_no_user: "You must be logged out to access this page"
-        
-### USERS SESSIONS
-#############################      
-
-    user_sessions:
-      create:
-        success: You successfully logged in. Welcome back! 
-      destroy: 
-        success: You successfully logged out. Good bye!
 
 ### USERS
 #############################
@@ -52,18 +43,6 @@ en:
       destroy:
         success: "Successfully destroyed testimonial"
         
-### PASSWORDS RESETS
-#############################  
-     
-    password_resets:
-      create:
-        success: "Instructions to reset your password have been emailed to you"
-        error: "No user was found with email address %{email}"
-      update:
-        success: "Your password was successfully updated"
-      load_user_using_perishable_token:
-        error: "We're sorry, but we could not locate your account"
-        
   
 ### MESSAGES
 #############################     
@@ -72,3 +51,12 @@ en:
         success: "Your message was successfully sent!"
       delete_selected:
         success: "Deleted! Congrats"
+
+### FRIENDSHIPS
+#############################     
+    friendships:
+      create:
+        success: " %{user} has been added to your contact list succesfully!"
+      destroy:
+        success: " %{user} has been deleted from your contact list succesfully!"
+        

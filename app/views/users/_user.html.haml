@@ -15,4 +15,4 @@
   %td= Carmen::country_name(user.country) rescue nil
   %td
     -if @current_user && @current_user != user
-      = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => user.id), :class => "button submit contact small"
+      = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => user.id), :class => "button contact_from_index "

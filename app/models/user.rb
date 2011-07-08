@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   has_many :services, :dependent => :destroy
   has_many :testimonials, :dependent => :destroy
+  has_many :friendships
+  has_many :friends, :through => :friendships
   has_private_messages
   geocoded_by :address
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?, 
@@ -79,7 +81,6 @@ class User < ActiveRecord::Base
       instruments << instrument if self.send("#{instrument}?")
     end
     return instruments
-    
   end
     
   def to_param
@@ -103,6 +104,9 @@ class User < ActiveRecord::Base
     self.latitude.present? && self.longitude.present?
   end
 
+  def is_friend_with(user)
+    self.friendships.find_by_friend_id(user.id)
+  end
   
   private
 

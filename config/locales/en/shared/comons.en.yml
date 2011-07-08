@@ -30,6 +30,8 @@ en:
       sent_messages: "Sent Messages"
     testimonials: Testimonials
     contact: "Contact us"
+    users:
+      contacts: Contact list
 
 ### TABLES
 ### ______________________________________________________

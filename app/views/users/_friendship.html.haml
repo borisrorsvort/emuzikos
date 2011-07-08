@@ -1,0 +1,19 @@
+%tr{:class => cycle("odd", "even")}
+  %td
+    .avatar.small
+      - if friendship.friend.avatar.present?
+        = link_to(image_tag(friendship.friend.avatar.url(:gallery)), user_contacts_path(friendship.friend))
+      -else
+        = link_to(image_tag("backgrounds/avatar-default.gif"), user_contacts_path(friendship.friend))
+      
+  %td= link_to "#{friendship.friend.username}", user_contacts_path(friendship.friend)
+  %td= t(:"users.types.#{friendship.friend.user_type}") 
+  %td= t(:"users.types.#{friendship.friend.searching_for}")
+  %td= friendship.friend.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
+  %td= t(:"musical_genres.#{friendship.friend.genre}")
+  %td= friendship.friend.zip
+  %td= Carmen::country_name(friendship.friend.country) rescue nil
+  %td
+    -if @current_user && @current_user != friendship.friend
+      = link_to t(:'buttons.remove_from_contact_list'), friendship, :method => :delete, :class => "button delete small"
+      = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => friendship.friend.id), :class => "button submit contact small"

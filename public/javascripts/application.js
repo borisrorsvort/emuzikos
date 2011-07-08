@@ -24,7 +24,30 @@ $(document).ready(function() {
 	$('.button').button({
     text: true
   });
-  
+  $('.button.add').button({
+    icons: {
+      primary: 'ui-icon-star'
+    },
+    text: true
+  });
+  $('.button.contact').button({
+    icons: {
+      secondary: 'ui-icon-triangle-1-e'
+    },
+    text: true
+  });
+  $('.button.contact_from_index').button({
+    icons: {
+      secondary: 'ui-icon-comment'
+    },
+    text: false
+  });
+  $('.button.delete').button({
+    icons: {
+      primary: 'ui-icon-trash'
+    },
+    text: true
+  });
   $('.button.submit').button({
     icons: {
       secondary: 'ui-icon-triangle-1-e'

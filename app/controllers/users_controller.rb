@@ -45,6 +45,9 @@ class UsersController < ApplicationController
     end
   end
   
+  def contacts
+    @friendships = @current_user.friendships
+  end
   private
   
   def is_search?

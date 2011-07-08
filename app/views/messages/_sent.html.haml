@@ -6,6 +6,8 @@
       = link_to t(:'menu.messages.inbox'), user_messages_path(@user)
     %li
       = link_to t(:'menu.messages.sent_messages'), user_messages_path(@user, :mailbox => :sent), :class => "current"
+    %li
+      = link_to t(:'menu.users.contacts'), user_contacts_path(@user)
   .clear
 
 

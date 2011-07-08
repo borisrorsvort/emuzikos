@@ -18,8 +18,12 @@
       %ul#sub_sections
         %li
           = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), :back, :class => "button back"
-        -if @current_user && @current_user != @user
-          %li= link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button submit contact"
+        -if current_user && current_user != @user
+          
+          - unless current_user.is_friend_with(@user)
+            %li= link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user), :method => :post, :class => "button add"
+              
+          %li= link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button contact"
         -elsif !@current_user
           %li= link_to t(:'buttons.home_signup'), signup_path, :class => "button submit contact "
     .clear
@@ -69,7 +73,13 @@
     %h3= t(:'activerecord.attributes.user.request_message')
     = simple_format(@user.request_message)
   
-  
+  -if @user ==  current_user
+    %h2 Friends
+    %ul
+      -for friendship in @user.friendships
+        %li
+          =h friendship.friend.username
+          (#{link_to "remove", friendship, :method => :delete})
     .clear
   / -if @users_nearby
   /     - for user in @users_nearby.nearbys(10)

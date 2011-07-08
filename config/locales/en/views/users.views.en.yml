@@ -4,6 +4,9 @@ en:
 ### ______________________________________________________
 
   users:
+    contacts:
+      title: Contact list
+      no_users: "You don't have any contact in your list"
     types:
       musician: Musician
       band: Band

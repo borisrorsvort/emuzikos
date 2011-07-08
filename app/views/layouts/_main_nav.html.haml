@@ -5,7 +5,7 @@
         :class => current_page?(users_path) ? "current" : nil
       
     %li.icon-messages
-      =link_to user_messages_path(current_user), :class => controller.controller_name == "messages" ? "current" : nil do
+      =link_to user_messages_path(current_user), :class => (controller.controller_name == "messages" || current_page?(user_contacts_path(current_user)) ) ? "current" : nil do
         = t(:'menu.messages.messages')
         = unread_messages_count unless  current_user.received_messages.un_read.count == 0
         
