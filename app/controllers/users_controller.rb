@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @testimonials = @user.testimonials
     @user_map = @user.to_gmaps4rails
-    #@users_nearby = User.profiles_completed.near("#{@user.zip} #{@user.country}", 50, :order => :distance)
+    @users_nearby = User.geocoded.profiles_completed.near("#{@user.zip} #{Carmen::country_name(@user.country)}", 100)
   end
   
   def edit

@@ -61,7 +61,6 @@
   - unless @user.instruments.blank?
     %h3= t(:'activerecord.attributes.user.instruments')
     .instruments_tag_list
-      =# @user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
       - @user.instruments.each do |instrument|
         %span= t(:"instruments.#{instrument}")
 
@@ -74,10 +73,13 @@
     = simple_format(@user.request_message)
   
     .clear
-  / -if @users_nearby
-  /     - for user in @users_nearby.nearbys(10)
-  /       = link_to user.username, user_path(user) 
-  /       (#{user.distance.round(2)} miles)
+    
+  -if @users_nearby
+    %ul
+      - for user in @users_nearby
+        %li
+          = link_to user.username, user_path(user) 
+          (#{user.distance.round(2)} miles)
 
 %section.left_drawer
   - if @user.avatar
