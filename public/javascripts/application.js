@@ -1,5 +1,36 @@
-$(document).ready(function() {
+if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+var viewportmeta = document.querySelectorAll('meta[name="viewport"]')[0];
+if (viewportmeta) {
+viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0';
+document.body.addEventListener('gesturestart', function() {
+viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
+}, false);
+}
+}
 
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+
+addLoadEvent(function() {
+  if (document.getElementById && document.getElementsByTagName) {
+  var aImgs = document.getElementById("content").getElementsByTagName("img");
+  imgSizer.collate(aImgs);
+  } 
+});
+
+$(document).ready(function() {
+  
   // TIPSY
 
   $('.tooltip').tipsy({trigger: 'hover', gravity: 's'});

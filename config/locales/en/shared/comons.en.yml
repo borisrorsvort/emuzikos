@@ -1,5 +1,6 @@
 en:
   common:
+    no_script: Your browser does not support JavaScript!
     home: Home
     required: Required
     please_choose: 'Please choose ...'

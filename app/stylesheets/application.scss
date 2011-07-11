@@ -20,6 +20,61 @@
 @import "tables";
 @import "pagination";
 
+/*
+1.ROOT
+2.HEADINGS
+3.TYPOGRAPHY
+4.LINKS
+5.FIGURES & IMAGES
+6.TABLES
+7.FORMS (See css/mylibs/forms.css)
+8.BANNER header[role="banner"]
+9.NAVIGATION nav[role="navigation"]
+10.CONTENT
+11.MAIN div[role="main"]
+12.COMPLIMENTARY div[role="complementary"]
+13.CONTENTINFO footer[role="contentinfo"]
+14.GLOBAL OBJECTS
+15.VENDOR-SPECIFIC 
+16.TEMPLATE SPECIFICS
+17.MODERNIZR
+*/
+
+
+/* 1.ROOT
+---------------------------------------- */
+/* 2.HEADINGS
+---------------------------------------- */
+/* 3.TYPOGRAPHY
+---------------------------------------- */
+/* 4.LINKS
+---------------------------------------- */
+/* 5.FIGURES & IMAGES
+---------------------------------------- */
+/* 6.TABLES
+---------------------------------------- */
+/* 7.FORMS (See css/mylibs/forms.css)
+---------------------------------------- */
+/* 8.BANNER header[role="banner"]
+---------------------------------------- */
+/* 9.NAVIGATION nav[role="navigation"]
+---------------------------------------- */
+/* 10.CONTENT
+---------------------------------------- */
+/* 11.MAIN div[role="main"]
+---------------------------------------- */
+/* 12.COMPLIMENTARY div[role="complementary"]
+---------------------------------------- */
+/* 13.CONTENTINFO footer[role="contentinfo"]
+---------------------------------------- */
+/* 14.GLOBAL OBJECTS
+---------------------------------------- */
+/* 15.VENDOR-SPECIFIC 
+---------------------------------------- */
+/* 16.TEMPLATE SPECIFICS
+---------------------------------------- */
+/* 17.MODERNIZR
+---------------------------------------- */
 
 
 #main_nav {
@@ -234,64 +289,119 @@ h1.username {
 }
 
 
-/* MEDIA QUERIES */
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-/* Styles */
-}
+/*480px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 480px) {
 
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 321px) {
-/* Styles */
-}
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
 
-/* Smartphones (portrait) ----------- */
-@media only screen 
-and (max-width : 320px) {
-/* Styles */
-}
+}/*/mediaquery*/
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-/* Styles */
-}
+/*768px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 768px) {
 
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-/* Styles */
-}
+/* 1.ROOT */
 
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-/* Styles */
-}
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
 
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-/* Styles */
-}
+}/*/mediaquery*/
 
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-/* Styles */
-}
+/*992px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 992px) {
 
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
-}
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*1382px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 1382px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*2x __________________________________________________________________________________________________________ */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/

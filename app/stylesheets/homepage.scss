@@ -25,12 +25,13 @@
     
   .icon_and_logo {
     @extend .centered;
-    width: 346px;
-    padding-top: 20px; }
+    width: 60%;
+    padding-top: 20px;}
     
   #home_moto {
     text-align:center;
     margin-top: 20px;
+    line-height: 1.4em;
     color: #00496d;
     @include inset(#bababa);
     font-size: 2.6em; }
@@ -138,10 +139,9 @@
 .step {
   float: left;
   width: 30%;
-  min-width: 200px;
+  min-width: 160px;
   margin-bottom: 20px;
-  margin-right: 3%;
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight:bold;
   color:#828282;
   position:relative;
@@ -178,3 +178,132 @@
     height: 31px;
     background:transparent image-url('/images/icons/zoom-icon.png') center center no-repeat; }
 }
+
+
+/*480px __________________________________________________________________________________________________________ */
+@media only screen and (max-width: 480px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+  
+  .logged_out {
+    #home_moto {
+      line-height: 1.2em;
+      font-size: 1.8em;
+      padding: 0 10%; }
+  }
+
+
+
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*768px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 768px) {
+
+/* 1.ROOT */
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*992px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 992px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*1382px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 1382px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*2x __________________________________________________________________________________________________________ */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+

@@ -195,50 +195,59 @@ body {
   line-height: 18px;
 }
 
-/* line 12, ../../../app/stylesheets/_base.scss */
-img {
-  width: 100%;
+/* line 19, ../../../app/stylesheets/_base.scss */
+html.js img,
+html.js object,
+html.iem7 img,
+html.iem7 object,
+html.ie6 img,
+html.ie6 object,
+html.ie7 img,
+html.ie7 object,
+html.ie8 img,
+html.ie8 object {
+  max-width: 100%;
 }
 
-/* line 16, ../../../app/stylesheets/_base.scss */
+/* line 26, ../../../app/stylesheets/_base.scss */
 a {
   color: #157ebe;
 }
-/* line 18, ../../../app/stylesheets/_base.scss */
+/* line 28, ../../../app/stylesheets/_base.scss */
 a img {
   border: none;
 }
 
-/* line 21, ../../../app/stylesheets/_base.scss */
+/* line 31, ../../../app/stylesheets/_base.scss */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 26, ../../../app/stylesheets/_base.scss */
+/* line 36, ../../../app/stylesheets/_base.scss */
 .wide {
   width: 100%;
 }
 
-/* line 29, ../../../app/stylesheets/_base.scss */
+/* line 39, ../../../app/stylesheets/_base.scss */
 .unread_bullet {
   font-size: 20px;
   font-weight: bold;
   line-height: 1em;
 }
 
-/* line 34, ../../../app/stylesheets/_base.scss */
+/* line 44, ../../../app/stylesheets/_base.scss */
 .centered {
   margin: 0 auto;
 }
 
-/* line 37, ../../../app/stylesheets/_base.scss */
+/* line 47, ../../../app/stylesheets/_base.scss */
 .hidden {
   display: none;
 }
 
-/* line 40, ../../../app/stylesheets/_base.scss */
+/* line 50, ../../../app/stylesheets/_base.scss */
 b {
   font-weight: bold;
 }
@@ -248,37 +257,37 @@ b {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 81, ../../../app/stylesheets/_base.scss */
+  /* line 91, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 82, ../../../app/stylesheets/_base.scss */
+  /* line 92, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 86, ../../../app/stylesheets/_base.scss */
+  /* line 96, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 87, ../../../app/stylesheets/_base.scss */
+  /* line 97, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 88, ../../../app/stylesheets/_base.scss */
+  /* line 98, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 89, ../../../app/stylesheets/_base.scss */
+  /* line 99, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -286,25 +295,25 @@ b {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 92, ../../../app/stylesheets/_base.scss */
+  /* line 102, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 93, ../../../app/stylesheets/_base.scss */
+  /* line 103, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 94, ../../../app/stylesheets/_base.scss */
+  /* line 104, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 95, ../../../app/stylesheets/_base.scss */
+  /* line 105, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -312,12 +321,12 @@ b {
 }
 
 @-webkit-keyframes opacity {
-  /* line 98, ../../../app/stylesheets/_base.scss */
+  /* line 108, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 99, ../../../app/stylesheets/_base.scss */
+  /* line 109, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -907,30 +916,83 @@ html.js .page_entries {
   height: 32px;
 }
 
-/* line 26, ../../../app/stylesheets/grid.scss */
+/*
+1.ROOT
+2.HEADINGS
+3.TYPOGRAPHY
+4.LINKS
+5.FIGURES & IMAGES
+6.TABLES
+7.FORMS (See css/mylibs/forms.css)
+8.BANNER header[role="banner"]
+9.NAVIGATION nav[role="navigation"]
+10.CONTENT
+11.MAIN div[role="main"]
+12.COMPLIMENTARY div[role="complementary"]
+13.CONTENTINFO footer[role="contentinfo"]
+14.GLOBAL OBJECTS
+15.VENDOR-SPECIFIC 
+16.TEMPLATE SPECIFICS
+17.MODERNIZR
+*/
+/* 1.ROOT
+---------------------------------------- */
+/* 2.HEADINGS
+---------------------------------------- */
+/* 3.TYPOGRAPHY
+---------------------------------------- */
+/* 4.LINKS
+---------------------------------------- */
+/* 5.FIGURES & IMAGES
+---------------------------------------- */
+/* 6.TABLES
+---------------------------------------- */
+/* 7.FORMS (See css/mylibs/forms.css)
+---------------------------------------- */
+/* 8.BANNER header[role="banner"]
+---------------------------------------- */
+/* 9.NAVIGATION nav[role="navigation"]
+---------------------------------------- */
+/* 10.CONTENT
+---------------------------------------- */
+/* 11.MAIN div[role="main"]
+---------------------------------------- */
+/* 12.COMPLIMENTARY div[role="complementary"]
+---------------------------------------- */
+/* 13.CONTENTINFO footer[role="contentinfo"]
+---------------------------------------- */
+/* 14.GLOBAL OBJECTS
+---------------------------------------- */
+/* 15.VENDOR-SPECIFIC 
+---------------------------------------- */
+/* 16.TEMPLATE SPECIFICS
+---------------------------------------- */
+/* 17.MODERNIZR
+---------------------------------------- */
+/* line 81, ../../../app/stylesheets/application.scss */
 #main_nav ul {
   padding: 0;
 }
-/* line 28, ../../../app/stylesheets/grid.scss */
+/* line 83, ../../../app/stylesheets/application.scss */
 #main_nav li {
   display: block;
   float: left;
   border-right: 1px solid #424242;
   position: relative;
 }
-/* line 33, ../../../app/stylesheets/grid.scss */
+/* line 88, ../../../app/stylesheets/application.scss */
 #main_nav li.icon-user a {
   background-position: 20px -85px;
 }
-/* line 35, ../../../app/stylesheets/grid.scss */
+/* line 90, ../../../app/stylesheets/application.scss */
 #main_nav li.icon-messages a {
   background-position: 20px -35px;
 }
-/* line 37, ../../../app/stylesheets/grid.scss */
+/* line 92, ../../../app/stylesheets/application.scss */
 #main_nav li.icon-search a {
   background-position: 20px 15px;
 }
-/* line 39, ../../../app/stylesheets/grid.scss */
+/* line 94, ../../../app/stylesheets/application.scss */
 #main_nav li a {
   text-shadow: #333333 0 1px 1px;
   color: #bababa;
@@ -945,12 +1007,12 @@ html.js .page_entries {
   border-right: 1px solid #2d2d2d;
   background: transparent url("/images/icons/main-nav-icon-sprite.png") left top no-repeat;
 }
-/* line 52, ../../../app/stylesheets/grid.scss */
+/* line 107, ../../../app/stylesheets/application.scss */
 #main_nav li a:hover, #main_nav li a.current {
   background-color: #3a3a3a;
 }
 
-/* line 55, ../../../app/stylesheets/grid.scss */
+/* line 110, ../../../app/stylesheets/application.scss */
 .main_nav_current_arrow {
   font-size: 0px;
   line-height: 0%;
@@ -963,7 +1025,7 @@ html.js .page_entries {
   top: 47px;
 }
 
-/* line 62, ../../../app/stylesheets/grid.scss */
+/* line 117, ../../../app/stylesheets/application.scss */
 .message_count {
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
@@ -987,7 +1049,7 @@ html.js .page_entries {
 
 /* MODAL BOX
 ---------------------------------------- */
-/* line 79, ../../../app/stylesheets/grid.scss */
+/* line 134, ../../../app/stylesheets/application.scss */
 #simplemodal-container a.modalCloseImg {
   background: url("/images/icons/close.png") no-repeat;
   /* adjust url as required */
@@ -1003,7 +1065,7 @@ html.js .page_entries {
 
 /* SEARCH
 ---------------------------------------- */
-/* line 94, ../../../app/stylesheets/grid.scss */
+/* line 149, ../../../app/stylesheets/application.scss */
 .quick_links {
   margin: 0;
   padding: 0;
@@ -1038,11 +1100,11 @@ html.js .page_entries {
 .quick_links li.last {
   padding-right: 0;
 }
-/* line 101, ../../../app/stylesheets/grid.scss */
+/* line 156, ../../../app/stylesheets/application.scss */
 .quick_links ul li {
   margin-right: 5px  !important;
 }
-/* line 105, ../../../app/stylesheets/grid.scss */
+/* line 160, ../../../app/stylesheets/application.scss */
 .quick_links a {
   text-decoration: none;
 }
@@ -1050,14 +1112,14 @@ html.js .page_entries {
 .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 107, ../../../app/stylesheets/grid.scss */
+/* line 162, ../../../app/stylesheets/application.scss */
 .quick_links span {
   font-weight: bold;
 }
 
 /* USER
 ---------------------------------------- */
-/* line 113, ../../../app/stylesheets/grid.scss */
+/* line 168, ../../../app/stylesheets/application.scss */
 #gmaps4rails_map {
   margin-top: 20px;
   border: 8px solid #fff;
@@ -1075,13 +1137,13 @@ html.js .page_entries {
   height: 300px  !important;
 }
 
-/* line 121, ../../../app/stylesheets/grid.scss */
+/* line 176, ../../../app/stylesheets/application.scss */
 .avatar {
   background: #ccc;
   display: block;
   float: left;
 }
-/* line 125, ../../../app/stylesheets/grid.scss */
+/* line 180, ../../../app/stylesheets/application.scss */
 .avatar.small {
   height: 30px;
   width: 30px;
@@ -1101,7 +1163,7 @@ html.js .page_entries {
 
 /* USER SHOW
 ---------------------------------------- */
-/* line 136, ../../../app/stylesheets/grid.scss */
+/* line 191, ../../../app/stylesheets/application.scss */
 .profile_picture {
   border: 8px solid #fff;
   -moz-border-radius: 8px;
@@ -1117,7 +1179,7 @@ html.js .page_entries {
   width: 90%;
 }
 
-/* line 142, ../../../app/stylesheets/grid.scss */
+/* line 197, ../../../app/stylesheets/application.scss */
 .looking_for {
   text-transform: lowercase;
   color: #1d8cc8;
@@ -1127,34 +1189,34 @@ html.js .page_entries {
   margin-bottom: 1em;
 }
 
-/* line 150, ../../../app/stylesheets/grid.scss */
+/* line 205, ../../../app/stylesheets/application.scss */
 h1.username {
   margin-bottom: 3px;
   display: inline;
 }
 
-/* line 154, ../../../app/stylesheets/grid.scss */
+/* line 209, ../../../app/stylesheets/application.scss */
 .location_infos {
   font-size: 0.8125em;
   margin-left: 10px;
   color: #999;
 }
 
-/* line 159, ../../../app/stylesheets/grid.scss */
+/* line 214, ../../../app/stylesheets/application.scss */
 .spread {
   margin-bottom: 1.5em;
 }
-/* line 161, ../../../app/stylesheets/grid.scss */
+/* line 216, ../../../app/stylesheets/application.scss */
 .spread .left {
   float: left;
   margin-right: 10px;
 }
 
-/* line 166, ../../../app/stylesheets/grid.scss */
+/* line 221, ../../../app/stylesheets/application.scss */
 .instruments_tag_list {
   margin: 10px 0 20px;
 }
-/* line 168, ../../../app/stylesheets/grid.scss */
+/* line 223, ../../../app/stylesheets/application.scss */
 .instruments_tag_list span {
   font-size: 0.75em;
   padding: 4px 10px;
@@ -1175,11 +1237,11 @@ h1.username {
 
 /* TESTIMONIALS
 ---------------------------------------- */
-/* line 180, ../../../app/stylesheets/grid.scss */
+/* line 235, ../../../app/stylesheets/application.scss */
 #testimonials {
   clear: both;
 }
-/* line 183, ../../../app/stylesheets/grid.scss */
+/* line 238, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial {
   width: 190px;
   padding: 15px;
@@ -1201,11 +1263,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 195, ../../../app/stylesheets/grid.scss */
+/* line 250, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 198, ../../../app/stylesheets/grid.scss */
+/* line 253, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -1216,17 +1278,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 202, ../../../app/stylesheets/grid.scss */
+/* line 257, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 208, ../../../app/stylesheets/grid.scss */
+/* line 263, ../../../app/stylesheets/application.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 211, ../../../app/stylesheets/grid.scss */
+/* line 266, ../../../app/stylesheets/application.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -1236,72 +1298,126 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 220, ../../../app/stylesheets/grid.scss */
+/* line 275, ../../../app/stylesheets/application.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 224, ../../../app/stylesheets/grid.scss */
+/* line 279, ../../../app/stylesheets/application.scss */
 #services img {
   width: 32px;
 }
 
 /* FOOTER
 ---------------------------------------- */
-/* line 232, ../../../app/stylesheets/grid.scss */
+/* line 287, ../../../app/stylesheets/application.scss */
 #footer {
   font-size: 0.70em;
 }
 
-/* MEDIA QUERIES */
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-  /* Styles */
+/*480px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 480px) {
+  /* 1.ROOT */
+  /* 2.HEADINGS */
+  /* 3.TYPOGRAPHY */
+  /* 4.LINKS */
+  /* 5.FIGURES & IMAGES */
+  /* 6.TABLES */
+  /* 7.FORMS */
+  /* 8.BANNER */
+  /* 9.NAVIGATION */
+  /* 10.CONTENT */
+  /* 11.MAIN */
+  /* 12.COMPLIMENTARY */
+  /* 13.CONTENTINFO */
+  /* 14.GLOBAL OBJECTS */
+  /* 15.VENDOR-SPECIFIC */
+  /* 16.TEMPLATE SPECIFICS */
+  /* 17.MODERNIZR */
 }
-/* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 321px) {
-  /* Styles */
+/*/mediaquery*/
+/*768px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 768px) {
+  /* 1.ROOT */
+  /* 1.ROOT */
+  /* 2.HEADINGS */
+  /* 3.TYPOGRAPHY */
+  /* 4.LINKS */
+  /* 5.FIGURES & IMAGES */
+  /* 6.TABLES */
+  /* 7.FORMS */
+  /* 8.BANNER */
+  /* 9.NAVIGATION */
+  /* 10.CONTENT */
+  /* 11.MAIN */
+  /* 12.COMPLIMENTARY */
+  /* 13.CONTENTINFO */
+  /* 14.GLOBAL OBJECTS */
+  /* 15.VENDOR-SPECIFIC */
+  /* 16.TEMPLATE SPECIFICS */
+  /* 17.MODERNIZR */
 }
-/* Smartphones (portrait) ----------- */
-@media only screen 
-and (max-width : 320px) {
-  /* Styles */
+/*/mediaquery*/
+/*992px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 992px) {
+  /* 1.ROOT */
+  /* 2.HEADINGS */
+  /* 3.TYPOGRAPHY */
+  /* 4.LINKS */
+  /* 5.FIGURES & IMAGES */
+  /* 6.TABLES */
+  /* 7.FORMS */
+  /* 8.BANNER */
+  /* 9.NAVIGATION */
+  /* 10.CONTENT */
+  /* 11.MAIN */
+  /* 12.COMPLIMENTARY */
+  /* 13.CONTENTINFO */
+  /* 14.GLOBAL OBJECTS */
+  /* 15.VENDOR-SPECIFIC */
+  /* 16.TEMPLATE SPECIFICS */
+  /* 17.MODERNIZR */
 }
-/* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-  /* Styles */
+/*/mediaquery*/
+/*1382px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 1382px) {
+  /* 1.ROOT */
+  /* 2.HEADINGS */
+  /* 3.TYPOGRAPHY */
+  /* 4.LINKS */
+  /* 5.FIGURES & IMAGES */
+  /* 6.TABLES */
+  /* 7.FORMS */
+  /* 8.BANNER */
+  /* 9.NAVIGATION */
+  /* 10.CONTENT */
+  /* 11.MAIN */
+  /* 12.COMPLIMENTARY */
+  /* 13.CONTENTINFO */
+  /* 14.GLOBAL OBJECTS */
+  /* 15.VENDOR-SPECIFIC */
+  /* 16.TEMPLATE SPECIFICS */
+  /* 17.MODERNIZR */
 }
-/* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-  /* Styles */
+/*/mediaquery*/
+/*2x __________________________________________________________________________________________________________ */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  /* 1.ROOT */
+  /* 2.HEADINGS */
+  /* 3.TYPOGRAPHY */
+  /* 4.LINKS */
+  /* 5.FIGURES & IMAGES */
+  /* 6.TABLES */
+  /* 7.FORMS */
+  /* 8.BANNER */
+  /* 9.NAVIGATION */
+  /* 10.CONTENT */
+  /* 11.MAIN */
+  /* 12.COMPLIMENTARY */
+  /* 13.CONTENTINFO */
+  /* 14.GLOBAL OBJECTS */
+  /* 15.VENDOR-SPECIFIC */
+  /* 16.TEMPLATE SPECIFICS */
+  /* 17.MODERNIZR */
 }
-/* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-  /* Styles */
-}
-/* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-  /* Styles */
-}
-/* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-  /* Styles */
-}
-/* iPhone 4 ----------- */
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-  /* Styles */
-}
+/*/mediaquery*/

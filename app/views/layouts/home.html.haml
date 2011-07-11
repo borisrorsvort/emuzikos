@@ -3,7 +3,7 @@
   
 = render "/layouts/head"
 
-%body.logged_out{:id => @body_id ? @body_id: controller.controller_name, :class => @body_class ? controller.action_name + " " + @body_class : controller.action_name}
+%body.logged_out{:id => @body_id ? @body_id: controller.controller_name, :class => @body_class ? controller.action_name + " clearfix " + @body_class : controller.action_name + " clearfix "}
 
   %section#header
     #logo

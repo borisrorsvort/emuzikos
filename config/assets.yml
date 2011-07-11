@@ -2,29 +2,38 @@ javascript_compressor: yui
 
 javascripts:
   polyfills:
-    - public/javascripts/modernizr-2.0.6.js
+    - public/javascripts/libs/modernizr-2.0.6.js
   jquery:
-    - public/javascripts/jquery-1.5.min.js
-    - public/javascripts/jquery-ui-1.8.9.custom.min.js
-    - public/javascripts/jquery.uniform.min.js
+    - public/javascripts/libs/jquery-1.5.min.js
+    - public/javascripts/libs/jquery-ui-1.8.9.custom.min.js
+    - public/javascripts/libs/jquery.uniform.min.js
   statistics:
-    - public/javascripts/highcharts.js
+    - public/javascripts/libs/highcharts.js  
+  ie_js_pack:
+    - public/javascripts/libs/DOMAssistantCompressed-2.8.js
+    - public/javascripts/libs/selectivizr-1.0.1.js
+    - public/javascripts/libs/respond.min.js
   emuzikos:
-    - public/javascripts/rails.js
-    - public/javascripts/jquery.tipsy.js
-    - public/javascripts/jquery.noisy.min.js
+    - public/javascripts/libs/rails.js
+    - public/javascripts/libs/jquery.tipsy.js
+    - public/javascripts/libs/jquery.noisy.min.js
     - public/javascripts/gritter/jquery.gritter.min.js  
-    - public/javascripts/jquery.masonry.min.js
-    - public/javascripts/jquery.simplemodal.1.4.1.min.js
-    - public/javascripts/jquery.pageless.js
+    - public/javascripts/libs/jquery.masonry.min.js
+    - public/javascripts/libs/jquery.simplemodal.1.4.1.min.js
+    - public/javascripts/libs/jquery.pageless.js
+    - public/javascripts/libs/imgsizer.js
+    - public/javascripts/plugins.js
+    - public/javascripts/mylibs/helper.js
     - public/javascripts/application.js
 
 stylesheets:
-  common:
+  jcrop:
     - public/stylesheets/jquery.Jcrop.css
+  
+  common:
     - public/stylesheets/ui-themes/Emuzikos/jquery-ui-1.8.7.custom.css
     - public/stylesheets/uniform-themes/uniform.emuzikos.css
-    - public/stylesheets/compiled/grid.css
+    - public/stylesheets/compiled/application.css
     - public/stylesheets/compiled/text.css  
     - public/stylesheets/gritter/jquery.gritter.css 
     - public/stylesheets/boxy.css  

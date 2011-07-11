@@ -9,9 +9,19 @@ body {
   color:#666; 
   line-height:18px;}
 
-img {
-  width: 100%;
+
+html.js,
+html.iem7,
+html.ie6,
+html.ie7,
+html.ie8 {
+  img,
+  object {
+    max-width: 100%;
+  }
 }
+
+
 
 a { 
   color: $blue_dark;

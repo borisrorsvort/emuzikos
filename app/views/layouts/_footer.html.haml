@@ -19,4 +19,18 @@
 = include_javascripts :jquery, :emuzikos
 = yield(:javascripts)
 = yield :scripts
+
+/[if (lt IE 9) & (!IEMobile)]
+  = include_javascripts :ie_js_pack
+  
 = gflash(:fade_in_speed => 200, :fade_out_speed => 200, :time => 200)
+
+/ http://t.co/HZe9oJ4
+:javascript
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+  
+%noscript
+  = t(:'common.no_script')
