@@ -78,8 +78,7 @@
     %ul
       - for user in @users_nearby
         %li
-          = link_to user.username, user_path(user) 
-          (#{user.distance.round(2)} miles)
+          = link_to user.username, user_path(user)
 
 %section.left_drawer
   - if @user.avatar
