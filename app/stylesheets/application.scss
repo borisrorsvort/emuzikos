@@ -229,6 +229,11 @@ h1.username {
     color: #fff;
     @include single-box-shadow(#fff, 0, 1px, 2px ); }}
 
+.jcrop-holder img, img#preview {
+  max-width: none  !important;
+  max-height: none  !important;
+}
+
 /* TESTIMONIALS
 ---------------------------------------- */ 
 
@@ -290,7 +295,7 @@ h1.username {
 
 
 /*480px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 480px) {
 
 /* 1.ROOT */
 /* 2.HEADINGS */
@@ -301,6 +306,20 @@ h1.username {
 /* 7.FORMS */
 /* 8.BANNER */
 /* 9.NAVIGATION */
+
+  #main_nav {
+    ul li a {
+     font-size: 0.85em;
+     padding: 15px 22px 15px 50px; }}
+       
+  #user_nav {
+    float:none;
+    clear:left;
+    margin-top: 30px;
+    a {
+      margin-left: 10px; }
+  }
+
 /* 10.CONTENT */
 /* 11.MAIN */
 /* 12.COMPLIMENTARY */
@@ -313,7 +332,7 @@ h1.username {
 }/*/mediaquery*/
 
 /*768px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
 
 /* 1.ROOT */
 
@@ -326,8 +345,15 @@ h1.username {
 /* 7.FORMS */
 /* 8.BANNER */
 /* 9.NAVIGATION */
+
 /* 10.CONTENT */
 /* 11.MAIN */
+  
+  .right_drawer {
+   margin-left: 0; 
+   width: 100%;
+  }
+
 /* 12.COMPLIMENTARY */
 /* 13.CONTENTINFO */
 /* 14.GLOBAL OBJECTS */

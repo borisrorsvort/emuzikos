@@ -5,7 +5,10 @@
 <% end %>
 
 <% content_for(:javascripts) do %>
-  <%= javascript_include_tag "jquery.Jcrop.min" %>
+  <%= javascript_include_tag "libs/jquery.Jcrop.min" %>
+<% end %>
+<% content_for(:scripts) do %>
+
   <script type="text/javascript" charset="utf-8">
   $(function() {
     $('#cropbox').Jcrop({

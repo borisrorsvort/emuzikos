@@ -16,8 +16,9 @@
       Emuzikos #{Time.now.year} | #{ t(:'common.created_by')} #{ link_to "Boris Rorsvort", "http://www.rorsvort.com", :rel => "external"}
     .clear
   
-= include_javascripts :jquery, :emuzikos
-= yield(:javascripts)
+= include_javascripts :jquery
+= yield :javascripts
+= include_javascripts :emuzikos
 = yield :scripts
 
 /[if (lt IE 9) & (!IEMobile)]
