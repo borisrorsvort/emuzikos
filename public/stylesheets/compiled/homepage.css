@@ -216,7 +216,7 @@ b {
   font-weight: bold;
   font-size: 1.5em;
   position: relative;
-  background: transparent url('/images/buttons/signup_button/signup_bc.png?1303908836') left top repeat-x;
+  background: transparent url('/images/buttons/signup_button/signup_bc.png?1303988570') left top repeat-x;
 }
 /* line 49, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button a {
@@ -239,14 +239,14 @@ b {
   position: absolute;
   width: 25px;
   height: 70px;
-  background: transparent url('/images/buttons/signup_button/signup_bl.png?1303908836') left top no-repeat;
+  background: transparent url('/images/buttons/signup_button/signup_bl.png?1303988570') left top no-repeat;
   display: block;
 }
 /* line 73, ../../../app/stylesheets/homepage.scss */
 .logged_out .signup_button .br {
   left: 100%;
   right: -25px;
-  background: transparent url('/images/buttons/signup_button/signup_br.png?1303908836') left top no-repeat;
+  background: transparent url('/images/buttons/signup_button/signup_br.png?1303988570') left top no-repeat;
 }
 /* line 79, ../../../app/stylesheets/homepage.scss */
 .logged_out #how_it_works {
@@ -319,7 +319,7 @@ b {
 
 /* line 129, ../../../app/stylesheets/homepage.scss */
 #user_forms {
-  width: 350px;
+  width: 35%;
   padding: 20px;
   margin: 20px auto;
   background: #efefef;
@@ -378,7 +378,7 @@ b {
   width: 49px;
   height: 62px;
   margin-bottom: 10px;
-  background: transparent url('/images/backgrounds/flag.png?1303908836') center center no-repeat;
+  background: transparent url('/images/backgrounds/flag.png?1303988570') center center no-repeat;
 }
 /* line 173, ../../../app/stylesheets/homepage.scss */
 .step .zoom_icon {
@@ -387,21 +387,76 @@ b {
   right: 0;
   width: 31px;
   height: 31px;
-  background: transparent url('/images/icons/zoom-icon.png?1303908836') center center no-repeat;
+  background: transparent url('/images/icons/zoom-icon.png?1303988570') center center no-repeat;
+}
+
+/* line 184, ../../../app/stylesheets/homepage.scss */
+#pages.homepage #logo {
+  display: none;
 }
 
 /*480px __________________________________________________________________________________________________________ */
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 480px) {
   /* 1.ROOT */
   /* 2.HEADINGS */
-  /* line 190, ../../../app/stylesheets/homepage.scss */
+  /* line 195, ../../../app/stylesheets/homepage.scss */
+  #pages.homepage #logo {
+    display: block;
+    float: left;
+  }
+
+  /* line 201, ../../../app/stylesheets/homepage.scss */
+  .logged_out .icon_and_logo {
+    width: 50%;
+  }
+  /* line 203, ../../../app/stylesheets/homepage.scss */
+  .logged_out .halo {
+    min-height: 280px;
+    padding-bottom: 30px;
+    margin-bottom: 0;
+  }
+  /* line 207, ../../../app/stylesheets/homepage.scss */
+  .logged_out #user_forms {
+    width: 80%;
+    margin: 20px auto;
+  }
+  /* line 210, ../../../app/stylesheets/homepage.scss */
+  .logged_out .signup_button a {
+    font-size: 0.55em;
+  }
+  /* line 212, ../../../app/stylesheets/homepage.scss */
+  .logged_out #user_nav {
+    margin-top: 0;
+    text-align: left;
+  }
+  /* line 215, ../../../app/stylesheets/homepage.scss */
+  .logged_out #user_nav a {
+    text-align: center;
+    display: block;
+    float: left;
+    width: 33%;
+    margin: 0;
+  }
+  /* line 221, ../../../app/stylesheets/homepage.scss */
+  .logged_out #logo {
+    width: 30%;
+    margin: 0 auto 15px;
+    float: none;
+  }
+  /* line 225, ../../../app/stylesheets/homepage.scss */
   .logged_out #home_moto {
     line-height: 1.2em;
-    font-size: 1.8em;
+    font-size: 1.4em;
     padding: 0 10%;
   }
 
   /* 3.TYPOGRAPHY */
+  /* line 235, ../../../app/stylesheets/homepage.scss */
+  h1 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
   /* 4.LINKS */
   /* 5.FIGURES & IMAGES */
   /* 6.TABLES */
@@ -423,6 +478,27 @@ b {
   /* 1.ROOT */
   /* 1.ROOT */
   /* 2.HEADINGS */
+  /* line 264, ../../../app/stylesheets/homepage.scss */
+  #pages.homepage #logo {
+    display: block;
+  }
+
+  /* line 267, ../../../app/stylesheets/homepage.scss */
+  .icon_and_logo {
+    width: 40%;
+  }
+
+  /* line 271, ../../../app/stylesheets/homepage.scss */
+  .logged_out .halo {
+    margin-bottom: 30px;
+  }
+  /* line 273, ../../../app/stylesheets/homepage.scss */
+  .logged_out #home_moto {
+    line-height: 1.2em;
+    font-size: 1.6em;
+    padding: 0 10%;
+  }
+
   /* 3.TYPOGRAPHY */
   /* 4.LINKS */
   /* 5.FIGURES & IMAGES */
