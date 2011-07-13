@@ -22,20 +22,6 @@ $sub_nav_topbottom_padding: 15px;
   float:left;
   width: 100%; }  
 
-#user_nav {
-  float: right;
-  font-size:  12px;
-  a {
-    margin-left: 20px;
-    &.logout {
-      background: $blue_dark;
-      @include border-radius(3px);
-      padding: 2px 10px ;
-      &:hover {
-        text-decoration:none;
-        background: darken($blue_dark, 10%);
-      };
-    }}}
 
 #main_nav {
   position:relative;
