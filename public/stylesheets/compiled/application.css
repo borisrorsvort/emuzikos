@@ -569,7 +569,8 @@ body {
 }
 
 /* line 19, ../../../app/stylesheets/_base.scss */
-html.js img, html.js object,
+html.js img,
+html.js object,
 html.iem7 img,
 html.iem7 object,
 html.ie6 img,
@@ -1241,53 +1242,60 @@ html.js .page_entries {
   float: left;
   border-right: 1px solid #424242;
   position: relative;
-}
-/* line 66, ../../../app/stylesheets/application.scss */
-#main_nav li.icon-user a {
-  background-position: 20px -85px;
+  width: 33%;
+  /*      &.icon-user a {
+          background-position: 20px -85px; }                      
+        &.icon-messages a {    
+          background-position: 20px -35px; }                      
+        &.icon-search a{       
+          background-position: 20px 15px; }*/
 }
 /* line 68, ../../../app/stylesheets/application.scss */
-#main_nav li.icon-messages a {
-  background-position: 20px -35px;
+#main_nav li.icon-user a {
+  background-position: 13px -88px;
 }
 /* line 70, ../../../app/stylesheets/application.scss */
-#main_nav li.icon-search a {
-  background-position: 20px 15px;
+#main_nav li.icon-messages a {
+  background-position: 13px -38px;
 }
 /* line 72, ../../../app/stylesheets/application.scss */
+#main_nav li.icon-search a {
+  background-position: 13px 11px;
+}
+/* line 80, ../../../app/stylesheets/application.scss */
 #main_nav li a {
   text-shadow: #333333 0 1px 1px;
   color: #bababa;
   display: block;
-  font-size: 0.85em;
+  font-size: 0.70em;
   font-weight: bold;
   position: relative;
   text-align: center;
   text-decoration: none;
-  padding: 15px 22px 15px 50px;
+  padding: 10px 15px 10px 40px;
   text-transform: uppercase;
   border-right: 1px solid #2d2d2d;
   background: transparent url("/images/icons/main-nav-icon-sprite.png") left top no-repeat;
 }
-/* line 85, ../../../app/stylesheets/application.scss */
+/* line 93, ../../../app/stylesheets/application.scss */
 #main_nav li a:hover, #main_nav li a.current {
   background-color: #3a3a3a;
 }
 
-/* line 88, ../../../app/stylesheets/application.scss */
+/* line 96, ../../../app/stylesheets/application.scss */
 .main_nav_current_arrow {
   font-size: 0px;
   line-height: 0%;
   width: 0px;
-  border-bottom: 5px solid #e7e7e7;
-  border-left: 5px solid #3a3a3a;
-  border-right: 5px solid #3a3a3a;
+  border-bottom: 4px solid #e7e7e7;
+  border-left: 4px solid #3a3a3a;
+  border-right: 4px solid #3a3a3a;
   position: absolute;
   left: 45%;
-  top: 47px;
+  top: 37px;
 }
 
-/* line 95, ../../../app/stylesheets/application.scss */
+/* line 103, ../../../app/stylesheets/application.scss */
 .message_count {
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
@@ -1309,14 +1317,14 @@ html.js .page_entries {
   text-shadow: none;
 }
 
-/* line 108, ../../../app/stylesheets/application.scss */
+/* line 116, ../../../app/stylesheets/application.scss */
 #user_nav {
   float: none;
   clear: left;
   margin-top: 10px;
   font-size: 0.70em;
 }
-/* line 113, ../../../app/stylesheets/application.scss */
+/* line 121, ../../../app/stylesheets/application.scss */
 #user_nav a {
   text-align: center;
   display: block;
@@ -1324,11 +1332,11 @@ html.js .page_entries {
   width: 25%;
   margin: 0;
 }
-/* line 119, ../../../app/stylesheets/application.scss */
+/* line 127, ../../../app/stylesheets/application.scss */
 #user_nav a:hover {
   text-decoration: underline;
 }
-/* line 122, ../../../app/stylesheets/application.scss */
+/* line 130, ../../../app/stylesheets/application.scss */
 #user_nav.logout {
   background: #157ebe;
   -moz-border-radius: 3px;
@@ -1339,7 +1347,7 @@ html.js .page_entries {
   border-radius: 3px;
   padding: 2px 10px;
 }
-/* line 126, ../../../app/stylesheets/application.scss */
+/* line 134, ../../../app/stylesheets/application.scss */
 #user_nav.logout:hover {
   text-decoration: none;
   background: #106090;
@@ -1350,7 +1358,7 @@ html.js .page_entries {
 /* 11.MAIN div[role="main"]
 ---------------------------------------- */
 /* USER */
-/* line 139, ../../../app/stylesheets/application.scss */
+/* line 147, ../../../app/stylesheets/application.scss */
 #gmaps4rails_map {
   margin-top: 20px;
   border: 8px solid #fff;
@@ -1368,13 +1376,13 @@ html.js .page_entries {
   height: 300px  !important;
 }
 
-/* line 147, ../../../app/stylesheets/application.scss */
+/* line 155, ../../../app/stylesheets/application.scss */
 .avatar {
   background: #ccc;
   display: block;
   float: left;
 }
-/* line 151, ../../../app/stylesheets/application.scss */
+/* line 159, ../../../app/stylesheets/application.scss */
 .avatar.small {
   height: 30px;
   width: 30px;
@@ -1393,7 +1401,7 @@ html.js .page_entries {
 }
 
 /* USER SHOW */
-/* line 161, ../../../app/stylesheets/application.scss */
+/* line 169, ../../../app/stylesheets/application.scss */
 .profile_picture {
   border: 8px solid #fff;
   -moz-border-radius: 8px;
@@ -1409,7 +1417,7 @@ html.js .page_entries {
   width: 90%;
 }
 
-/* line 167, ../../../app/stylesheets/application.scss */
+/* line 175, ../../../app/stylesheets/application.scss */
 .looking_for {
   text-transform: lowercase;
   color: #1d8cc8;
@@ -1419,34 +1427,34 @@ html.js .page_entries {
   margin-bottom: 1em;
 }
 
-/* line 175, ../../../app/stylesheets/application.scss */
+/* line 183, ../../../app/stylesheets/application.scss */
 h1.username {
   margin-bottom: 3px;
   display: inline;
 }
 
-/* line 179, ../../../app/stylesheets/application.scss */
+/* line 187, ../../../app/stylesheets/application.scss */
 .location_infos {
   font-size: 0.8125em;
   margin-left: 10px;
   color: #999;
 }
 
-/* line 184, ../../../app/stylesheets/application.scss */
+/* line 192, ../../../app/stylesheets/application.scss */
 .spread {
   margin-bottom: 1.5em;
 }
-/* line 186, ../../../app/stylesheets/application.scss */
+/* line 194, ../../../app/stylesheets/application.scss */
 .spread .left {
   float: left;
   margin-right: 10px;
 }
 
-/* line 190, ../../../app/stylesheets/application.scss */
+/* line 198, ../../../app/stylesheets/application.scss */
 .instruments_tag_list {
   margin: 10px 0 20px;
 }
-/* line 192, ../../../app/stylesheets/application.scss */
+/* line 200, ../../../app/stylesheets/application.scss */
 .instruments_tag_list span {
   font-size: 0.75em;
   padding: 4px 10px;
@@ -1465,18 +1473,18 @@ h1.username {
   box-shadow: 0 1px 2px white;
 }
 
-/* line 201, ../../../app/stylesheets/application.scss */
+/* line 209, ../../../app/stylesheets/application.scss */
 .jcrop-holder img, img#preview {
   max-width: none  !important;
   max-height: none  !important;
 }
 
 /* TESTIMONIALS */
-/* line 208, ../../../app/stylesheets/application.scss */
+/* line 216, ../../../app/stylesheets/application.scss */
 #testimonials {
   clear: both;
 }
-/* line 211, ../../../app/stylesheets/application.scss */
+/* line 219, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial {
   width: 190px;
   padding: 15px;
@@ -1498,11 +1506,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 223, ../../../app/stylesheets/application.scss */
+/* line 231, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 226, ../../../app/stylesheets/application.scss */
+/* line 234, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -1513,17 +1521,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 230, ../../../app/stylesheets/application.scss */
+/* line 238, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 236, ../../../app/stylesheets/application.scss */
+/* line 244, ../../../app/stylesheets/application.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 239, ../../../app/stylesheets/application.scss */
+/* line 247, ../../../app/stylesheets/application.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -1533,12 +1541,12 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 248, ../../../app/stylesheets/application.scss */
+/* line 256, ../../../app/stylesheets/application.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 251, ../../../app/stylesheets/application.scss */
+/* line 259, ../../../app/stylesheets/application.scss */
 #services img {
   width: 32px;
 }
@@ -1548,7 +1556,7 @@ h1.username {
 /* 13.CONTENTINFO footer[role="contentinfo"]
 ---------------------------------------- */
 /* FOOTER */
-/* line 262, ../../../app/stylesheets/application.scss */
+/* line 270, ../../../app/stylesheets/application.scss */
 #footer {
   font-size: 0.70em;
 }
@@ -1556,7 +1564,7 @@ h1.username {
 /* 14.GLOBAL OBJECTS
 ---------------------------------------- */
 /* MODAL BOX */
-/* line 270, ../../../app/stylesheets/application.scss */
+/* line 278, ../../../app/stylesheets/application.scss */
 #simplemodal-container a.modalCloseImg {
   background: url("/images/icons/close.png") no-repeat;
   /* adjust url as required */
@@ -1575,7 +1583,7 @@ h1.username {
 /* 16.TEMPLATE SPECIFICS
 ---------------------------------------- */
 /* SEARCH */
-/* line 289, ../../../app/stylesheets/application.scss */
+/* line 297, ../../../app/stylesheets/application.scss */
 .quick_links {
   margin: 0;
   padding: 0;
@@ -1610,11 +1618,11 @@ h1.username {
 .quick_links li.last {
   padding-right: 0;
 }
-/* line 296, ../../../app/stylesheets/application.scss */
+/* line 304, ../../../app/stylesheets/application.scss */
 .quick_links ul li {
   margin-right: 5px  !important;
 }
-/* line 300, ../../../app/stylesheets/application.scss */
+/* line 308, ../../../app/stylesheets/application.scss */
 .quick_links a {
   text-decoration: none;
 }
@@ -1622,7 +1630,7 @@ h1.username {
 .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 302, ../../../app/stylesheets/application.scss */
+/* line 310, ../../../app/stylesheets/application.scss */
 .quick_links span {
   font-weight: bold;
 }
@@ -1647,13 +1655,13 @@ h1.username {
   ---------------------------------------- */
   /* 8.HEADERS
   ---------------------------------------- */
-  /* line 332, ../../../app/stylesheets/application.scss */
+  /* line 340, ../../../app/stylesheets/application.scss */
   #pages.homepage #logo {
     display: block;
     float: left;
   }
 
-  /* line 337, ../../../app/stylesheets/application.scss */
+  /* line 345, ../../../app/stylesheets/application.scss */
   #logo {
     margin: 0;
     float: left;
@@ -1661,13 +1669,30 @@ h1.username {
 
   /* 9.NAVIGATION nav[role="navigation"]
   ---------------------------------------- */
-  /* line 349, ../../../app/stylesheets/application.scss */
+  /* line 356, ../../../app/stylesheets/application.scss */
+  #main_nav ul li {
+    width: auto;
+  }
+  /* line 358, ../../../app/stylesheets/application.scss */
   #main_nav ul li a {
     font-size: 0.875em;
     padding: 15px 20px 15px 50px;
   }
 
-  /* line 353, ../../../app/stylesheets/application.scss */
+  /* line 362, ../../../app/stylesheets/application.scss */
+  .main_nav_current_arrow {
+    font-size: 0px;
+    line-height: 0%;
+    width: 0px;
+    border-bottom: 5px solid #e7e7e7;
+    border-left: 5px solid #3a3a3a;
+    border-right: 5px solid #3a3a3a;
+    position: absolute;
+    left: 45%;
+    top: 47px;
+  }
+
+  /* line 369, ../../../app/stylesheets/application.scss */
   #user_nav {
     float: right;
     font-size: 0.75em;
@@ -1675,13 +1700,13 @@ h1.username {
     margin-top: 0;
     text-align: right;
   }
-  /* line 359, ../../../app/stylesheets/application.scss */
+  /* line 375, ../../../app/stylesheets/application.scss */
   #user_nav a {
     margin-left: 20px;
     float: none;
     display: inline;
   }
-  /* line 363, ../../../app/stylesheets/application.scss */
+  /* line 379, ../../../app/stylesheets/application.scss */
   #user_nav a.logout {
     background: #157ebe;
     -moz-border-radius: 3px;
@@ -1692,7 +1717,7 @@ h1.username {
     border-radius: 3px;
     padding: 2px 10px;
   }
-  /* line 367, ../../../app/stylesheets/application.scss */
+  /* line 383, ../../../app/stylesheets/application.scss */
   #user_nav a.logout:hover {
     text-decoration: none;
     background: #106090;
@@ -1730,7 +1755,7 @@ h1.username {
   /* 9.NAVIGATION */
   /* 10.CONTENT */
   /* 11.MAIN */
-  /* line 410, ../../../app/stylesheets/application.scss */
+  /* line 426, ../../../app/stylesheets/application.scss */
   .right_drawer {
     margin-left: 0;
     width: 100%;
