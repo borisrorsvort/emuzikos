@@ -1014,22 +1014,21 @@ input:focus, input:active, textarea:focus, textarea:active {
   float: left;
   height: 40px;
   margin-bottom: 0px;
-  min-width: 170px;
 }
-/* line 69, ../../../app/stylesheets/_forms.scss */
+/* line 68, ../../../app/stylesheets/_forms.scss */
 #search_form .field input#search_zip {
   padding: 5px 8px;
   margin-top: 3px;
 }
-/* line 74, ../../../app/stylesheets/_forms.scss */
+/* line 73, ../../../app/stylesheets/_forms.scss */
 #search_form .field .selector {
   width: 154px;
 }
-/* line 76, ../../../app/stylesheets/_forms.scss */
+/* line 75, ../../../app/stylesheets/_forms.scss */
 #search_form .field .selector span {
   width: 131px;
 }
-/* line 78, ../../../app/stylesheets/_forms.scss */
+/* line 77, ../../../app/stylesheets/_forms.scss */
 #search_form .field .selector span select {
   width: 140px;
 }
@@ -1329,14 +1328,18 @@ html.js .page_entries {
   text-align: center;
   display: block;
   float: left;
-  width: 25%;
+  width: 33%;
   margin: 0;
 }
 /* line 127, ../../../app/stylesheets/application.scss */
+#user_nav a.greating_profile {
+  display: none;
+}
+/* line 130, ../../../app/stylesheets/application.scss */
 #user_nav a:hover {
   text-decoration: underline;
 }
-/* line 130, ../../../app/stylesheets/application.scss */
+/* line 133, ../../../app/stylesheets/application.scss */
 #user_nav.logout {
   background: #157ebe;
   -moz-border-radius: 3px;
@@ -1347,7 +1350,7 @@ html.js .page_entries {
   border-radius: 3px;
   padding: 2px 10px;
 }
-/* line 134, ../../../app/stylesheets/application.scss */
+/* line 137, ../../../app/stylesheets/application.scss */
 #user_nav.logout:hover {
   text-decoration: none;
   background: #106090;
@@ -1358,7 +1361,37 @@ html.js .page_entries {
 /* 11.MAIN div[role="main"]
 ---------------------------------------- */
 /* USER */
-/* line 147, ../../../app/stylesheets/application.scss */
+/* line 150, ../../../app/stylesheets/application.scss */
+#users.index #search_form .field {
+  width: 46%;
+  padding-right: 10px;
+}
+/* line 153, ../../../app/stylesheets/application.scss */
+#users.index #search_form .field input#search_zip {
+  width: 112px;
+  padding-left: 10px;
+}
+/* line 157, ../../../app/stylesheets/application.scss */
+#users.index #search_form .field .centered {
+  margin: 0 auto;
+  width: 121px;
+}
+/* line 161, ../../../app/stylesheets/application.scss */
+#users.index #search_form .field .selector {
+  margin: 0 auto;
+  width: 110px;
+}
+/* line 164, ../../../app/stylesheets/application.scss */
+#users.index #search_form .field .selector span {
+  width: 100px;
+  font-size: 0.85em;
+}
+/* line 168, ../../../app/stylesheets/application.scss */
+#users.index #search_form .field .selector select {
+  width: 133px;
+}
+
+/* line 175, ../../../app/stylesheets/application.scss */
 #gmaps4rails_map {
   margin-top: 20px;
   border: 8px solid #fff;
@@ -1376,13 +1409,13 @@ html.js .page_entries {
   height: 300px  !important;
 }
 
-/* line 155, ../../../app/stylesheets/application.scss */
+/* line 183, ../../../app/stylesheets/application.scss */
 .avatar {
   background: #ccc;
   display: block;
   float: left;
 }
-/* line 159, ../../../app/stylesheets/application.scss */
+/* line 187, ../../../app/stylesheets/application.scss */
 .avatar.small {
   height: 30px;
   width: 30px;
@@ -1401,7 +1434,7 @@ html.js .page_entries {
 }
 
 /* USER SHOW */
-/* line 169, ../../../app/stylesheets/application.scss */
+/* line 197, ../../../app/stylesheets/application.scss */
 .profile_picture {
   border: 8px solid #fff;
   -moz-border-radius: 8px;
@@ -1417,7 +1450,7 @@ html.js .page_entries {
   width: 90%;
 }
 
-/* line 175, ../../../app/stylesheets/application.scss */
+/* line 203, ../../../app/stylesheets/application.scss */
 .looking_for {
   text-transform: lowercase;
   color: #1d8cc8;
@@ -1427,34 +1460,34 @@ html.js .page_entries {
   margin-bottom: 1em;
 }
 
-/* line 183, ../../../app/stylesheets/application.scss */
+/* line 211, ../../../app/stylesheets/application.scss */
 h1.username {
   margin-bottom: 3px;
   display: inline;
 }
 
-/* line 187, ../../../app/stylesheets/application.scss */
+/* line 215, ../../../app/stylesheets/application.scss */
 .location_infos {
   font-size: 0.8125em;
   margin-left: 10px;
   color: #999;
 }
 
-/* line 192, ../../../app/stylesheets/application.scss */
+/* line 220, ../../../app/stylesheets/application.scss */
 .spread {
   margin-bottom: 1.5em;
 }
-/* line 194, ../../../app/stylesheets/application.scss */
+/* line 222, ../../../app/stylesheets/application.scss */
 .spread .left {
   float: left;
   margin-right: 10px;
 }
 
-/* line 198, ../../../app/stylesheets/application.scss */
+/* line 226, ../../../app/stylesheets/application.scss */
 .instruments_tag_list {
   margin: 10px 0 20px;
 }
-/* line 200, ../../../app/stylesheets/application.scss */
+/* line 228, ../../../app/stylesheets/application.scss */
 .instruments_tag_list span {
   font-size: 0.75em;
   padding: 4px 10px;
@@ -1473,18 +1506,18 @@ h1.username {
   box-shadow: 0 1px 2px white;
 }
 
-/* line 209, ../../../app/stylesheets/application.scss */
+/* line 237, ../../../app/stylesheets/application.scss */
 .jcrop-holder img, img#preview {
   max-width: none  !important;
   max-height: none  !important;
 }
 
 /* TESTIMONIALS */
-/* line 216, ../../../app/stylesheets/application.scss */
+/* line 244, ../../../app/stylesheets/application.scss */
 #testimonials {
   clear: both;
 }
-/* line 219, ../../../app/stylesheets/application.scss */
+/* line 247, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial {
   width: 190px;
   padding: 15px;
@@ -1506,11 +1539,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 231, ../../../app/stylesheets/application.scss */
+/* line 259, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 234, ../../../app/stylesheets/application.scss */
+/* line 262, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -1521,17 +1554,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 238, ../../../app/stylesheets/application.scss */
+/* line 266, ../../../app/stylesheets/application.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 244, ../../../app/stylesheets/application.scss */
+/* line 272, ../../../app/stylesheets/application.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 247, ../../../app/stylesheets/application.scss */
+/* line 275, ../../../app/stylesheets/application.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -1541,12 +1574,12 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 256, ../../../app/stylesheets/application.scss */
+/* line 284, ../../../app/stylesheets/application.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 259, ../../../app/stylesheets/application.scss */
+/* line 287, ../../../app/stylesheets/application.scss */
 #services img {
   width: 32px;
 }
@@ -1556,7 +1589,7 @@ h1.username {
 /* 13.CONTENTINFO footer[role="contentinfo"]
 ---------------------------------------- */
 /* FOOTER */
-/* line 270, ../../../app/stylesheets/application.scss */
+/* line 298, ../../../app/stylesheets/application.scss */
 #footer {
   font-size: 0.70em;
 }
@@ -1564,7 +1597,7 @@ h1.username {
 /* 14.GLOBAL OBJECTS
 ---------------------------------------- */
 /* MODAL BOX */
-/* line 278, ../../../app/stylesheets/application.scss */
+/* line 306, ../../../app/stylesheets/application.scss */
 #simplemodal-container a.modalCloseImg {
   background: url("/images/icons/close.png") no-repeat;
   /* adjust url as required */
@@ -1583,8 +1616,9 @@ h1.username {
 /* 16.TEMPLATE SPECIFICS
 ---------------------------------------- */
 /* SEARCH */
-/* line 297, ../../../app/stylesheets/application.scss */
+/* line 325, ../../../app/stylesheets/application.scss */
 .quick_links {
+  display: none;
   margin: 0;
   padding: 0;
   border: 0;
@@ -1618,11 +1652,11 @@ h1.username {
 .quick_links li.last {
   padding-right: 0;
 }
-/* line 304, ../../../app/stylesheets/application.scss */
+/* line 333, ../../../app/stylesheets/application.scss */
 .quick_links ul li {
   margin-right: 5px  !important;
 }
-/* line 308, ../../../app/stylesheets/application.scss */
+/* line 337, ../../../app/stylesheets/application.scss */
 .quick_links a {
   text-decoration: none;
 }
@@ -1630,7 +1664,7 @@ h1.username {
 .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 310, ../../../app/stylesheets/application.scss */
+/* line 339, ../../../app/stylesheets/application.scss */
 .quick_links span {
   font-weight: bold;
 }
@@ -1655,13 +1689,13 @@ h1.username {
   ---------------------------------------- */
   /* 8.HEADERS
   ---------------------------------------- */
-  /* line 340, ../../../app/stylesheets/application.scss */
+  /* line 369, ../../../app/stylesheets/application.scss */
   #pages.homepage #logo {
     display: block;
     float: left;
   }
 
-  /* line 345, ../../../app/stylesheets/application.scss */
+  /* line 374, ../../../app/stylesheets/application.scss */
   #logo {
     margin: 0;
     float: left;
@@ -1669,30 +1703,22 @@ h1.username {
 
   /* 9.NAVIGATION nav[role="navigation"]
   ---------------------------------------- */
-  /* line 356, ../../../app/stylesheets/application.scss */
+  /* line 385, ../../../app/stylesheets/application.scss */
   #main_nav ul li {
     width: auto;
   }
-  /* line 358, ../../../app/stylesheets/application.scss */
+  /* line 387, ../../../app/stylesheets/application.scss */
   #main_nav ul li a {
     font-size: 0.875em;
     padding: 15px 20px 15px 50px;
   }
 
-  /* line 362, ../../../app/stylesheets/application.scss */
+  /* line 391, ../../../app/stylesheets/application.scss */
   .main_nav_current_arrow {
-    font-size: 0px;
-    line-height: 0%;
-    width: 0px;
-    border-bottom: 5px solid #e7e7e7;
-    border-left: 5px solid #3a3a3a;
-    border-right: 5px solid #3a3a3a;
-    position: absolute;
-    left: 45%;
     top: 47px;
   }
 
-  /* line 369, ../../../app/stylesheets/application.scss */
+  /* line 395, ../../../app/stylesheets/application.scss */
   #user_nav {
     float: right;
     font-size: 0.75em;
@@ -1700,13 +1726,17 @@ h1.username {
     margin-top: 0;
     text-align: right;
   }
-  /* line 375, ../../../app/stylesheets/application.scss */
+  /* line 401, ../../../app/stylesheets/application.scss */
   #user_nav a {
     margin-left: 20px;
     float: none;
     display: inline;
   }
-  /* line 379, ../../../app/stylesheets/application.scss */
+  /* line 405, ../../../app/stylesheets/application.scss */
+  #user_nav a.greating_profile {
+    display: inline;
+  }
+  /* line 408, ../../../app/stylesheets/application.scss */
   #user_nav a.logout {
     background: #157ebe;
     -moz-border-radius: 3px;
@@ -1717,7 +1747,7 @@ h1.username {
     border-radius: 3px;
     padding: 2px 10px;
   }
-  /* line 383, ../../../app/stylesheets/application.scss */
+  /* line 412, ../../../app/stylesheets/application.scss */
   #user_nav a.logout:hover {
     text-decoration: none;
     background: #106090;
@@ -1725,6 +1755,37 @@ h1.username {
 
   /* 10.CONTENT
   ---------------------------------------- */
+  /* line 420, ../../../app/stylesheets/application.scss */
+  #users.index #search_form .field {
+    min-width: 177px;
+    width: 14.285%;
+  }
+  /* line 423, ../../../app/stylesheets/application.scss */
+  #users.index #search_form .field#zip {
+    width: 11.5%;
+  }
+  /* line 425, ../../../app/stylesheets/application.scss */
+  #users.index #search_form .field#zip #search_zip {
+    width: 74%;
+  }
+  /* line 429, ../../../app/stylesheets/application.scss */
+  #users.index #search_form .field .centered {
+    width: 100%;
+  }
+  /* line 431, ../../../app/stylesheets/application.scss */
+  #users.index #search_form .field .selector {
+    margin: 0;
+    width: 154px;
+  }
+  /* line 434, ../../../app/stylesheets/application.scss */
+  #users.index #search_form .field .selector span {
+    width: 131px;
+  }
+  /* line 437, ../../../app/stylesheets/application.scss */
+  #users.index #search_form .field .selector select {
+    width: 154px;
+  }
+
   /* 11.MAIN div[role="main"]
   ---------------------------------------- */
   /* 12.COMPLIMENTARY div[role="complementary"]
@@ -1737,6 +1798,11 @@ h1.username {
   ---------------------------------------- */
   /* 16.TEMPLATE SPECIFICS
   ---------------------------------------- */
+  /* line 459, ../../../app/stylesheets/application.scss */
+  .quick_links {
+    display: block;
+  }
+
   /* 17.MODERNIZR
   ---------------------------------------- */
 }
@@ -1755,7 +1821,7 @@ h1.username {
   /* 9.NAVIGATION */
   /* 10.CONTENT */
   /* 11.MAIN */
-  /* line 426, ../../../app/stylesheets/application.scss */
+  /* line 486, ../../../app/stylesheets/application.scss */
   .right_drawer {
     margin-left: 0;
     width: 100%;

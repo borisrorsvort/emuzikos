@@ -10,8 +10,8 @@ en:
     instruments_match: Instruments match
 
   search_terms:
-    iam: "I'm searching for a"
-    who_search_for: "who's searching for a"
+    iam: "I search a"
+    who_search_for: "who search for"
     who_plays: Instruments
-    music_style: Main musical genre
-    country: country
+    music_style: Musical genre
+    country: Country

@@ -122,8 +122,11 @@
     text-align:center;
     display:block;
     float:left;
-    width: 25%;
+    width: 33%;
     margin: 0;
+    &.greating_profile {
+      display:none;
+    }
     &:hover {
      text-decoration:underline; 
     }}
@@ -143,6 +146,31 @@
 ---------------------------------------- */
 
 /* USER */
+
+#users.index #search_form .field {
+  min-width: 50%;
+  
+  input#search_zip {
+    width: 112px;
+    padding-left: 10px;
+  }
+  .centered {
+    margin: 0 auto;
+    width: 121px;
+  }
+  .selector {
+    margin: 0 auto;
+    width: 110px;
+    span {
+      width: 100px;
+      font-size: 0.85em;
+    }
+    select {
+      width:133px;
+    }
+  }
+}
+
 
 #gmaps4rails_map {
   margin-top: 20px;
@@ -295,6 +323,7 @@ h1.username {
 /* SEARCH */
 
 .quick_links {
+  display:none;
   @include horizontal-list(5px);
   list-style: none;
   margin-bottom: 0.7em;
@@ -373,6 +402,9 @@ h1.username {
     margin-left: 20px;
     float: none;
     display:inline;
+    &.greating_profile {
+      display: inline;
+    }
     &.logout {
       background: $blue_dark;
       @include border-radius(3px);
@@ -384,6 +416,33 @@ h1.username {
 
 /* 10.CONTENT
 ---------------------------------------- */
+
+#users.index #search_form .field  {
+  min-width : 177px;
+  width: 14.285% ;
+  &#zip {
+    width: 11.5%;
+    #search_zip {
+      width: 74%;
+    }
+  }
+  .centered {
+    width: 100%; }
+  .selector {
+    margin: 0;
+    width: 154px;
+    span {
+      width: 131px;
+    }
+    select {
+      width:154px;
+    }
+  }
+}
+
+
+
+
 /* 11.MAIN div[role="main"]
 ---------------------------------------- */
 /* 12.COMPLIMENTARY div[role="complementary"]
@@ -396,6 +455,10 @@ h1.username {
 ---------------------------------------- */
 /* 16.TEMPLATE SPECIFICS
 ---------------------------------------- */
+
+.quick_links {
+  display:block;
+}
 /* 17.MODERNIZR
 ---------------------------------------- */
 

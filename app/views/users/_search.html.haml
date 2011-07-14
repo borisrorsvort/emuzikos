@@ -52,9 +52,12 @@
       = f.country_select( :country, [], :include_blank => t(:'search_terms.country'))
       .clear
       
+    .field#zip
+      .centered
+        = f.text_field :zip, :placeholder => t(:'activerecord.attributes.user.zip'), :size => 10
+    
     .field
-      = f.text_field :zip, :placeholder => t(:'activerecord.attributes.user.zip'), :size => 10
-  
-      = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit search small")
+      .centered
+        = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit search small")
     
     .clear
