@@ -186,7 +186,8 @@ body {
 }
 
 /* line 19, ../../../app/stylesheets/_base.scss */
-html.js img, html.js object,
+html.js img,
+html.js object,
 html.iem7 img,
 html.iem7 object,
 html.ie6 img,
