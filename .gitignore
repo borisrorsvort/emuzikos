@@ -15,3 +15,4 @@ doc/plugins
 db/schema.rb
 public/system/***/**/*
 public/photos/***/**/*
+.rvmrc
