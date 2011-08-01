@@ -48,27 +48,31 @@ $sub_nav_topbottom_padding: 15px;
     li {
       position:relative;
       padding: 0;
-      margin-right: 40px; }}}
+      margin: 0 2px 0 ;
+      }}}
 
-#sub_sections {
-  @include horizontal-list(15px);
+#sub_nav #sub_sections {
   display:block;
   overflow: visible;
-  list-style: none;
-  padding-left: none;
-  
+  padding: 0;
+  margin: 0;
+  li {
+    margin-bottom: 10px;
+    list-style: disc inside;
+  }
   a {
+    text-align:left;
     @include link-colors($sub-nav-color-base);
     @include inset(#fff);
     text-decoration:none;
     position:relative;
     display:block;
-    float:left;
     overflow:visible;
     &.current {
       font-weight:bold; }}}
 
 .top_sub_nav_arrow {
+  display:none;
   $size: 5px;
   @include css-arrow("bottom", $sub_nav_gradient_dark, #fff, $size );
   position:absolute;
@@ -76,6 +80,21 @@ $sub_nav_topbottom_padding: 15px;
   z-index: 2;
   bottom: 0 - $sub_nav_topbottom_padding; }
 
+
+#sub_nav #actions_set {
+  @extend #sub_sections;
+  a {
+    display:inline-block;
+  }
+  .ui-button-text {
+    font-size: 0.630em;  } 
+  .button.add_to_contact_list {
+    width: 1.9em;
+    .ui-button-text {
+      position:relative;
+      text-indent: -99999px;
+      padding: .35em; }}
+}
 
 #inner_content {
   background:#efefef;
@@ -120,15 +139,10 @@ $sub_nav_topbottom_padding: 15px;
 ---------------------------------------- */
 
 .left_drawer {
-  width: 27%;
-  display:inline;
-  float:left;
-  /*clear: left; for iphone view */ 
-  
+  width: 100%;
 }
+
 .right_drawer {
-  float: right;
-  display:inline;
-  margin-left: 20px;
-  width: 70%;
+ margin-left: 0; 
+ width: 100%;
 }

@@ -38,6 +38,7 @@ group :development do
   gem "bullet"
   gem "nifty-generators"
   gem 'heroku_san'
+  gem 'rails_best_practices'
 end
 
 

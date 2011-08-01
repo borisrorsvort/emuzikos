@@ -15,17 +15,15 @@
       .clear  
       
     - else
-      %ul#sub_sections
-        %li
-          = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), :back, :class => "button back"
+      #actions_set
+        = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), :back, :class => "button back"
         -if current_user && current_user != @user
-          
           - unless current_user.is_friend_with(@user)
-            %li= link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user), :method => :post, :class => "button add"
+            = link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user), :method => :post, :class => "button add_to_contact_list"
               
-          %li= link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button contact"
+            = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button contact"
         -elsif !@current_user
-          %li= link_to t(:'buttons.home_signup'), signup_path, :class => "button submit contact "
+          = link_to t(:'buttons.home_signup'), signup_path, :class => "button submit contact "
     .clear
   
 

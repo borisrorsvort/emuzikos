@@ -36,14 +36,6 @@ $(document).ready(function() {
   $('.tooltip').tipsy({trigger: 'hover', gravity: 's'});
   
   $('input.form_guide').tipsy({trigger: 'focus', gravity: 'w'});
-
-  // FORMS UTILS
-  // var search_form = $('form.search')
-  // search_form.find("input[type=submit]").hide();
-  // search_form.change(function() {
-  //   $(this).submit();
-  // });
-
   
   // UI STUFF
   
@@ -57,13 +49,19 @@ $(document).ready(function() {
   });
   $('.button.add').button({
     icons: {
+      primary: 'ui-icon-plus'
+    },
+    text: true
+  });
+  $('.button.add_to_contact_list').button({
+    icons: {
       primary: 'ui-icon-star'
     },
     text: true
   });
   $('.button.contact').button({
     icons: {
-      secondary: 'ui-icon-triangle-1-e'
+      primary: 'ui-icon-mail-closed'
     },
     text: true
   });
