@@ -28,3 +28,5 @@ en:
     change_password: Save new password
     add_to_contact_list: Add to contact list
     remove_from_contact_list: Remove
+    services:
+      delete: "Remove this service"

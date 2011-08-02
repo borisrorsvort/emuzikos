@@ -285,9 +285,30 @@ h1.username {
 /* SERVICES */
 #remote {
   font-size: 0.75em; }
-#services {
+.services_list {
   img {
     width: 32px; } }
+    
+.services_used {
+  padding: 20px 10% 0 20px;
+  margin: 10px 0;
+  width: 80%;
+  float:left;
+  background: #fff;
+  @include border-radius(10px);
+  border: 1px solid #ccc;
+  img {
+    float:left;
+    margin-right: 10px;
+  }
+}
+.service_user {
+  float:left;
+  margin: 5px 0 10px;
+  .field {
+    margin-bottom: 5px;
+  }
+}
 
 /* 12.COMPLIMENTARY div[role="complementary"]
 ---------------------------------------- */
@@ -471,24 +492,6 @@ h1.username {
   width: 49%; 
   float:left; }
 
-/* 11.MAIN div[role="main"]
----------------------------------------- */
-/* 12.COMPLIMENTARY div[role="complementary"]
----------------------------------------- */
-/* 13.CONTENTINFO footer[role="contentinfo"]
----------------------------------------- */
-/* 14.GLOBAL OBJECTS
----------------------------------------- */
-/* 15.VENDOR-SPECIFIC 
----------------------------------------- */
-/* 16.TEMPLATE SPECIFICS
----------------------------------------- */
-
-
-/* 17.MODERNIZR
----------------------------------------- */
-
-
 }/*/mediaquery*/
 
 /*768px __________________________________________________________________________________________________________ */
@@ -595,12 +598,27 @@ h1.username {
   width: 100%; 
   float: none; }
   
-/* 12.COMPLIMENTARY */
-/* 13.CONTENTINFO */
-/* 14.GLOBAL OBJECTS */
-/* 15.VENDOR-SPECIFIC */
-/* 16.TEMPLATE SPECIFICS */
-/* 17.MODERNIZR */
+.services_used {
+  padding: 20px 10% 0 20px;
+  margin: 10px 10px 10px 0;
+  width: 20%;
+  min-width: 200px;
+  float:left;
+  background: #fff;
+  @include border-radius(10px);
+  border: 1px solid #ccc;
+  img {
+    float: none;
+    margin-right: 10px;
+  }
+}
+.service_user {
+  float: none;
+  margin: 5px 0 10px;
+  .field {
+    margin-bottom: 5px;
+  }
+}
 
 }/*/mediaquery*/
 

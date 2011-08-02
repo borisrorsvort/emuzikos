@@ -20,22 +20,27 @@
     - @services.each do |service|
       .services_used
         = image_tag "icons/authbuttons/#{service.provider}_64.png", :size => "64x64"
-        .user
-          .line1
-            Name: #{service.uname} (ID: #{service.uid})
-          .line2
-            Email: #{service.uemail != '' ? service.uemail : 'not set'}
-          .line3
-            - @services.count == 1 ? @msg = 'Removing the last account linked might lock you out of your account if you do not know the email/password sign-in of your local account!' : @msg = ''
-            = link_to "Remove this service", service, :confirm => 'Are you sure you want to remove this authentication service? ' + @msg, :method => :delete, :class => "remove"
-  
+        .service_user
+          .field
+            =t(:'activerecord.attributes.service.uname') 
+            %br
+            #{service.uname} (ID: #{service.uid})
+          .field
+            =t(:'activerecord.attributes.service.email')
+            %br
+            #{service.uemail != '' ? service.uemail : t(:'activerecord.attributes.service.not_set')}
+          .field
+            - @services.count == 1 ? @msg = t(:'.last_account_delete_warning') : @msg = ''
+            = link_to t(:'buttons.services.delete'), service, :confirm => t(:'.are_you_sure') + @msg, :method => :delete, :class => "remove"
+      
+  .clear
   #availableservices
-    %h3 You can connect more services to your account:
-    #services
+    %h3= t(:'.more_services')
+    .services_list
       %a.services{:href => "/auth/facebook"}
         = image_tag "icons/authbuttons/facebook_32.png",  :alt => "Facebook"
         
       %a.services{:href => "/auth/twitter"}
         = image_tag "icons/authbuttons/twitter_32.png",  :alt => "Twitter"
         
-    %h3 If you signed-up for CommunityGuides via an authentication service a random password has been set for the local password. You can request a new password using the "Forgot your Password?" link on the sign-in page.
+    .flash.notice= t(:'.random_password_warning')
