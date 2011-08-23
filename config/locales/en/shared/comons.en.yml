@@ -10,6 +10,8 @@ en:
     by: by
     created_by: Created by
     leave_blank: (leave blank if you don't want to change it)
+    users: 
+      from: From
   
 ### MENU
 ### ______________________________________________________

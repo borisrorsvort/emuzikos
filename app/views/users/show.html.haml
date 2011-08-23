@@ -58,7 +58,7 @@
 
   - unless @user.instruments.blank?
     %h3= t(:'activerecord.attributes.user.instruments')
-    .instruments_tag_list
+    .tag_list
       - @user.instruments.each do |instrument|
         %span= t(:"instruments.#{instrument}")
 

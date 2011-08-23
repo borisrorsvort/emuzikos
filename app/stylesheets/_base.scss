@@ -50,6 +50,9 @@ a {
 b {
   font-weight:bold;
 }
+strong {
+  font-weight:bold;
+}
 @mixin inset($color) {
   text-shadow: $color 0 1px 1px; }
 

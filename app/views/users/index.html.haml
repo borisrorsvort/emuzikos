@@ -10,21 +10,9 @@
   .page_entries
     = page_entries_info @users
 
-
-  %table.display.wide
-    %thead
-      %tr
-        %th
-        %th= t(:'activerecord.attributes.user.username')
-        %th= sortable "user_type", t(:'activerecord.attributes.user.user_type')
-        %th= sortable "searching_for", t(:'activerecord.attributes.user.searching_for')
-        %th= t(:'activerecord.attributes.user.instruments')
-        %th= t(:'activerecord.attributes.user.genre')
-        %th= sortable "zip", t(:'activerecord.attributes.user.zip')
-        %th= sortable "country", t(:'activerecord.attributes.user.country')
-        %th
-    %tbody
-      = render :partial => 'user', :collection => @users
+  %section.users_list
+    = render :partial => 'user', :collection => @users
+    .clear
 
   = will_paginate @users
   

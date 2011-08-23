@@ -29,6 +29,6 @@ module ApplicationHelper
     
     container && opts[:container] ||= container
     
-    javascript_tag("$('#inner_content table.display.wide').pageless(#{opts.to_json});")
+    javascript_tag("$('#inner_content .users_list').pageless(#{opts.to_json});")
   end
 end

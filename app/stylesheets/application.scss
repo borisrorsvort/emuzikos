@@ -148,6 +148,52 @@
 
 /* USER */
 
+.users_list {
+  .user_profile_listing {
+    background-color:#FFF;
+    border: 1px solid #dddddd;
+    margin-bottom: 10px;
+    @include border-radius(5px);
+    
+    .row {
+      display:block; }
+    .tag_list {
+      margin: 0;
+    }
+    .section {
+      font-size: 0.7em  !important;
+      padding: 10px;
+      
+      .title {
+        margin-bottom: 5px; }
+        
+      &.user_general_infos {
+        .username {
+          text-transform: uppercase;
+          a {
+            @include hover-link; }}
+        .location {
+          font-size: 0.9em;
+          color: lighten(#666, 10%); }
+      }    
+      &.user_type {
+        /* text-align:center; */
+        border-top: 1px solid #dddddd;
+      }
+      &.user_instruments {
+        /*text-align:center;*/
+        border-top: 1px solid #dddddd;
+        span {
+          background: none;
+          border: 1px solid #ddd;
+          color: lighten(#666, 10%);
+        }
+      }
+    }
+  }
+}
+
+
 #users.index #search_form .field {
   min-width: 50%;
   
@@ -225,15 +271,16 @@ h1.username {
     float:left;
     margin-right: 10px; }}
     
-.instruments_tag_list {
+.tag_list {
   margin: 10px 0 20px;
   span {
     font-size: 0.75em;
-    padding: 4px 10px;
+    padding: 0px 10px;
     background-color: $blue_basic;
     @include border-radius(3px);
-    margin-right: 5px;
+    margin: 0 5px 5px 0;
     color: #fff;
+    display:inline-block;
     @include single-box-shadow(#fff, 0, 1px, 2px ); }}
 
 .jcrop-holder img, img#preview {
@@ -479,6 +526,13 @@ h1.username {
   }
 }
 
+.users_list {
+  .user_profile_listing {
+    .section {
+      text-align:left  !important;
+    }
+  }
+}
 .location_infos {
   display:inline;
   margin: 0 0 0 10px; }
@@ -572,6 +626,30 @@ h1.username {
       text-indent: 0px;
       padding: .4em 1em .4em 2.1em; }}
 }
+
+.users_list {
+  .user_profile_listing {
+    clear:both;
+    .section {
+      float:left;
+      text-align:left  !important;
+      &.user_general_infos {
+        width: 20%; }
+      &.user_type {
+        width: 25%;
+        border-top: 0px solid #dddddd;
+        border-left: 1px solid #dddddd;
+        text-align:center;
+        font-size: 0.75em; }
+      &.user_instruments {
+        width: 39%;
+        overflow: hidden;
+        border-top: 0px solid #dddddd;
+        border-left: 1px solid #dddddd; }
+    }
+  }
+}
+
 
 /* 10.CONTENT */
 /* 11.MAIN */
