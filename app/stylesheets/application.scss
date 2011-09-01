@@ -53,6 +53,23 @@
   float: none;
   text-align: center; }
 
+
+/* LAyOUT*/
+
+
+#inner_content {
+  background:#efefef;
+  padding: 20px; /* for non mobiel version*/
+}
+#messages.index {
+  #inner_content {
+    padding: 0 0 20px 0;
+    .button.delete {
+      margin-left: 10px;
+    }
+  }
+}
+
 /* 9.NAVIGATION nav[role="navigation"]
 ---------------------------------------- */
      
@@ -104,12 +121,15 @@
 .message_count {
    @include border-radius(12px);
    @include box-shadow(#333, 0, 1px, 2px);
-   padding: 1px 7px;
+   padding: 0px 7px;
    margin-left: 5px;
    background-color:#ce2f2f;
    border: 1px solid #fff;
    font-size: 11px;
    color:#fff;
+   position: absolute;
+   top: -15px;
+   right: -7px;
    font-weight:normal;
    text-shadow: none; }
   
@@ -357,8 +377,39 @@ h1.username {
   }
 }
 
-/* 12.COMPLIMENTARY div[role="complementary"]
+
+
+
+/* 12. MESSAGES
 ---------------------------------------- */
+.messages_list {
+  margin-bottom: 10px;
+}
+
+.message {
+  display:block;
+  background-color:#FFF;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  font-size: 0.78em;
+  text-decoration:none;
+  color: #666;
+  &.unread {
+    background-color: lighten($blue_light, 40%);
+  }
+  span {
+    display:block;
+    &.message_sender {
+      color: $blue_basic;
+      font-weight:bold;
+    }
+  }
+  .checker, .headers {
+    float: left;
+  }
+  
+}
+
 
 /* 13.CONTENTINFO footer[role="contentinfo"]
 ---------------------------------------- */
@@ -437,7 +488,8 @@ h1.username {
 
 /* 9.NAVIGATION nav[role="navigation"]
 ---------------------------------------- */
-
+.message_count {
+   position: static; }
 
 #sub_nav {
   padding: 15px 20px 5px;
@@ -563,6 +615,15 @@ h1.username {
   text-align: left;
   float: left; }
 
+#messages.index {
+  #inner_content {
+    padding: 20px;
+    .button.delete {
+      margin-left: 0;
+    }
+  }
+}
+
 /* 1.ROOT */
 /* 2.HEADINGS */
 /* 3.TYPOGRAPHY */
@@ -630,7 +691,10 @@ h1.username {
 .users_list {
   .user_profile_listing {
     clear:both;
+    overflow: hidden; /* Trick to get equal height columns */
     .section {
+      margin-bottom: -99999px; /* Trick to get equal height columns */
+      padding-bottom: 99999px; /* Trick to get equal height columns */
       float:left;
       text-align:left  !important;
       &.user_general_infos {
@@ -646,6 +710,9 @@ h1.username {
         overflow: hidden;
         border-top: 0px solid #dddddd;
         border-left: 1px solid #dddddd; }
+    }
+    .tag_list {
+      padding-bottom: 10px; /* Adding pading cauz .section padding-bottom is taken for the equal height Trick  */
     }
   }
 }
@@ -697,6 +764,15 @@ h1.username {
     margin-bottom: 5px;
   }
 }
+
+/* 12. MESSAGES
+---------------------------------------- */
+
+.message {
+  margin-bottom: 10px;
+  @include white_box;
+}
+
 
 }/*/mediaquery*/
 

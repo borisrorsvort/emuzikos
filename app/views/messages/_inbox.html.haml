@@ -1,3 +1,5 @@
+- @innner_content_class == "no_padding"
+
 - title t(:'.title'), false
 
 - content_for :sub_nav do
@@ -15,28 +17,42 @@
 
 -else
   
-  %table#messages_table.display.wide
-    %tr
-      %th{:class => "delete_seleted"}= t(:'messages.delete')
-      %th{:class => "unread"}
-        %span.unread_bullet!=unread_bullet 
-      %th= t(:'messages.subject')
-      %th= t(:'messages.sender')
-      %th= t(:'activerecord.attributes.user.zip')
-      %th= t(:'activerecord.attributes.user.country')
-      %th= t(:'messages.sent_on')
-      
-    - for message in @messages
-      %tr{:class => "#{cycle("odd", "even")} #{ !message.read? ? "unread" : nil}"}
-        %td= check_box_tag "delete[]", message.id
-        %td 
-          - unless message.read?
-            %span.unread_bullet!=unread_bullet 
-        %td= link_to h(message.subject), user_message_path(@user, message)
-        %td= link_to h(message.sender.username), user_path(@user)
-        %td= @user.zip
-        %td= Carmen::country_name(@user.country) rescue nil
-        %td= h message.created_at.to_s(:long)
-    %tr
-      %td{:colspan => "5"}
-        = submit_tag t(:'buttons.delete'), :class => "button delete" 
+  / %table#messages_table.display.wide
+  /    %tr
+  /      %th{:class => "delete_seleted"}= t(:'messages.delete')
+  /      %th{:class => "unread"}
+  /        %span.unread_bullet!=unread_bullet 
+  /      %th= t(:'messages.subject')
+  /      %th= t(:'messages.sender')
+  /      %th= t(:'activerecord.attributes.user.zip')
+  /      %th= t(:'activerecord.attributes.user.country')
+  /      %th= t(:'messages.sent_on')
+  /      
+  /    - for message in @messages
+  /      %tr{:class => "#{cycle("odd", "even")} #{ !message.read? ? "unread" : nil}"}
+  /        %td= check_box_tag "delete[]", message.id
+  /        %td 
+  /          - unless message.read?
+  /            %span.unread_bullet!=unread_bullet 
+  /        %td= link_to h(message.subject), user_message_path(@user, message)
+  /        %td= link_to h(message.sender.username), user_path(@user)
+  /        %td= @user.zip
+  /        %td= Carmen::country_name(@user.country) rescue nil
+  /        %td= h message.created_at.to_s(:long)
+  /    %tr
+  /      %td{:colspan => "5"}
+  /        
+  
+  .messages_list
+    - for message in @messages 
+      = link_to user_message_path(@user, message), :class => "message #{"unread" if !message.read?}" do
+        = check_box_tag "delete[]", message.id
+        .headers
+          %span.message_sender= h(message.sender.username)      
+          %span.message_subject= h(message.subject)
+          %span.message_date= h message.created_at.to_s(:long)
+        .clear
+  
+  .field
+    = submit_tag t(:'buttons.delete'), :class => "button delete" 
+    .clear

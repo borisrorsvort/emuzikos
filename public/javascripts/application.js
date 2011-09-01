@@ -138,4 +138,10 @@ $(document).ready(function() {
     });
   });
   
+  // $('ul#sub_sections').mobileMenu({
+  //     switchWidth: 768,                   //width (in px to switch at)
+  //     topOptionText: 'Select a page',     //first option text
+  //     indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
+  //   });
+  //   $('#sub_sections').hide();  
 });

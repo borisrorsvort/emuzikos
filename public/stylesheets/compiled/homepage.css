@@ -90,37 +90,37 @@ strong {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 94, ../../../app/stylesheets/_base.scss */
+  /* line 100, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 95, ../../../app/stylesheets/_base.scss */
+  /* line 101, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 99, ../../../app/stylesheets/_base.scss */
+  /* line 105, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 100, ../../../app/stylesheets/_base.scss */
+  /* line 106, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 101, ../../../app/stylesheets/_base.scss */
+  /* line 107, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 102, ../../../app/stylesheets/_base.scss */
+  /* line 108, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -128,25 +128,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 105, ../../../app/stylesheets/_base.scss */
+  /* line 111, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 106, ../../../app/stylesheets/_base.scss */
+  /* line 112, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 107, ../../../app/stylesheets/_base.scss */
+  /* line 113, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 108, ../../../app/stylesheets/_base.scss */
+  /* line 114, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -154,12 +154,12 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 111, ../../../app/stylesheets/_base.scss */
+  /* line 117, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 112, ../../../app/stylesheets/_base.scss */
+  /* line 118, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -257,37 +257,37 @@ strong {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 94, ../../../app/stylesheets/_base.scss */
+  /* line 100, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 95, ../../../app/stylesheets/_base.scss */
+  /* line 101, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 99, ../../../app/stylesheets/_base.scss */
+  /* line 105, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 100, ../../../app/stylesheets/_base.scss */
+  /* line 106, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 101, ../../../app/stylesheets/_base.scss */
+  /* line 107, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 102, ../../../app/stylesheets/_base.scss */
+  /* line 108, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -295,25 +295,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 105, ../../../app/stylesheets/_base.scss */
+  /* line 111, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 106, ../../../app/stylesheets/_base.scss */
+  /* line 112, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 107, ../../../app/stylesheets/_base.scss */
+  /* line 113, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 108, ../../../app/stylesheets/_base.scss */
+  /* line 114, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -321,12 +321,12 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 111, ../../../app/stylesheets/_base.scss */
+  /* line 117, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 112, ../../../app/stylesheets/_base.scss */
+  /* line 118, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }

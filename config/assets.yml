@@ -22,6 +22,7 @@ javascripts:
     - public/javascripts/libs/jquery.simplemodal.1.4.1.min.js
     - public/javascripts/libs/jquery.pageless.js
     - public/javascripts/libs/imgsizer.js
+    - public/javascripts/libs/jquery.mobilemenu.js
     - public/javascripts/plugins.js
     - public/javascripts/mylibs/helper.js
     - public/javascripts/application.js
@@ -34,7 +35,6 @@ stylesheets:
     - public/stylesheets/ui-themes/Emuzikos/jquery-ui-1.8.7.custom.css
     - public/stylesheets/uniform-themes/uniform.emuzikos.css
     - public/stylesheets/compiled/application.css
-    - public/stylesheets/compiled/text.css  
     - public/stylesheets/gritter/jquery.gritter.css 
     - public/stylesheets/boxy.css  
   homepage:
