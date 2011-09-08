@@ -18,16 +18,16 @@ function addLoadEvent(func) {
         oldonload();
       }
       func();
-    }
+    };
   }
 }
 
-addLoadEvent(function() {
-  if (document.getElementById && document.getElementsByTagName) {
-  var aImgs = document.getElementById("content").getElementsByTagName("img");
-  imgSizer.collate(aImgs);
-  } 
-});
+// addLoadEvent(function() {
+//   if (document.getElementById && document.getElementsByTagName) {
+//   var aImgs = document.getElementById("content").getElementsByTagName("img");
+//   imgSizer.collate(aImgs);
+//   } 
+// });
 
 $(document).ready(function() {
   
