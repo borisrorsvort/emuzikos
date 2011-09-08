@@ -29,7 +29,7 @@ gem 'tolk', :git => "git://github.com/borisrorsvort/tolk.git", :branch => 'rails
 gem 'mysql2', '< 0.3'
 
 gem 'omniauth'
-gem "jammit", :git => "git://github.com/documentcloud/jammit.git"
+gem "jammit"
 
 gem 'geocoder'
 gem 'gmaps4rails'

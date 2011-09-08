@@ -7,13 +7,6 @@ GIT
       will_paginate (= 3.0.pre2)
       ya2yaml (~> 0.26)
 
-GIT
-  remote: git://github.com/documentcloud/jammit.git
-  revision: caf1c68
-  specs:
-    jammit (0.6.0)
-      yui-compressor (>= 0.9.3)
-
 GEM
   remote: http://rubygems.org/
   remote: http://gems.github.com/
@@ -113,6 +106,8 @@ GEM
       formtastic (>= 0.9.8)
       inherited_resources (>= 1.0.6)
       will_paginate (>= 2.3.12)
+    jammit (0.6.3)
+      yui-compressor (>= 0.9.3)
     jquery-rails (0.2.7)
       rails (~> 3.0)
       thor (~> 0.14.4)
@@ -254,7 +249,7 @@ DEPENDENCIES
   gritter
   haml (= 3.1.2)
   heroku_san
-  jammit!
+  jammit
   jquery-rails
   mysql2 (< 0.3)
   nifty-generators
