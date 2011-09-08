@@ -1,4 +1,5 @@
-javascript_compressor: yui
+javascript_compressor: uglifier
+embed_assets: datauri
 
 javascripts:
   polyfills:
