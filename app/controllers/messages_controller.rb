@@ -8,6 +8,10 @@ class MessagesController < ApplicationController
     else
       @messages = @user.received_messages.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page)
     end
+    if request.xhr?
+      sleep(2) # make request a little bit slower to see loader :-)
+      render :partial => @users
+    end
   end
   
   def show

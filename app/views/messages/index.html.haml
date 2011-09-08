@@ -1,8 +1,11 @@
 -if !@messages.blank?
   .page_entries
     = page_entries_info @messages
+  
+  - content_for :scripts do
+    = pageless(@messages.total_pages, user_messages_path(@current_user))
     
-= form_tag delete_selected_user_messages_path(@user, :method => :post)  do
+= form_tag delete_selected_user_messages_path(@current_user, :method => :post)  do
   
   - if params[:mailbox] == "sent"
     = render :partial => "sent"

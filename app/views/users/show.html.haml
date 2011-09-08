@@ -27,55 +27,56 @@
   
 
 
-%section.right_drawer
-  %header 
-    %h1.username= t(:'.title', :username => @user.username)
-    
+%section.right_drawer.profile
+  .inner_profile_wrapper
+    %header 
+      %h1.username= t(:'.title', :username => @user.username)
+
+      - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
+        %span.location_infos
+          =t(:"users.types.#{@user.user_type}")
+          =t(:'.from')
+          = @user.zip
+          = Carmen::country_name(@user.country) rescue "N/A"
+
     - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
-      %span.location_infos
-        =t(:"users.types.#{@user.user_type}")
-        =t(:'.from')
-        = @user.zip
-        = Carmen::country_name(@user.country) rescue "N/A"
+      %p.looking_for
+        = t(:'.is_looking_for')
+        = t(:"users.types.#{@user.searching_for}")
+        = t(:'.to_play')
+        = t(:"musical_genres.#{@user.genre}")
+        = t(:'.music')
 
-  - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
-    %p.looking_for
-      = t(:'.is_looking_for')
-      = t(:"users.types.#{@user.searching_for}")
-      = t(:'.to_play')
-      = t(:"musical_genres.#{@user.genre}")
-      = t(:'.music')
+    .spread
+      .twshare.left
+        %a.twitter-share-button.left{"data-count" => "horizontal", :href => "http://twitter.com/share"} Tweet
+        %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+      .fshare.left
+        %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"}
+        %fb:like{:layout => "button_count", :show_faces => "false", :width => "50"}
+      .clear
 
-  .spread
-    .twshare.left
-      %a.twitter-share-button.left{"data-count" => "horizontal", :href => "http://twitter.com/share"} Tweet
-      %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
-    .fshare.left
-      %script{:src => "http://connect.facebook.net/en_US/all.js#xfbml=1"}
-      %fb:like{:layout => "button_count", :show_faces => "false", :width => "50"}
-    .clear
+    - unless @user.instruments.blank?
+      %h3= t(:'activerecord.attributes.user.instruments')
+      .tag_list
+        - @user.instruments.each do |instrument|
+          %span= t(:"instruments.#{instrument}")
 
-  - unless @user.instruments.blank?
-    %h3= t(:'activerecord.attributes.user.instruments')
-    .tag_list
-      - @user.instruments.each do |instrument|
-        %span= t(:"instruments.#{instrument}")
+    - unless @user.references.blank?   
+      %h3= t(:'activerecord.attributes.user.references')
+      %p= @user.references
 
-  - unless @user.references.blank?   
-    %h3= t(:'activerecord.attributes.user.references')
-    %p= @user.references
+    - unless @user.request_message.blank?
+      %h3= t(:'activerecord.attributes.user.request_message')
+      = simple_format(@user.request_message)
 
-  - unless @user.request_message.blank?
-    %h3= t(:'activerecord.attributes.user.request_message')
-    = simple_format(@user.request_message)
-  
-    .clear
-        
-  -if @users_nearby
-    %h3= t(:'.users_nearby')
-    
-    - for user in @users_nearby
-      .user_profile_listing
+      .clear
+
+    - unless @users_nearby.nil?
+      .users_nearby
+        %h3= t(:'.users_nearby')
+
+      - for user in @users_nearby
         .section.user_general_infos
           .avatar.small
             - if user.avatar.present?

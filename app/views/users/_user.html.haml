@@ -1,11 +1,11 @@
-.user_profile_listing
+= link_to user_path(user), :class => "user_profile_listing" do
   .section.user_general_infos
     .avatar.small
       - if user.avatar.present?
-        = link_to(image_tag(user.avatar.url(:gallery)), user_path(user))
+        = image_tag(user.avatar.url(:gallery))
       -else
-        = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user))
-    .row.username= link_to "#{user.username}", user_url(user)
+        = image_tag("backgrounds/avatar-default.gif")
+    .row.username= user.username
     .row.location= t(:'common.users.from') + " " + user.zip + ", " + Carmen::country_name(user.country) rescue nil
   
   .section.user_type
@@ -18,7 +18,7 @@
       %span= t(:"musical_genres.#{user.genre}")
 
   .section.user_instruments
-    %header.title
+    .title
       = t(:'activerecord.attributes.user.instruments')
     .tag_list
       - user.instruments.each do |instrument|

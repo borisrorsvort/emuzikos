@@ -108,6 +108,9 @@ class User < ActiveRecord::Base
     self.friendships.find_by_friend_id(user.id)
   end
   
+  def has_service?(service)
+    self.services.find_by_provider(service)
+  end
   private
 
     def reprocess_avatar

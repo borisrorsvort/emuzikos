@@ -11,22 +11,8 @@
   .clear
 
 -if !@friendships.blank?
-
-  %table.display.wide
-    %thead
-      %tr
-        %th
-        %th= t(:'activerecord.attributes.user.username')
-        %th= sortable "user_type", t(:'activerecord.attributes.user.user_type')
-        %th= sortable "searching_for", t(:'activerecord.attributes.user.searching_for')
-        %th= t(:'activerecord.attributes.user.instruments')
-        %th= t(:'activerecord.attributes.user.genre')
-        %th= sortable "zip", t(:'activerecord.attributes.user.zip')
-        %th= sortable "country", t(:'activerecord.attributes.user.country')
-        %th
-    %tbody
-      = render :partial => 'friendship', :collection => @friendships
-
+  %section.users_list
+    = render :partial => 'friendship', :collection => @friendships
 
 -else
 

@@ -61,6 +61,34 @@ strong {
   border: 1px solid #ccc;
   @include border-radius(5px);
 }
+@mixin white_box_w_shadow {
+  @include border-radius(5px);
+  @include single-box-shadow(#999, 0, 1px, 2px );
+  background-color: #FFF;
+  border: none;
+  padding: 10px;
+}
+
+/* FOLDED CORNER */
+
+@mixin folded_corner($block_color, $corner_size, $bg_color, $rounded: true) {
+  position:relative;
+  
+  &:before {
+     content: "";
+     position: absolute;
+     top: -2px;
+     right: -2px;
+     border-width: 0 $corner_size $corner_size 0;
+     border-style: solid;
+     border-color: $bg_color $bg_color darken($block_color, 10%) darken($block_color, 10%);
+     background: darken($block_color, 10%);
+     @include single-box-shadow(rgba(153,153,153, 0.7), -1px, 1px, 1px );
+     display:block; width:0; /* Firefox 3.0 damage limitation */
+     
+     @if $rounded == true {
+       @include border-bottom-left-radius($corner_size * 0.2); }}
+}
 
 /* CSS ARROWS
 ---------------------------------------- */

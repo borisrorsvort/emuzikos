@@ -2,7 +2,7 @@
 - content_for :sub_nav do
   %ul#sub_sections
     %li
-      = link_to t(:'buttons.back', :model => t(:'messages.inbox.title')), user_messages_path(@user), :class => "button back"
+      = link_to t(:'buttons.back', :model => t(:'messages.inbox.title')), :back, :class => "button back"
   .clear
     
 .field
@@ -15,7 +15,7 @@
   %label.inline= t(:'messages.received')
   = @message.created_at.to_s(:long)
     
-.field
+.field.message_body
   %label= t(:'messages.message')
   
   = h @message.body

@@ -85,42 +85,43 @@ strong {
   font-weight: bold;
 }
 
+/* FOLDED CORNER */
 /* CSS ARROWS
 ---------------------------------------- */
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 100, ../../../app/stylesheets/_base.scss */
+  /* line 128, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 101, ../../../app/stylesheets/_base.scss */
+  /* line 129, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 105, ../../../app/stylesheets/_base.scss */
+  /* line 133, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 106, ../../../app/stylesheets/_base.scss */
+  /* line 134, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 107, ../../../app/stylesheets/_base.scss */
+  /* line 135, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 108, ../../../app/stylesheets/_base.scss */
+  /* line 136, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -128,25 +129,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 111, ../../../app/stylesheets/_base.scss */
+  /* line 139, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 112, ../../../app/stylesheets/_base.scss */
+  /* line 140, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 113, ../../../app/stylesheets/_base.scss */
+  /* line 141, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 114, ../../../app/stylesheets/_base.scss */
+  /* line 142, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -154,12 +155,12 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 117, ../../../app/stylesheets/_base.scss */
+  /* line 145, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 118, ../../../app/stylesheets/_base.scss */
+  /* line 146, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -252,42 +253,43 @@ strong {
   font-weight: bold;
 }
 
+/* FOLDED CORNER */
 /* CSS ARROWS
 ---------------------------------------- */
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 100, ../../../app/stylesheets/_base.scss */
+  /* line 128, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 101, ../../../app/stylesheets/_base.scss */
+  /* line 129, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 105, ../../../app/stylesheets/_base.scss */
+  /* line 133, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 106, ../../../app/stylesheets/_base.scss */
+  /* line 134, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 107, ../../../app/stylesheets/_base.scss */
+  /* line 135, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 108, ../../../app/stylesheets/_base.scss */
+  /* line 136, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -295,25 +297,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 111, ../../../app/stylesheets/_base.scss */
+  /* line 139, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 112, ../../../app/stylesheets/_base.scss */
+  /* line 140, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 113, ../../../app/stylesheets/_base.scss */
+  /* line 141, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 114, ../../../app/stylesheets/_base.scss */
+  /* line 142, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -321,12 +323,12 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 117, ../../../app/stylesheets/_base.scss */
+  /* line 145, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 118, ../../../app/stylesheets/_base.scss */
+  /* line 146, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
