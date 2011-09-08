@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 source 'http://gems.github.com'
-source 'http://gemcutter.org'
+source :gemcutter
 
 gem 'rails', '3.0.3'
 gem "jquery-rails"
