@@ -6,10 +6,14 @@ class User < ActiveRecord::Base
   after_update :reprocess_avatar, :if => :cropping?
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+
   has_many :services, :dependent => :destroy
   has_many :testimonials, :dependent => :destroy
-  has_many :friendships
+
+  has_many :friendships, :dependent => :destroy
   has_many :friends, :through => :friendships
+  has_many :followers, :class_name => 'Friendship', :foreign_key => 'friend_id', :dependent => :destroy
+
   has_private_messages
   geocoded_by :address
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?, 
