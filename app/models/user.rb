@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
   geocoded_by :address
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?, 
                     :address => "address", :normalized_address => "address", 
-                    :msg => "Sorry, not even Google could figure out where that is"
+                    :msg => "Sorry, not even Google could figure out where that is",
+                    :validation => false
   
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
@@ -25,7 +26,7 @@ class User < ActiveRecord::Base
   INSTRUMENTS = %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas)
   MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
   
-  after_validation :geocode, :if => :address_changed?
+  after_validation :geocode, :if => :address_changed? 
   
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
@@ -64,7 +65,7 @@ class User < ActiveRecord::Base
 
   scope :profiles_completed, where( "country != ? and user_type != ? and genre != ? and zip != ? " , "", "", "", "" )
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
-
+  
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end

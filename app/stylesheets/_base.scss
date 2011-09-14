@@ -69,6 +69,13 @@ strong {
   padding: 10px;
 }
 
+@mixin fluid_column($padding: 5%, $total_column: 2) {
+  width: (100% / 2) - (2 * $padding) ;
+  padding: $padding;
+  display:inline;
+  float:left;
+}
+
 /* FOLDED CORNER */
 
 @mixin folded_corner($block_color, $corner_size, $bg_color, $rounded: true) {
@@ -145,3 +152,7 @@ strong {
 	0% { opacity: 0;}
 	100% { opacity: 1;}
 }
+
+/*VARIABLES*/
+
+$profile_picture_border_width: 2%;

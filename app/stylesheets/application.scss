@@ -170,6 +170,7 @@
 
 .users_list {
   .user_profile_listing {
+    -webkit-animation: fadeIn 2s ;
     background-color:#FFF;
     border: 1px solid #dddddd;
     margin-bottom: 10px;
@@ -240,12 +241,6 @@
   }
 }
 
-
-#gmaps4rails_map {
-  @include white_box_w_shadow;
-  width: 90%  !important;
-  height: 300px  !important;
-}
 .avatar {
   background: #ccc;
   display:block;
@@ -256,13 +251,17 @@
     border: 2px solid #fff;
     @include box-shadow(#ccc, 0px, 0px, 3px);
     margin-right: 10px;
-    @include border-radius(2px); }}
+    @include border-radius(2px);
+    a {
+      display:block;
+    } }}
 
 /* USER SHOW */
 
 .profile_picture {
   @include white_box_w_shadow;
-  width: 90%; 
+  padding: 2%;
+  width: 100% - $profile_picture_border_width * 2;
   margin-bottom: 20px;}
   
 .looking_for {
@@ -608,14 +607,21 @@ h1.username {
   margin: 0 0 0 10px; }
 
 .profile_picture {
-  width: 45%;
+  width: 50% - ($profile_picture_border_width * 2) - 2%;
   float:left;
   margin-right: 2%;
 }
-#map_container {
-  width: 49%; 
-  float:left; }
 
+.map_container {
+  height: 300px;
+  margin-bottom: 20px;
+  width: 50%;
+  float:left; }
+}
+.gmaps4rails_map {
+  @include white_box_w_shadow;
+  width: 90%  !important;
+  height: 300px  !important;
 }
 
 .inner_profile_wrapper {
@@ -719,6 +725,10 @@ h1.username {
   .user_profile_listing {
     clear:both;
     overflow: hidden; /* Trick to get equal height columns */
+    &:hover {
+      @include single-box-shadow(#999, 0, 0px, 2px );
+      border-color: #fff;
+    }
     .section {
       margin-bottom: -99999px; /* Trick to get equal height columns */
       padding-bottom: 99999px; /* Trick to get equal height columns */
@@ -753,21 +763,24 @@ h1.username {
   float: right;
   width: 75%;
 }
-
 .left_drawer {
   display:inline;
   float:left;  
   width: 25%;
+  .inner {
+    padding-right: 10px;
+  }
 }
 .inner_profile_wrapper {
   margin-left: 20px;
 }
 .profile_picture {
-  width: 90%;
+  width: 100%  - ($profile_picture_border_width * 2) ;
   float: none;
   margin-right: 0;
 }
-#map_container {
+.map_container {
+  height: 300px  !important;
   width: 100%; 
   float: none; }
   

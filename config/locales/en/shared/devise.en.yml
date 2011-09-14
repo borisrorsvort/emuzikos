@@ -25,6 +25,7 @@ en:
       new: 
         title: Log in to your account
         forgot_password: Forgot your password?
+        or_login_using: "Or login using:"
       signed_in: 'Logged in in successfully.'
       signed_out: 'Logged out successfully.'
     passwords:
@@ -40,6 +41,7 @@ en:
     registrations:
       new:
         title: "Signup"
+        or_signup_using: "Or signup using:"
       edit:
         title: Edit my account
         cancel_my_account: Cancel my account
@@ -60,3 +62,7 @@ en:
         subject: 'Reset password instructions'
       unlock_instructions:
         subject: 'Unlock Instructions'
+    shared:
+      links:
+        dont_have_account_yet: "Don't have an account yet?"
+        have_account_already: "Have an account already?"

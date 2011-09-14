@@ -81,3 +81,36 @@ input, textarea {
     }
   }
 }
+
+.logged_out {
+  #user_forms {
+    width: 35%;
+    padding: 20px;
+    margin: 20px auto;
+    background:#efefef;
+    color:#666;
+    @include border-radius(8px);
+    @include single-box-shadow(#666, 0, 0, 5px);
+    
+    .normal_login {
+      @include fluid_column(5%, 2);
+      padding-left: 0;
+      padding-bottom: 0;
+    }
+    .services_login {
+      @include fluid_column(5%, 2);
+      font-size: 1em;
+      .shared_links {
+        margin-top: 20px;
+        .field {
+          margin-bottom: 10px;
+        }
+      }
+    }
+    h2 {
+      color: #666;
+      text-shadow: none;
+      font-size: 14px;
+    }
+  }
+}

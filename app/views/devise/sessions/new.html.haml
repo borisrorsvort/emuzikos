@@ -6,26 +6,29 @@
     
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     = devise_error_messages!
-    .field
-      = f.label :email, t(:'activerecord.attributes.user.email')
-      = f.text_field :email
-    .field
-      = f.label :password, t(:'activerecord.attributes.user.password')
-      = f.password_field :password
-    
-    - if devise_mapping.rememberable?
+    .normal_login
       .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .field
-      = f.submit(t(:'buttons.login'), :type => "submit", :class => "button submit")
-  
-  #remote
-    #terms.box
-      = link_to "Terms of Service", "#"
-    #services.box
-      = link_to image_tag("icons/authbuttons/facebook_32.png"), "/auth/facebook"
-      = link_to image_tag("icons/authbuttons/twitter_32.png"), "/auth/twitter"
-  
-  = render :partial => "devise/shared/links"
+        = f.label :email, t(:'activerecord.attributes.user.email')
+        = f.text_field :email
+      .field
+        = f.label :password, t(:'activerecord.attributes.user.password')
+        = f.password_field :password
 
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .field
+        = f.submit(t(:'buttons.login'), :type => "submit", :class => "button submit")
+  
+    #remote.services_login
+      #services.box
+        %h2= t(:'.or_login_using')
+        = link_to image_tag("icons/authbuttons/facebook_32.png"), "/auth/facebook"
+        = link_to image_tag("icons/authbuttons/twitter_32.png"), "/auth/twitter"
+      
+      .clear
+      .shared_links
+        = render :partial => "devise/shared/links"
+
+  .clear

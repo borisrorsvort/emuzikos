@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     @users = []
     @search = Search.new(User, params[:search])
     if is_search?
-      @users = User.profiles_completed.search(@search, :page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction )
+      @users = User.where("id != ?", @current_user.id).profiles_completed.search(@search, :page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction )
     else
-      @users = User.profiles_completed.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction)
+      @users = User.where("id != ?", @current_user.id).profiles_completed.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction)
     end
     if request.xhr?
       sleep(2) # make request a little bit slower to see loader :-)
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @testimonials = @user.testimonials
     @user_map = @user.to_gmaps4rails
-    @users_nearby = User.geocoded.profiles_completed.near("#{@user.zip} #{Carmen::country_name(@user.country)}", 100)
+    @users_nearby = User.where("id != ?", @user.id).geocoded.profiles_completed.near("#{@user.zip} #{Carmen::country_name(@user.country)}", 100) rescue nil
   end
   
   def edit

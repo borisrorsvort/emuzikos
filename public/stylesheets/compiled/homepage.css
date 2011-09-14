@@ -66,7 +66,7 @@ a img {
 }
 
 /* line 44, ../../../app/stylesheets/_base.scss */
-.centered {
+.centered, .signup_button {
   margin: 0 auto;
 }
 
@@ -91,37 +91,37 @@ strong {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 128, ../../../app/stylesheets/_base.scss */
+  /* line 135, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 129, ../../../app/stylesheets/_base.scss */
+  /* line 136, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 133, ../../../app/stylesheets/_base.scss */
+  /* line 140, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 134, ../../../app/stylesheets/_base.scss */
+  /* line 141, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 135, ../../../app/stylesheets/_base.scss */
+  /* line 142, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 136, ../../../app/stylesheets/_base.scss */
+  /* line 143, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -129,25 +129,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 139, ../../../app/stylesheets/_base.scss */
+  /* line 146, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 140, ../../../app/stylesheets/_base.scss */
+  /* line 147, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 141, ../../../app/stylesheets/_base.scss */
+  /* line 148, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 142, ../../../app/stylesheets/_base.scss */
+  /* line 149, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -155,17 +155,18 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 145, ../../../app/stylesheets/_base.scss */
+  /* line 152, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 146, ../../../app/stylesheets/_base.scss */
+  /* line 153, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
+/*VARIABLES*/
 /* TABLES
 ---------------------------------------- */
 /*$table-color-odd: #f3f7fb;*/
@@ -234,7 +235,7 @@ a img {
 }
 
 /* line 44, ../../../app/stylesheets/_base.scss */
-.centered {
+.centered, .signup_button {
   margin: 0 auto;
 }
 
@@ -259,37 +260,37 @@ strong {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 128, ../../../app/stylesheets/_base.scss */
+  /* line 135, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 129, ../../../app/stylesheets/_base.scss */
+  /* line 136, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 133, ../../../app/stylesheets/_base.scss */
+  /* line 140, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 134, ../../../app/stylesheets/_base.scss */
+  /* line 141, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 135, ../../../app/stylesheets/_base.scss */
+  /* line 142, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 136, ../../../app/stylesheets/_base.scss */
+  /* line 143, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -297,25 +298,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 139, ../../../app/stylesheets/_base.scss */
+  /* line 146, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 140, ../../../app/stylesheets/_base.scss */
+  /* line 147, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 141, ../../../app/stylesheets/_base.scss */
+  /* line 148, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 142, ../../../app/stylesheets/_base.scss */
+  /* line 149, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -323,17 +324,18 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 145, ../../../app/stylesheets/_base.scss */
+  /* line 152, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 146, ../../../app/stylesheets/_base.scss */
+  /* line 153, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
+/*VARIABLES*/
 /*HEADINGS
 -------------------------------------------------------- */
 /* line 7, ../../../app/stylesheets/_typography.scss */
@@ -482,6 +484,227 @@ ol {
 ol li {
   font-size: 1.2em;
   line-height: 1.5em;
+}
+
+@-webkit-keyframes scale_from_small {
+  /* line 10, ../../../app/stylesheets/homepage.scss */
+  0% {
+    -moz-transform: scale(0, 0);
+    -webkit-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+
+  /* line 13, ../../../app/stylesheets/homepage.scss */
+  60% {
+    -moz-transform: scale(0.4, 0.4);
+    -webkit-transform: scale(0.4, 0.4);
+    -o-transform: scale(0.4, 0.4);
+    -ms-transform: scale(0.4, 0.4);
+    transform: scale(0.4, 0.4);
+    opacity: 0;
+  }
+
+  /* line 16, ../../../app/stylesheets/homepage.scss */
+  100% {
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scale_to_big {
+  /* line 22, ../../../app/stylesheets/homepage.scss */
+  0% {
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 0.4;
+  }
+
+  /* line 25, ../../../app/stylesheets/homepage.scss */
+  60% {
+    -moz-transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+    opacity: 0.8;
+  }
+
+  /* line 28, ../../../app/stylesheets/homepage.scss */
+  100% {
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes opacity {
+  /* line 33, ../../../app/stylesheets/homepage.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 34, ../../../app/stylesheets/homepage.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+/* line 37, ../../../app/stylesheets/homepage.scss */
+#inner_content {
+  background: #041826;
+}
+
+/* line 41, ../../../app/stylesheets/homepage.scss */
+img {
+  max-width: 100%;
+}
+
+/* line 44, ../../../app/stylesheets/homepage.scss */
+strong {
+  font-weight: bolder;
+}
+
+/* line 49, ../../../app/stylesheets/homepage.scss */
+h1#main_title {
+  text-indent: -9990px;
+  height: 24px;
+  /* keep consistent baseline */
+}
+
+/* line 53, ../../../app/stylesheets/homepage.scss */
+h2.moto {
+  font-size: 2.5635em;
+  /* 41 / 16 */
+  color: #7bb3cf;
+  font-weight: normal;
+  text-shadow: black 0 1px 1px;
+  -webkit-animation: scale_to_big 1s;
+  -moz-animation: scale_to_big 1s;
+}
+
+/* line 62, ../../../app/stylesheets/homepage.scss */
+h3 {
+  font-size: 0.875em;
+  color: #b6cce2;
+  text-shadow: black 0 1px 1px;
+  margin-bottom: 5%;
+}
+
+/* line 69, ../../../app/stylesheets/homepage.scss */
+#music_notes {
+  background: transparent url("/images/homepage/music-notes.png") center -40px repeat-x;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 0;
+  -webkit-animation: opacity 4s;
+  -moz-animation: opacity 4s;
+  -webkit-animation: slidingFromLeft 4s;
+}
+
+/* line 84, ../../../app/stylesheets/homepage.scss */
+#inner_halo {
+  margin-top: -20px;
+  position: relative;
+  background: transparent url("/images/homepage/halo.png") center top no-repeat;
+}
+
+/* line 89, ../../../app/stylesheets/homepage.scss */
+#main {
+  text-align: center;
+  padding-top: 5%;
+  min-height: 500px;
+}
+
+/* line 95, ../../../app/stylesheets/homepage.scss */
+#main-icon {
+  margin-bottom: 10px;
+}
+/* line 97, ../../../app/stylesheets/homepage.scss */
+#main-icon img {
+  -webkit-animation: scale_from_small 1s;
+  -moz-animation: scale_from_small 1s;
+}
+
+/* line 101, ../../../app/stylesheets/homepage.scss */
+#logo img {
+  -webkit-animation: scale_from_small 1s;
+  -moz-animation: scale_from_small 1s;
+}
+
+/* line 107, ../../../app/stylesheets/homepage.scss */
+#header {
+  background: none;
+  background-color: #001824;
+}
+
+/* line 113, ../../../app/stylesheets/homepage.scss */
+.fb_iframe_widget {
+  background: #fff;
+}
+
+/* line 117, ../../../app/stylesheets/homepage.scss */
+.signup_button {
+  -webkit-animation: slidingFromLeft 2s;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+  display: block;
+  height: 70px;
+  width: 220px;
+  line-height: 65px;
+  margin: 20px auto;
+  text-transform: uppercase;
+  text-shadow: white 0 1px 1px;
+  font-weight: bold;
+  font-size: 1.5em;
+  position: relative;
+  background: transparent url('/images/buttons/signup_button/signup_bc.png?1303908836') left top repeat-x;
+}
+/* line 127, ../../../app/stylesheets/homepage.scss */
+.signup_button a {
+  font-size: 0.65em;
+  text-decoration: none;
+  color: #604f1b;
+  position: relative;
+}
+/* line 132, ../../../app/stylesheets/homepage.scss */
+.signup_button a:hover {
+  color: #887026;
+}
+/* line 134, ../../../app/stylesheets/homepage.scss */
+.signup_button a:active {
+  top: 1px;
+}
+/* line 144, ../../../app/stylesheets/homepage.scss */
+.signup_button .bl, .signup_button .br {
+  left: -25px;
+  position: absolute;
+  width: 25px;
+  height: 70px;
+  background: transparent url('/images/buttons/signup_button/signup_bl.png?1303908836') left top no-repeat;
+  display: block;
+}
+/* line 151, ../../../app/stylesheets/homepage.scss */
+.signup_button .br {
+  left: 100%;
+  right: -25px;
+  background: transparent url('/images/buttons/signup_button/signup_br.png?1303908836') left top no-repeat;
 }
 
 /*  #header {
