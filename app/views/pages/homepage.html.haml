@@ -20,11 +20,13 @@
         = link_to t(:'buttons.home_signup'), new_user_registration_path
     
     
-    .features_columns
-      .columns
-        .inner_column
-          
-      .columns
-        = render :partial => "shared/facebook_like_box"            
-      .columns
-        .inner_column
+
+= content_for :features do
+  .features_columns
+    .columns
+      .inner_column
+        
+    .columns
+      = render :partial => "shared/facebook_like_box"            
+    .columns
+      .inner_column

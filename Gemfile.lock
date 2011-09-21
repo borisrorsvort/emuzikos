@@ -9,7 +9,6 @@ GIT
 
 GEM
   remote: http://rubygems.org/
-  remote: http://gems.github.com/
   remote: http://rubygems.org/
   specs:
     POpen4 (0.1.4)
