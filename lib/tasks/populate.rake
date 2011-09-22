@@ -1,0 +1,59 @@
+namespace :db do
+  desc "Erase and fill database"
+  task :populate => :environment do
+    require 'populator'
+    
+    USER_TYPES = %w(band musician agent)
+    INSTRUMENTS = %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas)
+    MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
+    
+    [User, Friendship, Message, Service, Testimonial ].each(&:delete_all)
+    
+    User.populate 50 do |user|
+      user.username = Faker::Name.first_name
+      user.email = Faker::Internet.email
+      user.encrypted_password = SecureRandom.hex(10)
+      user.references = Populator.sentences(1..2)
+      user.request_message = Populator.paragraphs(3..5)
+      user.sign_in_count = [1..100]
+      user.user_type = USER_TYPES
+      user.searching_for = USER_TYPES
+      user.zip = Faker::Address.zip_code
+      user.country = %w(US CA BE FR DE UK)
+      user.genre = MUSICAL_GENRES
+      
+      user.bass = [true, false]
+      user.violin = [true, false]
+      user.drums = [true, false]
+      user.violin = [true, false]
+      user.piano = [true, false]
+      user.turntables = [true, false]
+      user.bouzouki = [true, false]
+      user.created_at = 2.years.ago..Time.now
+      
+      Testimonial.populate 1..2 do |t|
+        t.user_id = user.id
+        t.body = Populator.sentences(2..3)
+        t.created_at = user.created_at
+      end
+      
+    end
+    
+    Message.populate 300 do |message|
+      message.sender_id = rand(3-50).to_i
+      message.recipient_id = rand(3-50).to_i
+      message.sender_deleted = false
+      message.recipient_deleted = false
+      message.subject = Populator.sentences(1)
+      message.body = Populator.paragraphs(3..5)
+      message.created_at = 2.years.ago..Time.now
+      
+    end
+    
+    AdminUser.populate 1 do |admin_user|
+      admin_user.email = "admin@example.com"
+      admin_user.encrypted_password = password.hex(10)
+      admin_user.created_at = Time.now
+    end
+  end
+end

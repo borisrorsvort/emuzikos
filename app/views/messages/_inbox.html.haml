@@ -10,12 +10,13 @@
   .clear
 
 - if @messages.size == 0
-  =t(:'messages.no_messages')
+  .message
+    =t(:'messages.no_messages')
 
 -else
   
   .messages_list
     = render :partial => "message", :collection => @messages
   
-  .field
+  %p
     = submit_tag t(:'buttons.delete'), :class => "button delete" 

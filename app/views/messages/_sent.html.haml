@@ -18,5 +18,5 @@
   .messages_list
     = render :partial => "message", :collection => @messages
 
-  .field
+  %p
     = submit_tag t(:'buttons.delete'), :class => "button delete" 

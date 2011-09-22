@@ -11,17 +11,15 @@ form {
 
 .field {
   display       : block;
-  margin-bottom : 30px;
-  font-size: 0.75em;
-  line-height: 1.48em;
+  margin-bottom : #{24 / $em}em;
+  padding: #{24 / $em}em ;
+  @include white_box;
   i {
     display:block;}}
 
 label {
   font-weight   : bold;
-  display       : block;
-  font-size: 1em;
-  margin-bottom: 5px; }
+  display       : block; }
   
 .required {
   display       : block;
@@ -37,6 +35,7 @@ input, textarea {
   background    : #fff;
   border        : 1px solid #ccc;
   padding       : 5px;
+  max-width: 95%;
   &:focus, &:active {
     @include single-box-shadow(#666, 0, 0, 3px);
   }
@@ -48,9 +47,7 @@ input, textarea {
   width         : 150px;
   float         : left;
   .instrument {
-    padding     : 5px 0;
-    label {
-      padding-top: 5px; }}}
+    padding     : 5px 0;}}
 
 /* SEARCH FORM */
   
@@ -64,6 +61,9 @@ input, textarea {
     float       : left;
     height      : 40px;
     margin-bottom: 0px;
+    padding: 0;
+    background: none;
+    border: none;
     input {
       &#search_zip {
         padding: 5px 8px;
@@ -84,7 +84,7 @@ input, textarea {
 
 .logged_out {
   #user_forms {
-    width: 35%;
+    width: 80%;
     padding: 20px;
     margin: 20px auto;
     background:#efefef;
@@ -93,13 +93,12 @@ input, textarea {
     @include single-box-shadow(#666, 0, 0, 5px);
     
     .normal_login {
-      @include fluid_column(5%, 2);
       padding-left: 0;
       padding-bottom: 0;
     }
     .services_login {
-      @include fluid_column(5%, 2);
       font-size: 1em;
+      margin-top: 20px;
       .shared_links {
         margin-top: 20px;
         .field {

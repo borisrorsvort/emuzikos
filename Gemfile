@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 source :gemcutter
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.10'
 gem "jquery-rails"
 #gem "will_paginate", ">= 3.0.pre2"
 gem "gritter"
@@ -21,7 +21,7 @@ gem 'activeadmin'
 #replacement for country_select
 gem "carmen" 
 
-gem 'tolk', :git => "git://github.com/borisrorsvort/tolk.git", :branch => 'rails3'
+#gem 'tolk', :git => "git://github.com/borisrorsvort/tolk.git", :branch => 'rails3'
 
 #gem 'sitemap_generator', :git => "git://github.com/shinjikuwayama/sitemap_generator.git"
 
@@ -38,6 +38,9 @@ group :development do
   gem "nifty-generators"
   gem 'heroku_san'
   gem 'rails_best_practices'
+  gem 'simplecov', :require => false
+  gem "populator"
+  gem "faker"
 end
 
 
@@ -45,7 +48,7 @@ group :test do
   #gem 'factory_girl_rails'
   #gem "cucumber-rails"
   #gem "shoulda"
-  #gem "rspec-rails", "2.0.0.beta.12"
+  #gem "rspec-rails"
   #gem "mocha"
 end
 

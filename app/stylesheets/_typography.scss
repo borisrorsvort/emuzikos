@@ -1,6 +1,47 @@
 @import "colors";
 @import "base";
 
+$line: 16;
+$column: 100% / 18;
+$font-size: 12;
+$em: $font-size * 1;
+
+body {
+  font-size: $font-size / 16 * 1em;
+  line-height: #{$line / $em}em;
+}
+
+.small {
+  /* 13px / 18px */
+  font-size: #{($font-size*0.8125) / $em}em;
+  line-height: ($line*0.75) / ($font-size*0.8125) * 1em;
+}
+
+.normal, h4, h3 {
+  /* 16px / 24px */
+  font-size: #{$font-size / $em}em;
+  line-height: #{$line / $em}em; /* 24 */
+}
+
+.large, h2, h1 {
+  /* 26 / 36px */
+  font-size: #{18 / $em}em;
+  line-height: ($line*1.5) / 26 * 1em;
+}
+
+.huge {
+  /* 42px / 48px */
+  font-size: #{26 / $em}em;
+  line-height: ($line*2) / 42 * 1em;
+}
+
+.massive {
+  /* 68px / 72px */
+  font-size: #{42 / $em}em;
+  line-height: ($line*3) / 68 * 1em;
+}
+
+
 /*HEADINGS
 -------------------------------------------------------- */
 
@@ -8,107 +49,27 @@ h1, h2, h3, h4, h5, h6 {
   @include inset(#fff);
 }
 
-h1{
-	color:#515151;
-	font-size: 1.875em;
-	margin-bottom:0.6em;
-	line-height:1.2em;
+h1 {
+  @extend .huge;
+  margin: 0 0 (24/36*1em);
 }
-h2{
-	color:#515151;
-	font-size:1.25em;
-	margin-bottom:0.9em;
-	line-height:0.9em;
-}
-h3{
-	color:#515151;
-	font-size: 0.8125em;
-	font-weight:bold;
-	margin-bottom: 0.5em;
-	line-height:1.2em;
-}
-h4{
-	color:#000;
-	font-size: 0.8125em;
-	margin-bottom: 0.9375em;
-	line-height: 0.9375em;
-	font-variant:small-caps;
-}
-h5{
-	color:#000;
-	font-size:1em;
-	margin-bottom:1.8em;
-	line-height:1.8em;
-	font-variant:small-caps;
-}
-h6{
-	color:#000;
-	font-size:1em;
-	margin-bottom:1.8em;
-	line-height:1.8em;
-}
-p, ul {
-  font-size: 0.75em;
-  line-height: 1.48em;
-  margin-bottom: 2.3em;
+h2 {
+  margin-bottom: 12 / 26*1em;
 }
 
-blockquote p{
-	font-size:1.2em!important;
-	line-height:1.5em!important;
-	margin-bottom:1.5em!important;
-	font-style:italic;
-	font-weight:bold;
+h3 {
+  font-weight:bold;
+  margin: #{24 / $em}em 0 #{18 / $em}em;
 }
-
-blockquote p cite{
-	font-style:normal;
+h4 {
+  font-weight:bold;
 }
-.generic strong{
-	font-variant:small-caps;
+p {
+  margin-bottom: #{24 / $em}em;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
 }
-.generic em{
-	font-style:italic;
-	font-weight:inherit;
-}
-.amp{ /* Give those ampersands a right sexy look */
-	font-family:Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", serif;
-	font-style:italic;
-	font-weight:normal;
-	line-height:inherit;
-}
-abbr{
-	border-bottom:1px dotted #666;
-	border-color:inherit;
-	cursor:help;
-}
-
-ul{
-	margin-bottom:1.8em;
-	list-style: disc outside;
-  padding-left: 20px;
-}
-ul li{
-	font-size:1.2em;
-	line-height:1.5em;
-}
-ul li.caption{ /* Apply this class to the first list item in a list to give it a caption */
-	font-variant:small-caps;
-	list-style:none;
-	color:#000;
-}
-li > ul, li > ol{
-	margin-bottom:0;
-	margin-left:5em;
-}
-li > ul li, li > ol li{
-	font-size:1em;
-}
-ol{
-	margin-bottom:1.8em;
-	list-style:decimal inside;
-}
-ol li{
-	font-size:1.2em;
-	line-height:1.5em;
+p:last-child {
+  margin-bottom: 0;
 }

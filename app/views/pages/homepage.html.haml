@@ -25,8 +25,30 @@
   .features_columns
     .columns
       .inner_column
-        
+        %h2 The musician search tool you were missing 
+        %h3 Simple signup
+        %p Create your profile in 60s and start browsing, sending messages and share your musician profile around you.
+        %h3 We care about privacy  
+        %p Nobody will ever see your email when you send messages, ever.
     .columns
       = render :partial => "shared/facebook_like_box"            
-    .columns
+    .columns.home_testimonials
       .inner_column
+        %h2 Latest musician testimonial
+        - if !@testimonials.blank?
+          %ul
+            - for testimonial in @testimonials do
+              %li 
+                %span.avatar.small
+                  - if testimonial.user.avatar.present?
+                    = image_tag(testimonial.user.avatar.url(:gallery))
+                  -else
+                    = image_tag("backgrounds/avatar-default.gif")
+
+                %div.text
+                  .span.author
+                    = testimonial.created_at.strftime('%b %d, %Y')
+                    = t(:'common.by')
+                    = testimonial.user.username
+                  = testimonial.body
+    .clear  

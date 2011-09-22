@@ -48,22 +48,19 @@ strong {
 
 h1#main_title {
   text-indent: -9990px;
-  height: 24px; /* keep consistent baseline */
+  height: 0; /* keep consistent baseline */
+}
+#container {
+  margin: 16px auto 0;
 }
 h2.moto {
-  font-size: 2.5635em ; /* 41 / 16 */
+  font-size: 2em;
+  line-height: #{ 18/ $em}em;
   color: #7bb3cf;
   font-weight:normal;
   @include text-shadow(#000, 0, 1px, 1px);
   -webkit-animation: scale_to_big 1s ;
   -moz-animation: scale_to_big 1s;
-}
-
-h3 {
-  font-size: 0.875em ;
-  color:#b6cce2;
-  @include text-shadow(#000, 0, 1px, 1px);
-  margin-bottom: 5%;
 }
 
 #music_notes {
@@ -81,6 +78,9 @@ h3 {
   
   
 }
+.homepage.logged_out #inner_content {
+  padding: 0;
+}
 #inner_halo {
   margin-top: -20px;
   position:relative;
@@ -88,8 +88,12 @@ h3 {
 }
 #main {
   text-align:center;
-  padding-top: 5%;
-  min-height: 500px;
+  padding: 20px;
+}
+
+#logo_home, #main-icon {
+  width: 80%;
+  margin: 0 auto;
 }
 
 #main-icon {
@@ -109,11 +113,6 @@ h3 {
   background-color: #001824;
   
 }
-
-.fb_iframe_widget {
-  background: #fff;
-}
-
 .signup_button {
   -webkit-animation:slidingFromLeft 2s ;
   @extend .centered;
@@ -154,6 +153,54 @@ h3 {
     right: 0 - $arrow-size ;
     background:transparent image-url('/images/buttons/signup_button/signup_br.png') left top no-repeat; }
 }
+
+.features_columns {
+  background: #efefef;
+
+  .columns {
+    @include fluid_column(3%, 3);
+    min-width: 320px; }
+  
+}
+
+.FB_fan iframe{
+  margin: 0 auto;
+  width: 300px;
+  margin-left: 14%;
+}
+
+
+.home_testimonials {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top:2em;
+    font-size: 10px;
+    line-height: 1.48em;
+    li {
+      margin-bottom: 15px;
+      display:block;
+      vertical-align: middle;
+      @include inset(#fff);
+      padding: 10px;
+      background-color:#fff;
+      @include box-shadow(#666, 0, 0, 3px, 1px inset);
+      @include border-radius(5px);
+
+      .text {
+        font-size: 11px;
+        padding-left: 50px;
+      }
+      .author {
+        font-weight:bold;
+      }
+      .avatar {
+        float:left; 
+        border: 3px solid #ccc;
+        @include border-radius(3px); }}
+  }
+}
+
 /*  #header {
     background:none;
     background-color:#000; }

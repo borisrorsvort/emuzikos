@@ -4,16 +4,15 @@
   %h2= t(:'users.location')
 
   .field
-    = f.label :zip, t(:'activerecord.attributes.user.zip')    
-    = f.text_field :zip
-
-  .field
-    = f.label :country, t(:'activerecord.attributes.user.country')
-    = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
+    %p
+      = f.label :zip, t(:'activerecord.attributes.user.zip')    
+      = f.text_field :zip
+    %p
+      = f.label :country, t(:'activerecord.attributes.user.country')
+      = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
   
-  %h2= t(:'users.credentials')
+  %h2= t(:'users.avatar')
   .field
-    = f.label :avatar, t(:'activerecord.attributes.user.avatar')
     - if @user.avatar.present?
       .avatar.small
         = image_tag @user.avatar.url(:gallery)
@@ -23,43 +22,43 @@
   %h2= t(:'users.musician_infos')
 
   .field
-    = f.label :user_type, t(:'activerecord.attributes.user.user_type')     
-    .checkbox_set
-      - User::USER_TYPES.each do |user_type|
-        = radio_button(:user, :user_type, user_type)
-        = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
-        
-  .field
-    = f.label :instruments, t(:'activerecord.attributes.user.instruments')
-    - User::INSTRUMENTS.in_groups_of(4, false) do |instruments|
-      .instrument_column
-        - for instrument in instruments
-          .instrument
-            = f.check_box(instrument)
-            = f.label(instrument, t(:"instruments.#{instrument}"))
-    .clear
-    
-  .field
-    = f.label :genre, t(:'activerecord.attributes.user.genre')
-    %select{ :id => "user_genre", :name => "user[genre]" }
-      - User::MUSICAL_GENRES.each do |genre|
-        = options_for_select([[t(:"musical_genres.#{genre}"), genre]], :selected => ( @user.genre))
-  
-  .field
-    = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
-    
-    .checkbox_set
-      - User::USER_TYPES.each do |searching_for|
-        = radio_button(:user, :searching_for, searching_for)
-        = f.label "searching_for_" + searching_for, t(:"users.types.#{searching_for}")     
-        
-  .field
-    = f.label :references, t(:'activerecord.attributes.user.references')
-    = f.text_field :references, :size => 60
-    
-  .field
-    = f.label :request_message, t(:'activerecord.attributes.user.request_message')
-    = f.text_area :request_message, :size => "45x20"
+    %p
+      = f.label :user_type, t(:'activerecord.attributes.user.user_type')     
+      .checkbox_set
+        - User::USER_TYPES.each do |user_type|
+          = radio_button(:user, :user_type, user_type)
+          = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
+
+    %p
+      = f.label :instruments, t(:'activerecord.attributes.user.instruments')
+      - User::INSTRUMENTS.in_groups_of(4, false) do |instruments|
+        .instrument_column
+          - for instrument in instruments
+            .instrument
+              = f.check_box(instrument)
+              = f.label(instrument, t(:"instruments.#{instrument}"))
+      .clear
+
+    %p
+      = f.label :genre, t(:'activerecord.attributes.user.genre')
+      %select{ :id => "user_genre", :name => "user[genre]" }
+        - User::MUSICAL_GENRES.each do |genre|
+          = options_for_select([[t(:"musical_genres.#{genre}"), genre]], :selected => ( @user.genre))
+
+    %p
+      = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
+      .checkbox_set
+        - User::USER_TYPES.each do |searching_for|
+          = radio_button(:user, :searching_for, searching_for)
+          = f.label "searching_for_" + searching_for, t(:"users.types.#{searching_for}")     
+
+    %p
+      = f.label :references, t(:'activerecord.attributes.user.references')
+      = f.text_field :references, :size => 60
+
+    %p
+      = f.label :request_message, t(:'activerecord.attributes.user.request_message')
+      = f.text_area :request_message, :size => "45x20"
 
   .clear
     
@@ -73,5 +72,4 @@
   /     = f.label :password_confirmation, t(:'activerecord.attributes.user.password_confirmation')
   /     = f.password_field :password_confirmation 
 
-  .field
-    =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"
+  =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"

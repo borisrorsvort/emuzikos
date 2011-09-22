@@ -1,26 +1,23 @@
-!!!
-/[if IEMobile 7 ] <html class="no-js iem7" >
-/[if lt IE 7 ] <html class="no-js ie6" lang="en">
-/[if IE 7 ] <html class="no-js ie7" lang="en">
-/[if IE 8 ] <html class="no-js ie8" lang="en">
-/[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><! 
-/ %html.no-js{:lang => "en", :manifest => "default.appcache?v=1"}
-%html.no-js{:lang => "en"}
-  / <![endif]
-
+!!! 5
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!-->
+%html.no-js{ :lang => "en" }
+  <!--<![endif]-->
   %head
     %title
       = yield(:title) || "Find a local musicians"
       | Emuzikos
-      
-    %meta{:charset => "utf-8"}/
     
+    %meta{:charset => "utf-8"}/
+  
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
     / http://t.co/dKP3o1e
     %meta{:content => "True", :name => "HandheldFriendly"}
     %meta{:content => "320", :name => "MobileOptimized"}
-    %meta{:content => "width=device-width, target-densitydpi=160dpi, initial-scale=1", :name => "viewport"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
 
     = include_stylesheets :common, :media => 'all'
 
@@ -38,23 +35,23 @@
     / iOS.
     %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}
     %meta{:content => "black-translucent", :name => "apple-mobile-web-app-status-bar-style"}
-    
+  
     / Microsoft.
     %meta{:content => "on", "http-equiv" => "cleartype"}
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
-    
+  
     / http://t.co/y1jPVnT
     %link{:href => "/", :rel => "canonical"}/
-    
+  
     %link{:href => 'http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold', :rel => 'stylesheet', :type => 'text/css'}
-    
+  
     /[if lt IE 9]
       %script{:src => "http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"}
-    
+  
     = csrf_meta_tag
-    
+  
     = include_javascripts :polyfills
-    
+  
     = yield :stylesheets
-    
+  
     = yield :head

@@ -112,13 +112,13 @@ $(document).ready(function() {
   
   // NOISY STUFF
   
-  $('.homepage #content').noisy({
-      'intensity' : 1, 
-      'size' : 150, 
-      'opacity' : 0.06, 
-      'fallback' : '', 
-      'monochrome' : true
-  });
+  // $('.homepage #content').noisy({
+  //     'intensity' : 1, 
+  //     'size' : 150, 
+  //     'opacity' : 0.06, 
+  //     'fallback' : '', 
+  //     'monochrome' : true
+  // });
   
   // MASONRY
   $(".testimonials").masonry({ singleMode: true,resizeable: true, animate: true,itemSelector: '.testimonial' });

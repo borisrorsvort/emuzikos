@@ -2,6 +2,6 @@
   = check_box_tag "delete[]", message.id
   .headers
     %span.message_date= h message.created_at.to_s(:long)
-    %span.message_sender= h(message.sender.username)      
-    %span.message_subject= h(message.subject)
+    %h4.message_sender= h(message.sender.username)      
+    %span.message_subject= truncate(h(message.subject), :length => 50)
   .clear

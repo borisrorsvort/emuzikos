@@ -23,15 +23,15 @@
       .services_used
         = image_tag "icons/authbuttons/#{service.provider}_64.png", :size => "64x64"
         .service_user
-          .field
+          %p
             =t(:'activerecord.attributes.service.uname') 
             %br
             #{service.uname} (ID: #{service.uid})
-          .field
+          %p
             =t(:'activerecord.attributes.service.email')
             %br
             #{service.uemail != '' ? service.uemail : t(:'activerecord.attributes.service.not_set')}
-          .field
+          %p
             - @services.count == 1 ? @msg = t(:'.last_account_delete_warning') : @msg = ''
             = link_to t(:'buttons.services.delete'), service, :confirm => t(:'.are_you_sure') + @msg, :method => :delete, :class => "remove"
       
