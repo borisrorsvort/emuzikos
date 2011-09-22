@@ -617,7 +617,7 @@ h1#main_title {
 }
 
 /* line 53, ../../../app/stylesheets/homepage.scss */
-#container {
+.homepage #container {
   margin: 16px auto 0;
 }
 

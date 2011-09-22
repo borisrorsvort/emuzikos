@@ -19,8 +19,6 @@
     %meta{:content => "320", :name => "MobileOptimized"}
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
 
-    = include_stylesheets :common, :media => 'all'
-
     / For iPhone 4
     %link{:href => "/images/icons/h/apple-touch-icon.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}
     / For iPad 1
@@ -51,7 +49,9 @@
     = csrf_meta_tag
   
     = include_javascripts :polyfills
-  
+    
+    = include_stylesheets :common, :media => 'all'
+    
     = yield :stylesheets
   
     = yield :head
