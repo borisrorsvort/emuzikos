@@ -43,6 +43,10 @@ group :development do
   gem "faker"
 end
 
+group :staging do
+  gem "populator"
+  gem "faker"
+end
 
 group :test do
   #gem 'factory_girl_rails'
