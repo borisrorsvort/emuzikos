@@ -80,7 +80,7 @@ def create
               #user.confirm! dont need cause i usually don't confirm the user
               
               # flash and sign in
-              flash[:myinfo] = t(:'services.account_created', :provider => provider.capitalize, :link => edit_user_registration_path(current_user))
+              flash[:notice] = t(:'services.account_created', :provider => provider.capitalize, :link => edit_user_registration_path(current_user))
               
               sign_in_and_redirect(:user, user)
             end

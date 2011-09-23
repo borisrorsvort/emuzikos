@@ -51,7 +51,7 @@ h1#main_title {
   height: 0; /* keep consistent baseline */
 }
 .homepage #container {
-  margin: 16px auto 0;
+  padding: 16px auto 0;
 }
 h2.moto {
   font-size: 2em;
@@ -82,7 +82,6 @@ h2.moto {
   padding: 0;
 }
 #inner_halo {
-  margin-top: -20px;
   position:relative;
   background:transparent url('/images/homepage/halo.png') center top no-repeat;
 }

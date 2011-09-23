@@ -618,7 +618,7 @@ h1#main_title {
 
 /* line 53, ../../../app/stylesheets/homepage.scss */
 .homepage #container {
-  margin: 16px auto 0;
+  padding: 16px auto 0;
 }
 
 /* line 56, ../../../app/stylesheets/homepage.scss */
@@ -653,46 +653,45 @@ h2.moto {
 
 /* line 84, ../../../app/stylesheets/homepage.scss */
 #inner_halo {
-  margin-top: -20px;
   position: relative;
   background: transparent url("/images/homepage/halo.png") center top no-repeat;
 }
 
-/* line 89, ../../../app/stylesheets/homepage.scss */
+/* line 88, ../../../app/stylesheets/homepage.scss */
 #main {
   text-align: center;
   padding: 20px;
 }
 
-/* line 94, ../../../app/stylesheets/homepage.scss */
+/* line 93, ../../../app/stylesheets/homepage.scss */
 #logo_home, #main-icon {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 99, ../../../app/stylesheets/homepage.scss */
+/* line 98, ../../../app/stylesheets/homepage.scss */
 #main-icon {
   margin-bottom: 10px;
 }
-/* line 101, ../../../app/stylesheets/homepage.scss */
+/* line 100, ../../../app/stylesheets/homepage.scss */
 #main-icon img {
   -webkit-animation: scale_from_small 1s;
   -moz-animation: scale_from_small 1s;
 }
 
-/* line 105, ../../../app/stylesheets/homepage.scss */
+/* line 104, ../../../app/stylesheets/homepage.scss */
 #logo img {
   -webkit-animation: scale_from_small 1s;
   -moz-animation: scale_from_small 1s;
 }
 
-/* line 111, ../../../app/stylesheets/homepage.scss */
+/* line 110, ../../../app/stylesheets/homepage.scss */
 #header {
   background: none;
   background-color: #001824;
 }
 
-/* line 116, ../../../app/stylesheets/homepage.scss */
+/* line 115, ../../../app/stylesheets/homepage.scss */
 .signup_button {
   -webkit-animation: slidingFromLeft 2s;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
@@ -710,22 +709,22 @@ h2.moto {
   position: relative;
   background: transparent url('/images/buttons/signup_button/signup_bc.png?1303908836') left top repeat-x;
 }
-/* line 126, ../../../app/stylesheets/homepage.scss */
+/* line 125, ../../../app/stylesheets/homepage.scss */
 .signup_button a {
   font-size: 0.65em;
   text-decoration: none;
   color: #604f1b;
   position: relative;
 }
-/* line 131, ../../../app/stylesheets/homepage.scss */
+/* line 130, ../../../app/stylesheets/homepage.scss */
 .signup_button a:hover {
   color: #887026;
 }
-/* line 133, ../../../app/stylesheets/homepage.scss */
+/* line 132, ../../../app/stylesheets/homepage.scss */
 .signup_button a:active {
   top: 1px;
 }
-/* line 143, ../../../app/stylesheets/homepage.scss */
+/* line 142, ../../../app/stylesheets/homepage.scss */
 .signup_button .bl, .signup_button .br {
   left: -25px;
   position: absolute;
@@ -734,18 +733,18 @@ h2.moto {
   background: transparent url('/images/buttons/signup_button/signup_bl.png?1303908836') left top no-repeat;
   display: block;
 }
-/* line 150, ../../../app/stylesheets/homepage.scss */
+/* line 149, ../../../app/stylesheets/homepage.scss */
 .signup_button .br {
   left: 100%;
   right: -25px;
   background: transparent url('/images/buttons/signup_button/signup_br.png?1303908836') left top no-repeat;
 }
 
-/* line 157, ../../../app/stylesheets/homepage.scss */
+/* line 156, ../../../app/stylesheets/homepage.scss */
 .features_columns {
   background: #efefef;
 }
-/* line 160, ../../../app/stylesheets/homepage.scss */
+/* line 159, ../../../app/stylesheets/homepage.scss */
 .features_columns .columns {
   width: 27.333%;
   padding: 3%;
@@ -754,14 +753,14 @@ h2.moto {
   min-width: 320px;
 }
 
-/* line 166, ../../../app/stylesheets/homepage.scss */
+/* line 165, ../../../app/stylesheets/homepage.scss */
 .FB_fan iframe {
   margin: 0 auto;
   width: 300px;
   margin-left: 14%;
 }
 
-/* line 174, ../../../app/stylesheets/homepage.scss */
+/* line 173, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul {
   list-style: none;
   padding-left: 0;
@@ -769,7 +768,7 @@ h2.moto {
   font-size: 10px;
   line-height: 1.48em;
 }
-/* line 180, ../../../app/stylesheets/homepage.scss */
+/* line 179, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul li {
   margin-bottom: 15px;
   display: block;
@@ -788,16 +787,16 @@ h2.moto {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 190, ../../../app/stylesheets/homepage.scss */
+/* line 189, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul li .text {
   font-size: 11px;
   padding-left: 50px;
 }
-/* line 194, ../../../app/stylesheets/homepage.scss */
+/* line 193, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul li .author {
   font-weight: bold;
 }
-/* line 197, ../../../app/stylesheets/homepage.scss */
+/* line 196, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul li .avatar {
   float: left;
   border: 3px solid #ccc;
