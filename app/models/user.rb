@@ -85,20 +85,11 @@ class User < ActiveRecord::Base
     INSTRUMENTS.each do |instrument|
       instruments << instrument if self.send("#{instrument}?")
     end
-    return instruments
+    instruments
   end
 
   def to_param
     "#{id}-#{username. parameterize}"
-  end
-
-  def self.search(search, args = {})
-    if search
-      self.build_search_hash search, args
-      self.paginate(:all, @search_hash)
-    else
-      scoped
-    end
   end
 
   def self.total_on(date)
@@ -121,13 +112,6 @@ class User < ActiveRecord::Base
 
     def reprocess_avatar
       avatar.reprocess!
-    end
-
-    def self.build_search_hash(search, args = {})
-      @search_hash = {:conditions => search.conditions,
-                      :page => args[:page],
-                      :per_page => args[:per_page],
-                      :order => args[:order]}
     end
 
   protected

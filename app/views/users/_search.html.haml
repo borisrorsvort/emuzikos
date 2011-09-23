@@ -15,49 +15,29 @@
       =link_to t(:'common.reset'), users_path, :class => "reset"
       
 #search_form
-  = semantic_form_for :search, @search, :html => { :method => :get } do |f|
-    = hidden_field_tag :direction, params[:direction]
-    = hidden_field_tag :sort, params[:sort]
-    
+  = form_for @search, :url => users_path, :html => {:method => :get} do |f|
     .field
-      
-      %select{ :id => "search_user_type", :name => "search[user_type]" }
-        %option{:value => ''}
-          = t(:'search_terms.iam')
-        - User::USER_TYPES.each do |user_type|
-          = options_for_select([[t(:"users.types.#{user_type}"), user_type]], {:selected => ( params[:search][:user_type] rescue 'None') })
+      = f.select :user_type_contains, @user_types, :include_blank => t(:'search_terms.iam')
       .clear
-    .field     
-      
-      %select{ :id => "search_genre", :name => "search[genre]" }
-        %option{:value => ''}
-          = t(:'search_terms.music_style')
-        - User::MUSICAL_GENRES.each do |genre|
-          = options_for_select([[t(:"musical_genres.#{genre}"), genre]], {:selected => ( params[:search][:genre] rescue 'None') })
-      .clear
-      
-    .field     
-      = f.select :instrument, User::INSTRUMENTS, :include_blank => t(:'search_terms.who_plays')
-      .clear
-      
     .field
-      %select{ :id => "search_searching_for", :name => "search[searching_for]" }
-        %option{:value => ''}
-          = t(:'search_terms.who_search_for')    
-        - User::USER_TYPES.each do |searching_for|
-          = options_for_select([[t(:"users.types.#{searching_for}"), searching_for]], {:selected => ( params[:search][:searching_for] rescue 'None') })
+      = f.select :genre_contains, @musical_genres, :include_blank => t(:'search_terms.music_style')
       .clear
-      
-    .field     
-      = f.country_select( :country, [], :include_blank => t(:'search_terms.country'))
+    .field
+      = f.select :searching_for_contains, @instruments, :include_blank => t(:'search_terms.who_plays')
       .clear
-      
+    .field
+      = f.select :searching_for_contains, @user_types, :include_blank => t(:'search_terms.who_search_for')
+      .clear
+    .field
+      = f.select :country_contains, Carmen.countries, :include_blank => t(:'search_terms.country')
+      .clear
     .field#zip
       .centered
-        = f.text_field :zip, :placeholder => t(:'activerecord.attributes.user.zip'), :size => 10
-    
+        = f.text_field :zip_contains, :placeholder => t(:'activerecord.attributes.user.zip'), :size => 10
+      .clear
     .field
       .centered
         = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit search small")
     
     .clear
+    
