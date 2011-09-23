@@ -33,6 +33,9 @@ gem "jammit"
 gem 'geocoder'
 gem 'gmaps4rails'
 
+gem "meta_where"
+gem "meta_search"
+
 group :development do
   gem "bullet"
   gem "nifty-generators"
