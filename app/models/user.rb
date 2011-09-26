@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :friendships, :dependent => :destroy
   has_many :friends, :through => :friendships
   has_many :followers, :class_name => 'Friendship', :foreign_key => 'friend_id', :dependent => :destroy
+  has_and_belongs_to_many :instruments
+
 
   has_private_messages
   geocoded_by :address
@@ -27,8 +29,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
 
   USER_TYPES = %w(band musician agent)
-  INSTRUMENTS = %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas)
-  MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
+  MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino metal new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
 
   after_validation :geocode, :if => :address_changed?
 
@@ -80,13 +81,13 @@ class User < ActiveRecord::Base
     @geometry[style] ||= Paperclip::Geometry.from_file(avatar.to_file(style))
   end
 
-  def instruments
-    instruments = []
-    INSTRUMENTS.each do |instrument|
-      instruments << instrument if self.send("#{instrument}?")
-    end
-    instruments
-  end
+  # def instruments
+  #   instruments = []
+  #   INSTRUMENTS.each do |instrument|
+  #     instruments << instrument if self.send("#{instrument}?")
+  #   end
+  #   instruments
+  # end
 
   def to_param
     "#{id}-#{username. parameterize}"

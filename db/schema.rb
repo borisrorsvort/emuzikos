@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110923133549) do
+ActiveRecord::Schema.define(:version => 20110926204722) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(:version => 20110923133549) do
     t.integer  "friend_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "instruments", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "instruments_users", :id => false, :force => true do |t|
+    t.integer "instrument_id"
+    t.integer "user_id"
   end
 
   create_table "messages", :force => true do |t|
@@ -119,7 +130,6 @@ ActiveRecord::Schema.define(:version => 20110923133549) do
     t.string   "username"
     t.string   "email"
     t.string   "encrypted_password"
-    t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "user_type"
@@ -128,31 +138,11 @@ ActiveRecord::Schema.define(:version => 20110923133549) do
     t.string   "country"
     t.string   "searching_for"
     t.text     "request_message"
-    t.boolean  "guitar"
-    t.boolean  "bass"
-    t.boolean  "double_bass"
-    t.boolean  "drums"
-    t.boolean  "violin"
-    t.boolean  "flute"
-    t.boolean  "piano"
-    t.boolean  "percussions"
-    t.boolean  "voice"
-    t.boolean  "turntables"
-    t.boolean  "banjo"
-    t.boolean  "cithar"
-    t.boolean  "bouzouki"
-    t.boolean  "mandolin"
-    t.boolean  "whistles"
-    t.boolean  "spoons"
-    t.boolean  "keyboard"
-    t.boolean  "ocarina"
-    t.boolean  "congas"
     t.string   "genre"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.boolean  "is_admin",               :default => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

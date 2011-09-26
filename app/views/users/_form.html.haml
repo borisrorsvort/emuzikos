@@ -28,17 +28,15 @@
         - User::USER_TYPES.each do |user_type|
           = radio_button(:user, :user_type, user_type)
           = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
-
     %p
       = f.label :instruments, t(:'activerecord.attributes.user.instruments')
-      - User::INSTRUMENTS.in_groups_of(4, false) do |instruments|
+      -Instrument.all.in_groups_of(4, false) do |instruments|
         .instrument_column
           - for instrument in instruments
             .instrument
-              = f.check_box(instrument)
-              = f.label(instrument, t(:"instruments.#{instrument}"))
+              = check_box_tag "user[instrument_ids][]", instrument.id, @user.instruments.include?(instrument)
+              = f.label(instrument, t(:"instruments.#{instrument.name}"))
       .clear
-
     %p
       = f.label :genre, t(:'activerecord.attributes.user.genre')
       %select{ :id => "user_genre", :name => "user[genre]" }
