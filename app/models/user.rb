@@ -1,22 +1,21 @@
 class User < ActiveRecord::Base
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude
-  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
-  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
-  after_update :reprocess_avatar, :if => :cropping?
-
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
-
+  
+  has_private_messages
   has_many :services, :dependent => :destroy
   has_many :testimonials, :dependent => :destroy
-
   has_many :friendships, :dependent => :destroy
   has_many :friends, :through => :friendships
   has_many :followers, :class_name => 'Friendship', :foreign_key => 'friend_id', :dependent => :destroy
   has_and_belongs_to_many :instruments
-
-
-  has_private_messages
+  
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude
+  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  attr_searchable :user_type, :genre, :searching_for, :country, :zip
+  assoc_searchable :instruments
+  
   geocoded_by :address
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?,
                     :address => "address", :normalized_address => "address",
@@ -32,6 +31,7 @@ class User < ActiveRecord::Base
   MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino metal new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
 
   after_validation :geocode, :if => :address_changed?
+  after_update :reprocess_avatar, :if => :cropping?
 
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
@@ -67,10 +67,10 @@ class User < ActiveRecord::Base
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
     :default_url => '/images/backgrounds/no-image-:style.gif'
 
-
-  scope :profiles_completed, where( "country != ? and user_type != ? and genre != ? and zip != ? " , "", "", "", "" )
+  scope :profiles_completed, where( :country != "" && :user_type != "" && :genre != "" && :zip != ""  )
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
-
+  scope :except_current_user, lambda { |user| where("users.id != ?", user.id) }
+  
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
@@ -80,14 +80,6 @@ class User < ActiveRecord::Base
     @geometry ||= {}
     @geometry[style] ||= Paperclip::Geometry.from_file(avatar.to_file(style))
   end
-
-  # def instruments
-  #   instruments = []
-  #   INSTRUMENTS.each do |instrument|
-  #     instruments << instrument if self.send("#{instrument}?")
-  #   end
-  #   instruments
-  # end
 
   def to_param
     "#{id}-#{username. parameterize}"

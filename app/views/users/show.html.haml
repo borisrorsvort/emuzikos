@@ -59,11 +59,11 @@
       = render :partial => "shared/add_this"
       .clear
 
-    - unless @user.instruments.blank?
+    - if @user.instruments
       %h3= t(:'activerecord.attributes.user.instruments')
       .tag_list
         - @user.instruments.each do |instrument|
-          %span= t(:"instruments.#{instrument}")
+          %span= t(:"instruments.#{instrument.name}")
 
     - unless @user.references.blank?   
       %h3= t(:'activerecord.attributes.user.references')
