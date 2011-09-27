@@ -420,7 +420,8 @@ body {
 }
 
 /* line 20, ../../../app/stylesheets/_base.scss */
-html.js img, html.js object,
+html.js img,
+html.js object,
 html.iem7 img,
 html.iem7 object,
 html.ie6 img,
@@ -1066,7 +1067,7 @@ input:focus, input:active, textarea:focus, textarea:active {
   border: none;
 }
 /* line 68, ../../../app/stylesheets/_forms.scss */
-#search_form .field input#search_zip {
+#search_form .field input#search_zip_contains {
   padding: 5px 8px;
   margin-top: 3px;
 }
