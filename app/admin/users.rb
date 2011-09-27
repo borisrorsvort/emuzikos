@@ -30,28 +30,28 @@ ActiveAdmin.register User do
       f.input :country, :as => :country, :locale => :en
     end
     
-    f.inputs :name => "instruments" do
-      #too bad can't manage to make a loop, it would be much cleaner
-      f.input :guitar,      :as => :boolean
-      f.input :bass,        :as => :boolean
-      f.input :double_bass, :as => :boolean
-      f.input :drums,       :as => :boolean
-      f.input :violin,      :as => :boolean
-      f.input :flute,       :as => :boolean
-      f.input :piano,       :as => :boolean
-      f.input :percussions, :as => :boolean
-      f.input :voice,       :as => :boolean
-      f.input :turntables,  :as => :boolean
-      f.input :banjo,       :as => :boolean
-      f.input :cithar,      :as => :boolean
-      f.input :bouzouki,    :as => :boolean
-      f.input :mandolin,    :as => :boolean
-      f.input :whistles,    :as => :boolean
-      f.input :spoons,      :as => :boolean
-      f.input :keyboard,    :as => :boolean
-      f.input :ocarina,     :as => :boolean
-      f.input :congas,      :as => :boolean
-    end
+    # f.inputs :name => "instruments" do
+    #       #too bad can't manage to make a loop, it would be much cleaner
+    #       f.input :guitar,      :as => :boolean
+    #       f.input :bass,        :as => :boolean
+    #       f.input :double_bass, :as => :boolean
+    #       f.input :drums,       :as => :boolean
+    #       f.input :violin,      :as => :boolean
+    #       f.input :flute,       :as => :boolean
+    #       f.input :piano,       :as => :boolean
+    #       f.input :percussions, :as => :boolean
+    #       f.input :voice,       :as => :boolean
+    #       f.input :turntables,  :as => :boolean
+    #       f.input :banjo,       :as => :boolean
+    #       f.input :cithar,      :as => :boolean
+    #       f.input :bouzouki,    :as => :boolean
+    #       f.input :mandolin,    :as => :boolean
+    #       f.input :whistles,    :as => :boolean
+    #       f.input :spoons,      :as => :boolean
+    #       f.input :keyboard,    :as => :boolean
+    #       f.input :ocarina,     :as => :boolean
+    #       f.input :congas,      :as => :boolean
+    #     end
     f.buttons
   end
 end

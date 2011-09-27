@@ -4,10 +4,13 @@ namespace :db do
     require 'populator'
     
     USER_TYPES = %w(band musician agent)
-    INSTRUMENTS = %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas)
     MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
     
-    [User, Friendship, Message, Service, Testimonial ].each(&:delete_all)
+    [User, Friendship, Message, Service, Testimonial, Instrument ].each(&:delete_all)
+    
+    %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas).each do |instrument|
+      Instrument.create!(:name => instrument)
+    end    
     
     User.populate 50 do |user|
       user.username = Faker::Name.first_name
@@ -20,15 +23,7 @@ namespace :db do
       user.searching_for = USER_TYPES
       user.zip = Faker::Address.zip_code
       user.country = %w(US CA BE FR DE UK)
-      user.genre = MUSICAL_GENRES
-      
-      user.bass = [true, false]
-      user.violin = [true, false]
-      user.drums = [true, false]
-      user.violin = [true, false]
-      user.piano = [true, false]
-      user.turntables = [true, false]
-      user.bouzouki = [true, false]
+      user.genre = MUSICAL_GENRES      
       user.created_at = 2.years.ago..Time.now
       
       Testimonial.populate 1..2 do |t|
@@ -47,13 +42,14 @@ namespace :db do
       message.subject = Populator.sentences(1)
       message.body = Populator.paragraphs(3..5)
       message.created_at = 2.years.ago..Time.now
-      
     end
     
-    AdminUser.populate 1 do |admin_user|
-      admin_user.email = "admin@example.com"
-      admin_user.encrypted_password = password.hex(10)
-      admin_user.created_at = Time.now
-    end
+    # AdminUser.populate 1 do |admin_user|
+    #       admin_user.email = "admin@example.com"
+    #       admin_user.password = "cacacaca"
+    #       admin_user.encrypted_password = password.hex(10)
+    #       admin_user.created_at = Time.now
+    #     end
+    
   end
 end

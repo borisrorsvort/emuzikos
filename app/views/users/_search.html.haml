@@ -23,7 +23,7 @@
       = f.select :genre_contains, @musical_genres, :include_blank => t(:'search_terms.music_style')
       .clear
     .field
-      = f.select :searching_for_contains, @instruments, :include_blank => t(:'search_terms.who_plays')
+      = f.select :instruments_id_eq, @instruments.collect {|i| [ I18n.t(i.name, :scope => [:instruments]), i.id ]}, :include_blank => t(:'search_terms.who_plays')
       .clear
     .field
       = f.select :searching_for_contains, @user_types, :include_blank => t(:'search_terms.who_search_for')
