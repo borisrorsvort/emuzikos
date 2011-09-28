@@ -37,6 +37,7 @@ $(document).ready(function() {
   
   $('input.form_guide').tipsy({trigger: 'focus', gravity: 'w'});
   
+  
   // UI STUFF
   
   $("a[rel='external']").click( function() {
@@ -110,16 +111,6 @@ $(document).ready(function() {
   $('#sub_sections li a.current').after('<div class="top_sub_nav_arrow"></div>');
   $('#footer .inner_footer th').after('<div class="footer_headers_current_arrow"></div>');
   
-  // NOISY STUFF
-  
-  // $('.homepage #content').noisy({
-  //     'intensity' : 1, 
-  //     'size' : 150, 
-  //     'opacity' : 0.06, 
-  //     'fallback' : '', 
-  //     'monochrome' : true
-  // });
-  
   // MASONRY
   $(".testimonials").masonry({ singleMode: true,resizeable: true, animate: true,itemSelector: '.testimonial' });
   
@@ -138,10 +129,4 @@ $(document).ready(function() {
     });
   });
   
-  // $('ul#sub_sections').mobileMenu({
-  //     switchWidth: 768,                   //width (in px to switch at)
-  //     topOptionText: 'Select a page',     //first option text
-  //     indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
-  //   });
-  //   $('#sub_sections').hide();  
 });

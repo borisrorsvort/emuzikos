@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   #helper_method :sort_column, :sort_direction
   def index
     @users = []
-    @search = User.except_current_user(@current_user).profiles_completed.search(params[:search])
+    @search = User.visible.except_current_user(@current_user).profiles_completed.search(params[:search])
     @users = @search.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page)    
     @musical_genres = I18n.t(User::MUSICAL_GENRES, :scope => [:musical_genres])
     @instruments = Instrument.all
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id], :include => :instruments)
     @testimonials = @user.testimonials
     @user_map = @user.to_gmaps4rails
-    @users_nearby = User.geocoded.profiles_completed.except_current_user(@user).near("#{@user.zip} #{Carmen::country_name(@user.country)}", 100).limit(20) rescue nil
+    @users_nearby = User.visible.geocoded.profiles_completed.except_current_user(@user).near("#{@user.zip} #{Carmen::country_name(@user.country)}", 100).limit(20) rescue nil
   end
   
   def edit

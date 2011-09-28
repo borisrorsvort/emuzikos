@@ -947,7 +947,7 @@ p:last-child {
 .error_messages h2, #error_explanation h2 {
   text-align: left;
   margin: 0;
-  color: #fff;
+  color: #fff  !important;
   margin-bottom: 10px;
   line-height: 1.5em;
   text-shadow: black 0 1px 1px;

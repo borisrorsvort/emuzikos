@@ -23,7 +23,18 @@
 
   .field
     %p
-      = f.label :user_type, t(:'activerecord.attributes.user.user_type')     
+      = f.label :visible, t(:'activerecord.attributes.user.visible')
+      %br
+      Being visible, you still need to complete your profile to appear in search results. Being invisible will hide you from any search result.
+      .checkbox_set
+        = f.label "visible_true", t(:"users.visible")
+        = radio_button(:user, :visible, true)
+        = f.label "visible_false", t(:"users.invisible")
+        = radio_button(:user, :visible, false)
+        
+  
+    %p
+      = f.label :user_type, t(:'activerecord.attributes.user.user_type')
       .checkbox_set
         - User::USER_TYPES.each do |user_type|
           = radio_button(:user, :user_type, user_type)
@@ -35,7 +46,7 @@
           - for instrument in instruments
             .instrument
               = check_box_tag "user[instrument_ids][]", instrument.id, @user.instruments.include?(instrument)
-              = f.label(instrument, t(:"instruments.#{instrument.name}"))
+              = f.label(instrument.name, t(:"instruments.#{instrument.name}"), :class => "habtm")
       .clear
     %p
       = f.label :genre, t(:'activerecord.attributes.user.genre')

@@ -21,12 +21,13 @@ class User < ActiveRecord::Base
                     :address => "address", :normalized_address => "address",
                     :msg => "Sorry, not even Google could figure out where that is",
                     :validation => false
-
+                    
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
-  validates_attachment_content_type :avatar, :content_type => ['image/jpeg', 'image/pjpeg', 'image/jpg', 'image/png'], :message => "has to be in jpeg format"
-
+  validates_attachment_content_type :avatar, :message => 'should be PNG, GIF, or JPG', :content_type => %w( image/jpeg image/png image/gif image/pjpeg image/x-png )
+  validates_attachment_size :avatar, :less_than => 1.megabytes
+  
   USER_TYPES = %w(band musician agent)
   MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino metal new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
 
@@ -67,20 +68,32 @@ class User < ActiveRecord::Base
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
     :default_url => '/images/backgrounds/no-image-:style.gif'
 
-  scope :profiles_completed, where( :country != "" && :user_type != "" && :genre != "" && :zip != ""  )
+  scope :profiles_completed, where( :country != "" && :user_type != "" && :genre != "" && :zip != "" )
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
   scope :except_current_user, lambda { |user| where("users.id != ?", user.id) }
+  scope :visible, where( :visible => true )
   
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
 
   #Heroku read only fix
-  def avatar_geometry(style = :original)
-    @geometry ||= {}
-    @geometry[style] ||= Paperclip::Geometry.from_file(avatar.to_file(style))
+  # def avatar_geometry(style = :original)
+  #   @geometry ||= {}
+  #   @geometry[style] ||= Paperclip::Geometry.from_file(avatar.to_file(style))
+  # end
+  
+  def avatar_geometry(style=:original)  
+    return file_geometry if style == :original  
+    w, h = avatar.options[:styles][style].gsub("#","").split("x")  
+    Paperclip::Geometry.new(w, h)  
+  end  
+  
+  def file_geometry  
+    @geometry ||= {}  
+    @geometry[avatar.url] ||= Paperclip::Geometry.from_file(open(avatar.url))  
   end
-
+  
   def to_param
     "#{id}-#{username. parameterize}"
   end

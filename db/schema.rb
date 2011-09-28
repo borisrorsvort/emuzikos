@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110926204722) do
+ActiveRecord::Schema.define(:version => 20110927204303) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -153,6 +153,8 @@ ActiveRecord::Schema.define(:version => 20110926204722) do
     t.string   "last_sign_in_ip"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "visible",                :default => true
+    t.boolean  "wants_email",            :default => true
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

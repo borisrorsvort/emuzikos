@@ -4,6 +4,8 @@ en:
 ### ______________________________________________________
 
   users:
+    visible: Visible
+    invisible: Invisible
     contacts:
       title: Contact list
       no_users: "You don't have any contact in your list"
