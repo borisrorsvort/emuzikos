@@ -8,6 +8,8 @@ Emuzikos::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
   
+  resource :sitemaps, :only => :show
+  
   resources :friendships
   resources :testimonials
   resources :users do

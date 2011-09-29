@@ -18,12 +18,9 @@ gem 'aws-s3', :require => 'aws/s3'
 gem "devise"
 gem 'activeadmin'
 
-#replacement for country_select
 gem "carmen" 
 
 #gem 'tolk', :git => "git://github.com/borisrorsvort/tolk.git", :branch => 'rails3'
-
-#gem 'sitemap_generator', :git => "git://github.com/shinjikuwayama/sitemap_generator.git"
 
 gem 'mysql2', '< 0.3'
 
@@ -37,6 +34,8 @@ gem "meta_where"
 gem "meta_search"
 
 gem "hominid"
+
+
 
 group :development do
   gem "bullet"

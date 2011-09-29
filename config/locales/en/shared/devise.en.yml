@@ -46,7 +46,7 @@ en:
       edit:
         title: Edit my account
         cancel_my_account: Cancel my account
-      signed_up: 'Welcome! You have signed up successfully.'
+      signed_up: 'Welcome! You have signed up successfully. Please complete your profile to appear in search results'
       inactive_signed_up: 'You have signed up successfully. However, we could not log you in because your account is %{reason}.'
       updated: 'You updated your account successfully.'
       destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
