@@ -35,6 +35,7 @@ gem "meta_search"
 
 gem "hominid"
 
+gem "airbrake"
 
 
 group :development do

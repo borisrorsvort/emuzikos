@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     @current_path = "#{params[:controller]}_#{params[:action]}"
     @current_user = current_user
   end
+  
   def mailer_set_url_options
     ActionMailer::Base.default_url_options[:host] = request.host_with_port
   end
