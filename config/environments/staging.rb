@@ -5,31 +5,23 @@ Emuzikos::Application.configure do
   # Code is not reloaded between requests
   config.cache_classes = true
 
-  # Full error reports are disabled and caching is turned on
-  config.consider_all_requests_local       = false
-  config.action_controller.perform_caching = true
-
-  # Specifies the header that your server uses for sending files
-  config.action_dispatch.x_sendfile_header = "X-Sendfile"
-
-
-  # Don't care if the mailer can't send  
-  config.action_mailer.raise_delivery_errors = false
+  # Show full error reports and disable caching
+  config.consider_all_requests_local       = true
+  config.action_view.debug_rjs             = true
+  config.action_controller.perform_caching = false
 
   config.active_support.deprecation = :notify
   
-  ActionMailer::Base.delivery_method = :sendmail
-  ActionMailer::Base.raise_delivery_errors = true
-  ActionMailer::Base.perform_deliveries = true
-  config.action_mailer.default_url_options = { :host => "emuzikos.com" }
-
-  ActionMailer::Base.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :authentication => :plain,
-    :user_name => "noreply@emuzikos.com",
-    :password => '3muz1k0sn0r3ply'
-  }
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => 'noreply@emuzikos.com',
+    :password             => '3muz1k0sn0r3ply2',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
 
 
   # For nginx:
