@@ -17,3 +17,5 @@ en:
       message: Message
       address: Address
       name: Name
+    terms:
+      title: Terms of services

@@ -884,18 +884,19 @@ p:last-child {
 ---------------------------------------- */
 /* line 134, ../../../app/stylesheets/_layout.scss */
 .centered_grid {
-  width: 960px;
+  max-width: 920px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
 /* PROFILE SHOW
 ---------------------------------------- */
-/* line 143, ../../../app/stylesheets/_layout.scss */
+/* line 144, ../../../app/stylesheets/_layout.scss */
 .left_drawer {
   width: 100%;
 }
 
-/* line 147, ../../../app/stylesheets/_layout.scss */
+/* line 148, ../../../app/stylesheets/_layout.scss */
 .right_drawer {
   margin-left: 0;
   width: 100%;

@@ -5,8 +5,10 @@ class PagesController < ApplicationController
     render :layout => "home"
   end
   
-  def about
-    
+  %w(about terms).each do |section|
+    define_method section do
+      render :layout => "home"
+    end
   end
   
   def contact

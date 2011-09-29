@@ -132,7 +132,8 @@ $sub_nav_topbottom_padding: 15px;
 ---------------------------------------- */
 
 .centered_grid {
-  width: 960px;
+  max-width: 920px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
