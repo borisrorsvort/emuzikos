@@ -1,136 +1,470 @@
-<!-- ***************************************************
-********************************************************
-
-HOW TO USE: Use these code examples as a guideline for formatting your HTML email. You may want to create your own template based on these snippets or just pick and choose the ones that fix your specific rendering issue(s). There are two main areas in the template: 1. The header (head) area of the document. You will find global styles, where indicated, to move inline. 2. The body section contains more specific fixes and guidance to use where needed in your design.
-
-DO NOT COPY OVER COMMENTS AND INSTRUCTIONS WITH THE CODE to your message or risk spam box banishment :).
-
-It is important to note that sometimes the styles in the header area should not be or don't need to be brought inline. Those instances will be marked accordingly in the comments.
-
-********************************************************  
-**************************************************** -->
-
-<!-- Using the xHTML doctype is a good practice when sending HTML email. While not the only doctype you can use, it seems to have the least inconsistencies. For more information on which one may work best for you, check out the resources below.
-More info/Reference: 
-Campaign Monitor - http://www.campaignmonitor.com/blog/post/3317/correct-doctype-to-use-in-html-email/
-Email on Acid - http://www.emailonacid.com/blog/details/C18/doctype_-_the_black_sheep_of_html_email_design
--->
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-    
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Your Message Subject or Title</title>
-    <style type="text/css">
-    
-    /***********
-     The MailChimp Reset from Fabio Carneiro, MailChimp User Experience Design
-     More info and templates on Github: https://github.com/mailchimp/Email-Blueprints
-     http://www.mailchimp.com &amp; http://www.fabio-carneiro.com
-     
-     INLINE: Yes.
-    ***********/  
-    
-        /* Client-specific Styles */
-        #outlook a { padding: 0; } /* Force Outlook to provide a "view in browser" button. */
-        body { width: 100% !important; } .ReadMsgBody { width: 100%; } .ExternalClass { width: 100%; } /* Force Hotmail to display emails at full width */
-        body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; } /* Prevent Webkit and Windows Mobile platforms from changing default font sizes. */
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-        /* Reset Styles */
-        body { margin: 0; padding: 0; }
-        img { height: auto; line-height: 100%; outline: none; text-decoration: none; }
-        #backgroundTable { height: 100% !important; margin: 0; padding: 0; width: 100% !important; }
+  <!-- Facebook sharing information tags -->
+  <meta property="og:title" content="<%= @title %>" />
 
-    /** End Mail Chimp Reset **/ 
-    
-    /** Yahoo paragraph fix: removes the proper spacing or the paragraph (p) tag. To correct we set the top/bottom margin to 1em in the head of the document. Simple fix with little effect on other styling. You do not need to move this inline. NOTE: It is also common to use two breaks instead of the paragraph tag but I think this way is cleaner and more semantic. NOTE: This example recommends 1em or 1.12 em. More info on setting web defaults: http://www.w3.org/TR/CSS21/sample.html or http://meiert.com/en/blog/20070922/user-agent-style-sheets/
-       
-       INLINE: Yes.
-       **/
-       
-       p {
-           margin: 1em 0;
-       }
-          
-       /** Hotmail header color reset: Hotmail replaces your header color styles with a green color on H2, H3, H4, H5, and H6 tags. In this example, the color is reset to black for a non-linked header, blue for a linked header, red for an active header (limited support), and purple for a visited header (limited support).  Replace with your choice of color. The !important is really what is overriding Hotmail's styling. Hotmail also sets the H1 and H2 tags to the same size. 
-       
-       INLINE: Yes.
-       **/
-       
-       h1, h2, h3, h4, h5, h6 {
-           color: black !important;
-           line-height: 100% !important;
-       }
-       
-       h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-           color: blue !important;
-       }
-       
-       h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
-           color: red !important; /* Preferably not the same color as the normal header link color.  There is limited support for psuedo classes in email clients, this was added just for good measure. */
-       }
-       
-       h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
-           color: purple !important; /* Preferably not the same color as the normal header link color. There is limited support for psuedo classes in email clients, this was added just for good measure. */
-       }
-       
-       /** Outlook 07, 10 Padding issue: These "newer" versions of Outlook add some padding around table cells potentially throwing off your perfectly pixeled table.  The issue can cause added space and also throw off borders completely.  Use this fix in your header or inline to safely fix your table woes.
-       
-       More info: http://www.ianhoar.com/2008/04/29/outlook-2007-borders-and-1px-padding-on-table-cells/ 
-       http://www.campaignmonitor.com/blog/post/3392/1px-borders-padding-on-table-cells-in-outlook-07/
-       
-       H/T @edmelly 
-       
-       INLINE: No
-       **/
-       
-       table td {
-           border-collapse: collapse;
-       }
+  <title><%= @title %></title>
+  <style type="text/css">
+  
+  /* Client-specific Styles */
+  #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
+  body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+  body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
 
-       /** BONUS: Adaptation of Brian Thies (Campaign Monitor) link color fix to render the Yahoo Short Cuts invisible. Yahoo short cuts are links that Yahoo places over certain text in your email without your knowledge.  In order to use this fix you need to make the text color the same of the actual font color of your email and reset a few elements. IMPORTANT: You then need to use the Responsys/Smith Harmon link color fix if you want to style your links to the color you want them to be.  If you don't, this fix will change all links to black in Yahoo.  
-       
-       If you are not worried about Yahoo's shorcuts, just remove this code.  This is not applicable for Yahoo Classic. 
-       
-       INLINE: No.
-       **/
-       
-       .yshortcuts, .yshortcuts a, .yshortcuts a:link,.yshortcuts a:visited, .yshortcuts a:hover, .yshortcuts a span { color: black; text-decoration: none !important; border-bottom: none !important; background: none !important; } /* Body text color for the New Yahoo.  This example sets the font of Yahoo's Shortcuts to black. */
-       
-       </style>
+  /* Reset Styles */
+  body{margin:0; padding:0;}
+  img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+  table td{border-collapse:collapse;}
+  #backgroundTable{height:100% !important; margin:0; padding:0; width:100% !important;}
+
+  /* Template Styles */
+
+  /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: COMMON PAGE ELEMENTS /\/\/\/\/\/\/\/\/\/\ */
+
+  body, #backgroundTable{
+    background-color:#FAFAFA;
+  }
+  
+  #templateContainer{
+    border: 1px solid #DDDDDD;
+  }
+  
+  h1, .h1{
+    color:#202020;
+    display:block;
+    font-family:Arial;
+    font-size:34px;
+    font-weight:bold;
+    line-height:100%;
+    margin-top:0;
+    margin-right:0;
+    margin-bottom:10px;
+    margin-left:0;
+    text-align:left;
+  }
+  
+  h2, .h2{
+    color:#202020;
+    display:block;
+    font-family:Arial;
+    font-size:30px;
+    font-weight:bold;
+    line-height:100%;
+    margin-top:0;
+    margin-right:0;
+    margin-bottom:10px;
+    margin-left:0;
+    text-align:left;
+  }
+  
+  h3, .h3{
+    color:#202020;
+    display:block;
+    font-family:Arial;
+    font-size:26px;
+    font-weight:bold;
+    line-height:100%;
+    margin-top:0;
+    margin-right:0;
+    margin-bottom:10px;
+    margin-left:0;
+    text-align:left;
+  }
+
+  h4, .h4{
+    color:#202020;
+    display:block;
+    font-family:Arial;
+    font-size:22px;
+    font-weight:bold;
+    line-height:100%;
+    margin-top:0;
+    margin-right:0;
+    margin-bottom:10px;
+    margin-left:0;
+    text-align:left;
+  }
+
+  /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: PREHEADER /\/\/\/\/\/\/\/\/\/\ */
+
+
+  #templatePreheader{
+    background-color:#FAFAFA;
+  }
+  
+  .preheaderContent div{
+    color:#505050;
+    font-family:Arial;
+    font-size:10px;
+    line-height:100%;
+    text-align:left;
+  }
+  
+  .preheaderContent div a:link, .preheaderContent div a:visited, /* Yahoo! Mail Override */ .preheaderContent div a .yshortcuts /* Yahoo! Mail Override */{
+    color:#336699;
+    font-weight:normal;
+    text-decoration:underline;
+  }
+
+
+
+  /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: HEADER /\/\/\/\/\/\/\/\/\/\ */
+
+
+  #templateHeader{
+    background-color:#FFFFFF;
+    border-bottom:0;
+  }
+  
+  .headerContent{
+    color:#202020;
+    font-family:Arial;
+    font-size:34px;
+    font-weight:bold;
+    line-height:100%;
+    padding:0;
+    text-align:center;
+    vertical-align:middle;
+  }
+
+  .headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
+    color:#336699;
+    font-weight:normal;
+    text-decoration:underline;
+  }
+
+  #headerImage{
+    height:auto;
+    max-width:600px;
+  }
+
+  /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: MAIN BODY /\/\/\/\/\/\/\/\/\/\ */
+
+
+  #templateContainer, .bodyContent{
+    background-color:#FFFFFF;
+  }
+  
+  .bodyContent div{
+    color:#505050;
+    font-family:Arial;
+    font-size:14px;
+    line-height:150%;
+    text-align:left;
+  }
+  
+  .bodyContent div a:link, .bodyContent div a:visited, /* Yahoo! Mail Override */ .bodyContent div a .yshortcuts /* Yahoo! Mail Override */{
+    color:#336699;
+    font-weight:normal;
+    text-decoration:underline;
+  }
+
+  .bodyContent img{
+    display:inline;
+    height:auto;
+  }
+
+  /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: SIDEBAR /\/\/\/\/\/\/\/\/\/\ */
+
+  #templateSidebar{
+    background-color:#FFFFFF;
+  }
+  
+  .sidebarContent div{
+    color:#505050;
+    font-family:Arial;
+    font-size:12px;
+    line-height:150%;
+    text-align:left;
+  }
+  
+  .sidebarContent div a:link, .sidebarContent div a:visited, /* Yahoo! Mail Override */ .sidebarContent div a .yshortcuts /* Yahoo! Mail Override */{
+    color:#336699;
+    font-weight:normal;
+    text-decoration:underline;
+  }
+
+  .sidebarContent img{
+    display:inline;
+    height:auto;
+  }
+
+  /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: COLUMNS; LEFT, RIGHT /\/\/\/\/\/\/\/\/\/\ */
+
+  .leftColumnContent{
+    background-color:#FFFFFF;
+  }
+
+  .leftColumnContent div{
+    color:#505050;
+    font-family:Arial;
+    font-size:14px;
+    line-height:150%;
+    text-align:left;
+  }
+
+  .leftColumnContent div a:link, .leftColumnContent div a:visited, /* Yahoo! Mail Override */ .leftColumnContent div a .yshortcuts /* Yahoo! Mail Override */{
+    color:#336699;
+    font-weight:normal;
+    text-decoration:underline;
+  }
+
+  .leftColumnContent img{
+    display:inline;
+    height:auto;
+  }
+  
+  .rightColumnContent{
+    background-color:#FFFFFF;
+  }
+  
+  .rightColumnContent div{
+    color:#505050;
+    font-family:Arial;
+    font-size:14px;
+    line-height:150%;
+    text-align:left;
+  }
+
+
+  .rightColumnContent div a:link, .rightColumnContent div a:visited, /* Yahoo! Mail Override */ .rightColumnContent div a .yshortcuts /* Yahoo! Mail Override */{
+    color:#336699;
+    font-weight:normal;
+    text-decoration:underline;
+  }
+
+  .rightColumnContent img{
+    display:inline;
+    height:auto;
+  }
+
+  /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: FOOTER /\/\/\/\/\/\/\/\/\/\ */
+
+  #templateFooter{
+    background-color:#FFFFFF;
+    border-top:0;
+  }
+  
+  .footerContent div{
+    color:#707070;
+    font-family:Arial;
+    font-size:12px;
+    line-height:125%;
+    text-align:left;
+  }
+
+  
+  .footerContent div a:link, .footerContent div a:visited, /* Yahoo! Mail Override */ .footerContent div a .yshortcuts /* Yahoo! Mail Override */{
+    color:#336699;
+    font-weight:normal;
+    text-decoration:underline;
+  }
+
+  .footerContent img{
+    display:inline;
+  }
+  
+  #social{
+    background-color:#FAFAFA;
+    border:0;
+  }
+  
+  #social div{
+    text-align:center;
+  }
+
+  #utility{
+    background-color:#FFFFFF;
+    border:0;
+  }
+
+
+
+  #utility div{
+    text-align:center;
+  }
+
+  #monkeyRewards img{
+    max-width:190px;
+  }
+  #referral-info p {
+    color: #999;
+  }
+  #referral-info h4 {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.4em;
+  }
+  </style>
+  
 </head>
-<body>
-    <!-- Wrapper/Container Table: Use a wrapper table to control the width and the background color consistently of your email. Use this approach instead of setting attributes on the body tag. -->
-    
-    <table cellpadding="0" cellspacing="0" border="0" id="backgroundTable">
-    <tr>
-    <td> 
-               
-    <!-- Tables are the most common way to format your email consistently. Set your table widths inside cells and in most cases reset cellpadding, cellspacing, and border to zero. Use nested tables as a way to space effectively in your message. -->
-    
-    <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-            <td width="600">
-              <%= yield %>
-            </td>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+      <tr>
+        <td align="center" valign="top">
+          
+          <table border="0" cellpadding="10" cellspacing="0" width="600" id="logo">
+            <tr>
+              <td align="center" valign="top">
+                <a href="http://www.emuzikos.com"><img src="<%= root_url %>images/mail/logo-banner.png" alt=""></a>
+              </td>
+            </tr>
+          </table>
+          <!-- // End Template Preheader \\ -->
+          <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+              <tr>
+                <td align="center" valign="top">
+                  <!-- // Begin Template Header \\ -->
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
+                    <tr>
+                      <td class="headerContent">
+
+                        <!-- // Begin Module: Standard Header Image \\ -->
+                        <%= yield :banner %>
+                        <!-- // End Module: Standard Header Image \\ -->
+
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Header \\ -->
+                </td>
+              </tr>
+            <tr>
+              <td align="center" valign="top">
+                <!-- // Begin Template Body \\ -->
+                <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                  <tr>
+                    <td valign="top" width="400">
+                      <table border="0" cellpadding="0" cellspacing="0" width="400">
+                        <tr>
+                          <td valign="top">
+                            <table border="0" cellpadding="0" cellspacing="0" width="400">
+                              <tr>
+                                <td valign="top" class="bodyContent">
+
+                                  <!-- // Begin Module: Standard Content \\ -->
+                                  <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                                    <tr>
+                                      <td valign="top">
+                                        <div mc:edit="std_content00">
+                                          <h1 class="h1"> <%= @title %></h1>
+                                          <%= yield %>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <!-- // End Module: Standard Content \\ -->
+
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+
+                      </table>                                                
+                    </td>
+                    <!-- // Begin Sidebar \\ -->
+                    <td valign="top" width="200" id="templateSidebar">
+                      <table border="0" cellpadding="0" cellspacing="0" width="200">
+                        <tr>
+                          <td valign="top" class="sidebarContent">
+
+                            <!-- // Begin Module: Social Block with Icons \\ -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr>
+                                <td valign="top" style="padding-top:10px; padding-right:20px; padding-left:20px;">
+                                  <table border="0" cellpadding="0" cellspacing="4">
+                                    <tr mc:hideable>
+                                      <td align="left" valign="top" width="16">
+                                        <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/sfs_icon_facebook.png" style="margin:0 !important;" />
+                                      </td>
+                                      <td align="left" valign="top">
+                                        <div mc:edit="sbwi_link_one">
+                                          <a href="<%= AppConfig.social.facebook_page_url %>">Follow us on Facebook</a>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <tr mc:hideable>
+                                      <td align="left" valign="top" width="16">
+                                        <img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/sfs_icon_twitter.png" style="margin:0 !important;" />
+                                      </td>
+                                      <td align="left" valign="top">
+                                        <div mc:edit="sbwi_link_two">
+                                          <a href="http://www.twitter.com/emuzikos">Follow us on Twitter</a>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                            <!-- // End Module: Social Block with Icons \\ -->
+
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <!-- // End Sidebar \\ -->
+                    </tr>
+                  </table>
+                  <!-- // End Template Body \\ -->
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="top">
+                  <!-- // Begin Template Footer \\ -->
+                  <table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
+                    <tr>
+                      <td valign="top" class="footerContent">
+
+                        <!-- // Begin Module: Standard Footer \\ -->
+                        <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                          
+                          <tr>
+                            <td valign="top" width="350">
+                              <div mc:edit="std_footer">
+                                <p>Add info@emuzikos.com in your address book to be sure you'll receive our mail next time.</p>
+                                <p><em>Emuzikos.com 2011</em></p>
+                              </div>
+                            </td>
+                            <td valign="top" width="190" id="newsletter">
+                              <div mc:edit="newsletter">
+                                <table cellpadding="3">
+                                  <tr>
+                                    <td colspan="2">
+                                      <a href="<%= AppConfig.mailchimp.list_url %>"><img src="<%= root_url %>images/mail/mail_newsletter.gif" alt=""></a>
+                                    </td>
+                                  </tr>
+                                </table>
+                                
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" valign="middle" id="utility">
+                              <div mc:edit="std_social">
+                                &nbsp;<a href="http://www.twitter.com/emuzikos">Follow us on Twitter</a> | <a href="<%= AppConfig.social.facebook_page_url %>">Follow us on Facebook</a></a>&nbsp;
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- // End Module: Standard Footer \\ -->
+
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Footer \\ -->
+                </td>
+              </tr>
+            </table>
+            <br />
+          </td>
         </tr>
-    </table>  
-    
-    <!-- End example table -->
-    
-    <!-- Yahoo Link color fix: Simply override the styling color and decoration inline. -->
-    
-    <a href="http://www.responsys.com/blogs/nsm/2010/07/feeling-blue-over-yahoo-email.html" style="color: red; text-decoration: none;" target ="_blank" title="Feeling Blue Over Yahoo"><span style="color: red;">Your link copy here</span></a>
-    
-    <!-- Gmail/Hotmail image display fix: Gmail and Hotmail unwantedly adds in an extra space below images when using non IE browsers.  This can be especially painful when you putting images on top of each other or putting back together an image you spliced for formatting reasons.  Either way, you can add 'style="display: block;"' to remove that space below the image.  Make sure to set alignment (don't use float) on your images if you are placing them inline with text.-->
-    
-    <img src="full path to image" alt="Your alt text" title="Your title text" width="x" height="x" style="display: block;" />
-    
-    </td>
-    </tr>
-    </table>  
-    <!-- End of wrapper table -->
-</body>
-</html>
+      </table>
+    </center>
+  </body>
+  </html>

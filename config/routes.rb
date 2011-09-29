@@ -19,7 +19,6 @@ Emuzikos::Application.routes.draw do
     end
   end
 
-  match "contact" => "pages#contact", :as => :contact
   match "about" => "pages#about", :as => :about
   match "terms" => "pages#terms", :as => :terms
   root :to => "pages#homepage"

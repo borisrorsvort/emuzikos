@@ -3,7 +3,6 @@
     .left_links
       = link_to t(:'common.home'), root_path
       -if current_user
-        = link_to t(:'menu.contact'), contact_path
         =link_to t(:'menu.testimonials'), testimonials_path
         =link_to t(:'menu.logout'), destroy_user_session_path, :class => "logout"
 

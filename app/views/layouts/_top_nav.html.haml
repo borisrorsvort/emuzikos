@@ -1,6 +1,5 @@
 -if user_signed_in?
   = link_to "Hi #{current_user.username}!" , user_path(@current_user), :class => "greating_profile"
-  = link_to t(:'menu.contact'), contact_path
   =link_to t(:'menu.testimonials'), testimonials_path
   =link_to t(:'menu.logout'), destroy_user_session_path, :class => "logout"
   

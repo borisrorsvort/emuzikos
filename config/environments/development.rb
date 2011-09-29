@@ -24,16 +24,6 @@ Emuzikos::Application.configure do
   
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
-  ##config.action_mailer.default_url_options = { :host => "emuzikos.com" }
-  #onfig.action_mailer.delivery_method = :smtpconfig.action_mailer.default_url_options = { :host => "emuzikos.com" }
-
-  # ActionMailer::Base.smtp_settings = {
-  #   :address => "smtp.gmail.com",
-  #   :port => 587,
-  #   :authentication => :plain,
-  #   :user_name => "noreply@emuzikos.com",
-  #   :password => '3muz1k0sn0r3ply'
-  # }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",

@@ -3,6 +3,8 @@ namespace :db do
   task :populate => :environment do
     require 'populator'
     
+    puts 'Erasing models records'
+    
     USER_TYPES = %w(band musician agent)
     MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
     
@@ -11,6 +13,8 @@ namespace :db do
     %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas).each do |instrument|
       Instrument.create!(:name => instrument)
     end    
+    
+    puts 'Start population'
     
     User.populate 50 do |user|
       user.username = Faker::Name.first_name
@@ -25,12 +29,16 @@ namespace :db do
       user.country = %w(US CA BE FR DE UK)
       user.genre = MUSICAL_GENRES      
       user.created_at = 2.years.ago..Time.now
+      user.visible = true
+      user.wants_email = true
       
       Testimonial.populate 1..2 do |t|
         t.user_id = user.id
         t.body = Populator.sentences(2..3)
         t.created_at = user.created_at
       end
+      
+      puts 'Population finished'
       
     end
     

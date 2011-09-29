@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       
       if params[:user][:avatar].blank?
         gflash :success => true
-        redirect_to edit_user_url
+        redirect_to :back
       else
         gflash :notice => true
         render :action => 'crop'  
@@ -47,5 +47,8 @@ class UsersController < ApplicationController
   def contacts
     @friendships = @current_user.friendships
   end
+  
+    
+    
   
 end

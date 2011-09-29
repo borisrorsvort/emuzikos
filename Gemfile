@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source :rubygems
 source :gemcutter
 
 gem 'rails', '3.0.10'
@@ -35,6 +35,8 @@ gem 'gmaps4rails'
 
 gem "meta_where"
 gem "meta_search"
+
+gem "hominid"
 
 group :development do
   gem "bullet"

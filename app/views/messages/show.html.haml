@@ -8,10 +8,10 @@
 .field
   %p
     %label.inline= t(:'messages.from')  
-    = @message.sender == @user ? link_to("You", user_path(@user)) : link_to(h(@message.sender.username), user_path(@user))
+    = @message.sender == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.sender.username), user_path(@user))
 
     %label.inline= t(:'messages.to')   
-    = @message.recipient == @user ? link_to("You", user_path(@user)) : link_to(h(@message.recipient.username), user_path(@user))
+    = @message.recipient == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.recipient.username), user_path(@user))
     | 
     %label.inline= t(:'messages.received')
     = @message.created_at.to_s(:long)

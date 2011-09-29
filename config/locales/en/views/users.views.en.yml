@@ -22,6 +22,7 @@ en:
     show:
       title: "%{username}'s profile"
       from: from
+      donate: We depend on you! Please consider donate.
       is_looking_for: is looking for a
       to_play: to play
       music: music
@@ -30,5 +31,6 @@ en:
     edit:
       titles:
         title: Edit your profile
+      complete_profile_condition: "In order to appear in search results, you need to complete your profile fully."
     crop:
       prewiew: "Preview"

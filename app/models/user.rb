@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
   USER_TYPES = %w(band musician agent)
   MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino metal new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
 
+  before_save :subscribe
   after_validation :geocode, :if => :address_changed?
   after_update :reprocess_avatar, :if => :cropping?
 
@@ -119,7 +120,19 @@ class User < ActiveRecord::Base
     def reprocess_avatar
       avatar.reprocess!
     end
+    
+    def subscribe
+      h = Hominid::API.new(AppConfig.mailchimp.api_key)
+      h.list_subscribe(h.find_list_id_by_name(AppConfig.mailchimp.list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)      
+      rescue Hominid::APIError => error
+    end
 
+    def unsubscribe(u)
+      h = Hominid::API.new(AppConfig.mailchimp.api_key)
+      h.list_unsubscribe(h.find_list_id_by_name(AppConfig.mailchimp.list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)      
+      rescue Hominid::APIError => error
+    end
+    
   protected
 
     def address

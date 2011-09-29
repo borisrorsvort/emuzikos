@@ -90,6 +90,7 @@ GEM
     heroku_san (1.2.3)
       heroku (>= 2)
       rails (>= 2)
+    hominid (3.0.2)
     i18n (0.5.0)
     inherited_resources (1.2.2)
       has_scope (~> 0.5.0)
@@ -252,6 +253,7 @@ DEPENDENCIES
   gritter
   haml (= 3.1.2)
   heroku_san
+  hominid
   jammit
   jquery-rails
   meta_search

@@ -45,3 +45,27 @@
     %h2= t(:'.cancel_my_account')
     %p
       = link_to t(:'buttons.registrations.cancel_my_account'), registration_path(resource_name), :confirm => t(:'common.are_you_sure'), :method => :delete, :class => "button delete"
+
+
+
+= form_for @user, :html => { :multipart => true } do |f|
+  = f.error_messages
+
+  %h2= t(:'users.notifications')
+
+  .field
+    %p
+      = f.label :wants_email, t(:'activerecord.attributes.user.wants_email')
+      %br
+      .checkbox_set
+        = f.label "wants_email_true", t(:"users.wants_email")
+        = radio_button(:user, :wants_email, true)
+        = f.label "wants_email_false", t(:"users.dont_wants_email")
+        = radio_button(:user, :wants_email, false)
+
+
+  .clear
+
+
+  =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"
+

@@ -75,7 +75,7 @@
 
       .clear
 
-    - unless !@user.geocoded? && @users_nearby.size.empty? 
+    - unless !@user.geocoded? && ( @users_nearby.nil? || @users_nearby.size.empty?  )
       .users_nearby
         %h3= t(:'.users_nearby')
         - for user in @users_nearby
@@ -88,6 +88,9 @@
               .clear
         .clear
 
+    %h3= t(:'.donate')
+    = render :partial => "shared/paypal_widget"
+      
 %section.left_drawer
   .inner
     - if @user.avatar

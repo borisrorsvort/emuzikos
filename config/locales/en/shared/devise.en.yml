@@ -42,6 +42,7 @@ en:
       new:
         title: "Signup"
         or_signup_using: "Or signup using:"
+        newsletter_agreement: By signin up you agree to subscribe to the Emuzikos Newsletter
       edit:
         title: Edit my account
         cancel_my_account: Cancel my account

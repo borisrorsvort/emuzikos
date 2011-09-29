@@ -16,10 +16,11 @@ class Notifier < ActionMailer::Base
   end
   def user_message(message, user, recipient)
     @sender = user.username
+    @title = "New message from #{@sender}"    
     @recipient = recipient
     @message_url = user_message_url(recipient, message)
     mail(:to => @recipient.email,
-          :subject => "Contact from a memeber of Emuzikos.com")
+          :subject => "You've got a new message on Emuzikos!")
   end
   
 end
