@@ -75,18 +75,18 @@
 
       .clear
 
-    - unless !@user.geocoded? && @users_nearby.size.empty?
-      .users_nearby
-        %h3= t(:'.users_nearby')
-        - for user in @users_nearby
-          .section.user_general_infos
-            .avatar.small
-              - if user.avatar.present?
-                = link_to(image_tag(user.avatar.url(:gallery)), user_path(user), :class => "tooltip", :title => "#{user.username}")
-              -else
-                = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user), :class => "tooltip", :title => user.username)
-              .clear
-        .clear
+    / - unless !@user.geocoded? && @users_nearby.size.empty?
+    /       .users_nearby
+    /         %h3= t(:'.users_nearby')
+    /         - for user in @users_nearby
+    /           .section.user_general_infos
+    /             .avatar.small
+    /               - if user.avatar.present?
+    /                 = link_to(image_tag(user.avatar.url(:gallery)), user_path(user), :class => "tooltip", :title => "#{user.username}")
+    /               -else
+    /                 = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user), :class => "tooltip", :title => user.username)
+    /               .clear
+    /         .clear
 
     %h3= t(:'.donate')
     = render :partial => "shared/paypal_widget"
