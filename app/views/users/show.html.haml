@@ -82,7 +82,7 @@
           .section.user_general_infos
             .avatar.small
               - if user.avatar.present?
-                = link_to(image_tag(user.avatar.url(:gallery)), user_path(user), :class => "tooltip", :title => "#{user.username} - #{user.instruments.first.name if user.instruments}, ...")
+                = link_to(image_tag(user.avatar.url(:gallery)), user_path(user), :class => "tooltip", :title => "#{user.username}")
               -else
                 = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user), :class => "tooltip", :title => user.username)
               .clear
