@@ -50,6 +50,9 @@
     margin-left: 20px;
     float: none;
     display:inline;
+    &.feedback_link {
+      display:inline;
+    }
     &.greating_profile {
       display: inline;
     }

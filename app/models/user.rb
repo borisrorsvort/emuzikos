@@ -69,7 +69,7 @@ class User < ActiveRecord::Base
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
     :default_url => '/images/backgrounds/no-image-:style.gif'
 
-  scope :profiles_completed, where( :country != "" && :user_type != "" && :genre != "" && :zip != "" )
+  scope :profiles_completed, where( :country != nil && :user_type != "" && :genre != "" && :zip != "" )
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
   scope :except_current_user, lambda { |user| where("users.id != ?", user.id) }
   scope :visible, where( :visible => true )

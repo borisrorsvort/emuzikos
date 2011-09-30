@@ -6,7 +6,10 @@
       -else
         = image_tag("backgrounds/avatar-default.gif")
     .row.username= user.username
-    .row.location= t(:'common.users.from') + " " + user.zip + ", " + Carmen::country_name(user.country) rescue nil
+    .row.location
+      = t(:'common.users.from') + " "
+      = user.zip + ", "
+      = Carmen::country_name(user.country)
   
   .section.user_type
     .title
