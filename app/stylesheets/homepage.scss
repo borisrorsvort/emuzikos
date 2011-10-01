@@ -55,7 +55,7 @@ h1#main_title {
 }
 h2.moto {
   font-size: 2em;
-  line-height: #{ 18/ $em}em;
+  /*line-height: #{ 18/ $em}em;*/
   color: #7bb3cf;
   font-weight:normal;
   @include text-shadow(#000, 0, 1px, 1px);

@@ -3,7 +3,7 @@
 #user_forms 
   %header
     %h1= t(:'.title')
-    %p= t(:'.newsletter_agreement')
+    %p!= t(:'.newsletter_agreement')
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
     = devise_error_messages!
     .normal_login

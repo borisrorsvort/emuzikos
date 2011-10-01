@@ -9,6 +9,7 @@ gem "gritter"
 gem "sass", "3.1.2"
 gem "haml", "3.1.2"
 gem "compass", "0.11.1"
+gem "compass-baseline"
 
 gem 'formtastic', '1.1.0'
 gem "paperclip", "2.3.11"

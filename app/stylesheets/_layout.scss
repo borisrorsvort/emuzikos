@@ -1,10 +1,10 @@
 #logo {
   float:left;}
 
-$sub_nav_topbottom_padding: 15px;
+$sub_nav_topbottom_padding: 18px;
 
 #header {
-  padding: 15px 20px;
+  padding: 18px 20px;
   background: $blue_dark;
   color: $header-data-color;
   @include background-image(linear-gradient($blue_light, $blue_dark));
@@ -29,9 +29,12 @@ $sub_nav_topbottom_padding: 15px;
   width: 100%;
   background: $main_nav_color_default;
   ul {
-    padding: 20px;
+    margin: 0;
     display:block;
-    width: 100%; }}
+    width: 100%;
+    top: 0;
+    li {
+      margin: 0;} }}
 
 #sub_nav {
   background-color: $sub_nav_gradient_light;
@@ -41,6 +44,7 @@ $sub_nav_topbottom_padding: 15px;
   ul {
     @extend .normal;
     padding-left: 0;
+    top: 0;
     li {
       position:relative;
       padding: 0;
@@ -103,7 +107,7 @@ $sub_nav_topbottom_padding: 15px;
 
 
 #footer {
-  padding: 20px;
+  padding: 18px;
   .inner_footer {
     $radius: 3px;
     @include border-radius($radius);
@@ -111,7 +115,7 @@ $sub_nav_topbottom_padding: 15px;
     @include box-shadow(rgba(#555, 1) 0 0 1px 1px inset);}
     
   &.light .inner_footer {
-    padding: 20px;
+    padding: 18px;
   }
   
   .left_links {

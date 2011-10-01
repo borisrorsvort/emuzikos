@@ -1,75 +1,29 @@
-@import "colors";
-@import "base";
+$baseline: 1.5;
+$basefont: 13px; 
 
-$line: 16;
-$column: 100% / 18;
-$font-size: 12;
-$em: $font-size * 1;
+@import "baseline";
+@include baseline-base-defaults;
+@include baseline-type;
 
-body {
-  font-size: $font-size / 16 * 1em;
-  line-height: #{$line / $em}em;
+
+// Customization from Baseline
+
+article, aside, header, hgroup, nav, section, footer {
+  float:none;
 }
-
-.small {
-  /* 13px / 18px */
-  font-size: #{($font-size*0.8125) / $em}em;
-  line-height: ($line*0.75) / ($font-size*0.8125) * 1em;
-}
-
-.normal, h4, h3 {
-  /* 16px / 24px */
-  font-size: #{$font-size / $em}em;
-  line-height: #{$line / $em}em; /* 24 */
-}
-
-.large, h2, h1 {
-  /* 26 / 36px */
-  font-size: #{18 / $em}em;
-  line-height: ($line*1.5) / 26 * 1em;
-}
-
-.huge {
-  /* 42px / 48px */
-  font-size: #{26 / $em}em;
-  line-height: ($line*2) / 42 * 1em;
-}
-
-.massive {
-  /* 68px / 72px */
-  font-size: #{42 / $em}em;
-  line-height: ($line*3) / 68 * 1em;
-}
-
-
-/*HEADINGS
--------------------------------------------------------- */
-
-h1, h2, h3, h4, h5, h6 {
-  @include inset(#fff);
-}
-
-h1 {
-  @extend .huge;
-  margin: 0 0 (24/36*1em);
+li {
+  margin-bottom: 18px;
 }
 h2 {
-  margin-bottom: 12 / 26*1em;
+  font-weight:normal;
 }
-
 h3 {
-  font-weight:bold;
-  margin: #{24 / $em}em 0 #{18 / $em}em;
+  margin-bottom: 18px;
+  color: #999;
 }
-h4 {
-  font-weight:bold;
+p + p {
+  text-indent: 0;
 }
 p {
-  margin-bottom: #{24 / $em}em;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-p:last-child {
-  margin-bottom: 0;
+  padding-bottom: 18px;
 }

@@ -19,11 +19,11 @@
 
 #inner_content {
   background:#efefef;
-  padding: 20px; /* for non mobiel version*/
+  padding: 18px; /* for non mobiel version*/
 }
 #messages.index {
   #inner_content {
-    padding: 0 0 20px 0;
+    padding: 0 0 18px 0;
     .button.delete {
       margin-left: 10px;
     }
@@ -42,19 +42,13 @@
     border-right: 1px solid #424242;
     position:relative;
     width: 33%;
-    
     &.icon-user a {
       background-position: 13px -88px; }                      
     &.icon-messages a {    
       background-position: 13px -38px; }                      
     &.icon-search a{       
       background-position: 13px 11px; }
-/*      &.icon-user a {
-        background-position: 20px -85px; }                      
-      &.icon-messages a {    
-        background-position: 20px -35px; }                      
-      &.icon-search a{       
-        background-position: 20px 15px; }*/
+      
     a {
      @include inset(#333);
      color:#bababa;
@@ -76,7 +70,7 @@
    @include css-arrow("bottom",#3A3A3A, $sub_nav_gradient_light, $size );
    position:absolute;
    left: 45%;
-   top: 41px - $size; }
+   top: 43px - $size; }
 
 .message_count {
    @include border-radius(12px);
@@ -140,7 +134,7 @@
       display:block; }
     .tag_list {
       margin: 0;
-      font-size: #{($font-size*0.8125) / $em}em;
+      font-size: $basefont / 1.2;
     }
     .section {
       padding: 10px;
@@ -166,7 +160,8 @@
         /*text-align:center;*/
         border-top: 1px solid #dddddd;
         span {
-          font-size: #{($font-size*0.8125) / $em}em;
+          
+          font-size: $basefont / 1.2;
           background: none;
           border: 1px solid #ddd;
           color: lighten(#666, 10%);
@@ -222,11 +217,11 @@
   @include white_box_w_shadow;
   padding: 2%;
   width: 100% - $profile_picture_border_width * 2;
-  margin-bottom: 20px;}
+  margin-bottom: 18px;}
   
 .looking_for {
-  @extend .normal;
-  margin-top: #{$line / $em}em;
+  //@extend .normal;
+  margin: #{$baseline}em 0 #{$baseline / 4}em;
   text-transform:lowercase;
   color: $blue_basic;
   font-weight:bold;
@@ -237,9 +232,8 @@ h1.username {
   display:inline; }
   
 .location_infos {
-  @extend .small;
   color: #999;
-  margin: 10px 0;
+  margin: #{$baseline}em 0;
   display: block; }
 
 .spread {
@@ -248,7 +242,7 @@ h1.username {
     margin-right: 10px; }}
     
 .tag_list {
-  margin: 10px 0 20px;
+  margin: 10px 0 18px;
   span {
     padding: 0px 10px;
     background-color: $blue_basic;
@@ -267,14 +261,14 @@ h1.username {
   .avatar {
     margin: 0 10px 10px 0;
   }
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 /* CONTACT LIST*/
 
 #users.contacts {
   .actions {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 }
 
@@ -288,7 +282,7 @@ h1.username {
     padding: 15px;
     font-size: 11px;
     @include inset(#fff);
-    padding: 20px;
+    padding: 18px;
     line-height: 1.50em;
     background-color:#fff;
     @include box-shadow(#666, 0, 0, 3px, 1px inset);
@@ -355,7 +349,7 @@ h1.username {
 }
 
 .message {
-  @extend .small;
+  font-size: $basefont;
   display:block;
   background-color:#FFF;
   border-bottom: 1px solid #ccc;
@@ -378,9 +372,10 @@ h1.username {
     }
   }
   .message_sender {
+    font-size: $basefont;
     color: $blue_basic;
     font-weight:bold;
-    margin-bottom: 9px;
+    margin:0 0 9px;
   }
   .checker {
     float: left;

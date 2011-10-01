@@ -12,7 +12,7 @@
       = render "/layouts/top_nav"
     .clear
     
-  #container{:class => @current_user ? "with_sidebar" : nil}
+  #container
       
     = render "/layouts/main_nav"  if @current_user
 

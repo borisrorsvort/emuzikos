@@ -21,229 +21,11 @@ body {
   background: #333333 url(/images/backgrounds/bg-footer.gif);
   font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
   font-size: 100%;
+  line-height: 1.5;
   color: #666;
 }
 
-/* line 20, ../../../app/stylesheets/_base.scss */
-html.js img,
-html.js object,
-html.iem7 img,
-html.iem7 object,
-html.ie6 img,
-html.ie6 object,
-html.ie7 img,
-html.ie7 object,
-html.ie8 img,
-html.ie8 object {
-  max-width: 100%;
-}
-
-/* line 25, ../../../app/stylesheets/_base.scss */
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-/* line 32, ../../../app/stylesheets/_base.scss */
-sup {
-  top: -0.5em;
-}
-
-/* line 35, ../../../app/stylesheets/_base.scss */
-sub {
-  bottom: -0.25em;
-}
-
-/* line 38, ../../../app/stylesheets/_base.scss */
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-/* line 43, ../../../app/stylesheets/_base.scss */
-b, strong {
-  font-weight: bold;
-}
-
-/* line 46, ../../../app/stylesheets/_base.scss */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/* line 49, ../../../app/stylesheets/_base.scss */
-input, textarea, button, select {
-  margin: 0;
-  font-size: 100%;
-  line-height: normal;
-  vertical-align: baseline;
-}
-
-/* line 55, ../../../app/stylesheets/_base.scss */
-img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-}
-
-/* line 60, ../../../app/stylesheets/_base.scss */
-a {
-  color: #157ebe;
-}
-/* line 62, ../../../app/stylesheets/_base.scss */
-a img {
-  border: none;
-}
-
-/* line 65, ../../../app/stylesheets/_base.scss */
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
-
-/* line 70, ../../../app/stylesheets/_base.scss */
-.wide {
-  width: 100%;
-}
-
-/* line 73, ../../../app/stylesheets/_base.scss */
-.unread_bullet {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1em;
-}
-
-/* line 78, ../../../app/stylesheets/_base.scss */
-.centered, .signup_button {
-  margin: 0 auto;
-}
-
-/* line 81, ../../../app/stylesheets/_base.scss */
-.hidden {
-  display: none;
-}
-
-/* line 84, ../../../app/stylesheets/_base.scss */
-b {
-  font-weight: bold;
-}
-
-/* line 87, ../../../app/stylesheets/_base.scss */
-strong {
-  font-weight: bold;
-}
-
-/* FOLDED CORNER */
-/* CSS ARROWS
----------------------------------------- */
-/* ANIMATION
----------------------------------------- */
-@-webkit-keyframes fadeIn {
-  /* line 169, ../../../app/stylesheets/_base.scss */
-  0% {
-    opacity: 0;
-  }
-
-  /* line 170, ../../../app/stylesheets/_base.scss */
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes slidingFromLeft {
-  /* line 174, ../../../app/stylesheets/_base.scss */
-  0% {
-    left: -1440px;
-    opacity: 0;
-  }
-
-  /* line 175, ../../../app/stylesheets/_base.scss */
-  50% {
-    left: 50px;
-    opacity: 0.5;
-  }
-
-  /* line 176, ../../../app/stylesheets/_base.scss */
-  60% {
-    left: 50px;
-    opacity: 0.5;
-  }
-
-  /* line 177, ../../../app/stylesheets/_base.scss */
-  100% {
-    left: 0;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes movingarrow {
-  /* line 180, ../../../app/stylesheets/_base.scss */
-  0% {
-    top: -200px;
-    opacity: 0;
-  }
-
-  /* line 181, ../../../app/stylesheets/_base.scss */
-  50% {
-    top: 20px;
-    opacity: 0.5;
-  }
-
-  /* line 182, ../../../app/stylesheets/_base.scss */
-  60% {
-    top: 20px;
-    opacity: 0.5;
-  }
-
-  /* line 183, ../../../app/stylesheets/_base.scss */
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes opacity {
-  /* line 186, ../../../app/stylesheets/_base.scss */
-  0% {
-    opacity: 0;
-  }
-
-  /* line 187, ../../../app/stylesheets/_base.scss */
-  100% {
-    opacity: 1;
-  }
-}
-
-/*VARIABLES*/
-/* TABLES
----------------------------------------- */
-/*$table-color-odd: #f3f7fb;*/
-/* MAIN NAV */
-/* SUBNAV COLORS
----------------------------------------- */
-/* NOTICES
----------------------------------------- */
-/* PAGINATION
----------------------------------------- */
-/* line 1, ../../../app/stylesheets/_base.scss */
-html {
-  font-size: 100%;
-  min-height: 101%;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-/* line 7, ../../../app/stylesheets/_base.scss */
-body {
-  background: #333333 url(/images/backgrounds/bg-footer.gif);
-  font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
-  font-size: 100%;
-  color: #666;
-}
-
-/* line 20, ../../../app/stylesheets/_base.scss */
+/* line 21, ../../../app/stylesheets/_base.scss */
 html.js img, html.js object,
 html.iem7 img,
 html.iem7 object,
@@ -256,7 +38,7 @@ html.ie8 object {
   max-width: 100%;
 }
 
-/* line 25, ../../../app/stylesheets/_base.scss */
+/* line 26, ../../../app/stylesheets/_base.scss */
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -264,34 +46,34 @@ sub, sup {
   vertical-align: baseline;
 }
 
-/* line 32, ../../../app/stylesheets/_base.scss */
+/* line 33, ../../../app/stylesheets/_base.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 35, ../../../app/stylesheets/_base.scss */
+/* line 36, ../../../app/stylesheets/_base.scss */
 sub {
   bottom: -0.25em;
 }
 
-/* line 38, ../../../app/stylesheets/_base.scss */
+/* line 39, ../../../app/stylesheets/_base.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
-/* line 43, ../../../app/stylesheets/_base.scss */
+/* line 44, ../../../app/stylesheets/_base.scss */
 b, strong {
   font-weight: bold;
 }
 
-/* line 46, ../../../app/stylesheets/_base.scss */
+/* line 47, ../../../app/stylesheets/_base.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
-/* line 49, ../../../app/stylesheets/_base.scss */
+/* line 50, ../../../app/stylesheets/_base.scss */
 input, textarea, button, select {
   margin: 0;
   font-size: 100%;
@@ -299,56 +81,56 @@ input, textarea, button, select {
   vertical-align: baseline;
 }
 
-/* line 55, ../../../app/stylesheets/_base.scss */
+/* line 56, ../../../app/stylesheets/_base.scss */
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 60, ../../../app/stylesheets/_base.scss */
+/* line 61, ../../../app/stylesheets/_base.scss */
 a {
   color: #157ebe;
 }
-/* line 62, ../../../app/stylesheets/_base.scss */
+/* line 63, ../../../app/stylesheets/_base.scss */
 a img {
   border: none;
 }
 
-/* line 65, ../../../app/stylesheets/_base.scss */
+/* line 66, ../../../app/stylesheets/_base.scss */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 70, ../../../app/stylesheets/_base.scss */
+/* line 71, ../../../app/stylesheets/_base.scss */
 .wide {
   width: 100%;
 }
 
-/* line 73, ../../../app/stylesheets/_base.scss */
+/* line 74, ../../../app/stylesheets/_base.scss */
 .unread_bullet {
   font-size: 20px;
   font-weight: bold;
   line-height: 1em;
 }
 
-/* line 78, ../../../app/stylesheets/_base.scss */
+/* line 79, ../../../app/stylesheets/_base.scss */
 .centered, .signup_button {
   margin: 0 auto;
 }
 
-/* line 81, ../../../app/stylesheets/_base.scss */
+/* line 82, ../../../app/stylesheets/_base.scss */
 .hidden {
   display: none;
 }
 
-/* line 84, ../../../app/stylesheets/_base.scss */
+/* line 85, ../../../app/stylesheets/_base.scss */
 b {
   font-weight: bold;
 }
 
-/* line 87, ../../../app/stylesheets/_base.scss */
+/* line 88, ../../../app/stylesheets/_base.scss */
 strong {
   font-weight: bold;
 }
@@ -359,37 +141,37 @@ strong {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 169, ../../../app/stylesheets/_base.scss */
+  /* line 170, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 170, ../../../app/stylesheets/_base.scss */
+  /* line 171, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 174, ../../../app/stylesheets/_base.scss */
+  /* line 175, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 175, ../../../app/stylesheets/_base.scss */
+  /* line 176, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 176, ../../../app/stylesheets/_base.scss */
+  /* line 177, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 177, ../../../app/stylesheets/_base.scss */
+  /* line 178, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -397,25 +179,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 180, ../../../app/stylesheets/_base.scss */
+  /* line 181, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 181, ../../../app/stylesheets/_base.scss */
+  /* line 182, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 182, ../../../app/stylesheets/_base.scss */
+  /* line 183, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 183, ../../../app/stylesheets/_base.scss */
+  /* line 184, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -423,99 +205,353 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 186, ../../../app/stylesheets/_base.scss */
+  /* line 187, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 187, ../../../app/stylesheets/_base.scss */
+  /* line 188, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 /*VARIABLES*/
-/* line 9, ../../../app/stylesheets/_typography.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+}
+
+/* line 19, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+h4, h5, h6, b, strong, caption, th, thead, dt, legend {
+  font-weight: bold;
+}
+
+/* line 21, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+cite, dfn, em, i {
+  font-style: italic;
+}
+
+/* line 23, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+code, kbd, samp, pre, tt, var {
+  font-family: mono-space, monospace;
+}
+
+/* line 25, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+h1, h2, h3, h4, h5, h6 {
+  word-spacing: -0.125em;
+}
+
+/* line 27, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+p {
+  word-spacing: 0.125em;
+  hyphenate: auto;
+  hyphenate-lines: 3;
+}
+
+/* line 31, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+p + p {
+  text-indent: 1.5em;
+}
+/* line 33, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+p + p.no-indent {
+  text-indent: 0;
+}
+
+/* line 35, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+pre {
+  white-space: pre;
+}
+
+/* line 37, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+del {
+  text-decoration: line-through;
+}
+
+/* line 39, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+mark {
+  background: rgba(255, 255, 0, 0.4);
+  padding: 0 0.25em;
+}
+
+/* line 42, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+ins {
+  color: red;
+}
+
+/* line 44, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+small, sup, sub {
+  font-size: 80%;
+}
+
+/* line 46, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+big {
+  font-size: 125%;
+  line-height: 80%;
+}
+
+/* line 49, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+abbr, acronym {
+  font-size: 85%;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* line 53, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+abbr[title], acronym[title], dfn[title] {
+  border-bottom: 1px dotted black;
+  cursor: help;
+}
+
+/* line 56, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+sup, sub {
+  line-height: 0;
+}
+
+/* line 58, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+sup {
+  vertical-align: super;
+}
+
+/* line 60, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+sub {
+  vertical-align: sub;
+}
+
+/* line 62, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+blockquote {
+  padding: 1.5em;
+}
+
+/* line 64, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+hr {
+  border: none;
+  background: #dddddd;
+  width: 100%;
+}
+
+/* line 68, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+ul, ol {
+  margin-left: 1.5em;
+}
+
+/* line 70, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+ul {
+  list-style: disc outside;
+}
+
+/* line 72, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+ol {
+  list-style: decimal outside;
+}
+
+/* line 74, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+input, select, button {
+  cursor: pointer;
+}
+
+/* line 76, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+table {
+  font: inherit;
+  width: 100%;
+}
+
+/* line 80, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+article, aside, header, hgroup, nav, section, footer {
+  float: left;
+  display: block;
+}
+
+/* line 83, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+figure {
+  display: block;
+}
+
+/* line 85, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+.debug {
+  outline: solid gold 1px;
+}
+
+/* line 87, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_base.sass */
+.debug-background {
+  background: rgba(255, 215, 0, 0.2) !important;
+}
+
+/* line 2, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
 body {
-  font-size: 0.75em;
-  line-height: 1.333em;
+  font-size: 75%;
+  line-height: 1.5;
 }
 
-/* line 14, ../../../app/stylesheets/_typography.scss */
-.small {
-  /* 13px / 18px */
-  font-size: 0.813em;
-  line-height: 1.231em;
+/* line 15, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
 }
 
-/* line 20, ../../../app/stylesheets/_typography.scss */
-.normal, h4, h3 {
-  /* 16px / 24px */
-  font-size: 1em;
-  line-height: 1.333em;
-  /* 24 */
+/* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h1, h2 {
+  line-height: 36px;
+  margin-bottom: 18px;
+}
+
+/* line 20, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h1, h2, h3, h4 {
+  margin-top: 18px;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h3, h4, h5, h6 {
+  line-height: 18px;
+}
+
+/* line 24, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h1 {
+  font-size: 36px;
+  top: 5px;
+}
+
+/* line 27, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h2 {
+  font-size: 28px;
+  top: 8px;
+}
+
+/* line 30, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h3 {
+  font-size: 22px;
+  top: 1px;
+}
+
+/* line 33, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h4 {
+  font-size: 18px;
+  top: 2px;
+}
+
+/* line 36, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h5 {
+  font-size: 15px;
+  top: 4px;
+}
+
+/* line 39, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h6 {
+  font-size: 13px;
+  top: 5px;
+}
+
+/* line 42, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+h1:first-child, h2:first-child, h3:first-child, h4:first-child {
+  margin-top: 0;
+}
+
+/* line 44, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+p, pre, address {
+  font-size: 13px;
+  line-height: 18px;
+  position: relative;
+  top: 5px;
+}
+
+/* line 49, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+abbr, code, kbd, samp, small, var {
+  line-height: 15px;
+}
+
+/* line 51, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+ul, ol, dl, dialog {
+  font-size: 13px;
+  line-height: 18px;
+  position: relative;
+  top: 5px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+/* line 59, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+li ul, li ol {
+  top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 63, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+ul ul, ol ol {
+  top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 68, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+li h1, li h2, li h3, li h4, li h5, li h6, li p {
+  top: 0;
+}
+
+/* line 70, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+form, legend, label {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 73, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+legend {
+  position: relative;
+  top: 5px;
+}
+
+/* line 76, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+input, textarea {
+  font-size: 12px;
+}
+
+/* line 78, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+table {
+  font-size: 13px;
+}
+
+/* line 80, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+caption {
+  font-size: 13px;
+  line-height: 18px;
+  position: relative;
+}
+
+/* line 84, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-baseline-0.4.1/lib/baseline/stylesheets/baseline/modules/_type.sass */
+hr {
+  position: relative;
+  height: 4px;
+  margin: 18px 0 14px 0;
+}
+
+/* line 10, ../../../app/stylesheets/_typography.scss */
+article, aside, header, hgroup, nav, section, footer {
+  float: none;
+}
+
+/* line 13, ../../../app/stylesheets/_typography.scss */
+li {
+  margin-bottom: 18px;
+}
+
+/* line 16, ../../../app/stylesheets/_typography.scss */
+h2 {
+  font-weight: normal;
+}
+
+/* line 19, ../../../app/stylesheets/_typography.scss */
+h3 {
+  margin-bottom: 18px;
+  color: #999;
+}
+
+/* line 23, ../../../app/stylesheets/_typography.scss */
+p + p {
+  text-indent: 0;
 }
 
 /* line 26, ../../../app/stylesheets/_typography.scss */
-.large, h2, h1 {
-  /* 26 / 36px */
-  font-size: 1.5em;
-  line-height: 0.923em;
-}
-
-/* line 32, ../../../app/stylesheets/_typography.scss */
-.huge, h1 {
-  /* 42px / 48px */
-  font-size: 2.167em;
-  line-height: 0.762em;
-}
-
-/* line 38, ../../../app/stylesheets/_typography.scss */
-.massive {
-  /* 68px / 72px */
-  font-size: 3.5em;
-  line-height: 0.706em;
-}
-
-/*HEADINGS
--------------------------------------------------------- */
-/* line 48, ../../../app/stylesheets/_typography.scss */
-h1, h2, h3, h4, h5, h6 {
-  text-shadow: white 0 1px 1px;
-}
-
-/* line 52, ../../../app/stylesheets/_typography.scss */
-h1 {
-  margin: 0 0 0.667em;
-}
-
-/* line 56, ../../../app/stylesheets/_typography.scss */
-h2 {
-  margin-bottom: 0.462em;
-}
-
-/* line 60, ../../../app/stylesheets/_typography.scss */
-h3 {
-  font-weight: bold;
-  margin: 2em 0 1.5em;
-}
-
-/* line 64, ../../../app/stylesheets/_typography.scss */
-h4 {
-  font-weight: bold;
-}
-
-/* line 67, ../../../app/stylesheets/_typography.scss */
 p {
-  margin-bottom: 2em;
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  hyphens: auto;
-}
-
-/* line 73, ../../../app/stylesheets/_typography.scss */
-p:last-child {
-  margin-bottom: 0;
+  padding-bottom: 18px;
 }
 
 @-webkit-keyframes scale_from_small {
@@ -624,7 +660,7 @@ h1#main_title {
 /* line 56, ../../../app/stylesheets/homepage.scss */
 h2.moto {
   font-size: 2em;
-  line-height: 1.5em;
+  /*line-height: #{ 18/ $em}em;*/
   color: #7bb3cf;
   font-weight: normal;
   text-shadow: black 0 1px 1px;

@@ -11,8 +11,8 @@ form {
 
 .field {
   display       : block;
-  margin-bottom : #{24 / $em}em;
-  padding: #{24 / $em}em ;
+  margin-bottom :#{$baseline}em;
+  padding: #{$baseline}em ;
   @include white_box;
   i {
     display:block;}}
@@ -21,12 +21,6 @@ label {
   font-weight   : bold;
   display       : block; }
   
-.required {
-  display       : block;
-  font-style    : italic;
-  opacity       : 0.6;
-  margin-bottom : 5px; }
-  
 .inline {
   display       : inline; }
   
@@ -34,7 +28,7 @@ input, textarea {
   @include border-radius(3px);
   background    : #fff;
   border        : 1px solid #ccc;
-  padding       : 5px;
+  padding       :  #{$baseline}em ;
   max-width: 95%;
   &:focus, &:active {
     @include single-box-shadow(#666, 0, 0, 3px);
@@ -59,7 +53,7 @@ input, textarea {
   }
   .field {
     float       : left;
-    height      : 40px;
+    height      : 32px;
     margin-bottom: 0px;
     padding: 0;
     background: none;
