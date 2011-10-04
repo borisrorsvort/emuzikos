@@ -14,3 +14,4 @@ I18n.backend.store_translations :en, :messages_count => {
 
 # Set default locale for country_select
 Carmen.default_locale = :en
+

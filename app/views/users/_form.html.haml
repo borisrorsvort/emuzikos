@@ -22,23 +22,23 @@
   %h2= t(:'users.musician_infos')
 
   .field
-    %p
+    %p.checkbox_set
       = f.label :visible, t(:'activerecord.attributes.user.visible')
       %br
       Being visible, you still need to complete your profile to appear in search results. Being invisible will hide you from any search result.
-      .checkbox_set
-        = f.label "visible_true", t(:"users.visible")
-        = radio_button(:user, :visible, true)
-        = f.label "visible_false", t(:"users.invisible")
-        = radio_button(:user, :visible, false)
+      %br
+      = f.label "visible_true", t(:"users.visible")
+      = radio_button(:user, :visible, true)
+      = f.label "visible_false", t(:"users.invisible")
+      = radio_button(:user, :visible, false)
         
   
-    %p
+    %p.checkbox_set
       = f.label :user_type, t(:'activerecord.attributes.user.user_type')
-      .checkbox_set
-        - User::USER_TYPES.each do |user_type|
-          = radio_button(:user, :user_type, user_type)
-          = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
+     
+      - User::USER_TYPES.each do |user_type|
+        = radio_button(:user, :user_type, user_type)
+        = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
     %p
       = f.label :instruments, t(:'activerecord.attributes.user.instruments')
       -Instrument.all.in_groups_of(4, false) do |instruments|
@@ -54,12 +54,12 @@
         - User::MUSICAL_GENRES.each do |genre|
           = options_for_select([[t(:"musical_genres.#{genre}"), genre]], :selected => ( @user.genre))
 
-    %p
+    %p.checkbox_set
       = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
-      .checkbox_set
-        - User::USER_TYPES.each do |searching_for|
-          = radio_button(:user, :searching_for, searching_for)
-          = f.label "searching_for_" + searching_for, t(:"users.types.#{searching_for}")     
+      
+      - User::USER_TYPES.each do |searching_for|
+        = radio_button(:user, :searching_for, searching_for)
+        = f.label "searching_for_" + searching_for, t(:"users.types.#{searching_for}")     
 
     %p
       = f.label :references, t(:'activerecord.attributes.user.references')

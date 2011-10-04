@@ -95,6 +95,7 @@
   a {
     text-align:center;
     display:block;
+    font-size: $basefont;
     float:left;
     width: 33%;
     margin: 0;
@@ -130,6 +131,7 @@
     @include border-radius(5px);
     text-decoration:none;
     display:block;
+    font-size:$basefont;
     .row {
       display:block; }
     .tag_list {
@@ -160,7 +162,6 @@
         /*text-align:center;*/
         border-top: 1px solid #dddddd;
         span {
-          
           font-size: $basefont / 1.2;
           background: none;
           border: 1px solid #ddd;
@@ -221,7 +222,7 @@
   
 .looking_for {
   //@extend .normal;
-  margin: #{$baseline}em 0 #{$baseline / 4}em;
+  margin: $baseline 0 #{$baseline / 4};
   text-transform:lowercase;
   color: $blue_basic;
   font-weight:bold;
@@ -233,15 +234,17 @@ h1.username {
   
 .location_infos {
   color: #999;
-  margin: #{$baseline}em 0;
+  margin: $baseline 0;
   display: block; }
 
 .spread {
+  margin-bottom: $baseline;
   .left {
     float:left;
     margin-right: 10px; }}
     
 .tag_list {
+  font-size: $basefont / 1.2;
   margin: 10px 0 18px;
   span {
     padding: 0px 10px;

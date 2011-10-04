@@ -32,8 +32,7 @@
         %p Create your profile in 60s and start browsing, sending messages and share your musician profile around you.
         %h4 We care about privacy  
         %p Nobody will ever see your email when you send messages, ever.
-    .columns
-      = render :partial => "shared/facebook_like_box"            
+          
     .columns.home_testimonials
       .inner_column
         %h3 Latest musicians testimonials
@@ -52,5 +51,7 @@
                     = testimonial.created_at.strftime('%b %d, %Y')
                     = t(:'common.by')
                     = testimonial.user.username
-                  = testimonial.body
+                  = truncate(testimonial.body, :length => 123, :omission =>"...")
+    .columns
+      = render :partial => "shared/facebook_like_box"
     .clear  

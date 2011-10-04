@@ -11,13 +11,14 @@ form {
 
 .field {
   display       : block;
-  margin-bottom :#{$baseline}em;
-  padding: #{$baseline}em ;
+  margin-bottom :$baseline;
+  padding: $baseline ;
   @include white_box;
   i {
     display:block;}}
 
 label {
+  margin: #{$baseline / 2} 0 0;
   font-weight   : bold;
   display       : block; }
   
@@ -28,7 +29,7 @@ input, textarea {
   @include border-radius(3px);
   background    : #fff;
   border        : 1px solid #ccc;
-  padding       :  #{$baseline}em ;
+  padding       :  10px ;
   max-width: 95%;
   &:focus, &:active {
     @include single-box-shadow(#666, 0, 0, 3px);
@@ -96,7 +97,7 @@ input, textarea {
       .shared_links {
         margin-top: 20px;
         .field {
-          margin-bottom: 10px;
+          margin-bottom: $baseline;
         }
       }
     }

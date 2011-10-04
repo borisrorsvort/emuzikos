@@ -1,29 +1,102 @@
-$baseline: 1.5;
 $basefont: 13px; 
+$baseline: 18px ;
 
-@import "baseline";
-@include baseline-base-defaults;
-@include baseline-type;
+body {
+  line-height: $baseline;
+}
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  @include inset(#fff); }
 
+h1, h2 {
+  margin-bottom: $baseline * 2; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height:  120%; }
+
+h1 {
+  font-size: 36px;
+  top: 5px; }
+
+h2 {
+  font-size: 28px;
+  top: 8px; }
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: #999; }
+
+h4 {
+  font-size: 15px;
+  margin-top: $baseline / 2;
+  margin-bottom: $baseline / 2; }
+
+h5 {
+  font-size: $basefont;
+  font-weight:bold;}
+
+h6 {
+  font-size: $basefont; }
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child {
+  margin-top: 0; }
+
+p, pre, address {
+  font-size: 13px;
+  line-height: $baseline;
+  position: relative; }
+
+abbr, code, kbd, samp, small, var {
+  line-height: 15px; }
+
+ul, ol, dl, dialog {
+  font-size: $basefont;
+  line-height: $baseline;
+  position: relative;
+  margin: $baseline 0 $baseline; }
+
+li ul, li ol {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+ul ul, ol ol {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+form, legend, label {
+  font-size: $basefont;
+  line-height: $baseline; }
+
+legend {
+  position: relative;
+  top: 5px; }
+
+input, textarea {
+  font-size: $basefont; }
+
+table {
+  font-size: $basefont; }
+
+caption {
+  font-size: $basefont;
+  line-height: $baseline;
+  position: relative; }
+
+hr {
+  position: relative;
+  height: 4px;
+  margin: 18px 0 14px 0; }
 
 // Customization from Baseline
 
-article, aside, header, hgroup, nav, section, footer {
-  float:none;
-}
 li {
-  margin-bottom: 18px;
+  margin-bottom: $baseline;
 }
 h2 {
   font-weight:normal;
 }
-h3 {
-  margin-bottom: 18px;
-  color: #999;
-}
-p + p {
-  text-indent: 0;
-}
 p {
-  padding-bottom: 18px;
+  font-size: $basefont;
+  padding-bottom: $baseline;
 }

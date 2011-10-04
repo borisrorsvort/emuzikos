@@ -5,7 +5,6 @@
 @import "compass/utilities";
 @import "typography";
 
-
 @-webkit-keyframes scale_from_small {
   0% {
     @include scale(0);
@@ -173,9 +172,7 @@ h2.moto {
   ul {
     list-style: none;
     padding-left: 0;
-    margin-top:2em;
-    font-size: 10px;
-    line-height: 1.48em;
+    margin-top: 2em;
     li {
       margin-bottom: 15px;
       display:block;
@@ -187,7 +184,8 @@ h2.moto {
       @include border-radius(5px);
 
       .text {
-        font-size: 11px;
+        font-size: 12px;
+        opacity: 0.8;
         padding-left: 50px;
       }
       .author {

@@ -107,7 +107,9 @@ $sub_nav_topbottom_padding: 18px;
 
 
 #footer {
-  padding: 18px;
+  padding: $baseline;
+  font-size: $basefont;
+  
   .inner_footer {
     $radius: 3px;
     @include border-radius($radius);
@@ -126,6 +128,7 @@ $sub_nav_topbottom_padding: 18px;
   }
   a {
     margin-right: 20px;
+    
     color:#666;
     @include hover-link;
   }
