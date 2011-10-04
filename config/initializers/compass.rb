@@ -1,7 +1,9 @@
 unless Rails.env.development?
   require 'fileutils'
   
-  Encoding.default_encoding = 'utf-8'
+  if Rails.env == "development" 
+    Encoding.default_encoding = 'utf-8'
+  end
   
   output_folder = Rails.root.join("tmp", "jammit", "assets")
   FileUtils.mkdir_p(output_folder)
