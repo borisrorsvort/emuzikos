@@ -1,15 +1,15 @@
 #footer.light 
   .inner_footer
     .left_links
-      = link_to t(:'common.home'), root_path
+      = link_to t(:'common.home'), root_path, :rel => "nofollow"
       -if current_user
-        =link_to t(:'menu.testimonials'), testimonials_path
-        =link_to t(:'menu.logout'), destroy_user_session_path, :class => "logout"
+        =link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
+        =link_to t(:'menu.logout'), destroy_user_session_path, :class => "logout", :rel => "nofollow"
 
       -else
-        =link_to t(:'menu.testimonials'), testimonials_path
-        =link_to t(:'menu.register'), new_user_registration_path
-        =link_to t(:'menu.login'), new_user_session_path
+        =link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
+        =link_to t(:'menu.register'), new_user_registration_path, :rel => "nofollow"
+        =link_to t(:'menu.login'), new_user_session_path, :rel => "nofollow"
       
     .copyright
       Emuzikos #{Time.now.year} | #{ t(:'common.created_by')} #{ link_to "Boris Rorsvort", "http://www.rorsvort.com", :rel => "external"}

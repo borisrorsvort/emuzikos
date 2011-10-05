@@ -18,6 +18,18 @@ h1 {
   font-size: 28px;
   top: 5px; }
 
+// Specific color for dark bg
+
+#pages {
+  h1 {
+    @include inset(#000);
+    color:#fff;
+  }
+  strong {
+    color:#999;
+  }
+}
+
 h2 {
   font-size: 22px;
   top: 8px; }
@@ -56,9 +68,18 @@ ul, ol, dl, dialog {
   line-height: $baseline;
   position: relative;
   margin: $baseline 0 $baseline; }
-
+      
+ul {
+  list-style: disc outside 
+}
+      
+ol {
+  list-style: decimal outside
+}
+      
 li ul, li ol {
-  margin-top: 0;
+  margin-left: $baseline;
+  margin-top: $baseline;
   margin-bottom: 0; }
 
 ul ul, ol ol {
@@ -67,7 +88,9 @@ ul ul, ol ol {
 
 form, legend, label {
   font-size: $basefont;
-  line-height: $baseline; }
+  line-height: $baseline;
+  p {
+    text-indent: 0  !important; }}
 
 legend {
   position: relative;
@@ -100,4 +123,10 @@ h2 {
 p {
   font-size: $basefont;
   padding-bottom: $baseline;
+}
+p+p {
+  text-indent: 1.5em;
+  &.no-indent {
+    text-indent: 0;  
+  }
 }
