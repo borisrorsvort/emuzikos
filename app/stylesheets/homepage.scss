@@ -60,6 +60,9 @@ h2.moto {
   @include text-shadow(#000, 0, 1px, 1px);
   -webkit-animation: scale_to_big 1s ;
   -moz-animation: scale_to_big 1s;
+  strong {
+    color:#7bb3cf  !important;
+  }
 }
 
 #music_notes {
