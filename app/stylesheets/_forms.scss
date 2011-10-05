@@ -61,17 +61,17 @@ input, textarea {
     border: none;
     input {
       &#search_zip_contains {
-        padding: 5px 8px;
+        padding: 4px 8px;
         margin-top: 3px;
       }
     }
     .selector {
-      width: 154px;
+      width: 110px;
+      select {
+        width: 110px;
+      }
       span {
-        width: 131px;
-        select {
-          width: 140px;
-        }
+        width: 90px;
       }
     }
   }

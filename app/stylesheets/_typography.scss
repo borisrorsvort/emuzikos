@@ -15,16 +15,17 @@ h1, h2, h3, h4, h5, h6 {
   line-height:  120%; }
 
 h1 {
-  font-size: 36px;
+  font-size: 28px;
   top: 5px; }
 
 h2 {
-  font-size: 28px;
+  font-size: 22px;
   top: 8px; }
 
 h3 {
-  font-size: 22px;
-  margin-bottom: 18px;
+  font-size: 18px;
+  margin-top: $baseline / 2;
+  margin-bottom: $baseline / 2;
   color: #999; }
 
 h4 {
