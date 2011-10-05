@@ -1,7 +1,7 @@
 = form_for @user, :html => { :multipart => true } do |f|
   = f.error_messages
   
-  %h2= t(:'users.location')
+  %h3= t(:'users.location')
 
   .field
     %p
@@ -11,7 +11,7 @@
       = f.label :country, t(:'activerecord.attributes.user.country')
       = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
   
-  %h2= t(:'users.avatar')
+  %h3= t(:'users.avatar')
   .field
     - if @user.avatar.present?
       .avatar.small
@@ -19,7 +19,7 @@
     = f.file_field :avatar
     .clear
   
-  %h2= t(:'users.musician_infos')
+  %h3= t(:'users.musician_infos')
 
   .field
     %p.checkbox_set

@@ -69,10 +69,13 @@
         padding: .4em 1em .4em 2.1em; }}
   }
 
-
+  #search_submit {
+    position:relative;
+    top: 5px;
+  }
   #users.index #search_form .field  {
-    min-width : 177px;
-    width: 14.285% ;
+    min-width : 140px;
+    width: 140px;
     &#zip {
       width: 11.5%;
       #search_zip {
@@ -83,13 +86,6 @@
       width: 100%; }
     .selector {
       margin: 0;
-      width: 154px;
-      span {
-        width: 131px;
-      }
-      select {
-        width:154px;
-      }
     }
   }
 

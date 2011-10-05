@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @users = @search.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page)    
     @musical_genres = I18n.t(User::MUSICAL_GENRES, :scope => [:musical_genres])
     @instruments = Instrument.all
-    @user_types = I18n.t(User::USER_TYPES, :scope => [:user_types])
+    @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
     
     if request.xhr?
       render :partial => @users
