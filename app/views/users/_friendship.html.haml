@@ -22,7 +22,7 @@
       = t(:'activerecord.attributes.user.instruments')
     .tag_list
       - friendship.friend.instruments.each do |instrument|
-        %span= t(:"instruments.#{instrument}")
+        %span= t(:"instruments.#{instrument.name}")
     
   .clear
 
