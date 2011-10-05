@@ -23,6 +23,8 @@ Emuzikos::Application.routes.draw do
 
   match "about" => "pages#about", :as => :about
   match "terms" => "pages#terms", :as => :terms
+  match "privacy" => "pages#privacy", :as => :privacy
+  
   root :to => "pages#homepage"
   
 end

@@ -1,5 +1,4 @@
 @import "colors";
-
 @import "base";
 @import "compass/css3";
 @import "compass/utilities";
@@ -53,9 +52,8 @@ h1#main_title {
   padding: 16px auto 0;
 }
 h2.moto {
-  font-size: 2em;
-  /*line-height: #{ 18/ $em}em;*/
-  color: #7bb3cf;
+  font-size: $basefont * 2;
+  color: #7bb3cf  !important;
   font-weight:normal;
   @include text-shadow(#000, 0, 1px, 1px);
   -webkit-animation: scale_to_big 1s ;
@@ -64,7 +62,12 @@ h2.moto {
     color:#7bb3cf  !important;
   }
 }
-
+.homepage {
+  h3, h4 {
+  color: #666  !important;
+  @include inset(#fff, "important"); }
+  h4 {
+    margin-bottom: $baseline / 2  !important; }}
 #music_notes {
   background:transparent url('/images/homepage/music-notes.png') center -40px repeat-x;
   top: 0;

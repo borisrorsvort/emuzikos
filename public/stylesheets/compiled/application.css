@@ -320,37 +320,37 @@ strong {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 172, ../../../app/stylesheets/_base.scss */
+  /* line 177, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 173, ../../../app/stylesheets/_base.scss */
+  /* line 178, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 177, ../../../app/stylesheets/_base.scss */
+  /* line 182, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 178, ../../../app/stylesheets/_base.scss */
+  /* line 183, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 179, ../../../app/stylesheets/_base.scss */
+  /* line 184, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 180, ../../../app/stylesheets/_base.scss */
+  /* line 185, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -358,25 +358,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 183, ../../../app/stylesheets/_base.scss */
+  /* line 188, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 184, ../../../app/stylesheets/_base.scss */
+  /* line 189, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 185, ../../../app/stylesheets/_base.scss */
+  /* line 190, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 186, ../../../app/stylesheets/_base.scss */
+  /* line 191, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -384,12 +384,12 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 189, ../../../app/stylesheets/_base.scss */
+  /* line 194, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 190, ../../../app/stylesheets/_base.scss */
+  /* line 195, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -424,22 +424,22 @@ h1 {
 }
 
 /* line 24, ../../../app/stylesheets/_typography.scss */
-#pages h1 {
+#pages h1, #pages h2, #pages h3, #pages h4 {
   text-shadow: black 0 1px 1px;
   color: #fff;
 }
-/* line 28, ../../../app/stylesheets/_typography.scss */
-#pages strong {
-  color: #999;
+/* line 27, ../../../app/stylesheets/_typography.scss */
+#pages h4 {
+  margin-bottom: 0;
 }
 
-/* line 33, ../../../app/stylesheets/_typography.scss */
+/* line 30, ../../../app/stylesheets/_typography.scss */
 h2 {
   font-size: 22px;
   top: 8px;
 }
 
-/* line 37, ../../../app/stylesheets/_typography.scss */
+/* line 34, ../../../app/stylesheets/_typography.scss */
 h3 {
   font-size: 18px;
   margin-top: 9px;
@@ -447,42 +447,42 @@ h3 {
   color: #999;
 }
 
-/* line 43, ../../../app/stylesheets/_typography.scss */
+/* line 40, ../../../app/stylesheets/_typography.scss */
 h4 {
   font-size: 15px;
   margin-top: 9px;
   margin-bottom: 9px;
 }
 
-/* line 48, ../../../app/stylesheets/_typography.scss */
+/* line 45, ../../../app/stylesheets/_typography.scss */
 h5 {
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 52, ../../../app/stylesheets/_typography.scss */
+/* line 49, ../../../app/stylesheets/_typography.scss */
 h6 {
   font-size: 13px;
 }
 
-/* line 55, ../../../app/stylesheets/_typography.scss */
+/* line 52, ../../../app/stylesheets/_typography.scss */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child {
   margin-top: 0;
 }
 
-/* line 58, ../../../app/stylesheets/_typography.scss */
+/* line 55, ../../../app/stylesheets/_typography.scss */
 p, pre, address {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 63, ../../../app/stylesheets/_typography.scss */
+/* line 60, ../../../app/stylesheets/_typography.scss */
 abbr, code, kbd, samp, small, var {
   line-height: 15px;
 }
 
-/* line 66, ../../../app/stylesheets/_typography.scss */
+/* line 63, ../../../app/stylesheets/_typography.scss */
 ul, ol, dl, dialog {
   font-size: 13px;
   line-height: 18px;
@@ -490,90 +490,89 @@ ul, ol, dl, dialog {
   margin: 18px 0 18px;
 }
 
-/* line 72, ../../../app/stylesheets/_typography.scss */
+/* line 69, ../../../app/stylesheets/_typography.scss */
 ul {
   list-style: disc outside;
 }
 
-/* line 76, ../../../app/stylesheets/_typography.scss */
+/* line 73, ../../../app/stylesheets/_typography.scss */
 ol {
   list-style: decimal outside;
 }
 
-/* line 80, ../../../app/stylesheets/_typography.scss */
+/* line 77, ../../../app/stylesheets/_typography.scss */
 li ul, li ol {
   margin-left: 18px;
   margin-top: 18px;
   margin-bottom: 0;
 }
 
-/* line 85, ../../../app/stylesheets/_typography.scss */
-ul ul, ol ol {
-  margin-top: 0;
-  margin-bottom: 0;
+/* line 82, ../../../app/stylesheets/_typography.scss */
+ol.lower_alpha {
+  list-style: lower-alpha outside;
 }
 
-/* line 89, ../../../app/stylesheets/_typography.scss */
+/* line 86, ../../../app/stylesheets/_typography.scss */
 form, legend, label {
   font-size: 13px;
   line-height: 18px;
 }
-/* line 92, ../../../app/stylesheets/_typography.scss */
+/* line 89, ../../../app/stylesheets/_typography.scss */
 form p, legend p, label p {
   text-indent: 0  !important;
 }
 
-/* line 95, ../../../app/stylesheets/_typography.scss */
+/* line 92, ../../../app/stylesheets/_typography.scss */
 legend {
   position: relative;
   top: 5px;
 }
 
-/* line 99, ../../../app/stylesheets/_typography.scss */
+/* line 96, ../../../app/stylesheets/_typography.scss */
 input, textarea {
   font-size: 13px;
 }
 
-/* line 102, ../../../app/stylesheets/_typography.scss */
+/* line 99, ../../../app/stylesheets/_typography.scss */
 table {
   font-size: 13px;
 }
 
-/* line 105, ../../../app/stylesheets/_typography.scss */
+/* line 102, ../../../app/stylesheets/_typography.scss */
 caption {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 110, ../../../app/stylesheets/_typography.scss */
+/* line 107, ../../../app/stylesheets/_typography.scss */
 hr {
   position: relative;
   height: 4px;
   margin: 18px 0 14px 0;
 }
 
-/* line 117, ../../../app/stylesheets/_typography.scss */
+/* line 114, ../../../app/stylesheets/_typography.scss */
 li {
   margin-bottom: 18px;
 }
 
-/* line 120, ../../../app/stylesheets/_typography.scss */
+/* line 117, ../../../app/stylesheets/_typography.scss */
 h2 {
   font-weight: normal;
 }
 
-/* line 123, ../../../app/stylesheets/_typography.scss */
+/* line 120, ../../../app/stylesheets/_typography.scss */
 p {
   font-size: 13px;
   padding-bottom: 18px;
 }
 
-/* line 127, ../../../app/stylesheets/_typography.scss */
+/* line 124, ../../../app/stylesheets/_typography.scss */
 p + p {
   text-indent: 1.5em;
 }
-/* line 129, ../../../app/stylesheets/_typography.scss */
+/* line 126, ../../../app/stylesheets/_typography.scss */
 p + p.no-indent {
   text-indent: 0;
 }
@@ -2010,7 +2009,7 @@ h1.username {
     padding: 18px;
     margin-bottom: 18px;
   }
-  /* line 121, ../../../app/stylesheets/_base.scss */
+  /* line 126, ../../../app/stylesheets/_base.scss */
   .inner_profile_wrapper:before {
     content: "";
     position: absolute;

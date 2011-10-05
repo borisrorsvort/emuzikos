@@ -21,14 +21,11 @@ h1 {
 // Specific color for dark bg
 
 #pages {
-  h1 {
+  h1, h2, h3, h4 {
     @include inset(#000);
-    color:#fff;
-  }
-  strong {
-    color:#999;
-  }
-}
+    color:#fff; }
+  h4 {
+    margin-bottom: 0; }}
 
 h2 {
   font-size: 22px;
@@ -70,11 +67,11 @@ ul, ol, dl, dialog {
   margin: $baseline 0 $baseline; }
       
 ul {
-  list-style: disc outside 
+  list-style: disc outside; 
 }
       
 ol {
-  list-style: decimal outside
+  list-style: decimal outside;
 }
       
 li ul, li ol {
@@ -82,9 +79,9 @@ li ul, li ol {
   margin-top: $baseline;
   margin-bottom: 0; }
 
-ul ul, ol ol {
-  margin-top: 0;
-  margin-bottom: 0; }
+ol.lower_alpha {
+  list-style: lower-alpha outside;
+}
 
 form, legend, label {
   font-size: $basefont;

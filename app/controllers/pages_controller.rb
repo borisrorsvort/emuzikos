@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     render :layout => "home"
   end
   
-  %w(about terms).each do |section|
+  %w(about terms privacy).each do |section|
     define_method section do
       render :layout => "home"
     end

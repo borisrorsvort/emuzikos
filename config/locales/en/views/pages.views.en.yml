@@ -18,4 +18,6 @@ en:
       address: Address
       name: Name
     terms:
-      title: Terms of services
+      title: Terms of Agreement
+    privacy:
+      title: Privacy Policy

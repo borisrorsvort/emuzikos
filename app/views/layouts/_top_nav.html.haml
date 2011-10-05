@@ -6,7 +6,7 @@
   =link_to t(:'menu.logout'), destroy_user_session_path, :class => "logout", :rel => "nofollow"
   
 -else
-  =link_to t(:'menu.register'),new_user_registration_path
+  =link_to t(:'menu.signup'),new_user_registration_path
   =link_to t(:'menu.login'), new_user_session_path
   %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"}
     Help

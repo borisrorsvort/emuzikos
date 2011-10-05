@@ -90,8 +90,13 @@ b {
 strong {
   font-weight:bold;
 }
-@mixin inset($color) {
-  text-shadow: $color 0 1px 1px; }
+@mixin inset($color, $important: "") {
+  @if $important == "important" {
+    text-shadow: $color 0 1px 1px  !important;
+  } @else {
+    text-shadow: $color 0 1px 1px;
+  }
+}
 
 @mixin white_box {
   background-color: #FFF;

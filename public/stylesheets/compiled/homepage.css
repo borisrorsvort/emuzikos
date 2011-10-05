@@ -144,37 +144,37 @@ strong {
 /* ANIMATION
 ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 172, ../../../app/stylesheets/_base.scss */
+  /* line 177, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 173, ../../../app/stylesheets/_base.scss */
+  /* line 178, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 177, ../../../app/stylesheets/_base.scss */
+  /* line 182, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 178, ../../../app/stylesheets/_base.scss */
+  /* line 183, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 179, ../../../app/stylesheets/_base.scss */
+  /* line 184, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 180, ../../../app/stylesheets/_base.scss */
+  /* line 185, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -182,25 +182,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 183, ../../../app/stylesheets/_base.scss */
+  /* line 188, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 184, ../../../app/stylesheets/_base.scss */
+  /* line 189, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 185, ../../../app/stylesheets/_base.scss */
+  /* line 190, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 186, ../../../app/stylesheets/_base.scss */
+  /* line 191, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -208,12 +208,12 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 189, ../../../app/stylesheets/_base.scss */
+  /* line 194, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 190, ../../../app/stylesheets/_base.scss */
+  /* line 195, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -248,22 +248,22 @@ h1 {
 }
 
 /* line 24, ../../../app/stylesheets/_typography.scss */
-#pages h1 {
+#pages h1, #pages h2, #pages h3, #pages h4 {
   text-shadow: black 0 1px 1px;
   color: #fff;
 }
-/* line 28, ../../../app/stylesheets/_typography.scss */
-#pages strong {
-  color: #999;
+/* line 27, ../../../app/stylesheets/_typography.scss */
+#pages h4 {
+  margin-bottom: 0;
 }
 
-/* line 33, ../../../app/stylesheets/_typography.scss */
+/* line 30, ../../../app/stylesheets/_typography.scss */
 h2 {
   font-size: 22px;
   top: 8px;
 }
 
-/* line 37, ../../../app/stylesheets/_typography.scss */
+/* line 34, ../../../app/stylesheets/_typography.scss */
 h3 {
   font-size: 18px;
   margin-top: 9px;
@@ -271,42 +271,42 @@ h3 {
   color: #999;
 }
 
-/* line 43, ../../../app/stylesheets/_typography.scss */
+/* line 40, ../../../app/stylesheets/_typography.scss */
 h4 {
   font-size: 15px;
   margin-top: 9px;
   margin-bottom: 9px;
 }
 
-/* line 48, ../../../app/stylesheets/_typography.scss */
+/* line 45, ../../../app/stylesheets/_typography.scss */
 h5 {
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 52, ../../../app/stylesheets/_typography.scss */
+/* line 49, ../../../app/stylesheets/_typography.scss */
 h6 {
   font-size: 13px;
 }
 
-/* line 55, ../../../app/stylesheets/_typography.scss */
+/* line 52, ../../../app/stylesheets/_typography.scss */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child {
   margin-top: 0;
 }
 
-/* line 58, ../../../app/stylesheets/_typography.scss */
+/* line 55, ../../../app/stylesheets/_typography.scss */
 p, pre, address {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 63, ../../../app/stylesheets/_typography.scss */
+/* line 60, ../../../app/stylesheets/_typography.scss */
 abbr, code, kbd, samp, small, var {
   line-height: 15px;
 }
 
-/* line 66, ../../../app/stylesheets/_typography.scss */
+/* line 63, ../../../app/stylesheets/_typography.scss */
 ul, ol, dl, dialog {
   font-size: 13px;
   line-height: 18px;
@@ -314,96 +314,95 @@ ul, ol, dl, dialog {
   margin: 18px 0 18px;
 }
 
-/* line 72, ../../../app/stylesheets/_typography.scss */
+/* line 69, ../../../app/stylesheets/_typography.scss */
 ul {
   list-style: disc outside;
 }
 
-/* line 76, ../../../app/stylesheets/_typography.scss */
+/* line 73, ../../../app/stylesheets/_typography.scss */
 ol {
   list-style: decimal outside;
 }
 
-/* line 80, ../../../app/stylesheets/_typography.scss */
+/* line 77, ../../../app/stylesheets/_typography.scss */
 li ul, li ol {
   margin-left: 18px;
   margin-top: 18px;
   margin-bottom: 0;
 }
 
-/* line 85, ../../../app/stylesheets/_typography.scss */
-ul ul, ol ol {
-  margin-top: 0;
-  margin-bottom: 0;
+/* line 82, ../../../app/stylesheets/_typography.scss */
+ol.lower_alpha {
+  list-style: lower-alpha outside;
 }
 
-/* line 89, ../../../app/stylesheets/_typography.scss */
+/* line 86, ../../../app/stylesheets/_typography.scss */
 form, legend, label {
   font-size: 13px;
   line-height: 18px;
 }
-/* line 92, ../../../app/stylesheets/_typography.scss */
+/* line 89, ../../../app/stylesheets/_typography.scss */
 form p, legend p, label p {
   text-indent: 0  !important;
 }
 
-/* line 95, ../../../app/stylesheets/_typography.scss */
+/* line 92, ../../../app/stylesheets/_typography.scss */
 legend {
   position: relative;
   top: 5px;
 }
 
-/* line 99, ../../../app/stylesheets/_typography.scss */
+/* line 96, ../../../app/stylesheets/_typography.scss */
 input, textarea {
   font-size: 13px;
 }
 
-/* line 102, ../../../app/stylesheets/_typography.scss */
+/* line 99, ../../../app/stylesheets/_typography.scss */
 table {
   font-size: 13px;
 }
 
-/* line 105, ../../../app/stylesheets/_typography.scss */
+/* line 102, ../../../app/stylesheets/_typography.scss */
 caption {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 110, ../../../app/stylesheets/_typography.scss */
+/* line 107, ../../../app/stylesheets/_typography.scss */
 hr {
   position: relative;
   height: 4px;
   margin: 18px 0 14px 0;
 }
 
-/* line 117, ../../../app/stylesheets/_typography.scss */
+/* line 114, ../../../app/stylesheets/_typography.scss */
 li {
   margin-bottom: 18px;
 }
 
-/* line 120, ../../../app/stylesheets/_typography.scss */
+/* line 117, ../../../app/stylesheets/_typography.scss */
 h2 {
   font-weight: normal;
 }
 
-/* line 123, ../../../app/stylesheets/_typography.scss */
+/* line 120, ../../../app/stylesheets/_typography.scss */
 p {
   font-size: 13px;
   padding-bottom: 18px;
 }
 
-/* line 127, ../../../app/stylesheets/_typography.scss */
+/* line 124, ../../../app/stylesheets/_typography.scss */
 p + p {
   text-indent: 1.5em;
 }
-/* line 129, ../../../app/stylesheets/_typography.scss */
+/* line 126, ../../../app/stylesheets/_typography.scss */
 p + p.no-indent {
   text-indent: 0;
 }
 
 @-webkit-keyframes scale_from_small {
-  /* line 9, ../../../app/stylesheets/homepage.scss */
+  /* line 8, ../../../app/stylesheets/homepage.scss */
   0% {
     -moz-transform: scale(0, 0);
     -webkit-transform: scale(0, 0);
@@ -413,7 +412,7 @@ p + p.no-indent {
     opacity: 0;
   }
 
-  /* line 12, ../../../app/stylesheets/homepage.scss */
+  /* line 11, ../../../app/stylesheets/homepage.scss */
   60% {
     -moz-transform: scale(0.4, 0.4);
     -webkit-transform: scale(0.4, 0.4);
@@ -423,7 +422,7 @@ p + p.no-indent {
     opacity: 0;
   }
 
-  /* line 15, ../../../app/stylesheets/homepage.scss */
+  /* line 14, ../../../app/stylesheets/homepage.scss */
   100% {
     -moz-transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
@@ -435,7 +434,7 @@ p + p.no-indent {
 }
 
 @-webkit-keyframes scale_to_big {
-  /* line 21, ../../../app/stylesheets/homepage.scss */
+  /* line 20, ../../../app/stylesheets/homepage.scss */
   0% {
     -moz-transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
@@ -445,7 +444,7 @@ p + p.no-indent {
     opacity: 0.4;
   }
 
-  /* line 24, ../../../app/stylesheets/homepage.scss */
+  /* line 23, ../../../app/stylesheets/homepage.scss */
   60% {
     -moz-transform: scale(1.2, 1.2);
     -webkit-transform: scale(1.2, 1.2);
@@ -455,7 +454,7 @@ p + p.no-indent {
     opacity: 0.8;
   }
 
-  /* line 27, ../../../app/stylesheets/homepage.scss */
+  /* line 26, ../../../app/stylesheets/homepage.scss */
   100% {
     -moz-transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
@@ -467,60 +466,69 @@ p + p.no-indent {
 }
 
 @-webkit-keyframes opacity {
-  /* line 32, ../../../app/stylesheets/homepage.scss */
+  /* line 31, ../../../app/stylesheets/homepage.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 33, ../../../app/stylesheets/homepage.scss */
+  /* line 32, ../../../app/stylesheets/homepage.scss */
   100% {
     opacity: 1;
   }
 }
 
-/* line 36, ../../../app/stylesheets/homepage.scss */
+/* line 35, ../../../app/stylesheets/homepage.scss */
 #inner_content {
   background: #041826;
 }
 
-/* line 40, ../../../app/stylesheets/homepage.scss */
+/* line 39, ../../../app/stylesheets/homepage.scss */
 img {
   max-width: 100%;
 }
 
-/* line 43, ../../../app/stylesheets/homepage.scss */
+/* line 42, ../../../app/stylesheets/homepage.scss */
 strong {
   font-weight: bolder;
 }
 
-/* line 48, ../../../app/stylesheets/homepage.scss */
+/* line 47, ../../../app/stylesheets/homepage.scss */
 h1#main_title {
   text-indent: -9990px;
   height: 0;
   /* keep consistent baseline */
 }
 
-/* line 52, ../../../app/stylesheets/homepage.scss */
+/* line 51, ../../../app/stylesheets/homepage.scss */
 .homepage #container {
   padding: 16px auto 0;
 }
 
-/* line 55, ../../../app/stylesheets/homepage.scss */
+/* line 54, ../../../app/stylesheets/homepage.scss */
 h2.moto {
-  font-size: 2em;
-  /*line-height: #{ 18/ $em}em;*/
-  color: #7bb3cf;
+  font-size: 26px;
+  color: #7bb3cf  !important;
   font-weight: normal;
   text-shadow: black 0 1px 1px;
   -webkit-animation: scale_to_big 1s;
   -moz-animation: scale_to_big 1s;
 }
-/* line 63, ../../../app/stylesheets/homepage.scss */
+/* line 61, ../../../app/stylesheets/homepage.scss */
 h2.moto strong {
   color: #7bb3cf  !important;
 }
 
-/* line 68, ../../../app/stylesheets/homepage.scss */
+/* line 66, ../../../app/stylesheets/homepage.scss */
+.homepage h3, .homepage h4 {
+  color: #666  !important;
+  text-shadow: white 0 1px 1px !important;
+}
+/* line 69, ../../../app/stylesheets/homepage.scss */
+.homepage h4 {
+  margin-bottom: 9px !important;
+}
+
+/* line 71, ../../../app/stylesheets/homepage.scss */
 #music_notes {
   background: transparent url("/images/homepage/music-notes.png") center -40px repeat-x;
   top: 0;
@@ -534,52 +542,52 @@ h2.moto strong {
   -webkit-animation: slidingFromLeft 4s;
 }
 
-/* line 83, ../../../app/stylesheets/homepage.scss */
+/* line 86, ../../../app/stylesheets/homepage.scss */
 .homepage.logged_out #inner_content {
   padding: 0;
 }
 
-/* line 86, ../../../app/stylesheets/homepage.scss */
+/* line 89, ../../../app/stylesheets/homepage.scss */
 #inner_halo {
   position: relative;
   background: transparent url("/images/homepage/halo.png") center top no-repeat;
 }
 
-/* line 90, ../../../app/stylesheets/homepage.scss */
+/* line 93, ../../../app/stylesheets/homepage.scss */
 #main {
   text-align: center;
   padding: 20px;
 }
 
-/* line 95, ../../../app/stylesheets/homepage.scss */
+/* line 98, ../../../app/stylesheets/homepage.scss */
 #logo_home, #main-icon {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 100, ../../../app/stylesheets/homepage.scss */
+/* line 103, ../../../app/stylesheets/homepage.scss */
 #main-icon {
   margin-bottom: 10px;
 }
-/* line 102, ../../../app/stylesheets/homepage.scss */
+/* line 105, ../../../app/stylesheets/homepage.scss */
 #main-icon img {
   -webkit-animation: scale_from_small 1s;
   -moz-animation: scale_from_small 1s;
 }
 
-/* line 106, ../../../app/stylesheets/homepage.scss */
+/* line 109, ../../../app/stylesheets/homepage.scss */
 #logo img {
   -webkit-animation: scale_from_small 1s;
   -moz-animation: scale_from_small 1s;
 }
 
-/* line 112, ../../../app/stylesheets/homepage.scss */
+/* line 115, ../../../app/stylesheets/homepage.scss */
 #header {
   background: none;
   background-color: #001824;
 }
 
-/* line 117, ../../../app/stylesheets/homepage.scss */
+/* line 120, ../../../app/stylesheets/homepage.scss */
 .signup_button {
   -webkit-animation: slidingFromLeft 2s;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
@@ -597,22 +605,22 @@ h2.moto strong {
   position: relative;
   background: transparent url('/images/buttons/signup_button/signup_bc.png?1303908836') left top repeat-x;
 }
-/* line 127, ../../../app/stylesheets/homepage.scss */
+/* line 130, ../../../app/stylesheets/homepage.scss */
 .signup_button a {
   font-size: 0.65em;
   text-decoration: none;
   color: #604f1b;
   position: relative;
 }
-/* line 132, ../../../app/stylesheets/homepage.scss */
+/* line 135, ../../../app/stylesheets/homepage.scss */
 .signup_button a:hover {
   color: #887026;
 }
-/* line 134, ../../../app/stylesheets/homepage.scss */
+/* line 137, ../../../app/stylesheets/homepage.scss */
 .signup_button a:active {
   top: 1px;
 }
-/* line 144, ../../../app/stylesheets/homepage.scss */
+/* line 147, ../../../app/stylesheets/homepage.scss */
 .signup_button .bl, .signup_button .br {
   left: -25px;
   position: absolute;
@@ -621,18 +629,18 @@ h2.moto strong {
   background: transparent url('/images/buttons/signup_button/signup_bl.png?1303908836') left top no-repeat;
   display: block;
 }
-/* line 151, ../../../app/stylesheets/homepage.scss */
+/* line 154, ../../../app/stylesheets/homepage.scss */
 .signup_button .br {
   left: 100%;
   right: -25px;
   background: transparent url('/images/buttons/signup_button/signup_br.png?1303908836') left top no-repeat;
 }
 
-/* line 158, ../../../app/stylesheets/homepage.scss */
+/* line 161, ../../../app/stylesheets/homepage.scss */
 .features_columns {
   background: #efefef;
 }
-/* line 161, ../../../app/stylesheets/homepage.scss */
+/* line 164, ../../../app/stylesheets/homepage.scss */
 .features_columns .columns {
   width: 27.333%;
   padding: 3%;
@@ -641,20 +649,20 @@ h2.moto strong {
   min-width: 320px;
 }
 
-/* line 167, ../../../app/stylesheets/homepage.scss */
+/* line 170, ../../../app/stylesheets/homepage.scss */
 .FB_fan iframe {
   margin: 0 auto;
   width: 300px;
   margin-left: 14%;
 }
 
-/* line 175, ../../../app/stylesheets/homepage.scss */
+/* line 178, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul {
   list-style: none;
   padding-left: 0;
   margin-top: 2em;
 }
-/* line 179, ../../../app/stylesheets/homepage.scss */
+/* line 182, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul li {
   margin-bottom: 15px;
   display: block;
@@ -673,17 +681,17 @@ h2.moto strong {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 189, ../../../app/stylesheets/homepage.scss */
+/* line 192, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul li .text {
   font-size: 12px;
   opacity: 0.8;
   padding-left: 50px;
 }
-/* line 194, ../../../app/stylesheets/homepage.scss */
+/* line 197, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul li .author {
   font-weight: bold;
 }
-/* line 197, ../../../app/stylesheets/homepage.scss */
+/* line 200, ../../../app/stylesheets/homepage.scss */
 .home_testimonials ul li .avatar {
   float: left;
   border: 3px solid #ccc;
