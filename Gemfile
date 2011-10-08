@@ -36,7 +36,8 @@ gem "meta_search"
 gem "hominid"
 
 gem "airbrake"
-
+gem "populator"
+gem "faker"
 
 group :development do
   gem "hirb"
@@ -45,13 +46,7 @@ group :development do
   gem 'heroku_san'
   gem 'rails_best_practices'
   gem 'simplecov', :require => false
-  gem "populator"
-  gem "faker"
-end
 
-group :staging do
-  gem "populator"
-  gem "faker"
 end
 
 group :test do
