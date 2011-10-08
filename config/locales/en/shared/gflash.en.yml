@@ -37,7 +37,7 @@ en:
     testimonials:
       please_write: "If you like our service, please take 30s to write something nice about us in the <a href='%{link}'> testimonial section.</a>"
       create:
-        success: "Thanks for talking good about us! Keep spreading the word around you :)"
+        success: "Thanks for talking good about us! Your testimonial has been sent for validation. Keep spreading the word around you :)"
       update:
         success: "Successfully updated testimonial"
       destroy:
