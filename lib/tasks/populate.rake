@@ -10,11 +10,16 @@ namespace :db do
     
     [User, Friendship, Message, Service, Testimonial, Instrument, AdminUser ].each(&:delete_all)
     
-    %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas).each do |instrument|
-      Instrument.create!(:name => instrument)
-    end    
+    # %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas).each do |instrument|
+    #    instrument = Instrument.new(:name => instrument)
+    #    instrument.save
+    #  end    
     
     puts 'Start population'
+    
+    Instrument.populate 19 do |instrument|
+      instrument.name = %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas)
+    end
     
     User.populate 50 do |user|
       user.username = Faker::Name.first_name
@@ -36,7 +41,7 @@ namespace :db do
         t.user_id = user.id
         t.body = Populator.sentences(2..3)
         t.created_at = user.created_at
-        t.approved = [false, true]
+        t.approved = true
       end
       
       puts 'Population finished'
