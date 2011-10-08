@@ -8,7 +8,7 @@ namespace :db do
     USER_TYPES = %w(band musician agent)
     MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
     
-    [User, Friendship, Message, Service, Testimonial, Instrument ].each(&:delete_all)
+    [User, Friendship, Message, Service, Testimonial, Instrument, AdminUser ].each(&:delete_all)
     
     %w(guitar bass double_bass drums violin flute piano percussions voice turntables banjo cithar bouzouki mandolin whistles spoons keyboard ocarina congas).each do |instrument|
       Instrument.create!(:name => instrument)
@@ -36,6 +36,7 @@ namespace :db do
         t.user_id = user.id
         t.body = Populator.sentences(2..3)
         t.created_at = user.created_at
+        t.approved = [false, true]
       end
       
       puts 'Population finished'
@@ -52,12 +53,7 @@ namespace :db do
       message.created_at = 2.years.ago..Time.now
     end
     
-    # AdminUser.populate 1 do |admin_user|
-    #       admin_user.email = "admin@example.com"
-    #       admin_user.password = "cacacaca"
-    #       admin_user.encrypted_password = password.hex(10)
-    #       admin_user.created_at = Time.now
-    #     end
-    
+    admin_user = AdminUser.new(:email => "admin@example.com", :password => "cacacaca", :password_confirmation => "cacacaca")
+    admin_user.save
   end
 end

@@ -1073,83 +1073,57 @@ table th a:hover {
   text-decoration: underline;
 }
 
-/* line 1, ../../../app/stylesheets/_pagination.scss */
-html.no-js .page_entries {
+/* html.no-js .page_entries {
   padding: 0 10px 15px 0;
   font-size: 0.75em;
-  text-shadow: white 0 1px 1px;
-}
-
-/* line 6, ../../../app/stylesheets/_pagination.scss */
+  @include inset(#fff); }
+  
 html.js .page_entries {
-  display: none;
+  display:none;
 }
 
-/* line 10, ../../../app/stylesheets/_pagination.scss */
 .pagination {
   padding: 15px 0;
   font-size: 0.70em;
   line-height: 1em;
-  /* self-clearing method: */
-}
-/* line 14, ../../../app/stylesheets/_pagination.scss */
-.pagination a, .pagination span, .pagination em {
-  padding: 5px;
-  display: block;
-  float: left;
-  margin-right: 3px;
-}
-/* line 20, ../../../app/stylesheets/_pagination.scss */
-.pagination em {
-  font-weight: bold;
-  background: #1d8cc8;
-  color: white;
-}
-/* line 25, ../../../app/stylesheets/_pagination.scss */
-.pagination span.disabled {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
-  opacity: 0.3;
-}
-/* line 27, ../../../app/stylesheets/_pagination.scss */
-.pagination a, .pagination em, .pagination span {
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -khtml-border-radius: 2px;
-  border-radius: 2px;
-}
-/* line 29, ../../../app/stylesheets/_pagination.scss */
-.pagination a {
-  text-decoration: none;
-  background-color: white;
-  color: #1d8cc8;
-  text-shadow: white 0 1px 1px;
-}
-/* line 34, ../../../app/stylesheets/_pagination.scss */
-.pagination a:hover, .pagination a:focus {
-  color: white;
-  background-color: #1d8cc8;
-  text-shadow: #666666 0 1px 1px;
-}
-/* line 40, ../../../app/stylesheets/_pagination.scss */
-.pagination:after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-/* line 47, ../../../app/stylesheets/_pagination.scss */
-* html .pagination {
-  height: 1%;
-}
-/* line 49, ../../../app/stylesheets/_pagination.scss */
-*:first-child + html .pagination {
-  overflow: hidden;
-}
+  a, span, em {
+    padding: 5px;
+    display: block;
+    float: left;
+    margin-right: 3px; }
 
+  em {
+    font-weight: bold;
+    background: $paginate-current-bg;
+    color: $paginate-current-color; }
+    
+  span.disabled {
+    @include opacity(0.3);} 
+  a, em, span {
+    @include border-radius(2px);  }
+  a {
+    text-decoration: none;
+    background-color: $paginate-normal-bg;
+    color: $paginate-normal-color;
+    @include inset(#fff);
+    &:hover, &:focus {
+      color: $paginate-normal-bg;
+      background-color: $paginate-normal-color;
+      @include inset(#666); }}
+      
+  self-clearing method:
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+    
+  * html & {
+    height: 1%; }
+  *:first-child+html & {
+    overflow: hidden; } }
+ */
 /* line 53, ../../../app/stylesheets/_pagination.scss */
 #pageless-loader {
   background: #ccc;

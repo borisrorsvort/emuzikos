@@ -3,7 +3,6 @@ source :gemcutter
 
 gem 'rails', '3.0.10'
 gem "jquery-rails"
-#gem "will_paginate", ">= 3.0.pre2"
 gem "gritter"
 
 gem "sass", "3.1.2"
@@ -40,6 +39,7 @@ gem "airbrake"
 
 
 group :development do
+  gem "hirb"
   gem "bullet"
   gem "nifty-generators"
   gem 'heroku_san'

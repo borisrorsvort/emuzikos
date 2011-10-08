@@ -1,4 +1,4 @@
-html.no-js .page_entries {
+/* html.no-js .page_entries {
   padding: 0 10px 15px 0;
   font-size: 0.75em;
   @include inset(#fff); }
@@ -36,7 +36,7 @@ html.js .page_entries {
       background-color: $paginate-normal-color;
       @include inset(#666); }}
       
-  /* self-clearing method: */
+  self-clearing method:
   &:after {
     content: ".";
     display: block;
@@ -48,7 +48,7 @@ html.js .page_entries {
     height: 1%; }
   *:first-child+html & {
     overflow: hidden; } }
-
+ */
 
 #pageless-loader {  
   background: #ccc;

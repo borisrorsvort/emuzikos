@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = []
     @search = User.visible.except_current_user(@current_user).profiles_completed.search(params[:search])
-    @users = @search.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page)    
+    @users = @search.page.per(AppConfig.site.results_per_page)    
     @musical_genres = I18n.t(User::MUSICAL_GENRES, :scope => [:musical_genres])
     @instruments = Instrument.all
     @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])

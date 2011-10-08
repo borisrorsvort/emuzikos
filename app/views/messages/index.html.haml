@@ -3,7 +3,7 @@
     = page_entries_info @messages
   
   - content_for :scripts do
-    = pageless(@messages.total_pages, user_messages_path(@current_user))
+    = pageless(@messages.num_pages, user_messages_path(@current_user))
     
 = form_tag delete_selected_user_messages_path(@current_user, :method => :post)  do
   
@@ -12,7 +12,7 @@
   - else
     = render :partial => "inbox"
   
-  = will_paginate @messages
+  = paginate @messages
   
 = content_for :javascripts do 
   :javascript

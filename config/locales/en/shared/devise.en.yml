@@ -40,9 +40,9 @@ en:
       confirmed: 'Your account was successfully confirmed. You are now logged in.'
     registrations:
       new:
-        title: "Register to Emuzikos"
+        title: "Signup to Emuzikos"
         or_signup_using: "Or signup using:"
-        newsletter_agreement: You agree to the <a href="/terms" target="_blank">terms of agreements</a> and to be subscribed to our newsletter.
+        newsletter_agreement: "By clicking the submit button, you agree to the <a href='/terms' target='_blank'>terms of agreements</a> and to be subscribed to our newsletter."
       edit:
         title: Edit my account
         cancel_my_account: Cancel my account

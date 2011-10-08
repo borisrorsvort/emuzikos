@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   
   def homepage
-    @testimonials = Testimonial.last(3)
+    @testimonials = Testimonial.approved.last(3)
     render :layout => "home"
   end
   

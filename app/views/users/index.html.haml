@@ -4,20 +4,15 @@
   = render "search"
 
 - content_for :scripts do
-  = pageless(@users.total_pages, users_path)
+  = pageless(@users.num_pages, users_path)
 
 -if !@users.blank?
-  .page_entries
-    = page_entries_info @users
-
   %section.users_list
     = render :partial => 'user', :collection => @users
     .clear
 
-  = will_paginate @users
-  
-  
-    
+  = paginate @users
+      
 -else
   =t(:'.no_users')
 
