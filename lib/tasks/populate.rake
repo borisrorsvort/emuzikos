@@ -48,15 +48,15 @@ namespace :db do
       
     end
     
-    Message.populate 300 do |message|
-      message.sender_id = rand(3-50).to_i
-      message.recipient_id = rand(3-50).to_i
-      message.sender_deleted = false
-      message.recipient_deleted = false
-      message.subject = Populator.sentences(1)
-      message.body = Populator.paragraphs(3..5)
-      message.created_at = 2.years.ago..Time.now
-    end
+    # Message.populate 300 do |message|
+    #       message.sender_id = rand(3-50).to_i
+    #       message.recipient_id = rand(3-50).to_i
+    #       message.sender_deleted = false
+    #       message.recipient_deleted = false
+    #       message.subject = Populator.sentences(1)
+    #       message.body = Populator.paragraphs(3..5)
+    #       message.created_at = 2.years.ago..Time.now
+    #     end
     
     admin_user = AdminUser.new(:email => "admin@example.com", :password => "cacacaca", :password_confirmation => "cacacaca")
     admin_user.save
