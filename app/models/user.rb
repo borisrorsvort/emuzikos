@@ -71,7 +71,7 @@ class User < ActiveRecord::Base
     :default_url => '/images/backgrounds/no-image-:style.gif'
 
   #scope :profiles_completed, where( :country != nil, :user_type != nil, :genre != nil, :zip != nil )
-  scope :profiles_completed, where("country IS NOT NULL and user_type IS NOT NULL and genre IS NOT NULL and zip IS NOT NULL and looking_for IS NOT NULL")
+  scope :profiles_completed, where("country IS NOT NULL and user_type IS NOT NULL and genre IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL")
   #scope :profiles_completed, where( :country ^ nil, :user_type ^ nil, :genre ^ nil, :zip ^ nil)
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
   scope :except_current_user, lambda { |user| where("users.id != ?", user.id) }
