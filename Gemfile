@@ -1,4 +1,3 @@
-source :rubygems
 source :gemcutter
 
 gem 'rails', '3.0.10'
@@ -46,7 +45,9 @@ group :development do
   gem 'heroku_san'
   gem 'rails_best_practices'
   gem 'simplecov', :require => false
-
+  gem "cucumber"
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 
 group :test do

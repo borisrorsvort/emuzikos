@@ -15,7 +15,7 @@
     | 
     %label.inline= t(:'messages.received')
     = @message.created_at.to_s(:long)
-
+.field
   %p.message_body
     %label= t(:'messages.message')
     = h @message.body

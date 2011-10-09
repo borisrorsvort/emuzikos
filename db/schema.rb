@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(:version => 20111008114225) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "approved"
+    t.boolean  "approved",   :default => false
   end
 
   create_table "tolk_locales", :force => true do |t|
