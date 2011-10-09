@@ -87,13 +87,10 @@ input, textarea {
     @include border-radius(8px);
     @include single-box-shadow(#666, 0, 0, 5px);
     
-    .normal_login {
-      padding-left: 0;
-      padding-bottom: 0;
-    }
     .services_login {
       font-size: 1em;
       margin-top: 20px;
+      padding: 0;
       .shared_links {
         margin-top: 20px;
         .field {

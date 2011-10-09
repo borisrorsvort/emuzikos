@@ -170,17 +170,18 @@
 /* LOGGUED OUT  */
 .logged_out {
   #user_forms {
-    width: 55%; }
-    
-  .normal_login {
-    @include fluid_column(5%, 2);
-  }
-  .services_login {
-    @include fluid_column(5%, 2);
-    margin-top: 0;
-    padding-right: 0 ;
-    width: 50%;
-  }
+    width: 55%;
+    .normal_login {
+      
+      @include fluid_column(5%, 2);
+      padding: 0 5% 0 0; }
+      
+    .services_login {
+      @include fluid_column(5%, 2);
+      margin-top: 0;
+      padding: 5% 0 0 5%;
+      width: 50%; }
+  }  
 }
 
 

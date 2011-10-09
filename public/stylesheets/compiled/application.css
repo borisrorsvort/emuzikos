@@ -986,24 +986,20 @@ input:focus, input:active, textarea:focus, textarea:active {
   box-shadow: 0 0 5px #666666;
 }
 /* line 90, ../../../app/stylesheets/_forms.scss */
-.logged_out #user_forms .normal_login {
-  padding-left: 0;
-  padding-bottom: 0;
-}
-/* line 94, ../../../app/stylesheets/_forms.scss */
 .logged_out #user_forms .services_login {
   font-size: 1em;
   margin-top: 20px;
+  padding: 0;
 }
-/* line 97, ../../../app/stylesheets/_forms.scss */
+/* line 94, ../../../app/stylesheets/_forms.scss */
 .logged_out #user_forms .services_login .shared_links {
   margin-top: 20px;
 }
-/* line 99, ../../../app/stylesheets/_forms.scss */
+/* line 96, ../../../app/stylesheets/_forms.scss */
 .logged_out #user_forms .services_login .shared_links .field {
   margin-bottom: 18px;
 }
-/* line 104, ../../../app/stylesheets/_forms.scss */
+/* line 101, ../../../app/stylesheets/_forms.scss */
 .logged_out #user_forms h2 {
   color: #666;
   text-shadow: none;
@@ -2007,6 +2003,12 @@ h1.username {
     -khtml-border-bottom-left-radius: 8px;
     border-bottom-left-radius: 8px;
   }
+
+  /* LOGGUED OUT  */
+  /* line 130, ../../../app/stylesheets/mediaqueries/_480.scss */
+  .logged_out #user_forms {
+    width: 80%;
+  }
 }
 /*/mediaquery*/
 @media only screen and (min-width: 768px) {
@@ -2244,30 +2246,31 @@ h1.username {
   .logged_out #user_forms {
     width: 55%;
   }
-  /* line 175, ../../../app/stylesheets/mediaqueries/_768.scss */
-  .logged_out .normal_login {
+  /* line 174, ../../../app/stylesheets/mediaqueries/_768.scss */
+  .logged_out #user_forms .normal_login {
     width: 40%;
     padding: 5%;
     float: left;
     display: inline;
+    padding: 0 5% 0 0;
   }
-  /* line 178, ../../../app/stylesheets/mediaqueries/_768.scss */
-  .logged_out .services_login {
+  /* line 179, ../../../app/stylesheets/mediaqueries/_768.scss */
+  .logged_out #user_forms .services_login {
     width: 40%;
     padding: 5%;
     float: left;
     display: inline;
     margin-top: 0;
-    padding-right: 0;
+    padding: 5% 0 0 5%;
     width: 50%;
   }
 
   /* HOME PAGE */
-  /* line 196, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 197, ../../../app/stylesheets/mediaqueries/_768.scss */
   .homepage h2.moto {
     font-size: 3em;
   }
-  /* line 199, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 200, ../../../app/stylesheets/mediaqueries/_768.scss */
   .homepage #logo_home, .homepage #main-icon {
     width: 100%;
     margin: 0 auto;

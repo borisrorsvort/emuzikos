@@ -1,6 +1,4 @@
 -if !@messages.blank?
-  .page_entries
-    = page_entries_info @messages
   
   - content_for :scripts do
     = pageless(@messages.num_pages, user_messages_path(@current_user))
