@@ -401,6 +401,11 @@ p + p.no-indent {
   text-indent: 0;
 }
 
+/* line 130, ../../../app/stylesheets/_typography.scss */
+.field p + p {
+  text-indent: 0;
+}
+
 @-webkit-keyframes scale_from_small {
   /* line 8, ../../../app/stylesheets/homepage.scss */
   0% {

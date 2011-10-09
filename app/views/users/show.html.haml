@@ -64,7 +64,7 @@
       %h3= t(:'activerecord.attributes.user.instruments')
       .tag_list
         - @user.instruments.each do |instrument|
-          %span= t(:"instruments.#{instrument.name}")
+          %span= instrument.name
 
     - unless @user.references.blank?   
       %h3= t(:'activerecord.attributes.user.references')

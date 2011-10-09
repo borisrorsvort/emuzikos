@@ -25,6 +25,6 @@
       = t(:'activerecord.attributes.user.instruments')
     .tag_list
       - user.instruments.each do |instrument|
-        %span= t(:"instruments.#{instrument.name}")
+        %span= instrument.name
   
   .clear

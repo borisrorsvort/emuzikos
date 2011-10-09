@@ -577,6 +577,11 @@ p + p.no-indent {
   text-indent: 0;
 }
 
+/* line 130, ../../../app/stylesheets/_typography.scss */
+.field p + p {
+  text-indent: 0;
+}
+
 /* line 1, ../../../app/stylesheets/_layout.scss */
 #logo {
   float: left;
