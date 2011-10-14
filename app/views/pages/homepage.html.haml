@@ -1,7 +1,6 @@
 -title t(:'.title'), false
 
 #inner_halo
-  #music_notes
   #main
     %header
       #main-icon
@@ -15,44 +14,49 @@
         way to find
         %strong local
         musicians
-    %span.signup_button
-      .bl
-      .br
-      .signup_text
-        = link_to t(:'buttons.home_signup'), new_user_registration_path
-    
+    = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "signup_button"
+  #music_notes
+  
     
 
 = content_for :features do
   .features_columns
-    .columns
-      .inner_column
-        %h3 The musician search tool you were missing 
-        %h4 Simple & minimal signup
-        %p Create your musician profile in 60s and start browsing, sending messages and share your musician profile around you.
-        %h4 What do you get when you sign up?
-        %p You can search musicians, bands or agents by instruments, musical genres, country, zip code,... and promote your profile on multiple social networks. 
-        %h4 Care about privacy? 
-        %p You will also get a private message inbox so that nobody ever sees your real email address until you're sure they are trully your band mates.
-    .columns.home_testimonials
-      .inner_column
+    .inner_block.home_feature
+      %h3 Emuzikos, the musician search tool you were missing
+      
+      .columns
+        .inner_column
+          %h4 Simple & minimal signup
+          %p Create your musician profile in 60s and start browsing, sending messages to other musicians and share your profile around you.
+      .columns.home_testimonials
+        .inner_column
+          %h4 What do you get when you sign up?
+          %p You will also get a private message inbox so that nobody ever sees your real email address until you're sure they are trully your band mates.
+      .columns
+        .inner_column
+          %h4 Care about privacy? 
+          %p Nobody will ever see your email when you send messages, ever. Nobody will ever see your email .
+      .clear
+    
+    .note_circle
+    .latest_testimionals
+      .inner_block.home_testimonials
         %h3 Latest musicians testimonials
         - if !@testimonials.blank?
-          %ul
-            - for testimonial in @testimonials do
-              %li 
-                %span.avatar.small
-                  - if testimonial.user.avatar.present?
-                    = image_tag(testimonial.user.avatar.url(:gallery))
-                  -else
-                    = image_tag("backgrounds/avatar-default.gif")
+          - @testimonials.in_groups_of(2, false) do |group|
+            .t_column
+              - for testimonial in group do
+                .testimonial
+                  %span.avatar.small
+                    - if testimonial.user.avatar.present?
+                      = image_tag(testimonial.user.avatar.url(:gallery))
+                    -else
+                      = image_tag("backgrounds/avatar-default.gif")
 
-                %div.text
-                  .span.author
-                    = testimonial.created_at.strftime('%b %d, %Y')
-                    = t(:'common.by')
-                    = testimonial.user.username
-                  = truncate(testimonial.body, :length => 123, :omission =>"...")
-    .columns
-      = render :partial => "shared/facebook_like_box"
-    .clear  
+                  %div.text
+                    .span.author
+                      = testimonial.created_at.strftime('%b %d, %Y')
+                      = t(:'common.by')
+                      = testimonial.user.username
+                    = truncate(testimonial.body, :length => 123, :omission =>"...")
+    .clear

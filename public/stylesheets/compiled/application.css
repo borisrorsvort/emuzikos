@@ -2280,6 +2280,10 @@ h1.username {
     width: 100%;
     margin: 0 auto;
   }
+  /* line 204, ../../../app/stylesheets/mediaqueries/_768.scss */
+  .homepage #logo_home {
+    margin-bottom: 38px;
+  }
 }
 /*/mediaquery*/
 /*992px __________________________________________________________________________________________________________ */
