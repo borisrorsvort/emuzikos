@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   #helper_method :sort_column, :sort_direction
   def index
     @users = []
-    @search = User.visible.except_current_user(@current_user).profiles_completed.search(params[:search])
+    @search = User.except_current_user(@current_user).visible.geocoded.profiles_completed.search(params[:search])
     @users = @search.page.per(AppConfig.site.results_per_page)    
     @musical_genres = I18n.t(User::MUSICAL_GENRES, :scope => [:musical_genres])
     @instruments = Instrument.all

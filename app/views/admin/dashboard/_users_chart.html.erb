@@ -5,10 +5,20 @@
 
 <div class="users_numbers" style="margin-top: 20px;">
   
-  <p>Total users: <%= users.count %></p>
-  <p>Total users with completed profile: <%= users_complete_profile.count %> (<%= (users_complete_profile.count.to_f / users.count.to_f) * 100 %> %)</p>
-  <p>Total signed in users: <%= signed_in_users %></p>
-
+  <table>
+    <tr>
+      <th>Total Users</th>
+      <th>Profiles Completed</th>
+      <th>Signed in</th>
+      <th>In listing</th>
+    </tr>
+    <tr>
+      <td><%= users.count %></td>
+      <td><%= users_complete_profile.count %> (<%= ((users_complete_profile.count.to_f / users.count.to_f) * 100).round(2) %>%)</td>
+      <td><%= signed_in_users %></td>
+      <td><%= users_in_listing %></td>
+    </tr>
+  </table>
 </div>
 
 <script type="text/javascript">
