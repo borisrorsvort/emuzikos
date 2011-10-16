@@ -1,7 +1,3 @@
-/* 960 Grid System ~ Core CSS.
- * Learn more ~ http://960.gs/
- * *
- * Licensed under GPL and MIT. */
 /* RESETS */
 /* line 17, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
@@ -1185,7 +1181,7 @@ html.js .page_entries {
   margin-left: 10px;
 }
 
-/* 9.NAVIGATION nav[role="navigation"]
+/* NAVIGATION
 ---------------------------------------- */
 /* line 37, ../../../app/stylesheets/_main.scss */
 #main_nav ul {
@@ -1309,12 +1305,8 @@ html.js .page_entries {
   background: #106090;
 }
 
-/* 10.CONTENT
----------------------------------------- */
-/* 11.MAIN div[role="main"]
----------------------------------------- */
 /* USER */
-/* line 126, ../../../app/stylesheets/_main.scss */
+/* line 121, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing {
   -webkit-animation: fadeIn 2s;
   background-color: #FFF;
@@ -1330,29 +1322,29 @@ html.js .page_entries {
   display: block;
   font-size: 13px;
 }
-/* line 135, ../../../app/stylesheets/_main.scss */
+/* line 130, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .row {
   display: block;
 }
-/* line 137, ../../../app/stylesheets/_main.scss */
+/* line 132, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .tag_list {
   margin: 0;
   font-size: 10.833px;
 }
-/* line 141, ../../../app/stylesheets/_main.scss */
+/* line 135, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section {
   padding: 10px;
 }
-/* line 144, ../../../app/stylesheets/_main.scss */
+/* line 137, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section .title {
   margin-bottom: 5px;
   color: #666;
 }
-/* line 149, ../../../app/stylesheets/_main.scss */
+/* line 142, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_general_infos .username {
   text-transform: uppercase;
 }
-/* line 151, ../../../app/stylesheets/_main.scss */
+/* line 144, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_general_infos .username a {
   text-decoration: none;
 }
@@ -1360,22 +1352,22 @@ html.js .page_entries {
 .users_list .user_profile_listing .section.user_general_infos .username a:hover {
   text-decoration: underline;
 }
-/* line 153, ../../../app/stylesheets/_main.scss */
+/* line 146, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_general_infos .location {
   font-size: 0.9em;
   color: gray;
 }
-/* line 157, ../../../app/stylesheets/_main.scss */
+/* line 150, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_type {
   /* text-align:center; */
   border-top: 1px solid #dddddd;
 }
-/* line 161, ../../../app/stylesheets/_main.scss */
+/* line 154, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_instruments {
   /*text-align:center;*/
   border-top: 1px solid #dddddd;
 }
-/* line 164, ../../../app/stylesheets/_main.scss */
+/* line 157, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_instruments span {
   font-size: 10.833px;
   background: none;
@@ -1383,42 +1375,42 @@ html.js .page_entries {
   color: gray;
 }
 
-/* line 176, ../../../app/stylesheets/_main.scss */
+/* line 169, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field {
   min-width: 50%;
 }
-/* line 179, ../../../app/stylesheets/_main.scss */
+/* line 172, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field input#search_zip {
   width: 112px;
   padding-left: 10px;
 }
-/* line 183, ../../../app/stylesheets/_main.scss */
+/* line 176, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .centered {
   margin: 0 auto;
   width: 121px;
 }
-/* line 187, ../../../app/stylesheets/_main.scss */
+/* line 180, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .selector {
   margin: 0 auto;
   width: 110px;
 }
-/* line 190, ../../../app/stylesheets/_main.scss */
+/* line 183, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .selector span {
   width: 100px;
   font-size: 0.85em;
 }
-/* line 194, ../../../app/stylesheets/_main.scss */
+/* line 187, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .selector select {
   width: 133px;
 }
 
-/* line 200, ../../../app/stylesheets/_main.scss */
+/* line 193, ../../../app/stylesheets/_main.scss */
 .avatar {
   background: #ccc;
   display: block;
   float: left;
 }
-/* line 204, ../../../app/stylesheets/_main.scss */
+/* line 197, ../../../app/stylesheets/_main.scss */
 .avatar.small {
   height: 30px;
   width: 30px;
@@ -1435,13 +1427,13 @@ html.js .page_entries {
   -khtml-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 211, ../../../app/stylesheets/_main.scss */
+/* line 204, ../../../app/stylesheets/_main.scss */
 .avatar.small a {
   display: block;
 }
 
 /* USER SHOW */
-/* line 217, ../../../app/stylesheets/_main.scss */
+/* line 211, ../../../app/stylesheets/_main.scss */
 .profile_picture {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1461,7 +1453,7 @@ html.js .page_entries {
   margin-bottom: 18px;
 }
 
-/* line 223, ../../../app/stylesheets/_main.scss */
+/* line 217, ../../../app/stylesheets/_main.scss */
 .looking_for {
   margin: 18px 0 4.5px;
   text-transform: lowercase;
@@ -1470,35 +1462,35 @@ html.js .page_entries {
   text-shadow: white 0 1px 1px;
 }
 
-/* line 231, ../../../app/stylesheets/_main.scss */
+/* line 225, ../../../app/stylesheets/_main.scss */
 h1.username {
   margin-bottom: 3px;
   display: inline;
 }
 
-/* line 235, ../../../app/stylesheets/_main.scss */
+/* line 229, ../../../app/stylesheets/_main.scss */
 .location_infos {
   color: #999;
   margin: 18px 0;
   display: block;
 }
 
-/* line 240, ../../../app/stylesheets/_main.scss */
+/* line 234, ../../../app/stylesheets/_main.scss */
 .spread {
   margin-bottom: 18px;
 }
-/* line 242, ../../../app/stylesheets/_main.scss */
+/* line 236, ../../../app/stylesheets/_main.scss */
 .spread .left {
   float: left;
   margin-right: 10px;
 }
 
-/* line 246, ../../../app/stylesheets/_main.scss */
+/* line 240, ../../../app/stylesheets/_main.scss */
 .tag_list {
   font-size: 10.833px;
   margin: 10px 0 18px;
 }
-/* line 249, ../../../app/stylesheets/_main.scss */
+/* line 243, ../../../app/stylesheets/_main.scss */
 .tag_list span {
   padding: 0px 10px;
   background-color: #1d8cc8;
@@ -1517,33 +1509,33 @@ h1.username {
   box-shadow: 0 1px 2px white;
 }
 
-/* line 258, ../../../app/stylesheets/_main.scss */
+/* line 252, ../../../app/stylesheets/_main.scss */
 .jcrop-holder img, img#preview {
   max-width: none  !important;
   max-height: none  !important;
 }
 
-/* line 263, ../../../app/stylesheets/_main.scss */
+/* line 257, ../../../app/stylesheets/_main.scss */
 .users_nearby {
   margin-bottom: 18px;
 }
-/* line 264, ../../../app/stylesheets/_main.scss */
+/* line 258, ../../../app/stylesheets/_main.scss */
 .users_nearby .avatar {
   margin: 0 10px 10px 0;
 }
 
 /* CONTACT LIST*/
-/* line 273, ../../../app/stylesheets/_main.scss */
+/* line 267, ../../../app/stylesheets/_main.scss */
 #users.contacts .actions {
   margin-bottom: 18px;
 }
 
 /* TESTIMONIALS */
-/* line 280, ../../../app/stylesheets/_main.scss */
+/* line 274, ../../../app/stylesheets/_main.scss */
 #testimonials {
   clear: both;
 }
-/* line 283, ../../../app/stylesheets/_main.scss */
+/* line 277, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial {
   width: 230px;
   padding: 15px;
@@ -1565,11 +1557,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 295, ../../../app/stylesheets/_main.scss */
+/* line 289, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 298, ../../../app/stylesheets/_main.scss */
+/* line 292, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -1580,17 +1572,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 302, ../../../app/stylesheets/_main.scss */
+/* line 296, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 308, ../../../app/stylesheets/_main.scss */
+/* line 302, ../../../app/stylesheets/_main.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 311, ../../../app/stylesheets/_main.scss */
+/* line 305, ../../../app/stylesheets/_main.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -1600,17 +1592,17 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 320, ../../../app/stylesheets/_main.scss */
+/* line 314, ../../../app/stylesheets/_main.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 323, ../../../app/stylesheets/_main.scss */
+/* line 317, ../../../app/stylesheets/_main.scss */
 .services_list img {
   width: 32px;
 }
 
-/* line 326, ../../../app/stylesheets/_main.scss */
+/* line 320, ../../../app/stylesheets/_main.scss */
 .services_used {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -1630,30 +1622,30 @@ h1.username {
   width: 90%;
   float: left;
 }
-/* line 332, ../../../app/stylesheets/_main.scss */
+/* line 326, ../../../app/stylesheets/_main.scss */
 .services_used img {
   float: left;
   margin-right: 10px;
 }
 
-/* line 337, ../../../app/stylesheets/_main.scss */
+/* line 331, ../../../app/stylesheets/_main.scss */
 .service_user {
   float: left;
   margin: 5px 0 10px;
 }
-/* line 340, ../../../app/stylesheets/_main.scss */
+/* line 334, ../../../app/stylesheets/_main.scss */
 .service_user .field {
   margin-bottom: 1em;
 }
 
 /* 12. MESSAGES
 ---------------------------------------- */
-/* line 350, ../../../app/stylesheets/_main.scss */
+/* line 344, ../../../app/stylesheets/_main.scss */
 .messages_list {
   margin-bottom: 10px;
 }
 
-/* line 354, ../../../app/stylesheets/_main.scss */
+/* line 348, ../../../app/stylesheets/_main.scss */
 .message {
   font-size: 13px;
   display: block;
@@ -1664,36 +1656,36 @@ h1.username {
   color: #666;
   position: relative;
 }
-/* line 363, ../../../app/stylesheets/_main.scss */
+/* line 357, ../../../app/stylesheets/_main.scss */
 .message.unread {
   background-color: #e5f5fb;
 }
-/* line 366, ../../../app/stylesheets/_main.scss */
+/* line 360, ../../../app/stylesheets/_main.scss */
 .message span {
   display: block;
 }
-/* line 368, ../../../app/stylesheets/_main.scss */
+/* line 362, ../../../app/stylesheets/_main.scss */
 .message span.message_date {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 373, ../../../app/stylesheets/_main.scss */
+/* line 367, ../../../app/stylesheets/_main.scss */
 .message span.message_subject {
   color: #999;
 }
-/* line 377, ../../../app/stylesheets/_main.scss */
+/* line 371, ../../../app/stylesheets/_main.scss */
 .message .message_sender {
   font-size: 13px;
   color: #1d8cc8;
   font-weight: bold;
   margin: 0 0 9px;
 }
-/* line 383, ../../../app/stylesheets/_main.scss */
+/* line 377, ../../../app/stylesheets/_main.scss */
 .message .checker {
   float: left;
 }
-/* line 386, ../../../app/stylesheets/_main.scss */
+/* line 380, ../../../app/stylesheets/_main.scss */
 .message .headers {
   padding-left: 34px;
 }
@@ -1703,7 +1695,7 @@ h1.username {
 /* 14.GLOBAL OBJECTS
 ---------------------------------------- */
 /* MODAL BOX */
-/* line 401, ../../../app/stylesheets/_main.scss */
+/* line 395, ../../../app/stylesheets/_main.scss */
 #simplemodal-container a.modalCloseImg {
   background: url("/images/icons/close.png") no-repeat;
   /* adjust url as required */
@@ -1722,7 +1714,7 @@ h1.username {
 /* 16.TEMPLATE SPECIFICS
 ---------------------------------------- */
 /* SEARCH */
-/* line 420, ../../../app/stylesheets/_main.scss */
+/* line 414, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links {
   display: none;
   margin: 0;
@@ -1758,11 +1750,11 @@ h1.username {
 #sub_nav .quick_links li.last {
   padding-right: 0;
 }
-/* line 428, ../../../app/stylesheets/_main.scss */
+/* line 422, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links ul li {
   margin: 0 5px 0 0;
 }
-/* line 430, ../../../app/stylesheets/_main.scss */
+/* line 424, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links a {
   text-decoration: none;
 }
@@ -1770,7 +1762,7 @@ h1.username {
 #sub_nav .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 432, ../../../app/stylesheets/_main.scss */
+/* line 426, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links span {
   font-weight: bold;
 }

@@ -37,12 +37,11 @@
           %h4 Care about privacy? 
           %p Nobody will ever see your email when you send messages, ever. Nobody will ever see your email .
       .clear
-    
-    .note_circle
-    .latest_testimionals
-      .inner_block.home_testimonials
-        %h3 Latest musicians testimonials
-        - if !@testimonials.blank?
+    - if @testimonials
+      .note_circle
+      .latest_testimionals
+        .inner_block.home_testimonials
+          %h3 Latest musicians testimonials
           - @testimonials.in_groups_of(2, false) do |group|
             .t_column
               - for testimonial in group do

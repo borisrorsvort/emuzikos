@@ -41,7 +41,7 @@
         = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
     %p
       = f.label :instruments, t(:'activerecord.attributes.user.instruments')
-      -Instrument.all.in_groups_of(4, false) do |instruments|
+      - @instruments.in_groups_of(4, false) do |instruments|
         .instrument_column
           - for instrument in instruments
             .instrument

@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   
   def edit
     @user = @current_user
+    @instruments = Instrument.order("name asc")
   end
   
   def update
