@@ -9,6 +9,7 @@ class Testimonial < ActiveRecord::Base
   def self.total_on(date)  
     where("date(created_at) = ?",date).count  
   end
+  
   def approve
     self.approved = true
     self.save!
