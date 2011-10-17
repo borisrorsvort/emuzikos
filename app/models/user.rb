@@ -96,7 +96,7 @@ class User < ActiveRecord::Base
   end
 
   def self.total_on(date)
-    where("date(created_at) = ?",date).count
+    where("date(users.created_at) = ?",date).count
   end
 
   def geocoded?
