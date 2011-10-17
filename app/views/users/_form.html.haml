@@ -1,4 +1,4 @@
-= form_for user, :html => { :multipart => true } do |f|
+= form_for @user, :html => { :multipart => true } do |f|
   = f.error_messages
 
   %h3= t(:'users.location')
@@ -13,9 +13,9 @@
 
   %h3= t(:'users.avatar')
   .field
-    - if user.avatar.present?
+    - if @user.avatar.present?
       .avatar.small
-        = image_tag user.avatar.url(:gallery)
+        = image_tag @user.avatar.url(:gallery)
     = f.file_field :avatar
     .clear
 
@@ -45,16 +45,16 @@
         .instrument_column
           - for instrument in instruments
             .instrument
-              = check_box_tag "user[instrument_ids][]", instrument.id, user.instruments.include?(instrument)
+              = check_box_tag "user[instrument_ids][]", instrument.id, @user.instruments.include?(instrument)
               = f.label(instrument.name, :class => "habtm")
       .clear
     %p
       = f.label :genre, t(:'activerecord.attributes.user.genre')
-      - genres.in_groups_of(4, false) do |genres|
+      - @genres.in_groups_of(4, false) do |genres|
         .instrument_column
           - for genre in genres
             .instrument
-              = check_box_tag "user[genre_ids][]", genre.id, user.genres.include?(genre)
+              = check_box_tag "user[genre_ids][]", genre.id, @user.genres.include?(genre)
               = f.label(genre.name, :class => "habtm")
       .clear
     %p.checkbox_set
