@@ -23,9 +23,9 @@
     .tag_list
       - friendship.friend.instruments.each do |instrument|
         %span= t(:"instruments.#{instrument.name}")
-    
+
   .clear
 
 .actions
   = link_to t(:'buttons.remove_from_contact_list'), friendship, :method => :delete, :class => "button delete"
-  = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => friendship.friend.id), :class => "button submit contact"
+  = link_to t(:'buttons.contact'), new_user_message_path(current_user, :to => friendship.friend.id), :class => "button submit contact"

@@ -1,11 +1,11 @@
-en: 
+en:
   activerecord:
     attributes:
       user:
         username: Username
         user_type: User Type
         email: Email
-        genre: Main musical genre
+        genre: Musical genres
         instruments: Instruments
         searching_for: Searching for a
         references: References
@@ -32,5 +32,5 @@ en:
       testimonials: Testimonials
       messages: Messages
       search: Search
-      
+
 

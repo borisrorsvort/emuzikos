@@ -11,9 +11,9 @@ Emuzikos::Application.configure do
   config.action_controller.perform_caching = false
 
   config.active_support.deprecation = :notify
-  
+
   config.action_mailer.default_url_options = { :host => 'beta.emuzikos.com' }
-  
+
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
@@ -59,7 +59,7 @@ Emuzikos::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  
+
   Sass::Plugin.options[:template_location] = { 'app/stylesheets' => 'public/stylesheets/compiled' }
   Sass::Plugin.options[:never_update] = true
 end

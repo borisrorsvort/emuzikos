@@ -1,15 +1,15 @@
 Emuzikos::Application.routes.draw do
 
-  match '/auth/:service/callback' => 'services#create' 
+  match '/auth/:service/callback' => 'services#create'
   resources :services, :only => [:index, :create, :destroy]
-  
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
-  
+
   resource :sitemaps, :only => :show
-  
+
   resources :friendships
   resources :testimonials
   resources :users do
@@ -24,7 +24,7 @@ Emuzikos::Application.routes.draw do
   match "about" => "pages#about", :as => :about
   match "terms" => "pages#terms", :as => :terms
   match "privacy" => "pages#privacy", :as => :privacy
-  
+
   root :to => "pages#homepage"
-  
+
 end

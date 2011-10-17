@@ -9,42 +9,42 @@
       = link_to t(:'menu.profile.public'),  user_path(current_user)
     %li
       = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-    %li 
+    %li
       = link_to t(:'menu.profile.authentications'), services_path, :class => "current"
   .clear
 
 %section#deviseauth
   %header
-    %h3=t(:'.subtitle', :account => (@services.count == 1 ? t(:'.account.singular') : t(:'.account.plural')))    
+    %h3=t(:'.subtitle', :account => (@services.count == 1 ? t(:'.account.singular') : t(:'.account.plural')))
   #currservices
     %p= t(:'.random_password_warning')
-    
+
     - @services.each do |service|
       .services_used
         = image_tag "icons/authbuttons/#{service.provider}_64.png", :size => "64x64"
         .service_user
           %p
-            =t(:'activerecord.attributes.service.uname') 
+            =t(:'activerecord.attributes.service.uname')
             %br
             #{service.uname} (ID: #{service.uid})
           %p
             =t(:'activerecord.attributes.service.email')
             %br
-            #{service.uemail != '' ? service.uemail : t(:'activerecord.attributes.service.not_set')}
+            #{service.uemail? ? service.uemail : t(:'activerecord.attributes.service.not_set')}
           %p
             - @services.count == 1 ? @msg = t(:'.last_account_delete_warning') : @msg = ''
             = link_to t(:'buttons.services.delete'), service, :confirm => t(:'.are_you_sure') + @msg, :method => :delete, :class => "remove"
-      
+
   .clear
   - unless @services.count >= 2
     #availableservices
       %h3= t(:'.more_services')
       .services_list
-        
+
         - unless @current_user.has_service?("facebook")
           %a.services{:href => "/auth/facebook"}
             = image_tag "icons/authbuttons/facebook_32.png",  :alt => "Facebook"
-        
+
         - unless @current_user.has_service?("twitter")
           %a.services{:href => "/auth/twitter"}
             = image_tag "icons/authbuttons/twitter_32.png",  :alt => "Twitter"

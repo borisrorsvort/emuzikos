@@ -16,14 +16,14 @@
         musicians
     = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "signup_button"
   #music_notes
-  
-    
+
+
 
 = content_for :features do
   .features_columns
     .inner_block.home_feature
       %h3 Emuzikos, the musician search tool you were missing
-      
+
       .columns
         .inner_column
           %h4 Simple & minimal signup
@@ -34,7 +34,7 @@
           %p You will also get a private message inbox so that nobody ever sees your real email address until you're sure they are trully your band mates.
       .columns
         .inner_column
-          %h4 Care about privacy? 
+          %h4 Care about privacy?
           %p Nobody will ever see your email when you send messages, ever. Nobody will ever see your email .
       .clear
     - if @testimonials
@@ -56,6 +56,6 @@
                     .span.author
                       = testimonial.created_at.strftime('%b %d, %Y')
                       = t(:'common.by')
-                      = testimonial.user.username
+                      = testimonial.user_username
                     = truncate(testimonial.body, :length => 123, :omission =>"...")
     .clear

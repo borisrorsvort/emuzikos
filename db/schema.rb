@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111008114225) do
+ActiveRecord::Schema.define(:version => 20111016140220) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -53,6 +53,12 @@ ActiveRecord::Schema.define(:version => 20111008114225) do
     t.datetime "updated_at"
   end
 
+  create_table "genres", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "instruments", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -82,6 +88,13 @@ ActiveRecord::Schema.define(:version => 20111008114225) do
     t.string   "uid"
     t.string   "uname"
     t.string   "uemail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tastes", :force => true do |t|
+    t.integer  "genre_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -139,7 +152,6 @@ ActiveRecord::Schema.define(:version => 20111008114225) do
     t.string   "country"
     t.string   "searching_for"
     t.text     "request_message"
-    t.string   "genre"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"

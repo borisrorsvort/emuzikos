@@ -8,7 +8,7 @@
          li {
            position:relative;
            padding: 0;
-           margin: 0 10px 10px; 
+           margin: 0 10px 10px;
            .ui-button-text {
              font-size: 14px;
            }
@@ -31,14 +31,14 @@
       }
     }
   }
-  
+
   #sub_sections {
     @include horizontal-list(15px);
     display:block;
     overflow: visible;
     list-style: none;
 
-    a {    
+    a {
       @include link-colors($sub-nav-color-base);
       @include inset(#fff);
       text-decoration:none;
@@ -124,7 +124,7 @@
     padding: 18px;
     margin-bottom: 18px;
   }
-  
+
   /* LOGGUED OUT  */
   .logged_out {
     #user_forms {

@@ -5,19 +5,19 @@ module ApplicationHelper
     direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
     link_to title, params.merge(:sort => column, :direction => direction), {:class => css_class}
   end
-  
+
   def company
     AppConfig.company.name
   end
-  
+
   def devise
     AppConfig.site.devise
   end
-  
+
   def unread_bullet
     "&bull;"
   end
-  
+
   def pageless(total_pages, url=nil, container=nil)
     opts = {
       :totalPages => total_pages,
@@ -26,9 +26,9 @@ module ApplicationHelper
       :pagination => ".pagination",
       :loaderImage => "/images/icons/ajax-loader-pagiantion.gif"
     }
-    
+
     container && opts[:container] ||= container
-    
+
     javascript_tag("$('#inner_content .users_list').pageless(#{opts.to_json});")
   end
 end

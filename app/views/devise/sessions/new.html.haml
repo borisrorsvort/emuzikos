@@ -3,7 +3,7 @@
 #user_forms.centered
   %header
     %h1= t(:'.title')
-    
+
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     = devise_error_messages!
     .normal_login
@@ -20,15 +20,15 @@
           = f.label :remember_me
       %p
         = f.submit(t(:'buttons.login'), :type => "submit", :class => "button submit")
-      
+
     #remote.services_login
       #services.box.field
         %h5= t(:'.or_login_using')
         = link_to image_tag("icons/authbuttons/facebook_32.png"), "/auth/facebook"
         = link_to image_tag("icons/authbuttons/twitter_32.png"), "/auth/twitter"
-      
+
       .clear
       .shared_links
-        = render :partial => "devise/shared/links"
+        = render "devise/shared/links"
 
   .clear

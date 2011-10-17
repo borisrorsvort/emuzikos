@@ -6,24 +6,30 @@ namespace :db do
     puts 'Erasing models records'
     
     USER_TYPES = %w(band musician agent)
-    MUSICAL_GENRES = %w(alternative blues children classical comedy country dance easy_listening electronic fusion gospel hip_hop instrumental jazz latino new_age opera pop r_and_b reggae rock songwriter soundtrack spoken_word vocal world )
     
     puts 'Delete previous db'
     
-    [User, Friendship, Message, Service, Testimonial, Instrument, AdminUser].each(&:delete_all)
+    [User, Friendship, Message, Service, Testimonial, Instrument, Genre, Taste, AdminUser].each(&:delete_all)
     
     puts 'Creating instruments'
     
     ["guitar", "bass", "double bass", "drums", "violin", "flute", "piano", "percussions", "voice", "turntables", "banjo", "cithar", "bouzouki", "mandolin", "whistles", "spoons", "keyboard", "ocarina", "congas"].each do |instrument|
-       instrument = Instrument.new(:name => instrument)
-       instrument.save
-     end    
+      instrument = Instrument.new(:name => instrument)
+      instrument.save
+    end    
+    
+    puts 'Creating Genres'
+    
+    ["alternative", "blues", "indian classical", "irish", "children", "classical", "comedy", "country", "dance", "easy listening", "electronic", "fusion", "gospel", "hip hop", "instrumental", "jazz", "latino", "new age", "opera", "pop", "r&b", "reggae", "rock", "songwriter", "soundtrack", "spoken word", "vocal", "world"].each do |genre|
+      genre = Genre.new(:name => genre)
+      genre.save
+      Taste.populate 3 do |taste|
+        taste.user_id = rand(1-50).to_i
+        taste.genre_id = genre.id
+      end
+    end
     
     puts 'Start population'
-    
-    # Instrument.populate 19 do |instrument|
-    #       instrument.name = ["guitar", "bass", "double bass", "drums", "violin", "flute", "piano", "percussions", "voice", "turntables", "banjo", "cithar", "bouzouki", "mandolin", "whistles", "spoons", "keyboard", "ocarina", "congas"]
-    #     end
     
     User.populate 50 do |user|
       user.username = Faker::Name.first_name
@@ -31,12 +37,11 @@ namespace :db do
       user.encrypted_password = SecureRandom.hex(10)
       user.references = Populator.sentences(1..2)
       user.request_message = Populator.paragraphs(3..5)
-      user.sign_in_count = [1..100]
+      user.sign_in_count = 1..100
       user.user_type = USER_TYPES
       user.searching_for = USER_TYPES
       user.zip = Faker::Address.zip_code
       user.country = %w(US CA BE FR DE UK)
-      user.genre = MUSICAL_GENRES      
       user.created_at = 2.years.ago..Time.now
       user.visible = true
       user.wants_email = true
@@ -49,6 +54,8 @@ namespace :db do
       end
       
     end
+    
+    
     
     puts 'Populate messages'
     

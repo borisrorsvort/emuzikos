@@ -2,7 +2,7 @@
   padding: 0 10px 15px 0;
   font-size: 0.75em;
   @include inset(#fff); }
-  
+
 html.js .page_entries {
   display:none;
 }
@@ -21,9 +21,9 @@ html.js .page_entries {
     font-weight: bold;
     background: $paginate-current-bg;
     color: $paginate-current-color; }
-    
+
   span.disabled {
-    @include opacity(0.3);} 
+    @include opacity(0.3);}
   a, em, span {
     @include border-radius(2px);  }
   a {
@@ -35,7 +35,7 @@ html.js .page_entries {
       color: $paginate-normal-bg;
       background-color: $paginate-normal-color;
       @include inset(#666); }}
-      
+
   self-clearing method:
   &:after {
     content: ".";
@@ -43,14 +43,14 @@ html.js .page_entries {
     height: 0;
     clear: both;
     visibility: hidden; }
-    
+
   * html & {
     height: 1%; }
   *:first-child+html & {
     overflow: hidden; } }
  */
 
-#pageless-loader {  
+#pageless-loader {
   background: #ccc;
   width: 200px  !important;
   margin-top: 20px !important;

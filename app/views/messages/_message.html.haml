@@ -1,7 +1,7 @@
-= link_to user_message_path(@user, message), :class => "message #{"unread" if !message.read?}" do
+= link_to user_message_path(user, message), :class => "message #{"unread" if !message.read?}" do
   = check_box_tag "delete[]", message.id
   .headers
     %span.message_date= h message.created_at.to_s(:long)
-    %h4.message_sender= h(message.sender.username)      
+    %h4.message_sender= h(message.sender.username)
     %span.message_subject= truncate(h(message.subject), :length => 50)
   .clear

@@ -4,31 +4,31 @@
 
 
   %section#header
-    #logo
+    #logo.fadeInDown
       = link_to((@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home')) do
         = image_tag 'logo.png', :alt => "Emuzikos"
-        
+
     #user_nav
-      = render "/layouts/top_nav"
+      = render "/layouts/top_nav", :current_user => @current_user
     .clear
-    
+
   #container
-      
+
     = render "/layouts/main_nav"  if @current_user
 
     %section#content
       - flash.each do |key, message|
         = content_tag(:div, raw(message), :class => "flash #{key}")
-        
+
       - if content_for? :sub_nav
         %nav#sub_nav
           = yield :sub_nav
-          
+
       #inner_content
         - if show_title?
           %h1= yield(:title)
 
         = yield
     .clear
-  
+
   =render "/layouts/footer"

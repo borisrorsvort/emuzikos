@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :set_user
-  
+
   def index
     if params[:mailbox] == "sent"
       @messages = @user.sent_messages.page.per(AppConfig.site.results_per_page)
@@ -13,19 +13,19 @@ class MessagesController < ApplicationController
       render :partial => @users
     end
   end
-  
+
   def show
     @message = Message.read(params[:id], current_user)
   end
-  
+
   def new
     @message = Message.new
-    
+
     if params[:to]
       @reply_to = User.find(params[:to])
       @message.to = @reply_to.username
     end
-    
+
     if params[:reply_to]
       @reply_to = @user.received_messages.find(params[:reply_to])
       unless @reply_to.nil?
@@ -35,7 +35,7 @@ class MessagesController < ApplicationController
       end
     end
   end
-  
+
   def create
     @message = Message.new(params[:message])
     @message.sender = @user
@@ -45,14 +45,14 @@ class MessagesController < ApplicationController
       gflash :success => true
       gflash :notice => t(:'gflash.testimonials.please_write', :link => new_testimonial_url) if @current_user.testimonials.first.nil?
       if @message.recipient.wants_email == true
-        Notifier.user_message(@message, @user, @message.recipient).deliver        
+        Notifier.user_message(@message, @user, @message.recipient).deliver
       end
       redirect_to user_messages_path(@user)
     else
-      render :action => :new
+      render :new
     end
   end
-  
+
   def delete_selected
     if request.post?
       if params[:delete]
@@ -65,7 +65,7 @@ class MessagesController < ApplicationController
       redirect_to :back
     end
   end
-  
+
   private
     def set_user
       @user = @current_user

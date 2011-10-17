@@ -1,18 +1,18 @@
 - title t(:'.title'), false
 
 - content_for :sub_nav do
-  = render "search"
+  = render "search", :search => @search, :user_types => @user_types, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen.countries
 
 - content_for :scripts do
   = pageless(@users.num_pages, users_path)
 
 -if !@users.blank?
   %section.users_list
-    = render :partial => 'user', :collection => @users
+    = render @users
     .clear
 
   = paginate @users
-      
+
 -else
   =t(:'.no_users')
 

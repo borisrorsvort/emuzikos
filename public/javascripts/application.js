@@ -129,4 +129,11 @@ $(document).ready(function() {
     });
   });
   
+  $('#search_form .button').click(function() {
+    $('#inner_content').prepend("<div class='centered' style='text-align:center;'><p>Loading users<br><img width='220' height='19' src='/images/icons/ajax-loader-bar.gif'/></p></div>")
+    $('.users_list').addClass('fadeOutDownBig');
+    $(this).closest('form').submit();
+    $(this).attr("disabled", true);
+  });
+  
 });

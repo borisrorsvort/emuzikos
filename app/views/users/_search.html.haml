@@ -1,35 +1,19 @@
-/ .quick_links
-/   %ul
-/     %li
-/       %span= t(:'quick_links.title')
-/     %li
-/       = link_to t(:'quick_links.local_musicians'),  ""
-/       |
-/     %li
-/       = link_to t(:'quick_links.instruments_match'),  "#", :title => t(:'tooltips.search.match_instrument'), :class => "tooltip"
-/       |
-/     %li
-/       = link_to t(:'quick_links.recent_subscriptions'),  "#"
-/       |
-/     %li
-/       =link_to t(:'common.reset'), users_path, :class => "reset"
-      
 #search_form
-  = form_for @search, :url => users_path, :html => {:method => :get} do |f|
+  = form_for search, :url => users_path, :html => {:method => :get} do |f|
     .field
-      = f.select :user_type_contains, @user_types, :include_blank => t(:'search_terms.iam')
+      = f.select :user_type_contains, user_types, :include_blank => t(:'search_terms.iam')
       .clear
     .field
-      = f.select :genre_contains, @musical_genres, :include_blank => t(:'search_terms.music_style')
+      = f.select :genres_name_contains, genres.collect {|g| g.name}, :include_blank => t(:'search_terms.music_style')
       .clear
     .field
-      = f.select :instruments_name_contains, @instruments.collect {|i| i.name}, :include_blank => t(:'search_terms.who_plays')
+      = f.select :instruments_name_contains, instruments.collect {|i| i.name}, :include_blank => t(:'search_terms.who_plays')
       .clear
     .field
-      = f.select :searching_for_contains, @user_types, :include_blank => t(:'search_terms.who_search_for')
+      = f.select :searching_for_contains, user_types, :include_blank => t(:'search_terms.who_search_for')
       .clear
     .field
-      = f.select :country_contains, Carmen.countries, :include_blank => t(:'search_terms.country')
+      = f.select :country_contains, countries, :include_blank => t(:'search_terms.country')
       .clear
     .field#zip
       .centered
@@ -38,6 +22,5 @@
     .field
       .centered
         = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit search small")
-    
+
     .clear
-    

@@ -7,7 +7,7 @@
 #         super
 #       end
 #     end
-# 
+#
 #     def crop_command
 #       target = @attachment.instance
 #       if target.cropping?
@@ -27,7 +27,7 @@ module Paperclip
         super
       end
     end
-    
+
     def crop_command
       target = @attachment.instance
       if target.cropping?

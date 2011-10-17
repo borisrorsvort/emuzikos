@@ -727,21 +727,21 @@ h2.moto strong {
     background: $blue_dark;
     color: $header-data-color;
     @include background-image(linear-gradient($blue_light, $blue_dark)); }
-    
+
   .halo {
     text-align:center;
     background: transparent url("/images/backgrounds/halo.png") center top no-repeat;
     min-height: 400px; }
-    
+
   #inner_content {
     background: transparent url("/images/backgrounds/bg-music-notes.png") center top no-repeat;
     padding: 0;}
-    
+
   .icon_and_logo {
     @extend .centered;
     width: 40%;
     padding-top: 20px;}
-    
+
   #home_moto {
     text-align:center;
     margin-top: 20px;
@@ -749,7 +749,7 @@ h2.moto strong {
     color: #00496d;
     @include inset(#bababa);
     font-size: 2.6em; }
-    
+
   .signup_button {
     -webkit-animation:slidingFromLeft 2s ;
     @extend .centered;
@@ -769,14 +769,14 @@ h2.moto strong {
         color: lighten(#604f1b, 10%); }
       &:active {
         top: 1px; }}
-        
+
     @include inset(#FFF);
     font-weight:bold;
     font-size: 1.5em;
     position:relative;
     background:transparent image-url('/images/buttons/signup_button/signup_bc.png') left top repeat-x;
     $arrow-size: 25px;
-    
+
     .bl {
       left: 0 - $arrow-size;
       position:absolute;
@@ -796,7 +796,7 @@ h2.moto strong {
     padding: 30px 20px 20px;
     font-size: 12px;
     color:#666;
-    
+
     #steps {
       display:inline;
       float:left;
@@ -804,7 +804,7 @@ h2.moto strong {
       width: 53%;
       margin-left: 2%;
       }
-      
+
     #home_testimonials {
       display:inline;
       float:left;
@@ -832,7 +832,7 @@ h2.moto strong {
             font-weight:bold;
           }
           .avatar {
-            float:left; 
+            float:left;
             border: 3px solid #ccc;
             @include border-radius(3px); }}
       }
@@ -865,20 +865,20 @@ h2.moto strong {
     display: block;
     position:relative;
     width: 154px; }
-    
+
   .app_sample_image {
     width: 130px;
     height: 130px;
     border: 5px solid desaturate(lighten($blue_basic, 40%), 30%);
     background-color:#FFF;
     @include border-radius(4px); }
-    
+
   .flag {
     text-align:center;
     color:#fff;
     @include  inset(#000);
     font-size: 22px;
-    line-height: 62px; 
+    line-height: 62px;
     width: 49px;
     height: 62px;
     margin-bottom: 10px;
@@ -897,22 +897,22 @@ h2.moto strong {
   /* 1.ROOT */
   /* 2.HEADINGS */
   /*.logged_out {
-      
+
       .icon_and_logo {
         width: 50%; }
-        
+
       .halo {
         min-height: 280px;
         padding-bottom: 30px;
         margin-bottom: 0 ; }
-        
+
       #user_forms {
         width: 80%;
         margin: 20px auto; }
-        
+
       .signup_button a {
         font-size: 0.55em; }
-        
+
       #user_nav {
         margin-top:0;
         text-align:left;

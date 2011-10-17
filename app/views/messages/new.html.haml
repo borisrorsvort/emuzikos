@@ -8,4 +8,4 @@
 
 = form_for @message, :url => user_messages_path(@user) do |f|
 
-  = render :partial => "messages/form", :object => f
+  = render "messages/form", :object => f

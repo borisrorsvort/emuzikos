@@ -12,7 +12,7 @@
 
 -if !@friendships.blank?
   %section.users_list
-    = render :partial => 'friendship', :collection => @friendships
+    = render @friendships, :current_user => @current_user
 
 -else
 

@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  
+
 before_filter :authenticate_user!, :except => [:create]
 
 def index
@@ -11,7 +11,7 @@ def destroy
   # remove an authentication service linked to the current user
   @service = current_user.services.find(params[:id])
   @service.destroy
-  
+
   redirect_to services_path
 end
 
@@ -24,7 +24,7 @@ def create
 
   # continue only if hash and parameter exist
   if omniauth and params[:service]
-    
+
     # map the returned hashes to our variables first - the hashes differ for every service
     if service_route == 'facebook'
       omniauth['extra']['user_hash']['email'] ? email =  omniauth['extra']['user_hash']['email'] : email = ''
@@ -42,13 +42,13 @@ def create
       #render :text => uid.to_s + " - " + name + " - " + email + " - " + provider
       return
     end
-  
+
     # continue only if provider and uid exist
     if uid != '' and provider != ''
-        
+
       # nobody can sign in twice, nobody can sign up while being signed in (this saves a lot of trouble)
       if !user_signed_in?
-        
+
         # check if user has already signed in using this service provider and continue with sign in process if yes
         auth = Service.find_by_provider_and_uid(provider, uid)
         if auth
@@ -78,10 +78,10 @@ def create
               #user.skip_confirmation! dont need cause i usually don't confirm the user
               user.save!
               #user.confirm! dont need cause i usually don't confirm the user
-              
+
               # flash and sign in
               flash[:notice] = t(:'services.account_created', :provider => provider.capitalize, :link => edit_user_registration_path(current_user))
-              
+
               sign_in_and_redirect(:user, user)
             end
           else
@@ -91,7 +91,7 @@ def create
         end
       else
         # the user is currently signed in
-        
+
         # check if this service is already linked to his/her account, if not, add it
         auth = Service.find_by_provider_and_uid(provider, uid)
         if !auth
@@ -101,8 +101,8 @@ def create
         else
           flash[:notice] = service_route.capitalize + ' is already linked to your account.'
           redirect_to services_path
-        end  
-      end  
+        end
+      end
     else
       flash[:error] =  service_route.capitalize + ' returned invalid data for the user id.'
       redirect_to new_user_session_path

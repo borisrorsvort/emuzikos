@@ -3,11 +3,11 @@ html{
   min-height:101%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  word-wrap: break-word; 
-  -webkit-nbsp-mode: space; 
+  word-wrap: break-word;
+  -webkit-nbsp-mode: space;
   -webkit-line-break: after-white-space;  }
-  
-body { 
+
+body {
   background: $body_bg_default url(/images/backgrounds/bg-footer.gif);
   font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
   font-size: 100%;
@@ -60,7 +60,7 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-a { 
+a {
   color: $blue_dark;
   img {
     border: none; }}
@@ -72,7 +72,7 @@ a {
 
 .wide {
   width: 100%;}
- 
+
 .unread_bullet {
   font-size: 20px;
   font-weight:bold;
@@ -122,7 +122,7 @@ strong {
 
 @mixin folded_corner($block_color, $corner_size, $bg_color, $rounded: true) {
   position:relative;
-  
+
   &:before {
      content: "";
      position: absolute;
@@ -134,7 +134,7 @@ strong {
      background: darken($block_color, 10%);
      @include single-box-shadow(rgba(153,153,153, 0.7), -1px, 1px, 1px );
      display:block; width:0; /* Firefox 3.0 damage limitation */
-     
+
      @if $rounded == true {
        @include border-bottom-left-radius($corner_size * 0.2); }}
 }
@@ -143,26 +143,26 @@ strong {
 ---------------------------------------- */
 
 @mixin css-arrow($orientation: "top", $bg-color: #fff, $arrow-color: #ccc, $size: 10px) {
-  
-  font-size: 0px; 
-  line-height: 0%; 
+
+  font-size: 0px;
+  line-height: 0%;
   width: 0px;
-  
+
   @if $orientation == "top" {
     border-top: $size solid $arrow-color;
     border-left: $size solid $bg-color;
     border-right: $size solid $bg-color; }
-  
+
   @if $orientation == "bottom" {
     border-bottom: $size solid $arrow-color;
     border-left: $size solid $bg-color;
     border-right: $size solid $bg-color; }
-  
+
   @if $orientation == "left" {
     border-left: $size solid $arrow-color;
     border-top: $size solid $bg-color;
     border-bottom: $size solid $bg-color; }
-  
+
   @if $orientation == "right" {
     border-right: $size solid $arrow-color;
     border-top: $size solid $bg-color;
@@ -183,7 +183,7 @@ strong {
   50% {left: 50px;opacity: 0.5;}
   60% {left: 50px;opacity: 0.5;}
   100% {left: 0;opacity: 1;}
-} 
+}
 @-webkit-keyframes movingarrow {
   0% {top: -200px;opacity: 0;}
   50% {top: 20px;opacity: 0.5;}

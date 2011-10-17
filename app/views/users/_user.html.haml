@@ -10,7 +10,7 @@
       = t(:'common.users.from') + " "
       = user.zip + ", "
       = Carmen::country_name(user.country)
-  
+
   .section.user_type
     .title
       %strong= t(:"users.types.#{user.user_type}")
@@ -18,7 +18,8 @@
       %strong= t(:"users.types.#{user.searching_for}")
       = t(:'users.show.to_play')
     .tag_list
-      %span= t(:"musical_genres.#{user.genre}")
+      - user.genres.each do |genre|
+        %span= genre.name
 
   .section.user_instruments
     .title
@@ -26,5 +27,5 @@
     .tag_list
       - user.instruments.each do |instrument|
         %span= instrument.name
-  
+
   .clear

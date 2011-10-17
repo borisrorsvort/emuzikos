@@ -1,22 +1,20 @@
-- @innner_content_class == "no_padding"
-
 - title t(:'.title'), false
 
 - content_for :sub_nav do
   %ul#sub_sections
-    %li= link_to t(:'menu.messages.inbox'), user_messages_path(@user), :class => "current"
-    %li= link_to t(:'menu.messages.sent_messages'), user_messages_path(@user, :mailbox => :sent)
-    %li= link_to t(:'menu.users.contacts'), user_contacts_path(@user)
+    %li= link_to t(:'menu.messages.inbox'), user_messages_path(user), :class => "current"
+    %li= link_to t(:'menu.messages.sent_messages'), user_messages_path(user, :mailbox => :sent)
+    %li= link_to t(:'menu.users.contacts'), user_contacts_path(user)
   .clear
 
-- if @messages.size == 0
+- if messages.size == 0
   .message
     =t(:'messages.no_messages')
 
 -else
-  
+
   .messages_list
-    = render :partial => "message", :collection => @messages
-  
+    = render messages, :user => user
+
   %p
-    = submit_tag t(:'buttons.delete'), :class => "button delete" 
+    = submit_tag t(:'buttons.delete'), :class => "button delete"

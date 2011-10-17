@@ -1,6 +1,6 @@
 - title t(:'.title')
 
-#user_forms 
+#user_forms
   %header
     %h1= t(:'.title')
     %p!= t(:'.newsletter_agreement')
@@ -18,9 +18,9 @@
         = f.password_field :password, :class => 'form_guide', :title => t(:'tooltips.password')
       %p
         = f.label :password_confirmation, t(:'activerecord.attributes.user.password_confirmation')
-        = f.password_field :password_confirmation  
+        = f.password_field :password_confirmation
       %p
-        = f.label :zip, t(:'activerecord.attributes.user.zip')    
+        = f.label :zip, t(:'activerecord.attributes.user.zip')
         = f.text_field :zip
 
       %p
@@ -28,8 +28,8 @@
         = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
       %p
         = f.submit(t(:'buttons.submit'), :type => "submit", :class => "button submit")
-    
-    
+
+
     #remote.services_login
       #services.box.field
         %h5= t(:'.or_signup_using')
@@ -37,6 +37,6 @@
 
       .clear
       .shared_links
-        = render :partial => "devise/shared/links"
+        = render  "devise/shared/links"
 
   .clear

@@ -34,7 +34,7 @@
 #main_nav .icon-messages a {
   background-position: 13px -33px !important; }
 #main_nav .icon-search a {
-  background-position: 13px 15px !important; }  
+  background-position: 13px 15px !important; }
 
 .main_nav_current_arrow {
   $size: 5px;
@@ -68,7 +68,7 @@
 #sub_nav #actions_set {
   .ui-button-text {
     font-size: 14px; }
-    
+
   .button.add_to_contact_list {
     width:  auto;
     .ui-button-text {
@@ -120,7 +120,7 @@
 }
 .left_drawer {
   display:inline;
-  float:left;  
+  float:left;
   width: 25%;
   .inner {
     padding-right: 10px;
@@ -136,9 +136,9 @@
 }
 .map_container {
   height: 300px  !important;
-  width: 100%; 
+  width: 100%;
   float: none; }
-  
+
 .services_used {
   margin: 10px 10px 10px 0;
   width: 20%;
@@ -172,16 +172,16 @@
   #user_forms {
     width: 55%;
     .normal_login {
-      
+
       @include fluid_column(5%, 2);
       padding: 0 5% 0 0; }
-      
+
     .services_login {
       @include fluid_column(5%, 2);
       margin-top: 0;
       padding: 5% 0 0 5%;
       width: 50%; }
-  }  
+  }
 }
 
 
@@ -189,10 +189,10 @@
 
 .homepage {
   #main-icon {
-    
+
   }
   #logo img {
-   
+
   }
   h2.moto {
     font-size: 3em;

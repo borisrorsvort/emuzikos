@@ -13,13 +13,13 @@ $sub_nav_topbottom_padding: 18px;
     @include hover-link;}
 }
 
-#container{ 
+#container{
   margin:0 auto;
 }
 
 #content {
-  float:left; 
-  width: 100%; }  
+  float:left;
+  width: 100%; }
 
 
 #main_nav {
@@ -102,24 +102,24 @@ $sub_nav_topbottom_padding: 18px;
   }
   .ui-button-text {
     font-size: 0.80em;
-    padding: .4em 1em .4em 2.4em;  } 
+    padding: .4em 1em .4em 2.4em;  }
 }
 
 
 #footer {
   padding: $baseline;
   font-size: $basefont;
-  
+
   .inner_footer {
     $radius: 3px;
     @include border-radius($radius);
     background-color: #111;
     @include box-shadow(rgba(#555, 1) 0 0 1px 1px inset);}
-    
+
   &.light .inner_footer {
     padding: 18px;
   }
-  
+
   .left_links {
     float:left;
   }
@@ -128,7 +128,7 @@ $sub_nav_topbottom_padding: 18px;
   }
   a {
     margin-right: 20px;
-    
+
     color:#666;
     @include hover-link;
   }
@@ -150,9 +150,30 @@ $sub_nav_topbottom_padding: 18px;
 
 .left_drawer {
   width: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: .2s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
 }
 
 .right_drawer {
- margin-left: 0; 
+ margin-left: 0;
  width: 100%;
 }

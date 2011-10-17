@@ -1,12 +1,12 @@
 ActiveAdmin.register User do
-  User.class_eval do 
-    attr_searchable :email, :username, :user_type, :genre, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude
+  User.class_eval do
+    attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude
   end
-  
+
   index do
       column :id do |user|
         link_to user.id, admin_user_path(user)
-      end    
+      end
       column :username, :sortable => false
       column :user_type
       column :genre
@@ -20,8 +20,8 @@ ActiveAdmin.register User do
       column :wants_email
       default_actions
     end
-    
-    form do |f|    
+
+    form do |f|
       f.inputs "Details" do
         f.input :username
         f.input :email
@@ -35,7 +35,7 @@ ActiveAdmin.register User do
         f.input :visible, :as => :boolean
         f.input :wants_email, :as => :boolean
       end
-    
+
       f.buttons
     end
 end

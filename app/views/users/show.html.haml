@@ -5,7 +5,7 @@
 
 - content_for :javascripts do
   = include_javascripts :maps
-  
+
 
 
 -if current_user
@@ -18,10 +18,10 @@
           = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
         %li
           = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-        %li 
+        %li
           = link_to t(:'menu.profile.authentications'), services_path
-      .clear  
-      
+      .clear
+
     - else
       #actions_set
         = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), :back, :class => "button back profile"
@@ -32,12 +32,12 @@
         -elsif !@current_user
           = link_to t(:'buttons.home_signup'), signup_path, :class => "button submit contact "
     .clear
-  
+
 
 
 %section.right_drawer.profile
   .inner_profile_wrapper
-    %header 
+    %header
       %h1.username= t(:'.title', :username => @user.username)
 
       - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
@@ -52,12 +52,11 @@
         = t(:'.is_looking_for')
         = t(:"users.types.#{@user.searching_for}")
         = t(:'.to_play')
-        = t(:"musical_genres.#{@user.genre}")
-        = t(:'.music')
+        = @user.genres.collect {|g| g.name }.to_sentence(:last_word_connector => ' and ')
     -else
       %br
     .spread
-      = render :partial => "shared/add_this"
+      = render "shared/add_this"
       .clear
 
     - unless @user.instruments.empty?
@@ -66,7 +65,7 @@
         - @user.instruments.each do |instrument|
           %span= instrument.name
 
-    - unless @user.references.blank?   
+    - unless @user.references.blank?
       %h3= t(:'activerecord.attributes.user.references')
       %p= @user.references
 
@@ -76,7 +75,7 @@
 
       .clear
 
-    - unless !@user.geocoded?
+    - if @user.geocoded?
       - unless @users_nearby.size.empty?
         .users_nearby
           %h3= t(:'.users_nearby')
@@ -91,15 +90,15 @@
           .clear
 
     %h3= t(:'.donate')
-    = render :partial => "shared/paypal_widget"
-      
-%section.left_drawer
+    = render "shared/paypal_widget"
+
+%section.left_drawer.fadeInLeft
   .inner
     - if @user.avatar
-      = image_tag @user.avatar.url(:normal), :class => "profile_picture" 
+      = image_tag @user.avatar.url(:normal), :class => "profile_picture"
     - else
       = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture"
-    - if @user.geocoded?      
+    - if @user.geocoded?
       = gmaps({ "map_options" => {"auto_zoom" => false, "zoom" => 11, "center_latitude" => @user.latitude, "center_longitude" => @user.longitude, :raw => '{ scrollwheel: false }' }, "markers" => {"data" => @user_map } })
 .clear
 

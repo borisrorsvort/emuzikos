@@ -1,18 +1,18 @@
 -if !@messages.blank?
-  
+
   - content_for :scripts do
     = pageless(@messages.num_pages, user_messages_path(@current_user))
-    
+
 = form_tag delete_selected_user_messages_path(@current_user, :method => :post)  do
-  
+
   - if params[:mailbox] == "sent"
-    = render :partial => "sent"
+    = render "sent", :messages => @messages, :user => @user, :innner_content_class => "no_padding"
   - else
-    = render :partial => "inbox"
-  
+    = render "inbox", :messages => @messages, :user => @user, :innner_content_class => "no_padding"
+
   = paginate @messages
-  
-= content_for :javascripts do 
+
+= content_for :javascripts do
   :javascript
     $(document).ready(function() {
       if ($('#messages_table .checked').size() == 0) {
@@ -23,8 +23,8 @@
         if ($('#messages_table .checked').size() == 0) {
           $('.button.delete').button( "option", "disabled", true );
         } else {
-          $('.button.delete').button( "option", "disabled", false );      
+          $('.button.delete').button( "option", "disabled", false );
         }
-      });    
+      });
     });
 

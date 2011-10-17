@@ -21,10 +21,10 @@ label {
   margin: #{$baseline / 2} 0 0;
   font-weight   : bold;
   display       : block; }
-  
+
 .inline {
   display       : inline; }
-  
+
 input, textarea {
   @include border-radius(3px);
   background    : #fff;
@@ -45,7 +45,7 @@ input, textarea {
     padding     : 5px 0;}}
 
 /* SEARCH FORM */
-  
+
 #search_form {
   .button {
     &.search {
@@ -86,7 +86,7 @@ input, textarea {
     color:#666;
     @include border-radius(8px);
     @include single-box-shadow(#666, 0, 0, 5px);
-    
+
     .services_login {
       font-size: 1em;
       margin-top: 20px;
