@@ -57,8 +57,6 @@ h2.moto {
   color: #7bb3cf  !important;
   font-weight:normal;
   @include text-shadow(#000, 0, 1px, 1px);
-  -webkit-animation: scale_to_big 1s ;
-  -moz-animation: scale_to_big 1s;
   strong {
     color:#7bb3cf  !important;
   }
@@ -111,19 +109,54 @@ h2.moto {
 
 #logo_home {
   margin-bottom: 38px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  $duration: 1s;
+  $delay: 0.1s;
+
+  -webkit-animation-duration: $duration;
+  -webkit-animation-delay: $delay;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: $duration;
+  -moz-animation-delay: $delay;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: $duration;
+  -ms-animation-delay: $delay;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: $duration;
+  animation-delay:$delay;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
 }
 
 #main-icon {
   margin-bottom: 10px;
-  img {
-  -webkit-animation: scale_from_small 1s;
-  -moz-animation: scale_from_small 1s;
-}}
-#logo img {
-  -webkit-animation: scale_from_small 1s ;
-  -moz-animation: scale_from_small 1s;
-}
 
+  $duration: 1s;
+  $delay: 0.1s;
+
+  -webkit-animation-duration: $duration;
+  -webkit-animation-delay: $delay;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: $duration;
+  -moz-animation-delay: $delay;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: $duration;
+  -ms-animation-delay: $delay;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: $duration;
+  animation-delay:$delay;
+  animation-timing-function: ease;
+  animation-fill-mode: both; }
 
 #header {
   background:none;

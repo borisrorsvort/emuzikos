@@ -516,15 +516,13 @@ h2.moto {
   color: #7bb3cf  !important;
   font-weight: normal;
   text-shadow: black 0 1px 1px;
-  -webkit-animation: scale_to_big 1s;
-  -moz-animation: scale_to_big 1s;
 }
-/* line 62, ../../../app/stylesheets/homepage.scss */
+/* line 60, ../../../app/stylesheets/homepage.scss */
 h2.moto strong {
   color: #7bb3cf  !important;
 }
 
-/* line 67, ../../../app/stylesheets/homepage.scss */
+/* line 65, ../../../app/stylesheets/homepage.scss */
 .homepage h3 {
   font-size: 24px;
   padding: 45px 0;
@@ -533,14 +531,14 @@ h2.moto strong {
   background: transparent url('/images/homepage/home-separator.png?1318579966') center top no-repeat;
   color: #828282  !important;
 }
-/* line 75, ../../../app/stylesheets/homepage.scss */
+/* line 73, ../../../app/stylesheets/homepage.scss */
 .homepage h4 {
   color: #f5bd14  !important;
   text-shadow: black 0 1px 1px !important;
   margin-bottom: 9px !important;
 }
 
-/* line 80, ../../../app/stylesheets/homepage.scss */
+/* line 78, ../../../app/stylesheets/homepage.scss */
 #music_notes {
   background: transparent url("/images/homepage/music-notes.png") center -40px repeat-x;
   top: 0;
@@ -554,57 +552,82 @@ h2.moto strong {
   -webkit-animation: slidingFromLeft 4s;
 }
 
-/* line 95, ../../../app/stylesheets/homepage.scss */
+/* line 93, ../../../app/stylesheets/homepage.scss */
 .homepage.logged_out #inner_content {
   padding: 0;
 }
 
-/* line 98, ../../../app/stylesheets/homepage.scss */
+/* line 96, ../../../app/stylesheets/homepage.scss */
 #inner_halo {
   position: relative;
   background: transparent url("/images/homepage/halo.png") center bottom no-repeat;
 }
 
-/* line 102, ../../../app/stylesheets/homepage.scss */
+/* line 100, ../../../app/stylesheets/homepage.scss */
 #main {
   text-align: center;
   padding: 20px;
 }
 
-/* line 107, ../../../app/stylesheets/homepage.scss */
+/* line 105, ../../../app/stylesheets/homepage.scss */
 #logo_home, #main-icon {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 112, ../../../app/stylesheets/homepage.scss */
+/* line 110, ../../../app/stylesheets/homepage.scss */
 #logo_home {
   margin-bottom: 38px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.1s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 0.1s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: 0.1s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
 }
 
-/* line 116, ../../../app/stylesheets/homepage.scss */
+/* line 138, ../../../app/stylesheets/homepage.scss */
 #main-icon {
   margin-bottom: 10px;
-}
-/* line 118, ../../../app/stylesheets/homepage.scss */
-#main-icon img {
-  -webkit-animation: scale_from_small 1s;
-  -moz-animation: scale_from_small 1s;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0.1s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: 0.1s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: 0.1s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
 }
 
-/* line 122, ../../../app/stylesheets/homepage.scss */
-#logo img {
-  -webkit-animation: scale_from_small 1s;
-  -moz-animation: scale_from_small 1s;
-}
-
-/* line 128, ../../../app/stylesheets/homepage.scss */
+/* line 161, ../../../app/stylesheets/homepage.scss */
 #header {
   background: none;
   background-color: #041021;
 }
 
-/* line 133, ../../../app/stylesheets/homepage.scss */
+/* line 166, ../../../app/stylesheets/homepage.scss */
 .signup_button {
   height: 45px;
   line-height: 45px;
@@ -646,7 +669,7 @@ h2.moto strong {
   position: relative;
   z-index: 20;
 }
-/* line 157, ../../../app/stylesheets/homepage.scss */
+/* line 190, ../../../app/stylesheets/homepage.scss */
 .signup_button:hover {
   color: #372f12;
   -moz-transform: scale(1.02, 1.02);
@@ -656,24 +679,24 @@ h2.moto strong {
   transform: scale(1.02, 1.02);
 }
 
-/* line 163, ../../../app/stylesheets/homepage.scss */
+/* line 196, ../../../app/stylesheets/homepage.scss */
 .features_columns {
   background-color: #041021;
   padding-bottom: 48px;
 }
-/* line 166, ../../../app/stylesheets/homepage.scss */
+/* line 199, ../../../app/stylesheets/homepage.scss */
 .features_columns .columns {
   padding: 3%;
 }
 
-/* line 171, ../../../app/stylesheets/homepage.scss */
+/* line 204, ../../../app/stylesheets/homepage.scss */
 .FB_fan iframe {
   margin: 0 auto;
   width: 300px;
   margin-left: 14%;
 }
 
-/* line 177, ../../../app/stylesheets/homepage.scss */
+/* line 210, ../../../app/stylesheets/homepage.scss */
 .note_circle {
   width: 84px;
   height: 41px;
@@ -681,7 +704,7 @@ h2.moto strong {
   background: transparent url('/images/homepage/note-circle.png?1318579966') center bottom no-repeat;
 }
 
-/* line 185, ../../../app/stylesheets/homepage.scss */
+/* line 218, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .testimonial {
   font-size: 13px;
   background-color: #030c1a;
@@ -694,20 +717,20 @@ h2.moto strong {
   padding: 18px;
   margin: 0 10px 18px;
 }
-/* line 192, ../../../app/stylesheets/homepage.scss */
+/* line 225, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .text {
   font-size: 12px;
   opacity: 0.8;
   padding-left: 50px;
 }
-/* line 197, ../../../app/stylesheets/homepage.scss */
+/* line 230, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .author {
   font-weight: bold;
   margin-bottom: 9px;
   color: #496781;
   text-shadow: black 0 1px 1px;
 }
-/* line 203, ../../../app/stylesheets/homepage.scss */
+/* line 236, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -955,20 +978,20 @@ h2.moto strong {
 /*/mediaquery*/
 /*768px __________________________________________________________________________________________________________ */
 @media only screen and (min-width: 768px) {
-  /* line 455, ../../../app/stylesheets/homepage.scss */
+  /* line 488, ../../../app/stylesheets/homepage.scss */
   .homepage h2.moto {
     font-size: 41px;
   }
 
-  /* line 458, ../../../app/stylesheets/homepage.scss */
+  /* line 491, ../../../app/stylesheets/homepage.scss */
   .inner_block {
     margin: 0 auto;
   }
-  /* line 461, ../../../app/stylesheets/homepage.scss */
+  /* line 494, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_feature {
     max-width: 960px;
   }
-  /* line 463, ../../../app/stylesheets/homepage.scss */
+  /* line 496, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_feature .columns {
     width: 27.333%;
     padding: 3%;
@@ -976,11 +999,11 @@ h2.moto strong {
     display: inline;
     padding-top: 0;
   }
-  /* line 468, ../../../app/stylesheets/homepage.scss */
+  /* line 501, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_testimonials {
     max-width: 620px;
   }
-  /* line 470, ../../../app/stylesheets/homepage.scss */
+  /* line 503, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_testimonials .t_column {
     width: 50%;
     padding: 0;
