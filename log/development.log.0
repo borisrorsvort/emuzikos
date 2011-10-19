@@ -1,937 +1,970 @@
-# Logfile created on 2011-10-18 01:28:16 +0200 by logger.rb/25413
-Rendered messages/show.html.haml within layouts/application (4.7ms)
-Completed 500 Internal Server Error in 232ms
-
-ActionView::Template::Error (/Users/borisrorsvort/Sites/emuzikos/app/views/messages/show.html.haml:15: syntax error, unexpected ';', expecting ')'
-));}\n    |\n    <label class='inline'>#{_hamlout.adjust_tabs(1); 
-   ^
-/Users/borisrorsvort/Sites/emuzikos/app/views/messages/show.html.haml:15: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
-));}\n    |\n    <label class='inline'>#{_hamlout.adjust_tabs(1); 
-                             ^):
-    12: 
-    13:     %label.inline= t(:'messages.to')
-    14:     = @message.recipient == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.recipient.username), user_path(h(@message.recipient))
-    15:     |
-    16:     %label.inline= t(:'messages.received')
-    17:     = @message.created_at.to_s(:long)
-    18: .field
-  
+# Logfile created on 2011-10-18 01:36:32 +0200 by logger.rb/25413
 
 
-Rendered /Users/borisrorsvort/.rvm/gems/ruby-1.9.2-p290@rails_303/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
-Rendered /Users/borisrorsvort/.rvm/gems/ruby-1.9.2-p290@rails_303/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
-Rendered /Users/borisrorsvort/.rvm/gems/ruby-1.9.2-p290@rails_303/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
-
-
-Started GET "/users/56-borisrorsvort/messages/301" for 127.0.0.1 at 2011-10-18 01:28:38 +0200
-  [1m[36mSQL (1.2ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
-  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
-  Processing by MessagesController#show as HTML
-  Parameters: {"user_id"=>"56-borisrorsvort", "id"=>"301"}
-  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
-  [1m[35mMessage Load (1.1ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`id` = 301 AND (sender_id = 56 OR recipient_id = 56) LIMIT 1
-  [1m[36mUser Load (1.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 24 LIMIT 1[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-Rendered layouts/_head.html.haml (10.6ms)
-Rendered layouts/_top_nav.html.haml (3.5ms)
-  [1m[36mSQL (1.8ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))[0m
-Rendered layouts/_main_nav.html.haml (14.7ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.7ms)
-Rendered messages/show.html.haml within layouts/application (57.3ms)
-Completed 200 OK in 259ms (Views: 65.8ms | ActiveRecord: 9.2ms)
-
-
-Started GET "/users/24-mercedes" for 127.0.0.1 at 2011-10-18 01:28:45 +0200
-  [1m[35mSQL (1.3ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by UsersController#show as HTML
-  Parameters: {"id"=>"24-mercedes"}
-  [1m[35mUser Load (0.9ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 24 LIMIT 1[0m
-  [1m[35mInstrument Load (0.8ms)[0m  SELECT `instruments`.*, t0.user_id as the_parent_record_id FROM `instruments` INNER JOIN `instruments_users` t0 ON `instruments`.id = t0.instrument_id WHERE (t0.user_id = 24)
-  [1m[36mFriendship Load (1.2ms)[0m  [1mSELECT `friendships`.* FROM `friendships` WHERE `friendships`.`friend_id` = 24 AND (`friendships`.user_id = 56) LIMIT 1[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 24))
-Rendered shared/_add_this.html.erb (0.4ms)
-  [1m[36mSQL (5.8ms)[0m  [1mSELECT COUNT(*) AS count_all, users.id,users.username,users.email,users.encrypted_password,users.created_at,users.updated_at,users.user_type,users.references,users.zip,users.country,users.searching_for,users.request_message,users.avatar_file_name,users.avatar_content_type,users.avatar_file_size,users.avatar_updated_at,users.reset_password_token,users.reset_password_sent_at,users.remember_created_at,users.sign_in_count,users.current_sign_in_at,users.last_sign_in_at,users.current_sign_in_ip,users.last_sign_in_ip,users.latitude,users.longitude,users.visible,users.wants_email AS users_id_users_username_users_email_users_encrypted_password_users_created_at_users_updated_at_users_user_type_users_references_users_zip_users_country_users_searching_for_users_request_message_users_avatar_file_name_users_avatar_content_type_users_avatar FROM `users` WHERE (latitude BETWEEN 45.22616821688915 AND 45.51563178311085 AND longitude BETWEEN 1.4124203893520693 AND 1.824459610647931 AND users.id != 24) GROUP BY users.id,users.username,users.email,users.encrypted_password,users.created_at,users.updated_at,users.user_type,users.references,users.zip,users.country,users.searching_for,users.request_message,users.avatar_file_name,users.avatar_content_type,users.avatar_file_size,users.avatar_updated_at,users.reset_password_token,users.reset_password_sent_at,users.remember_created_at,users.sign_in_count,users.current_sign_in_at,users.last_sign_in_at,users.current_sign_in_ip,users.last_sign_in_ip,users.latitude,users.longitude,users.visible,users.wants_email HAVING 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((45.3709 - latitude) * PI() / 180 / 2), 2) + COS(45.3709 * PI() / 180) * COS(latitude * PI() / 180) * POWER(SIN((1.61844 - longitude) * PI() / 180 / 2), 2) )) <= 10 ORDER BY 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((45.3709 - latitude) * PI() / 180 / 2), 2) + COS(45.3709 * PI() / 180) * COS(latitude * PI() / 180) * POWER(SIN((1.61844 - longitude) * PI() / 180 / 2), 2) )) ASC[0m
-  [1m[35mUser Load (0.7ms)[0m  SELECT *, 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((45.3709 - latitude) * PI() / 180 / 2), 2) + COS(45.3709 * PI() / 180) * COS(latitude * PI() / 180) * POWER(SIN((1.61844 - longitude) * PI() / 180 / 2), 2) )) AS distance, CAST(DEGREES(ATAN2( RADIANS(longitude - 1.61844), RADIANS(latitude - 45.3709))) + 360 AS decimal) % 360 AS bearing FROM `users` WHERE (latitude BETWEEN 45.22616821688915 AND 45.51563178311085 AND longitude BETWEEN 1.4124203893520693 AND 1.824459610647931 AND users.id != 24) GROUP BY users.id,users.username,users.email,users.encrypted_password,users.created_at,users.updated_at,users.user_type,users.references,users.zip,users.country,users.searching_for,users.request_message,users.avatar_file_name,users.avatar_content_type,users.avatar_file_size,users.avatar_updated_at,users.reset_password_token,users.reset_password_sent_at,users.remember_created_at,users.sign_in_count,users.current_sign_in_at,users.last_sign_in_at,users.current_sign_in_ip,users.last_sign_in_ip,users.latitude,users.longitude,users.visible,users.wants_email HAVING 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((45.3709 - latitude) * PI() / 180 / 2), 2) + COS(45.3709 * PI() / 180) * COS(latitude * PI() / 180) * POWER(SIN((1.61844 - longitude) * PI() / 180 / 2), 2) )) <= 10 ORDER BY 3958.755864232 * 2 * ASIN(SQRT(POWER(SIN((45.3709 - latitude) * PI() / 180 / 2), 2) + COS(45.3709 * PI() / 180) * COS(latitude * PI() / 180) * POWER(SIN((1.61844 - longitude) * PI() / 180 / 2), 2) )) ASC
-Rendered shared/_paypal_widget.html.erb (0.4ms)
-Rendered /Users/borisrorsvort/.rvm/gems/ruby-1.9.2-p290@rails_303/gems/gmaps4rails-1.3.0/app/views/gmaps4rails/_gmaps4rails.html.erb (3.0ms)
-Rendered layouts/_head.html.haml (8.8ms)
-Rendered layouts/_top_nav.html.haml (3.5ms)
-  [1m[36mSQL (1.8ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))[0m
-Rendered layouts/_main_nav.html.haml (16.7ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.2ms)
-Rendered users/show.html.haml within layouts/application (118.1ms)
-Completed 200 OK in 311ms (Views: 117.9ms | ActiveRecord: 16.0ms)
-
-
-Started GET "/testimonials" for 127.0.0.1 at 2011-10-18 01:32:55 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.8ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
-  Processing by TestimonialsController#index as HTML
-  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.3ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1 ORDER BY created_at DESC LIMIT 20 OFFSET 0[0m
-  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 14 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 33 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 33 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 26 LIMIT 1
-  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 46 LIMIT 1
-  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 48 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 19 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 19 LIMIT 1[0m
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 12 LIMIT 1
-  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 41 LIMIT 1[0m
-  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 41 LIMIT 1
-  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 43 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 11 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 11 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 31 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 31 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 20 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 20 LIMIT 1[0m
-Rendered testimonials/_testimonial.html.haml (42.8ms)
-  [1m[35mSQL (1.2ms)[0m  SELECT COUNT(*) FROM `testimonials` WHERE `testimonials`.`approved` = 1
-Rendered layouts/_head.html.haml (148.9ms)
-Rendered layouts/_top_nav.html.haml (4.6ms)
-  [1m[36mSQL (1.6ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))[0m
-Rendered layouts/_main_nav.html.haml (18.9ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.7ms)
-Rendered testimonials/index.html.haml within layouts/application (309.2ms)
-Completed 200 OK in 348ms (Views: 313.0ms | ActiveRecord: 12.6ms)
-
-
-Started GET "/testimonials/new" for 127.0.0.1 at 2011-10-18 01:33:34 +0200
-  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.7ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by TestimonialsController#new as HTML
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-Rendered testimonials/_form.html.haml (7.7ms)
-Rendered layouts/_head.html.haml (150.5ms)
-Rendered layouts/_top_nav.html.haml (5.4ms)
-  [1m[36mSQL (1.7ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))[0m
-Rendered layouts/_main_nav.html.haml (23.1ms)
-Rendered shared/_feedback_box.html.erb (1.1ms)
-Rendered layouts/_footer.html.haml (12.9ms)
-Rendered testimonials/new.html.haml within layouts/application (217.3ms)
-Completed 200 OK in 283ms (Views: 227.6ms | ActiveRecord: 6.3ms)
-
-
-Started GET "/users" for 127.0.0.1 at 2011-10-18 01:35:08 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by UsersController#index as HTML
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mGenre Load (0.5ms)[0m  [1mSELECT `genres`.* FROM `genres` ORDER BY name asc[0m
-  [1m[35mInstrument Load (0.4ms)[0m  SELECT `instruments`.* FROM `instruments` ORDER BY name asc
-Rendered users/_search.html.haml (40.1ms)
-  [1m[36mSQL (1.7ms)[0m  [1mSELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)[0m
-  [1m[35mUser Load (4.9ms)[0m  SELECT DISTINCT users.* FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id) LIMIT 8 OFFSET 0
-  [1m[36mGenre Load (0.5ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 24))[0m
-  [1m[35mInstrument Load (1.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 24 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 32))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 32 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 2))[0m
-  [1m[35mInstrument Load (0.4ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 2 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 44))[0m
-  [1m[35mInstrument Load (0.4ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 44 )
-  [1m[36mGenre Load (0.4ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 47))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 47 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 9))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 9 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 20))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 20 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 41))[0m
-  [1m[35mInstrument Load (0.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 41 )
-Rendered users/_user.html.haml (173.0ms)
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)[0m
-Rendered layouts/_head.html.haml (10.7ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
-  [1m[35mSQL (1.7ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))
-Rendered layouts/_main_nav.html.haml (18.4ms)
-Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (11.9ms)
-Rendered users/index.html.haml within layouts/application (391.2ms)
-Completed 200 OK in 609ms (Views: 388.2ms | ActiveRecord: 19.7ms)
-
-
-Started GET "/users?utf8=%E2%9C%93&search%5Buser_type_contains%5D=&search%5Bgenres_name_contains%5D=&search%5Binstruments_name_contains%5D=&search%5Bsearching_for_contains%5D=&search%5Bcountry_contains%5D=&search%5Bzip_contains%5D=" for 127.0.0.1 at 2011-10-18 01:35:16 +0200
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
-  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  Processing by UsersController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>{"user_type_contains"=>"", "genres_name_contains"=>"", "instruments_name_contains"=>"", "searching_for_contains"=>"", "country_contains"=>"", "zip_contains"=>""}}
-  [1m[36mUser Load (1.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
-  [1m[35mGenre Load (0.5ms)[0m  SELECT `genres`.* FROM `genres` ORDER BY name asc
-  [1m[36mInstrument Load (0.3ms)[0m  [1mSELECT `instruments`.* FROM `instruments` ORDER BY name asc[0m
-Rendered users/_search.html.haml (154.7ms)
-  [1m[35mSQL (2.3ms)[0m  SELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)
-  [1m[36mUser Load (6.1ms)[0m  [1mSELECT DISTINCT users.* FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id) LIMIT 8 OFFSET 0[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 24))
-  [1m[36mInstrument Load (0.9ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 24 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 32))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 32 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 2))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 2 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 44))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 44 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 47))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 47 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 9))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 9 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 20))
-  [1m[36mInstrument Load (0.1ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 20 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 41))
-  [1m[36mInstrument Load (0.1ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 41 )[0m
-Rendered users/_user.html.haml (41.3ms)
-  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)
-Rendered layouts/_head.html.haml (11.6ms)
-Rendered layouts/_top_nav.html.haml (3.9ms)
-  [1m[36mSQL (1.4ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))[0m
-Rendered layouts/_main_nav.html.haml (17.7ms)
-Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (10.4ms)
-Rendered users/index.html.haml within layouts/application (358.8ms)
-Completed 200 OK in 598ms (Views: 353.2ms | ActiveRecord: 20.3ms)
-
-
-Started GET "/users?utf8=%E2%9C%93&search%5Buser_type_contains%5D=&search%5Bgenres_name_contains%5D=&search%5Binstruments_name_contains%5D=&search%5Bsearching_for_contains%5D=&search%5Bcountry_contains%5D=&search%5Bzip_contains%5D=" for 127.0.0.1 at 2011-10-18 01:35:25 +0200
-  [1m[35mSQL (1.3ms)[0m  describe `instruments_users`
-  [1m[36mSQL (170.2ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by UsersController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>{"user_type_contains"=>"", "genres_name_contains"=>"", "instruments_name_contains"=>"", "searching_for_contains"=>"", "country_contains"=>"", "zip_contains"=>""}}
-  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mGenre Load (0.5ms)[0m  [1mSELECT `genres`.* FROM `genres` ORDER BY name asc[0m
-  [1m[35mInstrument Load (0.4ms)[0m  SELECT `instruments`.* FROM `instruments` ORDER BY name asc
-Rendered users/_search.html.haml (32.2ms)
-  [1m[36mSQL (1.6ms)[0m  [1mSELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)[0m
-  [1m[35mUser Load (5.9ms)[0m  SELECT DISTINCT users.* FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id) LIMIT 8 OFFSET 0
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 24))[0m
-  [1m[35mInstrument Load (1.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 24 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 32))[0m
-  [1m[35mInstrument Load (0.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 32 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 2))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 2 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 44))[0m
-  [1m[35mInstrument Load (0.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 44 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 47))[0m
-  [1m[35mInstrument Load (0.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 47 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 9))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 9 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 20))[0m
-  [1m[35mInstrument Load (0.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 20 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 41))[0m
-  [1m[35mInstrument Load (0.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 41 )
-Rendered users/_user.html.haml (41.2ms)
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)[0m
-Rendered layouts/_head.html.haml (10.2ms)
-Rendered layouts/_top_nav.html.haml (3.5ms)
-  [1m[35mSQL (1.7ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))
-Rendered layouts/_main_nav.html.haml (149.0ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.7ms)
-Rendered users/index.html.haml within layouts/application (362.1ms)
-Completed 200 OK in 695ms (Views: 357.3ms | ActiveRecord: 187.9ms)
-
-
-Started GET "/users?utf8=%E2%9C%93&search%5Buser_type_contains%5D=&search%5Bgenres_name_contains%5D=&search%5Binstruments_name_contains%5D=&search%5Bsearching_for_contains%5D=&search%5Bcountry_contains%5D=&search%5Bzip_contains%5D=" for 127.0.0.1 at 2011-10-18 01:35:32 +0200
-  [1m[36mSQL (6.0ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
-  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  Processing by UsersController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>{"user_type_contains"=>"", "genres_name_contains"=>"", "instruments_name_contains"=>"", "searching_for_contains"=>"", "country_contains"=>"", "zip_contains"=>""}}
-  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
-  [1m[35mGenre Load (0.5ms)[0m  SELECT `genres`.* FROM `genres` ORDER BY name asc
-  [1m[36mInstrument Load (0.8ms)[0m  [1mSELECT `instruments`.* FROM `instruments` ORDER BY name asc[0m
-Rendered users/_search.html.haml (44.3ms)
-  [1m[35mSQL (7.3ms)[0m  SELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)
-  [1m[36mUser Load (6.9ms)[0m  [1mSELECT DISTINCT users.* FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id) LIMIT 8 OFFSET 0[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 24))
-  [1m[36mInstrument Load (2.7ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 24 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 32))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 32 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 2))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 2 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 44))
-  [1m[36mInstrument Load (0.1ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 44 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 47))
-  [1m[36mInstrument Load (0.1ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 47 )[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 9))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 9 )[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 20))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 20 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 41))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 41 )[0m
-Rendered users/_user.html.haml (180.5ms)
-  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)
-Rendered layouts/_head.html.haml (10.8ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
-  [1m[36mSQL (1.2ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))[0m
-Rendered layouts/_main_nav.html.haml (32.5ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (13.3ms)
-Rendered users/index.html.haml within layouts/application (473.7ms)
-Completed 200 OK in 941ms (Views: 468.4ms | ActiveRecord: 32.0ms)
-
-
-Started GET "/users?utf8=%E2%9C%93&search%5Buser_type_contains%5D=&search%5Bgenres_name_contains%5D=&search%5Binstruments_name_contains%5D=&search%5Bsearching_for_contains%5D=&search%5Bcountry_contains%5D=&search%5Bzip_contains%5D=" for 127.0.0.1 at 2011-10-18 01:35:41 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by UsersController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>{"user_type_contains"=>"", "genres_name_contains"=>"", "instruments_name_contains"=>"", "searching_for_contains"=>"", "country_contains"=>"", "zip_contains"=>""}}
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mGenre Load (0.7ms)[0m  [1mSELECT `genres`.* FROM `genres` ORDER BY name asc[0m
-  [1m[35mInstrument Load (0.5ms)[0m  SELECT `instruments`.* FROM `instruments` ORDER BY name asc
-Rendered users/_search.html.haml (164.8ms)
-  [1m[36mSQL (2.1ms)[0m  [1mSELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)[0m
-  [1m[35mUser Load (4.9ms)[0m  SELECT DISTINCT users.* FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id) LIMIT 8 OFFSET 0
-  [1m[36mGenre Load (0.4ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 24))[0m
-  [1m[35mInstrument Load (1.3ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 24 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 32))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 32 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 2))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 2 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 44))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 44 )
-  [1m[36mGenre Load (0.4ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 47))[0m
-  [1m[35mInstrument Load (0.4ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 47 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 9))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 9 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 20))[0m
-  [1m[35mInstrument Load (0.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 20 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 41))[0m
-  [1m[35mInstrument Load (1.3ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 41 )
-Rendered users/_user.html.haml (48.7ms)
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)[0m
-Rendered layouts/_head.html.haml (11.6ms)
-Rendered layouts/_top_nav.html.haml (4.3ms)
-  [1m[35mSQL (1.4ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))
-Rendered layouts/_main_nav.html.haml (17.5ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.9ms)
-Rendered users/index.html.haml within layouts/application (373.8ms)
-Completed 200 OK in 618ms (Views: 369.1ms | ActiveRecord: 21.4ms)
-
-
-Started GET "/users?utf8=%E2%9C%93&search%5Buser_type_contains%5D=&search%5Bgenres_name_contains%5D=&search%5Binstruments_name_contains%5D=&search%5Bsearching_for_contains%5D=&search%5Bcountry_contains%5D=&search%5Bzip_contains%5D=" for 127.0.0.1 at 2011-10-18 01:35:47 +0200
-  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  Processing by UsersController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>{"user_type_contains"=>"", "genres_name_contains"=>"", "instruments_name_contains"=>"", "searching_for_contains"=>"", "country_contains"=>"", "zip_contains"=>""}}
-  [1m[36mUser Load (0.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
-  [1m[35mGenre Load (0.6ms)[0m  SELECT `genres`.* FROM `genres` ORDER BY name asc
-  [1m[36mInstrument Load (0.4ms)[0m  [1mSELECT `instruments`.* FROM `instruments` ORDER BY name asc[0m
-Rendered users/_search.html.haml (34.2ms)
-  [1m[35mSQL (2.2ms)[0m  SELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)
-  [1m[36mUser Load (4.8ms)[0m  [1mSELECT DISTINCT users.* FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id) LIMIT 8 OFFSET 0[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 24))
-  [1m[36mInstrument Load (1.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 24 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 32))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 32 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 2))
-  [1m[36mInstrument Load (0.1ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 2 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 44))
-  [1m[36mInstrument Load (0.1ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 44 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 47))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 47 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 9))
-  [1m[36mInstrument Load (0.1ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 9 )[0m
-  [1m[35mGenre Load (0.2ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 20))
-  [1m[36mInstrument Load (0.1ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 20 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 41))
-  [1m[36mInstrument Load (0.1ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 41 )[0m
-Rendered users/_user.html.haml (39.9ms)
-  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)
-Rendered layouts/_head.html.haml (10.6ms)
-Rendered layouts/_top_nav.html.haml (3.8ms)
-  [1m[36mSQL (1.7ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))[0m
-Rendered layouts/_main_nav.html.haml (18.1ms)
-Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (159.7ms)
-Rendered users/index.html.haml within layouts/application (510.0ms)
-Completed 200 OK in 750ms (Views: 506.1ms | ActiveRecord: 18.6ms)
-
-
-Started GET "/users?utf8=%E2%9C%93&search%5Buser_type_contains%5D=&search%5Bgenres_name_contains%5D=&search%5Binstruments_name_contains%5D=&search%5Bsearching_for_contains%5D=&search%5Bcountry_contains%5D=&search%5Bzip_contains%5D=" for 127.0.0.1 at 2011-10-18 01:35:54 +0200
-  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
-  Processing by UsersController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>{"user_type_contains"=>"", "genres_name_contains"=>"", "instruments_name_contains"=>"", "searching_for_contains"=>"", "country_contains"=>"", "zip_contains"=>""}}
-  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mGenre Load (3.0ms)[0m  [1mSELECT `genres`.* FROM `genres` ORDER BY name asc[0m
-  [1m[35mInstrument Load (0.6ms)[0m  SELECT `instruments`.* FROM `instruments` ORDER BY name asc
-Rendered users/_search.html.haml (54.7ms)
-  [1m[36mSQL (2.6ms)[0m  [1mSELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)[0m
-  [1m[35mUser Load (5.5ms)[0m  SELECT DISTINCT users.* FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id) LIMIT 8 OFFSET 0
-  [1m[36mGenre Load (0.5ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 24))[0m
-  [1m[35mInstrument Load (1.4ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 24 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 32))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 32 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 2))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 2 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 44))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 44 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 47))[0m
-  [1m[35mInstrument Load (0.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 47 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 9))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 9 )
-  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 20))[0m
-  [1m[35mInstrument Load (0.2ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 20 )
-  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 41))[0m
-  [1m[35mInstrument Load (0.1ms)[0m  SELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 41 )
-Rendered users/_user.html.haml (41.1ms)
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)[0m
-Rendered layouts/_head.html.haml (11.1ms)
-Rendered layouts/_top_nav.html.haml (3.8ms)
-  [1m[35mSQL (1.7ms)[0m  SELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))
-Rendered layouts/_main_nav.html.haml (17.9ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (11.7ms)
-Rendered users/index.html.haml within layouts/application (395.4ms)
-Completed 200 OK in 634ms (Views: 387.0ms | ActiveRecord: 23.3ms)
-
-
-Started GET "/users?utf8=%E2%9C%93&search%5Buser_type_contains%5D=&search%5Bgenres_name_contains%5D=&search%5Binstruments_name_contains%5D=&search%5Bsearching_for_contains%5D=&search%5Bcountry_contains%5D=&search%5Bzip_contains%5D=" for 127.0.0.1 at 2011-10-18 01:36:01 +0200
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  Processing by UsersController#index as HTML
-  Parameters: {"utf8"=>"✓", "search"=>{"user_type_contains"=>"", "genres_name_contains"=>"", "instruments_name_contains"=>"", "searching_for_contains"=>"", "country_contains"=>"", "zip_contains"=>""}}
-  [1m[36mUser Load (19.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
-  [1m[35mGenre Load (0.5ms)[0m  SELECT `genres`.* FROM `genres` ORDER BY name asc
-  [1m[36mInstrument Load (0.4ms)[0m  [1mSELECT `instruments`.* FROM `instruments` ORDER BY name asc[0m
-Rendered users/_search.html.haml (46.9ms)
-  [1m[35mSQL (30.6ms)[0m  SELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)
-  [1m[36mUser Load (6.7ms)[0m  [1mSELECT DISTINCT users.* FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id) LIMIT 8 OFFSET 0[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 24))
-  [1m[36mInstrument Load (2.0ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 24 )[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 32))
-  [1m[36mInstrument Load (0.3ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 32 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 2))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 2 )[0m
-  [1m[35mGenre Load (0.3ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 44))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 44 )[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 47))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 47 )[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 9))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 9 )[0m
-  [1m[35mGenre Load (0.5ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 20))
-  [1m[36mInstrument Load (0.2ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 20 )[0m
-  [1m[35mGenre Load (0.4ms)[0m  SELECT `genres`.* FROM `genres` INNER JOIN `tastes` ON `genres`.id = `tastes`.genre_id WHERE ((`tastes`.user_id = 41))
-  [1m[36mInstrument Load (0.3ms)[0m  [1mSELECT * FROM `instruments` INNER JOIN `instruments_users` ON `instruments`.id = `instruments_users`.instrument_id WHERE (`instruments_users`.user_id = 41 )[0m
-Rendered users/_user.html.haml (247.3ms)
-  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `users` INNER JOIN `tastes` ON `tastes`.`user_id` = `users`.`id` WHERE `users`.`visible` = 1 AND (users.id != 56) AND (latitude IS NOT NULL AND longitude IS NOT NULL) AND (country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id)
-Rendered layouts/_head.html.haml (11.9ms)
-Rendered layouts/_top_nav.html.haml (3.9ms)
-  [1m[36mSQL (11.7ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))[0m
-Rendered layouts/_main_nav.html.haml (75.3ms)
-Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (10.8ms)
-Rendered users/index.html.haml within layouts/application (1053.2ms)
-Completed 200 OK in 1447ms (Views: 1041.4ms | ActiveRecord: 80.1ms)
-
-
-Started GET "/users/56-borisrorsvort/messages" for 127.0.0.1 at 2011-10-18 01:36:10 +0200
-  [1m[35mSQL (1.7ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by MessagesController#index as HTML
-  Parameters: {"user_id"=>"56-borisrorsvort"}
-  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mMessage Load (0.8ms)[0m  [1mSELECT `messages`.* FROM `messages` WHERE (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0)) ORDER BY messages.created_at DESC LIMIT 8 OFFSET 0[0m
-Rendered messages/_inbox.html.haml (5.1ms)
-  [1m[35mSQL (1.5ms)[0m  SELECT COUNT(*) FROM `messages` WHERE (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))
-Rendered layouts/_head.html.haml (10.1ms)
-Rendered layouts/_top_nav.html.haml (3.6ms)
-  [1m[36mSQL (1.5ms)[0m  [1mSELECT COUNT(*) FROM `messages` WHERE `messages`.`read_at` IS NULL AND (`messages`.recipient_id = 56 AND (messages.recipient_deleted = 0))[0m
-Rendered layouts/_main_nav.html.haml (15.7ms)
-Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (11.2ms)
-Rendered messages/index.html.haml within layouts/application (76.8ms)
-Completed 200 OK in 298ms (Views: 83.1ms | ActiveRecord: 8.6ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:36:31 +0200
-  [1m[35mSQL (1.8ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
-  [1m[36mSQL (14.3ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.3ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.7ms)
-Rendered layouts/_top_nav.html.haml (4.6ms)
-Rendered shared/_feedback_box.html.erb (1.1ms)
-Rendered layouts/_footer.html.haml (23.8ms)
-Rendered pages/homepage.html.haml within layouts/home (84.5ms)
-Completed 200 OK in 370ms (Views: 85.7ms | ActiveRecord: 21.7ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:39:31 +0200
-  [1m[35mSQL (1.2ms)[0m  describe `instruments_users`
-  [1m[36mSQL (2.0ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.6ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.6ms)
-Rendered layouts/_top_nav.html.haml (3.5ms)
-Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (10.3ms)
-Rendered pages/homepage.html.haml within layouts/home (61.9ms)
-Completed 200 OK in 267ms (Views: 62.9ms | ActiveRecord: 8.3ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:40:00 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.6ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.7ms)
-Rendered layouts/_top_nav.html.haml (3.5ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.1ms)
-Rendered pages/homepage.html.haml within layouts/home (61.8ms)
-Completed 200 OK in 275ms (Views: 63.3ms | ActiveRecord: 8.6ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:40:36 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.6ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.5ms)
-Rendered layouts/_top_nav.html.haml (3.4ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.7ms)
-Rendered pages/homepage.html.haml within layouts/home (234.4ms)
-Completed 200 OK in 302ms (Views: 235.6ms | ActiveRecord: 8.5ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:41:09 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (4.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (3.8ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (154.7ms)
-Rendered layouts/_top_nav.html.haml (3.6ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.2ms)
-Rendered pages/homepage.html.haml within layouts/home (208.6ms)
-Completed 200 OK in 292ms (Views: 209.7ms | ActiveRecord: 14.0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:42:43 +0200
-  [1m[35mSQL (2.3ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.6ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.9ms)
-Rendered layouts/_top_nav.html.haml (4.0ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.4ms)
-Rendered pages/homepage.html.haml within layouts/home (228.8ms)
-Completed 200 OK in 297ms (Views: 230.0ms | ActiveRecord: 9.3ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:43:26 +0200
-  [1m[35mSQL (18.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.7ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (2.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.0ms)
-Rendered layouts/_top_nav.html.haml (3.9ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.2ms)
-Rendered pages/homepage.html.haml within layouts/home (65.4ms)
-Completed 200 OK in 290ms (Views: 65.2ms | ActiveRecord: 26.7ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:44:00 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.8ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.5ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.0ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
-Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (10.6ms)
-Rendered pages/homepage.html.haml within layouts/home (63.8ms)
-Completed 200 OK in 292ms (Views: 65.0ms | ActiveRecord: 8.8ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:45:16 +0200
+Started GET "/" for 127.0.0.1 at 2011-10-18 01:36:32 +0200
   [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.6ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.9ms)
-Rendered layouts/_top_nav.html.haml (3.6ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (11.6ms)
-Rendered pages/homepage.html.haml within layouts/home (64.1ms)
-Completed 200 OK in 141ms (Views: 65.3ms | ActiveRecord: 8.6ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:45:27 +0200
-  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.7ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.0ms)
-Rendered layouts/_top_nav.html.haml (3.8ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.5ms)
-Rendered pages/homepage.html.haml within layouts/home (64.7ms)
-Completed 200 OK in 264ms (Views: 66.2ms | ActiveRecord: 8.9ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:46:02 +0200
-  [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
   [1m[35mSQL (0.7ms)[0m  SHOW TABLES
   [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
   Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (2.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.7ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.9ms)
-Rendered layouts/_top_nav.html.haml (3.6ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.3ms)
-Rendered pages/homepage.html.haml within layouts/home (62.5ms)
-Completed 200 OK in 291ms (Views: 64.1ms | ActiveRecord: 10.3ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:46:24 +0200
-  [1m[35mSQL (1.3ms)[0m  describe `instruments_users`
-  [1m[36mSQL (50.9ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.7ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.8ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.1ms)
-Rendered pages/homepage.html.haml within layouts/home (63.1ms)
-Completed 200 OK in 295ms (Views: 64.2ms | ActiveRecord: 57.5ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:46:33 +0200
-  [1m[35mSQL (120.1ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.7ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (0.9ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.7ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.0ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.4ms)
-Rendered pages/homepage.html.haml within layouts/home (63.8ms)
-Completed 200 OK in 286ms (Views: 64.6ms | ActiveRecord: 127.4ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:46:56 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (2.0ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[35mUser Load (2.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
+  [1m[36mTestimonial Load (3.9ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
+  [1m[35mUser Load (2.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
   [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (10.6ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.8ms)
-Rendered pages/homepage.html.haml within layouts/home (230.4ms)
-Completed 200 OK in 293ms (Views: 231.9ms | ActiveRecord: 9.2ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:47:56 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
-  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (2.0ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (2.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.0ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
+Rendered layouts/_head.html.haml (34.1ms)
+Rendered layouts/_top_nav.html.haml (4.2ms)
 Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (12.1ms)
-Rendered pages/homepage.html.haml within layouts/home (235.9ms)
-Completed 200 OK in 298ms (Views: 236.4ms | ActiveRecord: 9.4ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:48:07 +0200
+Rendered layouts/_footer.html.haml (26.0ms)
+Rendered pages/homepage.html.haml within layouts/home (229.8ms)
+Completed 200 OK in 500ms (Views: 230.4ms | ActiveRecord: 65.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
   [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
   [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (0.7ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (2.4ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.9ms)
-Rendered layouts/_top_nav.html.haml (4.0ms)
-Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (13.0ms)
-Rendered pages/homepage.html.haml within layouts/home (241.1ms)
-Completed 200 OK in 310ms (Views: 242.4ms | ActiveRecord: 8.6ms)
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
 
 
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:48:42 +0200
-  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.8ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+Started GET "/" for 127.0.0.1 at 2011-10-18 02:20:53 +0200
   [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
   Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.8ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.7ms)
-Rendered layouts/_top_nav.html.haml (3.5ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.3ms)
-Rendered pages/homepage.html.haml within layouts/home (62.3ms)
-Completed 200 OK in 131ms (Views: 63.6ms | ActiveRecord: 8.2ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:49:03 +0200
-  [1m[35mSQL (1.3ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
   [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (1.7ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (13.4ms)
+Rendered layouts/_top_nav.html.haml (196.5ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (11.2ms)
+Rendered pages/homepage.html.haml within layouts/home (462.4ms)
+Completed 200 OK in 1993ms (Views: 463.6ms | ActiveRecord: 10.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.8ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 02:51:16 +0200
   [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
   Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.5ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (0.9ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.6ms)
-Rendered layouts/_top_nav.html.haml (3.8ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.6ms)
-Rendered pages/homepage.html.haml within layouts/home (65.9ms)
-Completed 200 OK in 102ms (Views: 67.4ms | ActiveRecord: 7.8ms)
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mUser Load (3.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (44.1ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.1ms)
+Rendered layouts/_top_nav.html.haml (158.1ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (10.9ms)
+Rendered pages/homepage.html.haml within layouts/home (434.2ms)
+Completed 200 OK in 1756ms (Views: 435.9ms | ActiveRecord: 54.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.7ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
 
 
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:49:37 +0200
-  [1m[35mSQL (1.3ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+Started GET "/" for 127.0.0.1 at 2011-10-18 03:21:39 +0200
   [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
   Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.7ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.9ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.4ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (36.5ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (12.1ms)
+Rendered layouts/_top_nav.html.haml (154.1ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (11.2ms)
+Rendered pages/homepage.html.haml within layouts/home (429.7ms)
+Completed 200 OK in 1853ms (Views: 432.3ms | ActiveRecord: 45.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.8ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 03:52:04 +0200
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (37.8ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.1ms)
+Rendered layouts/_top_nav.html.haml (86.1ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (10.9ms)
+Rendered pages/homepage.html.haml within layouts/home (418.9ms)
+Completed 200 OK in 1835ms (Views: 420.6ms | ActiveRecord: 46.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 04:22:28 +0200
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (1.6ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.2ms)
+Rendered layouts/_top_nav.html.haml (159.0ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (12.6ms)
+Rendered pages/homepage.html.haml within layouts/home (426.6ms)
+Completed 200 OK in 2117ms (Views: 426.6ms | ActiveRecord: 12.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 04:52:51 +0200
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (40.9ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.2ms)
+Rendered layouts/_top_nav.html.haml (160.9ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (11.2ms)
+Rendered pages/homepage.html.haml within layouts/home (423.2ms)
+Completed 200 OK in 1746ms (Views: 425.0ms | ActiveRecord: 49.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
+  [1m[36mSQL (5.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 05:23:14 +0200
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mUser Load (39.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (32.0ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (12.2ms)
+Rendered layouts/_top_nav.html.haml (156.9ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (10.8ms)
+Rendered pages/homepage.html.haml within layouts/home (424.4ms)
+Completed 200 OK in 1874ms (Views: 425.9ms | ActiveRecord: 84.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (50.9ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (12.6ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 05:53:37 +0200
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (38.7ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (12.5ms)
+Rendered layouts/_top_nav.html.haml (159.9ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (10.8ms)
+Rendered pages/homepage.html.haml within layouts/home (431.8ms)
+Completed 200 OK in 1751ms (Views: 433.6ms | ActiveRecord: 107.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.9ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 06:24:00 +0200
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (1.9ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.9ms)
+Rendered layouts/_top_nav.html.haml (159.7ms)
+Rendered shared/_feedback_box.html.erb (0.9ms)
+Rendered layouts/_footer.html.haml (24.9ms)
+Rendered pages/homepage.html.haml within layouts/home (442.4ms)
+Completed 200 OK in 1833ms (Views: 444.1ms | ActiveRecord: 11.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.7ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 06:54:23 +0200
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (40.1ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.7ms)
+Rendered layouts/_top_nav.html.haml (156.8ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (10.9ms)
+Rendered pages/homepage.html.haml within layouts/home (413.8ms)
+Completed 200 OK in 1935ms (Views: 416.5ms | ActiveRecord: 48.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 07:24:45 +0200
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (0.6ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (14.1ms)
+Rendered layouts/_top_nav.html.haml (207.7ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (10.9ms)
+Rendered pages/homepage.html.haml within layouts/home (509.6ms)
+Completed 200 OK in 1950ms (Views: 509.4ms | ActiveRecord: 11.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 07:55:08 +0200
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (2.4ms)[0m  SHOW TABLES
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (44.9ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.3ms)
+Rendered layouts/_top_nav.html.haml (165.4ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (12.0ms)
+Rendered pages/homepage.html.haml within layouts/home (429.5ms)
+Completed 200 OK in 1806ms (Views: 431.9ms | ActiveRecord: 56.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 08:25:32 +0200
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (37.9ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.3ms)
+Rendered layouts/_top_nav.html.haml (158.7ms)
+Rendered shared/_feedback_box.html.erb (0.9ms)
+Rendered layouts/_footer.html.haml (24.0ms)
+Rendered pages/homepage.html.haml within layouts/home (433.0ms)
+Completed 200 OK in 1785ms (Views: 434.6ms | ActiveRecord: 47.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.9ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 08:55:54 +0200
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (43.7ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.7ms)
+Rendered layouts/_top_nav.html.haml (160.1ms)
 Rendered shared/_feedback_box.html.erb (0.4ms)
 Rendered layouts/_footer.html.haml (11.4ms)
-Rendered pages/homepage.html.haml within layouts/home (65.9ms)
-Completed 200 OK in 282ms (Views: 66.4ms | ActiveRecord: 9.0ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:49:50 +0200
-  [1m[35mSQL (1.7ms)[0m  describe `instruments_users`
-  [1m[36mSQL (188.3ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
-  [1m[36mSQL (15.0ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (2.9ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.7ms)
-Rendered layouts/_top_nav.html.haml (3.8ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (10.7ms)
-Rendered pages/homepage.html.haml within layouts/home (234.9ms)
-Completed 200 OK in 303ms (Views: 235.9ms | ActiveRecord: 211.1ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:50:08 +0200
-  [1m[35mSQL (1.8ms)[0m  describe `instruments_users`
-  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
-  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+Rendered pages/homepage.html.haml within layouts/home (708.4ms)
+Completed 200 OK in 2045ms (Views: 710.5ms | ActiveRecord: 52.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
   [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.3ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (9.1ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
-Rendered shared/_feedback_box.html.erb (0.4ms)
-Rendered layouts/_footer.html.haml (10.6ms)
-Rendered pages/homepage.html.haml within layouts/home (63.3ms)
-Completed 200 OK in 303ms (Views: 64.5ms | ActiveRecord: 7.8ms)
-
-
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:50:20 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
-  [1m[36mSQL (60.7ms)[0m  [1mdescribe `instruments_users`[0m
   [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 09:26:17 +0200
   [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
   Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (1.7ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.8ms)
-Rendered layouts/_top_nav.html.haml (3.7ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (11.6ms)
-Rendered pages/homepage.html.haml within layouts/home (64.2ms)
-Completed 200 OK in 274ms (Views: 65.5ms | ActiveRecord: 67.6ms)
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (1.3ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (12.9ms)
+Rendered layouts/_top_nav.html.haml (159.6ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (10.8ms)
+Rendered pages/homepage.html.haml within layouts/home (432.0ms)
+Completed 200 OK in 1846ms (Views: 434.5ms | ActiveRecord: 9.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
 
 
-Started GET "/" for 127.0.0.1 at 2011-10-18 01:50:28 +0200
-  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
+Started GET "/" for 127.0.0.1 at 2011-10-18 09:56:40 +0200
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (41.2ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (15.1ms)
+Rendered layouts/_top_nav.html.haml (158.2ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (12.3ms)
+Rendered pages/homepage.html.haml within layouts/home (424.9ms)
+Completed 200 OK in 1824ms (Views: 427.1ms | ActiveRecord: 49.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (15.7ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (28.0ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 10:27:03 +0200
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (36.7ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (10.9ms)
+Rendered layouts/_top_nav.html.haml (154.8ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (11.5ms)
+Rendered pages/homepage.html.haml within layouts/home (423.7ms)
+Completed 200 OK in 1816ms (Views: 425.9ms | ActiveRecord: 86.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.8ms)[0m  describe `instruments_users`
+  [1m[36mSQL (1.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 10:57:25 +0200
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (42.2ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.7ms)
+Rendered layouts/_top_nav.html.haml (161.1ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (10.9ms)
+Rendered pages/homepage.html.haml within layouts/home (428.3ms)
+Completed 200 OK in 1783ms (Views: 430.2ms | ActiveRecord: 52.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
   [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 11:27:48 +0200
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (38.5ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.7ms)
+Rendered layouts/_top_nav.html.haml (153.9ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (10.8ms)
+Rendered pages/homepage.html.haml within layouts/home (423.3ms)
+Completed 200 OK in 1778ms (Views: 425.9ms | ActiveRecord: 47.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.8ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 11:58:11 +0200
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (42.5ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (15.2ms)
+Rendered layouts/_top_nav.html.haml (197.1ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (11.3ms)
+Rendered pages/homepage.html.haml within layouts/home (521.9ms)
+Completed 200 OK in 2100ms (Views: 524.3ms | ActiveRecord: 51.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 12:28:36 +0200
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (1.6ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.8ms)
+Rendered layouts/_top_nav.html.haml (163.0ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (11.1ms)
+Rendered pages/homepage.html.haml within layouts/home (445.8ms)
+Completed 200 OK in 1816ms (Views: 447.2ms | ActiveRecord: 11.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (35.2ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (2.0ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 12:58:59 +0200
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (37.2ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (12.5ms)
+Rendered layouts/_top_nav.html.haml (163.6ms)
+Rendered shared/_feedback_box.html.erb (1.0ms)
+Rendered layouts/_footer.html.haml (11.5ms)
+Rendered pages/homepage.html.haml within layouts/home (469.3ms)
+Completed 200 OK in 1861ms (Views: 471.0ms | ActiveRecord: 80.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 13:29:22 +0200
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (36.7ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (11.0ms)
+Rendered layouts/_top_nav.html.haml (166.5ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (10.7ms)
+Rendered pages/homepage.html.haml within layouts/home (430.9ms)
+Completed 200 OK in 1800ms (Views: 433.1ms | ActiveRecord: 44.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.7ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 13:59:45 +0200
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (4.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (39.9ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (12.0ms)
+Rendered layouts/_top_nav.html.haml (163.1ms)
+Rendered shared/_feedback_box.html.erb (0.4ms)
+Rendered layouts/_footer.html.haml (10.8ms)
+Rendered pages/homepage.html.haml within layouts/home (425.4ms)
+Completed 200 OK in 1732ms (Views: 426.9ms | ActiveRecord: 52.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.9ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.7ms)[0m  describe `instruments_users`
+  [1m[36mSQL (1.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-18 14:30:08 +0200
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#homepage as HTML
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1[0m
+  [1m[35mTestimonial Load (1.9ms)[0m  SELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
+Rendered layouts/_head.html.haml (12.5ms)
+Rendered layouts/_top_nav.html.haml (158.6ms)
+Rendered shared/_feedback_box.html.erb (0.5ms)
+Rendered layouts/_footer.html.haml (11.3ms)
+Rendered pages/homepage.html.haml within layouts/home (431.9ms)
+Completed 200 OK in 1851ms (Views: 433.6ms | ActiveRecord: 12.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
+  [1m[36mSQL (187.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (10.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (337.1ms)[0m  DROP DATABASE IF EXISTS `emuzikos_test`
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE DATABASE `emuzikos_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (227.7ms)[0m  [1mCREATE TABLE `active_admin_comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `resource_id` int(11) NOT NULL, `resource_type` varchar(255) NOT NULL, `author_id` int(11), `author_type` varchar(255), `body` text, `created_at` datetime, `updated_at` datetime, `namespace` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (356.5ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_author_type_and_author_id` ON `active_admin_comments` (`author_type`, `author_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (136.1ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_namespace` ON `active_admin_comments` (`namespace`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (141.3ms)[0m  [1mCREATE INDEX `index_admin_notes_on_resource_type_and_resource_id` ON `active_admin_comments` (`resource_type`, `resource_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (100.5ms)[0m  [1mCREATE TABLE `admin_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (120.3ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_email` ON `admin_users` (`email`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (155.9ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` ON `admin_users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (143.6ms)[0m  [1mCREATE TABLE `friendships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `friend_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (116.2ms)[0m  [1mCREATE TABLE `genres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (194.9ms)[0m  [1mCREATE TABLE `instruments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (123.6ms)[0m  [1mCREATE TABLE `instruments_users` (`instrument_id` int(11), `user_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (123.1ms)[0m  [1mCREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sender_id` int(11), `recipient_id` int(11), `sender_deleted` tinyint(1) DEFAULT 0, `recipient_deleted` tinyint(1) DEFAULT 0, `subject` varchar(255), `body` text, `read_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (123.9ms)[0m  [1mCREATE TABLE `services` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `uname` varchar(255), `uemail` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (165.9ms)[0m  [1mCREATE TABLE `tastes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `genre_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (105.0ms)[0m  [1mCREATE TABLE `testimonials` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text, `user_id` int(11), `created_at` datetime, `updated_at` datetime, `approved` tinyint(1) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (146.3ms)[0m  [1mCREATE TABLE `tolk_locales` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `tolk_locales`
+  [1m[36mSQL (150.0ms)[0m  [1mCREATE UNIQUE INDEX `index_tolk_locales_on_name` ON `tolk_locales` (`name`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (92.0ms)[0m  [1mCREATE TABLE `tolk_phrases` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (112.6ms)[0m  [1mCREATE TABLE `tolk_translations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `phrase_id` int(11), `locale_id` int(11), `text` text, `previous_text` text, `primary_updated` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `tolk_translations`
+  [1m[36mSQL (147.2ms)[0m  [1mCREATE UNIQUE INDEX `index_tolk_translations_on_phrase_id_and_locale_id` ON `tolk_translations` (`phrase_id`, `locale_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (125.0ms)[0m  [1mCREATE TABLE `user_sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (146.0ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `email` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime, `user_type` varchar(255), `references` varchar(255), `zip` varchar(255), `country` varchar(255), `searching_for` varchar(255), `request_message` text, `avatar_file_name` varchar(255), `avatar_content_type` varchar(255), `avatar_file_size` int(11), `avatar_updated_at` datetime, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `latitude` float, `longitude` float, `visible` tinyint(1) DEFAULT 1, `wants_email` tinyint(1) DEFAULT 1) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (147.5ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (125.1ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_username_and_email` ON `users` (`username`, `email`)[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (119.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (124.6ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111016140220')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101225233442')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101225235518')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101226004938')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101226145021')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101226174430')[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110106080431')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110107083436')[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110107152518')
+  [1m[36mSQL (2.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110114103933')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110114133157')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110114151542')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110118234035')
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110413130304')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110608214333')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110615204525')[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110615224525')
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110615224526')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110619085712')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110704210340')[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110708083326')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110923133549')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110926204217')
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110926204722')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110927204303')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111008114225')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111016140117')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (2.4ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
+  [1m[36mSQL (2.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (41.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (88.6ms)[0m  DROP DATABASE IF EXISTS `emuzikos_test`
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE DATABASE `emuzikos_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (233.7ms)[0m  [1mCREATE TABLE `active_admin_comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `resource_id` int(11) NOT NULL, `resource_type` varchar(255) NOT NULL, `author_id` int(11), `author_type` varchar(255), `body` text, `created_at` datetime, `updated_at` datetime, `namespace` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (412.2ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_author_type_and_author_id` ON `active_admin_comments` (`author_type`, `author_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (207.6ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_namespace` ON `active_admin_comments` (`namespace`)[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (233.5ms)[0m  [1mCREATE INDEX `index_admin_notes_on_resource_type_and_resource_id` ON `active_admin_comments` (`resource_type`, `resource_id`)[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (169.2ms)[0m  [1mCREATE TABLE `admin_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (220.4ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_email` ON `admin_users` (`email`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (227.0ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` ON `admin_users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (207.7ms)[0m  [1mCREATE TABLE `friendships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `friend_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (225.4ms)[0m  [1mCREATE TABLE `genres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (3.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (183.0ms)[0m  [1mCREATE TABLE `instruments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (7.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (162.8ms)[0m  [1mCREATE TABLE `instruments_users` (`instrument_id` int(11), `user_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (151.7ms)[0m  [1mCREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sender_id` int(11), `recipient_id` int(11), `sender_deleted` tinyint(1) DEFAULT 0, `recipient_deleted` tinyint(1) DEFAULT 0, `subject` varchar(255), `body` text, `read_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (165.1ms)[0m  [1mCREATE TABLE `services` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `uname` varchar(255), `uemail` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (126.0ms)[0m  [1mCREATE TABLE `tastes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `genre_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (123.9ms)[0m  [1mCREATE TABLE `testimonials` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text, `user_id` int(11), `created_at` datetime, `updated_at` datetime, `approved` tinyint(1) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (163.3ms)[0m  [1mCREATE TABLE `tolk_locales` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `tolk_locales`
+  [1m[36mSQL (117.7ms)[0m  [1mCREATE UNIQUE INDEX `index_tolk_locales_on_name` ON `tolk_locales` (`name`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (137.0ms)[0m  [1mCREATE TABLE `tolk_phrases` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (114.7ms)[0m  [1mCREATE TABLE `tolk_translations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `phrase_id` int(11), `locale_id` int(11), `text` text, `previous_text` text, `primary_updated` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `tolk_translations`
+  [1m[36mSQL (128.2ms)[0m  [1mCREATE UNIQUE INDEX `index_tolk_translations_on_phrase_id_and_locale_id` ON `tolk_translations` (`phrase_id`, `locale_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (127.1ms)[0m  [1mCREATE TABLE `user_sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (147.1ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `email` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime, `user_type` varchar(255), `references` varchar(255), `zip` varchar(255), `country` varchar(255), `searching_for` varchar(255), `request_message` text, `avatar_file_name` varchar(255), `avatar_content_type` varchar(255), `avatar_file_size` int(11), `avatar_updated_at` datetime, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `latitude` float, `longitude` float, `visible` tinyint(1) DEFAULT 1, `wants_email` tinyint(1) DEFAULT 1) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (143.1ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (183.5ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_username_and_email` ON `users` (`username`, `email`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (112.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (126.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111016140220')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101225233442')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101225235518')
+  [1m[36mSQL (4.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101226004938')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101226145021')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101226174430')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110106080431')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110107083436')[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110107152518')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110114103933')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110114133157')
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110114151542')[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110118234035')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110413130304')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110608214333')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110615204525')[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110615224525')
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110615224526')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110619085712')
+  [1m[36mSQL (3.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110704210340')[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110708083326')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110923133549')[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110926204217')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110926204722')[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110927204303')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111008114225')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111016140117')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (3.4ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `instruments_users`
+  [1m[36mSQL (21.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (84.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (96.5ms)[0m  DROP DATABASE IF EXISTS `emuzikos_test`
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE DATABASE `emuzikos_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (162.1ms)[0m  [1mCREATE TABLE `active_admin_comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `resource_id` int(11) NOT NULL, `resource_type` varchar(255) NOT NULL, `author_id` int(11), `author_type` varchar(255), `body` text, `created_at` datetime, `updated_at` datetime, `namespace` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (249.9ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_author_type_and_author_id` ON `active_admin_comments` (`author_type`, `author_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (142.6ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_namespace` ON `active_admin_comments` (`namespace`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (149.2ms)[0m  [1mCREATE INDEX `index_admin_notes_on_resource_type_and_resource_id` ON `active_admin_comments` (`resource_type`, `resource_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (117.1ms)[0m  [1mCREATE TABLE `admin_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (119.9ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_email` ON `admin_users` (`email`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (123.3ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` ON `admin_users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (109.9ms)[0m  [1mCREATE TABLE `friendships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `friend_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (139.7ms)[0m  [1mCREATE TABLE `genres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (140.8ms)[0m  [1mCREATE TABLE `instruments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (155.3ms)[0m  [1mCREATE TABLE `instruments_users` (`instrument_id` int(11), `user_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (122.9ms)[0m  [1mCREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sender_id` int(11), `recipient_id` int(11), `sender_deleted` tinyint(1) DEFAULT 0, `recipient_deleted` tinyint(1) DEFAULT 0, `subject` varchar(255), `body` text, `read_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (130.8ms)[0m  [1mCREATE TABLE `services` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `uname` varchar(255), `uemail` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (131.7ms)[0m  [1mCREATE TABLE `tastes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `genre_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (139.1ms)[0m  [1mCREATE TABLE `testimonials` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text, `user_id` int(11), `created_at` datetime, `updated_at` datetime, `approved` tinyint(1) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (140.0ms)[0m  [1mCREATE TABLE `tolk_locales` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `tolk_locales`
+  [1m[36mSQL (135.8ms)[0m  [1mCREATE UNIQUE INDEX `index_tolk_locales_on_name` ON `tolk_locales` (`name`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (142.0ms)[0m  [1mCREATE TABLE `tolk_phrases` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (117.3ms)[0m  [1mCREATE TABLE `tolk_translations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `phrase_id` int(11), `locale_id` int(11), `text` text, `previous_text` text, `primary_updated` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `tolk_translations`
+  [1m[36mSQL (151.0ms)[0m  [1mCREATE UNIQUE INDEX `index_tolk_translations_on_phrase_id_and_locale_id` ON `tolk_translations` (`phrase_id`, `locale_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (110.3ms)[0m  [1mCREATE TABLE `user_sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (123.2ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `email` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime, `user_type` varchar(255), `references` varchar(255), `zip` varchar(255), `country` varchar(255), `searching_for` varchar(255), `request_message` text, `avatar_file_name` varchar(255), `avatar_content_type` varchar(255), `avatar_file_size` int(11), `avatar_updated_at` datetime, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `latitude` float, `longitude` float, `visible` tinyint(1) DEFAULT 1, `wants_email` tinyint(1) DEFAULT 1) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (127.0ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (122.9ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_username_and_email` ON `users` (`username`, `email`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (118.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (136.2ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111016140220')
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101225233442')[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101225235518')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101226004938')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101226145021')
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101226174430')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110106080431')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110107083436')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110107152518')
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110114103933')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110114133157')
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110114151542')[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110118234035')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110413130304')[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110608214333')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110615204525')[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110615224525')
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110615224526')[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110619085712')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110704210340')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110708083326')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110923133549')[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110926204217')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110926204722')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110927204303')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111008114225')[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111016140117')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/borisrorsvort/Sites/emuzikos/config/environment.rb:5)
+  [1m[36mSQL (14.5ms)[0m  [1mdescribe `instruments_users`[0m
+  [1m[35mSQL (1.4ms)[0m  describe `instruments_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
   [1m[35mSQL (0.5ms)[0m  SHOW TABLES
   [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
-  Processing by PagesController#homepage as HTML
-  [1m[35mUser Load (1.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 56 LIMIT 1
-  [1m[36mTestimonial Load (2.3ms)[0m  [1mSELECT `testimonials`.* FROM `testimonials` WHERE `testimonials`.`approved` = 1[0m
-  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 49 LIMIT 1[0m
-  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1
-  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 50 LIMIT 1[0m
-Rendered layouts/_head.html.haml (8.4ms)
-Rendered layouts/_top_nav.html.haml (4.0ms)
-Rendered shared/_feedback_box.html.erb (0.3ms)
-Rendered layouts/_footer.html.haml (187.2ms)
-Rendered pages/homepage.html.haml within layouts/home (240.2ms)
-Completed 200 OK in 307ms (Views: 241.7ms | ActiveRecord: 9.0ms)
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (95.5ms)[0m  DROP DATABASE IF EXISTS `emuzikos_test`
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE DATABASE `emuzikos_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (102.7ms)[0m  [1mCREATE TABLE `active_admin_comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `resource_id` int(11) NOT NULL, `resource_type` varchar(255) NOT NULL, `author_id` int(11), `author_type` varchar(255), `body` text, `created_at` datetime, `updated_at` datetime, `namespace` varchar(255)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (192.0ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_author_type_and_author_id` ON `active_admin_comments` (`author_type`, `author_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (124.5ms)[0m  [1mCREATE INDEX `index_active_admin_comments_on_namespace` ON `active_admin_comments` (`namespace`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `active_admin_comments`
+  [1m[36mSQL (131.4ms)[0m  [1mCREATE INDEX `index_admin_notes_on_resource_type_and_resource_id` ON `active_admin_comments` (`resource_type`, `resource_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (125.9ms)[0m  [1mCREATE TABLE `admin_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (136.6ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_email` ON `admin_users` (`email`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `admin_users`
+  [1m[36mSQL (132.0ms)[0m  [1mCREATE UNIQUE INDEX `index_admin_users_on_reset_password_token` ON `admin_users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (143.4ms)[0m  [1mCREATE TABLE `friendships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `friend_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (130.8ms)[0m  [1mCREATE TABLE `genres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (113.6ms)[0m  [1mCREATE TABLE `instruments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (152.5ms)[0m  [1mCREATE TABLE `instruments_users` (`instrument_id` int(11), `user_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (112.0ms)[0m  [1mCREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sender_id` int(11), `recipient_id` int(11), `sender_deleted` tinyint(1) DEFAULT 0, `recipient_deleted` tinyint(1) DEFAULT 0, `subject` varchar(255), `body` text, `read_at` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (129.9ms)[0m  [1mCREATE TABLE `services` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `provider` varchar(255), `uid` varchar(255), `uname` varchar(255), `uemail` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (123.6ms)[0m  [1mCREATE TABLE `tastes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `genre_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (124.3ms)[0m  [1mCREATE TABLE `testimonials` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text, `user_id` int(11), `created_at` datetime, `updated_at` datetime, `approved` tinyint(1) DEFAULT 0) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (160.5ms)[0m  [1mCREATE TABLE `tolk_locales` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `tolk_locales`
+  [1m[36mSQL (128.0ms)[0m  [1mCREATE UNIQUE INDEX `index_tolk_locales_on_name` ON `tolk_locales` (`name`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (115.7ms)[0m  [1mCREATE TABLE `tolk_phrases` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (260.8ms)[0m  [1mCREATE TABLE `tolk_translations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `phrase_id` int(11), `locale_id` int(11), `text` text, `previous_text` text, `primary_updated` tinyint(1) DEFAULT 0, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `tolk_translations`
+  [1m[36mSQL (121.3ms)[0m  [1mCREATE UNIQUE INDEX `index_tolk_translations_on_phrase_id_and_locale_id` ON `tolk_translations` (`phrase_id`, `locale_id`)[0m
+  [1m[35mSQL (1.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (115.7ms)[0m  [1mCREATE TABLE `user_sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (121.6ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `email` varchar(255), `encrypted_password` varchar(255), `created_at` datetime, `updated_at` datetime, `user_type` varchar(255), `references` varchar(255), `zip` varchar(255), `country` varchar(255), `searching_for` varchar(255), `request_message` text, `avatar_file_name` varchar(255), `avatar_content_type` varchar(255), `avatar_file_size` int(11), `avatar_updated_at` datetime, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `latitude` float, `longitude` float, `visible` tinyint(1) DEFAULT 1, `wants_email` tinyint(1) DEFAULT 1) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (130.7ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (164.5ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_username_and_email` ON `users` (`username`, `email`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (117.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (132.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111016140220')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101225233442')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101225235518')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101226004938')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20101226145021')
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20101226174430')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110106080431')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110107083436')[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110107152518')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110114103933')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110114133157')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110114151542')[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110118234035')
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110413130304')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110608214333')
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110615204525')[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110615224525')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110615224526')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110619085712')
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110704210340')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110708083326')
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110923133549')[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110926204217')
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110926204722')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110927204303')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111008114225')[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111016140117')
