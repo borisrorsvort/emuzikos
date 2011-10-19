@@ -54,7 +54,6 @@ gem "database_cleaner", :group => :test
 gem "launchy", :group => :test
 
 group :test do
-  gem "ZenTest"
   gem "shoulda"
   gem 'guard'
   gem 'rb-inotify', :require => false
