@@ -5,7 +5,6 @@ GEM
       Platform (>= 0.4.0)
       open4
     Platform (0.4.0)
-    ZenTest (4.6.2)
     abstract (1.0.0)
     actionmailer (3.0.10)
       actionpack (= 3.0.10)
@@ -309,7 +308,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ZenTest
   activeadmin
   airbrake
   aws-s3
