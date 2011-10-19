@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @testimonials = @user.testimonials
     @user_map = @user.to_gmaps4rails
     if @user.geocoded?
-      @users_nearby = @user.nearbys(10)
+      @users_nearby = @user.nearbys(10).profiles_completed
     end
   end
 

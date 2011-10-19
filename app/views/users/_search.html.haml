@@ -12,13 +12,17 @@
     .field
       = f.select :searching_for_contains, user_types, :include_blank => t(:'search_terms.who_search_for')
       .clear
-    .field
-      = f.select :country_contains, countries, :include_blank => t(:'search_terms.country')
-      .clear
-    .field#zip
+    .field#location
       .centered
-        = f.text_field :zip_contains, :placeholder => t(:'activerecord.attributes.user.zip'), :size => 10
-      .clear
+        = f.text_field :mass_locate, :placeholder => t(:'search_terms.mass_locate'), :size => 20
+        .clear
+    / .field
+    /       = f.select :country_contains, countries, :include_blank => t(:'search_terms.country')
+    /       .clear
+    /     .field#zip
+    /       .centered
+    /         = f.text_field :zip_contains, :placeholder => t(:'activerecord.attributes.user.mass_locate'), :size => 10
+    /       .clear
     .field
       .centered
         = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit search small")
