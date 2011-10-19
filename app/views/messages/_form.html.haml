@@ -1,14 +1,15 @@
 = form.error_messages
 
 = form.hidden_field :to
+.field
 
-.field
-  = form.label :subject, t(:'messages.subject')
-  = form.text_field :subject
+  %p
+    = form.label :subject, t(:'messages.subject')
+    = form.text_field :subject
 
-.field
-  = form.label :body, t(:'messages.message')
-  = form.text_area :body
-  
-.field
-  = submit_tag t(:'buttons.submit'), :class => "button submit"
+  %p
+    = form.label :body, t(:'messages.message')
+    = form.text_area :body
+
+  %p
+    = submit_tag t(:'buttons.submit'), :class => "button submit"

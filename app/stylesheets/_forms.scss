@@ -11,30 +11,26 @@ form {
 
 .field {
   display       : block;
-  margin-bottom : 15px;
-  font-size: 1.2em;
-  line-height: 1.48em; }
+  margin-bottom :$baseline;
+  padding: $baseline ;
+  @include white_box;
+  i {
+    display:block;}}
 
 label {
+  margin: #{$baseline / 2} 0 0;
   font-weight   : bold;
-  display       : block;
-  font-size: 1em;
-  margin-bottom: 5px; }
-  
-.required {
-  display       : block;
-  font-style    : italic;
-  opacity       : 0.6;
-  margin-bottom : 5px; }
-  
+  display       : block; }
+
 .inline {
   display       : inline; }
-  
+
 input, textarea {
   @include border-radius(3px);
   background    : #fff;
   border        : 1px solid #ccc;
-  padding       : 5px;
+  padding       :  10px ;
+  max-width: 95%;
   &:focus, &:active {
     @include single-box-shadow(#666, 0, 0, 3px);
   }
@@ -46,22 +42,66 @@ input, textarea {
   width         : 150px;
   float         : left;
   .instrument {
-    padding     : 5px 0;
-    label {
-      padding-top: 5px; }}}
+    padding     : 5px 0;}}
 
 /* SEARCH FORM */
 
-.reset_button {
-  float:left;
-  position:relative;
-  top: 5px;
-  margin-left: 10px;}
-  
 #search_form {
+  .button {
+    &.search {
+      font-size: 11px;
+    }
+  }
   .field {
     float       : left;
-    height      : 15px;
-    min-width   : 200px;
+    height      : 32px;
+    margin-bottom: 0px;
+    padding: 0;
+    background: none;
+    border: none;
+    input {
+      &#search_zip_contains {
+        padding: 4px 8px;
+        margin-top: 3px;
+      }
+    }
+    .selector {
+      width: 110px;
+      select {
+        width: 110px;
+      }
+      span {
+        width: 90px;
+      }
+    }
+  }
+}
+
+.logged_out {
+  #user_forms {
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
+    background:#efefef;
+    color:#666;
+    @include border-radius(8px);
+    @include single-box-shadow(#666, 0, 0, 5px);
+
+    .services_login {
+      font-size: 1em;
+      margin-top: 20px;
+      padding: 0;
+      .shared_links {
+        margin-top: 20px;
+        .field {
+          margin-bottom: $baseline;
+        }
+      }
+    }
+    h2 {
+      color: #666;
+      text-shadow: none;
+      font-size: 14px;
+    }
   }
 }

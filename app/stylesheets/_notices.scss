@@ -1,39 +1,41 @@
-
-#flash_notice,
-#flash_error,
-#flash_alert{ 
+.flash{
   padding: 20px;
-  font-size: 15px;
-  text-align:center; }
+  font-size: 1em;
+  text-align:center;
+  @include inset(#fff);
+  &.notice{
+    background-color: lighten($blue_light, 40%);
+    color: darken($blue_light, 30%);
+    @include box-shadow(#666, 1px, 1px, 1px, inset); }
+  &.alert, &.error{
+    background-color: #ffcccc;
+    color: darken(#ffcccc, 50%); } }
 
-#flash_notice{ 
-  background-color: #ccffcc;
-  border: solid 1px #66cc66; }
-
-#flash_error,
-#flash_alert{ 
-  background-color: #ffcccc;
-  border: solid 1px #cc6666; }
-
-.fieldWithErrors{ 
+.fieldWithErrors{
   display: inline; }
 
-.error_messages{ 
+.error_messages, #error_explanation{
   padding: 20px;
   @include border-radius(8px);
   padding-bottom: 12px;
   margin-bottom: 20px;
-  font-size: 11px;
+  font-size: 1em;
   background-color: $notice-error;
   color:#fff;
-  h2{ 
+  h2 {
     text-align: left;
     margin: 0;
-    color:#fff;
+    color:#fff  !important;
+    margin-bottom: 10px;
+    line-height: 1.5em;
     @include inset(#000);}
-  p{ 
+  p {
     margin: 10px 0px;}
-  ul{ 
+  ul {
     margin: 0;
     font-size: 11px;
     } }
+
+.gritter-item p {
+  font-size: 1em;
+}

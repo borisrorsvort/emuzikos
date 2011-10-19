@@ -1,0 +1,65 @@
+- title t(:'.title')
+
+- if @user == current_user
+  - content_for :sub_nav do
+    %ul#sub_sections
+      %li
+        = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+      %li
+        = link_to t(:'menu.profile.public'),  user_path(current_user)
+      %li
+        = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user), :class => "current"
+      %li
+        = link_to t(:'menu.profile.authentications'), services_path
+
+    .clear
+
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+  = devise_error_messages!
+
+  .field
+    %p
+      = f.label :username, t(:'activerecord.attributes.user.username')
+      = f.text_field :username
+
+    %p
+      = f.label :email, t(:'activerecord.attributes.user.email')
+      = f.email_field :email
+
+    %p
+      = f.label t(:'activerecord.attributes.user.password')
+      %i= t(:'common.leave_blank')
+      = f.password_field :password
+
+    %p
+      = f.label t(:'activerecord.attributes.user.password_confirmation')
+      = f.password_field :password_confirmation
+
+    %p
+      = f.label t(:'activerecord.attributes.user.current_password')
+      = f.password_field :current_password
+
+    %p= f.submit t(:'buttons.update'), :class => "button update"
+
+  %h3= t(:'.cancel_my_account')
+
+  .field
+    %p
+      = link_to t(:'buttons.registrations.cancel_my_account'), registration_path(resource_name), :confirm => t(:'common.are_you_sure'), :method => :delete, :class => "button delete"
+
+
+
+= form_for @user, :html => { :multipart => true } do |f|
+  = f.error_messages
+
+  %h3= t(:'users.notifications')
+
+  .field
+    %p.checkbox_set
+      = f.label "wants_email_true", t(:"users.wants_email")
+      = radio_button(:user, :wants_email, true)
+      = f.label "wants_email_false", t(:"users.dont_wants_email")
+      = radio_button(:user, :wants_email, false)
+    .clear
+    =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"
+

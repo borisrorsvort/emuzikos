@@ -13,14 +13,14 @@ class AddIndexToUsers < ActiveRecord::Migration
   end
 
   def self.down
-    change_table :users do |t|     
+    change_table :users do |t|
       t.remove  :login_count
       t.remove  :failed_login_count
-      t.remove  :last_request_at   
-      t.remove  :current_login_at  
-      t.remove  :last_login_at     
-      t.remove  :current_login_ip  
-      t.remove  :last_login_ip     
+      t.remove  :last_request_at
+      t.remove  :current_login_at
+      t.remove  :last_login_at
+      t.remove  :current_login_ip
+      t.remove  :last_login_ip
     end
     remove_index(:users, [:username, :email])
   end

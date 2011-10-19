@@ -1,4 +1,7 @@
 Emuzikos::Application.configure do
+
+
+
   # Settings specified here will take precedence over those in config/environment.rb
 
   # In the development environment your application's code is reloaded on
@@ -14,36 +17,51 @@ Emuzikos::Application.configure do
   config.action_view.debug_rjs             = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send  
+  # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
   config.active_support.deprecation = :notify
-  
-  ActionMailer::Base.delivery_method = :sendmail
-  ActionMailer::Base.raise_delivery_errors = true
-  ActionMailer::Base.perform_deliveries = true
-  config.action_mailer.default_url_options = { :host => "emuzikos.com" }
+
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => 'noreply@emuzikos.com',
+    :password             => '3muz1k0sn0r3ply2',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
 
 
-  # ActionMailer::Base.smtp_settings = {
-  #   :address => "smtp.gmail.com",
-  #   :port => 587,
-  #   :authentication => :plain,
-  #   :user_name => "carmen@destockjeans.fr",
-  #   :password => 'hc74jdf984jr'
-  # }
+
+  config.after_initialize do
+    Bullet.enable = false
+    Bullet.alert = false
+    Bullet.bullet_logger = true
+    #Bullet.console = true
+    Bullet.rails_logger = true
+    Bullet.disable_browser_cache = true
+    begin
+       require 'ruby-growl'
+       Bullet.growl = true
+     rescue MissingSourceFile, Exception
+     end
+  end
 
   config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)
-  
+
   if $0 == "irb"
     config.logger = Logger.new(STDOUT)
   else
-    config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)  
+    config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)
   end
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  Paperclip.options[:command_path] = "/usr/local/bin"
 end
 

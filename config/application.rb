@@ -34,14 +34,24 @@ module Emuzikos
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
     # Configure the default encoding used in templates for Ruby 1.9.
-    
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/*', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
-    
+
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password,  :password_confirmation]
-    
+
+
+    #Set the Devise layout to home except user_registration_edit
+    config.to_prepare do
+      Devise::SessionsController.layout "home"
+      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "home" }
+      Devise::ConfirmationsController.layout "home"
+      Devise::UnlocksController.layout "home"
+      Devise::PasswordsController.layout "home"
+    end
+
   end
 end

@@ -1,0 +1,36 @@
+en:
+
+### USERS
+### ______________________________________________________
+
+  users:
+    visible: Visible
+    invisible: Invisible
+    contacts:
+      title: Contact list
+      no_users: "You don't have any contact in your list"
+    types:
+      musician: Musician
+      band: Band
+      agent: Agent
+    musician_infos: Musician Infos
+    location: Location
+    credentials: Credentials
+    index:
+      title: Users Listing
+      no_users: "We couldn't find any users corresponding to you search criterias" 
+    show:
+      title: "%{username}'s profile"
+      from: from
+      donate: We depend on you! Please consider donate.
+      is_looking_for: is looking for a
+      to_play: to play
+      music: music
+      users_nearby: Other users nearby
+
+    edit:
+      titles:
+        title: Edit your profile
+      complete_profile_condition: "In order to appear in search results, you need to complete your profile fully."
+    crop:
+      prewiew: "Preview"

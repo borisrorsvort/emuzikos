@@ -1,5 +1,13 @@
 - title t(:'.title', :username => @user.username), false
 
+
+= include_stylesheets :maps
+
+- content_for :javascripts do
+  = include_javascripts :maps
+
+
+
 -if current_user
   - content_for :sub_nav do
     - if @user == current_user
@@ -8,62 +16,90 @@
           = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
         %li
           = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
+        %li
+          = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
+        %li
+          = link_to t(:'menu.profile.authentications'), services_path
+      .clear
 
     - else
-      %ul#sub_sections
-        %li
-          = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), users_path, :class => "button back"
+      #actions_set
+        = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), :back, :class => "button back profile"
+        -if current_user && current_user != @user
+          - unless current_user.is_friend_with(@user)
+            = link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user), :method => :post, :class => "button add_to_contact_list"
+          = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button contact"
+        -elsif !@current_user
+          = link_to t(:'buttons.home_signup'), signup_path, :class => "button submit contact "
     .clear
-  
 
 
-%section.left_drawer
-  = image_tag @user.avatar.url(:medium), :class => "profile_picture"
-  
-%section.right_drawer
-  %header 
-    %h1.username= t(:'.title', :username => @user.username)
-    
+
+%section.right_drawer.profile
+  .inner_profile_wrapper
+    %header
+      %h1.username= t(:'.title', :username => @user.username)
+
+      - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
+        %span.location_infos
+          =t(:"users.types.#{@user.user_type}")
+          =t(:'.from')
+          = @user.zip
+          = Carmen::country_name(@user.country) rescue "N/A"
+
     - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
-      %span.location_infos
-        =t(:"users.types.#{@user.user_type}")
-        =t(:'.from')
-        = @user.zip
-        = I18n.t(@user.country, :scope => "countries") rescue "N/A"
+      %p.looking_for
+        = t(:'.is_looking_for')
+        = t(:"users.types.#{@user.searching_for}")
+        = t(:'.to_play')
+        = @user.genres.collect {|g| g.name }.to_sentence(:last_word_connector => ' and ')
+    -else
+      %br
+    .spread
+      = render "shared/add_this"
+      .clear
 
-  - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
-    %p.looking_for
-      = t(:'.is_looking_for')
-      = t(:"users.types.#{@user.searching_for}")
-      = t(:'.to_play')
-      = t(:"musical_genres.#{@user.genre}")
-      = t(:'.music')
+    - unless @user.instruments.empty?
+      %h3= t(:'activerecord.attributes.user.instruments')
+      .tag_list
+        - @user.instruments.each do |instrument|
+          %span= instrument.name
 
-  - unless @user.instruments.blank?
-    %h3= t(:'activerecord.attributes.user.instruments')
-    .instruments_tag_list
-      =# @user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
-      - @user.instruments.each do |instrument|
-        %span= t(:"instruments.#{instrument}")
+    - unless @user.references.blank?
+      %h3= t(:'activerecord.attributes.user.references')
+      %p= @user.references
 
-  - unless @user.references.blank?   
-    %h3= t(:'activerecord.attributes.user.references')
-    %p= @user.references
+    - unless @user.request_message.blank?
+      %h3= t(:'activerecord.attributes.user.request_message')
+      = simple_format(@user.request_message)
 
-  - unless @user.request_message.blank?
-    %h3= t(:'activerecord.attributes.user.request_message')
-    %p= @user.request_message
-  
-          
-  / TODO make it work from profile
-  / -if @current_user && @current_user != @user
-  /     
-  /       = form_for @message, :as => :message, :url => user_message_path(@current_user, :to => @user.id) do |f|
-  /         = render :partial => "/messages/form", :object => f
-  -if @current_user && @current_user != @user
-    = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button submit contact small"
-  -elsif !@current_user
-    = link_to t(:'buttons.home_signup'), signup_path, :class => "button submit contact small"
+      .clear
+
+    - if @user.geocoded?
+      - unless @users_nearby.size.empty?
+        .users_nearby
+          %h3= t(:'.users_nearby')
+          - for user in @users_nearby
+            .section.user_general_infos
+              .avatar.small
+                - if user.avatar.present?
+                  = link_to(image_tag(user.avatar.url(:gallery)), user_path(user), :class => "tooltip", :title => "#{user.username}")
+                -else
+                  = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user), :class => "tooltip", :title => user.username)
+                .clear
+          .clear
+
+    %h3= t(:'.donate')
+    = render "shared/paypal_widget"
+
+%section.left_drawer.fadeInLeft
+  .inner
+    - if @user.avatar
+      = image_tag @user.avatar.url(:normal), :class => "profile_picture"
+    - else
+      = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture"
+    - if @user.geocoded?
+      = gmaps({ "map_options" => {"auto_zoom" => false, "zoom" => 11, "center_latitude" => @user.latitude, "center_longitude" => @user.longitude, :raw => '{ scrollwheel: false }' }, "markers" => {"data" => @user_map } })
 .clear
 
 

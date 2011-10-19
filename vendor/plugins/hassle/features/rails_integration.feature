@@ -8,7 +8,7 @@ Feature: Integration into Rails Apps
     And I have a file "public/stylesheets/sass/hassle.sass" with:
     """
     h1
-      :font-size 42em
+      font-size: 42em
     """
     When Hassle is installed as a gem, via bundler
     And the Rails app is initialized in "production" mode
@@ -17,14 +17,3 @@ Feature: Integration into Rails Apps
     h1 {
       font-size: 42em; }
     """
-
-  Scenario: Use hassle with Rails in development mode
-    Given I have a Rails app
-    And I have a file "public/stylesheets/sass/hassle.sass" with:
-    """
-    h1
-      :font-size 42em
-    """
-    When Hassle is installed as a gem, via bundler
-    And the Rails app is initialized in "development" mode
-    Then the file "tmp/hassle/stylesheets/hassle.css" should not exist

@@ -1,0 +1,36 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        username: Username
+        user_type: User Type
+        email: Email
+        genre: Musical genres
+        instruments: Instruments
+        searching_for: Searching for a
+        references: References
+        request_message: Request message
+        new_password: New password
+        password: Password
+        current_password: Current password
+        last_updater: Last updater
+        last_active: Recent activity
+        created_at: Created at
+        updated_at: Updated at
+        birthdate: Birth date
+        zip: Zip code
+        country: Country
+        password_confirmation: Password confirmation
+        avatar: Avatar
+        testimonials: "%{user}'s Testimonials"
+        location: Location
+      testimonial:
+        body: Body
+        user: User
+    models:
+      users: Users
+      testimonials: Testimonials
+      messages: Messages
+      search: Search
+
+

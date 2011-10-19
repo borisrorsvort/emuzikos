@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__), "base")
+require 'base'
 
 describe Hassle::Compiler do
   before do

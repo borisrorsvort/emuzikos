@@ -1,0 +1,210 @@
+@media only screen and (min-width: 768px) {
+
+#pages.homepage {
+  #logo {
+    display:block;
+    float:left;}
+}
+
+#logo {
+  margin: 0;
+  text-align: left;
+  float: left; }
+
+#messages.index {
+  #inner_content {
+    padding: 18px;
+    .button.delete {
+      margin-left: 0;
+    }
+  }
+}
+
+#main_nav {
+  ul {
+    li {
+      width: auto;
+      a {
+       font-size: 1em ;
+       padding: 17px 20px 17px 50px; }}}}
+
+
+#main_nav .icon-user a {
+  background-position: 13px -83px  !important; }
+#main_nav .icon-messages a {
+  background-position: 13px -33px !important; }
+#main_nav .icon-search a {
+  background-position: 13px 15px !important; }
+
+.main_nav_current_arrow {
+  $size: 5px;
+  top: 53px - $size; }
+
+
+#user_nav {
+  float: right;
+  clear: none;
+  margin-top: 0;
+  text-align:right;
+  a {
+    margin-left: 20px;
+    float: none;
+    display:inline;
+    &.feedback_link {
+      display:inline;
+    }
+    &.greating_profile {
+      display: inline;
+    }
+    &.logout {
+      background: $blue_dark;
+      @include border-radius(3px);
+      padding: 2px 10px ;
+      &:hover {
+        text-decoration:none;
+        background: darken($blue_dark, 10%);  }}}}
+
+
+#sub_nav #actions_set {
+  .ui-button-text {
+    font-size: 14px; }
+
+  .button.add_to_contact_list {
+    width:  auto;
+    .ui-button-text {
+      position:relative;
+      text-indent: 0px;
+      padding: .4em 1em .4em 2.1em; }}
+}
+
+.users_list {
+  .user_profile_listing {
+    clear:both;
+    overflow: hidden; /* Trick to get equal height columns */
+    &:hover {
+      @include single-box-shadow(#999, 0, 0px, 2px );
+      border-color: #fff;
+    }
+    .section {
+      margin-bottom: -99999px; /* Trick to get equal height columns */
+      padding-bottom: 99999px; /* Trick to get equal height columns */
+      float:left;
+      text-align:left  !important;
+      &.user_general_infos {
+        width: 20%; }
+      &.user_type {
+        width: 25%;
+        border-top: 0px solid #dddddd;
+        border-left: 1px solid #dddddd;
+        text-align:center; }
+      &.user_instruments {
+        width: 39%;
+        overflow: hidden;
+        border-top: 0px solid #dddddd;
+        border-left: 1px solid #dddddd; }
+    }
+    .tag_list {
+      padding-bottom: 10px; /* Adding pading cauz .section padding-bottom is taken for the equal height Trick  */
+    }
+  }
+}
+
+
+/* 10.CONTENT */
+/* 11.MAIN */
+
+.right_drawer {
+  display:inline;
+  float: right;
+  width: 75%;
+}
+.left_drawer {
+  display:inline;
+  float:left;
+  width: 25%;
+  .inner {
+    padding-right: 10px;
+  }
+}
+.inner_profile_wrapper {
+  margin-left: 20px;
+}
+.profile_picture {
+  width: 100%  - ($profile_picture_border_width * 2) ;
+  float: none;
+  margin-right: 0;
+}
+.map_container {
+  height: 300px  !important;
+  width: 100%;
+  float: none; }
+
+.services_used {
+  margin: 10px 10px 10px 0;
+  width: 20%;
+  min-width: 200px;
+  float:left;
+  img {
+    float: none;
+    margin-right: 10px;
+  }
+}
+.service_user {
+  float: none;
+  margin: 5px 0 10px;
+  .field {
+    margin-bottom: 1em;
+  }
+}
+
+/* 12. MESSAGES
+---------------------------------------- */
+
+.message {
+  margin-bottom: 10px;
+  @include white_box;
+}
+
+
+
+/* LOGGUED OUT  */
+.logged_out {
+  #user_forms {
+    width: 55%;
+    .normal_login {
+
+      @include fluid_column(5%, 2);
+      padding: 0 5% 0 0; }
+
+    .services_login {
+      @include fluid_column(5%, 2);
+      margin-top: 0;
+      padding: 5% 0 0 5%;
+      width: 50%; }
+  }
+}
+
+
+/* HOME PAGE */
+
+.homepage {
+  #main-icon {
+
+  }
+  #logo img {
+
+  }
+  h2.moto {
+    font-size: 3em;
+  }
+  #logo_home, #main-icon {
+    width: 100%;
+    margin: 0 auto;
+  }
+  #logo_home {
+    margin-bottom: 38px;
+  }
+}
+
+
+}/*/mediaquery*/

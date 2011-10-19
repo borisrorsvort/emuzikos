@@ -2,13 +2,14 @@
 
 =form_for :email, :url => { :controller => 'pages', :action => 'contact' } do |f|
   .field
-    = f.label :name, t(:'pages.contact.name')
-    = f.text_field :name, :size => 60
-  .field
-    = f.label :address, t(:'pages.contact.address')
-    = f.text_field :address, :size => 60
-  .field
-    = f.label :body, t(:'pages.contact.message')
-    = f.text_area :body, :rols => 10, :cols => 60
-  .field
-    = submit_tag t(:'buttons.submit'), :class => "button submit"
+    %p
+      = f.label :name, t(:'pages.contact.name')
+      = f.text_field :name, :size => 60
+    %p
+      = f.label :address, t(:'pages.contact.address')
+      = f.text_field :address, :size => 60
+    %p
+      = f.label :body, t(:'pages.contact.message')
+      = f.text_area :body, :rols => 10, :cols => 60
+    %p
+      = submit_tag t(:'buttons.submit'), :class => "button submit"

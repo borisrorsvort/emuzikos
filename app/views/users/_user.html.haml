@@ -1,18 +1,31 @@
-%tr{:class => cycle("odd", "even")}
-  %td
+= link_to user_path(user), :class => "user_profile_listing" do
+  .section.user_general_infos
     .avatar.small
       - if user.avatar.present?
-        = link_to(image_tag(user.avatar.url(:gallery)), user_path(user))
+        = image_tag(user.avatar.url(:gallery))
       -else
-        = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user))
-      
-  %td= link_to "#{user.username}", user_url(user)
-  %td= t(:"users.types.#{user.user_type}") 
-  %td= t(:"users.types.#{user.searching_for}")
-  %td= user.instruments.collect{|instrument| t(:"instruments.#{instrument}")}.join(', ')
-  %td= t(:"musical_genres.#{user.genre}")
-  %td= user.zip
-  %td= I18n.t(user.country, :scope => 'countries') rescue nil
-  %td
-    -if @current_user && @current_user != user
-      = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => user.id), :class => "button submit contact small"
+        = image_tag("backgrounds/avatar-default.gif")
+    .row.username= user.username
+    .row.location
+      = t(:'common.users.from') + " "
+      = user.zip + ", "
+      = Carmen::country_name(user.country)
+
+  .section.user_type
+    .title
+      %strong= t(:"users.types.#{user.user_type}")
+      = t(:'users.show.is_looking_for')
+      %strong= t(:"users.types.#{user.searching_for}")
+      = t(:'users.show.to_play')
+    .tag_list
+      - user.genres.each do |genre|
+        %span= genre.name
+
+  .section.user_instruments
+    .title
+      = t(:'activerecord.attributes.user.instruments')
+    .tag_list
+      - user.instruments.each do |instrument|
+        %span= instrument.name
+
+  .clear

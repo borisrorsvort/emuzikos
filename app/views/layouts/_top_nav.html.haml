@@ -1,10 +1,13 @@
--if current_user
-  = "Hi #{current_user.username}!" 
-  = link_to t(:'menu.contact'), contact_path
-  =link_to t(:'menu.testimonials'), testimonials_path
-  =link_to t(:'menu.logout'), logout_path, :class => "logout"
-  
+-if user_signed_in?
+  = link_to "Hi #{current_user.username}!" , user_path(current_user), :class => "greating_profile"
+  %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog (powered by UserVoice)"}
+    Help
+  =link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
+  =link_to t(:'menu.logout'), destroy_user_session_path, :class => "logout", :rel => "nofollow"
+
 -else
-  =link_to t(:'menu.testimonials'), testimonials_path
-  =link_to t(:'menu.register'),new_user_path
-  =link_to t(:'menu.login'),login_path
+  =link_to t(:'menu.signup'),new_user_registration_path
+  =link_to t(:'menu.login'), new_user_session_path
+  %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"}
+    Help
+  =link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
