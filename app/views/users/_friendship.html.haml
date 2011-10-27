@@ -15,14 +15,14 @@
       %strong= t(:"users.types.#{friendship.friend.searching_for}")
       = t(:'users.show.to_play')
     .tag_list
-      %span= t(:"musical_genres.#{friendship.friend.genre}")
-
+      - friendship.friend.genres.each do |genre|
+        %span= genre.name
   .section.user_instruments
     .title
       = t(:'activerecord.attributes.user.instruments')
     .tag_list
       - friendship.friend.instruments.each do |instrument|
-        %span= t(:"instruments.#{instrument.name}")
+        %span= instrument.name
 
   .clear
 
