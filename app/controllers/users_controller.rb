@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(:conditions => ["id = ?", params[:id].to_i])
+    @user = User.find(params[:id].to_i)
     @testimonials = @user.testimonials
     @user_map = @user.to_gmaps4rails
     if @user.geocoded?
