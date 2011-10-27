@@ -1,20 +1,21 @@
 #search_form
-  = form_for search, :url => users_path, :html => {:method => :get} do |f|
+  = search_form_for @q, :url => users_path, :html => {:method => :get} do |f|
     .field
-      = f.select :user_type_contains, user_types, :include_blank => t(:'search_terms.iam')
+      = f.select :user_type_cont, user_types, :include_blank => t(:'search_terms.iam')
       .clear
     .field
-      = f.select :genres_name_contains, genres.collect {|g| g.name}, :include_blank => t(:'search_terms.music_style')
+      = f.select :genres_name_cont, genres.collect {|g| g.name}, :include_blank => t(:'search_terms.music_style')
       .clear
     .field
-      = f.select :instruments_name_contains, instruments.collect {|i| i.name}, :include_blank => t(:'search_terms.who_plays')
+      = f.select :instruments_name_cont, instruments.collect {|i| i.name}, :include_blank => t(:'search_terms.who_plays')
       .clear
     .field
-      = f.select :searching_for_contains, user_types, :include_blank => t(:'search_terms.who_search_for')
+      = f.select :searching_for_cont, user_types, :include_blank => t(:'search_terms.who_search_for')
       .clear
     .field#location
       .centered
-        = f.text_field :mass_locate, :placeholder => t(:'search_terms.mass_locate'), :size => 20
+        //= text_field_tag :mass_locate, :placeholder => t(:'search_terms.mass_locate'), :size => 20
+        = text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate'), :size => 20
         .clear
     / .field
     /       = f.select :country_contains, countries, :include_blank => t(:'search_terms.country')

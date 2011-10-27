@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
 
   attr_searchable :username, :user_type, :searching_for, :country, :zip
   assoc_searchable :instruments, :tastes, :genres
-  search_methods :mass_locate
 
   geocoded_by :address
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?,
@@ -73,13 +72,16 @@ class User < ActiveRecord::Base
     :default_url => '/images/backgrounds/no-image-:style.gif'
 
   scope :profiles_completed, where("country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id").joins(:tastes)
-  #scope :profiles_completed, where("country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id").joins(:tastes).select('DISTINCT users.*')
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
   scope :except_current_user, lambda { |user| where("users.id != ?", user.id) }
   scope :visible, where( :visible => true )
 
   def self.mass_locate(location)
     self.near(location.to_s, 10)
+  end
+
+  def self.available_for_listing(current_user)
+    self.except_current_user(current_user).visible.geocoded.profiles_completed
   end
 
   def cropping?

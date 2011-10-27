@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:show]
 
-  #helper_method :sort_column, :sort_direction
   def index
-    @users = []
-    @search = User.except_current_user(@current_user).visible.geocoded.profiles_completed.search(params[:search])
-    @users = @search.page.per(AppConfig.site.results_per_page)
+    #@users = []
+    if params[:mass_locate] && !params[:mass_locate].empty?
+      # select distinct must be inside near scope (https://github.com/alexreisner/geocoder)
+      @q = User.available_for_listing(@current_user).near(params[:mass_locate].to_s, 10, :select => "DISTINCT users.*").search(params[:q])
+    else
+      @q = User.available_for_listing(@current_user).select("DISTINCT users.*").search(params[:q])
+    end
+    @users = @q.result.order("last_sign_in_at").page(params[:page]).per(AppConfig.site.results_per_page)
     @genres = Genre.order("name asc")
     @instruments = Instrument.order("name asc")
     @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])

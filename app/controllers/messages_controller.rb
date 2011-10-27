@@ -4,9 +4,9 @@ class MessagesController < ApplicationController
 
   def index
     if params[:mailbox] == "sent"
-      @messages = @user.sent_messages.page.per(AppConfig.site.results_per_page)
+      @messages = @user.sent_messages.order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
     else
-      @messages = @user.received_messages.page.per(AppConfig.site.results_per_page)
+      @messages = @user.received_messages.order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
     end
     if request.xhr?
       sleep(2) # make request a little bit slower to see loader :-)

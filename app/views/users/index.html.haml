@@ -1,7 +1,7 @@
 - title t(:'.title'), false
 
 - content_for :sub_nav do
-  = render "search", :search => @search, :user_types => @user_types, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen.countries
+  = render "search", :q => @q, :user_types => @user_types, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen.countries
 
 - content_for :scripts do
   = pageless(@users.num_pages, users_path)

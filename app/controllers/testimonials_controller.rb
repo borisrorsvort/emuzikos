@@ -1,4 +1,6 @@
 class TestimonialsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index]
+
   def index
     @testimonials = Testimonial.approved.order("created_at DESC").page.per(20)
   end

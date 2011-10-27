@@ -4111,7 +4111,7 @@ input:focus, input:active, textarea:focus, textarea:active {
   border: none;
 }
 /* line 63, ../../../app/stylesheets/_forms.scss */
-#search_form .field input#search_mass_locate {
+#search_form .field input#mass_locate {
   padding: 4px 8px;
   margin-top: 3px;
 }
@@ -4345,29 +4345,29 @@ html.js .page_entries {
 }
 
 /* LAyOUT*/
-/* line 41, ../../../app/stylesheets/_main.scss */
+/* line 40, ../../../app/stylesheets/_main.scss */
 #inner_content {
   background: #efefef;
   padding: 18px;
   /* for non mobiel version*/
 }
 
-/* line 46, ../../../app/stylesheets/_main.scss */
+/* line 45, ../../../app/stylesheets/_main.scss */
 #messages.index #inner_content {
   padding: 0 0 18px 0;
 }
-/* line 48, ../../../app/stylesheets/_main.scss */
+/* line 47, ../../../app/stylesheets/_main.scss */
 #messages.index #inner_content .button.delete {
   margin-left: 10px;
 }
 
 /* NAVIGATION
 ---------------------------------------- */
-/* line 58, ../../../app/stylesheets/_main.scss */
+/* line 57, ../../../app/stylesheets/_main.scss */
 #main_nav ul {
   padding: 0;
 }
-/* line 60, ../../../app/stylesheets/_main.scss */
+/* line 59, ../../../app/stylesheets/_main.scss */
 #main_nav li {
   display: block;
   float: left;
@@ -4375,19 +4375,19 @@ html.js .page_entries {
   position: relative;
   width: 33%;
 }
-/* line 66, ../../../app/stylesheets/_main.scss */
+/* line 65, ../../../app/stylesheets/_main.scss */
 #main_nav li.icon-user a {
   background-position: 13px -88px;
 }
-/* line 68, ../../../app/stylesheets/_main.scss */
+/* line 67, ../../../app/stylesheets/_main.scss */
 #main_nav li.icon-messages a {
   background-position: 13px -38px;
 }
-/* line 70, ../../../app/stylesheets/_main.scss */
+/* line 69, ../../../app/stylesheets/_main.scss */
 #main_nav li.icon-search a {
   background-position: 13px 11px;
 }
-/* line 73, ../../../app/stylesheets/_main.scss */
+/* line 72, ../../../app/stylesheets/_main.scss */
 #main_nav li a {
   text-shadow: #333333 0 1px 1px;
   color: #bababa;
@@ -4402,12 +4402,12 @@ html.js .page_entries {
   border-right: 1px solid #2d2d2d;
   background: transparent url("/images/icons/main-nav-icon-sprite.png") left top no-repeat;
 }
-/* line 86, ../../../app/stylesheets/_main.scss */
+/* line 85, ../../../app/stylesheets/_main.scss */
 #main_nav li a:hover, #main_nav li a.current {
   background-color: #3a3a3a;
 }
 
-/* line 89, ../../../app/stylesheets/_main.scss */
+/* line 88, ../../../app/stylesheets/_main.scss */
 .main_nav_current_arrow {
   font-size: 0px;
   line-height: 0%;
@@ -4420,7 +4420,7 @@ html.js .page_entries {
   top: 39px;
 }
 
-/* line 96, ../../../app/stylesheets/_main.scss */
+/* line 95, ../../../app/stylesheets/_main.scss */
 .message_count {
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
@@ -4445,13 +4445,13 @@ html.js .page_entries {
   text-shadow: none;
 }
 
-/* line 112, ../../../app/stylesheets/_main.scss */
+/* line 111, ../../../app/stylesheets/_main.scss */
 #user_nav {
   float: none;
   clear: left;
   margin-top: 10px;
 }
-/* line 116, ../../../app/stylesheets/_main.scss */
+/* line 115, ../../../app/stylesheets/_main.scss */
 #user_nav a {
   text-align: center;
   display: block;
@@ -4460,15 +4460,15 @@ html.js .page_entries {
   width: 33%;
   margin: 0;
 }
-/* line 123, ../../../app/stylesheets/_main.scss */
+/* line 122, ../../../app/stylesheets/_main.scss */
 #user_nav a.greating_profile {
   display: none;
 }
-/* line 126, ../../../app/stylesheets/_main.scss */
+/* line 125, ../../../app/stylesheets/_main.scss */
 #user_nav a:hover {
   text-decoration: underline;
 }
-/* line 129, ../../../app/stylesheets/_main.scss */
+/* line 128, ../../../app/stylesheets/_main.scss */
 #user_nav.logout {
   background: #157ebe;
   -moz-border-radius: 3px;
@@ -4479,14 +4479,14 @@ html.js .page_entries {
   border-radius: 3px;
   padding: 2px 10px;
 }
-/* line 133, ../../../app/stylesheets/_main.scss */
+/* line 132, ../../../app/stylesheets/_main.scss */
 #user_nav.logout:hover {
   text-decoration: none;
   background: #106090;
 }
 
 /* USER */
-/* line 141, ../../../app/stylesheets/_main.scss */
+/* line 140, ../../../app/stylesheets/_main.scss */
 .users_list {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -4509,7 +4509,7 @@ html.js .page_entries {
   animation-timing-function: ease;
   animation-fill-mode: both;
 }
-/* line 164, ../../../app/stylesheets/_main.scss */
+/* line 163, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing {
   -webkit-animation: fadeIn 2s;
   background-color: #FFF;
@@ -4525,30 +4525,30 @@ html.js .page_entries {
   display: block;
   font-size: 13px;
 }
-/* line 173, ../../../app/stylesheets/_main.scss */
+/* line 172, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .row {
   display: block;
   padding-left: 45px;
 }
-/* line 176, ../../../app/stylesheets/_main.scss */
+/* line 175, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .tag_list {
   margin: 0;
   font-size: 10.833px;
 }
-/* line 179, ../../../app/stylesheets/_main.scss */
+/* line 178, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section {
   padding: 10px;
 }
-/* line 181, ../../../app/stylesheets/_main.scss */
+/* line 180, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section .title {
   margin-bottom: 5px;
   color: #666;
 }
-/* line 186, ../../../app/stylesheets/_main.scss */
+/* line 185, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_general_infos .username {
   text-transform: uppercase;
 }
-/* line 188, ../../../app/stylesheets/_main.scss */
+/* line 187, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_general_infos .username a {
   text-decoration: none;
 }
@@ -4556,22 +4556,22 @@ html.js .page_entries {
 .users_list .user_profile_listing .section.user_general_infos .username a:hover {
   text-decoration: underline;
 }
-/* line 190, ../../../app/stylesheets/_main.scss */
+/* line 189, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_general_infos .location {
   font-size: 0.9em;
   color: gray;
 }
-/* line 194, ../../../app/stylesheets/_main.scss */
+/* line 193, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_type {
   /* text-align:center; */
   border-top: 1px solid #dddddd;
 }
-/* line 198, ../../../app/stylesheets/_main.scss */
+/* line 197, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_instruments {
   /*text-align:center;*/
   border-top: 1px solid #dddddd;
 }
-/* line 201, ../../../app/stylesheets/_main.scss */
+/* line 200, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_instruments span {
   font-size: 10.833px;
   background: none;
@@ -4579,42 +4579,42 @@ html.js .page_entries {
   color: gray;
 }
 
-/* line 213, ../../../app/stylesheets/_main.scss */
+/* line 212, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field {
   min-width: 50%;
 }
-/* line 216, ../../../app/stylesheets/_main.scss */
+/* line 215, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field input#search_zip {
   width: 112px;
   padding-left: 10px;
 }
-/* line 220, ../../../app/stylesheets/_main.scss */
+/* line 219, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .centered {
   margin: 0 auto;
   width: 121px;
 }
-/* line 224, ../../../app/stylesheets/_main.scss */
+/* line 223, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .selector {
   margin: 0 auto;
   width: 110px;
 }
-/* line 227, ../../../app/stylesheets/_main.scss */
+/* line 226, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .selector span {
   width: 100px;
   font-size: 0.85em;
 }
-/* line 231, ../../../app/stylesheets/_main.scss */
+/* line 230, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .selector select {
   width: 133px;
 }
 
-/* line 237, ../../../app/stylesheets/_main.scss */
+/* line 236, ../../../app/stylesheets/_main.scss */
 .avatar {
   background: #ccc;
   display: block;
   float: left;
 }
-/* line 241, ../../../app/stylesheets/_main.scss */
+/* line 240, ../../../app/stylesheets/_main.scss */
 .avatar.small {
   height: 30px;
   width: 30px;
@@ -4631,13 +4631,13 @@ html.js .page_entries {
   -khtml-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 248, ../../../app/stylesheets/_main.scss */
+/* line 247, ../../../app/stylesheets/_main.scss */
 .avatar.small a {
   display: block;
 }
 
 /* USER SHOW */
-/* line 255, ../../../app/stylesheets/_main.scss */
+/* line 254, ../../../app/stylesheets/_main.scss */
 .profile_picture {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -4657,7 +4657,7 @@ html.js .page_entries {
   margin-bottom: 18px;
 }
 
-/* line 261, ../../../app/stylesheets/_main.scss */
+/* line 260, ../../../app/stylesheets/_main.scss */
 .looking_for {
   margin: 18px 0 4.5px;
   text-transform: lowercase;
@@ -4666,35 +4666,35 @@ html.js .page_entries {
   text-shadow: white 0 1px 1px;
 }
 
-/* line 269, ../../../app/stylesheets/_main.scss */
+/* line 268, ../../../app/stylesheets/_main.scss */
 h1.username {
   margin-bottom: 3px;
   display: inline;
 }
 
-/* line 273, ../../../app/stylesheets/_main.scss */
+/* line 272, ../../../app/stylesheets/_main.scss */
 .location_infos {
   color: #999;
   margin: 18px 0;
   display: block;
 }
 
-/* line 278, ../../../app/stylesheets/_main.scss */
+/* line 277, ../../../app/stylesheets/_main.scss */
 .spread {
   margin-bottom: 18px;
 }
-/* line 280, ../../../app/stylesheets/_main.scss */
+/* line 279, ../../../app/stylesheets/_main.scss */
 .spread .left {
   float: left;
   margin-right: 10px;
 }
 
-/* line 284, ../../../app/stylesheets/_main.scss */
+/* line 283, ../../../app/stylesheets/_main.scss */
 .tag_list {
   font-size: 10.833px;
   margin: 10px 0 18px;
 }
-/* line 287, ../../../app/stylesheets/_main.scss */
+/* line 286, ../../../app/stylesheets/_main.scss */
 .tag_list span {
   padding: 0px 10px;
   background-color: #1d8cc8;
@@ -4713,33 +4713,33 @@ h1.username {
   box-shadow: 0 1px 2px white;
 }
 
-/* line 296, ../../../app/stylesheets/_main.scss */
+/* line 295, ../../../app/stylesheets/_main.scss */
 .jcrop-holder img, img#preview {
   max-width: none  !important;
   max-height: none  !important;
 }
 
-/* line 301, ../../../app/stylesheets/_main.scss */
+/* line 300, ../../../app/stylesheets/_main.scss */
 .users_nearby {
   margin-bottom: 18px;
 }
-/* line 302, ../../../app/stylesheets/_main.scss */
+/* line 301, ../../../app/stylesheets/_main.scss */
 .users_nearby .avatar {
   margin: 0 10px 10px 0;
 }
 
 /* CONTACT LIST*/
-/* line 311, ../../../app/stylesheets/_main.scss */
+/* line 310, ../../../app/stylesheets/_main.scss */
 #users.contacts .actions {
   margin-bottom: 18px;
 }
 
 /* TESTIMONIALS */
-/* line 318, ../../../app/stylesheets/_main.scss */
+/* line 317, ../../../app/stylesheets/_main.scss */
 #testimonials {
   clear: both;
 }
-/* line 321, ../../../app/stylesheets/_main.scss */
+/* line 320, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial {
   width: 230px;
   padding: 15px;
@@ -4761,11 +4761,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 333, ../../../app/stylesheets/_main.scss */
+/* line 332, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 336, ../../../app/stylesheets/_main.scss */
+/* line 335, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -4776,17 +4776,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 340, ../../../app/stylesheets/_main.scss */
+/* line 339, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 346, ../../../app/stylesheets/_main.scss */
+/* line 345, ../../../app/stylesheets/_main.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 349, ../../../app/stylesheets/_main.scss */
+/* line 348, ../../../app/stylesheets/_main.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -4796,17 +4796,17 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 358, ../../../app/stylesheets/_main.scss */
+/* line 357, ../../../app/stylesheets/_main.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 361, ../../../app/stylesheets/_main.scss */
+/* line 360, ../../../app/stylesheets/_main.scss */
 .services_list img {
   width: 32px;
 }
 
-/* line 364, ../../../app/stylesheets/_main.scss */
+/* line 363, ../../../app/stylesheets/_main.scss */
 .services_used {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -4826,30 +4826,30 @@ h1.username {
   width: 90%;
   float: left;
 }
-/* line 370, ../../../app/stylesheets/_main.scss */
+/* line 369, ../../../app/stylesheets/_main.scss */
 .services_used img {
   float: left;
   margin-right: 10px;
 }
 
-/* line 375, ../../../app/stylesheets/_main.scss */
+/* line 374, ../../../app/stylesheets/_main.scss */
 .service_user {
   float: left;
   margin: 5px 0 10px;
 }
-/* line 378, ../../../app/stylesheets/_main.scss */
+/* line 377, ../../../app/stylesheets/_main.scss */
 .service_user .field {
   margin-bottom: 1em;
 }
 
 /* 12. MESSAGES
 ---------------------------------------- */
-/* line 388, ../../../app/stylesheets/_main.scss */
+/* line 387, ../../../app/stylesheets/_main.scss */
 .messages_list {
   margin-bottom: 10px;
 }
 
-/* line 392, ../../../app/stylesheets/_main.scss */
+/* line 391, ../../../app/stylesheets/_main.scss */
 .message {
   font-size: 13px;
   display: block;
@@ -4860,36 +4860,36 @@ h1.username {
   color: #666;
   position: relative;
 }
-/* line 401, ../../../app/stylesheets/_main.scss */
+/* line 400, ../../../app/stylesheets/_main.scss */
 .message.unread {
   background-color: #e5f5fb;
 }
-/* line 404, ../../../app/stylesheets/_main.scss */
+/* line 403, ../../../app/stylesheets/_main.scss */
 .message span {
   display: block;
 }
-/* line 406, ../../../app/stylesheets/_main.scss */
+/* line 405, ../../../app/stylesheets/_main.scss */
 .message span.message_date {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 411, ../../../app/stylesheets/_main.scss */
+/* line 410, ../../../app/stylesheets/_main.scss */
 .message span.message_subject {
   color: #999;
 }
-/* line 415, ../../../app/stylesheets/_main.scss */
+/* line 414, ../../../app/stylesheets/_main.scss */
 .message .message_sender {
   font-size: 13px;
   color: #1d8cc8;
   font-weight: bold;
   margin: 0 0 9px;
 }
-/* line 421, ../../../app/stylesheets/_main.scss */
+/* line 420, ../../../app/stylesheets/_main.scss */
 .message .checker {
   float: left;
 }
-/* line 424, ../../../app/stylesheets/_main.scss */
+/* line 423, ../../../app/stylesheets/_main.scss */
 .message .headers {
   padding-left: 34px;
 }
@@ -4899,7 +4899,7 @@ h1.username {
 /* 14.GLOBAL OBJECTS
 ---------------------------------------- */
 /* MODAL BOX */
-/* line 439, ../../../app/stylesheets/_main.scss */
+/* line 438, ../../../app/stylesheets/_main.scss */
 #simplemodal-container a.modalCloseImg {
   background: url("/images/icons/close.png") no-repeat;
   /* adjust url as required */
@@ -4918,7 +4918,7 @@ h1.username {
 /* 16.TEMPLATE SPECIFICS
 ---------------------------------------- */
 /* SEARCH */
-/* line 458, ../../../app/stylesheets/_main.scss */
+/* line 457, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links {
   display: none;
   margin: 0;
@@ -4954,11 +4954,11 @@ h1.username {
 #sub_nav .quick_links li.last {
   padding-right: 0;
 }
-/* line 466, ../../../app/stylesheets/_main.scss */
+/* line 465, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links ul li {
   margin: 0 5px 0 0;
 }
-/* line 468, ../../../app/stylesheets/_main.scss */
+/* line 467, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links a {
   text-decoration: none;
 }
@@ -4966,7 +4966,7 @@ h1.username {
 #sub_nav .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 470, ../../../app/stylesheets/_main.scss */
+/* line 469, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links span {
   font-weight: bold;
 }

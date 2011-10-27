@@ -28,7 +28,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 
 gem "meta_where"
-gem "meta_search"
+gem "ransack"
 
 gem "hominid"
 
