@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id], :include => :instruments)
+    @user = User.find(params[:id])
     @testimonials = @user.testimonials
     @user_map = @user.to_gmaps4rails
     if @user.geocoded?

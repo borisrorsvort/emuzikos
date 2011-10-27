@@ -5,7 +5,7 @@
         = image_tag(user.avatar.url(:gallery))
       -else
         = image_tag("backgrounds/avatar-default.gif")
-    .row.username= user.username + "#{user.id}"
+    .row.username= user.username
     .row.location
       = t(:'common.users.from') + " "
       = user.zip + ", "
