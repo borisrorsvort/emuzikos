@@ -9,7 +9,20 @@ ActiveAdmin.register User do
       end
       column :username, :sortable => false
       column :user_type
-      column :genre
+      column "Genres" do |user|
+        for genre in user.genres do
+          span do
+            genre.name
+          end
+        end
+      end
+      column "Instruments" do |user|
+        for instrument in user.instruments do
+          span do
+            instrument.name
+          end
+        end
+      end
       column :zip
       column :country
       column :created_at
