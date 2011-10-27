@@ -1,19 +1,21 @@
 table {
   border-top: $table-top-border 1px solid;
-  font-size: 1.2em;
+  font-size: 0.75em;
   vertical-align: middle;
   color: $table-data-color;
   border-collapse: separate;
-  
+
 /*  thead {
     border: $table-top-border 1px solid; }*/
-    
+
   tr {
+    -webkit-animation: fadeIn 2s ;
+
     &.even {
       background-color: $table-color-even ;}
     &.odd {
       background-color: $table-color-odd ;}}
-      
+
   td {
     padding: 20px;
     a {
@@ -23,23 +25,16 @@ table {
     padding: 6px 20px;
     background-color:$table-header-gb;
     @include background-image(linear-gradient($table-header-gt, $table-header-gb));
-    
+
     border-top: 1px solid lighten($table-header-gt, 20%);
-    
+
     color: $table-header-link;
     @include inset(#333);
-    
+
     a {
       @include link-colors($table-header-link, lighten($table-header-link, 5%));
       @include hover-link;
       @include inset(#333);
     }
-  }
-}
-
-
-body#messages {
-  .delete_seleted,.unread {
-    width: 10px;
   }
 }

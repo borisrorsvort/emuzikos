@@ -1,55 +1,63 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:show]
-  
-  helper_method :sort_column, :sort_direction
-  
+
   def index
-    @users = []
-    @search = Search.new(User, params[:search])
-    if is_search?
-      @users = User.profiles_completed.search(@search, :page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction )
+    #@users = []
+    if params[:mass_locate] && !params[:mass_locate].empty?
+      # select distinct must be inside near scope (https://github.com/alexreisner/geocoder)
+      @q = User.available_for_listing(@current_user).near(params[:mass_locate].to_s, 10, :select => "DISTINCT users.*").search(params[:q])
     else
-      @users = User.profiles_completed.paginate(:page => params[:page], :per_page => AppConfig.site.results_per_page, :order => sort_column + " " + sort_direction)
+      @q = User.available_for_listing(@current_user).select("DISTINCT users.*").search(params[:q])
+    end
+    @users = @q.result.order("last_sign_in_at").page(params[:page]).per(AppConfig.site.results_per_page)
+    @genres = Genre.order("name asc")
+    @instruments = Instrument.order("name asc")
+    @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
+    if request.xhr?
+      render @users
     end
   end
-  
+
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id].to_i)
     @testimonials = @user.testimonials
+    @user_map = @user.to_gmaps4rails
+    if @user.geocoded?
+      @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at")
+    end
   end
-  
+
   def edit
     @user = @current_user
+    @genres = Genre.order('name asc')
+    @instruments = Instrument.order("name asc")
   end
-  
+
   def update
+    params[:user][:instrument_ids] ||= []
+    params[:user][:genre_ids] ||= []
+
     @user = @current_user
     if @user.update_attributes(params[:user])
-      
+
       if params[:user][:avatar].blank?
         gflash :success => true
-        redirect_to edit_user_url
+        redirect_to :back
       else
         gflash :notice => true
-        render :action => 'crop'  
+        render 'crop'
       end
     else
       gflash :error => true
-      render :action => 'edit'
+      render 'edit'
     end
   end
-  
-  private
-  
-  def is_search?
-    @search.conditions
+
+  def contacts
+    @friendships = @current_user.friendships
   end
-  
-  def sort_column
-    User.column_names.include?(params[:sort]) ? params[:sort] : "last_sign_in_at"
-  end
-  
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
+
+
+
+
 end

@@ -1,19 +1,14 @@
 class PagesController < ApplicationController
-  
+
   def homepage
-    @testimonials = Testimonial.last(3)
+    @testimonials = Testimonial.approved.last(4)
     render :layout => "home"
   end
-  
-  def about
-    
-  end
-  
-  def contact
-    if request.post? 
-      Notifier.contact_email(params[:email]).deliver
-      gflash :success => true
-      #flash[:notice] = "seuccessfully send your message"
+
+  %w(about terms privacy).each do |section|
+    define_method section do
+      render :layout => "home"
     end
   end
+
 end

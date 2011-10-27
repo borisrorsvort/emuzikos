@@ -25,6 +25,7 @@ en:
       new: 
         title: Log in to your account
         forgot_password: Forgot your password?
+        or_login_using: "Or login using:"
       signed_in: 'Logged in in successfully.'
       signed_out: 'Logged out successfully.'
     passwords:
@@ -39,11 +40,13 @@ en:
       confirmed: 'Your account was successfully confirmed. You are now logged in.'
     registrations:
       new:
-        title: "Signup"
+        title: "Signup to Emuzikos"
+        or_signup_using: "Or signup using:"
+        newsletter_agreement: "By clicking the submit button, you agree to the <a href='/terms' target='_blank'>terms of agreements</a> and to be subscribed to our newsletter."
       edit:
         title: Edit my account
         cancel_my_account: Cancel my account
-      signed_up: 'Welcome! You have signed up successfully.'
+      signed_up: 'Welcome! You have signed up successfully. Please complete your profile to appear in search results'
       inactive_signed_up: 'You have signed up successfully. However, we could not log you in because your account is %{reason}.'
       updated: 'You updated your account successfully.'
       destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
@@ -60,3 +63,7 @@ en:
         subject: 'Reset password instructions'
       unlock_instructions:
         subject: 'Unlock Instructions'
+    shared:
+      links:
+        dont_have_account_yet: "Don't have an account yet?"
+        have_account_already: "Have an account already?"

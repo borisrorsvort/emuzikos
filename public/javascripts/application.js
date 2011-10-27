@@ -1,18 +1,42 @@
-$(document).ready(function() {
+if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+  var viewportmeta = document.querySelectorAll('meta[name="viewport"]')[0];
+  if (viewportmeta) {
+    viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0';
+    document.body.addEventListener('gesturestart', function() {
+      viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
+    }, false);
+  }
+}
 
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    };
+  }
+}
+
+// addLoadEvent(function() {
+//   if (document.getElementById && document.getElementsByTagName) {
+//   var aImgs = document.getElementById("content").getElementsByTagName("img");
+//   imgSizer.collate(aImgs);
+//   } 
+// });
+
+$(document).ready(function() {
+  
   // TIPSY
 
   $('.tooltip').tipsy({trigger: 'hover', gravity: 's'});
   
   $('input.form_guide').tipsy({trigger: 'focus', gravity: 'w'});
-
-  // FORMS UTILS
-  var search_form = $('form.search')
-  search_form.find("input[type=submit]").hide();
-  search_form.change(function() {
-    $(this).submit();
-  });
-
+  
   
   // UI STUFF
   
@@ -24,7 +48,36 @@ $(document).ready(function() {
 	$('.button').button({
     text: true
   });
-  
+  $('.button.add').button({
+    icons: {
+      primary: 'ui-icon-plus'
+    },
+    text: true
+  });
+  $('.button.add_to_contact_list').button({
+    icons: {
+      primary: 'ui-icon-star'
+    },
+    text: true
+  });
+  $('.button.contact').button({
+    icons: {
+      primary: 'ui-icon-mail-closed'
+    },
+    text: true
+  });
+  $('.button.contact_from_index').button({
+    icons: {
+      secondary: 'ui-icon-comment'
+    },
+    text: false
+  });
+  $('.button.delete').button({
+    icons: {
+      primary: 'ui-icon-trash'
+    },
+    text: true
+  });
   $('.button.submit').button({
     icons: {
       secondary: 'ui-icon-triangle-1-e'
@@ -54,23 +107,33 @@ $(document).ready(function() {
   
   // CSS ARROWS
   
-  $('#main_nav li a.current').append('<div class="main_nav_current_arrow"></div>');
-  $('#sub_sections li a.current').append('<div class="top_sub_nav_arrow"></div>');
-  $('#footer .inner_footer th').append('<div class="footer_headers_current_arrow"></div>');
-  
-  // NOISY STUFF
-  
-  $('.homepage #content').noisy({
-      'intensity' : 1, 
-      'size' : 150, 
-      'opacity' : 0.06, 
-      'fallback' : '', 
-      'monochrome' : true
-  });
+  $('#main_nav li a.current').after('<div class="main_nav_current_arrow"></div>');
+  $('#sub_sections li a.current').after('<div class="top_sub_nav_arrow"></div>');
+  $('#footer .inner_footer th').after('<div class="footer_headers_current_arrow"></div>');
   
   // MASONRY
   $(".testimonials").masonry({ singleMode: true,resizeable: true, animate: true,itemSelector: '.testimonial' });
   
   // BOXY MODAL CONFIG
-  $("a[rel=boxy]").boxy({modal: true, closeable: true, center: true, title: "EMUZIKOS" , closetext: "[close]"});
+  //$("a[rel=boxy]").boxy({modal: true, closeable: true, center: true, title: "EMUZIKOS" , closetext: "[close]"});
+  
+  $('a[rel=boxy]').click(function(){
+    var selector = $(this).attr('href');
+    $(selector).modal({
+      overlayCss: {backgroundColor:"#000"},
+      autoResize: false,
+      autoPosition: true,
+      overlayClose: true,
+      maxWidth: 380,
+      maxHeight: '80%'
+    });
+  });
+  
+  $('#search_form .button').click(function() {
+    $('#inner_content').prepend("<div class='centered' style='text-align:center;'><p>Loading users<br><img width='220' height='19' src='/images/icons/ajax-loader-bar.gif'/></p></div>")
+    $('.users_list').addClass('fadeOutDownBig');
+    $(this).closest('form').submit();
+    $(this).attr("disabled", true);
+  });
+  
 });

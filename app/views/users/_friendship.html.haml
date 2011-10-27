@@ -1,0 +1,31 @@
+= link_to user_path(friendship.friend), :class => "user_profile_listing" do
+  .section.user_general_infos
+    .avatar.small
+      - if friendship.friend.avatar.present?
+        = image_tag(friendship.friend.avatar.url(:gallery))
+      -else
+        = image_tag("backgrounds/avatar-default.gif")
+    .row.username= friendship.friend.username
+    .row.location= t(:'common.users.from') + " " + friendship.friend.zip + ", " + Carmen::country_name(friendship.friend.country) rescue nil
+
+  .section.user_type
+    .title
+      %strong= t(:"users.types.#{friendship.friend.user_type}")
+      = t(:'users.show.is_looking_for')
+      %strong= t(:"users.types.#{friendship.friend.searching_for}")
+      = t(:'users.show.to_play')
+    .tag_list
+      %span= t(:"musical_genres.#{friendship.friend.genre}")
+
+  .section.user_instruments
+    .title
+      = t(:'activerecord.attributes.user.instruments')
+    .tag_list
+      - friendship.friend.instruments.each do |instrument|
+        %span= t(:"instruments.#{instrument.name}")
+
+  .clear
+
+.actions
+  = link_to t(:'buttons.remove_from_contact_list'), friendship, :method => :delete, :class => "button delete"
+  = link_to t(:'buttons.contact'), new_user_message_path(current_user, :to => friendship.friend.id), :class => "button submit contact"

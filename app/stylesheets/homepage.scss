@@ -1,11 +1,245 @@
 @import "colors";
-
 @import "base";
 @import "compass/css3";
 @import "compass/utilities";
+@import "typography";
 
-.logged_out {
-  #header {
+@-webkit-keyframes scale_from_small {
+  0% {
+    @include scale(0);
+    opacity: 0;}
+  60% {
+    @include scale(0.4);
+    opacity: 0;}
+  100% {
+    @include scale(1);
+    opacity: 1;}
+}
+
+@-webkit-keyframes scale_to_big {
+  0% {
+    @include scale(1);
+    opacity: 0.4;}
+  60% {
+    @include scale(1.2);
+    opacity: 0.8;}
+  100% {
+    @include scale(1);
+    opacity: 1;}
+}
+@-webkit-keyframes opacity {
+	0% { opacity: 0;}
+	100% { opacity: 1;}
+}
+
+#inner_content {
+  background: $home_bg;
+}
+
+img {
+  max-width: 100%;
+}
+strong {
+  font-weight: bolder;
+}
+
+
+h1#main_title {
+  text-indent: -9990px;
+  margin-top: -50px;
+  height: 0; /* keep consistent baseline */
+}
+.homepage #container {
+  padding: 16px auto 0;
+}
+h2.moto {
+  font-size: $basefont * 2;
+  color: #7bb3cf  !important;
+  font-weight:normal;
+  @include text-shadow(#000, 0, 1px, 1px);
+  strong {
+    color:#7bb3cf  !important;
+  }
+}
+.homepage {
+  h3 {
+    font-size: 24px;
+    padding: 45px 0;
+    text-align: center;
+    margin: 0;
+    background:transparent image-url('homepage/home-separator.png') center top no-repeat;
+    color:#828282  !important;
+  }
+  h4 {
+    color: #f5bd14  !important;
+    @include inset(#000, "important");
+    margin-bottom: $baseline / 2  !important; }}
+
+#music_notes {
+  background:transparent url('/images/homepage/music-notes.png') center -40px repeat-x;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 0;
+  -webkit-animation: opacity 4s ;
+  -moz-animation: opacity 4s;
+  -webkit-animation: slidingFromLeft 4s ;
+
+
+
+}
+.homepage.logged_out #inner_content {
+  padding: 0;
+}
+#inner_halo {
+  position:relative;
+  background:transparent url('/images/homepage/halo.png') center bottom no-repeat;
+}
+#main {
+  text-align:center;
+  padding: 20px;
+}
+
+#logo_home, #main-icon {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#logo_home {
+  margin-bottom: 38px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  $duration: 1s;
+  $delay: 0.1s;
+
+  -webkit-animation-duration: $duration;
+  -webkit-animation-delay: $delay;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: $duration;
+  -moz-animation-delay: $delay;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: $duration;
+  -ms-animation-delay: $delay;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: $duration;
+  animation-delay:$delay;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+#main-icon {
+  margin-bottom: 10px;
+
+  $duration: 1s;
+  $delay: 0.1s;
+
+  -webkit-animation-duration: $duration;
+  -webkit-animation-delay: $delay;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: $duration;
+  -moz-animation-delay: $delay;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: $duration;
+  -ms-animation-delay: $delay;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: $duration;
+  animation-delay:$delay;
+  animation-timing-function: ease;
+  animation-fill-mode: both; }
+
+#header {
+  background:none;
+  background-color:  $home_bg;
+
+}
+.signup_button {
+  height: 45px;
+  line-height: 45px;
+  width: 280px;
+  display:block;
+  margin: 0 auto 20px;
+  background: #f1d260; /* Old browsers */
+  background: -moz-linear-gradient(top, #f1d260 0%, #efbf26 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1d260), color-stop(100%,#efbf26)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #f1d260 0%,#efbf26 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f1d260 0%,#efbf26 100%); /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #f1d260 0%,#efbf26 100%); /* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1d260', endColorstr='#efbf26',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, #f1d260 0%,#efbf26 100%); /* W3C */
+  color: #5e501e;
+  @include inset(#fff);
+  @include border-radius(45px);
+  text-decoration:none;
+  border: 7px solid #273b52;
+  @include box-shadow( #cbc5a1, 0, 0, 2px, inset);
+  text-transform: uppercase;
+  font-weight:bold;
+  position: relative;
+  z-index: 20;
+  &:hover {
+    color: darken(#5e501e, 10%);
+    @include scale(1.02);
+  }
+}
+
+.features_columns {
+  background-color: $home_bg;
+  padding-bottom: 48px;
+  .columns {
+    padding: 3%;
+  }
+}
+
+.FB_fan iframe{
+  margin: 0 auto;
+  width: 300px;
+  margin-left: 14%;
+}
+
+.note_circle {
+  width: 84px;
+  height: 41px;
+  margin: 20px auto 0;
+  background:transparent image-url('homepage/note-circle.png') center bottom no-repeat;
+}
+
+.home_testimonials {
+  .testimonial {
+    font-size: $basefont;
+    background-color: #030c1a;
+    @include border-radius(10px);
+    padding: $baseline;
+    margin: 0 10px $baseline;
+  }
+  .text {
+    font-size: 12px;
+    opacity: 0.8;
+    padding-left: 50px;
+  }
+  .author {
+    font-weight:bold;
+    margin-bottom: $baseline / 2;
+    color: #496781;
+    @include inset(#000);
+  }
+  .avatar {
+    float:left;
+    border: 3px solid #ccc;
+    @include border-radius(3px); }
+}
+
+/*  #header {
     background:none;
     background-color:#000; }
 
@@ -13,28 +247,29 @@
     background: $blue_dark;
     color: $header-data-color;
     @include background-image(linear-gradient($blue_light, $blue_dark)); }
-    
+
   .halo {
     text-align:center;
     background: transparent url("/images/backgrounds/halo.png") center top no-repeat;
     min-height: 400px; }
-    
+
   #inner_content {
     background: transparent url("/images/backgrounds/bg-music-notes.png") center top no-repeat;
     padding: 0;}
-    
+
   .icon_and_logo {
     @extend .centered;
-    width: 346px;
-    padding-top: 20px; }
-    
+    width: 40%;
+    padding-top: 20px;}
+
   #home_moto {
     text-align:center;
     margin-top: 20px;
+    line-height: 1.4em;
     color: #00496d;
     @include inset(#bababa);
-    font-size: 4em; }
-    
+    font-size: 2.6em; }
+
   .signup_button {
     -webkit-animation:slidingFromLeft 2s ;
     @extend .centered;
@@ -42,10 +277,11 @@
     display:block;
     height: 70px;
     width: 220px;
-    line-height: 70px;
+    line-height: 65px;
     margin-top: 20px;
     text-transform:uppercase;
     a {
+      font-size: 0.65em;
       text-decoration:none;
       color:#604f1b;
       position: relative;
@@ -53,14 +289,14 @@
         color: lighten(#604f1b, 10%); }
       &:active {
         top: 1px; }}
-        
+
     @include inset(#FFF);
     font-weight:bold;
     font-size: 1.5em;
     position:relative;
     background:transparent image-url('/images/buttons/signup_button/signup_bc.png') left top repeat-x;
     $arrow-size: 25px;
-    
+
     .bl {
       left: 0 - $arrow-size;
       position:absolute;
@@ -80,7 +316,7 @@
     padding: 30px 20px 20px;
     font-size: 12px;
     color:#666;
-    
+
     #steps {
       display:inline;
       float:left;
@@ -88,7 +324,7 @@
       width: 53%;
       margin-left: 2%;
       }
-      
+
     #home_testimonials {
       display:inline;
       float:left;
@@ -116,16 +352,16 @@
             font-weight:bold;
           }
           .avatar {
-            float:left; 
+            float:left;
             border: 3px solid #ccc;
             @include border-radius(3px); }}
       }
     }
   }
-}
+
 
 #user_forms {
-  width: 350px;
+  width: 35%;
   padding: 20px;
   margin: 20px auto;
   background:#efefef;
@@ -137,10 +373,9 @@
 .step {
   float: left;
   width: 30%;
-  min-width: 200px;
+  min-width: 160px;
   margin-bottom: 20px;
-  margin-right: 3%;
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight:bold;
   color:#828282;
   position:relative;
@@ -150,20 +385,20 @@
     display: block;
     position:relative;
     width: 154px; }
-    
+
   .app_sample_image {
     width: 130px;
     height: 130px;
     border: 5px solid desaturate(lighten($blue_basic, 40%), 30%);
     background-color:#FFF;
     @include border-radius(4px); }
-    
+
   .flag {
     text-align:center;
     color:#fff;
     @include  inset(#000);
     font-size: 22px;
-    line-height: 62px; 
+    line-height: 62px;
     width: 49px;
     height: 62px;
     margin-bottom: 10px;
@@ -176,4 +411,174 @@
     width: 31px;
     height: 31px;
     background:transparent image-url('/images/icons/zoom-icon.png') center center no-repeat; }
+}*/
+
+/*480px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 480px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+
+  /*.logged_out {
+
+      .icon_and_logo {
+        width: 50%; }
+
+      .halo {
+        min-height: 280px;
+        padding-bottom: 30px;
+        margin-bottom: 0 ; }
+
+      #user_forms {
+        width: 80%;
+        margin: 20px auto; }
+
+      .signup_button a {
+        font-size: 0.55em; }
+
+      #user_nav {
+        margin-top:0;
+        text-align:left;
+        a {
+          text-align:center;
+          display:block;
+          float:left;
+          width: 33%;
+          margin: 0; }}
+      #logo {
+        width: 30%;
+        margin: 0 auto 15px;
+        float: none; }
+      #home_moto {
+        line-height: 1.2em;
+        font-size: 1.4em ;
+        padding: 0 10%; }
+    }
+  */
+
+
+/* 3.TYPOGRAPHY */
+
+/*  h1 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }*/
+
+
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*768px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 768px) {
+
+.homepage h2.moto {
+  font-size: 41px;
 }
+.inner_block {
+  margin: 0 auto;
+
+  &.home_feature {
+    max-width: 960px;
+    .columns {
+      @include fluid_column(3%, 3);
+      padding-top: 0;
+    }
+  }
+  &.home_testimonials {
+    max-width: 620px;
+    .t_column {
+      @include fluid_column(0, 2);
+    }
+  }
+}
+
+
+}/*/mediaquery*/
+
+/*992px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 992px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+
+/*  .icon_and_logo {
+    width: 60%;}*/
+
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*1382px __________________________________________________________________________________________________________ */
+@media only screen and (min-width: 1382px) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+
+/*2x __________________________________________________________________________________________________________ */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+/* 1.ROOT */
+/* 2.HEADINGS */
+/* 3.TYPOGRAPHY */
+/* 4.LINKS */
+/* 5.FIGURES & IMAGES */
+/* 6.TABLES */
+/* 7.FORMS */
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+/* 14.GLOBAL OBJECTS */
+/* 15.VENDOR-SPECIFIC */
+/* 16.TEMPLATE SPECIFICS */
+/* 17.MODERNIZR */
+
+}/*/mediaquery*/
+

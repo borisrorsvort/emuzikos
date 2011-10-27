@@ -7,7 +7,7 @@ class AddAdminToUsers < ActiveRecord::Migration
 
   def self.down
     change_table :users do |t|
-      t.remove :is_admin 
+      t.remove :is_admin
     end
   end
 end

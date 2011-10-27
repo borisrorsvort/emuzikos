@@ -9,10 +9,13 @@
         = link_to t(:'menu.profile.public'),  user_path(current_user)
       %li
         = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-      %li 
+      %li
         = link_to t(:'menu.profile.authentications'), services_path
-        
+
     .clear
+
+
+%p= t(:'.complete_profile_condition')
 
 = render 'form'
 

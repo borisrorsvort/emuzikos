@@ -1,58 +1,55 @@
 ActiveAdmin.register User do
+  User.class_eval do
+    attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude
+  end
+
   index do
-    column :id do |user|
-      link_to user.id, admin_user_path(user)
-    end    
-    column :username
-    column :user_type
-    column :genre
-    column :zip
-    column :country
-    column :created_at
-    column :current_sign_in_at
-    column :last_sign_in_at
-    column :sign_in_count
-    default_actions
-  end
-  
-  form do |f|    
-    f.inputs "Details" do
-      #f.input :is_admin?, :as => :boolean
-      f.input :username
-      f.input :email
-      f.input :user_type, :as => :select, :collection => User::USER_TYPES
-      f.input :searching_for, :as => :select, :collection => User::USER_TYPES
-      f.input :genre, :as => :select, :collection => User::MUSICAL_GENRES
-      f.input :references, :as => :string
-      f.input :request_message, :as => :text
-      f.input :zip, :as => :string
-      #f.input :avatar, :as => :file don't know how make the crop in the admin
-      f.input :country, :as => :country, :locale => :en
+      column :id do |user|
+        link_to user.id, admin_user_path(user)
+      end
+      column :username, :sortable => false
+      column :user_type
+      column "Genres" do |user|
+        for genre in user.genres do
+          span do
+            genre.name
+          end
+        end
+      end
+      column "Instruments" do |user|
+        for instrument in user.instruments do
+          span do
+            instrument.name
+          end
+        end
+      end
+      column :zip
+      column :country
+      column :created_at
+      column :current_sign_in_at
+      column :last_sign_in_at
+      column :sign_in_count
+      column :visible
+      column :wants_email
+      default_actions
     end
-    
-    f.inputs :name => "instruments" do
-      #too bad can't manage to make a loop, it would be much cleaner
-      f.input :guitar,      :as => :boolean
-      f.input :bass,        :as => :boolean
-      f.input :double_bass, :as => :boolean
-      f.input :drums,       :as => :boolean
-      f.input :violin,      :as => :boolean
-      f.input :flute,       :as => :boolean
-      f.input :piano,       :as => :boolean
-      f.input :percussions, :as => :boolean
-      f.input :voice,       :as => :boolean
-      f.input :turntables,  :as => :boolean
-      f.input :banjo,       :as => :boolean
-      f.input :cithar,      :as => :boolean
-      f.input :bouzouki,    :as => :boolean
-      f.input :mandolin,    :as => :boolean
-      f.input :whistles,    :as => :boolean
-      f.input :spoons,      :as => :boolean
-      f.input :keyboard,    :as => :boolean
-      f.input :ocarina,     :as => :boolean
-      f.input :congas,      :as => :boolean
+
+    form do |f|
+      f.inputs "Details" do
+        f.input :username
+        f.input :email
+        f.input :user_type, :as => :select, :collection => User::USER_TYPES
+        f.input :searching_for, :as => :select, :collection => User::USER_TYPES
+        f.input :genre, :as => :select, :collection => User::MUSICAL_GENRES
+        f.input :references, :as => :string
+        f.input :request_message, :as => :text
+        f.input :zip, :as => :string
+        f.input :country, :as => :country, :locale => :en
+        f.input :visible, :as => :boolean
+        f.input :wants_email, :as => :boolean
+      end
+
+      f.buttons
     end
-    f.buttons
-  end
 end
 

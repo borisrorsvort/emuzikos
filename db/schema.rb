@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110619085712) do
+ActiveRecord::Schema.define(:version => 20111016140220) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -45,6 +45,30 @@ ActiveRecord::Schema.define(:version => 20110619085712) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "friendships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "genres", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "instruments", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "instruments_users", :id => false, :force => true do |t|
+    t.integer "instrument_id"
+    t.integer "user_id"
+  end
+
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
@@ -53,11 +77,6 @@ ActiveRecord::Schema.define(:version => 20110619085712) do
     t.string   "subject"
     t.text     "body"
     t.datetime "read_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "searches", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,11 +91,19 @@ ActiveRecord::Schema.define(:version => 20110619085712) do
     t.datetime "updated_at"
   end
 
+  create_table "tastes", :force => true do |t|
+    t.integer  "genre_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "testimonials", :force => true do |t|
     t.text     "body"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved",   :default => false
   end
 
   create_table "tolk_locales", :force => true do |t|
@@ -124,31 +151,10 @@ ActiveRecord::Schema.define(:version => 20110619085712) do
     t.string   "country"
     t.string   "searching_for"
     t.text     "request_message"
-    t.boolean  "guitar"
-    t.boolean  "bass"
-    t.boolean  "double_bass"
-    t.boolean  "drums"
-    t.boolean  "violin"
-    t.boolean  "flute"
-    t.boolean  "piano"
-    t.boolean  "percussions"
-    t.boolean  "voice"
-    t.boolean  "turntables"
-    t.boolean  "banjo"
-    t.boolean  "cithar"
-    t.boolean  "bouzouki"
-    t.boolean  "mandolin"
-    t.boolean  "whistles"
-    t.boolean  "spoons"
-    t.boolean  "keyboard"
-    t.boolean  "ocarina"
-    t.boolean  "congas"
-    t.string   "genre"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.boolean  "is_admin",               :default => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -157,6 +163,10 @@ ActiveRecord::Schema.define(:version => 20110619085712) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "visible",                :default => true
+    t.boolean  "wants_email",            :default => true
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

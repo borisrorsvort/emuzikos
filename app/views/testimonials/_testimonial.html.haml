@@ -1,9 +1,4 @@
 .testimonial
-  / = t(:'common.by')
-  / =testimonial.user.username
-  / %br
-  / =testimonial.body
-
   %span.avatar.small
     - if testimonial.user.avatar.present?
       = image_tag(testimonial.user.avatar.url(:gallery))

@@ -4,7 +4,7 @@ en:
 ### ______________________________________________________
 
   buttons:
-    home_signup: signup for free in 60 s. 
+    home_signup: signup for free in 60 sec. 
     update: Update
     create: Create
     edit: Edit
@@ -18,7 +18,7 @@ en:
     cancel: Cancel
     reply: Reply
     all: View all
-    contact: Contact
+    contact: Send a message
     testimonials:
       all: Go back to Testimonials
       create: Add a new testimonial
@@ -26,3 +26,7 @@ en:
       cancel_my_account: Cancel my account
     send_password: Send the password reset email
     change_password: Save new password
+    add_to_contact_list: Add to contact list
+    remove_from_contact_list: Remove
+    services:
+      delete: "Remove this service"

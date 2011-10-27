@@ -5,13 +5,13 @@ development:
   secret_access_key: msqsxq8kf4rVgHz2S/u2qDQ3KFL3F6putZi9uOAR
 
 staging:
-  bucket_name: emuzikos-staging
-  bucket: emuzikos-staging
+  bucket_name: emuzikos-beta
+  bucket: emuzikos-beta
   access_key_id: AKIAJWUPX6SF4T3BUQKQ
   secret_access_key: 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
 
 test:
-  bucket_name: emuzikos-test
+  bucket_name: emuzikos-beta
   bucket: emuzikos-test
   access_key_id: AKIAJWUPX6SF4T3BUQKQ
   secret_access_key: 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

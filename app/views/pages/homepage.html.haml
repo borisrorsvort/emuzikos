@@ -1,65 +1,61 @@
-- title t(:'.title'), false
+-title t(:'.title'), false
 
-.halo
-  .icon_and_logo
-    = link_to(image_tag("backgrounds/icon-and-logo.png") ,root_path)
-    
-  #home_moto
-    = t(:'.moto').html_safe  
+#inner_halo
+  #main
+    %header
+      #main-icon.fadeInDownBig
+        %img{:alt => "emuzikos-icon", :src => "/images/homepage/icon-emuzikos.png"}
+      #logo_home.bounceInDown
+        %img{:alt => "Emuzikos-logo", :src => "/images/homepage/logo.png"}
+      %h1#main_title Emuzikos, The musician search platform
+      %h2.moto
+        The first
+        %strong easy
+        way to find
+        %strong local
+        musicians
+    = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "signup_button"
+  #music_notes
 
-  %span.signup_button
-    .bl
-    .br
-    .signup_text
-      = link_to t(:'buttons.home_signup'), new_user_registration_path
 
-#how_it_works
-  %section#steps
-    .step#profile
-      .flag 1
-      %p= t(:'.steps.profile').html_safe
-      = link_to "#profile_zoomed", :class => "app_sample", :rel => "boxy" do
-        .zoom_icon
-        .app_sample_image
-          =image_tag('app-samples/profile-thumb.jpg')
-    .step#search
-      .flag 2
-      %p= t(:'.steps.search').html_safe
-      = link_to "#search_zoomed", :class => "app_sample", :rel => "boxy" do
-        .zoom_icon
-        .app_sample_image
-          =image_tag('app-samples/search-thumb.jpg')
-    .step#contact
-      .flag 3
-      %p= t(:'.steps.contact').html_safe
-      = link_to "#contact_zoomed", :class => "app_sample", :rel => "boxy" do
-        .zoom_icon
-        .app_sample_image
-          =image_tag('app-samples/contact-thumb.jpg')
-        
-      =image_tag('app-samples/profile.jpg', :id => "profile_zoomed", :class => "hidden", :title => t(:'.steps.profile').html_safe)
-      =image_tag('app-samples/search.jpg', :id => "search_zoomed", :class => "hidden", :title => t(:'.steps.profile').html_safe)
-      =image_tag('app-samples/contact.jpg', :id => "contact_zoomed", :class => "hidden", :title => t(:'.steps.profile').html_safe)
-      
-  %section#home_testimonials
-    %header 
-      %h2= t(:'.latest_testimonials')
-    - if !@testimonials.blank?
-      %ul
-        - for testimonial in @testimonials do
-          %li 
-            %span.avatar.small
-              - if testimonial.user.avatar.present?
-                = image_tag(testimonial.user.avatar.url(:gallery))
-              -else
-                = image_tag("backgrounds/avatar-default.gif")
-            
-            %div.text
-              .span.author
-                = testimonial.created_at.strftime('%b %d, %Y')
-                = t(:'common.by')
-                = testimonial.user.username
-              = testimonial.body
-            
-            
-  .clear
+
+= content_for :features do
+  .features_columns
+    .inner_block.home_feature
+      %h3 Emuzikos, the musician search tool you were missing
+
+      .columns
+        .inner_column
+          %h4 Simple & minimal signup
+          %p Create your musician profile in 60s and start browsing, sending messages to other musicians and share your profile around you.
+      .columns.home_testimonials
+        .inner_column
+          %h4 What do you get when you sign up?
+          %p You will also get a private message inbox so that nobody ever sees your real email address until you're sure they are trully your band mates.
+      .columns
+        .inner_column
+          %h4 Care about privacy?
+          %p Nobody will ever see your email when you send messages, ever. Nobody will ever see your email .
+      .clear
+    - if @testimonials
+      .note_circle
+      .latest_testimionals
+        .inner_block.home_testimonials
+          %h3 Latest musicians testimonials
+          - @testimonials.in_groups_of(2, false) do |group|
+            .t_column
+              - for testimonial in group do
+                .testimonial
+                  %span.avatar.small
+                    - if testimonial.user.avatar.present?
+                      = image_tag(testimonial.user.avatar.url(:gallery))
+                    -else
+                      = image_tag("backgrounds/avatar-default.gif")
+
+                  %div.text
+                    .span.author
+                      = testimonial.created_at.strftime('%b %d, %Y')
+                      = t(:'common.by')
+                      = testimonial.user_username
+                    = truncate(testimonial.body, :length => 123, :omission =>"...")
+    .clear

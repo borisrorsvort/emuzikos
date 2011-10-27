@@ -4,9 +4,9 @@
 .testimonials{ :class => (@current_user ? nil : "wide")}
   - if !@testimonials.blank?
     = render @testimonials
-   
+
   -else
     %p= t(:'testimonials.no_testimonials')
 .pagination
-  = will_paginate @testimonials
-.clear 
+  = paginate @testimonials
+.clear

@@ -1,11 +1,10 @@
 #logo {
   float:left;}
 
-$sidebar_width: 180px;
-$sub_nav_topbottom_padding: 15px;
+$sub_nav_topbottom_padding: 18px;
 
 #header {
-  padding: 15px 20px;
+  padding: 18px 20px;
   background: $blue_dark;
   color: $header-data-color;
   @include background-image(linear-gradient($blue_light, $blue_dark));
@@ -14,40 +13,28 @@ $sub_nav_topbottom_padding: 15px;
     @include hover-link;}
 }
 
-#container{ 
+#container{
   margin:0 auto;
-  &.with_sidebar{ 
-  padding-left: $sidebar_width ;
-  background:#efefef image-url('backgrounds/bg-sidebar.png') left top  repeat-y; }}
+}
 
 #content {
-  border-left: $sidebar_width solid transparent;
   float:left;
-  margin-left: 0 - $sidebar_width;
-  width: 100%; }  
+  width: 100%; }
 
-#user_nav {
-  float: right;
-  font-size:  12px;
-  a {
-    margin-left: 20px;
-    &.logout {
-      background: $blue_dark;
-      @include border-radius(3px);
-      padding: 2px 10px ;
-      &:hover {
-        text-decoration:none;
-        background: darken($blue_dark, 10%);
-      };
-    }}}
 
 #main_nav {
   position:relative;
   float:left;
-  width: $sidebar_width;
-  margin-left: 0 - $sidebar_width;
+  display:inline;
+  width: 100%;
+  background: $main_nav_color_default;
   ul {
-    padding: 20px; }}
+    margin: 0;
+    display:block;
+    width: 100%;
+    top: 0;
+    li {
+      margin: 0;} }}
 
 #sub_nav {
   background-color: $sub_nav_gradient_light;
@@ -55,27 +42,37 @@ $sub_nav_topbottom_padding: 15px;
   padding: $sub_nav_topbottom_padding 20px;
   border-bottom: #fff 1px solid;
   ul {
-    font-size:10px;
-    padding-left: 0; } }
+    @extend .normal;
+    padding-left: 0;
+    top: 0;
+    li {
+      position:relative;
+      padding: 0;
+      margin: 0 2px 0 ;
+}}}
 
-#sub_sections {
-  @include horizontal-list(15px);
+#sub_nav #sub_sections {
+  display:block;
   overflow: visible;
-  list-style: none;
-  padding-left: none;
-  
+  padding: 0;
+  margin: 0;
+  li {
+    margin-bottom: 10px;
+    list-style: disc inside;
+  }
   a {
+    text-align:left;
     @include link-colors($sub-nav-color-base);
     @include inset(#fff);
     text-decoration:none;
     position:relative;
     display:block;
-    float:left;
     overflow:visible;
     &.current {
       font-weight:bold; }}}
 
 .top_sub_nav_arrow {
+  display:none;
   $size: 5px;
   @include css-arrow("bottom", $sub_nav_gradient_dark, #fff, $size );
   position:absolute;
@@ -84,32 +81,56 @@ $sub_nav_topbottom_padding: 15px;
   bottom: 0 - $sub_nav_topbottom_padding; }
 
 
-#inner_content {
-  background:#efefef;
-  padding: 20px; }
+#sub_nav #actions_set {
+  @extend #sub_sections;
+  a {
+    display:inline-block;
+  }
+  .button {
+    &.back.profile {
+      margin-right: 5px;
+    }
+    &.contact {
+      margin-left: 5px;
+    }
+    &.add_to_contact_list {
+      width: 2em;
+      .ui-button-text {
+        position:relative;
+        text-indent: -99999px;
+        padding: .35em; }}
+  }
+  .ui-button-text {
+    font-size: 0.80em;
+    padding: .4em 1em .4em 2.4em;  }
+}
+
 
 #footer {
-  padding: 20px;
+  padding: $baseline;
+  font-size: $basefont;
 
   .inner_footer {
     $radius: 3px;
     @include border-radius($radius);
-    background-color:#e6e6e6;
-    @include box-shadow(rgba(#fff, 1) 0 0 1px 1px inset);
-    border: 1px solid #b9b9b9;}
-    
+    background-color: #111;
+    @include box-shadow(rgba(#555, 1) 0 0 1px 1px inset);}
+
   &.light .inner_footer {
-    padding: 20px;
+    padding: 18px;
   }
-  
+
   .left_links {
     float:left;
-    a {
-      margin-right: 20px;
-    }
   }
   .copyright {
     float:right;
+  }
+  a {
+    margin-right: 20px;
+
+    color:#666;
+    @include hover-link;
   }
 }
 
@@ -118,7 +139,8 @@ $sub_nav_topbottom_padding: 15px;
 ---------------------------------------- */
 
 .centered_grid {
-  width: 960px;
+  max-width: 600px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
@@ -126,13 +148,32 @@ $sub_nav_topbottom_padding: 15px;
 /* PROFILE SHOW
 ---------------------------------------- */
 
-$ld_width: 240px ;
-
 .left_drawer {
-  width: $ld_width ;
-  display:inline;
-  float:left;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-duration: 1s;
+  -moz-animation-delay: .2s;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: both;
+  -ms-animation-duration: 1s;
+  -ms-animation-delay: .2s;
+  -ms-animation-timing-function: ease;
+  -ms-animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: .2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
 }
+
 .right_drawer {
-  padding-left: $ld_width;
+ margin-left: 0;
+ width: 100%;
 }

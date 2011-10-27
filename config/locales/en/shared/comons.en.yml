@@ -1,5 +1,6 @@
 en:
   common:
+    no_script: Your browser does not support JavaScript!
     home: Home
     required: Required
     please_choose: 'Please choose ...'
@@ -9,6 +10,8 @@ en:
     by: by
     created_by: Created by
     leave_blank: (leave blank if you don't want to change it)
+    users: 
+      from: From
   
 ### MENU
 ### ______________________________________________________
@@ -23,14 +26,24 @@ en:
     all_users: Search
     logout: Lougout
     login: Login
-    register: Register
+    signup: Signup
+    terms: Terms of agreement
+    privacy: Privacy Policy
     messages:
       messages: Messages
       inbox: Inbox
       sent_messages: "Sent Messages"
     testimonials: Testimonials
     contact: "Contact us"
+    users:
+      contacts: Contact list
 
+### TABLES
+### ______________________________________________________
+
+
+  pagination: 
+    loading_more_results: Loading more result
 ### TABLES
 ### ______________________________________________________
 
@@ -57,6 +70,7 @@ en:
     instrumental: Instrumental
     jazz: Jazz
     latino: Latino
+    metal: Metal
     new_age: New Age
     opera: Opera 
     pop: Pop

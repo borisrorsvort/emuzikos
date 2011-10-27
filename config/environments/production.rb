@@ -6,11 +6,25 @@ Emuzikos::Application.configure do
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
-  config.consider_all_requests_local       = false
-  config.action_controller.perform_caching = true
+  config.consider_all_requests_local       = true
+  config.action_view.debug_rjs             = true
+  config.action_controller.perform_caching = false
 
-  # Specifies the header that your server uses for sending files
-  config.action_dispatch.x_sendfile_header = "X-Sendfile"
+  config.active_support.deprecation = :notify
+
+  config.action_mailer.default_url_options = { :host => 'beta.emuzikos.com' }
+
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'beta.emuzikos.com',
+    :user_name            => 'noreply@emuzikos.com',
+    :password             => '3muz1k0sn0r3ply2',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
 
   # For nginx:
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
@@ -45,7 +59,7 @@ Emuzikos::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
-  
+
   Sass::Plugin.options[:template_location] = { 'app/stylesheets' => 'public/stylesheets/compiled' }
   Sass::Plugin.options[:never_update] = true
 end
