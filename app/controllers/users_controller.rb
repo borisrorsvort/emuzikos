@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @testimonials = @user.testimonials
     @user_map = @user.to_gmaps4rails
     if @user.geocoded?
-      @users_nearby = @user.nearbys(10).profiles_completed.available_for_listing(@current_user).select("DISTINCT users.*")
+      @users_nearby = @user.nearbys(10).available_for_listing(@user).select("DISTINCT users.*")
     end
   end
 
