@@ -18,6 +18,8 @@ gem "devise"
 gem 'activeadmin'
 
 gem "carmen"
+gem 'httparty'
+gem 'songkickr'
 
 #gem 'tolk', :git => "git://github.com/borisrorsvort/tolk.git", :branch => 'rails3'
 

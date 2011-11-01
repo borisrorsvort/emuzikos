@@ -74,4 +74,11 @@
 
   .clear
 
+  %h3= t(:'users.events')
+  .field
+    %p
+      = f.label :songkick_username, t(:'activerecord.attributes.user.songkick_username')
+      = f.text_field :songkick_username, :placeholder => "Example: Lady Gaga"
+  .clear
+
   =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"

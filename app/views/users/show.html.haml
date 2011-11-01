@@ -92,6 +92,20 @@
     %h3= t(:'.donate')
     = render "shared/paypal_widget"
 
+    - unless @events.results.empty?
+      %h3= t(:'.events')
+      %ul
+        - @events.results.each do |event|
+          %li
+            = event.start.to_date
+            %br
+            = event.venue.display_name
+            %br
+            = link_to "read more", event.uri, :target => "_blank"
+
+
+
+
 %section.left_drawer.fadeInLeft
   .inner
     - if @user.avatar
