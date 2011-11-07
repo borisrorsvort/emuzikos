@@ -137,5 +137,4 @@ $(document).ready(function() {
 
   $('.habtm').click_checkbox();
 
-  $('#sub_sections').mobileSelect();
 });
