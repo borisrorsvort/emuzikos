@@ -26,6 +26,7 @@ en:
       is_looking_for: is looking for a
       to_play: to play
       music: music
+      events: Future events
       users_nearby: Other users nearby
 
     edit:

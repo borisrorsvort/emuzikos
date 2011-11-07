@@ -11,27 +11,28 @@ common: &default_settings
         size: 100
       small:
         size: 30
-        
+
   google:
     analytics:
       enabled: false
       key: UA-4782653-1
-      
+
   email:
     from: "Emuzikos <boris@emuzikos.com>"
     do_not_reply_from: "Eumzikos <noreply@emuzikos.com>"
   addthis:
-    enabled: false 
-  
+    enabled: false
+
   mailchimp:
     api_key: '613dcd0b1e941fc982eefabed484c3c5-us2'
     list_name: Emuzikos_dev
     list_url: http://eepurl.com/f8qj9
     list_url: http://eepurl.com/eoZDQ
-    
+  songkick:
+    api_key: "cApdrGD0PiCPiJyw"
   social:
     facebook_page_url: "http://www.facebook.com/pages/Emuzikos/169399636456395"
-    
+
 development:
   <<: *default_settings
   google:
@@ -51,29 +52,29 @@ staging:
   email:
     from: "Emuzikos <boris@emuzikos.com>"
     do_not_reply_from: "Eumzikos <noreply@emuzikos.com>"
-        
+
 production:
   <<: *default_settings
   google:
     analytics:
       enabled: true
-      key: UA-4782653-1 
+      key: UA-4782653-1
   addthis:
-    enabled: true 
-  
+    enabled: true
+
   mailchimp:
     api_key: '613dcd0b1e941fc982eefabed484c3c5-us2'
     list_name: Emuzikos
     list_url: http://eepurl.com/eoZDQ
-    
+
 test:
   <<: *default_settings
   google:
     analytics:
-      enabled: false 
-      
+      enabled: false
+
 cucumber:
   <<: *default_settings
   google:
     analytics:
-      enabled: false 
+      enabled: false

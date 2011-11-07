@@ -12,20 +12,11 @@
     .field
       = f.select :searching_for_cont, user_types, :include_blank => t(:'search_terms.who_search_for')
       .clear
-    .field#location
+    .field#location.wide
       .centered
-        //= text_field_tag :mass_locate, :placeholder => t(:'search_terms.mass_locate'), :size => 20
         = text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate'), :size => 20
         .clear
-    / .field
-    /       = f.select :country_contains, countries, :include_blank => t(:'search_terms.country')
-    /       .clear
-    /     .field#zip
-    /       .centered
-    /         = f.text_field :zip_contains, :placeholder => t(:'activerecord.attributes.user.mass_locate'), :size => 10
-    /       .clear
-    .field
-      .centered
-        = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit search small")
+    .field.wide
+      = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit search small")
 
     .clear
