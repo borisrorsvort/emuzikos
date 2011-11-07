@@ -122,7 +122,7 @@ class User < ActiveRecord::Base
   def get_events(songkick_username)
     require 'songkickr'
     remote = Songkickr::Remote.new AppConfig.songkick.api_key
-    results = remote.events(:artist_name => songkick_username,:type => 'concert')
+    results = remote.events(:artist_name => songkick_username, :type => 'concert')
     return results
   end
 

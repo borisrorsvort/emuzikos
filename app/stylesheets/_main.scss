@@ -73,7 +73,7 @@
      @include inset(#333);
      color:#bababa;
      display:block;
-     font-size: 0.90em;
+     font-size: 0.80em;
      font-weight:bold;
      position:relative;
      text-align: center;
@@ -117,8 +117,8 @@
     display:block;
     font-size: $basefont;
     float:left;
-    width: 33%;
-    margin: 0;
+    width: 50%;
+    margin: 0 0 $basefont 0;
     &.greating_profile {
       display:none;
     }
@@ -212,14 +212,6 @@
 #users.index #search_form .field {
   min-width: 50%;
 
-  input#search_zip {
-    width: 112px;
-    padding-left: 10px;
-  }
-  .centered {
-    margin: 0 auto;
-    width: 121px;
-  }
   .selector {
     margin: 0 auto;
     width: 110px;
@@ -230,6 +222,20 @@
     select {
       width:133px;
     }
+  }
+  &#location {
+   width: 100%;
+   .centered {
+     width: 95%;
+     input {
+       width: 100%;
+     }
+   }
+  }
+  .button.submit.search {
+    width: 100%;
+    margin: 10px auto 0;
+    display: block;
   }
 }
 
@@ -302,6 +308,12 @@ h1.username {
     margin: 0 10px 10px 0;
   }
   margin-bottom: 18px;
+}
+
+.future_events {
+  ul {
+    list-style: none;
+  }
 }
 
 /* CONTACT LIST*/

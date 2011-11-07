@@ -109,6 +109,9 @@
   }
 }
 
+#users.index #search_form .field#location {
+ width: 22%;
+}
 
 /* 10.CONTENT */
 /* 11.MAIN */
@@ -188,12 +191,6 @@
 /* HOME PAGE */
 
 .homepage {
-  #main-icon {
-
-  }
-  #logo img {
-
-  }
   h2.moto {
     font-size: 3em;
   }
