@@ -40,7 +40,6 @@ ActiveAdmin.register User do
         f.input :email
         f.input :user_type, :as => :select, :collection => User::USER_TYPES
         f.input :searching_for, :as => :select, :collection => User::USER_TYPES
-        f.input :genre, :as => :select, :collection => User::MUSICAL_GENRES
         f.input :references, :as => :string
         f.input :request_message, :as => :text
         f.input :zip, :as => :string
