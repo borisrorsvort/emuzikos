@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
   User.class_eval do
-    attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude
+    attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude, :songkick_username
   end
 
   index do
