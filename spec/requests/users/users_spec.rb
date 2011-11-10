@@ -16,10 +16,9 @@ feature "Users", %q{
       fill_in 'user_email', :with => 'test@emuzikos.com'
       fill_in 'user_password', :with => 'password'
     end
-    find("#user_submit").click
-    current_path.should match users_path
+    click_button 'Login'
+    current_path.should match edit_user_path(@user)
     page.should have_content('Logout')
-
   end
 
   scenario "with incorrect credentials" do
@@ -28,7 +27,7 @@ feature "Users", %q{
       fill_in 'user_email', :with => 'test@emuzikos.com'
       fill_in 'user_password', :with => 'wrongpassword'
     end
-    find("#user_submit").click
+    click_button 'Login'
     current_path.should match new_user_session_path
     page.should have_content('Invalid email or password.')
     page.should have_content('Login')

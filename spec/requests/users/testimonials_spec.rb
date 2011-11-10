@@ -6,7 +6,7 @@ feature "Testimonials" do
     @user = Factory.create(:user)
   end
 
-  scenario "Create a testimonial" do
+  scenario "Create a new testimonial" do
     visit(new_user_session_path)
 
     within("#user_new") do
@@ -16,13 +16,13 @@ feature "Testimonials" do
 
     click_button 'Login'
 
-    current_path.should match users_path
+    current_path.should match edit_user_path(@user)
     page.should have_content('Logout')
 
     visit(new_testimonial_path)
     within('#new_testimonial') do
-      fill_in '#testimonial_body' , :with => "Lorem ipsum dolor sit amet, consectetuer adipiscing elitLorem ipsum dolor sit amet, consectetuer adipiscing elit"
-      click_link('Add a new testimonial')
+      fill_in 'testimonial_body' , :with => "Lorem ipsum dolor sit amet, consectetuer adipiscing elitLorem ipsum dolor sit amet, consectetuer adipiscing elit"
+      click_button('testimonial_submit')
     end
 
     page.should have_content('Success')
