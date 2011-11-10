@@ -1,6 +1,10 @@
 ActiveAdmin.register User do
+  scope :all, :default => true
+  scope :geocoded
+  scope :visible
+
   User.class_eval do
-    attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude
+    attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude, :songkick_username
   end
 
   index do
@@ -9,28 +13,20 @@ ActiveAdmin.register User do
       end
       column :username, :sortable => false
       column :user_type
-      column "Genres" do |user|
-        for genre in user.genres do
-          span do
-            genre.name
-          end
-        end
-      end
-      column "Instruments" do |user|
-        for instrument in user.instruments do
-          span do
-            instrument.name
-          end
-        end
-      end
       column :zip
-      column :country
+      column :country do |user|
+        Carmen::country_name(user.country)
+      end
       column :created_at
       column :current_sign_in_at
       column :last_sign_in_at
       column :sign_in_count
-      column :visible
-      column :wants_email
+      column :visible do |user|
+        status_tag (user.visible ? "Yes" : "No"), (user.visible ? :ok : :error)
+      end
+      column :wants_email do |user|
+        status_tag (user.wants_email ? "Yes" : "No"), (user.wants_email ? :ok : :error)
+      end
       default_actions
     end
 
@@ -40,7 +36,6 @@ ActiveAdmin.register User do
         f.input :email
         f.input :user_type, :as => :select, :collection => User::USER_TYPES
         f.input :searching_for, :as => :select, :collection => User::USER_TYPES
-        f.input :genre, :as => :select, :collection => User::MUSICAL_GENRES
         f.input :references, :as => :string
         f.input :request_message, :as => :text
         f.input :zip, :as => :string

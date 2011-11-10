@@ -18,10 +18,12 @@ gem "devise"
 gem 'activeadmin'
 
 gem "carmen"
+gem 'httparty'
+gem 'songkickr'
 
 #gem 'tolk', :git => "git://github.com/borisrorsvort/tolk.git", :branch => 'rails3'
 
-gem 'omniauth'
+gem 'omniauth', '~> 0.3.2'
 gem "jammit"
 
 gem 'geocoder'
@@ -51,7 +53,7 @@ gem "factory_girl_rails", :group => :test
 gem "cucumber-rails", :group => :test
 gem "capybara", :group => :test
 gem "database_cleaner", :group => :test
-gem "launchy", :group => :test
+gem "launchy", '2.0.5', :group => :test
 
 group :test do
   gem "shoulda"
@@ -59,7 +61,6 @@ group :test do
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
-  gem 'guard-cucumber'
 end
 
 gem "settingslogic", "2.0.6"

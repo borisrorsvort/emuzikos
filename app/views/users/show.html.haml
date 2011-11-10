@@ -89,9 +89,21 @@
                 .clear
           .clear
 
+    - unless @events.results.empty?
+      .future_events
+        %h3= t(:'.events')
+        %ul
+          - @events.results.first(5).each do |event|
+            %li
+              = event.start.to_date
+              = " | "
+              = event.venue.display_name
+              = " | "
+              = link_to "read more", event.uri, :target => "_blank"
+        = image_tag "songkick/concerts_by_songkick.gif", :alt => "Concerts by Songkick"
+
     %h3= t(:'.donate')
     = render "shared/paypal_widget"
-
 %section.left_drawer.fadeInLeft
   .inner
     - if @user.avatar

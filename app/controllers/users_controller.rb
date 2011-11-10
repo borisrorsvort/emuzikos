@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     if @user.geocoded?
       @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at")
     end
+    @events = @user.get_events(@user.songkick_username)
   end
 
   def edit

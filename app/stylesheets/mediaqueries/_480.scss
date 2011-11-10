@@ -1,23 +1,29 @@
 @media only screen and (min-width: 480px) {
 
   .message_count {
-     position: static; }
+    position: static; }
 
-     #sub_nav {
-       ul {
-         li {
-           position:relative;
-           padding: 0;
-           margin: 0 10px 10px;
-           .ui-button-text {
-             font-size: 14px;
-           }
-           .button.add_to_contact_list {
-             width:  auto;
-             .ui-button-text {
-               position:relative;
-               text-indent: 0px;
-               padding: .4em 1em .4em 2.1em; }}}}}
+#user_nav {
+  a {
+    margin: 0 20px;
+    float: none;
+    display:inline; }}
+
+#sub_nav {
+ ul {
+   li {
+     position:relative;
+     padding: 0;
+     margin: 0 10px 10px;
+     .ui-button-text {
+       font-size: 14px;
+     }
+     .button.add_to_contact_list {
+       width:  auto;
+       .ui-button-text {
+         position:relative;
+         text-indent: 0px;
+         padding: .4em 1em .4em 2.1em; }}}}}
 
   #sub_nav .quick_links {
     display:block;
@@ -77,9 +83,9 @@
     min-width : 140px;
     width: 140px;
     &#location {
-      width: 12.5%;
-      #search_mass_locate {
-        width: 74%;
+      width: 60%;
+      .centered {
+        width: 100%;
       }
     }
     .centered {

@@ -1,6 +1,18 @@
 /*992px __________________________________________________________________________________________________________ */
 @media only screen and (min-width: 992px) {
 
+#users.index #search_form .field {
+  &#location {
+    width: 28%;
+    .centered input {
+    width: 88%;
+  }
+  }
+  .button.submit.search {
+    margin-top: 3px;
+  }
+}
+
 .right_drawer {
   float: right;
   display:inline;
@@ -12,6 +24,20 @@
   max-width: 20%;
   display:inline;
   float:left;
+}
+
+#footer {
+  a {
+    display:inline-block;
+    margin: 0 20px 0 0;
+  }
+  .left_links {
+    width: auto;
+  }
+  .copyright {
+    float: right;
+    margin-top: 0;
+  }
 }
 
 /* LOGGUED OUT  */

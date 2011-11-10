@@ -526,9 +526,9 @@ h2.moto strong {
 .homepage h3 {
   font-size: 24px;
   padding: 45px 0;
-  text-align: center;
+  text-align: left;
   margin: 0;
-  background: transparent url('/images/homepage/home-separator.png?1319722016') center top no-repeat;
+  background: transparent url('/images/homepage/home-separator.png?1319018090') center top no-repeat;
   color: #828282  !important;
 }
 /* line 73, ../../../app/stylesheets/homepage.scss */
@@ -682,7 +682,7 @@ h2.moto strong {
 /* line 196, ../../../app/stylesheets/homepage.scss */
 .features_columns {
   background-color: #041021;
-  padding-bottom: 48px;
+  padding: 0 20px 48px;
 }
 /* line 199, ../../../app/stylesheets/homepage.scss */
 .features_columns .columns {
@@ -701,7 +701,7 @@ h2.moto strong {
   width: 84px;
   height: 41px;
   margin: 20px auto 0;
-  background: transparent url('/images/homepage/note-circle.png?1319722016') center bottom no-repeat;
+  background: transparent url('/images/homepage/note-circle.png?1319018090') center bottom no-repeat;
 }
 
 /* line 218, ../../../app/stylesheets/homepage.scss */
@@ -742,256 +742,29 @@ h2.moto strong {
   border-radius: 3px;
 }
 
-/*  #header {
-    background:none;
-    background-color:#000; }
-
-  #content {
-    background: $blue_dark;
-    color: $header-data-color;
-    @include background-image(linear-gradient($blue_light, $blue_dark)); }
-
-  .halo {
-    text-align:center;
-    background: transparent url("/images/backgrounds/halo.png") center top no-repeat;
-    min-height: 400px; }
-
-  #inner_content {
-    background: transparent url("/images/backgrounds/bg-music-notes.png") center top no-repeat;
-    padding: 0;}
-
-  .icon_and_logo {
-    @extend .centered;
-    width: 40%;
-    padding-top: 20px;}
-
-  #home_moto {
-    text-align:center;
-    margin-top: 20px;
-    line-height: 1.4em;
-    color: #00496d;
-    @include inset(#bababa);
-    font-size: 2.6em; }
-
-  .signup_button {
-    -webkit-animation:slidingFromLeft 2s ;
-    @extend .centered;
-    @include opacity(0.9);
-    display:block;
-    height: 70px;
-    width: 220px;
-    line-height: 65px;
-    margin-top: 20px;
-    text-transform:uppercase;
-    a {
-      font-size: 0.65em;
-      text-decoration:none;
-      color:#604f1b;
-      position: relative;
-      &:hover {
-        color: lighten(#604f1b, 10%); }
-      &:active {
-        top: 1px; }}
-
-    @include inset(#FFF);
-    font-weight:bold;
-    font-size: 1.5em;
-    position:relative;
-    background:transparent image-url('/images/buttons/signup_button/signup_bc.png') left top repeat-x;
-    $arrow-size: 25px;
-
-    .bl {
-      left: 0 - $arrow-size;
-      position:absolute;
-      width: $arrow-size;
-      height: 70px;
-      background:transparent image-url('/images/buttons/signup_button/signup_bl.png') left top no-repeat;
-      display:block; }
-    .br {
-      @extend .bl;
-      left: 100%;
-      right: 0 - $arrow-size ;
-      background:transparent image-url('/images/buttons/signup_button/signup_br.png') left top no-repeat; }
-  }
-  #how_it_works {
-    background: #efefef;
-    border-top: 1px solid #fff;
-    padding: 30px 20px 20px;
-    font-size: 12px;
-    color:#666;
-
-    #steps {
-      display:inline;
-      float:left;
-      width: 350px;
-      width: 53%;
-      margin-left: 2%;
-      }
-
-    #home_testimonials {
-      display:inline;
-      float:left;
-      width: 45%;
-      ul {
-        list-style: none;
-        padding-left: 0;
-        font-size: 10px;
-        line-height: 1.48em;
-        li {
-          margin-bottom: 15px;
-          display:block;
-          vertical-align: middle;
-          @include inset(#fff);
-          padding: 10px;
-          background-color:#fff;
-          @include box-shadow(#666, 0, 0, 3px, 1px inset);
-          @include border-radius(5px);
-
-          .text {
-            font-size: 11px;
-            padding-left: 50px;
-          }
-          .author {
-            font-weight:bold;
-          }
-          .avatar {
-            float:left;
-            border: 3px solid #ccc;
-            @include border-radius(3px); }}
-      }
-    }
-  }
-
-
-#user_forms {
-  width: 35%;
-  padding: 20px;
-  margin: 20px auto;
-  background:#efefef;
-  color:#666;
-  @include border-radius(8px);
-  @include single-box-shadow(#666, 0, 0, 5px);
-}
-
-.step {
-  float: left;
-  width: 30%;
-  min-width: 160px;
-  margin-bottom: 20px;
-  font-size: 1.3em;
-  font-weight:bold;
-  color:#828282;
-  position:relative;
-  @include inset(#fff);
-  top: -37px;
-  .app_sample {
-    display: block;
-    position:relative;
-    width: 154px; }
-
-  .app_sample_image {
-    width: 130px;
-    height: 130px;
-    border: 5px solid desaturate(lighten($blue_basic, 40%), 30%);
-    background-color:#FFF;
-    @include border-radius(4px); }
-
-  .flag {
-    text-align:center;
-    color:#fff;
-    @include  inset(#000);
-    font-size: 22px;
-    line-height: 62px;
-    width: 49px;
-    height: 62px;
-    margin-bottom: 10px;
-    background:transparent image-url('/images/backgrounds/flag.png') center center no-repeat;
-  }
-  .zoom_icon {
-    position:absolute;
-    top:-10px;
-    right:0;
-    width: 31px;
-    height: 31px;
-    background:transparent image-url('/images/icons/zoom-icon.png') center center no-repeat; }
-}*/
 /*480px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 480px) {
-  /* 1.ROOT */
-  /* 2.HEADINGS */
-  /*.logged_out {
-
-      .icon_and_logo {
-        width: 50%; }
-
-      .halo {
-        min-height: 280px;
-        padding-bottom: 30px;
-        margin-bottom: 0 ; }
-
-      #user_forms {
-        width: 80%;
-        margin: 20px auto; }
-
-      .signup_button a {
-        font-size: 0.55em; }
-
-      #user_nav {
-        margin-top:0;
-        text-align:left;
-        a {
-          text-align:center;
-          display:block;
-          float:left;
-          width: 33%;
-          margin: 0; }}
-      #logo {
-        width: 30%;
-        margin: 0 auto 15px;
-        float: none; }
-      #home_moto {
-        line-height: 1.2em;
-        font-size: 1.4em ;
-        padding: 0 10%; }
-    }
-  */
-  /* 3.TYPOGRAPHY */
-  /*  h1 {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-    }*/
-  /* 4.LINKS */
-  /* 5.FIGURES & IMAGES */
-  /* 6.TABLES */
-  /* 7.FORMS */
-  /* 8.BANNER */
-  /* 9.NAVIGATION */
-  /* 10.CONTENT */
-  /* 11.MAIN */
-  /* 12.COMPLIMENTARY */
-  /* 13.CONTENTINFO */
-  /* 14.GLOBAL OBJECTS */
-  /* 15.VENDOR-SPECIFIC */
-  /* 16.TEMPLATE SPECIFICS */
-  /* 17.MODERNIZR */
-}
 /*/mediaquery*/
 /*768px __________________________________________________________________________________________________________ */
 @media only screen and (min-width: 768px) {
-  /* line 488, ../../../app/stylesheets/homepage.scss */
+  /* line 252, ../../../app/stylesheets/homepage.scss */
   .homepage h2.moto {
     font-size: 41px;
   }
 
-  /* line 491, ../../../app/stylesheets/homepage.scss */
+  /* line 257, ../../../app/stylesheets/homepage.scss */
+  .homepage h3 {
+    text-align: center;
+  }
+
+  /* line 260, ../../../app/stylesheets/homepage.scss */
   .inner_block {
     margin: 0 auto;
   }
-  /* line 494, ../../../app/stylesheets/homepage.scss */
+  /* line 263, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_feature {
     max-width: 960px;
   }
-  /* line 496, ../../../app/stylesheets/homepage.scss */
+  /* line 265, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_feature .columns {
     width: 27.333%;
     padding: 3%;
@@ -999,11 +772,11 @@ h2.moto strong {
     display: inline;
     padding-top: 0;
   }
-  /* line 501, ../../../app/stylesheets/homepage.scss */
+  /* line 270, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_testimonials {
     max-width: 620px;
   }
-  /* line 503, ../../../app/stylesheets/homepage.scss */
+  /* line 272, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_testimonials .t_column {
     width: 50%;
     padding: 0;
@@ -1013,67 +786,6 @@ h2.moto strong {
 }
 /*/mediaquery*/
 /*992px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 992px) {
-  /* 1.ROOT */
-  /* 2.HEADINGS */
-  /*  .icon_and_logo {
-      width: 60%;}*/
-  /* 3.TYPOGRAPHY */
-  /* 4.LINKS */
-  /* 5.FIGURES & IMAGES */
-  /* 6.TABLES */
-  /* 7.FORMS */
-  /* 8.BANNER */
-  /* 9.NAVIGATION */
-  /* 10.CONTENT */
-  /* 11.MAIN */
-  /* 12.COMPLIMENTARY */
-  /* 13.CONTENTINFO */
-  /* 14.GLOBAL OBJECTS */
-  /* 15.VENDOR-SPECIFIC */
-  /* 16.TEMPLATE SPECIFICS */
-  /* 17.MODERNIZR */
-}
 /*/mediaquery*/
 /*1382px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 1382px) {
-  /* 1.ROOT */
-  /* 2.HEADINGS */
-  /* 3.TYPOGRAPHY */
-  /* 4.LINKS */
-  /* 5.FIGURES & IMAGES */
-  /* 6.TABLES */
-  /* 7.FORMS */
-  /* 8.BANNER */
-  /* 9.NAVIGATION */
-  /* 10.CONTENT */
-  /* 11.MAIN */
-  /* 12.COMPLIMENTARY */
-  /* 13.CONTENTINFO */
-  /* 14.GLOBAL OBJECTS */
-  /* 15.VENDOR-SPECIFIC */
-  /* 16.TEMPLATE SPECIFICS */
-  /* 17.MODERNIZR */
-}
-/*/mediaquery*/
-/*2x __________________________________________________________________________________________________________ */
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-  /* 1.ROOT */
-  /* 2.HEADINGS */
-  /* 3.TYPOGRAPHY */
-  /* 4.LINKS */
-  /* 5.FIGURES & IMAGES */
-  /* 6.TABLES */
-  /* 7.FORMS */
-  /* 8.BANNER */
-  /* 9.NAVIGATION */
-  /* 10.CONTENT */
-  /* 11.MAIN */
-  /* 12.COMPLIMENTARY */
-  /* 13.CONTENTINFO */
-  /* 14.GLOBAL OBJECTS */
-  /* 15.VENDOR-SPECIFIC */
-  /* 16.TEMPLATE SPECIFICS */
-  /* 17.MODERNIZR */
-}
 /*/mediaquery*/
