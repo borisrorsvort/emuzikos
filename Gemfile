@@ -1,42 +1,38 @@
 source :gemcutter
 
+# Core Gems
+
 gem 'rails', '3.0.10'
 gem 'mysql'
 gem "jquery-rails"
-gem "gritter"
-
-gem "sass", "3.1.2"
-gem "haml", "3.1.2"
-gem "compass", "0.11.1"
-
-
-gem 'formtastic', '1.1.0'
-gem "paperclip", "2.3.11"
-gem 'aws-s3', :require => 'aws/s3'
 
 gem "devise"
-gem 'activeadmin'
-
-gem "carmen"
-gem 'httparty'
-gem 'songkickr'
-
-#gem 'tolk', :git => "git://github.com/borisrorsvort/tolk.git", :branch => 'rails3'
-
 gem 'omniauth', '~> 0.3.2'
-gem "jammit"
-
-gem 'geocoder'
-gem 'gmaps4rails'
-
-gem "meta_where"
-gem "ransack"
-
-gem "hominid"
-
+gem 'activeadmin'
 gem "airbrake"
 gem "populator"
 gem "faker"
+gem "meta_where"
+gem "ransack"
+gem "jammit"
+gem "gritter"
+gem "sass", "3.1.2"
+gem "haml", "3.1.2"
+gem "compass", "0.11.1"
+gem "settingslogic", "2.0.6"
+gem 'formtastic', '1.1.0'
+
+gem "paperclip", "2.3.11"
+gem 'aws-s3', :require => 'aws/s3'
+
+gem "carmen"
+gem 'httparty'
+
+gem 'songkickr'
+gem "hominid"
+
+gem 'geocoder'
+gem 'gmaps4rails'
 
 group :development do
   gem 'rails-footnotes', '>= 3.7.5.rc4'
@@ -48,19 +44,16 @@ group :development do
   gem 'simplecov', :require => false
 end
 
-gem "rspec-rails", :group => [:development, :test]
-gem "factory_girl_rails", :group => :test
-gem "cucumber-rails", :group => :test
-gem "capybara", :group => :test
-gem "database_cleaner", :group => :test
-gem "launchy", '2.0.5', :group => :test
-
 group :test do
+  gem "rspec-rails"
+  gem "cucumber-rails"
+  gem "factory_girl_rails"
   gem "shoulda"
+  gem "database_cleaner"
+  gem "capybara"
   gem 'guard'
+  gem "launchy", '2.0.5'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
 end
-
-gem "settingslogic", "2.0.6"
