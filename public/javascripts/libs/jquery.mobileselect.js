@@ -35,8 +35,7 @@
 					   "selected": gs,
 					   "value"   : "",
 					   "text"    : "Go to..."
-					}).appendTo(_s);
-				
+					}).addClass('mobile_select').appendTo(_s);
 					// Populate the dropdown with menu items. If there is an li.current we'll 
 					// make this one selected
 					$('a', _o).each(function() {

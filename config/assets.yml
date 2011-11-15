@@ -23,14 +23,13 @@ javascripts:
   emuzikos:
     - public/javascripts/libs/rails.js
     - public/javascripts/libs/jquery.tipsy.js
-    - public/javascripts/libs/jquery.noisy.min.js
     - public/javascripts/gritter/jquery.gritter.min.js
     - public/javascripts/libs/jquery.masonry.min.js
-    - public/javascripts/libs/jquery.simplemodal.1.4.1.min.js
     - public/javascripts/libs/jquery.pageless.js
     - public/javascripts/libs/imgsizer.js
     - public/javascripts/plugins.js
     - public/javascripts/mylibs/helper.js
+    - public/javascripts/libs/jquery.mobileselect.js
     - public/javascripts/application.js
 
 stylesheets:
