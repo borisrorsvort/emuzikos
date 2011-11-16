@@ -28,10 +28,11 @@ en:
       music: music
       events: Future events
       users_nearby: Other users nearby
-
     edit:
       titles:
         title: Edit your profile
       complete_profile_condition: "In order to appear in search results, you need to complete your profile fully."
+      medias: "Medias (Events, Youtube video)"
+
     crop:
       prewiew: "Preview"

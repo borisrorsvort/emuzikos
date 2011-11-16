@@ -102,8 +102,14 @@
               = link_to "read more", event.uri, :target => "_blank"
         = image_tag "songkick/concerts_by_songkick.gif", :alt => "Concerts by Songkick"
 
-    %h3= t(:'.donate')
-    = render "shared/paypal_widget"
+    /%h3= t(:'.donate')
+    /= render "shared/paypal_widget"
+
+    - if @user.youtube_video_id?
+      %h3= t(:'.youtube_video')
+      %section
+        %iframe{:src => "http://www.youtube.com/embed/#{@user.youtube_video_id}", :width => "320", :height => "190"}
+
 %section.left_drawer.fadeInLeft
   .inner
     - if @user.avatar
@@ -113,5 +119,4 @@
     - if @user.geocoded?
       = gmaps({ "map_options" => {"auto_zoom" => false, "zoom" => 11, "center_latitude" => @user.latitude, "center_longitude" => @user.longitude, :raw => '{ scrollwheel: false }' }, "markers" => {"data" => @user_map } })
 .clear
-
 

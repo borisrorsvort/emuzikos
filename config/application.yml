@@ -28,6 +28,10 @@ common: &default_settings
     list_name: Emuzikos_dev
     list_url: http://eepurl.com/f8qj9
     list_url: http://eepurl.com/eoZDQ
+
+  youtube_it:
+    api_key: 'AI39si7FayCLoIiujLg3XPJpYYH1kbn4PoEXev-lz3GVY305SkM9EU7weLeNmdRYvRkBFilD1Ms_nj8QNbeS6rDoBxVCpNK21g'
+
   songkick:
     api_key: "cApdrGD0PiCPiJyw"
   social:

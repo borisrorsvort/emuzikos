@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @genres = Genre.order("name asc")
     @instruments = Instrument.order("name asc")
     @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
+
     if request.xhr?
       render @users
     end

@@ -8,7 +8,7 @@ Emuzikos::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
 
-  resource :sitemaps, :only => :show
+  #resource :sitemaps, :only => :show
 
   resources :friendships
   resources :testimonials
@@ -25,6 +25,7 @@ Emuzikos::Application.routes.draw do
   match "about" => "pages#about", :as => :about
   match "terms" => "pages#terms", :as => :terms
   match "privacy" => "pages#privacy", :as => :privacy
+  match "sitemap" => "sitemaps#show", :as => :sitemap
 
   root :to => "pages#homepage"
 

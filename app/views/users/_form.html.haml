@@ -74,11 +74,14 @@
 
   .clear
 
-  %h3= t(:'users.events')
+  %h3= t(:medias, :scope => [:users, :edit])
   .field
     %p
       = f.label :songkick_username, t(:'activerecord.attributes.user.songkick_username')
       = f.text_field :songkick_username, :placeholder => "Example: Lady Gaga"
+    %p
+      = f.label :youtube_video_id, t(:'activerecord.attributes.user.youtube_video_id')
+      = f.text_field :youtube_video_id, :placeholder => "Example: JW5meKfy3fY"
   .clear
 
   =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"

@@ -4061,13 +4061,17 @@ label {
   font-weight: bold;
   display: block;
 }
+/* line 24, ../../../app/stylesheets/_forms.scss */
+label.habtm {
+  margin-top: 3px !important;
+}
 
-/* line 25, ../../../app/stylesheets/_forms.scss */
+/* line 28, ../../../app/stylesheets/_forms.scss */
 .inline {
   display: inline;
 }
 
-/* line 28, ../../../app/stylesheets/_forms.scss */
+/* line 31, ../../../app/stylesheets/_forms.scss */
 input, textarea {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -4080,7 +4084,7 @@ input, textarea {
   padding: 10px;
   max-width: 95%;
 }
-/* line 34, ../../../app/stylesheets/_forms.scss */
+/* line 37, ../../../app/stylesheets/_forms.scss */
 input:focus, input:active, textarea:focus, textarea:active {
   -moz-box-shadow: 0 0 3px #666666;
   -webkit-box-shadow: 0 0 3px #666666;
@@ -4089,22 +4093,22 @@ input:focus, input:active, textarea:focus, textarea:active {
 }
 
 /* USER PROFILE FORM */
-/* line 41, ../../../app/stylesheets/_forms.scss */
+/* line 44, ../../../app/stylesheets/_forms.scss */
 .instrument_column {
   width: 150px;
   float: left;
 }
-/* line 44, ../../../app/stylesheets/_forms.scss */
+/* line 47, ../../../app/stylesheets/_forms.scss */
 .instrument_column .instrument {
   padding: 5px 0;
 }
 
 /* SEARCH FORM */
-/* line 51, ../../../app/stylesheets/_forms.scss */
+/* line 54, ../../../app/stylesheets/_forms.scss */
 #search_form .button.search {
   font-size: 11px;
 }
-/* line 55, ../../../app/stylesheets/_forms.scss */
+/* line 58, ../../../app/stylesheets/_forms.scss */
 #search_form .field {
   float: left;
   height: 32px;
@@ -4113,25 +4117,25 @@ input:focus, input:active, textarea:focus, textarea:active {
   background: none;
   border: none;
 }
-/* line 63, ../../../app/stylesheets/_forms.scss */
+/* line 66, ../../../app/stylesheets/_forms.scss */
 #search_form .field input#mass_locate {
   padding: 4px 8px;
   margin-top: 3px;
 }
-/* line 68, ../../../app/stylesheets/_forms.scss */
+/* line 71, ../../../app/stylesheets/_forms.scss */
 #search_form .field .selector {
   width: 110px;
 }
-/* line 70, ../../../app/stylesheets/_forms.scss */
+/* line 73, ../../../app/stylesheets/_forms.scss */
 #search_form .field .selector select {
   width: 110px;
 }
-/* line 73, ../../../app/stylesheets/_forms.scss */
+/* line 76, ../../../app/stylesheets/_forms.scss */
 #search_form .field .selector span {
   width: 90px;
 }
 
-/* line 81, ../../../app/stylesheets/_forms.scss */
+/* line 84, ../../../app/stylesheets/_forms.scss */
 .logged_out #user_forms {
   width: 80%;
   padding: 20px;
@@ -4149,21 +4153,21 @@ input:focus, input:active, textarea:focus, textarea:active {
   -o-box-shadow: 0 0 5px #666666;
   box-shadow: 0 0 5px #666666;
 }
-/* line 90, ../../../app/stylesheets/_forms.scss */
+/* line 93, ../../../app/stylesheets/_forms.scss */
 .logged_out #user_forms .services_login {
   font-size: 1em;
   margin-top: 20px;
   padding: 0;
 }
-/* line 94, ../../../app/stylesheets/_forms.scss */
+/* line 97, ../../../app/stylesheets/_forms.scss */
 .logged_out #user_forms .services_login .shared_links {
   margin-top: 20px;
 }
-/* line 96, ../../../app/stylesheets/_forms.scss */
+/* line 99, ../../../app/stylesheets/_forms.scss */
 .logged_out #user_forms .services_login .shared_links .field {
   margin-bottom: 18px;
 }
-/* line 101, ../../../app/stylesheets/_forms.scss */
+/* line 104, ../../../app/stylesheets/_forms.scss */
 .logged_out #user_forms h2 {
   color: #666;
   text-shadow: none;
