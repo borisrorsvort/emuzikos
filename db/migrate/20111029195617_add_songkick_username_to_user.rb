@@ -1,6 +1,6 @@
 class AddSongkickUsernameToUser < ActiveRecord::Migration
   def self.up
-    add_column :users, :songkick_username, :string
+    add_column :users, :songkick_username, :string, :default => ""
   end
 
   def self.down
