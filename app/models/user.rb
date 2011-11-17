@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
     :styles => {
-      :normal => "300>",
+      :normal => "500x500>",
       :medium => "200x200#",
       :gallery => "30x30#"
     },
@@ -84,19 +84,28 @@ class User < ActiveRecord::Base
     self.except_current_user(current_user).visible.geocoded.profiles_completed
   end
 
+  # def cropping?
+  #   !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  # end
+
+  # def avatar_geometry(style=:original)
+  #   return file_geometry if style == :original
+  #   w, h = avatar.options[:styles][style].gsub("#","").split("x")
+  #   Paperclip::Geometry.new(w, h)
+  # end
+
+  # def file_geometry
+  #   @geometry ||= {}
+  #   @geometry[avatar.path] ||= Paperclip::Geometry.from_file(open(avatar.path))
+  # end
+
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
-
-  def avatar_geometry(style=:original)
-    return file_geometry if style == :original
-    w, h = avatar.options[:styles][style].gsub("#","").split("x")
-    Paperclip::Geometry.new(w, h)
-  end
-
-  def file_geometry
+  
+  def avatar_geometry(style = :original)
     @geometry ||= {}
-    @geometry[avatar.url] ||= Paperclip::Geometry.from_file(open(avatar.url))
+    @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))
   end
 
   def to_param

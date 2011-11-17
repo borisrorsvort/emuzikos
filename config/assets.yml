@@ -29,7 +29,7 @@ javascripts:
     - public/javascripts/libs/imgsizer.js
     - public/javascripts/plugins.js
     - public/javascripts/mylibs/helper.js
-    - public/javascripts/libs/jquery.mobileselect.js
+    #- public/javascripts/libs/jquery.mobileselect.js
     - public/javascripts/application.js
 
 stylesheets:
