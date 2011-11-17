@@ -168,8 +168,8 @@ ActiveRecord::Schema.define(:version => 20111116230906) do
     t.float    "longitude"
     t.boolean  "visible",                :default => true
     t.boolean  "wants_email",            :default => true
-    t.string   "songkick_username"
-    t.string   "youtube_video_id"
+    t.string   "songkick_username",      :default => ""
+    t.string   "youtube_video_id",       :default => ""
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

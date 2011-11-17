@@ -26,7 +26,6 @@ feature "Testimonials" do
     end
 
     page.should have_content('Success')
-
   end
 
 end
