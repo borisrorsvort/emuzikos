@@ -14,7 +14,7 @@ Emuzikos::Application.routes.draw do
   resources :testimonials
   resources :users do
     match "contacts" => "users#contacts", :as => :contacts
-    #match "crop" => "users#crop", :as => :crop
+    match "crop" => "users#crop", :as => :crop
     get 'page/:page', :action => :index, :on => :collection
     resources :messages do
       collection do

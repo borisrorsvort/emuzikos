@@ -40,14 +40,17 @@ class UsersController < ApplicationController
     params[:user][:genre_ids] ||= []
 
     @user = @current_user
+    @instruments = Instrument.order("name asc")
+    @genres = Genre.order('name asc')
+
     if @user.update_attributes(params[:user])
       if params[:user][:avatar].blank?
         gflash :success => true
         redirect_to edit_user_path(@user)
       else
         gflash :notice => true
-        #redirect_to user_crop_path(@user)
-        render 'crop'
+        redirect_to user_crop_path(@user)
+        #render 'crop'
       end
     else
       gflash :error => true
@@ -59,7 +62,7 @@ class UsersController < ApplicationController
     @friendships = @current_user.friendships
   end
 
-  # def crop
-  #   @user = @current_user
-  # end
+  def crop
+    @user = @current_user
+  end
 end
