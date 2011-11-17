@@ -102,12 +102,15 @@ class User < ActiveRecord::Base
   def cropping?
     !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
   end
-  
+  # def avatar_geometry(style = :original)
+  #   @geometry ||= {}
+  #   @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))
+  # end
   def avatar_geometry(style = :original)
     @geometry ||= {}
-    @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))
+    path = (avatar.options[:storage]==:s3) ? avatar.url(style) : avatar.path(style)
+    @geometry[style] ||= Paperclip::Geometry.from_file(path)
   end
-
   def to_param
     "#{id}-#{username. parameterize}"
   end
