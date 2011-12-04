@@ -44,6 +44,7 @@ group :development do
   gem 'heroku_san'
   gem 'rails_best_practices'
   gem 'simplecov', :require => false
+  gem "letter_opener"
 end
 
 group :test do

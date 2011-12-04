@@ -149,6 +149,8 @@ GEM
       rails (>= 3.0.0)
     launchy (2.0.5)
       addressable (~> 2.2.6)
+    letter_opener (0.0.2)
+      launchy
     log4r (1.1.9)
     macaddr (1.5.0)
       systemu (>= 2.4.0)
@@ -354,6 +356,7 @@ DEPENDENCIES
   jammit
   jquery-rails
   launchy (= 2.0.5)
+  letter_opener
   meta_where
   mysql
   nifty-generators

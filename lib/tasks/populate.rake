@@ -9,7 +9,7 @@ namespace :db do
 
     puts 'Delete previous db'
 
-    [User, Friendship, Message, Service, Testimonial, Instrument, Genre, Taste, AdminUser].each(&:delete_all)
+    [ User, Friendship, Message, Service, Testimonial, Instrument, Genre, Taste, AdminUser ].each(&:delete_all)
 
     puts 'Creating instruments'
 
@@ -45,6 +45,8 @@ namespace :db do
       user.created_at = 2.years.ago..Time.now
       user.visible = true
       user.wants_email = true
+      user.youtube_video_id = ["JW5meKfy3fY", ""]
+      user.songkick_username = "Lady Gaga"
 
       Testimonial.populate 1..2 do |t|
         t.user_id = user.id
@@ -55,7 +57,12 @@ namespace :db do
 
     end
 
+    users = User.all
+    users.each do |user|
+      user.instruments << Instrument.first(rand(1-5))
+    end
 
+    system "rake geocode:all CLASS=User"
 
     puts 'Populate messages'
 

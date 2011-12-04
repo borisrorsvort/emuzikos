@@ -9,6 +9,7 @@ Factory.define :user do |u|
   u.country "BE"
   u.visible true
   u.wants_email true
+  u.youtube_video_id "JW5meKfy3fY"
 end
 # require 'factory_girl'
 #

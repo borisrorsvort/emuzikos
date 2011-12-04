@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
   validates_attachment_size :avatar,
       :less_than => 1.megabyte, #another option is :greater_than
       :message => "max size is 1M"
+
   USER_TYPES = %w(band musician agent)
 
   after_validation :subscribe
