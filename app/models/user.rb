@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
-  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  #attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   attr_searchable :username, :user_type, :searching_for, :country, :zip
   assoc_searchable :instruments, :tastes, :genres
@@ -28,14 +28,17 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
-  validates_attachment_content_type :avatar, :message => 'should be PNG, GIF, or JPG', :content_type => %w( image/jpeg image/png image/gif image/pjpeg image/x-png )
-  validates_attachment_size :avatar, :less_than => 1.megabytes
-
+  validates_attachment_content_type :avatar,
+    :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'],
+    :message => "only image files are allowed"
+  validates_attachment_size :avatar,
+      :less_than => 1.megabyte, #another option is :greater_than
+      :message => "max size is 1M"
   USER_TYPES = %w(band musician agent)
 
   after_validation :subscribe
   after_validation :geocode, :if => :address_changed?
-  after_update :reprocess_avatar, :if => :cropping?
+  #after_update :reprocess_avatar, :if => :cropping?
 
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
@@ -44,7 +47,7 @@ class User < ActiveRecord::Base
       :medium => "200x200#",
       :gallery => "30x30#"
     },
-    :processors => [:cropper],
+    # :processors => [:cropper],
     :whiny => true,
     :storage => {
       'development' => :filesystem,
@@ -99,9 +102,9 @@ class User < ActiveRecord::Base
   #   @geometry[avatar.path] ||= Paperclip::Geometry.from_file(open(avatar.path))
   # end
 
-  def cropping?
-    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
-  end
+  # def cropping?
+  #   !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  # end
   # def avatar_geometry(style = :original)
   #   @geometry ||= {}
   #   @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))

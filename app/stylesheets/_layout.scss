@@ -107,14 +107,11 @@ $sub_nav_topbottom_padding: 18px;
 
 
 #footer {
-  padding: $baseline;
   font-size: $basefont;
+  padding: $basefont * 3;
 
   .inner_footer {
-    $radius: 3px;
-    @include border-radius($radius);
-    background-color: #111;
-    @include box-shadow(rgba(#555, 1) 0 0 1px 1px inset);}
+    background-color: #011120;}
 
   &.light .inner_footer {
     padding: 18px;

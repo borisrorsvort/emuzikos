@@ -3870,38 +3870,28 @@ p + p.no-indent {
 
 /* line 109, ../../../app/stylesheets/_layout.scss */
 #footer {
-  padding: 18px;
   font-size: 13px;
+  padding: 39px;
 }
 /* line 113, ../../../app/stylesheets/_layout.scss */
 #footer .inner_footer {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #111;
-  -moz-box-shadow: #555555 0 0 1px 1px inset;
-  -webkit-box-shadow: #555555 0 0 1px 1px inset;
-  -o-box-shadow: #555555 0 0 1px 1px inset;
-  box-shadow: #555555 0 0 1px 1px inset;
+  background-color: #011120;
 }
-/* line 119, ../../../app/stylesheets/_layout.scss */
+/* line 116, ../../../app/stylesheets/_layout.scss */
 #footer.light .inner_footer {
   padding: 18px;
 }
-/* line 123, ../../../app/stylesheets/_layout.scss */
+/* line 120, ../../../app/stylesheets/_layout.scss */
 #footer .left_links {
   float: left;
   width: 100%;
 }
-/* line 127, ../../../app/stylesheets/_layout.scss */
+/* line 124, ../../../app/stylesheets/_layout.scss */
 #footer .copyright {
   margin-top: 20px;
   float: left;
 }
-/* line 131, ../../../app/stylesheets/_layout.scss */
+/* line 128, ../../../app/stylesheets/_layout.scss */
 #footer a {
   margin: 0 20px 15px 0;
   display: block;
@@ -3915,7 +3905,7 @@ p + p.no-indent {
 
 /* HOMEPAGE
 ---------------------------------------- */
-/* line 143, ../../../app/stylesheets/_layout.scss */
+/* line 140, ../../../app/stylesheets/_layout.scss */
 .centered_grid {
   max-width: 600px;
   padding: 0 20px;
@@ -3924,7 +3914,7 @@ p + p.no-indent {
 
 /* PROFILE SHOW
 ---------------------------------------- */
-/* line 153, ../../../app/stylesheets/_layout.scss */
+/* line 150, ../../../app/stylesheets/_layout.scss */
 .left_drawer {
   width: 100%;
   -webkit-backface-visibility: hidden;
@@ -3949,7 +3939,7 @@ p + p.no-indent {
   animation-fill-mode: both;
 }
 
-/* line 178, ../../../app/stylesheets/_layout.scss */
+/* line 175, ../../../app/stylesheets/_layout.scss */
 .right_drawer {
   margin-left: 0;
   width: 100%;

@@ -43,15 +43,22 @@ class UsersController < ApplicationController
     @instruments = Instrument.order("name asc")
     @genres = Genre.order('name asc')
 
+    # if @user.update_attributes(params[:user])
+    #   if params[:user][:avatar].blank?
+    #     gflash :success => true
+    #     redirect_to edit_user_path(@user)
+    #   else
+    #     gflash :notice => true
+    #     redirect_to user_crop_path(@user)
+    #     #render 'crop'
+    #   end
+    # else
+    #   gflash :error => true
+    #   render :edit
+    # end
     if @user.update_attributes(params[:user])
-      if params[:user][:avatar].blank?
         gflash :success => true
         redirect_to edit_user_path(@user)
-      else
-        gflash :notice => true
-        redirect_to user_crop_path(@user)
-        #render 'crop'
-      end
     else
       gflash :error => true
       render :edit
