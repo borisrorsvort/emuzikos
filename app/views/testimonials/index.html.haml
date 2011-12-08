@@ -6,7 +6,7 @@
     = render @testimonials
 
   -else
-    %p= t(:'testimonials.no_testimonials')
+    %p= t(:"#{ @current_user ? 'testimonials.no_testimonials_logged_in' : 'testimonials.no_testimonials'  }")
 .pagination
   = paginate @testimonials
 .clear
