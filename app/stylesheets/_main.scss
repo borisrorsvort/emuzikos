@@ -137,6 +137,21 @@
 
 /* USER */
 
+.progress_bar_wrapper {
+  width: 220px;
+  margin: 0 auto;
+  margin-bottom: $basefont;
+  text-align: center;
+  font-size: $basefont;
+  .progress_bar,  {
+    width: 220px;
+    height: 19px;
+    margin-top: $basefont;
+  }
+}
+
+
+
 .users_list {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;

@@ -74,17 +74,6 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     crack (0.3.1)
-    cucumber (1.1.0)
-      builder (>= 2.1.2)
-      diff-lcs (>= 1.1.2)
-      gherkin (~> 2.5.0)
-      json (>= 1.4.6)
-      term-ansicolor (>= 1.0.6)
-    cucumber-rails (0.5.2)
-      capybara (>= 1.0.0.rc1)
-      cucumber (>= 0.10.5)
-      nokogiri (>= 1.4.4)
-      rack-test (>= 0.5.7)
     database_cleaner (0.6.7)
     devise (1.4.7)
       bcrypt-ruby (~> 3.0)
@@ -112,8 +101,6 @@ GEM
       i18n (>= 0.4.0)
     fssm (0.2.7)
     geocoder (1.0.4)
-    gherkin (2.5.1)
-      json (>= 1.4.6)
     gmaps4rails (1.3.0)
       crack
     gritter (0.6.1)
@@ -338,7 +325,6 @@ DEPENDENCIES
   capybara
   carmen
   compass (= 0.11.1)
-  cucumber-rails
   database_cleaner
   devise
   factory_girl_rails

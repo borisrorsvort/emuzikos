@@ -65,11 +65,6 @@ ActiveRecord::Schema.define(:version => 20111116230906) do
     t.datetime "updated_at"
   end
 
-  create_table "instruments_users", :id => false, :force => true do |t|
-    t.integer "instrument_id"
-    t.integer "user_id"
-  end
-
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
@@ -88,6 +83,13 @@ ActiveRecord::Schema.define(:version => 20111116230906) do
     t.string   "uid"
     t.string   "uname"
     t.string   "uemail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "skills", :force => true do |t|
+    t.integer  "instrument_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

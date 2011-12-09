@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   has_many :friendships, :dependent => :destroy
   has_many :friends, :through => :friendships
   has_many :followers, :class_name => 'Friendship', :foreign_key => 'friend_id', :dependent => :destroy
-  has_and_belongs_to_many :instruments
+  has_many :instruments, :through => :skills
+  has_many :skills, :dependent => :destroy
   has_many :tastes, :dependent => :destroy
   has_many :genres, :through => :tastes
 
@@ -17,7 +18,7 @@ class User < ActiveRecord::Base
   #attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   attr_searchable :username, :user_type, :searching_for, :country, :zip
-  assoc_searchable :instruments, :tastes, :genres
+  assoc_searchable :instruments, :skills, :tastes, :genres
 
   geocoded_by :address
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?,

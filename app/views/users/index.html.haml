@@ -6,6 +6,10 @@
 - content_for :scripts do
   = pageless(@users.num_pages, users_path)
 
+.progress_bar_wrapper.hidden
+  Processing search
+  .progress_bar
+    = image_tag('icons/ajax-loader-bar.gif', :id => "search_loader")
 -if !@users.blank?
   %section.users_list
     = render @users
@@ -15,5 +19,3 @@
 
 -else
   =t(:'.no_users')
-
-

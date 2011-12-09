@@ -36,7 +36,7 @@ gem "hominid"
 gem 'geocoder'
 gem 'gmaps4rails'
 
-group :development do
+group :development, :test do
   gem 'rails-footnotes', '>= 3.7.5.rc4'
   gem "hirb"
   gem "bullet"
@@ -45,11 +45,8 @@ group :development do
   gem 'rails_best_practices'
   gem 'simplecov', :require => false
   gem "letter_opener"
-end
 
-group :test do
   gem "rspec-rails"
-  gem "cucumber-rails"
   gem "factory_girl_rails"
   gem "shoulda"
   gem "database_cleaner"
@@ -60,3 +57,4 @@ group :test do
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
 end
+

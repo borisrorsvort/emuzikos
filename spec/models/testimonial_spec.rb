@@ -13,7 +13,7 @@ describe Testimonial do
     Testimonial.create!(@attr)
   end
 
-  it "should not have empty body" do
+  it "should reject empty body" do
     empty_body = Testimonial.new(@attr.merge(:body => ""))
     empty_body.should_not be_valid
   end

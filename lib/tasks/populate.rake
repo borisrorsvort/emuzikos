@@ -9,13 +9,17 @@ namespace :db do
 
     puts 'Delete previous db'
 
-    [ User, Friendship, Message, Service, Testimonial, Instrument, Genre, Taste, AdminUser ].each(&:delete_all)
+    [ User, Friendship, Message, Service, Testimonial, Instrument, Skill, Genre, Taste, AdminUser ].each(&:delete_all)
 
     puts 'Creating instruments'
 
     ["guitar", "bass", "double bass", "drums", "violin", "flute", "piano", "percussions", "voice", "turntables", "banjo", "cithar", "bouzouki", "mandolin", "whistles", "spoons", "keyboard", "ocarina", "congas"].each do |instrument|
       instrument = Instrument.new(:name => instrument)
       instrument.save
+      Skill.populate 3 do |skill|
+        skill.user_id = rand(1-50).to_i
+        skill.instrument_id = instrument.id
+      end
     end
 
     puts 'Creating Genres'
@@ -57,11 +61,6 @@ namespace :db do
 
     end
 
-    users = User.all
-    users.each do |user|
-      user.instruments << Instrument.first(rand(1-5))
-    end
-
     system "rake geocode:all CLASS=User"
 
     puts 'Populate messages'
@@ -77,7 +76,7 @@ namespace :db do
     end
 
     puts 'Creating admin user'
-
+    
     admin_user = AdminUser.new(:email => "admin@example.com", :password => "cacacaca", :password_confirmation => "cacacaca")
     admin_user.save
 

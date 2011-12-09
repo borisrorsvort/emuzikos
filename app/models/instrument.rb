@@ -1,5 +1,6 @@
 class Instrument < ActiveRecord::Base
-  has_and_belongs_to_many :users
+  has_many :users, :through => :skills
+  has_many :skills, :dependent => :destroy
 
   validates_presence_of :name
   validates_uniqueness_of :name
