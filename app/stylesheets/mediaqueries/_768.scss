@@ -126,11 +126,11 @@
   float:left;
   width: 25%;
   .inner {
-    padding-right: 10px;
+    padding-right: $baseline / 2;
   }
 }
 .inner_profile_wrapper {
-  margin-left: 20px;
+  margin-left: $baseline / 2;
 }
 .profile_picture {
   width: 100%  - ($profile_picture_border_width * 2) ;

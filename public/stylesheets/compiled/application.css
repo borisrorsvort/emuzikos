@@ -196,7 +196,7 @@ body {
   background: #333333 url(/images/backgrounds/bg-footer.gif);
   font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
   font-size: 100%;
-  color: #666;
+  color: #333;
 }
 
 /* line 23, ../../../app/stylesheets/_base.scss */
@@ -3577,48 +3577,49 @@ h2 {
 
 /* line 34, ../../../app/stylesheets/_typography.scss */
 h3 {
-  font-size: 18px;
-  margin-top: 9px;
-  margin-bottom: 9px;
-  color: #999;
+  font-size: 13px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
 }
 
-/* line 40, ../../../app/stylesheets/_typography.scss */
+/* line 41, ../../../app/stylesheets/_typography.scss */
 h4 {
-  font-size: 15px;
+  font-size: 11px;
   margin-top: 9px;
   margin-bottom: 9px;
 }
 
-/* line 45, ../../../app/stylesheets/_typography.scss */
+/* line 46, ../../../app/stylesheets/_typography.scss */
 h5 {
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 49, ../../../app/stylesheets/_typography.scss */
+/* line 50, ../../../app/stylesheets/_typography.scss */
 h6 {
   font-size: 13px;
 }
 
-/* line 52, ../../../app/stylesheets/_typography.scss */
+/* line 53, ../../../app/stylesheets/_typography.scss */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child {
   margin-top: 0;
 }
 
-/* line 55, ../../../app/stylesheets/_typography.scss */
+/* line 56, ../../../app/stylesheets/_typography.scss */
 p, pre, address {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 60, ../../../app/stylesheets/_typography.scss */
+/* line 61, ../../../app/stylesheets/_typography.scss */
 abbr, code, kbd, samp, small, var {
   line-height: 15px;
 }
 
-/* line 63, ../../../app/stylesheets/_typography.scss */
+/* line 64, ../../../app/stylesheets/_typography.scss */
 ul, ol, dl, dialog {
   font-size: 13px;
   line-height: 18px;
@@ -3626,94 +3627,94 @@ ul, ol, dl, dialog {
   margin: 18px 0 18px;
 }
 
-/* line 69, ../../../app/stylesheets/_typography.scss */
+/* line 70, ../../../app/stylesheets/_typography.scss */
 ul {
   list-style: disc outside;
 }
 
-/* line 73, ../../../app/stylesheets/_typography.scss */
+/* line 74, ../../../app/stylesheets/_typography.scss */
 ol {
   list-style: decimal outside;
 }
 
-/* line 77, ../../../app/stylesheets/_typography.scss */
+/* line 78, ../../../app/stylesheets/_typography.scss */
 li ul, li ol {
   margin-left: 18px;
   margin-top: 18px;
   margin-bottom: 0;
 }
 
-/* line 82, ../../../app/stylesheets/_typography.scss */
+/* line 83, ../../../app/stylesheets/_typography.scss */
 ol.lower_alpha {
   list-style: lower-alpha outside;
 }
 
-/* line 86, ../../../app/stylesheets/_typography.scss */
+/* line 87, ../../../app/stylesheets/_typography.scss */
 form, legend, label {
   font-size: 13px;
   line-height: 18px;
 }
-/* line 89, ../../../app/stylesheets/_typography.scss */
+/* line 90, ../../../app/stylesheets/_typography.scss */
 form p, legend p, label p {
   text-indent: 0  !important;
 }
 
-/* line 92, ../../../app/stylesheets/_typography.scss */
+/* line 93, ../../../app/stylesheets/_typography.scss */
 legend {
   position: relative;
   top: 5px;
 }
 
-/* line 96, ../../../app/stylesheets/_typography.scss */
+/* line 97, ../../../app/stylesheets/_typography.scss */
 input, textarea {
   font-size: 13px;
 }
 
-/* line 99, ../../../app/stylesheets/_typography.scss */
+/* line 100, ../../../app/stylesheets/_typography.scss */
 table {
   font-size: 13px;
 }
 
-/* line 102, ../../../app/stylesheets/_typography.scss */
+/* line 103, ../../../app/stylesheets/_typography.scss */
 caption {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 107, ../../../app/stylesheets/_typography.scss */
+/* line 108, ../../../app/stylesheets/_typography.scss */
 hr {
   position: relative;
   height: 4px;
   margin: 18px 0 14px 0;
 }
 
-/* line 114, ../../../app/stylesheets/_typography.scss */
+/* line 115, ../../../app/stylesheets/_typography.scss */
 li {
   margin-bottom: 18px;
 }
 
-/* line 117, ../../../app/stylesheets/_typography.scss */
+/* line 118, ../../../app/stylesheets/_typography.scss */
 h2 {
   font-weight: normal;
 }
 
-/* line 120, ../../../app/stylesheets/_typography.scss */
+/* line 121, ../../../app/stylesheets/_typography.scss */
 p {
   font-size: 13px;
   padding-bottom: 18px;
 }
 
-/* line 124, ../../../app/stylesheets/_typography.scss */
+/* line 125, ../../../app/stylesheets/_typography.scss */
 p + p {
   text-indent: 1.5em;
 }
-/* line 126, ../../../app/stylesheets/_typography.scss */
+/* line 127, ../../../app/stylesheets/_typography.scss */
 p + p.no-indent {
   text-indent: 0;
 }
 
-/* line 130, ../../../app/stylesheets/_typography.scss */
+/* line 131, ../../../app/stylesheets/_typography.scss */
 .field p + p {
   text-indent: 0;
 }
@@ -4754,18 +4755,69 @@ h1.username {
   list-style: none;
 }
 
+/* line 334, ../../../app/stylesheets/_main.scss */
+#tabs {
+  border-color: #ccc;
+}
+/* line 336, ../../../app/stylesheets/_main.scss */
+#tabs li {
+  margin-right: 9px;
+}
+/* line 339, ../../../app/stylesheets/_main.scss */
+#tabs .ui-state-default {
+  background: #fff;
+  border: none;
+}
+/* line 342, ../../../app/stylesheets/_main.scss */
+#tabs .ui-state-default a {
+  font-weight: normal;
+  color: #157EBE;
+  text-decoration: none;
+  padding: 9px;
+}
+/* line 4, ../../../../../.rvm/gems/ruby-1.9.2-p290@rails_303/gems/compass-0.11.1/frameworks/compass/stylesheets/compass/typography/links/_hover-link.scss */
+#tabs .ui-state-default a:hover {
+  text-decoration: underline;
+}
+/* line 349, ../../../app/stylesheets/_main.scss */
+#tabs .ui-tabs-selected {
+  border: 1px solid #ccc;
+}
+/* line 351, ../../../app/stylesheets/_main.scss */
+#tabs .ui-tabs-selected a {
+  color: #666 !important;
+}
+/* line 353, ../../../app/stylesheets/_main.scss */
+#tabs .ui-tabs-selected a:hover {
+  text-decoration: none;
+}
+/* line 358, ../../../app/stylesheets/_main.scss */
+#tabs .ui-tabs-panel {
+  border: none;
+  padding: 18px 9px;
+}
+/* line 362, ../../../app/stylesheets/_main.scss */
+#tabs .ui-widget-header {
+  border-bottom: 1px solid #ccc;
+}
+/* line 365, ../../../app/stylesheets/_main.scss */
+#tabs .icon-info {
+  background-image: url(images/ui-icons_222222_256x240.png);
+  background: url(images/icon_sprite.png) 0 0 no-repeat !important;
+}
+
 /* CONTACT LIST*/
-/* line 337, ../../../app/stylesheets/_main.scss */
+/* line 374, ../../../app/stylesheets/_main.scss */
 #users.contacts .actions {
   margin-bottom: 18px;
 }
 
 /* TESTIMONIALS */
-/* line 344, ../../../app/stylesheets/_main.scss */
+/* line 381, ../../../app/stylesheets/_main.scss */
 #testimonials {
   clear: both;
 }
-/* line 347, ../../../app/stylesheets/_main.scss */
+/* line 384, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial {
   width: 230px;
   padding: 15px;
@@ -4787,11 +4839,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 359, ../../../app/stylesheets/_main.scss */
+/* line 396, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 362, ../../../app/stylesheets/_main.scss */
+/* line 399, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -4802,17 +4854,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 366, ../../../app/stylesheets/_main.scss */
+/* line 403, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 372, ../../../app/stylesheets/_main.scss */
+/* line 409, ../../../app/stylesheets/_main.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 375, ../../../app/stylesheets/_main.scss */
+/* line 412, ../../../app/stylesheets/_main.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -4822,17 +4874,17 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 384, ../../../app/stylesheets/_main.scss */
+/* line 421, ../../../app/stylesheets/_main.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 387, ../../../app/stylesheets/_main.scss */
+/* line 424, ../../../app/stylesheets/_main.scss */
 .services_list img {
   width: 32px;
 }
 
-/* line 390, ../../../app/stylesheets/_main.scss */
+/* line 427, ../../../app/stylesheets/_main.scss */
 .services_used {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -4852,30 +4904,30 @@ h1.username {
   width: 90%;
   float: left;
 }
-/* line 396, ../../../app/stylesheets/_main.scss */
+/* line 433, ../../../app/stylesheets/_main.scss */
 .services_used img {
   float: left;
   margin-right: 10px;
 }
 
-/* line 401, ../../../app/stylesheets/_main.scss */
+/* line 438, ../../../app/stylesheets/_main.scss */
 .service_user {
   float: left;
   margin: 5px 0 10px;
 }
-/* line 404, ../../../app/stylesheets/_main.scss */
+/* line 441, ../../../app/stylesheets/_main.scss */
 .service_user .field {
   margin-bottom: 1em;
 }
 
 /* 12. MESSAGES
 ---------------------------------------- */
-/* line 414, ../../../app/stylesheets/_main.scss */
+/* line 451, ../../../app/stylesheets/_main.scss */
 .messages_list {
   margin-bottom: 10px;
 }
 
-/* line 418, ../../../app/stylesheets/_main.scss */
+/* line 455, ../../../app/stylesheets/_main.scss */
 .message {
   font-size: 13px;
   display: block;
@@ -4886,36 +4938,36 @@ h1.username {
   color: #666;
   position: relative;
 }
-/* line 427, ../../../app/stylesheets/_main.scss */
+/* line 464, ../../../app/stylesheets/_main.scss */
 .message.unread {
   background-color: #e5f5fb;
 }
-/* line 430, ../../../app/stylesheets/_main.scss */
+/* line 467, ../../../app/stylesheets/_main.scss */
 .message span {
   display: block;
 }
-/* line 432, ../../../app/stylesheets/_main.scss */
+/* line 469, ../../../app/stylesheets/_main.scss */
 .message span.message_date {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 437, ../../../app/stylesheets/_main.scss */
+/* line 474, ../../../app/stylesheets/_main.scss */
 .message span.message_subject {
   color: #999;
 }
-/* line 441, ../../../app/stylesheets/_main.scss */
+/* line 478, ../../../app/stylesheets/_main.scss */
 .message .message_sender {
   font-size: 13px;
   color: #1d8cc8;
   font-weight: bold;
   margin: 0 0 9px;
 }
-/* line 447, ../../../app/stylesheets/_main.scss */
+/* line 484, ../../../app/stylesheets/_main.scss */
 .message .checker {
   float: left;
 }
-/* line 450, ../../../app/stylesheets/_main.scss */
+/* line 487, ../../../app/stylesheets/_main.scss */
 .message .headers {
   padding-left: 34px;
 }
@@ -4925,7 +4977,7 @@ h1.username {
 /* 14.GLOBAL OBJECTS
 ---------------------------------------- */
 /* MODAL BOX */
-/* line 465, ../../../app/stylesheets/_main.scss */
+/* line 502, ../../../app/stylesheets/_main.scss */
 #simplemodal-container a.modalCloseImg {
   background: url("/images/icons/close.png") no-repeat;
   /* adjust url as required */
@@ -4944,7 +4996,7 @@ h1.username {
 /* 16.TEMPLATE SPECIFICS
 ---------------------------------------- */
 /* SEARCH */
-/* line 484, ../../../app/stylesheets/_main.scss */
+/* line 521, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links {
   display: none;
   margin: 0;
@@ -4980,11 +5032,11 @@ h1.username {
 #sub_nav .quick_links li.last {
   padding-right: 0;
 }
-/* line 492, ../../../app/stylesheets/_main.scss */
+/* line 529, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links ul li {
   margin: 0 5px 0 0;
 }
-/* line 494, ../../../app/stylesheets/_main.scss */
+/* line 531, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links a {
   text-decoration: none;
 }
@@ -4992,7 +5044,7 @@ h1.username {
 #sub_nav .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 496, ../../../app/stylesheets/_main.scss */
+/* line 533, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links span {
   font-weight: bold;
 }
@@ -5420,12 +5472,12 @@ h1.username {
   }
   /* line 128, ../../../app/stylesheets/mediaqueries/_768.scss */
   .left_drawer .inner {
-    padding-right: 10px;
+    padding-right: 9px;
   }
 
   /* line 132, ../../../app/stylesheets/mediaqueries/_768.scss */
   .inner_profile_wrapper {
-    margin-left: 20px;
+    margin-left: 9px;
   }
 
   /* line 135, ../../../app/stylesheets/mediaqueries/_768.scss */

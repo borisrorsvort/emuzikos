@@ -6,7 +6,9 @@
 - content_for :javascripts do
   = include_javascripts :maps
 
-
+- content_for :scripts do
+  :javascript
+    $( "#tabs" ).tabs();
 
 -if current_user
   - content_for :sub_nav do
@@ -33,8 +35,6 @@
           = link_to t(:'buttons.home_signup'), signup_path, :class => "button submit contact "
     .clear
 
-
-
 %section.right_drawer.profile
   .inner_profile_wrapper
     %header
@@ -59,56 +59,72 @@
       = render "shared/add_this"
       .clear
 
-    - unless @user.instruments.empty?
-      %h3= t(:'activerecord.attributes.user.instruments')
-      .tag_list
-        - @user.instruments.each do |instrument|
-          %span= instrument.name
+    #tabs
+      %ul.profile_tabs_nav
+        %li
+          %a{:href => "#tab_info", :class => "icon-info"} User Infos
+        - unless @events.results.empty?
+          %li
+            %a{:href => "#tab_events", :class => "icon-calendar"} Events
+        - if @user.youtube_video_id?
+          %li
+            %a{:href => "#tab_medias", :class => "icon-video"} Medias
 
-    - unless @user.references.blank?
-      %h3= t(:'activerecord.attributes.user.references')
-      %p= @user.references
+      / INFOS TAB START
+      #tab_info
+        - unless @user.instruments.empty?
+          %h3= t(:'activerecord.attributes.user.instruments')
+          .tag_list
+            - @user.instruments.each do |instrument|
+              %span= instrument.name
 
-    - unless @user.request_message.blank?
-      %h3= t(:'activerecord.attributes.user.request_message')
-      = simple_format(@user.request_message)
+        - unless @user.references.blank?
+          %h3= t(:'activerecord.attributes.user.references')
+          %p= @user.references
 
-      .clear
+        - unless @user.request_message.blank?
+          %h3= t(:'activerecord.attributes.user.request_message')
+          = simple_format(@user.request_message)
 
-    - if @user.geocoded?
-      - unless @users_nearby.size.empty?
-        .users_nearby
-          %h3= t(:'.users_nearby')
-          - for user in @users_nearby
-            .section.user_general_infos
-              .avatar.small
-                - if user.avatar.present?
-                  = link_to(image_tag(user.avatar.url(:gallery)), user_path(user), :class => "tooltip", :title => "#{user.username}")
-                -else
-                  = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user), :class => "tooltip", :title => user.username)
-                .clear
           .clear
 
-    - unless @events.results.empty?
-      .future_events
-        %h3= t(:'.events')
-        %ul
-          - @events.results.first(5).each do |event|
-            %li
-              = event.start.to_date
-              = " | "
-              = event.venue.display_name
-              = " | "
-              = link_to "read more", event.uri, :target => "_blank"
-        = image_tag "songkick/concerts_by_songkick.gif", :alt => "Concerts by Songkick"
+        - if @user.geocoded?
+          - unless @users_nearby.size.empty?
+            .users_nearby
+              %h3= t(:'.users_nearby')
+              - for user in @users_nearby
+                .section.user_general_infos
+                  .avatar.small
+                    - if user.avatar.present?
+                      = link_to(image_tag(user.avatar.url(:gallery)), user_path(user), :class => "tooltip", :title => "#{user.username}")
+                    -else
+                      = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user), :class => "tooltip", :title => user.username)
+                    .clear
+              .clear
 
-    /%h3= t(:'.donate')
-    /= render "shared/paypal_widget"
+      - unless @events.results.empty?
+        / EVENTS TAB START
+        #tab_events
+          .future_events
+            %h3= t(:'.events')
+            %ul
+              - @events.results.first(5).each do |event|
+                %li
+                  = event.start.to_date
+                  = " | "
+                  = event.venue.display_name
+                  = " | "
+                  = link_to "read more", event.uri, :target => "_blank"
+            = image_tag "songkick/concerts_by_songkick.gif", :alt => "Concerts by Songkick"
+          .clear
 
-    - if @user.youtube_video_id?
-      %h3= t(:'.youtube_video')
-      %section
-        %iframe{:src => "http://www.youtube.com/embed/#{@user.youtube_video_id}", :width => "320", :height => "190"}
+      - if @user.youtube_video_id?
+        / MEDIA TAB START
+        #tab_medias
+          %h3= t(:'.youtube_video')
+          %section
+            %iframe{:src => "http://www.youtube.com/embed/#{@user.youtube_video_id}", :width => "320", :height => "190"}
+          .clear
 
 %section.left_drawer.fadeInLeft
   .inner
@@ -119,4 +135,3 @@
     - if @user.geocoded?
       = gmaps({ "map_options" => {"auto_zoom" => false, "zoom" => 11, "center_latitude" => @user.latitude, "center_longitude" => @user.longitude, :raw => '{ scrollwheel: false }' }, "markers" => {"data" => @user_map } })
 .clear
-

@@ -331,6 +331,43 @@ h1.username {
   }
 }
 
+#tabs {
+  border-color: #ccc;
+  li {
+    margin-right: $baseline / 2;
+  }
+  .ui-state-default {
+    background: #fff ;
+    border: none;
+    a {
+      font-weight: normal;
+      color: #157EBE;
+      @include hover-link;
+      padding: $baseline / 2;
+    }
+  }
+  .ui-tabs-selected {
+    border: 1px solid #ccc;
+    a {
+      color: #666 !important;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .ui-tabs-panel {
+    border: none;
+    padding: #{$baseline} #{$baseline / 2};
+  }
+  .ui-widget-header {
+    border-bottom: 1px solid #ccc;
+  }
+  .icon-info {
+    background-image: url(images/ui-icons_222222_256x240.png);
+    background: url(images/icon_sprite.png) 0 0 no-repeat !important
+  }
+}
+
 /* CONTACT LIST*/
 
 #users.contacts {

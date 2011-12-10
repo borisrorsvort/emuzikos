@@ -24,7 +24,7 @@ body {
   background: #333333 url(/images/backgrounds/bg-footer.gif);
   font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
   font-size: 100%;
-  color: #666;
+  color: #333;
 }
 
 /* line 23, ../../../app/stylesheets/_base.scss */
@@ -265,48 +265,49 @@ h2 {
 
 /* line 34, ../../../app/stylesheets/_typography.scss */
 h3 {
-  font-size: 18px;
-  margin-top: 9px;
-  margin-bottom: 9px;
-  color: #999;
+  font-size: 13px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
 }
 
-/* line 40, ../../../app/stylesheets/_typography.scss */
+/* line 41, ../../../app/stylesheets/_typography.scss */
 h4 {
-  font-size: 15px;
+  font-size: 11px;
   margin-top: 9px;
   margin-bottom: 9px;
 }
 
-/* line 45, ../../../app/stylesheets/_typography.scss */
+/* line 46, ../../../app/stylesheets/_typography.scss */
 h5 {
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 49, ../../../app/stylesheets/_typography.scss */
+/* line 50, ../../../app/stylesheets/_typography.scss */
 h6 {
   font-size: 13px;
 }
 
-/* line 52, ../../../app/stylesheets/_typography.scss */
+/* line 53, ../../../app/stylesheets/_typography.scss */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child {
   margin-top: 0;
 }
 
-/* line 55, ../../../app/stylesheets/_typography.scss */
+/* line 56, ../../../app/stylesheets/_typography.scss */
 p, pre, address {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 60, ../../../app/stylesheets/_typography.scss */
+/* line 61, ../../../app/stylesheets/_typography.scss */
 abbr, code, kbd, samp, small, var {
   line-height: 15px;
 }
 
-/* line 63, ../../../app/stylesheets/_typography.scss */
+/* line 64, ../../../app/stylesheets/_typography.scss */
 ul, ol, dl, dialog {
   font-size: 13px;
   line-height: 18px;
@@ -314,94 +315,94 @@ ul, ol, dl, dialog {
   margin: 18px 0 18px;
 }
 
-/* line 69, ../../../app/stylesheets/_typography.scss */
+/* line 70, ../../../app/stylesheets/_typography.scss */
 ul {
   list-style: disc outside;
 }
 
-/* line 73, ../../../app/stylesheets/_typography.scss */
+/* line 74, ../../../app/stylesheets/_typography.scss */
 ol {
   list-style: decimal outside;
 }
 
-/* line 77, ../../../app/stylesheets/_typography.scss */
+/* line 78, ../../../app/stylesheets/_typography.scss */
 li ul, li ol {
   margin-left: 18px;
   margin-top: 18px;
   margin-bottom: 0;
 }
 
-/* line 82, ../../../app/stylesheets/_typography.scss */
+/* line 83, ../../../app/stylesheets/_typography.scss */
 ol.lower_alpha {
   list-style: lower-alpha outside;
 }
 
-/* line 86, ../../../app/stylesheets/_typography.scss */
+/* line 87, ../../../app/stylesheets/_typography.scss */
 form, legend, label {
   font-size: 13px;
   line-height: 18px;
 }
-/* line 89, ../../../app/stylesheets/_typography.scss */
+/* line 90, ../../../app/stylesheets/_typography.scss */
 form p, legend p, label p {
   text-indent: 0  !important;
 }
 
-/* line 92, ../../../app/stylesheets/_typography.scss */
+/* line 93, ../../../app/stylesheets/_typography.scss */
 legend {
   position: relative;
   top: 5px;
 }
 
-/* line 96, ../../../app/stylesheets/_typography.scss */
+/* line 97, ../../../app/stylesheets/_typography.scss */
 input, textarea {
   font-size: 13px;
 }
 
-/* line 99, ../../../app/stylesheets/_typography.scss */
+/* line 100, ../../../app/stylesheets/_typography.scss */
 table {
   font-size: 13px;
 }
 
-/* line 102, ../../../app/stylesheets/_typography.scss */
+/* line 103, ../../../app/stylesheets/_typography.scss */
 caption {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 107, ../../../app/stylesheets/_typography.scss */
+/* line 108, ../../../app/stylesheets/_typography.scss */
 hr {
   position: relative;
   height: 4px;
   margin: 18px 0 14px 0;
 }
 
-/* line 114, ../../../app/stylesheets/_typography.scss */
+/* line 115, ../../../app/stylesheets/_typography.scss */
 li {
   margin-bottom: 18px;
 }
 
-/* line 117, ../../../app/stylesheets/_typography.scss */
+/* line 118, ../../../app/stylesheets/_typography.scss */
 h2 {
   font-weight: normal;
 }
 
-/* line 120, ../../../app/stylesheets/_typography.scss */
+/* line 121, ../../../app/stylesheets/_typography.scss */
 p {
   font-size: 13px;
   padding-bottom: 18px;
 }
 
-/* line 124, ../../../app/stylesheets/_typography.scss */
+/* line 125, ../../../app/stylesheets/_typography.scss */
 p + p {
   text-indent: 1.5em;
 }
-/* line 126, ../../../app/stylesheets/_typography.scss */
+/* line 127, ../../../app/stylesheets/_typography.scss */
 p + p.no-indent {
   text-indent: 0;
 }
 
-/* line 130, ../../../app/stylesheets/_typography.scss */
+/* line 131, ../../../app/stylesheets/_typography.scss */
 .field p + p {
   text-indent: 0;
 }
