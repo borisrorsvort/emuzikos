@@ -18,7 +18,8 @@ en:
     credentials: Credentials
     index:
       title: Users Listing
-      no_users: "We couldn't find any users corresponding to you search criterias. Share Emuzikos around you and make the community grow!" 
+      processing_search: Processing search
+      no_users: "We couldn't find any users corresponding to you search criterias."
     show:
       title: "%{username}'s profile"
       from: from

@@ -4616,7 +4616,7 @@ a.yellow:hover {
   margin-top: 13px;
 }
 
-/* line 155, ../../../app/stylesheets/_main.scss */
+/* line 153, ../../../app/stylesheets/_main.scss */
 .users_list {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -4639,7 +4639,7 @@ a.yellow:hover {
   animation-timing-function: ease;
   animation-fill-mode: both;
 }
-/* line 178, ../../../app/stylesheets/_main.scss */
+/* line 176, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing {
   -webkit-animation: fadeIn 2s;
   background-color: #FFF;
@@ -4655,30 +4655,30 @@ a.yellow:hover {
   display: block;
   font-size: 13px;
 }
-/* line 187, ../../../app/stylesheets/_main.scss */
+/* line 185, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .row {
   display: block;
   padding-left: 45px;
 }
-/* line 190, ../../../app/stylesheets/_main.scss */
+/* line 188, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .tag_list {
   margin: 0;
   font-size: 10.833px;
 }
-/* line 193, ../../../app/stylesheets/_main.scss */
+/* line 191, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section {
   padding: 10px;
 }
-/* line 195, ../../../app/stylesheets/_main.scss */
+/* line 193, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section .title {
   margin-bottom: 5px;
   color: #666;
 }
-/* line 200, ../../../app/stylesheets/_main.scss */
+/* line 198, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_general_infos .username {
   text-transform: uppercase;
 }
-/* line 202, ../../../app/stylesheets/_main.scss */
+/* line 200, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_general_infos .username a {
   text-decoration: none;
 }
@@ -4686,22 +4686,22 @@ a.yellow:hover {
 .users_list .user_profile_listing .section.user_general_infos .username a:hover {
   text-decoration: underline;
 }
-/* line 204, ../../../app/stylesheets/_main.scss */
+/* line 202, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_general_infos .location {
   font-size: 0.9em;
   color: gray;
 }
-/* line 208, ../../../app/stylesheets/_main.scss */
+/* line 206, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_type {
   /* text-align:center; */
   border-top: 1px solid #dddddd;
 }
-/* line 212, ../../../app/stylesheets/_main.scss */
+/* line 210, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_instruments {
   /*text-align:center;*/
   border-top: 1px solid #dddddd;
 }
-/* line 215, ../../../app/stylesheets/_main.scss */
+/* line 213, ../../../app/stylesheets/_main.scss */
 .users_list .user_profile_listing .section.user_instruments span {
   font-size: 10.833px;
   background: none;
@@ -4709,50 +4709,50 @@ a.yellow:hover {
   color: gray;
 }
 
-/* line 227, ../../../app/stylesheets/_main.scss */
+/* line 225, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field {
   min-width: 50%;
 }
-/* line 230, ../../../app/stylesheets/_main.scss */
+/* line 228, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .selector {
   margin: 0 auto;
   width: 110px;
 }
-/* line 233, ../../../app/stylesheets/_main.scss */
+/* line 231, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .selector span {
   width: 100px;
   font-size: 0.85em;
 }
-/* line 237, ../../../app/stylesheets/_main.scss */
+/* line 235, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .selector select {
   width: 133px;
 }
-/* line 241, ../../../app/stylesheets/_main.scss */
+/* line 239, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field#location {
   width: 100%;
 }
-/* line 243, ../../../app/stylesheets/_main.scss */
+/* line 241, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field#location .centered {
   width: 95%;
 }
-/* line 245, ../../../app/stylesheets/_main.scss */
+/* line 243, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field#location .centered input {
   width: 100%;
 }
-/* line 250, ../../../app/stylesheets/_main.scss */
+/* line 248, ../../../app/stylesheets/_main.scss */
 #users.index #search_form .field .button.submit.search {
   width: 100%;
   margin: 10px auto 0;
   display: block;
 }
 
-/* line 257, ../../../app/stylesheets/_main.scss */
+/* line 255, ../../../app/stylesheets/_main.scss */
 .avatar {
   background: #ccc;
   display: block;
   float: left;
 }
-/* line 261, ../../../app/stylesheets/_main.scss */
+/* line 259, ../../../app/stylesheets/_main.scss */
 .avatar.small {
   height: 30px;
   width: 30px;
@@ -4769,13 +4769,13 @@ a.yellow:hover {
   -khtml-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 268, ../../../app/stylesheets/_main.scss */
+/* line 266, ../../../app/stylesheets/_main.scss */
 .avatar.small a {
   display: block;
 }
 
 /* USER SHOW */
-/* line 275, ../../../app/stylesheets/_main.scss */
+/* line 273, ../../../app/stylesheets/_main.scss */
 .profile_picture {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -4795,7 +4795,7 @@ a.yellow:hover {
   margin-bottom: 18px;
 }
 
-/* line 281, ../../../app/stylesheets/_main.scss */
+/* line 279, ../../../app/stylesheets/_main.scss */
 .looking_for {
   margin: 18px 0 4.5px;
   text-transform: lowercase;
@@ -4804,35 +4804,35 @@ a.yellow:hover {
   text-shadow: white 0 1px 1px;
 }
 
-/* line 289, ../../../app/stylesheets/_main.scss */
+/* line 287, ../../../app/stylesheets/_main.scss */
 h1.username {
   margin-bottom: 3px;
   display: inline;
 }
 
-/* line 293, ../../../app/stylesheets/_main.scss */
+/* line 291, ../../../app/stylesheets/_main.scss */
 .location_infos {
   color: #999;
   margin: 18px 0;
   display: block;
 }
 
-/* line 298, ../../../app/stylesheets/_main.scss */
+/* line 296, ../../../app/stylesheets/_main.scss */
 .spread {
   margin-bottom: 18px;
 }
-/* line 300, ../../../app/stylesheets/_main.scss */
+/* line 298, ../../../app/stylesheets/_main.scss */
 .spread .left {
   float: left;
   margin-right: 10px;
 }
 
-/* line 304, ../../../app/stylesheets/_main.scss */
+/* line 302, ../../../app/stylesheets/_main.scss */
 .tag_list {
   font-size: 10.833px;
   margin: 10px 0 18px;
 }
-/* line 307, ../../../app/stylesheets/_main.scss */
+/* line 305, ../../../app/stylesheets/_main.scss */
 .tag_list span {
   padding: 0px 10px;
   background-color: #1d8cc8;
@@ -4851,40 +4851,40 @@ h1.username {
   box-shadow: 0 1px 2px white;
 }
 
-/* line 318, ../../../app/stylesheets/_main.scss */
+/* line 316, ../../../app/stylesheets/_main.scss */
 .jcrop-holder img, img#preview {
   max-width: none  !important;
   max-height: none  !important;
 }
 
-/* line 323, ../../../app/stylesheets/_main.scss */
+/* line 321, ../../../app/stylesheets/_main.scss */
 .users_nearby {
   margin-bottom: 18px;
 }
-/* line 324, ../../../app/stylesheets/_main.scss */
+/* line 322, ../../../app/stylesheets/_main.scss */
 .users_nearby .avatar {
   margin: 0 10px 10px 0;
 }
 
-/* line 331, ../../../app/stylesheets/_main.scss */
+/* line 329, ../../../app/stylesheets/_main.scss */
 .future_events ul {
   list-style: none;
 }
 
-/* line 336, ../../../app/stylesheets/_main.scss */
+/* line 334, ../../../app/stylesheets/_main.scss */
 #tabs {
   border-color: #ccc;
 }
-/* line 338, ../../../app/stylesheets/_main.scss */
+/* line 336, ../../../app/stylesheets/_main.scss */
 #tabs li {
   margin-right: 9px;
 }
-/* line 341, ../../../app/stylesheets/_main.scss */
+/* line 339, ../../../app/stylesheets/_main.scss */
 #tabs .ui-state-default {
   background: #fff;
   border: none;
 }
-/* line 344, ../../../app/stylesheets/_main.scss */
+/* line 342, ../../../app/stylesheets/_main.scss */
 #tabs .ui-state-default a {
   font-weight: normal;
   color: #157EBE;
@@ -4895,45 +4895,40 @@ h1.username {
 #tabs .ui-state-default a:hover {
   text-decoration: underline;
 }
-/* line 351, ../../../app/stylesheets/_main.scss */
+/* line 349, ../../../app/stylesheets/_main.scss */
 #tabs .ui-tabs-selected {
   border: 1px solid #ccc;
 }
-/* line 353, ../../../app/stylesheets/_main.scss */
+/* line 351, ../../../app/stylesheets/_main.scss */
 #tabs .ui-tabs-selected a {
   color: #666 !important;
 }
-/* line 355, ../../../app/stylesheets/_main.scss */
+/* line 353, ../../../app/stylesheets/_main.scss */
 #tabs .ui-tabs-selected a:hover {
   text-decoration: none;
 }
-/* line 360, ../../../app/stylesheets/_main.scss */
+/* line 358, ../../../app/stylesheets/_main.scss */
 #tabs .ui-tabs-panel {
   border: none;
   padding: 18px 9px;
 }
-/* line 364, ../../../app/stylesheets/_main.scss */
+/* line 362, ../../../app/stylesheets/_main.scss */
 #tabs .ui-widget-header {
   border-bottom: 1px solid #ccc;
 }
-/* line 367, ../../../app/stylesheets/_main.scss */
-#tabs .icon-info {
-  background-image: url(images/ui-icons_222222_256x240.png);
-  background: url(images/icon_sprite.png) 0 0 no-repeat !important;
-}
 
 /* CONTACT LIST*/
-/* line 376, ../../../app/stylesheets/_main.scss */
+/* line 370, ../../../app/stylesheets/_main.scss */
 #users.contacts .actions {
   margin-bottom: 18px;
 }
 
 /* TESTIMONIALS */
-/* line 383, ../../../app/stylesheets/_main.scss */
+/* line 377, ../../../app/stylesheets/_main.scss */
 #testimonials {
   clear: both;
 }
-/* line 386, ../../../app/stylesheets/_main.scss */
+/* line 380, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial {
   width: 230px;
   padding: 15px;
@@ -4955,11 +4950,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 398, ../../../app/stylesheets/_main.scss */
+/* line 392, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 401, ../../../app/stylesheets/_main.scss */
+/* line 395, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -4970,17 +4965,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 405, ../../../app/stylesheets/_main.scss */
+/* line 399, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 411, ../../../app/stylesheets/_main.scss */
+/* line 405, ../../../app/stylesheets/_main.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 414, ../../../app/stylesheets/_main.scss */
+/* line 408, ../../../app/stylesheets/_main.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -4990,17 +4985,17 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 423, ../../../app/stylesheets/_main.scss */
+/* line 417, ../../../app/stylesheets/_main.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 426, ../../../app/stylesheets/_main.scss */
+/* line 420, ../../../app/stylesheets/_main.scss */
 .services_list img {
   width: 32px;
 }
 
-/* line 429, ../../../app/stylesheets/_main.scss */
+/* line 423, ../../../app/stylesheets/_main.scss */
 .services_used {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -5020,30 +5015,30 @@ h1.username {
   width: 90%;
   float: left;
 }
-/* line 435, ../../../app/stylesheets/_main.scss */
+/* line 429, ../../../app/stylesheets/_main.scss */
 .services_used img {
   float: left;
   margin-right: 10px;
 }
 
-/* line 440, ../../../app/stylesheets/_main.scss */
+/* line 434, ../../../app/stylesheets/_main.scss */
 .service_user {
   float: left;
   margin: 5px 0 10px;
 }
-/* line 443, ../../../app/stylesheets/_main.scss */
+/* line 437, ../../../app/stylesheets/_main.scss */
 .service_user .field {
   margin-bottom: 1em;
 }
 
 /* 12. MESSAGES
 ---------------------------------------- */
-/* line 453, ../../../app/stylesheets/_main.scss */
+/* line 447, ../../../app/stylesheets/_main.scss */
 .messages_list {
   margin-bottom: 10px;
 }
 
-/* line 457, ../../../app/stylesheets/_main.scss */
+/* line 451, ../../../app/stylesheets/_main.scss */
 .message {
   font-size: 13px;
   display: block;
@@ -5054,36 +5049,36 @@ h1.username {
   color: #666;
   position: relative;
 }
-/* line 466, ../../../app/stylesheets/_main.scss */
+/* line 460, ../../../app/stylesheets/_main.scss */
 .message.unread {
   background-color: #e5f5fb;
 }
-/* line 469, ../../../app/stylesheets/_main.scss */
+/* line 463, ../../../app/stylesheets/_main.scss */
 .message span {
   display: block;
 }
-/* line 471, ../../../app/stylesheets/_main.scss */
+/* line 465, ../../../app/stylesheets/_main.scss */
 .message span.message_date {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 476, ../../../app/stylesheets/_main.scss */
+/* line 470, ../../../app/stylesheets/_main.scss */
 .message span.message_subject {
   color: #999;
 }
-/* line 480, ../../../app/stylesheets/_main.scss */
+/* line 474, ../../../app/stylesheets/_main.scss */
 .message .message_sender {
   font-size: 13px;
   color: #1d8cc8;
   font-weight: bold;
   margin: 0 0 9px;
 }
-/* line 486, ../../../app/stylesheets/_main.scss */
+/* line 480, ../../../app/stylesheets/_main.scss */
 .message .checker {
   float: left;
 }
-/* line 489, ../../../app/stylesheets/_main.scss */
+/* line 483, ../../../app/stylesheets/_main.scss */
 .message .headers {
   padding-left: 34px;
 }
@@ -5093,7 +5088,7 @@ h1.username {
 /* 14.GLOBAL OBJECTS
 ---------------------------------------- */
 /* MODAL BOX */
-/* line 504, ../../../app/stylesheets/_main.scss */
+/* line 498, ../../../app/stylesheets/_main.scss */
 #simplemodal-container a.modalCloseImg {
   background: url("/images/icons/close.png") no-repeat;
   /* adjust url as required */
@@ -5112,7 +5107,7 @@ h1.username {
 /* 16.TEMPLATE SPECIFICS
 ---------------------------------------- */
 /* SEARCH */
-/* line 523, ../../../app/stylesheets/_main.scss */
+/* line 517, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links {
   display: none;
   margin: 0;
@@ -5148,11 +5143,11 @@ h1.username {
 #sub_nav .quick_links li.last {
   padding-right: 0;
 }
-/* line 531, ../../../app/stylesheets/_main.scss */
+/* line 525, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links ul li {
   margin: 0 5px 0 0;
 }
-/* line 533, ../../../app/stylesheets/_main.scss */
+/* line 527, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links a {
   text-decoration: none;
 }
@@ -5160,7 +5155,7 @@ h1.username {
 #sub_nav .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 535, ../../../app/stylesheets/_main.scss */
+/* line 529, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links span {
   font-weight: bold;
 }

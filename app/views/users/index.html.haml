@@ -7,9 +7,10 @@
   = pageless(@users.num_pages, users_path)
 
 .progress_bar_wrapper.hidden
-  Processing search
+  = t(:".processing_search")
   .progress_bar
     = image_tag('icons/ajax-loader-bar.gif', :id => "search_loader")
+
 -if !@users.blank?
   %section.users_list
     = render @users
@@ -18,7 +19,8 @@
   = paginate @users
 
 -else
-  =t(:'.no_users')
+  %h3=t(:'.no_users')
+  %p Invite more user to Emuzikos and help to make the community grow!
   .spread
     = render "shared/add_this"
     .clear
