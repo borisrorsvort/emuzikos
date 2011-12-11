@@ -13,7 +13,7 @@ Emuzikos::Application.configure do
   config.whiny_nils = true
 
   # Show full error reports and disable caching
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_view.debug_rjs             = true
   config.action_controller.perform_caching = false
 

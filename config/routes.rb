@@ -26,6 +26,8 @@ Emuzikos::Application.routes.draw do
   match "sitemap" => "sitemaps#show", :as => :sitemap
 
   root :to => "pages#homepage"
+
+  # catch all and redirect to error page except auth path required for omniauth
   match '*path', :to => 'errors#404', :constraints => lambda{|request|
     !request.path.starts_with?("/auth")
   }
