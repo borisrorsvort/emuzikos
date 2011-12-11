@@ -26,5 +26,7 @@ Emuzikos::Application.routes.draw do
   match "sitemap" => "sitemaps#show", :as => :sitemap
 
   root :to => "pages#homepage"
-
+  match '*path', :to => 'errors#404', :constraints => lambda{|request|
+    !request.path.starts_with?("/auth")
+  }
 end
