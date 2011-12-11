@@ -6,8 +6,8 @@ Emuzikos::Application.configure do
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
-  config.action_controller.consider_all_requests_local = true
-  config.action_view.debug_rjs                         = true
+  config.action_controller.consider_all_requests_local = false
+  #config.action_view.debug_rjs                         = true
   config.action_controller.perform_caching             = false
 
   config.active_support.deprecation = :notify
