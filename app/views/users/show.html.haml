@@ -74,9 +74,10 @@
       #tab_info
         - unless @user.instruments.empty?
           %h3= t(:'activerecord.attributes.user.instruments')
-          .tag_list
+          .tag_list_instruments
             - @user.instruments.each do |instrument|
-              %span= instrument.name
+              .tag-body.yellow
+                %span.tag= instrument.name
 
         - unless @user.references.blank?
           %h3= t(:'activerecord.attributes.user.references')
