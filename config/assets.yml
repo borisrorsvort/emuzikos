@@ -20,6 +20,9 @@ javascripts:
     - public/javascripts/libs/gmaps4rails.bing.js
     - public/javascripts/libs/gmaps4rails.openlayers.js
     - public/javascripts/libs/gmaps4rails.mapquest.js
+  soundcloud:
+    - public/javascripts/libs/soundcloud.player.api.js
+    - public/javascripts/libs/sc-player.js
   emuzikos:
     - public/javascripts/libs/rails.js
     - public/javascripts/libs/jquery.tipsy.js
@@ -32,6 +35,8 @@ javascripts:
     - public/javascripts/application.js
 
 stylesheets:
+  soundcloud:
+    - public/stylesheets/soundcloud/sc-player-standard.css
   jcrop:
     - public/stylesheets/jquery.Jcrop.css
   maps:

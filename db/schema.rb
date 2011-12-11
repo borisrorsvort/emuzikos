@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111116230906) do
+ActiveRecord::Schema.define(:version => 20111211223347) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20111116230906) do
     t.boolean  "wants_email",            :default => true
     t.string   "songkick_username",      :default => ""
     t.string   "youtube_video_id",       :default => ""
+    t.string   "soundcloud_username",    :default => ""
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

@@ -1,10 +1,10 @@
 - title t(:'.title', :username => @user.username), false
 
 
-= include_stylesheets :maps
+= include_stylesheets :maps, :soundcloud
 
 - content_for :javascripts do
-  = include_javascripts :maps
+  = include_javascripts :maps, :soundcloud
 
 - content_for :scripts do
   :javascript
@@ -66,7 +66,7 @@
         - unless @events.results.empty?
           %li
             %a{:href => "#tab_events", :class => "icon-calendar"} Events
-        - if @user.youtube_video_id?
+        - if @user.youtube_video_id? || @user.soundcloud_username?
           %li
             %a{:href => "#tab_medias", :class => "icon-video"} Medias
 
@@ -119,12 +119,16 @@
             = image_tag "songkick/concerts_by_songkick.gif", :alt => "Concerts by Songkick"
           .clear
 
-      - if @user.youtube_video_id?
+      - if @user.youtube_video_id? || @user.soundcloud_username?
         / MEDIA TAB START
         #tab_medias
-          %h3= t(:'.youtube_video')
-          %section
-            %iframe{:src => "http://www.youtube.com/embed/#{@user.youtube_video_id}", :width => "320", :height => "190"}
+          - if @user.soundcloud_username?
+            %h3= t(:souncloud_player)
+            = link_to "#{@user.username} Tracks", "http://soundcloud.com/#{@user.soundcloud_username}", :class => "sc-player"
+          - if @user.youtube_video_id?
+            %h3= t(:'.youtube_video')
+            %section
+              %iframe{:src => "http://www.youtube.com/embed/#{@user.youtube_video_id}", :width => "320", :height => "190"}
           .clear
 
 %section.left_drawer.fadeInLeft
