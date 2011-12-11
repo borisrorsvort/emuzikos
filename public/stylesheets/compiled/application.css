@@ -313,158 +313,40 @@ strong {
 /* FOLDED CORNER */
 /* CSS ARROWS */
 /*---------------------------------------- */
-/* CSS tags */
-/* ---------------------------------------- */
-/*yellow color*/
-/* line 175, ../../../app/stylesheets/_base.scss */
-.tag-body, a.tag-body {
-  display: inline-block;
-  position: relative;
-  padding: 7px 10px 7px 20px;
-  margin: auto auto 25px 7px;
-  border-width: 1px 1px 1px 0;
-  border-style: solid;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -khtml-border-radius: 4px;
-  border-radius: 4px;
-  font-size: 11px;
-  height: 8px;
-  line-height: 8px;
-}
-
-/* line 189, ../../../app/stylesheets/_base.scss */
-.tag {
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -o-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -khtml-border-radius: 4px;
-  border-radius: 4px;
-  bottom: 0;
-  height: 100%;
-  right: -1px;
-  width: 101%;
-  z-index: 0;
-  background: none !important;
-}
-
-/* line 199, ../../../app/stylesheets/_base.scss */
-.tag:after {
-  position: absolute;
-  background: none repeat scroll 0 0 whitesmoke;
-  /* change 'whitesmoke' to background color of your body */
-  border: 1px solid white;
-  -moz-border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -o-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -khtml-border-radius: 25px;
-  border-radius: 25px;
-  -moz-box-shadow: white -1px -1px 3px inset, rgba(0, 0, 0, 0.3) 0 1px 1px inset;
-  -webkit-box-shadow: white -1px -1px 3px inset, rgba(0, 0, 0, 0.3) 0 1px 1px inset;
-  -o-box-shadow: white -1px -1px 3px inset, rgba(0, 0, 0, 0.3) 0 1px 1px inset;
-  box-shadow: white -1px -1px 3px inset, rgba(0, 0, 0, 0.3) 0 1px 1px inset;
-  content: "";
-  height: 7px;
-  left: 0;
-  top: 10px;
-  width: 7px;
-  z-index: 0;
-  background-clip: padding-box;
-  -webkit-background-clip: padding-box;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-}
-
-/* line 219, ../../../app/stylesheets/_base.scss */
-.tag:before {
-  background: inherit;
-  -moz-transform: rotate(45deg) translate(-9px, 6px);
-  -webkit-transform: rotate(45deg) translate(-9px, 6px);
-  -ms-transform: rotate(45deg) translate(-9px, 6px);
-  -o-transform: rotate(45deg) translate(-9px, 6px);
-  -khtml-transform: rotate(45deg) translate(-9px, 6px);
-  transform: rotate(45deg) translate(-9px, 6px);
-  border-style: solid;
-  border-width: 0 0 1px 1px;
-  -webkit-border-radius: 3px 3px;
-  -moz-border-radius: 3px 4px / 3px 6px;
-  -o-border-radius: 3px 4px / 3px 6px;
-  -ms-border-radius: 3px 4px / 3px 6px;
-  -khtml-border-radius: 3px 4px / 3px 6px;
-  border-radius: 3px 4px / 3px 6px;
-  z-index: 0;
-  height: 16.5px;
-  content: "";
-  left: 4px;
-  top: 5px;
-  position: absolute;
-  width: 17.5px;
-}
-
-/* line 240, ../../../app/stylesheets/_base.scss */
-.yellow {
-  border-color: #FFA71D;
-  color: white;
-  background: #1d8cc8;
-  border-color: #1d8cc8;
-}
-
-/* line 249, ../../../app/stylesheets/_base.scss */
-.yellow .tag:before {
-  border-color: #FFA71D;
-  background: #1d8cc8;
-  border-color: #1d8cc8;
-}
-
-/* line 257, ../../../app/stylesheets/_base.scss */
-a.yellow {
-  color: #A96903 !important;
-}
-
-/* line 258, ../../../app/stylesheets/_base.scss */
-a.yellow:hover {
-  color: #000 !important;
-}
-
 /* ANIMATION
 /* ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 264, ../../../app/stylesheets/_base.scss */
+  /* line 175, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 265, ../../../app/stylesheets/_base.scss */
+  /* line 176, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 269, ../../../app/stylesheets/_base.scss */
+  /* line 180, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 270, ../../../app/stylesheets/_base.scss */
+  /* line 181, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 271, ../../../app/stylesheets/_base.scss */
+  /* line 182, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 272, ../../../app/stylesheets/_base.scss */
+  /* line 183, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -472,25 +354,25 @@ a.yellow:hover {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 275, ../../../app/stylesheets/_base.scss */
+  /* line 186, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 276, ../../../app/stylesheets/_base.scss */
+  /* line 187, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 277, ../../../app/stylesheets/_base.scss */
+  /* line 188, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 278, ../../../app/stylesheets/_base.scss */
+  /* line 189, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -498,12 +380,12 @@ a.yellow:hover {
 }
 
 @-webkit-keyframes opacity {
-  /* line 281, ../../../app/stylesheets/_base.scss */
+  /* line 192, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 282, ../../../app/stylesheets/_base.scss */
+  /* line 193, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -4421,6 +4303,122 @@ html.js .page_entries {
 #pageless-loader img {
   width: 32px;
   height: 32px;
+}
+
+/* line 1, ../../../app/stylesheets/_tags.scss */
+.tag-body, a.tag-body {
+  display: inline-block;
+  position: relative;
+  padding: 7px 10px 7px 20px;
+  margin: auto auto 25px 7px;
+  border-width: 1px 1px 1px 0;
+  border-style: solid;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 11px;
+  height: 8px;
+  line-height: 8px;
+}
+
+/* line 14, ../../../app/stylesheets/_tags.scss */
+.tag {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+  bottom: 0;
+  height: 100%;
+  right: -1px;
+  width: 101%;
+  z-index: 0;
+  background: none !important;
+}
+
+/*/ Little circle inside */
+/* line 24, ../../../app/stylesheets/_tags.scss */
+.tag:after {
+  position: absolute;
+  background: none repeat scroll 0 0 white;
+  border: 1px solid white;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -o-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -khtml-border-radius: 25px;
+  border-radius: 25px;
+  -moz-box-shadow: white -1px -1px 3px inset, rgba(0, 0, 0, 0.3) 0 1px 1px inset;
+  -webkit-box-shadow: white -1px -1px 3px inset, rgba(0, 0, 0, 0.3) 0 1px 1px inset;
+  -o-box-shadow: white -1px -1px 3px inset, rgba(0, 0, 0, 0.3) 0 1px 1px inset;
+  box-shadow: white -1px -1px 3px inset, rgba(0, 0, 0, 0.3) 0 1px 1px inset;
+  content: "";
+  height: 7px;
+  left: 0;
+  top: 10px;
+  width: 7px;
+  z-index: 0;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+}
+
+/* Left arrow */
+/* line 44, ../../../app/stylesheets/_tags.scss */
+.tag:before {
+  background: inherit;
+  -moz-transform: rotate(45deg) translate(-9px, 6px);
+  -webkit-transform: rotate(45deg) translate(-9px, 6px);
+  -ms-transform: rotate(45deg) translate(-9px, 6px);
+  -o-transform: rotate(45deg) translate(-9px, 6px);
+  -khtml-transform: rotate(45deg) translate(-9px, 6px);
+  transform: rotate(45deg) translate(-9px, 6px);
+  border-style: solid;
+  border-width: 0 0 1px 1px;
+  -webkit-border-radius: 3px 3px;
+  -moz-border-radius: 3px 4px / 3px 6px;
+  -o-border-radius: 3px 4px / 3px 6px;
+  -ms-border-radius: 3px 4px / 3px 6px;
+  -khtml-border-radius: 3px 4px / 3px 6px;
+  border-radius: 3px 4px / 3px 6px;
+  z-index: 0;
+  height: 16.5px;
+  content: "";
+  left: 4px;
+  top: 5px;
+  position: absolute;
+  width: 17.5px;
+}
+
+/* line 64, ../../../app/stylesheets/_tags.scss */
+.yellow {
+  border-color: #FFA71D;
+  color: white;
+  background: #1d8cc8;
+  border-color: #1d8cc8;
+}
+
+/* line 71, ../../../app/stylesheets/_tags.scss */
+.yellow .tag:before {
+  border-color: #FFA71D;
+  background: #1d8cc8;
+  border-color: #1d8cc8;
+}
+
+/* line 77, ../../../app/stylesheets/_tags.scss */
+a.yellow {
+  color: #A96903 !important;
+}
+
+/* line 78, ../../../app/stylesheets/_tags.scss */
+a.yellow:hover {
+  color: #000 !important;
 }
 
 /* line 1, ../../../app/stylesheets/_main.scss */
