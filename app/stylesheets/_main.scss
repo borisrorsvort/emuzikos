@@ -73,7 +73,7 @@
      @include inset(#333);
      color:#bababa;
      display:block;
-     font-size: 0.90em;
+     font-size: 0.80em;
      font-weight:bold;
      position:relative;
      text-align: center;
@@ -117,8 +117,8 @@
     display:block;
     font-size: $basefont;
     float:left;
-    width: 33%;
-    margin: 0;
+    width: 50%;
+    margin: 0 0 $basefont 0;
     &.greating_profile {
       display:none;
     }
@@ -136,6 +136,19 @@
 
 
 /* USER */
+
+.progress_bar_wrapper {
+  width: 220px;
+  margin: 0 auto;
+  margin-bottom: $basefont;
+  text-align: center;
+  font-size: $basefont;
+  .progress_bar,  {
+    width: 220px;
+    height: 19px;
+    margin-top: $basefont;
+  }
+}
 
 .users_list {
   -webkit-backface-visibility: hidden;
@@ -212,14 +225,6 @@
 #users.index #search_form .field {
   min-width: 50%;
 
-  input#search_zip {
-    width: 112px;
-    padding-left: 10px;
-  }
-  .centered {
-    margin: 0 auto;
-    width: 121px;
-  }
   .selector {
     margin: 0 auto;
     width: 110px;
@@ -230,6 +235,20 @@
     select {
       width:133px;
     }
+  }
+  &#location {
+   width: 100%;
+   .centered {
+     width: 95%;
+     input {
+       width: 100%;
+     }
+   }
+  }
+  .button.submit.search {
+    width: 100%;
+    margin: 10px auto 0;
+    display: block;
   }
 }
 
@@ -290,7 +309,9 @@ h1.username {
     margin: 0 5px 5px 0;
     color: #fff;
     display:inline-block;
-    @include single-box-shadow(#fff, 0, 1px, 2px ); }}
+    @include single-box-shadow(#fff, 0, 1px, 2px ); 
+  }
+}
 
 .jcrop-holder img, img#preview {
   max-width: none  !important;
@@ -302,6 +323,45 @@ h1.username {
     margin: 0 10px 10px 0;
   }
   margin-bottom: 18px;
+}
+
+.future_events {
+  ul {
+    list-style: none;
+  }
+}
+
+#tabs {
+  border-color: #ccc;
+  li {
+    margin-right: $baseline / 2;
+  }
+  .ui-state-default {
+    background: #fff ;
+    border: none;
+    a {
+      font-weight: normal;
+      color: #157EBE;
+      @include hover-link;
+      padding: $baseline / 2;
+    }
+  }
+  .ui-tabs-selected {
+    border: 1px solid #ccc;
+    a {
+      color: #666 !important;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .ui-tabs-panel {
+    border: none;
+    padding: #{$baseline} #{$baseline / 2};
+  }
+  .ui-widget-header {
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 /* CONTACT LIST*/

@@ -1,0 +1,28 @@
+- content_for :stylesheets do
+  = include_stylesheets :homepage, :media => 'all'
+
+= render "/layouts/head"
+
+%body.logged_out{:id => "pages", :class => "homepage clearfix loggued_out"}
+
+  %section#header
+    #logo
+      = link_to root_path, :title => t(:'tooltips.back_to_home') do
+        = image_tag 'logo.png', :alt => "Emuzikos - Musicians search plateform"
+    .clear
+
+  #container
+
+    %section#content
+      - if content_for? :sub_nav
+        %nav#sub_nav
+          = yield :sub_nav
+
+      - flash.each do |key, message|
+        = content_tag(:div, message, :class => "flash #{key}")
+
+      #inner_content
+        = yield
+    .clear
+  = yield :features
+  =render "/layouts/footer"

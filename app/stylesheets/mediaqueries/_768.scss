@@ -91,14 +91,14 @@
       float:left;
       text-align:left  !important;
       &.user_general_infos {
-        width: 20%; }
+        width: 30%; }
       &.user_type {
-        width: 25%;
+        width: 30%;
         border-top: 0px solid #dddddd;
         border-left: 1px solid #dddddd;
         text-align:center; }
       &.user_instruments {
-        width: 39%;
+        width: 20%;
         overflow: hidden;
         border-top: 0px solid #dddddd;
         border-left: 1px solid #dddddd; }
@@ -109,6 +109,9 @@
   }
 }
 
+#users.index #search_form .field#location {
+ width: 22%;
+}
 
 /* 10.CONTENT */
 /* 11.MAIN */
@@ -123,11 +126,11 @@
   float:left;
   width: 25%;
   .inner {
-    padding-right: 10px;
+    padding-right: $baseline / 2;
   }
 }
 .inner_profile_wrapper {
-  margin-left: 20px;
+  margin-left: $baseline / 2;
 }
 .profile_picture {
   width: 100%  - ($profile_picture_border_width * 2) ;
@@ -188,12 +191,6 @@
 /* HOME PAGE */
 
 .homepage {
-  #main-icon {
-
-  }
-  #logo img {
-
-  }
   h2.moto {
     font-size: 3em;
   }

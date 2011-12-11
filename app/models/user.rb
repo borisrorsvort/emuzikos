@@ -8,16 +8,17 @@ class User < ActiveRecord::Base
   has_many :friendships, :dependent => :destroy
   has_many :friends, :through => :friendships
   has_many :followers, :class_name => 'Friendship', :foreign_key => 'friend_id', :dependent => :destroy
-  has_and_belongs_to_many :instruments
+  has_many :instruments, :through => :skills
+  has_many :skills, :dependent => :destroy
   has_many :tastes, :dependent => :destroy
   has_many :genres, :through => :tastes
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
-  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  #attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   attr_searchable :username, :user_type, :searching_for, :country, :zip
-  assoc_searchable :instruments, :tastes, :genres
+  assoc_searchable :instruments, :skills, :tastes, :genres
 
   geocoded_by :address
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?,
@@ -28,23 +29,27 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
-  validates_attachment_content_type :avatar, :message => 'should be PNG, GIF, or JPG', :content_type => %w( image/jpeg image/png image/gif image/pjpeg image/x-png )
-  validates_attachment_size :avatar, :less_than => 1.megabytes
+  validates_attachment_content_type :avatar,
+    :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'],
+    :message => "only image files are allowed"
+  validates_attachment_size :avatar,
+      :less_than => 1.megabyte, #another option is :greater_than
+      :message => "max size is 1M"
 
   USER_TYPES = %w(band musician agent)
 
   after_validation :subscribe
   after_validation :geocode, :if => :address_changed?
-  after_update :reprocess_avatar, :if => :cropping?
+  #after_update :reprocess_avatar, :if => :cropping?
 
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
     :styles => {
-      :normal => "300>",
+      :normal => "500x500>",
       :medium => "200x200#",
       :gallery => "30x30#"
     },
-    :processors => [:cropper],
+    # :processors => [:cropper],
     :whiny => true,
     :storage => {
       'development' => :filesystem,
@@ -84,19 +89,33 @@ class User < ActiveRecord::Base
     self.except_current_user(current_user).visible.geocoded.profiles_completed
   end
 
-  def cropping?
-    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
-  end
+  # def cropping?
+  #   !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  # end
 
-  def avatar_geometry(style=:original)
-    return file_geometry if style == :original
-    w, h = avatar.options[:styles][style].gsub("#","").split("x")
-    Paperclip::Geometry.new(w, h)
-  end
+  # def avatar_geometry(style=:original)
+  #   return file_geometry if style == :original
+  #   w, h = avatar.options[:styles][style].gsub("#","").split("x")
+  #   Paperclip::Geometry.new(w, h)
+  # end
 
-  def file_geometry
+  # def file_geometry
+  #   @geometry ||= {}
+  #   @geometry[avatar.path] ||= Paperclip::Geometry.from_file(open(avatar.path))
+  # end
+
+  # def cropping?
+  #   !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  # end
+  # def avatar_geometry(style = :original)
+  #   @geometry ||= {}
+  #   @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))
+  # end
+
+  def avatar_geometry(style = :normal)
     @geometry ||= {}
-    @geometry[avatar.url] ||= Paperclip::Geometry.from_file(open(avatar.url))
+    path = (avatar.options[:storage]==:s3) ? avatar.url(style) : avatar.path(style)
+    @geometry[style] ||= Paperclip::Geometry.from_file(path)
   end
 
   def to_param
@@ -117,6 +136,13 @@ class User < ActiveRecord::Base
 
   def has_service?(service)
     self.services.find_by_provider(service)
+  end
+
+  def get_events(songkick_username)
+    require 'songkickr'
+    remote = Songkickr::Remote.new AppConfig.songkick.api_key
+    results = remote.events(:artist_name => songkick_username, :type => 'concert')
+    return results
   end
 
   private

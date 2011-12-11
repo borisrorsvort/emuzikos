@@ -4,7 +4,8 @@ en:
 ### ______________________________________________________
 
   buttons:
-    home_signup: signup for free in 60 sec. 
+    home_signup: signup for free in 60 sec.
+    back_to_homepage: Back to the home page
     update: Update
     create: Create
     edit: Edit

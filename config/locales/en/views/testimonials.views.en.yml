@@ -1,10 +1,11 @@
 en:
-  
+
 ### TESTIMONIALS
 ### ______________________________________________________
 
   testimonials:
-    no_testimonials: "Sorry, you haven't written any testominal. May be it's time for one now :)"
+    no_testimonials: "They are currently no testimonials. Please come bacl later"
+    no_testimonials_logged_in: "Sorry, you haven't written any testominal. May be is it time for one now?"
     index:
       title: Testimonials
     new:

@@ -4,7 +4,7 @@ class SitemapsController < ApplicationController
 
   def show
     @users = User.visible.profiles_completed
-    @other_routes = ["","users/signin","users/signup","terms", "about", "testimonials"]
+    @other_routes = ["","users/signin","users/signup","testimonials"]
     respond_to do |format|
       format.xml
     end

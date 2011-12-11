@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111016140220) do
+ActiveRecord::Schema.define(:version => 20111211223347) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -64,11 +65,6 @@ ActiveRecord::Schema.define(:version => 20111016140220) do
     t.datetime "updated_at"
   end
 
-  create_table "instruments_users", :id => false, :force => true do |t|
-    t.integer "instrument_id"
-    t.integer "user_id"
-  end
-
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
@@ -87,6 +83,13 @@ ActiveRecord::Schema.define(:version => 20111016140220) do
     t.string   "uid"
     t.string   "uname"
     t.string   "uemail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "skills", :force => true do |t|
+    t.integer  "instrument_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -167,6 +170,9 @@ ActiveRecord::Schema.define(:version => 20111016140220) do
     t.float    "longitude"
     t.boolean  "visible",                :default => true
     t.boolean  "wants_email",            :default => true
+    t.string   "songkick_username",      :default => ""
+    t.string   "youtube_video_id",       :default => ""
+    t.string   "soundcloud_username",    :default => ""
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

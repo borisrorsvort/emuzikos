@@ -3,13 +3,13 @@ ActiveAdmin::Dashboards.build do
   section "Users charts", :priority => 1 do
     div do
       @users = User
-      @users_complete_profile = @users.profiles_completed
+      @users_complete_profile = @users.geocoded.profiles_completed.uniq.count
       @signed_in_users = @users.currently_signed_in.count
-      @users_in_listing = @users.profiles_completed.geocoded.visible.count
+      @users_in_listing = @users.geocoded.profiles_completed.visible.uniq.count
       render :partial => "users_chart", :locals => {  :users => @users,
-                                                        :users_complete_profile => @users_complete_profile,
-                                                        :signed_in_users => @signed_in_users,
-                                                        :users_in_listing => @users_in_listing}
+                                                      :users_complete_profile => @users_complete_profile,
+                                                      :signed_in_users => @signed_in_users,
+                                                      :users_in_listing => @users_in_listing }
     end
   end
 

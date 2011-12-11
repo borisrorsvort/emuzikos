@@ -20,7 +20,10 @@ form {
 label {
   margin: #{$baseline / 2} 0 0;
   font-weight   : bold;
-  display       : block; }
+  display       : block;
+  &.habtm {
+    margin-top: 3px !important;
+  }}
 
 .inline {
   display       : inline; }

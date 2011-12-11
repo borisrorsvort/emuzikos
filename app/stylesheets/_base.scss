@@ -11,7 +11,7 @@ body {
   background: $body_bg_default url(/images/backgrounds/bg-footer.gif);
   font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
   font-size: 100%;
-  color:#666; }
+  color:#333; }
 
 
 html.js,
@@ -139,8 +139,8 @@ strong {
        @include border-bottom-left-radius($corner_size * 0.2); }}
 }
 
-/* CSS ARROWS
----------------------------------------- */
+/* CSS ARROWS */
+/*---------------------------------------- */
 
 @mixin css-arrow($orientation: "top", $bg-color: #fff, $arrow-color: #ccc, $size: 10px) {
 
@@ -168,10 +168,8 @@ strong {
     border-top: $size solid $bg-color;
     border-bottom: $size solid $bg-color; } }
 
-
-
 /* ANIMATION
----------------------------------------- */
+/* ---------------------------------------- */
 
 @-webkit-keyframes fadeIn {
   0% {opacity: 0;}

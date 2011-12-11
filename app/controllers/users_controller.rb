@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @genres = Genre.order("name asc")
     @instruments = Instrument.order("name asc")
     @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
+
     if request.xhr?
       render @users
     end
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
     if @user.geocoded?
       @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at")
     end
+    @events = @user.get_events(@user.songkick_username)
   end
 
   def edit
@@ -38,18 +40,28 @@ class UsersController < ApplicationController
     params[:user][:genre_ids] ||= []
 
     @user = @current_user
-    if @user.update_attributes(params[:user])
+    @instruments = Instrument.order("name asc")
+    @genres = Genre.order('name asc')
 
-      if params[:user][:avatar].blank?
+    # if @user.update_attributes(params[:user])
+    #   if params[:user][:avatar].blank?
+    #     gflash :success => true
+    #     redirect_to edit_user_path(@user)
+    #   else
+    #     gflash :notice => true
+    #     redirect_to user_crop_path(@user)
+    #     #render 'crop'
+    #   end
+    # else
+    #   gflash :error => true
+    #   render :edit
+    # end
+    if @user.update_attributes(params[:user])
         gflash :success => true
-        redirect_to :back
-      else
-        gflash :notice => true
-        render 'crop'
-      end
+        redirect_to edit_user_path(@user)
     else
       gflash :error => true
-      render 'edit'
+      render :edit
     end
   end
 
@@ -57,7 +69,7 @@ class UsersController < ApplicationController
     @friendships = @current_user.friendships
   end
 
-
-
-
+  def crop
+    @user = @current_user
+  end
 end

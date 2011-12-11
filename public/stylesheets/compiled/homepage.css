@@ -24,7 +24,7 @@ body {
   background: #333333 url(/images/backgrounds/bg-footer.gif);
   font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
   font-size: 100%;
-  color: #666;
+  color: #333;
 }
 
 /* line 23, ../../../app/stylesheets/_base.scss */
@@ -139,42 +139,42 @@ strong {
 }
 
 /* FOLDED CORNER */
-/* CSS ARROWS
----------------------------------------- */
+/* CSS ARROWS */
+/*---------------------------------------- */
 /* ANIMATION
----------------------------------------- */
+/* ---------------------------------------- */
 @-webkit-keyframes fadeIn {
-  /* line 177, ../../../app/stylesheets/_base.scss */
+  /* line 175, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 178, ../../../app/stylesheets/_base.scss */
+  /* line 176, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes slidingFromLeft {
-  /* line 182, ../../../app/stylesheets/_base.scss */
+  /* line 180, ../../../app/stylesheets/_base.scss */
   0% {
     left: -1440px;
     opacity: 0;
   }
 
-  /* line 183, ../../../app/stylesheets/_base.scss */
+  /* line 181, ../../../app/stylesheets/_base.scss */
   50% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 184, ../../../app/stylesheets/_base.scss */
+  /* line 182, ../../../app/stylesheets/_base.scss */
   60% {
     left: 50px;
     opacity: 0.5;
   }
 
-  /* line 185, ../../../app/stylesheets/_base.scss */
+  /* line 183, ../../../app/stylesheets/_base.scss */
   100% {
     left: 0;
     opacity: 1;
@@ -182,25 +182,25 @@ strong {
 }
 
 @-webkit-keyframes movingarrow {
-  /* line 188, ../../../app/stylesheets/_base.scss */
+  /* line 186, ../../../app/stylesheets/_base.scss */
   0% {
     top: -200px;
     opacity: 0;
   }
 
-  /* line 189, ../../../app/stylesheets/_base.scss */
+  /* line 187, ../../../app/stylesheets/_base.scss */
   50% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 190, ../../../app/stylesheets/_base.scss */
+  /* line 188, ../../../app/stylesheets/_base.scss */
   60% {
     top: 20px;
     opacity: 0.5;
   }
 
-  /* line 191, ../../../app/stylesheets/_base.scss */
+  /* line 189, ../../../app/stylesheets/_base.scss */
   100% {
     top: 0;
     opacity: 1;
@@ -208,12 +208,12 @@ strong {
 }
 
 @-webkit-keyframes opacity {
-  /* line 194, ../../../app/stylesheets/_base.scss */
+  /* line 192, ../../../app/stylesheets/_base.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 195, ../../../app/stylesheets/_base.scss */
+  /* line 193, ../../../app/stylesheets/_base.scss */
   100% {
     opacity: 1;
   }
@@ -265,48 +265,49 @@ h2 {
 
 /* line 34, ../../../app/stylesheets/_typography.scss */
 h3 {
-  font-size: 18px;
-  margin-top: 9px;
-  margin-bottom: 9px;
-  color: #999;
+  font-size: 13px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #333;
 }
 
-/* line 40, ../../../app/stylesheets/_typography.scss */
+/* line 41, ../../../app/stylesheets/_typography.scss */
 h4 {
-  font-size: 15px;
+  font-size: 11px;
   margin-top: 9px;
   margin-bottom: 9px;
 }
 
-/* line 45, ../../../app/stylesheets/_typography.scss */
+/* line 46, ../../../app/stylesheets/_typography.scss */
 h5 {
   font-size: 13px;
   font-weight: bold;
 }
 
-/* line 49, ../../../app/stylesheets/_typography.scss */
+/* line 50, ../../../app/stylesheets/_typography.scss */
 h6 {
   font-size: 13px;
 }
 
-/* line 52, ../../../app/stylesheets/_typography.scss */
+/* line 53, ../../../app/stylesheets/_typography.scss */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child {
   margin-top: 0;
 }
 
-/* line 55, ../../../app/stylesheets/_typography.scss */
+/* line 56, ../../../app/stylesheets/_typography.scss */
 p, pre, address {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 60, ../../../app/stylesheets/_typography.scss */
+/* line 61, ../../../app/stylesheets/_typography.scss */
 abbr, code, kbd, samp, small, var {
   line-height: 15px;
 }
 
-/* line 63, ../../../app/stylesheets/_typography.scss */
+/* line 64, ../../../app/stylesheets/_typography.scss */
 ul, ol, dl, dialog {
   font-size: 13px;
   line-height: 18px;
@@ -314,94 +315,94 @@ ul, ol, dl, dialog {
   margin: 18px 0 18px;
 }
 
-/* line 69, ../../../app/stylesheets/_typography.scss */
+/* line 70, ../../../app/stylesheets/_typography.scss */
 ul {
   list-style: disc outside;
 }
 
-/* line 73, ../../../app/stylesheets/_typography.scss */
+/* line 74, ../../../app/stylesheets/_typography.scss */
 ol {
   list-style: decimal outside;
 }
 
-/* line 77, ../../../app/stylesheets/_typography.scss */
+/* line 78, ../../../app/stylesheets/_typography.scss */
 li ul, li ol {
   margin-left: 18px;
   margin-top: 18px;
   margin-bottom: 0;
 }
 
-/* line 82, ../../../app/stylesheets/_typography.scss */
+/* line 83, ../../../app/stylesheets/_typography.scss */
 ol.lower_alpha {
   list-style: lower-alpha outside;
 }
 
-/* line 86, ../../../app/stylesheets/_typography.scss */
+/* line 87, ../../../app/stylesheets/_typography.scss */
 form, legend, label {
   font-size: 13px;
   line-height: 18px;
 }
-/* line 89, ../../../app/stylesheets/_typography.scss */
+/* line 90, ../../../app/stylesheets/_typography.scss */
 form p, legend p, label p {
   text-indent: 0  !important;
 }
 
-/* line 92, ../../../app/stylesheets/_typography.scss */
+/* line 93, ../../../app/stylesheets/_typography.scss */
 legend {
   position: relative;
   top: 5px;
 }
 
-/* line 96, ../../../app/stylesheets/_typography.scss */
+/* line 97, ../../../app/stylesheets/_typography.scss */
 input, textarea {
   font-size: 13px;
 }
 
-/* line 99, ../../../app/stylesheets/_typography.scss */
+/* line 100, ../../../app/stylesheets/_typography.scss */
 table {
   font-size: 13px;
 }
 
-/* line 102, ../../../app/stylesheets/_typography.scss */
+/* line 103, ../../../app/stylesheets/_typography.scss */
 caption {
   font-size: 13px;
   line-height: 18px;
   position: relative;
 }
 
-/* line 107, ../../../app/stylesheets/_typography.scss */
+/* line 108, ../../../app/stylesheets/_typography.scss */
 hr {
   position: relative;
   height: 4px;
   margin: 18px 0 14px 0;
 }
 
-/* line 114, ../../../app/stylesheets/_typography.scss */
+/* line 115, ../../../app/stylesheets/_typography.scss */
 li {
   margin-bottom: 18px;
 }
 
-/* line 117, ../../../app/stylesheets/_typography.scss */
+/* line 118, ../../../app/stylesheets/_typography.scss */
 h2 {
   font-weight: normal;
 }
 
-/* line 120, ../../../app/stylesheets/_typography.scss */
+/* line 121, ../../../app/stylesheets/_typography.scss */
 p {
   font-size: 13px;
   padding-bottom: 18px;
 }
 
-/* line 124, ../../../app/stylesheets/_typography.scss */
+/* line 125, ../../../app/stylesheets/_typography.scss */
 p + p {
   text-indent: 1.5em;
 }
-/* line 126, ../../../app/stylesheets/_typography.scss */
+/* line 127, ../../../app/stylesheets/_typography.scss */
 p + p.no-indent {
   text-indent: 0;
 }
 
-/* line 130, ../../../app/stylesheets/_typography.scss */
+/* line 131, ../../../app/stylesheets/_typography.scss */
 .field p + p {
   text-indent: 0;
 }
@@ -497,7 +498,17 @@ strong {
   font-weight: bolder;
 }
 
-/* line 47, ../../../app/stylesheets/homepage.scss */
+/* line 45, ../../../app/stylesheets/homepage.scss */
+h4 {
+  font-size: 14px;
+}
+
+/* line 48, ../../../app/stylesheets/homepage.scss */
+body {
+  color: #666;
+}
+
+/* line 51, ../../../app/stylesheets/homepage.scss */
 h1#main_title {
   text-indent: -9990px;
   margin-top: -50px;
@@ -505,40 +516,42 @@ h1#main_title {
   /* keep consistent baseline */
 }
 
-/* line 52, ../../../app/stylesheets/homepage.scss */
+/* line 56, ../../../app/stylesheets/homepage.scss */
 .homepage #container {
   padding: 16px auto 0;
 }
 
-/* line 55, ../../../app/stylesheets/homepage.scss */
+/* line 59, ../../../app/stylesheets/homepage.scss */
 h2.moto {
   font-size: 26px;
   color: #7bb3cf  !important;
   font-weight: normal;
   text-shadow: black 0 1px 1px;
 }
-/* line 60, ../../../app/stylesheets/homepage.scss */
+/* line 64, ../../../app/stylesheets/homepage.scss */
 h2.moto strong {
   color: #7bb3cf  !important;
 }
 
-/* line 65, ../../../app/stylesheets/homepage.scss */
+/* line 69, ../../../app/stylesheets/homepage.scss */
 .homepage h3 {
   font-size: 24px;
   padding: 45px 0;
-  text-align: center;
+  text-align: left;
   margin: 0;
+  font-weight: normal;
   background: transparent url('/images/homepage/home-separator.png?1319722016') center top no-repeat;
   color: #828282  !important;
 }
-/* line 73, ../../../app/stylesheets/homepage.scss */
+/* line 78, ../../../app/stylesheets/homepage.scss */
 .homepage h4 {
   color: #f5bd14  !important;
+  font-size: 14px;
   text-shadow: black 0 1px 1px !important;
   margin-bottom: 9px !important;
 }
 
-/* line 78, ../../../app/stylesheets/homepage.scss */
+/* line 84, ../../../app/stylesheets/homepage.scss */
 #music_notes {
   background: transparent url("/images/homepage/music-notes.png") center -40px repeat-x;
   top: 0;
@@ -552,30 +565,30 @@ h2.moto strong {
   -webkit-animation: slidingFromLeft 4s;
 }
 
-/* line 93, ../../../app/stylesheets/homepage.scss */
+/* line 99, ../../../app/stylesheets/homepage.scss */
 .homepage.logged_out #inner_content {
   padding: 0;
 }
 
-/* line 96, ../../../app/stylesheets/homepage.scss */
+/* line 102, ../../../app/stylesheets/homepage.scss */
 #inner_halo {
   position: relative;
   background: transparent url("/images/homepage/halo.png") center bottom no-repeat;
 }
 
-/* line 100, ../../../app/stylesheets/homepage.scss */
+/* line 106, ../../../app/stylesheets/homepage.scss */
 #main {
   text-align: center;
   padding: 20px;
 }
 
-/* line 105, ../../../app/stylesheets/homepage.scss */
+/* line 111, ../../../app/stylesheets/homepage.scss */
 #logo_home, #main-icon {
   width: 80%;
   margin: 0 auto;
 }
 
-/* line 110, ../../../app/stylesheets/homepage.scss */
+/* line 116, ../../../app/stylesheets/homepage.scss */
 #logo_home {
   margin-bottom: 38px;
   -webkit-backface-visibility: hidden;
@@ -600,7 +613,7 @@ h2.moto strong {
   animation-fill-mode: both;
 }
 
-/* line 138, ../../../app/stylesheets/homepage.scss */
+/* line 144, ../../../app/stylesheets/homepage.scss */
 #main-icon {
   margin-bottom: 10px;
   -webkit-animation-duration: 1s;
@@ -621,13 +634,13 @@ h2.moto strong {
   animation-fill-mode: both;
 }
 
-/* line 161, ../../../app/stylesheets/homepage.scss */
+/* line 167, ../../../app/stylesheets/homepage.scss */
 #header {
   background: none;
   background-color: #041021;
 }
 
-/* line 166, ../../../app/stylesheets/homepage.scss */
+/* line 172, ../../../app/stylesheets/homepage.scss */
 .signup_button {
   height: 45px;
   line-height: 45px;
@@ -669,7 +682,7 @@ h2.moto strong {
   position: relative;
   z-index: 20;
 }
-/* line 190, ../../../app/stylesheets/homepage.scss */
+/* line 196, ../../../app/stylesheets/homepage.scss */
 .signup_button:hover {
   color: #372f12;
   -moz-transform: scale(1.02, 1.02);
@@ -679,24 +692,24 @@ h2.moto strong {
   transform: scale(1.02, 1.02);
 }
 
-/* line 196, ../../../app/stylesheets/homepage.scss */
+/* line 202, ../../../app/stylesheets/homepage.scss */
 .features_columns {
   background-color: #041021;
-  padding-bottom: 48px;
+  padding: 0 20px 48px;
 }
-/* line 199, ../../../app/stylesheets/homepage.scss */
+/* line 205, ../../../app/stylesheets/homepage.scss */
 .features_columns .columns {
   padding: 3%;
 }
 
-/* line 204, ../../../app/stylesheets/homepage.scss */
+/* line 210, ../../../app/stylesheets/homepage.scss */
 .FB_fan iframe {
   margin: 0 auto;
   width: 300px;
   margin-left: 14%;
 }
 
-/* line 210, ../../../app/stylesheets/homepage.scss */
+/* line 216, ../../../app/stylesheets/homepage.scss */
 .note_circle {
   width: 84px;
   height: 41px;
@@ -704,7 +717,7 @@ h2.moto strong {
   background: transparent url('/images/homepage/note-circle.png?1319722016') center bottom no-repeat;
 }
 
-/* line 218, ../../../app/stylesheets/homepage.scss */
+/* line 224, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .testimonial {
   font-size: 13px;
   background-color: #030c1a;
@@ -717,20 +730,20 @@ h2.moto strong {
   padding: 18px;
   margin: 0 10px 18px;
 }
-/* line 225, ../../../app/stylesheets/homepage.scss */
+/* line 231, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .text {
   font-size: 12px;
   opacity: 0.8;
   padding-left: 50px;
 }
-/* line 230, ../../../app/stylesheets/homepage.scss */
+/* line 236, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .author {
   font-weight: bold;
   margin-bottom: 9px;
   color: #496781;
   text-shadow: black 0 1px 1px;
 }
-/* line 236, ../../../app/stylesheets/homepage.scss */
+/* line 242, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -742,256 +755,29 @@ h2.moto strong {
   border-radius: 3px;
 }
 
-/*  #header {
-    background:none;
-    background-color:#000; }
-
-  #content {
-    background: $blue_dark;
-    color: $header-data-color;
-    @include background-image(linear-gradient($blue_light, $blue_dark)); }
-
-  .halo {
-    text-align:center;
-    background: transparent url("/images/backgrounds/halo.png") center top no-repeat;
-    min-height: 400px; }
-
-  #inner_content {
-    background: transparent url("/images/backgrounds/bg-music-notes.png") center top no-repeat;
-    padding: 0;}
-
-  .icon_and_logo {
-    @extend .centered;
-    width: 40%;
-    padding-top: 20px;}
-
-  #home_moto {
-    text-align:center;
-    margin-top: 20px;
-    line-height: 1.4em;
-    color: #00496d;
-    @include inset(#bababa);
-    font-size: 2.6em; }
-
-  .signup_button {
-    -webkit-animation:slidingFromLeft 2s ;
-    @extend .centered;
-    @include opacity(0.9);
-    display:block;
-    height: 70px;
-    width: 220px;
-    line-height: 65px;
-    margin-top: 20px;
-    text-transform:uppercase;
-    a {
-      font-size: 0.65em;
-      text-decoration:none;
-      color:#604f1b;
-      position: relative;
-      &:hover {
-        color: lighten(#604f1b, 10%); }
-      &:active {
-        top: 1px; }}
-
-    @include inset(#FFF);
-    font-weight:bold;
-    font-size: 1.5em;
-    position:relative;
-    background:transparent image-url('/images/buttons/signup_button/signup_bc.png') left top repeat-x;
-    $arrow-size: 25px;
-
-    .bl {
-      left: 0 - $arrow-size;
-      position:absolute;
-      width: $arrow-size;
-      height: 70px;
-      background:transparent image-url('/images/buttons/signup_button/signup_bl.png') left top no-repeat;
-      display:block; }
-    .br {
-      @extend .bl;
-      left: 100%;
-      right: 0 - $arrow-size ;
-      background:transparent image-url('/images/buttons/signup_button/signup_br.png') left top no-repeat; }
-  }
-  #how_it_works {
-    background: #efefef;
-    border-top: 1px solid #fff;
-    padding: 30px 20px 20px;
-    font-size: 12px;
-    color:#666;
-
-    #steps {
-      display:inline;
-      float:left;
-      width: 350px;
-      width: 53%;
-      margin-left: 2%;
-      }
-
-    #home_testimonials {
-      display:inline;
-      float:left;
-      width: 45%;
-      ul {
-        list-style: none;
-        padding-left: 0;
-        font-size: 10px;
-        line-height: 1.48em;
-        li {
-          margin-bottom: 15px;
-          display:block;
-          vertical-align: middle;
-          @include inset(#fff);
-          padding: 10px;
-          background-color:#fff;
-          @include box-shadow(#666, 0, 0, 3px, 1px inset);
-          @include border-radius(5px);
-
-          .text {
-            font-size: 11px;
-            padding-left: 50px;
-          }
-          .author {
-            font-weight:bold;
-          }
-          .avatar {
-            float:left;
-            border: 3px solid #ccc;
-            @include border-radius(3px); }}
-      }
-    }
-  }
-
-
-#user_forms {
-  width: 35%;
-  padding: 20px;
-  margin: 20px auto;
-  background:#efefef;
-  color:#666;
-  @include border-radius(8px);
-  @include single-box-shadow(#666, 0, 0, 5px);
-}
-
-.step {
-  float: left;
-  width: 30%;
-  min-width: 160px;
-  margin-bottom: 20px;
-  font-size: 1.3em;
-  font-weight:bold;
-  color:#828282;
-  position:relative;
-  @include inset(#fff);
-  top: -37px;
-  .app_sample {
-    display: block;
-    position:relative;
-    width: 154px; }
-
-  .app_sample_image {
-    width: 130px;
-    height: 130px;
-    border: 5px solid desaturate(lighten($blue_basic, 40%), 30%);
-    background-color:#FFF;
-    @include border-radius(4px); }
-
-  .flag {
-    text-align:center;
-    color:#fff;
-    @include  inset(#000);
-    font-size: 22px;
-    line-height: 62px;
-    width: 49px;
-    height: 62px;
-    margin-bottom: 10px;
-    background:transparent image-url('/images/backgrounds/flag.png') center center no-repeat;
-  }
-  .zoom_icon {
-    position:absolute;
-    top:-10px;
-    right:0;
-    width: 31px;
-    height: 31px;
-    background:transparent image-url('/images/icons/zoom-icon.png') center center no-repeat; }
-}*/
 /*480px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 480px) {
-  /* 1.ROOT */
-  /* 2.HEADINGS */
-  /*.logged_out {
-
-      .icon_and_logo {
-        width: 50%; }
-
-      .halo {
-        min-height: 280px;
-        padding-bottom: 30px;
-        margin-bottom: 0 ; }
-
-      #user_forms {
-        width: 80%;
-        margin: 20px auto; }
-
-      .signup_button a {
-        font-size: 0.55em; }
-
-      #user_nav {
-        margin-top:0;
-        text-align:left;
-        a {
-          text-align:center;
-          display:block;
-          float:left;
-          width: 33%;
-          margin: 0; }}
-      #logo {
-        width: 30%;
-        margin: 0 auto 15px;
-        float: none; }
-      #home_moto {
-        line-height: 1.2em;
-        font-size: 1.4em ;
-        padding: 0 10%; }
-    }
-  */
-  /* 3.TYPOGRAPHY */
-  /*  h1 {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-    }*/
-  /* 4.LINKS */
-  /* 5.FIGURES & IMAGES */
-  /* 6.TABLES */
-  /* 7.FORMS */
-  /* 8.BANNER */
-  /* 9.NAVIGATION */
-  /* 10.CONTENT */
-  /* 11.MAIN */
-  /* 12.COMPLIMENTARY */
-  /* 13.CONTENTINFO */
-  /* 14.GLOBAL OBJECTS */
-  /* 15.VENDOR-SPECIFIC */
-  /* 16.TEMPLATE SPECIFICS */
-  /* 17.MODERNIZR */
-}
 /*/mediaquery*/
 /*768px __________________________________________________________________________________________________________ */
 @media only screen and (min-width: 768px) {
-  /* line 488, ../../../app/stylesheets/homepage.scss */
+  /* line 258, ../../../app/stylesheets/homepage.scss */
   .homepage h2.moto {
     font-size: 41px;
   }
 
-  /* line 491, ../../../app/stylesheets/homepage.scss */
+  /* line 263, ../../../app/stylesheets/homepage.scss */
+  .homepage h3 {
+    text-align: center;
+  }
+
+  /* line 266, ../../../app/stylesheets/homepage.scss */
   .inner_block {
     margin: 0 auto;
   }
-  /* line 494, ../../../app/stylesheets/homepage.scss */
+  /* line 269, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_feature {
     max-width: 960px;
   }
-  /* line 496, ../../../app/stylesheets/homepage.scss */
+  /* line 271, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_feature .columns {
     width: 27.333%;
     padding: 3%;
@@ -999,11 +785,11 @@ h2.moto strong {
     display: inline;
     padding-top: 0;
   }
-  /* line 501, ../../../app/stylesheets/homepage.scss */
+  /* line 276, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_testimonials {
     max-width: 620px;
   }
-  /* line 503, ../../../app/stylesheets/homepage.scss */
+  /* line 278, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_testimonials .t_column {
     width: 50%;
     padding: 0;
@@ -1013,67 +799,6 @@ h2.moto strong {
 }
 /*/mediaquery*/
 /*992px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 992px) {
-  /* 1.ROOT */
-  /* 2.HEADINGS */
-  /*  .icon_and_logo {
-      width: 60%;}*/
-  /* 3.TYPOGRAPHY */
-  /* 4.LINKS */
-  /* 5.FIGURES & IMAGES */
-  /* 6.TABLES */
-  /* 7.FORMS */
-  /* 8.BANNER */
-  /* 9.NAVIGATION */
-  /* 10.CONTENT */
-  /* 11.MAIN */
-  /* 12.COMPLIMENTARY */
-  /* 13.CONTENTINFO */
-  /* 14.GLOBAL OBJECTS */
-  /* 15.VENDOR-SPECIFIC */
-  /* 16.TEMPLATE SPECIFICS */
-  /* 17.MODERNIZR */
-}
 /*/mediaquery*/
 /*1382px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 1382px) {
-  /* 1.ROOT */
-  /* 2.HEADINGS */
-  /* 3.TYPOGRAPHY */
-  /* 4.LINKS */
-  /* 5.FIGURES & IMAGES */
-  /* 6.TABLES */
-  /* 7.FORMS */
-  /* 8.BANNER */
-  /* 9.NAVIGATION */
-  /* 10.CONTENT */
-  /* 11.MAIN */
-  /* 12.COMPLIMENTARY */
-  /* 13.CONTENTINFO */
-  /* 14.GLOBAL OBJECTS */
-  /* 15.VENDOR-SPECIFIC */
-  /* 16.TEMPLATE SPECIFICS */
-  /* 17.MODERNIZR */
-}
-/*/mediaquery*/
-/*2x __________________________________________________________________________________________________________ */
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-  /* 1.ROOT */
-  /* 2.HEADINGS */
-  /* 3.TYPOGRAPHY */
-  /* 4.LINKS */
-  /* 5.FIGURES & IMAGES */
-  /* 6.TABLES */
-  /* 7.FORMS */
-  /* 8.BANNER */
-  /* 9.NAVIGATION */
-  /* 10.CONTENT */
-  /* 11.MAIN */
-  /* 12.COMPLIMENTARY */
-  /* 13.CONTENTINFO */
-  /* 14.GLOBAL OBJECTS */
-  /* 15.VENDOR-SPECIFIC */
-  /* 16.TEMPLATE SPECIFICS */
-  /* 17.MODERNIZR */
-}
 /*/mediaquery*/

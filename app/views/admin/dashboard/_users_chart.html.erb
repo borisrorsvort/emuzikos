@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <td><%= users.count %></td>
-      <td><%= users_complete_profile.count %> (<%= ((users_complete_profile.count.to_f / users.count.to_f) * 100).round(2) %>%)</td>
+      <td><%= users_complete_profile %> (<%= ((users_complete_profile.to_f / users.count.to_f) * 100).round(2) %>%)</td>
       <td><%= signed_in_users %></td>
       <td><%= users_in_listing %></td>
     </tr>
@@ -42,17 +42,12 @@
           enableMouseTracking: true
         }
       },
-      series: [{
-        name: "Profile completed same day",
-        pointInterval: <%= 1.day * 1000 %>,
-        pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,
-        data: <%= (4.weeks.ago.to_date..Date.today).map { |date| User.profiles_completed.total_on(date).to_f}.inspect %>
-       },
+      series: [
        {
          name: "Total Users",
          pointInterval: <%= 1.day * 1000 %>,
-         pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,
-         data: <%= (4.weeks.ago.to_date..Date.today).map { |date| User.total_on(date).to_f}.inspect %>
+         pointStart: <%= 5.weeks.ago.at_midnight.to_i * 1000 %>,
+         data: <%= (5.weeks.ago.to_date..Date.today).map { |date| User.total_on(date).to_f}.inspect %>
        }]
     });
   });

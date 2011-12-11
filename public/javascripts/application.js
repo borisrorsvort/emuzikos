@@ -129,12 +129,23 @@ $(document).ready(function() {
   });
 
   $('#search_form .button').click(function() {
-    $('#inner_content').prepend("<div class='centered' style='text-align:center;'><p>Loading users<br><img width='220' height='19' src='/images/icons/ajax-loader-bar.gif'/></p></div>")
-    $('.users_list').addClass('fadeOutDownBig');
+    $('.progress_bar_wrapper').removeClass('hidden');
+    $('.users_list').css('opacity', 0.5);
     $(this).closest('form').submit();
     $(this).attr("disabled", true);
   });
 
   $('.habtm').click_checkbox();
+
+  // $('#sub_nav ul').mobileSelect({
+  //   autoHide: true, // Hide the ul automatically
+  //   defaultOption: "Go to...", // The default select option
+  //   deviceWidth: 768 // The select will be added for screensizes smaller than this
+  // });
+  // $('.inner_footer .left_links').mobileSelect({
+  //   autoHide: true, // Hide the ul automatically
+  //   defaultOption: "Go to...", // The default select option
+  //   deviceWidth: 768 // The select will be added for screensizes smaller than this
+  // });
 
 });

@@ -13,6 +13,7 @@ doc/api
 doc/app
 doc/plugins
 db/schema.rb
+coverage/**/*
 public/system/***/**/*
 public/photos/***/**/*
 .rvmrc
