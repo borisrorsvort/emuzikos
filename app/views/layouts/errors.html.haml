@@ -7,11 +7,8 @@
 
   %section#header
     #logo
-      = link_to((@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home')) do
+      = link_to root_path, :title => t(:'tooltips.back_to_home') do
         = image_tag 'logo.png', :alt => "Emuzikos - Musicians search plateform"
-
-    #user_nav
-      = render "/layouts/top_nav", :current_user => @current_user
     .clear
 
   #container
