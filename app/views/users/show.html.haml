@@ -8,7 +8,12 @@
 
 - content_for :scripts do
   :javascript
-    $( "#tabs" ).tabs();
+    $( "#tabs" ).tabs({
+    select: function(event, ui) {
+    window.location.hash = ui.tab.hash;
+    }
+    });
+
 
 -if current_user
   - content_for :sub_nav do
