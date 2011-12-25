@@ -176,3 +176,33 @@ $sub_nav_topbottom_padding: 18px;
  margin-left: 0;
  width: 100%;
 }
+
+// IE overlay
+#ie_warning {
+  display: block !important;
+  background: #fff;
+  width: 90%;
+  height: 400px;
+  z-index: 10000;
+  padding: 10%;
+  .inner_warning_wrapper {
+    width:  80%;
+    margin: 0 auto;
+    h2 {
+      color: #333;
+      text-shadow: none !important;
+    }
+    li {
+      float: left;
+      margin-right:  30px;
+      list-style-type: none;
+      a {
+        text-decoration: none;
+      }
+      img {
+        border: 2px #ccc solid;
+      }
+    }
+  }
+}
+
