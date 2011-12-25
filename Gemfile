@@ -36,6 +36,8 @@ gem "hominid"
 gem 'geocoder'
 gem 'gmaps4rails'
 
+gem 'pg'
+
 group :development, :test do
   gem 'rails-footnotes', '>= 3.7.5.rc4'
   gem "hirb"
