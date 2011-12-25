@@ -7,7 +7,8 @@ $sub_nav_topbottom_padding: 18px;
   padding: 18px 20px;
   background: $blue_dark;
   color: $header-data-color;
-  @include background-image(linear-gradient($blue_light, $blue_dark));
+  //@include background-image(linear-gradient($blue_light, $blue_dark));
+  @include background-image(linear-gradient(#333, #111));
   a {
     @include link-colors($header-data-color);
     @include hover-link;}
