@@ -3729,13 +3729,13 @@ p + p.no-indent {
   padding: 18px 20px;
   background: #157ebe;
   color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #34afe0), color-stop(100%, #157ebe));
-  background-image: -webkit-linear-gradient(#34afe0, #157ebe);
-  background-image: -moz-linear-gradient(#34afe0, #157ebe);
-  background-image: -o-linear-gradient(#34afe0, #157ebe);
-  background-image: linear-gradient(#34afe0, #157ebe);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #111111));
+  background-image: -webkit-linear-gradient(#333333, #111111);
+  background-image: -moz-linear-gradient(#333333, #111111);
+  background-image: -o-linear-gradient(#333333, #111111);
+  background-image: linear-gradient(#333333, #111111);
 }
-/* line 11, ../../../app/stylesheets/_layout.scss */
+/* line 12, ../../../app/stylesheets/_layout.scss */
 #header a {
   color: white;
   text-decoration: none;
@@ -3745,18 +3745,18 @@ p + p.no-indent {
   text-decoration: underline;
 }
 
-/* line 16, ../../../app/stylesheets/_layout.scss */
+/* line 17, ../../../app/stylesheets/_layout.scss */
 #container {
   margin: 0 auto;
 }
 
-/* line 20, ../../../app/stylesheets/_layout.scss */
+/* line 21, ../../../app/stylesheets/_layout.scss */
 #content {
   float: left;
   width: 100%;
 }
 
-/* line 25, ../../../app/stylesheets/_layout.scss */
+/* line 26, ../../../app/stylesheets/_layout.scss */
 #main_nav {
   position: relative;
   float: left;
@@ -3764,19 +3764,19 @@ p + p.no-indent {
   width: 100%;
   background: #333333;
 }
-/* line 31, ../../../app/stylesheets/_layout.scss */
+/* line 32, ../../../app/stylesheets/_layout.scss */
 #main_nav ul {
   margin: 0;
   display: block;
   width: 100%;
   top: 0;
 }
-/* line 36, ../../../app/stylesheets/_layout.scss */
+/* line 37, ../../../app/stylesheets/_layout.scss */
 #main_nav ul li {
   margin: 0;
 }
 
-/* line 39, ../../../app/stylesheets/_layout.scss */
+/* line 40, ../../../app/stylesheets/_layout.scss */
 #sub_nav {
   background-color: #e7e7e7;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e7e7e7), color-stop(100%, #d0d0d0));
@@ -3787,31 +3787,31 @@ p + p.no-indent {
   padding: 18px 20px;
   border-bottom: #fff 1px solid;
 }
-/* line 44, ../../../app/stylesheets/_layout.scss */
+/* line 45, ../../../app/stylesheets/_layout.scss */
 #sub_nav ul {
   padding-left: 0;
   top: 0;
 }
-/* line 48, ../../../app/stylesheets/_layout.scss */
+/* line 49, ../../../app/stylesheets/_layout.scss */
 #sub_nav ul li {
   position: relative;
   padding: 0;
   margin: 0 2px 0;
 }
 
-/* line 54, ../../../app/stylesheets/_layout.scss */
+/* line 55, ../../../app/stylesheets/_layout.scss */
 #sub_nav #sub_sections, #sub_nav #actions_set {
   display: block;
   overflow: visible;
   padding: 0;
   margin: 0;
 }
-/* line 59, ../../../app/stylesheets/_layout.scss */
+/* line 60, ../../../app/stylesheets/_layout.scss */
 #sub_nav #sub_sections li, #sub_nav #actions_set li {
   margin-bottom: 10px;
   list-style: disc inside;
 }
-/* line 63, ../../../app/stylesheets/_layout.scss */
+/* line 64, ../../../app/stylesheets/_layout.scss */
 #sub_nav #sub_sections a, #sub_nav #actions_set a {
   text-align: left;
   color: #464646;
@@ -3821,12 +3821,12 @@ p + p.no-indent {
   display: block;
   overflow: visible;
 }
-/* line 71, ../../../app/stylesheets/_layout.scss */
+/* line 72, ../../../app/stylesheets/_layout.scss */
 #sub_nav #sub_sections a.current, #sub_nav #actions_set a.current {
   font-weight: bold;
 }
 
-/* line 74, ../../../app/stylesheets/_layout.scss */
+/* line 75, ../../../app/stylesheets/_layout.scss */
 .top_sub_nav_arrow {
   display: none;
   font-size: 0px;
@@ -3841,58 +3841,58 @@ p + p.no-indent {
   bottom: -18px;
 }
 
-/* line 86, ../../../app/stylesheets/_layout.scss */
+/* line 87, ../../../app/stylesheets/_layout.scss */
 #sub_nav #actions_set a {
   display: inline-block;
 }
-/* line 90, ../../../app/stylesheets/_layout.scss */
+/* line 91, ../../../app/stylesheets/_layout.scss */
 #sub_nav #actions_set .button.back.profile {
   margin-right: 5px;
 }
-/* line 93, ../../../app/stylesheets/_layout.scss */
+/* line 94, ../../../app/stylesheets/_layout.scss */
 #sub_nav #actions_set .button.contact {
   margin-left: 5px;
 }
-/* line 96, ../../../app/stylesheets/_layout.scss */
+/* line 97, ../../../app/stylesheets/_layout.scss */
 #sub_nav #actions_set .button.add_to_contact_list {
   width: 2em;
 }
-/* line 98, ../../../app/stylesheets/_layout.scss */
+/* line 99, ../../../app/stylesheets/_layout.scss */
 #sub_nav #actions_set .button.add_to_contact_list .ui-button-text {
   position: relative;
   text-indent: -99999px;
   padding: .35em;
 }
-/* line 103, ../../../app/stylesheets/_layout.scss */
+/* line 104, ../../../app/stylesheets/_layout.scss */
 #sub_nav #actions_set .ui-button-text {
   font-size: 0.80em;
   padding: .4em 1em .4em 2.4em;
 }
 
-/* line 109, ../../../app/stylesheets/_layout.scss */
+/* line 110, ../../../app/stylesheets/_layout.scss */
 #footer {
   font-size: 13px;
   padding: 39px;
 }
-/* line 113, ../../../app/stylesheets/_layout.scss */
+/* line 114, ../../../app/stylesheets/_layout.scss */
 #footer .inner_footer {
   background-color: #011120;
 }
-/* line 116, ../../../app/stylesheets/_layout.scss */
+/* line 117, ../../../app/stylesheets/_layout.scss */
 #footer.light .inner_footer {
   padding: 18px;
 }
-/* line 120, ../../../app/stylesheets/_layout.scss */
+/* line 121, ../../../app/stylesheets/_layout.scss */
 #footer .left_links {
   float: left;
   width: 100%;
 }
-/* line 124, ../../../app/stylesheets/_layout.scss */
+/* line 125, ../../../app/stylesheets/_layout.scss */
 #footer .copyright {
   margin-top: 20px;
   float: left;
 }
-/* line 128, ../../../app/stylesheets/_layout.scss */
+/* line 129, ../../../app/stylesheets/_layout.scss */
 #footer a {
   margin: 0 20px 15px 0;
   display: block;
@@ -3906,7 +3906,7 @@ p + p.no-indent {
 
 /* HOMEPAGE
 ---------------------------------------- */
-/* line 140, ../../../app/stylesheets/_layout.scss */
+/* line 141, ../../../app/stylesheets/_layout.scss */
 .centered_grid {
   max-width: 600px;
   padding: 0 20px;
@@ -3915,7 +3915,7 @@ p + p.no-indent {
 
 /* PROFILE SHOW
 ---------------------------------------- */
-/* line 150, ../../../app/stylesheets/_layout.scss */
+/* line 151, ../../../app/stylesheets/_layout.scss */
 .left_drawer {
   width: 100%;
   -webkit-backface-visibility: hidden;
@@ -3940,10 +3940,44 @@ p + p.no-indent {
   animation-fill-mode: both;
 }
 
-/* line 175, ../../../app/stylesheets/_layout.scss */
+/* line 176, ../../../app/stylesheets/_layout.scss */
 .right_drawer {
   margin-left: 0;
   width: 100%;
+}
+
+/* line 182, ../../../app/stylesheets/_layout.scss */
+#ie_warning {
+  display: block !important;
+  background: #fff;
+  width: 90%;
+  height: 400px;
+  z-index: 10000;
+  padding: 10%;
+}
+/* line 189, ../../../app/stylesheets/_layout.scss */
+#ie_warning .inner_warning_wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+/* line 192, ../../../app/stylesheets/_layout.scss */
+#ie_warning .inner_warning_wrapper h2 {
+  color: #333;
+  text-shadow: none !important;
+}
+/* line 196, ../../../app/stylesheets/_layout.scss */
+#ie_warning .inner_warning_wrapper li {
+  float: left;
+  margin-right: 30px;
+  list-style-type: none;
+}
+/* line 200, ../../../app/stylesheets/_layout.scss */
+#ie_warning .inner_warning_wrapper li a {
+  text-decoration: none;
+}
+/* line 203, ../../../app/stylesheets/_layout.scss */
+#ie_warning .inner_warning_wrapper li img {
+  border: 2px #ccc solid;
 }
 
 /* line 1, ../../../app/stylesheets/_notices.scss */
@@ -4917,18 +4951,27 @@ h1.username {
   border-bottom: 1px solid #ccc;
 }
 
+/* line 367, ../../../app/stylesheets/_main.scss */
+.soundcloud_block {
+  max-width: 80%;
+}
+/* line 369, ../../../app/stylesheets/_main.scss */
+.soundcloud_block li {
+  margin-right: 0 !important;
+}
+
 /* CONTACT LIST*/
-/* line 370, ../../../app/stylesheets/_main.scss */
+/* line 376, ../../../app/stylesheets/_main.scss */
 #users.contacts .actions {
   margin-bottom: 18px;
 }
 
 /* TESTIMONIALS */
-/* line 377, ../../../app/stylesheets/_main.scss */
+/* line 383, ../../../app/stylesheets/_main.scss */
 #testimonials {
   clear: both;
 }
-/* line 380, ../../../app/stylesheets/_main.scss */
+/* line 386, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial {
   width: 230px;
   padding: 15px;
@@ -4950,11 +4993,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 392, ../../../app/stylesheets/_main.scss */
+/* line 398, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 395, ../../../app/stylesheets/_main.scss */
+/* line 401, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -4965,17 +5008,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 399, ../../../app/stylesheets/_main.scss */
+/* line 405, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 405, ../../../app/stylesheets/_main.scss */
+/* line 411, ../../../app/stylesheets/_main.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 408, ../../../app/stylesheets/_main.scss */
+/* line 414, ../../../app/stylesheets/_main.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -4985,17 +5028,17 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 417, ../../../app/stylesheets/_main.scss */
+/* line 423, ../../../app/stylesheets/_main.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 420, ../../../app/stylesheets/_main.scss */
+/* line 426, ../../../app/stylesheets/_main.scss */
 .services_list img {
   width: 32px;
 }
 
-/* line 423, ../../../app/stylesheets/_main.scss */
+/* line 429, ../../../app/stylesheets/_main.scss */
 .services_used {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -5015,30 +5058,30 @@ h1.username {
   width: 90%;
   float: left;
 }
-/* line 429, ../../../app/stylesheets/_main.scss */
+/* line 435, ../../../app/stylesheets/_main.scss */
 .services_used img {
   float: left;
   margin-right: 10px;
 }
 
-/* line 434, ../../../app/stylesheets/_main.scss */
+/* line 440, ../../../app/stylesheets/_main.scss */
 .service_user {
   float: left;
   margin: 5px 0 10px;
 }
-/* line 437, ../../../app/stylesheets/_main.scss */
+/* line 443, ../../../app/stylesheets/_main.scss */
 .service_user .field {
   margin-bottom: 1em;
 }
 
 /* 12. MESSAGES
 ---------------------------------------- */
-/* line 447, ../../../app/stylesheets/_main.scss */
+/* line 453, ../../../app/stylesheets/_main.scss */
 .messages_list {
   margin-bottom: 10px;
 }
 
-/* line 451, ../../../app/stylesheets/_main.scss */
+/* line 457, ../../../app/stylesheets/_main.scss */
 .message {
   font-size: 13px;
   display: block;
@@ -5049,36 +5092,36 @@ h1.username {
   color: #666;
   position: relative;
 }
-/* line 460, ../../../app/stylesheets/_main.scss */
+/* line 466, ../../../app/stylesheets/_main.scss */
 .message.unread {
   background-color: #e5f5fb;
 }
-/* line 463, ../../../app/stylesheets/_main.scss */
+/* line 469, ../../../app/stylesheets/_main.scss */
 .message span {
   display: block;
 }
-/* line 465, ../../../app/stylesheets/_main.scss */
+/* line 471, ../../../app/stylesheets/_main.scss */
 .message span.message_date {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 470, ../../../app/stylesheets/_main.scss */
+/* line 476, ../../../app/stylesheets/_main.scss */
 .message span.message_subject {
   color: #999;
 }
-/* line 474, ../../../app/stylesheets/_main.scss */
+/* line 480, ../../../app/stylesheets/_main.scss */
 .message .message_sender {
   font-size: 13px;
   color: #1d8cc8;
   font-weight: bold;
   margin: 0 0 9px;
 }
-/* line 480, ../../../app/stylesheets/_main.scss */
+/* line 486, ../../../app/stylesheets/_main.scss */
 .message .checker {
   float: left;
 }
-/* line 483, ../../../app/stylesheets/_main.scss */
+/* line 489, ../../../app/stylesheets/_main.scss */
 .message .headers {
   padding-left: 34px;
 }
@@ -5088,7 +5131,7 @@ h1.username {
 /* 14.GLOBAL OBJECTS
 ---------------------------------------- */
 /* MODAL BOX */
-/* line 498, ../../../app/stylesheets/_main.scss */
+/* line 504, ../../../app/stylesheets/_main.scss */
 #simplemodal-container a.modalCloseImg {
   background: url("/images/icons/close.png") no-repeat;
   /* adjust url as required */
@@ -5107,7 +5150,7 @@ h1.username {
 /* 16.TEMPLATE SPECIFICS
 ---------------------------------------- */
 /* SEARCH */
-/* line 517, ../../../app/stylesheets/_main.scss */
+/* line 523, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links {
   display: none;
   margin: 0;
@@ -5143,11 +5186,11 @@ h1.username {
 #sub_nav .quick_links li.last {
   padding-right: 0;
 }
-/* line 525, ../../../app/stylesheets/_main.scss */
+/* line 531, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links ul li {
   margin: 0 5px 0 0;
 }
-/* line 527, ../../../app/stylesheets/_main.scss */
+/* line 533, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links a {
   text-decoration: none;
 }
@@ -5155,7 +5198,7 @@ h1.username {
 #sub_nav .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 529, ../../../app/stylesheets/_main.scss */
+/* line 535, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links span {
   font-weight: bold;
 }
@@ -5417,7 +5460,7 @@ h1.username {
 
   /* line 9, ../../../app/stylesheets/mediaqueries/_768.scss */
   #logo {
-    margin: 0;
+    margin: 10px 0 0 0;
     text-align: left;
     float: left;
   }
@@ -5482,45 +5525,71 @@ h1.username {
   #user_nav a.greating_profile {
     display: inline;
   }
-  /* line 59, ../../../app/stylesheets/mediaqueries/_768.scss */
-  #user_nav a.logout {
-    background: #157ebe;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -o-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -khtml-border-radius: 3px;
-    border-radius: 3px;
-    padding: 2px 10px;
+
+  /* line 62, ../../../app/stylesheets/mediaqueries/_768.scss */
+  #user_nav {
+    height: auto;
   }
-  /* line 63, ../../../app/stylesheets/mediaqueries/_768.scss */
-  #user_nav a.logout:hover {
+  /* line 65, ../../../app/stylesheets/mediaqueries/_768.scss */
+  #user_nav a {
+    display: inline;
+    float: left;
+    width: auto;
+    padding: 8px 13px;
+    margin: 0 !important;
+    background: #333333;
+    color: #fff;
     text-decoration: none;
-    background: #106090;
+    border: 1px solid #262626;
+    border-right-color: #404040;
+    -moz-box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px inset;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px inset;
+    -o-box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px inset;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 1px 0px inset;
+  }
+  /* line 79, ../../../app/stylesheets/mediaqueries/_768.scss */
+  #user_nav a:hover {
+    background: #2b2b2b;
+    text-decoration: none;
+  }
+  /* line 83, ../../../app/stylesheets/mediaqueries/_768.scss */
+  #user_nav a:active, #user_nav a.current {
+    -webkit-box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.8);
+  }
+  /* line 86, ../../../app/stylesheets/mediaqueries/_768.scss */
+  #user_nav a:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  /* line 90, ../../../app/stylesheets/mediaqueries/_768.scss */
+  #user_nav a:last-child {
+    border-right-color: #262626;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
 
-  /* line 69, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 100, ../../../app/stylesheets/mediaqueries/_768.scss */
   #sub_nav #actions_set .ui-button-text {
     font-size: 14px;
   }
-  /* line 72, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 103, ../../../app/stylesheets/mediaqueries/_768.scss */
   #sub_nav #actions_set .button.add_to_contact_list {
     width: auto;
   }
-  /* line 74, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 105, ../../../app/stylesheets/mediaqueries/_768.scss */
   #sub_nav #actions_set .button.add_to_contact_list .ui-button-text {
     position: relative;
     text-indent: 0px;
     padding: .4em 1em .4em 2.1em;
   }
 
-  /* line 81, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 112, ../../../app/stylesheets/mediaqueries/_768.scss */
   .users_list .user_profile_listing {
     clear: both;
     overflow: hidden;
     /* Trick to get equal height columns */
   }
-  /* line 84, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 115, ../../../app/stylesheets/mediaqueries/_768.scss */
   .users_list .user_profile_listing:hover {
     -moz-box-shadow: 0 0px 2px #999999;
     -webkit-box-shadow: 0 0px 2px #999999;
@@ -5528,7 +5597,7 @@ h1.username {
     box-shadow: 0 0px 2px #999999;
     border-color: #fff;
   }
-  /* line 88, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 119, ../../../app/stylesheets/mediaqueries/_768.scss */
   .users_list .user_profile_listing .section {
     margin-bottom: -99999px;
     /* Trick to get equal height columns */
@@ -5537,100 +5606,105 @@ h1.username {
     float: left;
     text-align: left  !important;
   }
-  /* line 93, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 124, ../../../app/stylesheets/mediaqueries/_768.scss */
   .users_list .user_profile_listing .section.user_general_infos {
     width: 30%;
   }
-  /* line 95, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 126, ../../../app/stylesheets/mediaqueries/_768.scss */
   .users_list .user_profile_listing .section.user_type {
     width: 30%;
     border-top: 0px solid #dddddd;
     border-left: 1px solid #dddddd;
     text-align: center;
   }
-  /* line 100, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 131, ../../../app/stylesheets/mediaqueries/_768.scss */
   .users_list .user_profile_listing .section.user_instruments {
     width: 20%;
     overflow: hidden;
     border-top: 0px solid #dddddd;
     border-left: 1px solid #dddddd;
   }
-  /* line 106, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 137, ../../../app/stylesheets/mediaqueries/_768.scss */
   .users_list .user_profile_listing .tag_list {
     padding-bottom: 10px;
     /* Adding pading cauz .section padding-bottom is taken for the equal height Trick  */
   }
 
-  /* line 112, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 144, ../../../app/stylesheets/mediaqueries/_768.scss */
   #users.index #search_form .field#location {
-    width: 22%;
+    width: 20%;
+    margin-right: 20px;
+  }
+  /* line 148, ../../../app/stylesheets/mediaqueries/_768.scss */
+  #users.index #search_form .button.submit.search {
+    margin-top: 3px !important;
   }
 
   /* 10.CONTENT */
   /* 11.MAIN */
-  /* line 119, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 157, ../../../app/stylesheets/mediaqueries/_768.scss */
   .right_drawer {
     display: inline;
     float: right;
     width: 75%;
   }
 
-  /* line 124, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 162, ../../../app/stylesheets/mediaqueries/_768.scss */
   .left_drawer {
     display: inline;
     float: left;
     width: 25%;
   }
-  /* line 128, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 166, ../../../app/stylesheets/mediaqueries/_768.scss */
   .left_drawer .inner {
     padding-right: 9px;
   }
 
-  /* line 132, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 170, ../../../app/stylesheets/mediaqueries/_768.scss */
   .inner_profile_wrapper {
     margin-left: 9px;
   }
 
-  /* line 135, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 173, ../../../app/stylesheets/mediaqueries/_768.scss */
   .profile_picture {
     width: 96%;
     float: none;
     margin-right: 0;
   }
 
-  /* line 140, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 178, ../../../app/stylesheets/mediaqueries/_768.scss */
   .map_container {
     height: 300px  !important;
     width: 100%;
     float: none;
   }
 
-  /* line 145, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 183, ../../../app/stylesheets/mediaqueries/_768.scss */
   .services_used {
     margin: 10px 10px 10px 0;
     width: 20%;
     min-width: 200px;
     float: left;
   }
-  /* line 150, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 188, ../../../app/stylesheets/mediaqueries/_768.scss */
   .services_used img {
     float: none;
     margin-right: 10px;
   }
 
-  /* line 155, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 193, ../../../app/stylesheets/mediaqueries/_768.scss */
   .service_user {
     float: none;
     margin: 5px 0 10px;
   }
-  /* line 158, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 196, ../../../app/stylesheets/mediaqueries/_768.scss */
   .service_user .field {
     margin-bottom: 1em;
   }
 
   /* 12. MESSAGES
   ---------------------------------------- */
-  /* line 166, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 204, ../../../app/stylesheets/mediaqueries/_768.scss */
   .message {
     margin-bottom: 10px;
     background-color: #FFF;
@@ -5644,11 +5718,11 @@ h1.username {
   }
 
   /* LOGGUED OUT  */
-  /* line 175, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 213, ../../../app/stylesheets/mediaqueries/_768.scss */
   .logged_out #user_forms {
     width: 55%;
   }
-  /* line 177, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 215, ../../../app/stylesheets/mediaqueries/_768.scss */
   .logged_out #user_forms .normal_login {
     width: 40%;
     padding: 5%;
@@ -5656,7 +5730,7 @@ h1.username {
     display: inline;
     padding: 0 5% 0 0;
   }
-  /* line 182, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 220, ../../../app/stylesheets/mediaqueries/_768.scss */
   .logged_out #user_forms .services_login {
     width: 40%;
     padding: 5%;
@@ -5668,16 +5742,16 @@ h1.username {
   }
 
   /* HOME PAGE */
-  /* line 194, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 232, ../../../app/stylesheets/mediaqueries/_768.scss */
   .homepage h2.moto {
     font-size: 3em;
   }
-  /* line 197, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 235, ../../../app/stylesheets/mediaqueries/_768.scss */
   .homepage #logo_home, .homepage #main-icon {
     width: 100%;
     margin: 0 auto;
   }
-  /* line 201, ../../../app/stylesheets/mediaqueries/_768.scss */
+  /* line 239, ../../../app/stylesheets/mediaqueries/_768.scss */
   .homepage #logo_home {
     margin-bottom: 38px;
   }
@@ -5685,13 +5759,13 @@ h1.username {
 /*/mediaquery*/
 /*992px __________________________________________________________________________________________________________ */
 @media only screen and (min-width: 992px) {
-  /* line 5, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 6, ../../../app/stylesheets/mediaqueries/_992.scss */
   .users_list .user_profile_listing {
     clear: both;
     overflow: hidden;
     /* Trick to get equal height columns */
   }
-  /* line 8, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 9, ../../../app/stylesheets/mediaqueries/_992.scss */
   .users_list .user_profile_listing:hover {
     -moz-box-shadow: 0 0px 2px #999999;
     -webkit-box-shadow: 0 0px 2px #999999;
@@ -5699,7 +5773,7 @@ h1.username {
     box-shadow: 0 0px 2px #999999;
     border-color: #fff;
   }
-  /* line 12, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 13, ../../../app/stylesheets/mediaqueries/_992.scss */
   .users_list .user_profile_listing .section {
     margin-bottom: -99999px;
     /* Trick to get equal height columns */
@@ -5708,44 +5782,44 @@ h1.username {
     float: left;
     text-align: left  !important;
   }
-  /* line 17, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 18, ../../../app/stylesheets/mediaqueries/_992.scss */
   .users_list .user_profile_listing .section.user_general_infos {
     width: 30%;
   }
-  /* line 19, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 20, ../../../app/stylesheets/mediaqueries/_992.scss */
   .users_list .user_profile_listing .section.user_type {
     width: 30%;
     border-top: 0px solid #dddddd;
     border-left: 1px solid #dddddd;
     text-align: center;
   }
-  /* line 24, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 25, ../../../app/stylesheets/mediaqueries/_992.scss */
   .users_list .user_profile_listing .section.user_instruments {
     width: 30%;
     overflow: hidden;
     border-top: 0px solid #dddddd;
     border-left: 1px solid #dddddd;
   }
-  /* line 30, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 31, ../../../app/stylesheets/mediaqueries/_992.scss */
   .users_list .user_profile_listing .tag_list {
     padding-bottom: 10px;
     /* Adding pading cauz .section padding-bottom is taken for the equal height Trick  */
   }
 
-  /* line 37, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 38, ../../../app/stylesheets/mediaqueries/_992.scss */
   #users.index #search_form .field#location {
     width: 28%;
   }
-  /* line 39, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 40, ../../../app/stylesheets/mediaqueries/_992.scss */
   #users.index #search_form .field#location .centered input {
     width: 88%;
   }
-  /* line 43, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 44, ../../../app/stylesheets/mediaqueries/_992.scss */
   #users.index #search_form .field .button.submit.search {
     margin-top: 3px;
   }
 
-  /* line 48, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 49, ../../../app/stylesheets/mediaqueries/_992.scss */
   .right_drawer {
     float: right;
     display: inline;
@@ -5753,30 +5827,30 @@ h1.username {
     width: 80%;
   }
 
-  /* line 55, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 56, ../../../app/stylesheets/mediaqueries/_992.scss */
   .left_drawer {
     max-width: 20%;
     display: inline;
     float: left;
   }
 
-  /* line 62, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 63, ../../../app/stylesheets/mediaqueries/_992.scss */
   #footer a {
     display: inline-block;
     margin: 0 20px 0 0;
   }
-  /* line 66, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 67, ../../../app/stylesheets/mediaqueries/_992.scss */
   #footer .left_links {
     width: auto;
   }
-  /* line 69, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 70, ../../../app/stylesheets/mediaqueries/_992.scss */
   #footer .copyright {
     float: right;
     margin-top: 0;
   }
 
   /* LOGGUED OUT  */
-  /* line 77, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 78, ../../../app/stylesheets/mediaqueries/_992.scss */
   .logged_out #user_forms {
     width: 35%;
   }

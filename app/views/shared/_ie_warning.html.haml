@@ -1,0 +1,35 @@
+%section#ie_warning{ :style => "display: none;"}
+  .inner_warning_wrapper
+    %h2 Saviez-vous que votre version d'Internet Explorer est périmée?
+    %br
+    %p
+      Afin d'obtenir la meilleure expérience de navigation possible sur notre site web, nous vous recommandons de
+      %strong mettre à jour
+      votre navigateur ou d'en choisir un autre.
+    %p Une liste des navigateurs les plus populaires se trouve ci-dessous.
+    %p
+      Il suffit de cliquer
+      %strong sur l'icône du navigateur
+      correspondant pour se rendre à sa page de téléchargement.
+    %ul
+      %li
+        %a{:href => "http://www.mozilla-europe.org/fr/firefox/", :target => "_blank"}
+          =image_tag('browsers/browser_firefox.gif')
+          %br
+          Firefox 3.5
+      %li
+        %a{:href => "http://www.apple.com/fr/safari/download/", :target => "_blank"}
+          =image_tag('browsers/browser_safari.gif')
+          %br
+          Safari 4
+      %li
+        %a{:href => "http://www.google.com/chrome?hl=fr", :target => "_blank"}
+          =image_tag('browsers/browser_chrome.gif')
+          %br
+          Google Chrome
+      %li
+        %a{:href => "http://www.microsoft.com/windows/Internet-explorer/default.aspx", :target => "_blank"}
+          =image_tag('browsers/browser_ie.gif')
+          %br
+          Internet Explorer 9
+    .clear

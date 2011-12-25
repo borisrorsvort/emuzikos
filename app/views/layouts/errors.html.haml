@@ -5,6 +5,9 @@
 
 %body.logged_out{:id => "pages", :class => "homepage clearfix loggued_out"}
 
+  /[if lt IE9 ]
+    = render  "shared/ie_warning"
+
   %section#header
     #logo
       = link_to root_path, :title => t(:'tooltips.back_to_home') do

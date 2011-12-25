@@ -8,7 +8,12 @@
 
 - content_for :scripts do
   :javascript
-    $( "#tabs" ).tabs();
+    $( "#tabs" ).tabs({
+    select: function(event, ui) {
+    window.location.hash = ui.tab.hash;
+    }
+    });
+
 
 -if current_user
   - content_for :sub_nav do
@@ -124,7 +129,8 @@
         #tab_medias
           - if @user.soundcloud_username?
             %h3= t(:souncloud_player)
-            = link_to "#{@user.username} Tracks", "http://soundcloud.com/#{@user.soundcloud_username}", :class => "sc-player"
+            .soundcloud_block
+              = link_to "#{@user.username} Tracks", "http://soundcloud.com/#{@user.soundcloud_username}", :class => "sc-player"
           - if @user.youtube_video_id?
             %h3= t(:'.youtube_video')
             %section

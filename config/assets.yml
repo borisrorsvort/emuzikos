@@ -36,7 +36,7 @@ javascripts:
 
 stylesheets:
   soundcloud:
-    - public/stylesheets/soundcloud/sc-player-standard.css
+    - public/stylesheets/soundcloud/sc-player-emuzikos.css
   jcrop:
     - public/stylesheets/jquery.Jcrop.css
   maps:
