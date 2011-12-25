@@ -209,6 +209,7 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.11.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.2)
@@ -348,6 +349,7 @@ DEPENDENCIES
   nifty-generators
   omniauth (~> 0.3.2)
   paperclip (= 2.4)
+  pg
   populator
   rails (= 3.0.10)
   rails-footnotes (>= 3.7.5.rc4)
