@@ -37,3 +37,6 @@ en:
 
     crop:
       prewiew: "Preview"
+    prefers:
+      newsletters: Neswletters
+      message_notifications: Message notifications

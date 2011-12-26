@@ -27,6 +27,8 @@ Emuzikos::Application.routes.draw do
 
   root :to => "pages#homepage"
 
+  match '/mailchimp/callback' =>'mailchimp#callback', :as => :mailchimp_callback
+
   # catch all and redirect to error page except auth path required for omniauth
   match '*path', :to => 'errors#404', :constraints => lambda{|request|
     !request.path.starts_with?("/auth")

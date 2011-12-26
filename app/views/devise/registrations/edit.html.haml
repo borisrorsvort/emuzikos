@@ -55,11 +55,12 @@
   %h3= t(:'users.notifications')
 
   .field
-    %p.checkbox_set
-      = f.label "wants_email_true", t(:"users.wants_email")
-      = radio_button(:user, :wants_email, true)
-      = f.label "wants_email_false", t(:"users.dont_wants_email")
-      = radio_button(:user, :wants_email, false)
+    %p
+      = f.check_box :prefers_newsletters
+      = f.label "prefers_newsletters", t(:"users.prefers.newsletters"), :class => "habtm"
+    %p
+      = f.check_box :prefers_message_notifications
+      = f.label "prefers_message_notifications", t(:"users.prefers.message_notifications"), :class => "habtm"
     .clear
     =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"
 

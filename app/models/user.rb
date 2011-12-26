@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
   has_many :tastes, :dependent => :destroy
   has_many :genres, :through => :tastes
 
+  preference :newsletters, :default => true
+  preference :message_notifications, :default => true
+
   attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
   #attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
@@ -39,6 +42,7 @@ class User < ActiveRecord::Base
   USER_TYPES = %w(band musician agent)
 
   after_validation :subscribe
+  after_update :check_against_mailchimp
   after_validation :geocode, :if => :address_changed?
   #after_update :reprocess_avatar, :if => :cropping?
 
@@ -152,20 +156,49 @@ class User < ActiveRecord::Base
     end
 
     def subscribe
-      h = Hominid::API.new(AppConfig.mailchimp.api_key)
+      @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
+      list_name = AppConfig.mailchimp.list_name
+
       begin
-        h.list_subscribe(h.find_list_id_by_name(AppConfig.mailchimp.list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+        @hominid.list_subscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
       rescue Hominid::APIError => error
         errors.add(:email, error.message)
       end
     end
 
     def unsubscribe(u)
-      h = Hominid::API.new(AppConfig.mailchimp.api_key)
+      @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
       begin
-        h.list_unsubscribe(h.find_list_id_by_name(AppConfig.mailchimp.list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+        @hominid.list_unsubscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
       rescue Hominid::APIError => error
         errors.add(:email, error.message)
+      end
+    end
+
+    def update_mailchimp(optin)
+      # Create a Hominid object (A wrapper to the mailchimp api), and pass in a hash from the yaml file 
+      # telling which mailing list id to update with subscribe/unsubscribe notifications)
+      @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
+      list_name = AppConfig.mailchimp.list_name
+      begin
+        case optin  
+          when 'subscribe_newsletter'
+            logger.debug("subscribing to newsletter...")
+            "success!" if @hominid.list_subscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+          when 'unsubscribe_newsletter'
+            logger.debug("unsubscribing from newsletter...")
+            "success!" if @hominid.list_unsubscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+          end
+      rescue Hominid::APIError => error
+        errors.add(:email, error.message)
+      end
+    end
+
+    def check_against_mailchimp
+      logger.info("Checking if changes need to be sent to mailchimp...")
+      if self.preferred_newsletters_changed?
+        logger.info("Newsletter changed...")
+        self.preferred_newsletters ? update_mailchimp('subscribe_newsletter') : update_mailchimp('unsubscribe_newsletter')
       end
     end
 
