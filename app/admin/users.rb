@@ -24,11 +24,11 @@ ActiveAdmin.register User do
       column :visible do |user|
         status_tag (user.visible ? "Yes" : "No"), (user.visible ? :ok : :error)
       end
-      column :prefers_newsletters do |user|
-        status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers.newsletters ? :ok : :error)
+      column "Newsletter" do |user|
+        status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers_newsletters ? :ok : :error)
       end
-      column :prefers_message_notifications do |user|
-        status_tag (user.prefers_message_notifications ? "Yes" : "No"), (user.prefers.message_notifications ? :ok : :error)
+      column "Message notifications" do |user|
+        status_tag (user.prefers_message_notifications ? "Yes" : "No"), (user.prefers_message_notifications ? :ok : :error)
       end
       default_actions
     end
