@@ -4,7 +4,7 @@ class SitemapsController < ApplicationController
 
   def show
     @users = User.available_for_listing(@current_user).select("DISTINCT users.*")
-    @other_routes = ["","users/signin","users/signup","testimonials"]
+    @other_routes = ["","users/sign_in","users/sign_up","testimonials"]
     respond_to do |format|
       format.xml
     end
