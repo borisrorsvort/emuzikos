@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :get_variables
   before_filter :mailer_set_url_options
+  before_filter :check_uri
 
   helper :all
   helper_method :current_user
@@ -42,6 +43,10 @@ class ApplicationController < ActionController::Base
     # you can insert logic in here too to log errors
     # or get more error info and use different templates
     render "/errors/500.html.haml", :layout => "errors", :status => 500
+  end
+
+  def check_uri
+    redirect_to request.protocol + "www." + request.host_with_port + request.request_uri if !/^www/.match(request.host) && RAILS_ENV == "production" 
   end
 
   private
