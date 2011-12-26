@@ -79,12 +79,15 @@
     %p
       = f.label :songkick_username, t(:'activerecord.attributes.user.songkick_username')
       = f.text_field :songkick_username, :placeholder => "Example: Lady Gaga"
+      %i Don't have a Songkick account? #{ link_to "Create one here", "http://www.songkick.com/signup" }
     %p
       = f.label :soundcloud_username, t(:'activerecord.attributes.user.soundcloud_username')
       = f.text_field :soundcloud_username, :placeholder => "Example: john-doe"
+      %i Don't have a Soundcloud account? #{ link_to "Create one here", "http://www.soundcloud.com/" }
     %p
       = f.label :youtube_video_id, t(:'activerecord.attributes.user.youtube_video_id')
       = f.text_field :youtube_video_id, :placeholder => "Example: JW5meKfy3fY"
+      %i Don't have a Youtube account? #{ link_to "Create one here", "http://www.youtube.com/" }
   .clear
 
   =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"

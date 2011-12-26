@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211223347) do
+ActiveRecord::Schema.define(:version => 20111226101541) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -76,6 +76,19 @@ ActiveRecord::Schema.define(:version => 20111211223347) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "preferences", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "owner_id",   :null => false
+    t.string   "owner_type", :null => false
+    t.integer  "group_id"
+    t.string   "group_type"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "preferences", ["owner_id", "owner_type", "name", "group_id", "group_type"], :name => "index_preferences_on_owner_and_name_and_preference", :unique => true
 
   create_table "services", :force => true do |t|
     t.integer  "user_id"
@@ -169,7 +182,6 @@ ActiveRecord::Schema.define(:version => 20111211223347) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "visible",                :default => true
-    t.boolean  "wants_email",            :default => true
     t.string   "songkick_username",      :default => ""
     t.string   "youtube_video_id",       :default => ""
     t.string   "soundcloud_username",    :default => ""

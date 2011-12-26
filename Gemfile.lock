@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/rds/preferences.git
+  revision: 37f02c18f169e2010a7fadc14eac9444cfadc11d
+  specs:
+    preferences (0.5.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -351,6 +357,7 @@ DEPENDENCIES
   paperclip (= 2.4)
   pg
   populator
+  preferences!
   rails (= 3.0.10)
   rails-footnotes (>= 3.7.5.rc4)
   rails_best_practices

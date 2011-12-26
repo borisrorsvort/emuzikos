@@ -4,7 +4,7 @@ ActiveAdmin.register User do
   scope :visible
 
   User.class_eval do
-    attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude, :songkick_username, :youtube_video_id
+    attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude, :songkick_username, :youtube_video_id, :soundcloud_username
   end
 
   index do
@@ -24,8 +24,11 @@ ActiveAdmin.register User do
       column :visible do |user|
         status_tag (user.visible ? "Yes" : "No"), (user.visible ? :ok : :error)
       end
-      column :wants_email do |user|
-        status_tag (user.wants_email ? "Yes" : "No"), (user.wants_email ? :ok : :error)
+      column :prefers_newsletters do |user|
+        status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers.newsletters ? :ok : :error)
+      end
+      column :prefers_message_notifications do |user|
+        status_tag (user.prefers_message_notifications ? "Yes" : "No"), (user.prefers.message_notifications ? :ok : :error)
       end
       default_actions
     end
