@@ -52,12 +52,12 @@ namespace :db do
       user.youtube_video_id = ["JW5meKfy3fY", ""]
       user.songkick_username = "Lady Gaga"
 
-      Testimonial.populate 1..2 do |t|
-        t.user_id = user.id
-        t.body = Populator.sentences(2..3)
-        t.created_at = user.created_at
-        t.approved = true
-      end
+      # Testimonial.populate 1..2 do |t|
+      #   t.user_id = user.id
+      #   t.body = Populator.sentences(2..3)
+      #   t.created_at = user.created_at
+      #   t.approved = true
+      # end
 
     end
 

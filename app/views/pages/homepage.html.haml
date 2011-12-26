@@ -37,7 +37,7 @@
           %h4 Care about privacy?
           %p Nobody will ever see your email when you send messages, ever. Nobody will ever see your email .
       .clear
-    - if @testimonials
+    - unless @testimonials.empty?
       .note_circle
       .latest_testimionals
         .inner_block.home_testimonials
