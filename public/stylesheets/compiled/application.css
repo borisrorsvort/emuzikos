@@ -3719,6 +3719,11 @@ p + p.no-indent {
   text-indent: 0;
 }
 
+/* line 135, ../../../app/stylesheets/_typography.scss */
+.no_records {
+  font-size: 13px;
+}
+
 /* line 1, ../../../app/stylesheets/_layout.scss */
 #logo {
   float: left;

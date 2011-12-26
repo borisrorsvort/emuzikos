@@ -48,16 +48,16 @@ namespace :db do
       user.country = %w(US CA BE FR DE UK)
       user.created_at = 2.years.ago..Time.now
       user.visible = true
-      user.wants_email = true
       user.youtube_video_id = ["JW5meKfy3fY", ""]
-      user.songkick_username = "Lady Gaga"
+      user.songkick_username = "foo-fighters"
+      user.soundcloud_username = "desta"
 
-      # Testimonial.populate 1..2 do |t|
-      #   t.user_id = user.id
-      #   t.body = Populator.sentences(2..3)
-      #   t.created_at = user.created_at
-      #   t.approved = true
-      # end
+      Testimonial.populate 1..2 do |t|
+        t.user_id = user.id
+        t.body = Populator.sentences(2..3)
+        t.created_at = user.created_at
+        t.approved = true
+      end
 
     end
 
