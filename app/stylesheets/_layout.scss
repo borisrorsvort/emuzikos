@@ -112,7 +112,9 @@ $sub_nav_topbottom_padding: 18px;
   padding: $basefont * 3;
 
   .inner_footer {
-    background-color: #011120;}
+    background-color: #011120;
+    @include border-radius(5px);
+  }
 
   &.light .inner_footer {
     padding: 18px;
