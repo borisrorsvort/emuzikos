@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     else
       @q = User.available_for_listing(@current_user).select("DISTINCT users.*").search(params[:q])
     end
-    @users = @q.result.order("last_sign_in_at").page(params[:page]).per(AppConfig.site.results_per_page)
+    @users = @q.result.order("last_sign_in_at DESC").page(params[:page]).per(AppConfig.site.results_per_page)
     @genres = Genre.order("name asc")
     @instruments = Instrument.order("name asc")
     @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
