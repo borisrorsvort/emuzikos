@@ -46,8 +46,8 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
         gflash :success => true
 
-        if !@user.instruments.empty? && @user.geocoded? && Rails.env == "production"
-          @tweet = @user.searching_for + " " + @user.instruments.map {|i| i.name}.to_sentence + " available in " + Carmen::country_name(@user.country) + " http://www.emuzikos.com/users/#{@user.id} "
+        if !@user.instruments.empty? && !@user.user_type.blank? && @user.geocoded? && Rails.env == "production"
+          @tweet = @user.user_type + " " + @user.instruments.map {|i| i.name}.to_sentence + " available in " + Carmen::country_name(@user.country) + " http://www.emuzikos.com/users/#{@user.id} "
           Twitter.update(@tweet) rescue nil
         end
 
