@@ -298,6 +298,7 @@ GEM
     settingslogic (2.0.6)
     sexp_processor (3.0.5)
     shoulda (2.11.3)
+    simple_oauth (0.1.5)
     simplecov (0.5.3)
       multi_json (~> 1.0.3)
       simplecov-html (~> 0.5.3)
@@ -309,6 +310,11 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    twitter (2.0.2)
+      activesupport (>= 2.3.9, < 4)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
+      simple_oauth (~> 0.1)
     tzinfo (0.3.31)
     uniform_notifier (1.0.1)
     uuid (2.3.4)
@@ -371,3 +377,4 @@ DEPENDENCIES
   shoulda
   simplecov
   songkickr
+  twitter

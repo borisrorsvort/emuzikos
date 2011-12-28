@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
-  #attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
   attr_searchable :username, :user_type, :searching_for, :country, :zip
   assoc_searchable :instruments, :skills, :tastes, :genres
@@ -44,7 +43,6 @@ class User < ActiveRecord::Base
   after_validation :subscribe
   after_update :check_against_mailchimp
   after_validation :geocode, :if => :address_changed?
-  #after_update :reprocess_avatar, :if => :cropping?
 
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
@@ -53,7 +51,6 @@ class User < ActiveRecord::Base
       :medium => "200x200#",
       :gallery => "30x30#"
     },
-    # :processors => [:cropper],
     :whiny => true,
     :storage => {
       'development' => :filesystem,
@@ -92,29 +89,6 @@ class User < ActiveRecord::Base
   def self.available_for_listing(current_user)
     self.except_current_user(current_user).visible.geocoded.profiles_completed
   end
-
-  # def cropping?
-  #   !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
-  # end
-
-  # def avatar_geometry(style=:original)
-  #   return file_geometry if style == :original
-  #   w, h = avatar.options[:styles][style].gsub("#","").split("x")
-  #   Paperclip::Geometry.new(w, h)
-  # end
-
-  # def file_geometry
-  #   @geometry ||= {}
-  #   @geometry[avatar.path] ||= Paperclip::Geometry.from_file(open(avatar.path))
-  # end
-
-  # def cropping?
-  #   !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
-  # end
-  # def avatar_geometry(style = :original)
-  #   @geometry ||= {}
-  #   @geometry[style] ||= Paperclip::Geometry.from_file(avatar.path(style))
-  # end
 
   def avatar_geometry(style = :normal)
     @geometry ||= {}

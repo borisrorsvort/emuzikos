@@ -43,21 +43,14 @@ class UsersController < ApplicationController
     @instruments = Instrument.order("name asc")
     @genres = Genre.order('name asc')
 
-    # if @user.update_attributes(params[:user])
-    #   if params[:user][:avatar].blank?
-    #     gflash :success => true
-    #     redirect_to edit_user_path(@user)
-    #   else
-    #     gflash :notice => true
-    #     redirect_to user_crop_path(@user)
-    #     #render 'crop'
-    #   end
-    # else
-    #   gflash :error => true
-    #   render :edit
-    # end
     if @user.update_attributes(params[:user])
         gflash :success => true
+
+        if !@user.instruments.empty? && @user.geocoded? && Rails.env == "production"
+          @tweet = @user.searching_for + " " + @user.instruments.map {|i| i.name}.to_sentence + " available in " + Carmen::country_name(@user.country) + " http://www.emuzikos.com/users/#{@user.id} "
+          Twitter.update(@tweet) rescue nil
+        end
+
         redirect_to edit_user_path(@user)
     else
       gflash :error => true

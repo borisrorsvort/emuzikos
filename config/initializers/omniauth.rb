@@ -14,3 +14,10 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     provider :facebook, '218956201460694', '51b7eeef805ce7858fb312c3a444e5ad', {:client_options => {:ssl => {:ca_file => "/usr/lib/ssl/certs/ca-certificates.crt"}}}
   end
 end
+
+Twitter.configure do |config|
+  config.consumer_key = "JCrZPH7NaE8ZDY5Yj1qA"
+  config.consumer_secret = "ik0gfOBMdk0rE99dS5W6DhdWci9THaMrzI8BFDhY"
+  config.oauth_token = "241146137-l0jQZzEKaYaKNFSZ05hzmEHYnPNfTihy9mLVhr8w"
+  config.oauth_token_secret = "uBrA09rATDBtvQsZCKFf5vEmKOlBT9HvExzSNUF7NG4"
+end

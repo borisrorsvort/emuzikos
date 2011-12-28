@@ -33,7 +33,7 @@ gem 'httparty'
 gem 'songkickr'
 gem "hominid"
 gem 'preferences', :git => 'git://github.com/rds/preferences.git'
-
+gem 'twitter'
 gem 'geocoder'
 gem 'gmaps4rails'
 
