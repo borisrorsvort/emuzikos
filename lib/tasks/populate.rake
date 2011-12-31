@@ -42,15 +42,16 @@ namespace :db do
       user.references = Populator.sentences(1..2)
       user.request_message = Populator.paragraphs(3..5)
       user.sign_in_count = 1..100
+      user.last_sign_in_at = 2.hours.ago..Time.now
       user.user_type = USER_TYPES
       user.searching_for = USER_TYPES
       user.zip = Faker::Address.zip_code
       user.country = %w(US CA BE FR DE UK)
       user.created_at = 2.years.ago..Time.now
-      user.visible = true
+      user.visible = [true, false]
       user.youtube_video_id = ["JW5meKfy3fY", ""]
-      user.songkick_username = "foo-fighters"
-      user.soundcloud_username = "desta"
+      user.songkick_username = ["foo-fighters", ""]
+      user.soundcloud_username = ["desta", ""]
 
       Testimonial.populate 1..2 do |t|
         t.user_id = user.id
