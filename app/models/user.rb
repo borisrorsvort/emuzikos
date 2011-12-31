@@ -90,10 +90,8 @@ class User < ActiveRecord::Base
     self.except_current_user(current_user).visible.geocoded.profiles_completed
   end
 
-  def avatar_geometry(style = :normal)
-    @geometry ||= {}
-    path = (avatar.options[:storage]==:s3) ? avatar.url(style) : avatar.path(style)
-    @geometry[style] ||= Paperclip::Geometry.from_file(path)
+  def has_profile_complete?
+    !self.country.nil? && !self.instruments.empty? && !self.zip.nil? && !self.searching_for.nil? && !self.user_type.nil? && !self.genres.empty?
   end
 
   def to_param

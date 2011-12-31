@@ -10,9 +10,9 @@ en:
     by: by
     created_by: Created by
     leave_blank: (leave blank if you don't want to change it)
-    users: 
+    users:
       from: From
-  
+
 ### MENU
 ### ______________________________________________________
 
@@ -24,9 +24,9 @@ en:
       account: Edit my account
       authentications: Authentication services
     all_users: Search
-    logout: Logout
-    login: Login
-    signup: Signup
+    logout: Log out
+    login: Log in
+    signup: Sign up
     terms: Terms of agreement
     privacy: Privacy Policy
     messages:
@@ -42,7 +42,7 @@ en:
 ### ______________________________________________________
 
 
-  pagination: 
+  pagination:
     loading_more_results: Loading more result
 ### TABLES
 ### ______________________________________________________
@@ -50,7 +50,7 @@ en:
   tables:
     headings:
       actions: Actions
-      
+
 ### MUSICAL GENRES
 ### ______________________________________________________
 
@@ -72,9 +72,9 @@ en:
     latino: Latino
     metal: Metal
     new_age: New Age
-    opera: Opera 
+    opera: Opera
     pop: Pop
-    r_and_b: "R&B" 
+    r_and_b: "R&B"
     reggae: Reggae
     rock: Rock
     songwriter: Song Writer

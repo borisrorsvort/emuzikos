@@ -96,7 +96,7 @@ def create
         auth = Service.find_by_provider_and_uid(provider, uid)
         if !auth
           current_user.services.create(:provider => provider, :uid => uid, :uname => username, :uemail => email)
-          flash[:notice] = 'Sign in via ' + provider.capitalize + ' has been added to your account.'
+          flash[:notice] = 'Logged in via ' + provider.capitalize + ' has been added to your account.'
           redirect_to services_path
         else
           flash[:notice] = service_route.capitalize + ' is already linked to your account.'

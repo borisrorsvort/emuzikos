@@ -2,7 +2,7 @@
   .field
     = t(:'.have_account_already')
     %br
-    = link_to "Sign in", new_session_path(resource_name)
+    = link_to "Log in", new_session_path(resource_name)
 - if devise_mapping.registerable? && controller_name != 'registrations'
   .field
     = t(:'.dont_have_account_yet')
@@ -22,4 +22,4 @@
 - if devise_mapping.omniauthable?
   - resource_class.omniauth_providers.each do |provider|
     .field
-      = link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider)
+      = link_to "Log in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider)
