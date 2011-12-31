@@ -15,7 +15,7 @@ ActiveAdmin.register User do
       column :user_type
       column :zip
       column :country do |user|
-        Carmen::country_name(user.country)
+        Carmen::country_name(user.country) unless user.country.nil?
       end
       column :created_at
       column :current_sign_in_at
@@ -24,12 +24,12 @@ ActiveAdmin.register User do
       column :visible do |user|
         status_tag (user.visible ? "Yes" : "No"), (user.visible ? :ok : :error) rescue nil
       end
-      # column "Newsletter" do |user|
-      #   status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers_newsletters ? :ok : :error) rescue nil
-      # end
-      # column "Message notifications" do |user|
-      #   status_tag (user.prefers_message_notifications ? "Yes" : "No"), (user.prefers_message_notifications ? :ok : :error) rescue nil
-      # end
+      column "Newsletter" do |user|
+        status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers_newsletters ? :ok : :error) rescue nil
+      end
+      column "Message notifications" do |user|
+        status_tag (user.prefers_message_notifications ? "Yes" : "No"), (user.prefers_message_notifications ? :ok : :error) rescue nil
+      end
       default_actions
     end
 
