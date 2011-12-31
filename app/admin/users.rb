@@ -24,12 +24,12 @@ ActiveAdmin.register User do
       column :visible do |user|
         status_tag (user.visible ? "Yes" : "No"), (user.visible ? :ok : :error) rescue nil
       end
-      column "Newsletter" do |user|
-        status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers_newsletters ? :ok : :error) rescue nil
-      end
-      column "Message notifications" do |user|
-        status_tag (user.prefers_message_notifications ? "Yes" : "No"), (user.prefers_message_notifications ? :ok : :error) rescue nil
-      end
+      # column "Newsletter" do |user|
+      #   status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers_newsletters ? :ok : :error) rescue nil
+      # end
+      # column "Message notifications" do |user|
+      #   status_tag (user.prefers_message_notifications ? "Yes" : "No"), (user.prefers_message_notifications ? :ok : :error) rescue nil
+      # end
       default_actions
     end
 
@@ -43,10 +43,12 @@ ActiveAdmin.register User do
         f.input :request_message, :as => :text
         f.input :zip, :as => :string
         f.input :country, :as => :country, :locale => :en
-        f.input :visible, :as => :boolean
-        f.input :wants_email, :as => :boolean
         f.input :songkick_username
         f.input :youtube_video_id
+        f.input :soundcloud_username
+        f.input :prefers_newsletters, :as => :boolean
+        f.input :prefers_message_notifications, :as => :boolean
+        f.input :visible, :as => :boolean
       end
 
       f.buttons
