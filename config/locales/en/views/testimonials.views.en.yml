@@ -4,8 +4,8 @@ en:
 ### ______________________________________________________
 
   testimonials:
-    no_testimonials: "They are currently no testimonials. Please come bacl later"
-    no_testimonials_logged_in: "Sorry, you haven't written any testominal. May be is it time for one now?"
+    no_testimonials: "They are currently no testimonials. Please come back later"
+    no_testimonials_logged_in: "Sorry, there are no testimonials yet. May be is it time for one now?"
     index:
       title: Testimonials
     new:

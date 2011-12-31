@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Sign in Users", %q{
   In order to get access to protected sections of the site
   A user
-  Should be able to sign in
+  Should be able to log in
 } do
 
   background do

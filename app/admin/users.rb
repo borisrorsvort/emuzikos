@@ -22,13 +22,13 @@ ActiveAdmin.register User do
       column :last_sign_in_at
       column :sign_in_count
       column :visible do |user|
-        status_tag (user.visible ? "Yes" : "No"), (user.visible ? :ok : :error)
+        status_tag (user.visible ? "Yes" : "No"), (user.visible ? :ok : :error) rescue nil
       end
       column "Newsletter" do |user|
-        status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers_newsletters ? :ok : :error)
+        status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers_newsletters ? :ok : :error) rescue nil
       end
       column "Message notifications" do |user|
-        status_tag (user.prefers_message_notifications ? "Yes" : "No"), (user.prefers_message_notifications ? :ok : :error)
+        status_tag (user.prefers_message_notifications ? "Yes" : "No"), (user.prefers_message_notifications ? :ok : :error) rescue nil
       end
       default_actions
     end

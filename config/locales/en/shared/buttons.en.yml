@@ -4,7 +4,7 @@ en:
 ### ______________________________________________________
 
   buttons:
-    home_signup: signup for free in 60 sec.
+    home_signup: sign up for free in 60 sec.
     back_to_homepage: Back to the home page
     update: Update
     create: Create
@@ -12,7 +12,7 @@ en:
     back: "Back to %{model}"
     delete: Delete
     show: Show
-    login: Login
+    login: Log in
     submit: Submit
     search: Search
     compose: Compose

@@ -1,22 +1,6 @@
 <div id="users_chart" style="width: 380px; height: 300px;">
 </div>
 
-<div class="users_numbers" style="margin-top: 20px;">
-  <table>
-    <tr>
-      <th>Total Users</th>
-      <th>Profiles Completed</th>
-      <th>Signed in</th>
-      <th>In listing</th>
-    </tr>
-    <tr>
-      <td><%= users.count %></td>
-      <td><%= users_complete_profile %> (<%= ((users_complete_profile.to_f / users.count.to_f) * 100).round(2) %>%)</td>
-      <td><%= signed_in_users %></td>
-      <td><%= users_in_listing %></td>
-    </tr>
-  </table>
-</div>
 
 <script type="text/javascript">
   $(function () {
