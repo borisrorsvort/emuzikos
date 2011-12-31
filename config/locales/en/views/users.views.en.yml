@@ -32,8 +32,11 @@ en:
     edit:
       titles:
         title: Edit your profile
-      complete_profile_condition: "In order to appear in search results, you need to complete your profile fully."
-      medias: "Medias (Events, Youtube video)"
+      profile_complete_notice: "Congratulations, your profile is complete!"
+      profile_not_complete_notice: "In order to appear in search results, you need to complete your profile fully (except the media section)."
+      visible_notice: "You now appear in search results!"
+      invisible_notice: "Make sure you're set as visible in order to appear in search results"
+      medias: "Medias (optional)"
 
     crop:
       prewiew: "Preview"

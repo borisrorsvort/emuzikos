@@ -35,7 +35,10 @@ $sub_nav_topbottom_padding: 18px;
     width: 100%;
     top: 0;
     li {
-      margin: 0;} }}
+      margin: 0;
+      a {
+        font-size: 8px;
+      }} }}
 
 #sub_nav {
   background-color: $sub_nav_gradient_light;
@@ -102,7 +105,7 @@ $sub_nav_topbottom_padding: 18px;
         padding: .35em; }}
   }
   .ui-button-text {
-    font-size: 0.80em;
+    font-size: 0.6em;
     padding: .4em 1em .4em 2.4em;  }
 }
 

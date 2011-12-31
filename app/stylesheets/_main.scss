@@ -38,7 +38,7 @@
 /* LAyOUT*/
 
 #inner_content {
-  background:#efefef;
+  background:#fff;
   padding: 18px; /* for non mobiel version*/
 }
 #messages.index {
@@ -536,3 +536,47 @@ h1.username {
     font-weight:bold; }}
 
 
+
+//  Alerts
+.alert {
+
+  $bg-alert-info: #d69c3b;
+  $bg-alert-error: #cf6d6e;
+  $bg-alert-success: #78964e;
+  $bg-alert-base: #4a8cae;
+
+  display: inline-block;
+  padding: $baseline / 2;
+  text-align: left;
+  border: 1px solid;
+  font-size: $basefont;
+  @include border-radius(5px);
+  margin-bottom: $baseline;
+  &.base {
+    background: $bg-alert-base;
+    color: darken($bg-alert-base, 30%);
+    @include inset(lighten($bg-alert-base,20%));
+    border-color: darken($bg-alert-base, 10%);
+  }
+
+  &.info {
+    background: $bg-alert-info;
+    color: darken($bg-alert-info, 30%);
+    @include inset(lighten($bg-alert-info,20%));
+    border-color: darken($bg-alert-info, 10%);
+  }
+
+  &.error {
+    background: $bg-alert-error;
+    color: darken($bg-alert-error, 30%);
+    @include inset(lighten($bg-alert-error,20%));
+    border-color: darken($bg-alert-error, 10%);
+  }
+
+  &.success {
+    background: $bg-alert-success;
+    color: darken($bg-alert-success, 30%);
+    @include inset(lighten($bg-alert-success,20%));
+    border-color: darken($bg-alert-success, 10%);
+  }
+}

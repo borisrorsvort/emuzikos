@@ -56,8 +56,6 @@
       %p.looking_for
         = t(:'.is_looking_for')
         = t(:"users.types.#{@user.searching_for}")
-        = t(:'.to_play')
-        = @user.genres.collect {|g| g.name }.to_sentence(:last_word_connector => ' and ')
     -else
       %br
     .spread
@@ -77,6 +75,13 @@
 
       / INFOS TAB START
       #tab_info
+        - if @user.has_profile_complete?
+          %h3= t(:'activerecord.attributes.user.genres')
+          .tag_list_instruments
+            - @user.genres.each do |genre|
+              .tag-body.yellow
+                %span.tag= genre.name
+
         - unless @user.instruments.empty?
           %h3= t(:'activerecord.attributes.user.instruments')
           .tag_list_instruments

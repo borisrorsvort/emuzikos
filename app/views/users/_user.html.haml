@@ -16,7 +16,6 @@
       %strong= t(:"users.types.#{user.user_type}")
       = t(:'users.show.is_looking_for')
       %strong= t(:"users.types.#{user.searching_for}")
-      = t(:'users.show.to_play')
     .tag_list
       - user.genres.each do |genre|
         %span= genre.name

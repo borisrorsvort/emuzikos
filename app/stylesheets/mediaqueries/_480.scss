@@ -1,7 +1,10 @@
 @media only screen and (min-width: 480px) {
-
-  .message_count {
-    position: static; }
+#inner_content {
+  background:#efefef;
+  padding: 18px; /* for non mobiel version*/
+}
+.message_count {
+  position: static; }
 
 #user_nav {
   a {

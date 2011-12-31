@@ -91,7 +91,7 @@ class User < ActiveRecord::Base
   end
 
   def has_profile_complete?
-    !self.country.nil? && !self.instruments.empty? && !self.zip.nil? && !self.searching_for.nil? && !self.user_type.nil? && !self.genres.empty?
+    self.country.present? && !self.instruments.empty? && self.zip.present? && self.searching_for.present? && self.user_type.present? && !self.genres.empty?
   end
 
   def to_param

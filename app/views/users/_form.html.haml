@@ -25,7 +25,7 @@
     %p.checkbox_set
       = f.label :visible, t(:'activerecord.attributes.user.visible')
       %br
-      Being visible, you still need to complete your profile to appear in search results. Being invisible will hide you from any search result.
+      When "visible", you will appear in search results if your profile is complete (except medias). When "invisible", you will be removed you from any search results.
       %br
       = f.label "visible_true", t(:"users.visible")
       = radio_button(:user, :visible, true)
@@ -41,32 +41,35 @@
         = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
     %p
       = f.label :instruments, t(:'activerecord.attributes.user.instruments')
-      %i If your instrument is not in the list, please make a request using the 
-      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"} help dashboard
+      %i If you're a band, list instruments already present in the band
       - @instruments.in_groups_of(4, false) do |instruments|
         .instrument_column
           - for instrument in instruments
             .instrument
               = check_box_tag "user[instrument_ids][]", instrument.id, @user.instruments.include?(instrument)
               = f.label(instrument.name, :class => "habtm")
-      .clear
+    .clear
+    %p
+      %br
+      %i Your instrument is not in the list?
+      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"} Please make a request using the help dashboard
+    
     %p
       = f.label :genre, t(:'activerecord.attributes.user.genre')
-      %i If your genre is not in the list, please make a request using the 
-      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"} help dashboard
       - @genres.in_groups_of(4, false) do |genres|
         .instrument_column
           - for genre in genres
             .instrument
               = check_box_tag "user[genre_ids][]", genre.id, @user.genres.include?(genre)
               = f.label(genre.name, :class => "habtm")
-      .clear
-    %p.checkbox_set
+    .clear
+    %p
+      %br
+      %i Your genre is not in the list?
+      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"} Please make a request using the help dashboard
+    %p
       = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
-
-      - User::USER_TYPES.each do |searching_for|
-        = radio_button(:user, :searching_for, searching_for)
-        = f.label "searching_for_" + searching_for, t(:"users.types.#{searching_for}")
+      = select(:user, :searching_for, grouped_options_for_select(searching_for_grouped_options, @user.searching_for ))
 
     %p
       = f.label :references, t(:'activerecord.attributes.user.references')
