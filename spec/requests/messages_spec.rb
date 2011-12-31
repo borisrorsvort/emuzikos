@@ -12,7 +12,7 @@ feature "Send a Message" do
       fill_in 'user_email', :with => @sender.email
       fill_in 'user_password', :with => @sender.password
     end
-    click_button 'Login'
+    click_button 'Log in'
     current_path.should match edit_user_path(@sender)
     page.should have_content('Logout')
 

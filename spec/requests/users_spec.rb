@@ -16,7 +16,7 @@ feature "Sign in Users", %q{
       fill_in 'user_email', :with => @user.email
       fill_in 'user_password', :with => @user.password
     end
-    click_button 'Login'
+    click_button 'Log in'
     current_path.should match edit_user_path(@user)
     page.should have_content('Logout')
   end
@@ -27,9 +27,9 @@ feature "Sign in Users", %q{
       fill_in 'user_email', :with => @user.email
       fill_in 'user_password', :with => 'wrongpassword'
     end
-    click_button 'Login'
+    click_button 'Log in'
     current_path.should match new_user_session_path
     page.should have_content('Invalid email or password.')
-    page.should have_content('Login')
+    page.should have_content('Log in')
   end
 end
