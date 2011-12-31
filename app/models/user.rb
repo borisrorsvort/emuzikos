@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   preference :newsletters, :default => true
   preference :message_notifications, :default => true
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude, :prefers_newsletters, :prefers_message_notifications
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
 
   attr_searchable :username, :user_type, :searching_for, :country, :zip
