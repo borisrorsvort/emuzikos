@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_uri
-    redirect_to request.protocol + "www." + request.host_with_port + request.request_uri if !/^www/.match(request.host) && RAILS_ENV == "production" 
+    redirect_to request.protocol + "www." + request.host_with_port + request.request_uri if !/^www/.match(request.host) && Rails.env == "production" 
   end
 
   private
