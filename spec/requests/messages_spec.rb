@@ -14,7 +14,7 @@ feature "Send a Message" do
     end
     click_button 'Log in'
     current_path.should match edit_user_path(@sender)
-    page.should have_content('Logout')
+    page.should have_content('Log out')
 
     visit(user_path(@recipient))
 

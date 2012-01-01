@@ -54,6 +54,7 @@ group :development, :test do
   gem "shoulda"
   gem "database_cleaner"
   gem "capybara"
+  gem 'selenium-webdriver'
   gem 'guard'
   gem "launchy", '2.0.5'
   gem 'rb-inotify', :require => false

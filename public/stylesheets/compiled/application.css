@@ -5906,9 +5906,15 @@ h1.username {
   /* line 44, ../../../app/stylesheets/mediaqueries/_992.scss */
   #users.index #search_form .field .button.submit.search {
     margin-top: 3px;
+    float: right;
+  }
+  /* line 48, ../../../app/stylesheets/mediaqueries/_992.scss */
+  #users.index #search_form .field#submit_search {
+    min-width: 129px;
+    width: 129px;
   }
 
-  /* line 49, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 54, ../../../app/stylesheets/mediaqueries/_992.scss */
   .right_drawer {
     float: right;
     display: inline;
@@ -5916,30 +5922,30 @@ h1.username {
     width: 80%;
   }
 
-  /* line 56, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 61, ../../../app/stylesheets/mediaqueries/_992.scss */
   .left_drawer {
     max-width: 20%;
     display: inline;
     float: left;
   }
 
-  /* line 63, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 68, ../../../app/stylesheets/mediaqueries/_992.scss */
   #footer a {
     display: inline-block;
     margin: 0 20px 0 0;
   }
-  /* line 67, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 72, ../../../app/stylesheets/mediaqueries/_992.scss */
   #footer .left_links {
     width: auto;
   }
-  /* line 70, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 75, ../../../app/stylesheets/mediaqueries/_992.scss */
   #footer .copyright {
     float: right;
     margin-top: 0;
   }
 
   /* LOGGUED OUT  */
-  /* line 78, ../../../app/stylesheets/mediaqueries/_992.scss */
+  /* line 83, ../../../app/stylesheets/mediaqueries/_992.scss */
   .logged_out #user_forms {
     width: 50%;
   }

@@ -43,6 +43,11 @@
   }
   .button.submit.search {
     margin-top: 3px;
+    float: right;
+  }
+  &#submit_search {
+    min-width: 129px;
+    width: 129px;
   }
 }
 

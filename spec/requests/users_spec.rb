@@ -18,7 +18,7 @@ feature "Sign in Users", %q{
     end
     click_button 'Log in'
     current_path.should match edit_user_path(@user)
-    page.should have_content('Logout')
+    page.should have_content('Log out')
   end
 
   scenario "with incorrect credentials" do
