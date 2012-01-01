@@ -26,13 +26,13 @@ Emuzikos::Application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :letter_opener
   #config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :user_name            => 'noreply@emuzikos.com',
-    :password             => '3muz1k0sn0r3ply2',
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  }
+  # config.action_mailer.smtp_settings = {
+  #   :address              => "smtp.gmail.com",
+  #   :port                 => 587,
+  #   :user_name            => 'noreply@emuzikos.com',
+  #   :password             => '3muz1k0sn0r3ply2',
+  #   :authentication       => 'plain',
+  #   :enable_starttls_auto => true  }
 
 
 

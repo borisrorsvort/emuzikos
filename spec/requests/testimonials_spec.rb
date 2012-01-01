@@ -12,9 +12,9 @@ feature "Testimonials" do
       fill_in 'user_email', :with => @user.email
       fill_in 'user_password', :with => @user.password
     end
-    click_button 'Login'
+    click_button 'Log in'
     current_path.should match edit_user_path(@user)
-    page.should have_content('Logout')
+    page.should have_content('Log out')
 
     visit(new_testimonial_path)
 
@@ -32,9 +32,9 @@ feature "Testimonials" do
       fill_in 'user_email', :with => @user.email
       fill_in 'user_password', :with => @user.password
     end
-    click_button 'Login'
+    click_button 'Log in'
     current_path.should match edit_user_path(@user)
-    page.should have_content('Logout')
+    page.should have_content('Log out')
 
     visit(new_testimonial_path)
 
