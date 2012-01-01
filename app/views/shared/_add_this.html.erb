@@ -1,8 +1,7 @@
 <!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style">
-<a class="addthis_button_tweet"></a>
-<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<div class="addthis_toolbox addthis_default_style" addthis:url="<%= request.url %>">
+  <a class="addthis_button_tweet" tw:url="<%= request.url %>"></a>
+  <a class="addthis_button_facebook_like" fb:like:layout="button_count" fb:like:href="<%= request.url %>"></a>
 </div>
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=borisrorsvort"></script>
 <!-- AddThis Button END -->
