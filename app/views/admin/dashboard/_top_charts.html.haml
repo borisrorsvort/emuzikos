@@ -1,0 +1,21 @@
+%h3 Top Genres
+
+%table
+  %tr
+    %th Name
+    %th Number of users
+  - top_genres.all.each do |genre|
+    %tr
+      %td= genre.name
+      %td= genre.total_tastes
+
+%h3 Top Instruments
+
+%table
+  %tr
+    %th Name
+    %th Number of users
+  - top_instruments.all.each do |instrument|
+    %tr
+      %td= instrument.name
+      %td= instrument.total_skills

@@ -31,4 +31,13 @@ ActiveAdmin::Dashboards.build do
     end
   end
 
+
+  section "Top charts", :priority => 5 do
+    @top_genres = Genre.select("genres.name, COUNT(tastes.user_id) AS total_tastes").joins(:tastes).group("genres.name").order("total_tastes DESC").limit(10)
+    @top_instruments = Instrument.select("instruments.name, COUNT(skills.user_id) AS total_skills").joins(:skills).group("instruments.name").order("total_skills DESC").limit(10)
+    div do
+      render :partial => "top_charts", :locals => { :top_genres => @top_genres, :top_instruments => @top_instruments}
+    end
+  end
+
 end
