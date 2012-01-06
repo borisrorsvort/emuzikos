@@ -20,7 +20,8 @@
 		left: 50%;
 		margin-left: -300px;
 		width: 520px;
-		background: #eee url(/images/reveal/modal-gloss.png) no-repeat -200px -80px;
+		background: url(/images/reveal/modal-gloss.png) no-repeat -200px -80px;
+		background-color: rgba(238, 238, 238, 1 );
 		position: absolute;
 		z-index: 101;
 		padding: 30px 40px 34px;

@@ -403,11 +403,16 @@ p + p.no-indent {
 }
 
 /* line 131, ../../../app/stylesheets/_typography.scss */
+#tab_info p + p {
+  text-indent: 0;
+}
+
+/* line 134, ../../../app/stylesheets/_typography.scss */
 .field p + p {
   text-indent: 0;
 }
 
-/* line 135, ../../../app/stylesheets/_typography.scss */
+/* line 138, ../../../app/stylesheets/_typography.scss */
 .no_records {
   font-size: 13px;
 }
@@ -545,7 +550,7 @@ h2.moto strong {
   text-align: left;
   margin: 0;
   font-weight: normal;
-  background: transparent url('/images/homepage/home-separator.png?1325858610') center top no-repeat;
+  background: transparent url('/images/homepage/home-separator.png?1325860325') center top no-repeat;
   color: #828282  !important;
 }
 /* line 78, ../../../app/stylesheets/homepage.scss */
@@ -765,7 +770,7 @@ h2.moto strong {
   width: 84px;
   height: 41px;
   margin: 20px auto 0;
-  background: transparent url('/images/homepage/note-circle.png?1325858618') center bottom no-repeat;
+  background: transparent url('/images/homepage/note-circle.png?1325860325') center bottom no-repeat;
 }
 
 /* line 240, ../../../app/stylesheets/homepage.scss */

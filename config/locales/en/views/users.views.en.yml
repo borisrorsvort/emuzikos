@@ -37,6 +37,10 @@ en:
       visible_notice: "You now appear in search results!"
       invisible_notice: "Make sure you're set as visible in order to appear in search results"
       medias: "Medias (optional)"
+      visible_explanation: 'When "visible", you will appear in search results if your profile is complete (except medias). When "invisible", you will be removed you from any search results.'
+      instruments_in_band_notice: "If you're a band, list instruments already present in the band"
+      instrument_not_in_list: "Your instrument is not in the list?"
+      request_through_dashboard: "Please make a request using the help dashboard"
 
     crop:
       prewiew: "Preview"

@@ -313,6 +313,10 @@ h1.username {
   }
 }
 
+.friendly_actions {
+  margin-bottom: $baseline * 2;
+}
+
 .jcrop-holder img, img#preview {
   max-width: none  !important;
   max-height: none  !important;
@@ -538,7 +542,7 @@ h1.username {
 
 
 //  Alerts
-.alert {
+.notification {
 
   $bg-alert-info: #d69c3b;
   $bg-alert-error: #cf6d6e;
