@@ -16,3 +16,4 @@ I18n.backend.store_translations :en, :messages_count => {
 Carmen.default_locale = :en
 
 #Encoding.default_internal = 'UTF-8'
+
