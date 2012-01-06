@@ -37,12 +37,15 @@ class User < ActiveRecord::Base
   validates_attachment_size :avatar,
       :less_than => 1.megabyte, #another option is :greater_than
       :message => "max size is 1M"
+  
+  validates_uri_existence_of :youtube_video_id_response, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :on => :update, :message => "is not valid. Please check if you didn't put the whole url or your username instead of just the id"
 
   USER_TYPES = %w(band musician agent)
 
   after_validation :subscribe
   after_update :check_against_mailchimp
   after_validation :geocode, :if => :address_changed?
+
 
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
@@ -121,6 +124,11 @@ class User < ActiveRecord::Base
     return results
   end
 
+  def youtube_video_id_response
+    # Build a url with the video id and check response within the custom validation using the ad-hoc regex
+    return "http://gdata.youtube.com/feeds/api/videos/#{self.youtube_video_id}"
+  end
+
   private
 
     def reprocess_avatar
@@ -173,6 +181,8 @@ class User < ActiveRecord::Base
         self.preferred_newsletters ? update_mailchimp('subscribe_newsletter') : update_mailchimp('unsubscribe_newsletter')
       end
     end
+
+
 
   protected
 

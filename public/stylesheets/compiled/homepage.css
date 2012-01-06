@@ -686,8 +686,9 @@ h2.moto strong {
   font-weight: bold;
   position: relative;
   z-index: 20;
+  text-align: center;
 }
-/* line 196, ../../../app/stylesheets/homepage.scss */
+/* line 197, ../../../app/stylesheets/homepage.scss */
 .signup_button:hover {
   color: #372f12;
   -moz-transform: scale(1.02, 1.02);
@@ -697,24 +698,24 @@ h2.moto strong {
   transform: scale(1.02, 1.02);
 }
 
-/* line 202, ../../../app/stylesheets/homepage.scss */
+/* line 203, ../../../app/stylesheets/homepage.scss */
 .features_columns {
   background-color: #041021;
   padding: 0 20px 48px;
 }
-/* line 205, ../../../app/stylesheets/homepage.scss */
+/* line 206, ../../../app/stylesheets/homepage.scss */
 .features_columns .columns {
   padding: 3%;
 }
 
-/* line 210, ../../../app/stylesheets/homepage.scss */
+/* line 211, ../../../app/stylesheets/homepage.scss */
 .FB_fan iframe {
   margin: 0 auto;
   width: 300px;
   margin-left: 14%;
 }
 
-/* line 216, ../../../app/stylesheets/homepage.scss */
+/* line 217, ../../../app/stylesheets/homepage.scss */
 .note_circle {
   width: 84px;
   height: 41px;
@@ -723,6 +724,11 @@ h2.moto strong {
 }
 
 /* line 224, ../../../app/stylesheets/homepage.scss */
+.latest_testimionals {
+  margin-bottom: 18px;
+}
+
+/* line 228, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .testimonial {
   font-size: 13px;
   background-color: #030c1a;
@@ -735,20 +741,20 @@ h2.moto strong {
   padding: 18px;
   margin: 0 10px 18px;
 }
-/* line 231, ../../../app/stylesheets/homepage.scss */
+/* line 235, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .text {
   font-size: 12px;
   opacity: 0.8;
   padding-left: 50px;
 }
-/* line 236, ../../../app/stylesheets/homepage.scss */
+/* line 240, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .author {
   font-weight: bold;
   margin-bottom: 9px;
   color: #496781;
   text-shadow: black 0 1px 1px;
 }
-/* line 242, ../../../app/stylesheets/homepage.scss */
+/* line 246, ../../../app/stylesheets/homepage.scss */
 .home_testimonials .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -764,25 +770,25 @@ h2.moto strong {
 /*/mediaquery*/
 /*768px __________________________________________________________________________________________________________ */
 @media only screen and (min-width: 768px) {
-  /* line 258, ../../../app/stylesheets/homepage.scss */
+  /* line 262, ../../../app/stylesheets/homepage.scss */
   .homepage h2.moto {
     font-size: 41px;
   }
 
-  /* line 263, ../../../app/stylesheets/homepage.scss */
+  /* line 267, ../../../app/stylesheets/homepage.scss */
   .homepage h3 {
     text-align: center;
   }
 
-  /* line 266, ../../../app/stylesheets/homepage.scss */
+  /* line 270, ../../../app/stylesheets/homepage.scss */
   .inner_block {
     margin: 0 auto;
   }
-  /* line 269, ../../../app/stylesheets/homepage.scss */
+  /* line 273, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_feature {
     max-width: 960px;
   }
-  /* line 271, ../../../app/stylesheets/homepage.scss */
+  /* line 275, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_feature .columns {
     width: 27.333%;
     padding: 3%;
@@ -790,11 +796,11 @@ h2.moto strong {
     display: inline;
     padding-top: 0;
   }
-  /* line 276, ../../../app/stylesheets/homepage.scss */
+  /* line 280, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_testimonials {
     max-width: 620px;
   }
-  /* line 278, ../../../app/stylesheets/homepage.scss */
+  /* line 282, ../../../app/stylesheets/homepage.scss */
   .inner_block.home_testimonials .t_column {
     width: 50%;
     padding: 0;

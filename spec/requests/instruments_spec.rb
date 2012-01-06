@@ -19,7 +19,6 @@ feature "Instrument", :js => true do
     page.should have_content('Log out')
 
     visit(edit_user_path(@user))
-    save_and_open_page
     page.should have_content(@instrument.name)
     page.should have_no_checked_field('user_instrument_ids_')
 

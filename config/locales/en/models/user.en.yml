@@ -21,7 +21,7 @@ en:
         zip: Zip code
         country: Country
         password_confirmation: Password confirmation
-        avatar: Avatar
+        avatar: Profile picture
         testimonials: "%{user}'s Testimonials"
         location: Location
         youtube_video_id: YouTube Video Id

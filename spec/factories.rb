@@ -28,6 +28,4 @@ FactoryGirl.define do
   factory :instrument do |i|
     i.name 'Guitar'
   end
-
-
 end
