@@ -36,6 +36,10 @@ end
 
 feature "Editing profile infos" do
 
+  background do
+    @user = Factory(:user)
+  end
+  
   scenario "add a youtube video with a valid id" do
     visit(new_user_session_path)
     within("#user_new") do
@@ -48,7 +52,7 @@ feature "Editing profile infos" do
 
     visit(edit_user_path(@user))
 
-    fill_in 'youtube_video_id', :with => "vP1x2DbS55E"
+    fill_in 'user_youtube_video_id', :with => "vP1x2DbS55E"
     click_button 'Update'
     page.should have_content "Success"
   end
@@ -65,7 +69,7 @@ feature "Editing profile infos" do
 
     visit(edit_user_path(@user))
 
-    fill_in 'youtube_video_id', :with => "vP1xbS55E"
+    fill_in 'user_youtube_video_id', :with => "vP1xbS55E"
     click_button 'Update'
     page.should have_content "Error"
   end
