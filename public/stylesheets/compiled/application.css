@@ -3715,11 +3715,16 @@ p + p.no-indent {
 }
 
 /* line 131, ../../../app/stylesheets/_typography.scss */
+#tab_info p + p {
+  text-indent: 0;
+}
+
+/* line 134, ../../../app/stylesheets/_typography.scss */
 .field p + p {
   text-indent: 0;
 }
 
-/* line 135, ../../../app/stylesheets/_typography.scss */
+/* line 138, ../../../app/stylesheets/_typography.scss */
 .no_records {
   font-size: 13px;
 }
@@ -4901,39 +4906,44 @@ h1.username {
 }
 
 /* line 316, ../../../app/stylesheets/_main.scss */
+.friendly_actions {
+  margin-bottom: 36px;
+}
+
+/* line 320, ../../../app/stylesheets/_main.scss */
 .jcrop-holder img, img#preview {
   max-width: none  !important;
   max-height: none  !important;
 }
 
-/* line 321, ../../../app/stylesheets/_main.scss */
+/* line 325, ../../../app/stylesheets/_main.scss */
 .users_nearby {
   margin-bottom: 18px;
 }
-/* line 322, ../../../app/stylesheets/_main.scss */
+/* line 326, ../../../app/stylesheets/_main.scss */
 .users_nearby .avatar {
   margin: 0 10px 10px 0;
 }
 
-/* line 329, ../../../app/stylesheets/_main.scss */
+/* line 333, ../../../app/stylesheets/_main.scss */
 .future_events ul {
   list-style: none;
 }
 
-/* line 334, ../../../app/stylesheets/_main.scss */
+/* line 338, ../../../app/stylesheets/_main.scss */
 #tabs {
   border-color: #ccc;
 }
-/* line 336, ../../../app/stylesheets/_main.scss */
+/* line 340, ../../../app/stylesheets/_main.scss */
 #tabs li {
   margin-right: 9px;
 }
-/* line 339, ../../../app/stylesheets/_main.scss */
+/* line 343, ../../../app/stylesheets/_main.scss */
 #tabs .ui-state-default {
   background: #fff;
   border: none;
 }
-/* line 342, ../../../app/stylesheets/_main.scss */
+/* line 346, ../../../app/stylesheets/_main.scss */
 #tabs .ui-state-default a {
   font-weight: normal;
   color: #157EBE;
@@ -4944,49 +4954,49 @@ h1.username {
 #tabs .ui-state-default a:hover {
   text-decoration: underline;
 }
-/* line 349, ../../../app/stylesheets/_main.scss */
+/* line 353, ../../../app/stylesheets/_main.scss */
 #tabs .ui-tabs-selected {
   border: 1px solid #ccc;
 }
-/* line 351, ../../../app/stylesheets/_main.scss */
+/* line 355, ../../../app/stylesheets/_main.scss */
 #tabs .ui-tabs-selected a {
   color: #666 !important;
 }
-/* line 353, ../../../app/stylesheets/_main.scss */
+/* line 357, ../../../app/stylesheets/_main.scss */
 #tabs .ui-tabs-selected a:hover {
   text-decoration: none;
 }
-/* line 358, ../../../app/stylesheets/_main.scss */
+/* line 362, ../../../app/stylesheets/_main.scss */
 #tabs .ui-tabs-panel {
   border: none;
   padding: 18px 9px;
 }
-/* line 362, ../../../app/stylesheets/_main.scss */
+/* line 366, ../../../app/stylesheets/_main.scss */
 #tabs .ui-widget-header {
   border-bottom: 1px solid #ccc;
 }
 
-/* line 367, ../../../app/stylesheets/_main.scss */
+/* line 371, ../../../app/stylesheets/_main.scss */
 .soundcloud_block {
   max-width: 80%;
 }
-/* line 369, ../../../app/stylesheets/_main.scss */
+/* line 373, ../../../app/stylesheets/_main.scss */
 .soundcloud_block li {
   margin-right: 0 !important;
 }
 
 /* CONTACT LIST*/
-/* line 376, ../../../app/stylesheets/_main.scss */
+/* line 380, ../../../app/stylesheets/_main.scss */
 #users.contacts .actions {
   margin-bottom: 18px;
 }
 
 /* TESTIMONIALS */
-/* line 383, ../../../app/stylesheets/_main.scss */
+/* line 387, ../../../app/stylesheets/_main.scss */
 #testimonials {
   clear: both;
 }
-/* line 386, ../../../app/stylesheets/_main.scss */
+/* line 390, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial {
   width: 230px;
   padding: 15px;
@@ -5008,11 +5018,11 @@ h1.username {
   margin: 0px 10px 10px 0px;
   float: left;
 }
-/* line 398, ../../../app/stylesheets/_main.scss */
+/* line 402, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .author {
   font-weight: bold;
 }
-/* line 401, ../../../app/stylesheets/_main.scss */
+/* line 405, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .avatar {
   float: left;
   border: 3px solid #ccc;
@@ -5023,17 +5033,17 @@ h1.username {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 405, ../../../app/stylesheets/_main.scss */
+/* line 409, ../../../app/stylesheets/_main.scss */
 #testimonials .testimonial .text {
   padding-left: 50px;
 }
 
-/* line 411, ../../../app/stylesheets/_main.scss */
+/* line 415, ../../../app/stylesheets/_main.scss */
 .testimonials.wide .testimonial {
   width: 225px !important;
 }
 
-/* line 414, ../../../app/stylesheets/_main.scss */
+/* line 418, ../../../app/stylesheets/_main.scss */
 #testimonials:after {
   clear: both;
   content: '';
@@ -5043,17 +5053,17 @@ h1.username {
 }
 
 /* SERVICES */
-/* line 423, ../../../app/stylesheets/_main.scss */
+/* line 427, ../../../app/stylesheets/_main.scss */
 #remote {
   font-size: 0.75em;
 }
 
-/* line 426, ../../../app/stylesheets/_main.scss */
+/* line 430, ../../../app/stylesheets/_main.scss */
 .services_list img {
   width: 32px;
 }
 
-/* line 429, ../../../app/stylesheets/_main.scss */
+/* line 433, ../../../app/stylesheets/_main.scss */
 .services_used {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -5073,30 +5083,30 @@ h1.username {
   width: 90%;
   float: left;
 }
-/* line 435, ../../../app/stylesheets/_main.scss */
+/* line 439, ../../../app/stylesheets/_main.scss */
 .services_used img {
   float: left;
   margin-right: 10px;
 }
 
-/* line 440, ../../../app/stylesheets/_main.scss */
+/* line 444, ../../../app/stylesheets/_main.scss */
 .service_user {
   float: left;
   margin: 5px 0 10px;
 }
-/* line 443, ../../../app/stylesheets/_main.scss */
+/* line 447, ../../../app/stylesheets/_main.scss */
 .service_user .field {
   margin-bottom: 1em;
 }
 
 /* 12. MESSAGES
 ---------------------------------------- */
-/* line 453, ../../../app/stylesheets/_main.scss */
+/* line 457, ../../../app/stylesheets/_main.scss */
 .messages_list {
   margin-bottom: 10px;
 }
 
-/* line 457, ../../../app/stylesheets/_main.scss */
+/* line 461, ../../../app/stylesheets/_main.scss */
 .message {
   font-size: 13px;
   display: block;
@@ -5107,36 +5117,36 @@ h1.username {
   color: #666;
   position: relative;
 }
-/* line 466, ../../../app/stylesheets/_main.scss */
+/* line 470, ../../../app/stylesheets/_main.scss */
 .message.unread {
   background-color: #e5f5fb;
 }
-/* line 469, ../../../app/stylesheets/_main.scss */
+/* line 473, ../../../app/stylesheets/_main.scss */
 .message span {
   display: block;
 }
-/* line 471, ../../../app/stylesheets/_main.scss */
+/* line 475, ../../../app/stylesheets/_main.scss */
 .message span.message_date {
   position: absolute;
   top: 10px;
   right: 10px;
 }
-/* line 476, ../../../app/stylesheets/_main.scss */
+/* line 480, ../../../app/stylesheets/_main.scss */
 .message span.message_subject {
   color: #999;
 }
-/* line 480, ../../../app/stylesheets/_main.scss */
+/* line 484, ../../../app/stylesheets/_main.scss */
 .message .message_sender {
   font-size: 13px;
   color: #1d8cc8;
   font-weight: bold;
   margin: 0 0 9px;
 }
-/* line 486, ../../../app/stylesheets/_main.scss */
+/* line 490, ../../../app/stylesheets/_main.scss */
 .message .checker {
   float: left;
 }
-/* line 489, ../../../app/stylesheets/_main.scss */
+/* line 493, ../../../app/stylesheets/_main.scss */
 .message .headers {
   padding-left: 34px;
 }
@@ -5146,7 +5156,7 @@ h1.username {
 /* 14.GLOBAL OBJECTS
 ---------------------------------------- */
 /* MODAL BOX */
-/* line 504, ../../../app/stylesheets/_main.scss */
+/* line 508, ../../../app/stylesheets/_main.scss */
 #simplemodal-container a.modalCloseImg {
   background: url("/images/icons/close.png") no-repeat;
   /* adjust url as required */
@@ -5165,7 +5175,7 @@ h1.username {
 /* 16.TEMPLATE SPECIFICS
 ---------------------------------------- */
 /* SEARCH */
-/* line 523, ../../../app/stylesheets/_main.scss */
+/* line 527, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links {
   display: none;
   margin: 0;
@@ -5201,11 +5211,11 @@ h1.username {
 #sub_nav .quick_links li.last {
   padding-right: 0;
 }
-/* line 531, ../../../app/stylesheets/_main.scss */
+/* line 535, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links ul li {
   margin: 0 5px 0 0;
 }
-/* line 533, ../../../app/stylesheets/_main.scss */
+/* line 537, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links a {
   text-decoration: none;
 }
@@ -5213,13 +5223,13 @@ h1.username {
 #sub_nav .quick_links a:hover {
   text-decoration: underline;
 }
-/* line 535, ../../../app/stylesheets/_main.scss */
+/* line 539, ../../../app/stylesheets/_main.scss */
 #sub_nav .quick_links span {
   font-weight: bold;
 }
 
-/* line 541, ../../../app/stylesheets/_main.scss */
-.alert {
+/* line 545, ../../../app/stylesheets/_main.scss */
+.notification {
   display: inline-block;
   padding: 9px;
   text-align: left;
@@ -5233,29 +5243,29 @@ h1.username {
   border-radius: 5px;
   margin-bottom: 18px;
 }
-/* line 555, ../../../app/stylesheets/_main.scss */
-.alert.base {
+/* line 559, ../../../app/stylesheets/_main.scss */
+.notification.base {
   background: #4a8cae;
   color: #1c3643;
   text-shadow: #8fb9cf 0 1px 1px;
   border-color: #3b6f8a;
 }
-/* line 562, ../../../app/stylesheets/_main.scss */
-.alert.info {
+/* line 566, ../../../app/stylesheets/_main.scss */
+.notification.info {
   background: #d69c3b;
   color: #634615;
   text-shadow: #e8c78f 0 1px 1px;
   border-color: #b88126;
 }
-/* line 569, ../../../app/stylesheets/_main.scss */
-.alert.error {
+/* line 573, ../../../app/stylesheets/_main.scss */
+.notification.error {
   background: #cf6d6e;
   color: #7b2829;
   text-shadow: #e8baba 0 1px 1px;
   border-color: #c24748;
 }
-/* line 576, ../../../app/stylesheets/_main.scss */
-.alert.success {
+/* line 580, ../../../app/stylesheets/_main.scss */
+.notification.success {
   background: #78964e;
   color: #27311a;
   text-shadow: #aac189 0 1px 1px;

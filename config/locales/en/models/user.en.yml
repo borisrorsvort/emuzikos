@@ -7,8 +7,8 @@ en:
         email: Email
         genre: Musical genres
         instruments: Instruments
-        searching_for: Searching for a
-        references: References
+        searching_for: Searching for
+        references: Musical References
         request_message: Request message
         new_password: New password
         password: Password

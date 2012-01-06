@@ -92,7 +92,7 @@
       .note_circle
       .latest_testimionals
         .inner_block.home_testimonials
-          %h3 Latest musicians testimonials
+          %h3 What people are saying about it?
           - @testimonials.in_groups_of(2, false) do |group|
             .t_column
               - for testimonial in group do
@@ -108,7 +108,12 @@
                       = testimonial.created_at.strftime('%b %d, %Y')
                       = t(:'common.by')
                       = testimonial.user_username
-                    = truncate(testimonial.body, :length => 123, :omission =>"...")
+                    = truncate(testimonial.body, :length => 500, :omission =>"...")
+                    - if testimonial.body.length > 500
+                      =link_to("read more", "#", "data-reveal-id" => "testimonial_full_#{testimonial.id}", :class => "testimonial_read_more")
+                      %div{ :id => "testimonial_full_#{testimonial.id}", :class => "reveal-modal"}
+                        %p= testimonial.body
+                        %a.close-reveal-modal ×
         .clear
     .clear
     .center
