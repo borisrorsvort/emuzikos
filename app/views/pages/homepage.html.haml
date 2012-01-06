@@ -58,13 +58,35 @@
         .inner_column
           %h4 No credit card required
           %p The service is completely free. We believe you should never pay to be able to connect with other musicians.
-        .inner_column
-      
       .columns
         .inner_column
           %h4 Spread the love
           = render "shared/add_this"
-
+      .clear
+    .note_circle
+    .inner_block.home_feature
+      %h3 How does it look like?
+      .columns
+        .inner_column
+          %h4 Search page
+          =link_to(image_tag("app-samples/search-thumb.jpg"), "#", "data-reveal-id" => "app_sample_search", :class => "app_sample_thumb")
+          #app_sample_search.reveal-modal.xlarge
+            = image_tag("app-samples/search-normal.jpg")
+            %a.close-reveal-modal ×
+      .columns
+        .inner_column
+          %h4 Profile page
+          =link_to(image_tag("app-samples/profile-thumb.jpg"), "#", "data-reveal-id" => "app_sample_profile", :class => "app_sample_thumb")
+          #app_sample_profile.reveal-modal.xlarge
+            = image_tag("app-samples/profile-normal.jpg")
+            %a.close-reveal-modal ×
+      .columns
+        .inner_column
+          %h4 Your private inbox
+          =link_to(image_tag("app-samples/inbox-thumb.jpg"), "#", "data-reveal-id" => "app_sample_inbox", :class => "app_sample_thumb")
+          #app_sample_inbox.reveal-modal.xlarge
+            = image_tag("app-samples/inbox-normal.jpg")
+            %a.close-reveal-modal ×
       .clear
     - unless @testimonials.empty?
       .note_circle
@@ -87,4 +109,7 @@
                       = t(:'common.by')
                       = testimonial.user_username
                     = truncate(testimonial.body, :length => 123, :omission =>"...")
+        .clear
     .clear
+    .center
+      = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "signup_button"

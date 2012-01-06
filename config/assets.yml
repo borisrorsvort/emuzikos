@@ -29,6 +29,7 @@ javascripts:
     - public/javascripts/gritter/jquery.gritter.min.js
     - public/javascripts/libs/jquery.masonry.min.js
     - public/javascripts/libs/jquery.pageless.js
+    - public/javascripts/libs/jquery.reveal.js
     - public/javascripts/libs/imgsizer.js
     - public/javascripts/plugins.js
     - public/javascripts/mylibs/helper.js
@@ -46,7 +47,7 @@ stylesheets:
     - public/stylesheets/uniform-themes/uniform.emuzikos.css
     - public/stylesheets/compiled/application.css
     - public/stylesheets/gritter/jquery.gritter.css
-    - public/stylesheets/boxy.css
+    - public/stylesheets/reveal.css
   homepage:
     - public/stylesheets/compiled/homepage.css
 

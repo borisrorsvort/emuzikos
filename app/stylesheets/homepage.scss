@@ -193,6 +193,10 @@ h2.moto {
   font-weight:bold;
   position: relative;
   z-index: 20;
+  text-align: center;
+  @include transition-property(all);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease-in);
   &:hover {
     color: darken(#5e501e, 10%);
     @include scale(1.02);
@@ -204,6 +208,19 @@ h2.moto {
   padding: 0 20px 48px;
   .columns {
     padding: 3%;
+  }
+}
+.app_sample_thumb img {
+  border: 5px solid #fff;
+  @include box-shadow(#000, 0, 1px, 1px);
+  @include border-radius(5px);
+  @include transition-property(all);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease-in);
+  position: relative;
+  &:hover{
+    border-color: #f5bd14;
+    top: 5px;
   }
 }
 
@@ -220,6 +237,9 @@ h2.moto {
   background:transparent image-url('homepage/note-circle.png') center bottom no-repeat;
 }
 
+.latest_testimionals {
+    margin-bottom: $baseline;
+}
 .home_testimonials {
   .testimonial {
     font-size: $basefont;

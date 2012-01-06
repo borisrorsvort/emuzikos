@@ -2,7 +2,6 @@
   = f.error_messages
 
   %h3= t(:'users.location')
-
   .field
     %p
       = f.label :zip, t(:'activerecord.attributes.user.zip')
@@ -11,7 +10,7 @@
       = f.label :country, t(:'activerecord.attributes.user.country')
       = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
 
-  %h3= t(:'users.avatar')
+  %h3= t(:'activerecord.attributes.user.avatar')
   .field
     - if @user.avatar.present?
       .avatar.small
@@ -94,7 +93,21 @@
     %p
       = f.label :youtube_video_id, t(:'activerecord.attributes.user.youtube_video_id')
       = f.text_field :youtube_video_id, :placeholder => "Example: JW5meKfy3fY"
+      %i Don't find your video id? #{ link_to "Click here for help", "#", "data-reveal-id" => "youtube_video_id_help" }
       %i Don't have a Youtube account? #{ link_to "Create one here", "http://www.youtube.com/" }
   .clear
 
-  =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"
+  = f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"
+
+#youtube_video_id_help.reveal-modal
+  %h1 How to find your Youtube video id?
+  %ol
+    %li First go to your youtube video page
+    %li
+      %p Then copy the id form the page url. That's the text after "watch?v="
+      %p
+        = image_tag "reveal/youtube/url-example.jpg", :alt => "youtube url example"
+    %li Paste it in your profile youtube video id field
+    %li Press update
+
+  %a.close-reveal-modal ×
