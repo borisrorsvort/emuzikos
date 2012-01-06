@@ -32,12 +32,8 @@
     - else
       #actions_set
         = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), :back, :class => "button back profile"
-        -if current_user && current_user != @user
-          - unless current_user.is_friend_with(@user)
-            = link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user), :method => :post, :class => "button add_to_contact_list"
-          = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button contact"
-        -elsif !@current_user
-          = link_to t(:'buttons.home_signup'), signup_path, :class => "button submit contact "
+        -if !@current_user
+          = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "button submit contact "
     .clear
 
 %section.right_drawer.profile
@@ -52,16 +48,17 @@
           = @user.zip
           = Carmen::country_name(@user.country) rescue "N/A"
 
-    - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
-      %p.looking_for
-        = t(:'.is_looking_for')
-        = t(:"users.types.#{@user.searching_for}")
-    -else
-      %br
+    -if current_user && current_user != @user
+      .friendly_actions
+        = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button contact"
+        - unless current_user.is_friend_with(@user)
+          = link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user), :method => :post, :class => "button add_to_contact_list"
+    -if !@current_user
+      .friendly_actions
+        = link_to t(:'buttons.contact'), new_user_registration_path, :class => "button contact"
     .spread
       = render "shared/add_this"
       .clear
-
     #tabs
       %ul.profile_tabs_nav
         %li
@@ -75,8 +72,12 @@
 
       / INFOS TAB START
       #tab_info
+        - if @user.searching_for?
+          %h3= t(:'activerecord.attributes.user.searching_for') + " :"
+          %p= t(:"users.types.#{@user.searching_for}")
+
         - if @user.has_profile_complete?
-          %h3= t(:'activerecord.attributes.user.genres')
+          %h3= t(:'activerecord.attributes.user.genre')
           .tag_list_instruments
             - @user.genres.each do |genre|
               .tag-body.yellow

@@ -136,16 +136,4 @@ $(document).ready(function() {
   });
 
   $('.habtm').click_checkbox();
-
-  // $('#sub_nav ul').mobileSelect({
-  //   autoHide: true, // Hide the ul automatically
-  //   defaultOption: "Go to...", // The default select option
-  //   deviceWidth: 768 // The select will be added for screensizes smaller than this
-  // });
-  // $('.inner_footer .left_links').mobileSelect({
-  //   autoHide: true, // Hide the ul automatically
-  //   defaultOption: "Go to...", // The default select option
-  //   deviceWidth: 768 // The select will be added for screensizes smaller than this
-  // });
-
 });

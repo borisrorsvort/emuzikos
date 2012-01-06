@@ -17,13 +17,13 @@
 
 - if @user.has_profile_complete?
   - if @user.visible?
-    %span.alert.success
+    %span.notification.success
       = t(:'.profile_complete_notice') + " " + t(:'.visible_notice')
   - else
-    %span.alert.info
+    %span.notification.info
       = t(:'.profile_complete_notice') + " " + t(:'.invisible_notice')
 - else
-  %span.alert.info
+  %span.notification.info
     = t(:'.profile_not_complete_notice')
 
 = render 'form'
