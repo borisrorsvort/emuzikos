@@ -44,11 +44,10 @@ group :development, :test do
   gem "hirb"
   gem "bullet"
   gem "nifty-generators"
-  gem 'heroku_san'
   gem 'rails_best_practices'
   gem 'simplecov', :require => false
   gem "letter_opener"
-
+  gem 'heroku_san'
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem "shoulda"
