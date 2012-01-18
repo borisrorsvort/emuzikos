@@ -16,5 +16,5 @@ db/schema.rb
 coverage/**/*
 public/system/***/**/*
 public/photos/***/**/*
-.idea/***/**/*
+.idea/*
 .rvmrc
