@@ -21,7 +21,6 @@ gem "haml", "3.1.2"
 gem "compass", "0.11.1"
 gem "settingslogic", "2.0.6"
 gem 'formtastic', '1.1.0'
-
 #gem "paperclip", "2.3.11"
 gem "paperclip", "2.4"
 #gem "paperclip", "2.4.1"

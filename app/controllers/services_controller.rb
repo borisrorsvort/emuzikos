@@ -96,19 +96,19 @@ def create
         auth = Service.find_by_provider_and_uid(provider, uid)
         if !auth
           current_user.services.create(:provider => provider, :uid => uid, :uname => username, :uemail => email)
-          flash[:notice] = 'Logged in via ' + provider.capitalize + ' has been added to your account.'
+          flash[:notice] = "Logged in via" + provider.capitalize + " has been added to your account."
           redirect_to services_path
         else
-          flash[:notice] = service_route.capitalize + ' is already linked to your account.'
+          flash[:notice] = service_route.capitalize + t('already_linked_account')
           redirect_to services_path
         end
       end
     else
-      flash[:error] =  service_route.capitalize + ' returned invalid data for the user id.'
+      flash[:error] =  service_route.capitalize + t('invalid_data_user_id')
       redirect_to new_user_session_path
     end
   else
-    flash[:error] = 'Error while authenticating via ' + service_route.capitalize + '.'
+    flash[:error] = "Error while authenticating via #{service_route.capitalize}."
     redirect_to new_user_session_path
   end
 end
