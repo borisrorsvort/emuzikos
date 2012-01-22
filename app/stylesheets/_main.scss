@@ -315,6 +315,10 @@ h1.username {
 
 .friendly_actions {
   margin-bottom: $baseline * 2;
+  .ui-button-text {
+    font-size: 0.6em;
+    padding: .4em 1em .4em 2.4em;  }
+
 }
 
 .jcrop-holder img, img#preview {

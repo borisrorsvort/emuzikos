@@ -1,9 +1,8 @@
 - title t(:'.title')
 
 - content_for :sub_nav do
-  %ul#sub_sections
-    %li
-      = link_to t(:'buttons.cancel'), :back, :class => "button back"
+  #actions_set
+    = link_to t(:'buttons.cancel'), :back, :class => "button back"
   .clear
 
 = form_for @message, :url => user_messages_path(@user) do |f|

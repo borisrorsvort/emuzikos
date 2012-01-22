@@ -641,7 +641,7 @@
         1,
         1,
         1,
-        1,
+        null,
         null,
         1,
         1,
@@ -684,8 +684,8 @@
         0,
         null,
         null,
-        1,
-        46,
+        null,
+        null,
         null,
         null,
         1,
@@ -785,10 +785,6 @@
         null,
         null
       ],
-      "/Users/borisrorsvort/Sites/emuzikos/app/helpers/mailchimp_helper.rb": [
-        1,
-        null
-      ],
       "/Users/borisrorsvort/Sites/emuzikos/app/helpers/users_helper.rb": [
         1,
         1,
@@ -846,6 +842,13 @@
       ],
       "/Users/borisrorsvort/Sites/emuzikos/app/admin/genres.rb": [
         1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
         null,
         null
       ],
@@ -856,6 +859,11 @@
         null,
         1,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/borisrorsvort/Sites/emuzikos/app/admin/instruments.rb": [
@@ -886,6 +894,11 @@
       ],
       "/Users/borisrorsvort/Sites/emuzikos/app/admin/messages.rb": [
         1,
+        1,
+        0,
+        0,
+        0,
+        null,
         null,
         null
       ],
@@ -961,11 +974,6 @@
         1,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        null,
         null,
         null,
         null,
@@ -981,8 +989,11 @@
         null,
         0,
         0,
+        null,
         0,
         0,
+        0,
+        null,
         0,
         0,
         null,
@@ -996,6 +1007,7 @@
         null,
         null,
         1,
+        0,
         0,
         0,
         0,
@@ -1040,8 +1052,9 @@
         1,
         1,
         null,
-        1,
-        1,
+        null,
+        null,
+        null,
         null,
         1,
         null,
@@ -1557,8 +1570,6 @@
         3,
         3,
         null,
-        3,
-        null,
         null,
         1,
         14,
@@ -1623,7 +1634,6 @@
         null,
         1,
         null,
-        null,
         null
       ],
       "/Users/borisrorsvort/Sites/emuzikos/app/models/app_config.rb": [
@@ -1657,6 +1667,6 @@
         null
       ]
     },
-    "timestamp": 1326931031
+    "timestamp": 1327274226
   }
 }

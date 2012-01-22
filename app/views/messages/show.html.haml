@@ -1,8 +1,7 @@
 -title h(@message.subject)
 - content_for :sub_nav do
-  %ul#sub_sections
-    %li
-      = link_to t(:'buttons.back', :model => t(:'messages.inbox.title')), :back, :class => "button back"
+  #actions_set
+    = link_to t(:'buttons.back', :model => t(:'messages.inbox.title')), :back, :class => "button back"
   .clear
 
 .field
