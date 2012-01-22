@@ -50,7 +50,7 @@
     .clear
     %p
       %br
-      %i= t(:instrument_not_in_list, :scope => [:users, :edit])
+      %i= t(:'instrument_not_in_list', :scope => [:users, :edit])
       %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:request_through_dashboard, :scope => [:users, :edit])}
         = t(:request_through_dashboard, :scope => [:users, :edit])
 
@@ -65,8 +65,8 @@
     .clear
     %p
       %br
-      %i Your genre is not in the list?
-      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:request_through_dashboard, :scope => [:users, :edit])}= t(:request_through_dashboard, :scope => [:users, :edit])
+      %i= t(:'genre_not_on_list')
+      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'request_through_dashboard', :scope => [:users, :edit])}= t(:'request_through_dashboard', :scope => [:users, :edit])
     %p
       = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
       = select(:user, :searching_for, grouped_options_for_select(searching_for_grouped_options, @user.searching_for ))
