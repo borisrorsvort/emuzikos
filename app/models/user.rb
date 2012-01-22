@@ -19,8 +19,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude, :prefers_newsletters, :prefers_message_notifications
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
 
-  attr_searchable :username, :user_type, :searching_for, :country, :zip
-  assoc_searchable :instruments, :skills, :tastes, :genres
+  #attr_searchable :username, :user_type, :searching_for, :country, :zip
+  #attr_unsearchable :songkick_username
+  #assoc_searchable :instruments, :skills, :tastes, :genres
 
   geocoded_by :address
   acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?,
@@ -37,7 +38,7 @@ class User < ActiveRecord::Base
   validates_attachment_size :avatar,
       :less_than => 1.megabyte, #another option is :greater_than
       :message => "max size is 1M"
-  
+
   validates_uri_existence_of :youtube_video_id_response, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :on => :update, :message => "is not valid. Please check if you didn't put the whole url or your username instead of just the id"
 
   USER_TYPES = %w(band musician agent)
@@ -121,12 +122,12 @@ class User < ActiveRecord::Base
     require 'songkickr'
     remote = Songkickr::Remote.new AppConfig.songkick.api_key
     results = remote.events(:artist_name => songkick_username, :type => 'concert')
-    return results
+    results
   end
 
   def youtube_video_id_response
     # Build a url with the video id and check response within the custom validation using the ad-hoc regex
-    return "http://gdata.youtube.com/feeds/api/videos/#{self.youtube_video_id}"
+    "http://gdata.youtube.com/feeds/api/videos/#{self.youtube_video_id}"
   end
 
   private
@@ -156,12 +157,12 @@ class User < ActiveRecord::Base
     end
 
     def update_mailchimp(optin)
-      # Create a Hominid object (A wrapper to the mailchimp api), and pass in a hash from the yaml file 
+      # Create a Hominid object (A wrapper to the mailchimp api), and pass in a hash from the yaml file
       # telling which mailing list id to update with subscribe/unsubscribe notifications)
       @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
       list_name = AppConfig.mailchimp.list_name
       begin
-        case optin  
+        case optin
           when 'subscribe_newsletter'
             logger.debug("subscribing to newsletter...")
             "success!" if @hominid.list_subscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
@@ -188,7 +189,7 @@ class User < ActiveRecord::Base
 
     def address
       if country.present? || zip.present?
-        return "#{zip} #{Carmen::country_name(country)}"
+        "#{zip} #{Carmen::country_name(country)}"
       end
     end
 

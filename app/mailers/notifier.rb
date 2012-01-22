@@ -22,5 +22,4 @@ class Notifier < ActionMailer::Base
     mail(:to => @recipient.email,
           :subject => "You've got a new message on Emuzikos!")
   end
-
 end

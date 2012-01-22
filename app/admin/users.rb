@@ -3,7 +3,9 @@ ActiveAdmin.register User do
   scope :geocoded
   scope :visible
 
-  before_filter { User.class_eval { attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude, :songkick_username, :youtube_video_id, :soundcloud_username } }
+  before_filter do
+    #User.class_eval { attr_searchable :email, :username, :user_type, :searching_for, :country, :zip, :encrypted_password, :created_at, :updated_at, :references, :request_message, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at, :reset_password_token, :reset_password_sent_at, :remember_created_at, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :latitude, :longitude, :songkick_username, :youtube_video_id, :soundcloud_username }
+  end
   
   index do
     column :id do |user|
@@ -50,6 +52,7 @@ ActiveAdmin.register User do
       f.input :prefers_newsletters, :as => :boolean
       f.input :prefers_message_notifications, :as => :boolean
       f.input :visible, :as => :boolean
+      f.input :instruments, :as => :checkboxes, :collection => Instrument.all.collect{|i| i.name}
     end
 
     f.buttons

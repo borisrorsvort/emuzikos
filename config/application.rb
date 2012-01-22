@@ -52,6 +52,8 @@ module Emuzikos
       Devise::UnlocksController.layout "home"
       Devise::PasswordsController.layout "home"
     end
-
+    if Rails.env.production?
+      config.middleware.insert_before Rack::Lock, Rack::NoWWW
+    end
   end
 end

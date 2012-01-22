@@ -1,7 +1,7 @@
 = form_for @user, :html => { :multipart => true } do |f|
   = f.error_messages
 
-  %h3= t(:location, :scope => :users)
+  %h3= t(:"location", :scope => :users)
   .field
     %p
       = f.label :zip, t(:'activerecord.attributes.user.zip')
@@ -18,13 +18,13 @@
     = f.file_field :avatar
     .clear
 
-  %h3= t(:musician_infos, :scope => :users)
+  %h3= t(:"musician_infos", :scope => :users)
 
   .field
     %p.checkbox_set
       = f.label :visible, t(:'activerecord.attributes.user.visible')
       %br
-      = t(:visible_explanation, :scope => [:users, :edit])
+      = t(:"visible_explanation", :scope => [:users, :edit])
       %br
       = f.label "visible_true", t(:"users.visible")
       = radio_button(:user, :visible, true)
@@ -40,7 +40,7 @@
         = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
     %p
       = f.label :instruments, t(:'activerecord.attributes.user.instruments')
-      %i= t(:instruments_in_band_notice, :scope => [:users, :edit])
+      %i= t(:"instruments_in_band_notice", :scope => [:users, :edit])
       - @instruments.in_groups_of(4, false) do |instruments|
         .instrument_column
           - for instrument in instruments
@@ -51,7 +51,7 @@
     %p
       %br
       %i= t(:'instrument_not_in_list', :scope => [:users, :edit])
-      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:request_through_dashboard, :scope => [:users, :edit])}
+      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'request_through_dashboard', :scope => [:users, :edit])}
         = t(:request_through_dashboard, :scope => [:users, :edit])
 
     %p
@@ -81,7 +81,7 @@
 
   .clear
 
-  %h3= t(:medias, :scope => [:users, :edit])
+  %h3= t(:'medias', :scope => [:users, :edit])
   .field
     %p
       = f.label :songkick_username, t(:'activerecord.attributes.user.songkick_username')

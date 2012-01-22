@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :get_variables
   before_filter :mailer_set_url_options
-  before_filter :check_uri
+  #before_filter :check_uri
 
   helper :all
   helper_method :current_user
@@ -45,9 +45,9 @@ class ApplicationController < ActionController::Base
     render "/errors/500.html.haml", :layout => "errors", :status => 500
   end
 
-  def check_uri
-    redirect_to request.protocol + "www." + request.host_with_port + request.request_uri if !/^www/.match(request.host) && Rails.env == "production" 
-  end
+  #def check_uri
+  #  redirect_to request.protocol + "www." + request.host_with_port + request.request_uri if !/^www/.match(request.host) && Rails.env == "production"
+  #end
 
   private
 
