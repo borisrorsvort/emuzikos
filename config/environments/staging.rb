@@ -1,21 +1,10 @@
 Emuzikos::Application.configure do
 
-  # Compress JavaScript and CSS  
-  config.assets.compress = true  
-       
-  # Don't fallback to assets pipeline  
-  config.assets.compile = false  
-       
-  # Generate digests for assets URLs  
-  config.assets.digest = true  
-
-  # The production environment is meant for finished, "live" apps.
-  # Code is not reloaded between requests
-  config.cache_classes = true
-
-  # Full error reports are disabled and caching is turned on
-  config.action_controller.consider_all_requests_local = false
-  config.action_controller.perform_caching             = true
+  config.assets.compress                      = true
+  config.assets.digest                        = true  
+  config.cache_classes                        = true
+  config.consider_all_requests_local          = false  
+  config.action_controller.perform_caching    = true
 
   config.active_support.deprecation = :notify
   config.action_mailer.default_url_options = { :host => 'emuzikos-staging.heroku.com' }
