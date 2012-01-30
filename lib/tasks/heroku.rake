@@ -12,7 +12,7 @@ namespace :heroku do
 
   # runs before all the deploys complete
   task :before_deploy do
-    system "bundle exec rake assets:precompile"
+    system "bundle exec rake assets:precompile RAILS_ENV=development"
   end
 
   # runs before each push to a particular heroku deploy environment
