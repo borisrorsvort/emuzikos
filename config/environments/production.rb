@@ -1,6 +1,15 @@
 Emuzikos::Application.configure do
   # Settings specified here will take precedence over those in config/environment.rb
 
+  # Compress JavaScript and CSS  
+  config.assets.compress = true  
+       
+  # Don't fallback to assets pipeline  
+  config.assets.compile = false  
+       
+  # Generate digests for assets URLs  
+  config.assets.digest = true  
+
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
   config.cache_classes = true
@@ -11,7 +20,7 @@ Emuzikos::Application.configure do
 
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'beta.emuzikos.com' }
+  config.action_mailer.default_url_options = { :host => 'emuzikos.com' }
 
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
@@ -19,7 +28,7 @@ Emuzikos::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => 'beta.emuzikos.com',
+    :domain               => 'emuzikos.com',
     :user_name            => 'noreply@emuzikos.com',
     :password             => '3muz1k0sn0r3ply2',
     :authentication       => 'plain',
@@ -59,6 +68,6 @@ Emuzikos::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  Sass::Plugin.options[:template_location] = { 'app/stylesheets' => 'public/stylesheets/compiled' }
-  Sass::Plugin.options[:never_update] = true
+  # Sass::Plugin.options[:template_location] = { 'app/stylesheets' => 'public/stylesheets/compiled' }
+  # Sass::Plugin.options[:never_update] = true
 end

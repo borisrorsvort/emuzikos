@@ -1,10 +1,10 @@
 - title t(:'.title', :username => @user.username), false
 
 
-= include_stylesheets :maps, :soundcloud
+=# include_stylesheets :maps, :soundcloud
 
 - content_for :javascripts do
-  = include_javascripts :maps, :soundcloud
+  =# include_javascripts :maps, :soundcloud
 
 - content_for :scripts do
   :javascript
@@ -101,7 +101,7 @@
           .clear
 
         - if @user.geocoded?
-          - unless @users_nearby.size.empty?
+          - unless @users_nearby.size.nil?
             .users_nearby
               %h3= t(:'.users_nearby')
               - for user in @users_nearby

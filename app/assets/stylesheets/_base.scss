@@ -1,0 +1,198 @@
+html{
+  font-size:100%;
+  min-height:101%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  word-wrap: break-word;
+  -webkit-nbsp-mode: space;
+  -webkit-line-break: after-white-space;  }
+
+body {
+  background: $body_bg_default image-url("backgrounds/bg-footer.gif");
+  font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
+  font-size: 100%;
+  color:#333; }
+
+
+html.js,
+html.iem7,
+html.ie6,
+html.ie7,
+html.ie8 {
+  img,
+  object {
+    max-width: 100%;
+  }
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+b, strong {
+  font-weight: bold;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+input, textarea, button, select {
+  margin: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: baseline;
+}
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+a {
+  color: $blue_dark;
+  img {
+    border: none; }}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;}
+
+.wide {
+  width: 100%;}
+
+.unread_bullet {
+  font-size: 20px;
+  font-weight:bold;
+  line-height: 1em; }
+
+.centered {
+  margin: 0 auto;
+}
+.hidden {
+  display:none;
+}
+b {
+  font-weight:bold;
+}
+strong {
+  font-weight:bold;
+}
+@mixin inset($color, $important: "") {
+  @if $important == "important" {
+    text-shadow: $color 0 1px 1px  !important;
+  } @else {
+    text-shadow: $color 0 1px 1px;
+  }
+}
+
+@mixin white_box {
+  background-color: #FFF;
+  border: 1px solid #ccc;
+  @include border-radius(5px);
+}
+@mixin white_box_w_shadow {
+  @include border-radius(5px);
+  @include single-box-shadow(#999, 0, 1px, 2px );
+  background-color: #FFF;
+  border: none;
+  padding: 10px;
+}
+
+@mixin fluid_column($padding: 5%, $total_column: 2) {
+  width: (100% / $total_column) - (2 * $padding) ;
+  padding: $padding;
+  float:left;
+  display:inline;
+}
+
+/* FOLDED CORNER */
+
+@mixin folded_corner($block_color, $corner_size, $bg_color, $rounded: true) {
+  position:relative;
+
+  &:before {
+     content: "";
+     position: absolute;
+     top: -2px;
+     right: -2px;
+     border-width: 0 $corner_size $corner_size 0;
+     border-style: solid;
+     border-color: $bg_color $bg_color darken($block_color, 10%) darken($block_color, 10%);
+     background: darken($block_color, 10%);
+     @include single-box-shadow(rgba(153,153,153, 0.7), -1px, 1px, 1px );
+     display:block; width:0; /* Firefox 3.0 damage limitation */
+
+     @if $rounded == true {
+       @include border-bottom-left-radius($corner_size * 0.2); }}
+}
+
+/* CSS ARROWS */
+/*---------------------------------------- */
+
+@mixin css-arrow($orientation: "top", $bg-color: #fff, $arrow-color: #ccc, $size: 10px) {
+
+  font-size: 0px;
+  line-height: 0%;
+  width: 0px;
+
+  @if $orientation == "top" {
+    border-top: $size solid $arrow-color;
+    border-left: $size solid $bg-color;
+    border-right: $size solid $bg-color; }
+
+  @if $orientation == "bottom" {
+    border-bottom: $size solid $arrow-color;
+    border-left: $size solid $bg-color;
+    border-right: $size solid $bg-color; }
+
+  @if $orientation == "left" {
+    border-left: $size solid $arrow-color;
+    border-top: $size solid $bg-color;
+    border-bottom: $size solid $bg-color; }
+
+  @if $orientation == "right" {
+    border-right: $size solid $arrow-color;
+    border-top: $size solid $bg-color;
+    border-bottom: $size solid $bg-color; } }
+
+/* ANIMATION
+/* ---------------------------------------- */
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes slidingFromLeft {
+  0% {left: -1440px;opacity: 0;}
+  50% {left: 50px;opacity: 0.5;}
+  60% {left: 50px;opacity: 0.5;}
+  100% {left: 0;opacity: 1;}
+}
+@-webkit-keyframes movingarrow {
+  0% {top: -200px;opacity: 0;}
+  50% {top: 20px;opacity: 0.5;}
+  60% {top: 20px;opacity: 0.5;}
+  100% {top: 0;opacity: 1;}
+}
+@-webkit-keyframes opacity {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+
+/*VARIABLES*/
+
+$profile_picture_border_width: 2%;

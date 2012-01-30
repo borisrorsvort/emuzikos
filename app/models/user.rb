@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
     }[Rails.env],
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
-    :default_url => '/images/backgrounds/no-image-:style.gif'
+    :default_url => '/assets/backgrounds/no-image-:style.gif'
 
   scope :profiles_completed, where("country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id").joins(:tastes)
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )

@@ -18,7 +18,7 @@ module ApplicationHelper
       :url        => url,
       :loaderMsg  => t(:'pagination.loading_more_results'),
       :pagination => ".pagination",
-      :loaderImage => "/images/icons/ajax-loader-pagiantion.gif"
+      :loaderImage => "/assets/icons/ajax-loader-pagiantion.gif"
     }
 
     container && opts[:container] ||= container
