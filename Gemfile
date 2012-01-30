@@ -40,8 +40,10 @@ gem 'gmaps4rails'
 gem 'rack-no-www'
 gem 'pg'
 
-group :assets do  
-  gem 'sass-rails', " ~> 3.1.0"  
+gem 'sass-rails', " ~> 3.1.0"
+
+group :assets do
+    
   gem 'coffee-rails', " ~> 3.1.0"  
   gem 'uglifier' 
   gem "compass", "0.12.alpha.1"
