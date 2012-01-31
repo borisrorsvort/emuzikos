@@ -1,0 +1,38 @@
+/*
+*= require jquery-ui/jquery-ui-1.8.7.custom
+*= require uniform-themes/uniform.emuzikos
+*= require reveal
+*= require gritter
+*= require gmaps4rails
+*/
+
+
+/* RESETS */
+@import "compass/reset";
+@include reset-html5;
+
+/* COMPASS */
+@import "compass/css3";
+@import "compass/utilities";
+
+/* LIBS */
+@import "tipsy";
+@import "colors";
+
+/* APPLICATION */
+@import "base";
+@import "animations";
+@import "typography";
+@import "layout";
+@import "notices";
+@import "forms";
+@import "tables";
+@import "pagination";
+@import "tags";
+@import "main";
+
+/* MEDIA QUERIES */
+@import "mediaqueries/480";
+@import "mediaqueries/768";
+@import "mediaqueries/992";
+@import "mediaqueries/1382";

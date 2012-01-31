@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
       edit_user_path(current_user)
   end
 
-  unless ActionController::Base.consider_all_requests_local
+  unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, :with => :render_error
     rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found
     rescue_from ActionController::RoutingError, :with => :rescue_action_in_public
@@ -36,12 +36,16 @@ class ApplicationController < ActionController::Base
   end
 
   def render_not_found(exception)
+    log_error(exception)
+    notify_hoptoad(exception)
     render "/errors/404.html.haml", :layout => "errors", :status => 404
   end
 
   def render_error(exception)
     # you can insert logic in here too to log errors
     # or get more error info and use different templates
+    log_error(exception)
+    notify_hoptoad(exception)
     render "/errors/500.html.haml", :layout => "errors", :status => 500
   end
 

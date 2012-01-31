@@ -1,17 +1,13 @@
 Emuzikos::Application.configure do
-  # Settings specified here will take precedence over those in config/environment.rb
 
-  # The production environment is meant for finished, "live" apps.
-  # Code is not reloaded between requests
-  config.cache_classes = true
-
-  # Show full error reports and disable caching
-  config.consider_all_requests_local       = true
-  config.action_controller.perform_caching = false
+  config.assets.compress                      = true
+  config.assets.digest                        = true  
+  config.cache_classes                        = true
+  config.consider_all_requests_local          = false  
+  config.action_controller.perform_caching    = true
 
   config.active_support.deprecation = :notify
-
-  config.action_mailer.default_url_options = { :host => 'beta.emuzikos.com' }
+  config.action_mailer.default_url_options = { :host => 'emuzikos-staging.heroku.com' }
 
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.perform_deliveries = true
@@ -19,7 +15,7 @@ Emuzikos::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    :domain               => 'beta.emuzikos.com',
+    :domain               => 'emuzikos-staging.heroku.com',
     :user_name            => 'noreply@emuzikos.com',
     :password             => '3muz1k0sn0r3ply2',
     :authentication       => 'plain',

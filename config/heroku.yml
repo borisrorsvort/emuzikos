@@ -1,19 +1,49 @@
-#
-# Format:
-#
-# <heroku_san shorthand name>:
-#   app: <Heroku app name>
-#   config:
-#     - <Heroku config:var name>: <Heroku config:var value>
-#
-production:
-  app: emuzikos
-  config:
-    BUNDLE_WITHOUT: "development:test"
+apps:
+  # map the environments to your desired heroku app names
+  # for example,
+  #   production: awesomeapp
+  # would create the RACK_ENV=production
+  # and deploy to http://awesomeapp.heroku.com
+  production: emuzikos
+  staging: emuzikos-staging
+
+stacks:
+  # choose the stacks you want to use for each app.
+  # the all: setting sets the default
+  all: cedar
+
+  # override on a per environment basis
+  #legacy: bamboo-ree-1.8.7
+
+config:
+  # choose the configuration settings for all environments
+  all:
+    BUNDLE_WITHOUT:  "test:development"
+    LOG_LEVEL: "DEBUG"
+
+  # you can also override configuration settings for each environment
+  production:
     GOOGLE_ANALYTICS: "UA–2826331–13"
 
-staging:
-  app: emuzikos-staging
-  config: &default
-    BUNDLE_WITHOUT: "development:test"
+collaborators:
+  # Be sure to add yourself as a collaborator, otherwise your
+  # access to the app will be revoked.
+  all:
+    - "boris.rorsvort@gmail.com"
 
+domains:
+  production:
+    - "emuzikos.com"
+    - "www.emuzikos.com"
+
+addons:
+  all:
+    custom_domains: "basic"
+    logging: "expanded"
+    pgbackups: "basic"
+    releases: "basic"
+    shared-database: "5mb"
+
+  production:
+    stillalive:basic
+    newrelic:standard

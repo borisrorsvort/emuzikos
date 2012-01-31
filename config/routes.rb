@@ -1,12 +1,19 @@
 Emuzikos::Application.routes.draw do
 
+  match "about" => "pages#about", :as => :about
+  match "terms" => "pages#terms", :as => :terms
+  match "privacy" => "pages#privacy", :as => :privacy
+  match "sitemap" => "sitemaps#show", :as => :sitemap
+  
+  match '/mailchimp/callback' =>'mailchimp#callback', :as => :mailchimp_callback
   match '/auth/:service/callback' => 'services#create'
-  resources :services, :only => [:index, :create, :destroy]
 
-  ActiveAdmin.routes(self)
+  resources :services, :only => [:index, :create, :destroy]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
+
+  ActiveAdmin.routes(self)
 
   resources :friendships
   resources :testimonials
@@ -20,17 +27,6 @@ Emuzikos::Application.routes.draw do
     end
   end
 
-  match "about" => "pages#about", :as => :about
-  match "terms" => "pages#terms", :as => :terms
-  match "privacy" => "pages#privacy", :as => :privacy
-  match "sitemap" => "sitemaps#show", :as => :sitemap
-
   root :to => "pages#homepage"
 
-  match '/mailchimp/callback' =>'mailchimp#callback', :as => :mailchimp_callback
-
-  # catch all and redirect to error page except auth path required for omniauth
-  match '*path', :to => 'errors#404', :constraints => lambda{|request|
-    !request.path.starts_with?("/auth")
-  }
 end

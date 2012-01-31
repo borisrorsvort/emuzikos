@@ -2,23 +2,25 @@ source :gemcutter
 
 # Core Gems
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.1.3'
 gem 'mysql'
 gem "jquery-rails"
 
 gem "devise"
-gem 'omniauth', '~> 0.3.2'
+gem 'omniauth', '0.3.2'
+
 gem 'activeadmin'
+gem 'meta_search'
+
 gem "airbrake"
 gem "populator"
 gem "faker"
-gem "meta_where"
+gem "squeel"
 gem "ransack"
-gem "jammit"
 gem "gritter"
-gem "sass", "3.1.2"
-gem "haml", "3.1.2"
-gem "compass", "0.11.1"
+gem "sass"
+gem "haml"
+
 gem "settingslogic", "2.0.6"
 gem 'formtastic', '1.1.0'
 #gem "paperclip", "2.3.11"
@@ -38,6 +40,15 @@ gem 'gmaps4rails'
 gem 'rack-no-www'
 gem 'pg'
 
+gem 'sass-rails', " ~> 3.1.0"
+
+group :assets do
+    
+  gem 'coffee-rails', " ~> 3.1.0"  
+  gem 'uglifier' 
+  gem "compass", "0.12.alpha.1"
+end  
+
 group :development, :test do
   gem 'rails-footnotes', '>= 3.7.5.rc4'
   gem "hirb"
@@ -46,7 +57,7 @@ group :development, :test do
   gem 'rails_best_practices'
   gem 'simplecov', :require => false
   gem "letter_opener"
-  gem 'heroku_san'
+  gem 'heroku-rails'
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem "shoulda"

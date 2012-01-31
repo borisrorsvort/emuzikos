@@ -14,15 +14,13 @@
       Emuzikos #{Time.now.year} | #{ t(:'common.created_by')} #{ link_to "Boris Rorsvort", "http://www.rorsvort.com", :rel => "external"}
     .clear
 
-= include_javascripts :jquery
+= javascript_include_tag "application"
 = yield :javascripts
-= include_javascripts :emuzikos
 = yield :scripts
 
 /[if (lt IE 9) & (!IEMobile)]
-  = include_javascripts :ie_js_pack
-
-= gflash(:fade_in_speed => 200, :fade_out_speed => 200, :time => 200)
+  = javascript_include_tag "ie_js_pack"
+= gflash
 
 =render "/shared/feedback_box"
 
