@@ -1,10 +1,12 @@
-- title t(:'.title', :username => @user.username), false
+- title t(:'.title', :username => @user.username)
 
+- if @user.has_profile_complete?
+  - description "#{ @user.username}" + ": " + "#{"Local " + t(:"users.types.#{@user.user_type}")} looking for #{@user.searching_for if @user.searching_for} in #{Carmen::country_name(@user.country) rescue "N/A"} "
+- else
+  - description t(:'.title', :username => @user.username) + " on Emuzikos"
 
-=# include_stylesheets :maps, :soundcloud
+- set_meta_tags :canonical => request.url
 
-- content_for :javascripts do
-  =# include_javascripts :maps, :soundcloud
 
 - content_for :scripts do
   :javascript

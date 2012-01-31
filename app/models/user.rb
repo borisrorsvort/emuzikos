@@ -13,6 +13,10 @@ class User < ActiveRecord::Base
   has_many :tastes, :dependent => :destroy
   has_many :genres, :through => :tastes
 
+  extend FriendlyId
+  friendly_id :username, use: [:slugged, :history]
+
+
   preference :newsletters, :default => true
   preference :message_notifications, :default => true
 
@@ -98,9 +102,9 @@ class User < ActiveRecord::Base
     self.country.present? && !self.instruments.empty? && self.zip.present? && self.searching_for.present? && self.user_type.present? && !self.genres.empty?
   end
 
-  def to_param
-    "#{id}-#{username. parameterize}"
-  end
+  # def to_param
+  #   "#{id}-#{username. parameterize}"
+  # end
 
   def self.total_on(date)
     where("date(users.created_at) = ?",date).count

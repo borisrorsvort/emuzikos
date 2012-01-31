@@ -6,9 +6,7 @@
 %html.no-js{ :lang => "en" }
   <!--<![endif]-->
   %head
-    %title
-      = yield(:title) || "Find a local musicians"
-      | Emuzikos
+    = display_meta_tags :site => 'Emuzikos, the musicians search tool', :reverse => true
 
     %meta{:charset => "utf-8"}/
     %meta{ :name => "google-site-verification", :content => "U84a4JsWjHvENwEbAWcsSTecF326rTo9L_5oDKJKA5c"}

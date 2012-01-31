@@ -27,10 +27,10 @@
           = yield :sub_nav
 
       #inner_content
-        - if show_title?
-          %h1= yield(:title)
+        - if show_headline?
+          %h1= yield(:headline)
 
         = yield
     .clear
 
-  =render "/layouts/footer"
+  = render "/layouts/footer"

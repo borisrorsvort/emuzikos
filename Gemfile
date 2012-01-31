@@ -40,6 +40,9 @@ gem 'gmaps4rails'
 gem 'rack-no-www'
 gem 'pg'
 
+gem 'meta-tags', :require => 'meta_tags'
+gem "friendly_id", "~> 4.0.0"
+
 gem 'sass-rails', " ~> 3.1.0"
 
 group :assets do
