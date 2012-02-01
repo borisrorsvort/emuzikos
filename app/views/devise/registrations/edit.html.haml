@@ -1,4 +1,6 @@
 - title t(:'.title')
+- description 'Edit your account, notification settings on Emuzikos.com and start to search for wanted bands and musicians'
+- set_meta_tags :canonical => request.url
 
 - if @user == current_user
   - content_for :sub_nav do
