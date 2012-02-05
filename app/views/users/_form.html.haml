@@ -26,9 +26,9 @@
       %br
       = t(:"visible_explanation", :scope => [:users, :edit])
       %br
-      = f.label "visible_true", t(:"users.visible")
+      = f.label "visible_true", t(:"activerecord.attributes.user.visible")
       = radio_button(:user, :visible, true)
-      = f.label "visible_false", t(:"users.invisible")
+      = f.label "visible_false", t(:"activerecord.attributes.user.invisible")
       = radio_button(:user, :visible, false)
 
 

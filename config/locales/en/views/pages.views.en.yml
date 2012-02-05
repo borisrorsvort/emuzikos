@@ -1,8 +1,4 @@
 en:
-
-### CONTACT PAGE
-### ______________________________________________________
-
   pages:
     homepage:
       title: Find local musicians around the world
@@ -12,11 +8,6 @@ en:
         profile: "Create an account <br> and fill in your profile"
         search: "Search for musicians, <br> all around the globe"
         contact: "Contact them <br> and make some music!"
-    contact:
-      title: Contact us
-      message: Message
-      address: Address
-      name: Name
     terms:
       title: Terms of Agreement
     privacy:

@@ -1,7 +1,4 @@
 en:
-### TOOLTIPS
-### ______________________________________________________    
-
   tooltips:
     email: "Must be a valid email address"
     password: "Must contains at least 5 characters"

@@ -1,10 +1,6 @@
 en:
-    
-### MESSAGES
-### ______________________________________________________
-
   messages:
-    delete: "Delete"
+    delete: Delete
     subject: Subject
     sender: Send by
     from: From

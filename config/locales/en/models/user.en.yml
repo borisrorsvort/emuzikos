@@ -25,6 +25,8 @@ en:
         testimonials: "%{user}'s Testimonials"
         location: Location
         youtube_video_id: YouTube Video Id
+        visible: Visible
+        invisible: Invisible
       testimonial:
         body: Body
         user: User

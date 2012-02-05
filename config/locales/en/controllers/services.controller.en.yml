@@ -5,7 +5,6 @@ en:
     signed_in_successful: 'Signed in successfully!'
     signed_in_successful_via: 'Signed in successfully via'
     invalid_callback: 'no service (invalid callback)'
-
     account_created: 'Your account on Emuzikos has been created via %{provider}. In your <a href="%{link}">account settings</a> you can change your personal information and add a local password.'
     account_creation_error: ' can not be used to sign-up on Emuzikos as no valid email address has been provided. Please use another authentication provider or use local sign-up. If you already have an account, please sign-in and add %{service_route} from your profile.'
   invalid_data_user_id: "returned invalid data for the user id."

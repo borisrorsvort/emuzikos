@@ -75,4 +75,4 @@ group :development, :test do
   gem 'rb-fchange', :require => false
 end
 
-gem 'localeapp'
+#gem 'localeapp'
