@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   end
 
   def render_not_found(exception)
-    log_error(exception)
+    #log_error(exception)
     notify_hoptoad(exception)
     render "/errors/404.html.haml", :layout => "errors", :status => 404
   end
@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
   def render_error(exception)
     # you can insert logic in here too to log errors
     # or get more error info and use different templates
-    log_error(exception)
+    #log_error(exception)
     notify_hoptoad(exception)
     render "/errors/500.html.haml", :layout => "errors", :status => 500
   end
