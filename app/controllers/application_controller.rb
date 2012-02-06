@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
     # you can insert logic in here too to log errors
     # or get more error info and use different templates
     #log_error(exception)
-    notify_hoptoad(exception)
+    #notify_hoptoad(exception)
     render "/errors/500.html.haml", :layout => "errors", :status => 500
   end
 
