@@ -1,0 +1,13 @@
+fr:
+  ie_warning:
+    title: Saviez-vous que votre version d'Internet Explorer est périmée?
+    description: "Afin d'obtenir la meilleure expérience de navigation possible sur notre site web, nous vous recommandons de <strong>mettre à jour</strong> votre navigateur ou d'en choisir un autre."
+    popular_browsers_choice: Une liste des navigateurs les plus populaires se trouve ci-dessous.
+    click_to_download: "Il suffit de cliquer <strong>sur l'icône du navigateur</strong> correspondant pour se rendre à sa page de téléchargement."
+
+en:
+  ie_warning:
+    title: Did you know that your browser is outdated?
+    description: "In order to provide the best user experience possible, we recommand you <strong>to upgrade</strong> your browser or to download a more modern one"
+    popular_browsers_choice: Most popular browsers are listed below:
+    click_to_download: "Click on the browser icon to go to the download page."

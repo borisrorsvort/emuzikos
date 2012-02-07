@@ -1,0 +1,894 @@
+en: 
+  activerecord: 
+    attributes: 
+      service: 
+        email: Email
+        not_set: "Not set"
+        uname: Name
+      testimonial: 
+        body: Body
+        user: User
+      user: 
+        avatar: "Profile picture"
+        birthdate: "Birth date"
+        country: Country
+        created_at: "Created at"
+        current_password: "Current password"
+        email: Email
+        genre: "Musical genres"
+        instruments: Instruments
+        invisible: Invisible
+        last_active: "Recent activity"
+        last_updater: "Last updater"
+        location: Location
+        new_password: "New password"
+        password: Password
+        password_confirmation: "Password confirmation"
+        references: "Musical References"
+        request_message: "Request message"
+        searching_for: "Searching for"
+        testimonials: "%{user}'s Testimonials"
+        updated_at: "Updated at"
+        user_type: "User Type"
+        username: Username
+        visible: Visible
+        youtube_video_id: "YouTube Video Id"
+        zip: "Zip code"
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: "must be accepted"
+        blank: "can't be blank"
+        confirmation: "doesn't match confirmation"
+        empty: "can't be empty"
+        equal_to: "must be equal to %{count}"
+        even: "must be even"
+        exclusion: "is reserved"
+        greater_than: "must be greater than %{count}"
+        greater_than_or_equal_to: "must be greater than or equal to %{count}"
+        inclusion: "is not included in the list"
+        invalid: "is invalid"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "must be less than or equal to %{count}"
+        not_a_number: "is not a number"
+        not_an_integer: "must be an integer"
+        odd: "must be odd"
+        record_invalid: "Validation failed: %{errors}"
+        taken: "has already been taken"
+        too_long: 
+          one: "is too long (maximum is 1 character)"
+          other: "is too long (maximum is %{count} characters)"
+        too_short: 
+          one: "is too short (minimum is 1 character)"
+          other: "is too short (minimum is %{count} characters)"
+        wrong_length: 
+          one: "is the wrong length (should be 1 character)"
+          other: "is the wrong length (should be %{count} characters)"
+      template: 
+        body: "There were problems with the following fields:"
+        header: 
+          one: "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+    models: 
+      messages: Messages
+      search: Search
+      testimonials: Testimonials
+      users: Users
+  buttons: 
+    add_to_contact_list: "Add to contact list"
+    all: "View all"
+    back: "Back to %{model}"
+    back_to_homepage: "Back to the home page"
+    cancel: Cancel
+    change_password: "Save new password"
+    compose: Compose
+    contact: "Send a message"
+    create: Create
+    delete: Delete
+    edit: Edit
+    home_signup: "sign up in 60 sec. It's free"
+    login: "Log in"
+    registrations: 
+      cancel_my_account: "Cancel my account"
+    remove_from_contact_list: Remove
+    reply: Reply
+    search: Search
+    send_password: "Send the password reset email"
+    services: 
+      delete: "Remove this service"
+    show: Show
+    submit: Submit
+    testimonials: 
+      all: "Go back to Testimonials"
+      create: "Add a new testimonial"
+    update: Update
+  common: 
+    are_you_sure: "Are you sure?"
+    base_title: "Emuzikos, the musicians search tool"
+    by: by
+    created_by: "Created by"
+    home: Home
+    leave_blank: "(leave blank if you don't want to change it)"
+    no_script: "Your browser does not support JavaScript!"
+    or: or
+    please_choose: "Please choose ..."
+    read_more: "Read more"
+    required: Required
+    reset: Reset
+    users: 
+      from: From
+  countries: 
+    AC: "Ascension Island"
+    AD: Andorra
+    AE: "United Arab Emirates"
+    AF: Afghanistan
+    AG: "Antigua and Barbuda"
+    AI: Anguilla
+    AL: Albania
+    AM: Armenia
+    AN: "Netherlands Antilles"
+    AO: Angola
+    AQ: Antarctica
+    AR: Argentina
+    AS: "American Samoa"
+    AT: Austria
+    AU: Australia
+    AW: Aruba
+    AX: "Åland Islands"
+    AZ: Azerbaijan
+    BA: "Bosnia and Herzegovina"
+    BB: Barbados
+    BD: Bangladesh
+    BE: Belgium
+    BF: "Burkina Faso"
+    BG: Bulgaria
+    BH: Bahrain
+    BI: Burundi
+    BJ: Benin
+    BL: "Saint Barthélemy"
+    BM: Bermuda
+    BN: Brunei
+    BO: Bolivia
+    BQ: "British Antarctic Territory"
+    BR: Brazil
+    BS: Bahamas
+    BT: Bhutan
+    BV: "Bouvet Island"
+    BW: Botswana
+    BY: Belarus
+    BZ: Belize
+    CA: Canada
+    CC: "Cocos [Keeling] Islands"
+    CD: "Congo - Kinshasa"
+    CF: "Central African Republic"
+    CG: "Congo - Brazzaville"
+    CH: Switzerland
+    CI: "Côte d’Ivoire"
+    CK: "Cook Islands"
+    CL: Chile
+    CM: Cameroon
+    CN: China
+    CO: Colombia
+    CP: "Clipperton Island"
+    CR: "Costa Rica"
+    CS: "Serbia and Montenegro"
+    CT: "Canton and Enderbury Islands"
+    CU: Cuba
+    CV: "Cape Verde"
+    CX: "Christmas Island"
+    CY: Cyprus
+    CZ: "Czech Republic"
+    DD: "East Germany"
+    DE: Germany
+    DG: "Diego Garcia"
+    DJ: Djibouti
+    DK: Denmark
+    DM: Dominica
+    DO: "Dominican Republic"
+    DZ: Algeria
+    EA: "Ceuta and Melilla"
+    EC: Ecuador
+    EE: Estonia
+    EG: Egypt
+    EH: "Western Sahara"
+    ER: Eritrea
+    ES: Spain
+    ET: Ethiopia
+    EU: "European Union"
+    FI: Finland
+    FJ: Fiji
+    FK: "Falkland Islands"
+    FM: Micronesia
+    FO: "Faroe Islands"
+    FQ: "French Southern and Antarctic Territories"
+    FR: France
+    FX: "Metropolitan France"
+    GA: Gabon
+    GB: "United Kingdom"
+    GD: Grenada
+    GE: Georgia
+    GF: "French Guiana"
+    GG: Guernsey
+    GH: Ghana
+    GI: Gibraltar
+    GL: Greenland
+    GM: Gambia
+    GN: Guinea
+    GP: Guadeloupe
+    GQ: "Equatorial Guinea"
+    GR: Greece
+    GS: "South Georgia and the South Sandwich Islands"
+    GT: Guatemala
+    GU: Guam
+    GW: Guinea-Bissau
+    GY: Guyana
+    HK: "Hong Kong SAR China"
+    HM: "Heard Island and McDonald Islands"
+    HN: Honduras
+    HR: Croatia
+    HT: Haiti
+    HU: Hungary
+    IC: "Canary Islands"
+    ID: Indonesia
+    IE: Ireland
+    IL: Israel
+    IM: "Isle of Man"
+    IN: India
+    IO: "British Indian Ocean Territory"
+    IQ: Iraq
+    IR: Iran
+    IS: Iceland
+    IT: Italy
+    JE: Jersey
+    JM: Jamaica
+    JO: Jordan
+    JP: Japan
+    JT: "Johnston Island"
+    KE: Kenya
+    KG: Kyrgyzstan
+    KH: Cambodia
+    KI: Kiribati
+    KM: Comoros
+    KN: "Saint Kitts and Nevis"
+    KP: "North Korea"
+    KR: "South Korea"
+    KW: Kuwait
+    KY: "Cayman Islands"
+    KZ: Kazakhstan
+    LA: Laos
+    LB: Lebanon
+    LC: "Saint Lucia"
+    LI: Liechtenstein
+    LK: "Sri Lanka"
+    LR: Liberia
+    LS: Lesotho
+    LT: Lithuania
+    LU: Luxembourg
+    LV: Latvia
+    LY: Libya
+    MA: Morocco
+    MC: Monaco
+    MD: Moldova
+    ME: Montenegro
+    MF: "Saint Martin"
+    MG: Madagascar
+    MH: "Marshall Islands"
+    MI: "Midway Islands"
+    MK: Macedonia
+    ML: Mali
+    MM: "Myanmar [Burma]"
+    MN: Mongolia
+    MO: "Macau SAR China"
+    MP: "Northern Mariana Islands"
+    MQ: Martinique
+    MR: Mauritania
+    MS: Montserrat
+    MT: Malta
+    MU: Mauritius
+    MV: Maldives
+    MW: Malawi
+    MX: Mexico
+    MY: Malaysia
+    MZ: Mozambique
+    NA: Namibia
+    NC: "New Caledonia"
+    NE: Niger
+    NF: "Norfolk Island"
+    NG: Nigeria
+    NI: Nicaragua
+    NL: Netherlands
+    ? "NO"
+    : Norway
+    NP: Nepal
+    NQ: "Dronning Maud Land"
+    NR: Nauru
+    NT: "Neutral Zone"
+    NU: Niue
+    NZ: "New Zealand"
+    OM: Oman
+    PA: Panama
+    PC: "Pacific Islands Trust Territory"
+    PE: Peru
+    PF: "French Polynesia"
+    PG: "Papua New Guinea"
+    PH: Philippines
+    PK: Pakistan
+    PL: Poland
+    PM: "Saint Pierre and Miquelon"
+    PN: "Pitcairn Islands"
+    PR: "Puerto Rico"
+    PS: "Palestinian Territories"
+    PT: Portugal
+    PU: "U.S. Miscellaneous Pacific Islands"
+    PW: Palau
+    PY: Paraguay
+    PZ: "Panama Canal Zone"
+    QA: Qatar
+    QO: "Outlying Oceania"
+    RE: Réunion
+    RO: Romania
+    RS: Serbia
+    RU: Russia
+    RW: Rwanda
+    SA: "Saudi Arabia"
+    SB: "Solomon Islands"
+    SC: Seychelles
+    SD: Sudan
+    SE: Sweden
+    SG: Singapore
+    SH: "Saint Helena"
+    SI: Slovenia
+    SJ: "Svalbard and Jan Mayen"
+    SK: Slovakia
+    SL: "Sierra Leone"
+    SM: "San Marino"
+    SN: Senegal
+    SO: Somalia
+    SR: Suriname
+    ST: "São Tomé and Príncipe"
+    SU: "Union of Soviet Socialist Republics"
+    SV: "El Salvador"
+    SY: Syria
+    SZ: Swaziland
+    TA: "Tristan da Cunha"
+    TC: "Turks and Caicos Islands"
+    TD: Chad
+    TF: "French Southern Territories"
+    TG: Togo
+    TH: Thailand
+    TJ: Tajikistan
+    TK: Tokelau
+    TL: Timor-Leste
+    TM: Turkmenistan
+    TN: Tunisia
+    TO: Tonga
+    TR: Turkey
+    TT: "Trinidad and Tobago"
+    TV: Tuvalu
+    TW: Taiwan
+    TZ: Tanzania
+    UA: Ukraine
+    UG: Uganda
+    UM: "U.S. Minor Outlying Islands"
+    US: "United States"
+    UY: Uruguay
+    UZ: Uzbekistan
+    VA: "Vatican City"
+    VC: "Saint Vincent and the Grenadines"
+    VD: "North Vietnam"
+    VE: Venezuela
+    VG: "British Virgin Islands"
+    VI: "U.S. Virgin Islands"
+    VN: Vietnam
+    VU: Vanuatu
+    WF: "Wallis and Futuna"
+    WK: "Wake Island"
+    WS: Samoa
+    YD: "People's Democratic Republic of Yemen"
+    YE: Yemen
+    YT: Mayotte
+    ZA: "South Africa"
+    ZM: Zambia
+    ZW: Zimbabwe
+    ZZ: "Unknown Region"
+  date: 
+    abbr_day_names: 
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names: 
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names: 
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+    order: 
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months: 
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years: 
+        one: "about 1 year"
+        other: "about %{count} years"
+      almost_x_years: 
+        one: "almost 1 year"
+        other: "almost %{count} years"
+      half_a_minute: "half a minute"
+      less_than_x_minutes: 
+        one: "less than a minute"
+        other: "less than %{count} minutes"
+      less_than_x_seconds: 
+        one: "less than 1 second"
+        other: "less than %{count} seconds"
+      over_x_years: 
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days: 
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes: 
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months: 
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds: 
+        one: "1 second"
+        other: "%{count} seconds"
+    prompts: 
+      day: Day
+      hour: Hour
+      minute: Minute
+      month: Month
+      second: Seconds
+      year: Year
+  devise: 
+    confirmations: 
+      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
+    failure: 
+      already_authenticated: "You are already logged in."
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token."
+      locked: "Your account is locked."
+      timeout: "Your session expired, please log in again to continue."
+      unauthenticated: "You need to log in or sign up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
+    passwords: 
+      edit: 
+        title: "Change your password"
+      new: 
+        title: "Reset your Password"
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      updated: "Your password was changed successfully. You are now logged in."
+    sessions: 
+      new: 
+        forgot_password: "Forgot your password?"
+        or_login_using: "Or log in using:"
+        title: "Log in to your account"
+      signed_in: "Logged in in successfully."
+      signed_out: "Logged out successfully."
+  errors: 
+    format: "%{attribute} %{message}"
+    messages: 
+      accepted: "must be accepted"
+      already_confirmed: "was already confirmed, please try to log in"
+      blank: "can't be blank"
+      confirmation: "doesn't match confirmation"
+      empty: "can't be empty"
+      equal_to: "must be equal to %{count}"
+      even: "must be even"
+      exclusion: "is reserved"
+      expired: "has expired, please request a new one"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      inclusion: "is not included in the list"
+      invalid: "is invalid"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      not_a_number: "is not a number"
+      not_an_integer: "must be an integer"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved: 
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+      odd: "must be odd"
+      record_invalid: "Validation failed: %{errors}"
+      taken: "has already been taken"
+      too_long: 
+        one: "is too long (maximum is 1 character)"
+        other: "is too long (maximum is %{count} characters)"
+      too_short: 
+        one: "is too short (minimum is 1 character)"
+        other: "is too short (minimum is %{count} characters)"
+      wrong_length: 
+        one: "is the wrong length (should be 1 character)"
+        other: "is the wrong length (should be %{count} characters)"
+    template: 
+      body: "There were problems with the following fields:"
+      header: 
+        one: "1 error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"
+  gflash: 
+    common: 
+      require_no_user: "You must be logged out to access this page"
+      require_user: "You must be logged in to access this page"
+    friendships: 
+      create: 
+        success: " %{user} has been added to your contact list succesfully!"
+      destroy: 
+        success: " %{user} has been deleted from your contact list succesfully!"
+    messages: 
+      create: 
+        success: "Your message was successfully sent!"
+      delete_selected: 
+        success: "Deleted! Congrats"
+    services: 
+      errors: 
+        authentication: "Error while authenticating via %{service_route.capitalize}"
+    testimonials: 
+      create: 
+        success: "Thanks for talking good about us! Your testimonial has been sent for validation. Keep spreading the word around you :)"
+      destroy: 
+        success: "Successfully destroyed testimonial"
+      please_write: "If you like our service, please take 30s to write something nice about us in the <a href='%{link}'> testimonial section.</a>"
+      update: 
+        success: "Successfully updated testimonial"
+    titles: 
+      error: Error
+      notice: Notice
+      progress: Progress
+      success: Success
+      warning: Warning
+    users: 
+      create: 
+        error: "Some informations need to be corrected"
+        notice: "Don't forget to complete your profile to appear in search results"
+        success: "Registration successful. Don't forget to complete your profile to appear in search results"
+      update: 
+        error: "Some informations need to be corrected"
+        notice: "One more thing to do, you need to crop your avatar picture."
+        success: "Successfully updated your profile."
+  helpers: 
+    select: 
+      prompt: "Please select"
+    submit: 
+      create: "Create %{model}"
+      submit: "Save %{model}"
+      update: "Update %{model}"
+  instruments: 
+    banjo: banjo
+    bass: bass
+    bouzouki: bouzouki
+    cithar: cithar
+    congas: congas
+    double_bass: "doule bass"
+    drums: drums
+    flute: flute
+    guitar: guitar
+    keyboard: keyboard
+    mandolin: mandolin
+    ocarina: ocarina
+    percussions: percussions
+    piano: piano
+    spoons: spoons
+    turntables: turntables
+    violin: violin
+    voice: voice
+    whistles: whistles
+  menu: 
+    all_users: Search
+    contact: "Contact us"
+    login: "Log in"
+    logout: "Log out"
+    messages: 
+      inbox: Inbox
+      messages: Messages
+      sent_messages: "Sent Messages"
+    privacy: "Privacy Policy"
+    profile: 
+      account: "Edit my account"
+      authentications: "Authentication services"
+      edit: "Edit my profile"
+      public: "Public profile"
+      show: Profile
+    signup: "Sign up"
+    terms: "Terms of agreement"
+    testimonials: Testimonials
+    users: 
+      contacts: "Contact list"
+  messages: 
+    delete: Delete
+    from: From
+    inbox: 
+      description: "Your inbox helps you keep your musicians or band infos private"
+      subtitle: Inbox
+      title: "Your Messages"
+    message: Message
+    new: 
+      title: "New message"
+    no_messages: "You have no messages"
+    received: "Received on"
+    sender: "Send by"
+    sent: 
+      subtitle: "Sent Messages"
+      title: "Your Messages"
+    sent_on: "Sent on"
+    subject: Subject
+    to: To
+  musical_genres: 
+    alternative: Alternative
+    blues: Blues
+    children: Children
+    classical: Classical
+    comedy: Comedy
+    country: Country
+    dance: Dance
+    easy_listening: "Easy Listening"
+    electronic: Electronic
+    fusion: Fusion
+    gospel: Gospel
+    hip_hop: "Hip Hop"
+    instrumental: Instrumental
+    jazz: Jazz
+    latino: Latino
+    metal: Metal
+    new_age: "New Age"
+    opera: Opera
+    pop: Pop
+    r_and_b: R&B
+    reggae: Reggae
+    rock: Rock
+    songwriter: "Song Writer"
+    soundtrack: Soundtrack
+    spoken_word: "Spoken Word"
+    vocal: Vocal
+    world: World
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format: 
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+          unit: ""
+      format: 
+        delimiter: ""
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  pages: 
+    homepage: 
+      description: "Looking for a local musician or band mates? Emuzikos.com is quick way to search for wanted bands and musicians"
+      home_feature: 
+        advantage: 
+          body: "You will get a fully customizable profile, a private message inbox, an awesome musicians, bands & agents listing to search in."
+          title: "What do you get when you sign up?"
+        external_services: 
+          body: "We don't want to reinvent the wheel, so we have integrated some cool services for you:"
+          services: 
+            songkick: "<strong>Songikick</strong> to announce your events"
+            soundcloud: "<strong>Soundcloud</strong> to play your music"
+            youtube: "<strong>Youtube</strong> to show you off"
+          title: "What services do we integrate with?"
+        no_credit_card: 
+          body: "The service is completely free. We believe you should never pay to be able to connect with other musicians."
+          title: "No credit card required"
+        privacy: 
+          body: "You can use the private inbox to prevent anybody from seeing your email address until you are sure they are truly your band mates."
+          title: "Care about privacy?"
+        sharing: 
+          title: "Spread the love"
+        sign_up: 
+          body: "Create your musician profile in 60sec. and start browsing, sending messages to other musicians and share your profile around you."
+          title: "Simple & minimal sign up process"
+      keywords: "musician, search, musician search, local musicians, search local musician"
+      latest_testimonials: "Latest musician's testimonials"
+      moto: "The first <strong>easy</strong> way to find <strong>local</strong> musicians"
+      sections: 
+        screenshots: 
+          inbox: "Your private inbox"
+          profile: "Profile page"
+          search_page: "Search page"
+          title: "How does it look like?"
+        testimonials: 
+          title: "What people are saying about it?"
+      subtitle: "Emuzikos, the musician search tool you were missing"
+      title: "The first easy way to find local musicians. The place for wanted musicians or bands"
+    privacy: 
+      description: "The privacy policy of Emuzikos help you use the site by defining the scope of your privacy"
+      title: "Privacy Policy"
+    terms: 
+      description: "The terms of agreements of Emuzikos help you use the site by defining the scope of your rights"
+      title: "Terms of Agreement"
+  pagination: 
+    loading_more_results: "Loading more result"
+  search_terms: 
+    country: Country
+    i_search_a: "I search a"
+    mass_locate: "Zip, city"
+    music_style: "Musical genre"
+    who_plays: Instruments
+    who_search_for: "Who search for"
+  services: 
+    account_created: "Your account on Emuzikos has been created via %{provider}. In your <a href=\"%{link}\">account settings</a> you can change your personal information and add a local password."
+    account_creation_error: " can not be used to sign-up on Emuzikos as no valid email address has been provided. Please use another authentication provider or use local sign-up. If you already have an account, please sign-in and add %{service_route} from your profile."
+    added_to_account: "has been added to your account"
+    already_linked_account: "is already linked to your account."
+    index: 
+      account: 
+        plural: "account are"
+        singular: "account is"
+      are_you_sure: "Are you sure you want to remove this authentication service?"
+      last_account_delete_warning: "Removing the last account linked might lock you out of your account if you do not know the email/password sign-in of your local account!"
+      more_services: "You can connect more services to your account:"
+      random_password_warning: "If you signed-up for Emuzikos via an authentication service, a random password has been set for the local password. You can request a new password using the 'Forgot your Password?' link on the sign-in page."
+      subtitle: "The following %{account} connected with your local account at Emuzikos:"
+      title: "Authentication services - Settings"
+    invalid_callback: "no service (invalid callback)"
+    invalid_data_user_id: "returned invalid data for the user id."
+    logged_in_via: "Logged in via"
+    signed_in_successful: "Signed in successfully!"
+    signed_in_successful_via: "Signed in successfully via"
+  support: 
+    array: 
+      last_word_connector: ", and "
+      two_words_connector: " and "
+      words_connector: ", "
+    select: 
+      prompt: "Please select"
+  tables: 
+    headings: 
+      actions: Actions
+  testimonials: 
+    index: 
+      title: Testimonials
+    new: 
+      title: "New testimonial"
+    no_testimonials: "They are currently no testimonials. Please come back later"
+    no_testimonials_logged_in: "Sorry, there are no testimonials yet. May be is it time for one now?"
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  tooltips: 
+    back_to_home: "Back to Homepage"
+    email: "Must be a valid email address"
+    password: "Must contains at least 5 characters"
+  users: 
+    contacts: 
+      no_users: "You don't have any contact in your list"
+      title: "Contact list"
+    credentials: Credentials
+    edit: 
+      form_helpers: 
+        dont_find_youtube_video_id: "Don't find your Youtube video id?"
+        dont_have_a_service_account: "Don't have %{service} account? "
+        genre_not_on_list: "Your genre is not in the list?"
+        instrument_not_in_list: "Your instrument is not in the list?"
+        personal_infos_advice: "We advice you not to share any personal informations such as email or phone number. Let people contact you using the internal messaging system instead."
+        request_through_dashboard: "Please make a request using the help dashboard"
+      instruments_in_band_notice: "If you're a band, list instruments already present in the band"
+      invisible_notice: "Make sure you're set as visible in order to appear in search results"
+      medias: "Medias (optional)"
+      meta_description: "Edit %{username}'s profile page. Musician, band or agents infos"
+      profile_complete_notice: "Congratulations, your profile is complete!"
+      profile_not_complete_notice: "In order to appear in search results, you need to complete your profile fully (except the media section)."
+      title: "Edit your profile"
+      tracks: Tracks
+      visible_explanation: "When \"visible\", you will appear in search results if your profile is complete (except medias). When \"invisible\", you will be removed you from any search results."
+      visible_notice: "You now appear in search results!"
+      youtube_video_id_help: 
+        steps: 
+          first: "First go to your youtube video page"
+          fourth: "Press update"
+          second: "Then copy the id form the page url. That's the text after 'watch?v='"
+          third: "Paste it in your profile youtube video id field"
+        title: "How to find your Youtube video id?"
+    index: 
+      invite_more_users: "Invite more user to Emuzikos and help to make the community grow!"
+      no_users: "We couldn't find any users corresponding to you search criterias."
+      processing_search: "Processing search"
+      title: "Users Listing"
+    location: Location
+    musician_infos: "Musician Infos"
+    prefers: 
+      message_notifications: "Message notifications"
+      newsletters: Neswletters
+    show: 
+      donate: "We depend on you! Please consider donate."
+      events: "Future events"
+      from: from
+      is_looking_for: "is looking for a"
+      music: music
+      title: "%{username}'s profile"
+      to_play: "to play"
+      users_nearby: "Other users nearby"
+    types: 
+      agent: Agent
+      band: Band
+      musician: Musician
