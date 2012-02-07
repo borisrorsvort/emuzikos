@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       @messages = @user.received_messages.order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
     end
     if request.xhr?
-      sleep(2) # make request a little bit slower to see loader :-)
+      sleep(1) # make request a little bit slower to see loader :-)
       render :partial => @users
     end
   end

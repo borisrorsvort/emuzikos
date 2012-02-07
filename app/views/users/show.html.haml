@@ -3,7 +3,7 @@
 - if @user.has_profile_complete?
   - description "#{ @user.username}" + ": " + "#{"Local " + t(:"users.types.#{@user.user_type}")} looking for #{@user.searching_for if @user.searching_for} in #{Carmen::country_name(@user.country) rescue "N/A"} "
 - else
-  - description t(:'.title', :username => @user.username) + " on Emuzikos"
+  - description t(:'.title', :username => @user.username) + " - Emuzikos"
 
 - set_meta_tags :canonical => request.url
 
@@ -11,9 +11,7 @@
 - content_for :scripts do
   :javascript
     $( "#tabs" ).tabs({
-    select: function(event, ui) {
-    window.location.hash = ui.tab.hash;
-    }
+      select: function(event, ui) { window.location.hash = ui.tab.hash; }
     });
 
 
@@ -112,7 +110,7 @@
                     - if user.avatar.present?
                       = link_to(image_tag(user.avatar.url(:gallery)), user_path(user), :class => "tooltip", :title => "#{user.username}")
                     -else
-                      = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user), :class => "tooltip", :title => user.username)
+                      = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user), :class => "tooltip", :title => "#{user.username}")
                     .clear
               .clear
 
@@ -128,7 +126,7 @@
                   = " | "
                   = event.venue.display_name
                   = " | "
-                  = link_to "read more", event.uri, :target => "_blank"
+                  = link_to t(:'common.read_more'), event.uri, :target => "_blank"
             = image_tag "songkick/concerts_by_songkick.gif", :alt => "Concerts by Songkick"
           .clear
 
@@ -138,7 +136,7 @@
           - if @user.soundcloud_username?
             %h3= t(:souncloud_player)
             .soundcloud_block
-              = link_to "#{@user.username} Tracks", "http://soundcloud.com/#{@user.soundcloud_username}", :class => "sc-player"
+              = link_to "#{@user.username} #{t(:'.tracks')}", "http://soundcloud.com/#{@user.soundcloud_username}", :class => "sc-player"
           - if @user.youtube_video_id?
             %h3= t(:'.youtube_video')
             %section

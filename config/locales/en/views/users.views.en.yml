@@ -1,11 +1,5 @@
 en:
-
-### USERS
-### ______________________________________________________
-
   users:
-    visible: Visible
-    invisible: Invisible
     types:
       musician: Musician
       band: Band
@@ -35,10 +29,23 @@ en:
       visible_notice: "You now appear in search results!"
       invisible_notice: "Make sure you're set as visible in order to appear in search results"
       medias: "Medias (optional)"
+      tracks: "Tracks"
       visible_explanation: 'When "visible", you will appear in search results if your profile is complete (except medias). When "invisible", you will be removed you from any search results.'
       instruments_in_band_notice: "If you're a band, list instruments already present in the band"
-      instrument_not_in_list: "Your instrument is not in the list?"
-      request_through_dashboard: "Please make a request using the help dashboard"
+      form_helpers:
+        genre_not_on_list: "Your genre is not in the list?"
+        instrument_not_in_list: "Your instrument is not in the list?"
+        request_through_dashboard: "Please make a request using the help dashboard"
+        personal_infos_advice: "We advice you not to share any personal informations such as email or phone number. Let people contact you using the internal messaging system instead."
+        dont_have_a_service_account: "Don't have %{service} account? "
+        dont_find_youtube_video_id: "Don't find your Youtube video id?"
+      youtube_video_id_help:
+        title: How to find your Youtube video id?
+        steps:
+          first: First go to your youtube video page
+          second: "Then copy the id form the page url. That's the text after 'watch?v='"
+          third: Paste it in your profile youtube video id field
+          fourth: Press update
     contacts:
       title: Contact list
       no_users: "You don't have any contact in your list"

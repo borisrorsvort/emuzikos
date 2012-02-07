@@ -1,10 +1,12 @@
 en:
   common:
+    base_title: 'Emuzikos, the musicians search tool'
     no_script: Your browser does not support JavaScript!
     home: Home
     required: Required
     please_choose: 'Please choose ...'
     are_you_sure: Are you sure?
+    read_more: Read more
     reset: Reset
     or: or
     by: by

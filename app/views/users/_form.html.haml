@@ -50,9 +50,9 @@
     .clear
     %p
       %br
-      %i= t(:'instrument_not_in_list', :scope => [:users, :edit])
-      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'request_through_dashboard', :scope => [:users, :edit])}
-        = t(:request_through_dashboard, :scope => [:users, :edit])
+      %i= t(:'form_helpers.instrument_not_in_list', :scope => [:users, :edit])
+      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])}
+        = t(:"form_helpers.request_through_dashboard", :scope => [:users, :edit])
 
     %p
       = f.label :genre, t(:'activerecord.attributes.user.genre')
@@ -65,8 +65,8 @@
     .clear
     %p
       %br
-      %i= t(:'genre_not_on_list')
-      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'request_through_dashboard', :scope => [:users, :edit])}= t(:'request_through_dashboard', :scope => [:users, :edit])
+      %i= t(:"form_helpers.genre_not_on_list", :scope => [:users, :edit])
+      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])}= t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])
     %p
       = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
       = select(:user, :searching_for, grouped_options_for_select(searching_for_grouped_options, @user.searching_for ))
@@ -78,7 +78,7 @@
     %p
       = f.label :request_message, t(:'activerecord.attributes.user.request_message')
       = f.text_area :request_message, :size => "45x20"
-      .notification.info= "We advice you not to share any personal informations such as email or phone number. Let people contact you using the internal messaging system instead."
+      .notification.info= t(:'form_helpers.personal_infos_advice', :scope => [:users, :edit])
 
   .clear
 
@@ -87,29 +87,33 @@
     %p
       = f.label :songkick_username, t(:'activerecord.attributes.user.songkick_username')
       = f.text_field :songkick_username, :placeholder => "Example: Lady Gaga"
-      %i Don't have a Songkick account? #{ link_to "Create one here", "http://www.songkick.com/signup" }
+      %i #{t(:'form_helpers.dont_have_a_service_account', :service => "Songkick", :scope => [:users, :edit])} #{ link_to "Create one here", "http://www.songkick.com/signup" }
     %p
       = f.label :soundcloud_username, t(:'activerecord.attributes.user.soundcloud_username')
       = f.text_field :soundcloud_username, :placeholder => "Example: john-doe"
-      %i Don't have a Soundcloud account? #{ link_to "Create one here", "http://www.soundcloud.com/" }
+      %i #{t(:'form_helpers.dont_have_a_service_account', :service => "Soundcloud", :scope => [:users, :edit])} #{ link_to "Create one here", "http://www.soundcloud.com/" }
     %p
       = f.label :youtube_video_id, t(:'activerecord.attributes.user.youtube_video_id')
       = f.text_field :youtube_video_id, :placeholder => "Example: JW5meKfy3fY"
-      %i Don't find your video id? #{ link_to "Click here for help", "#", "data-reveal-id" => "youtube_video_id_help" }
-      %i Don't have a Youtube account? #{ link_to "Create one here", "http://www.youtube.com/" }
+      %i #{t(:'form_helpers.dont_find_youtube_video_id', :scope => [:users, :edit])} #{ link_to "Click here for help", "#", "data-reveal-id" => "youtube_video_id_help" }
+      %i #{t(:'form_helpers.dont_have_a_service_account', :service => "Youtube", :scope => [:users, :edit])} #{ link_to "Create one here", "http://www.youtube.com/" }
   .clear
 
   = f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"
 
 #youtube_video_id_help.reveal-modal
-  %h1 How to find your Youtube video id?
+  %section
+    %header
+      %h1= t(:'youtube_video_id_help.title', :scope => [:users, :edit])
   %ol
-    %li First go to your youtube video page
     %li
-      %p Then copy the id form the page url. That's the text after "watch?v="
-      %p
-        = image_tag "reveal/youtube/url-example.jpg", :alt => "youtube url example"
-    %li Paste it in your profile youtube video id field
-    %li Press update
+      = t(:'youtube_video_id_help.steps.first', :scope => [:users, :edit])
+    %li
+      %p= t(:'youtube_video_id_help.steps.second', :scope => [:users, :edit])
+      %p= image_tag "reveal/youtube/url-example.jpg", :alt => "youtube url example"
+    %li
+      = t(:'youtube_video_id_help.steps.third', :scope => [:users, :edit])
+    %li
+      = t(:'youtube_video_id_help.steps.fourth', :scope => [:users, :edit])
 
   %a.close-reveal-modal ×

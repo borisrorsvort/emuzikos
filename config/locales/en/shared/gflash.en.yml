@@ -12,9 +12,9 @@ en:
       progress: "Progress"
 
 ### APPLICATION
-#############################  
+#############################
 
-    common: 
+    common:
       require_user: "You must be logged in to access this page"
       require_no_user: "You must be logged out to access this page"
 
@@ -33,7 +33,7 @@ en:
 
 ### TESTIMONIALS
 #############################
-    
+
     testimonials:
       please_write: "If you like our service, please take 30s to write something nice about us in the <a href='%{link}'> testimonial section.</a>"
       create:
@@ -42,10 +42,10 @@ en:
         success: "Successfully updated testimonial"
       destroy:
         success: "Successfully destroyed testimonial"
-        
-  
+
+
 ### MESSAGES
-#############################     
+#############################
     messages:
       create:
         success: "Your message was successfully sent!"
@@ -53,10 +53,13 @@ en:
         success: "Deleted! Congrats"
 
 ### FRIENDSHIPS
-#############################     
+#############################
     friendships:
       create:
         success: " %{user} has been added to your contact list succesfully!"
       destroy:
         success: " %{user} has been deleted from your contact list succesfully!"
-        
+
+    services:
+      errors:
+        authentication: "Error while authenticating via %{service_route.capitalize}"

@@ -14,6 +14,7 @@ en:
     inbox:
       title: Your Messages
       subtitle: Inbox
+      description: 'Your inbox helps you keep your musicians or band infos private'
     sent:
       title: Your Messages
       subtitle: Sent Messages

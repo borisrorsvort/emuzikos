@@ -62,7 +62,7 @@ def create
             if existinguser
               # map this new login method via a service provider to an existing account if the email address is the same
               existinguser.services.create(:provider => provider, :uid => uid, :uname => username, :uemail => email)
-              flash[:notice] = t(:'services.signed_in_via') + " " + provider.capitalize + " " + t(:'services.added_to_account') + " " + existinguser.email + " " + t(:'services.signed_in_successful')
+              flash[:notice] = t(:'services.logged_in_via') + " " + provider.capitalize + " " + t(:'services.added_to_account') + " " + existinguser.email + " " + t(:'services.signed_in_successful')
               sign_in_and_redirect(:user, existinguser)
             else
               # let's create a new user: register this user and add this authentication method for this user
@@ -96,19 +96,19 @@ def create
         auth = Service.find_by_provider_and_uid(provider, uid)
         if !auth
           current_user.services.create(:provider => provider, :uid => uid, :uname => username, :uemail => email)
-          flash[:notice] = "Logged in via" + provider.capitalize + " has been added to your account."
+          flash[:notice] = t(:'services.logged_in_via') + provider.capitalize + t(:'services.added_to_account')
           redirect_to services_path
         else
-          flash[:notice] = service_route.capitalize + t('already_linked_account')
+          flash[:notice] = service_route.capitalize + t(:"services.already_linked_account")
           redirect_to services_path
         end
       end
     else
-      flash[:error] =  service_route.capitalize + t('invalid_data_user_id')
+      flash[:error] =  service_route.capitalize + t(:"services.invalid_data_user_id")
       redirect_to new_user_session_path
     end
   else
-    flash[:error] = "Error while authenticating via #{service_route.capitalize}."
+    flash[:error] = t(:'gflash.services.errors.authentication', :service_route => service_route.capitalize)
     redirect_to new_user_session_path
   end
 end
