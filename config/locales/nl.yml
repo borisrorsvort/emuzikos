@@ -194,6 +194,9 @@ nl:
       create: "%{model} toevoegen"
       submit: "%{model} opslaan"
       update: "%{model} bewaren"
+  ie_warning: 
+    description: ""
+    title: ""
   number: 
     currency: 
       format: 

@@ -27,6 +27,8 @@ en:
         references: "Musical References"
         request_message: "Request message"
         searching_for: "Searching for"
+        songkick_username: "Songkick username"
+        soundcloud_username: "SoundCloud username"
         testimonials: "%{user}'s Testimonials"
         updated_at: "Updated at"
         user_type: "User Type"
@@ -490,6 +492,7 @@ en:
       year: Year
   devise: 
     confirmations: 
+      confirmed: "Your account was successfully confirmed. You are now logged in."
       send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
     failure: 
       already_authenticated: "You are already logged in."
@@ -500,20 +503,56 @@ en:
       timeout: "Your session expired, please log in again to continue."
       unauthenticated: "You need to log in or sign up before continuing."
       unconfirmed: "You have to confirm your account before continuing."
+    mailer: 
+      confirmation_instructions: 
+        subject: "Confirmation instructions"
+      reset_password_instructions: 
+        subject: "Reset password instructions"
+      unlock_instructions: 
+        subject: "Unlock Instructions"
+    omniauth_callbacks: 
+      failure: "Could not authorize you from %{kind} because \"%{reason}\"."
+      success: "Successfully authorized from %{kind} account."
     passwords: 
       edit: 
         title: "Change your password"
       new: 
+        description: "Forgot your password? No problem, just fill in the form and start search for musicians or bands again"
         title: "Reset your Password"
       send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
       updated: "Your password was changed successfully. You are now logged in."
+    registrations: 
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      edit: 
+        cancel_my_account: "Cancel my account"
+        title: "Edit my account"
+      new: 
+        newsletter_agreement: "By clicking on the 'submit' button, you will be subscribed to our newsletter and you agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>."
+        or_signup_using: "Or sign up using:"
+        title: "Signup to Emuzikos"
+      signed_up: "Welcome! You have signed up successfully. Please complete your profile to appear in search results"
+      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
+      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
+      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
+      updated: "You updated your account successfully."
     sessions: 
       new: 
+        description: "Log in on Emuzikos.com and start to search for wanted bands and musicians"
         forgot_password: "Forgot your password?"
         or_login_using: "Or log in using:"
+        remember_me: "Remember me"
         title: "Log in to your account"
       signed_in: "Logged in in successfully."
       signed_out: "Logged out successfully."
+    shared: 
+      links: 
+        dont_have_account_yet: "Don't have an account yet?"
+        forgot_password: "Forgot your password?"
+        go_to_recovery_page: "Got to recovery page"
+        have_account_already: "Have an account already?"
+    unlocks: 
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      unlocked: "Your account was successfully unlocked. You are now logged in."
   errors: 
     format: "%{attribute} %{message}"
     messages: 
@@ -594,7 +633,6 @@ en:
         success: "Registration successful. Don't forget to complete your profile to appear in search results"
       update: 
         error: "Some informations need to be corrected"
-        notice: "One more thing to do, you need to crop your avatar picture."
         success: "Successfully updated your profile."
   helpers: 
     select: 
@@ -603,6 +641,11 @@ en:
       create: "Create %{model}"
       submit: "Save %{model}"
       update: "Update %{model}"
+  ie_warning: 
+    click_to_download: "Click on the browser icon to go to the download page."
+    description: "In order to provide the best user experience possible, we recommand you <strong>to upgrade</strong> your browser or to download a more modern one"
+    popular_browsers_choice: "Most popular browsers are listed below:"
+    title: "Did you know that your browser is outdated?"
   instruments: 
     banjo: banjo
     bass: bass
@@ -626,6 +669,7 @@ en:
   menu: 
     all_users: Search
     contact: "Contact us"
+    help: Help
     login: "Log in"
     logout: "Log out"
     messages: 
@@ -743,12 +787,12 @@ en:
       description: "Looking for a local musician or band mates? Emuzikos.com is quick way to search for wanted bands and musicians"
       home_feature: 
         advantage: 
-          body: "You will get a fully customizable profile, a private message inbox, an awesome musicians, bands & agents listing to search in."
+          body: "You will get a fully customizable profile, a private message inbox, and an awesome musicians, bands & agents database to search from."
           title: "What do you get when you sign up?"
         external_services: 
           body: "We don't want to reinvent the wheel, so we have integrated some cool services for you:"
           services: 
-            songkick: "<strong>Songikick</strong> to announce your events"
+            songkick: "<strong>Songkick</strong> to announce your events"
             soundcloud: "<strong>Soundcloud</strong> to play your music"
             youtube: "<strong>Youtube</strong> to show you off"
           title: "What services do we integrate with?"
@@ -756,12 +800,12 @@ en:
           body: "The service is completely free. We believe you should never pay to be able to connect with other musicians."
           title: "No credit card required"
         privacy: 
-          body: "You can use the private inbox to prevent anybody from seeing your email address until you are sure they are truly your band mates."
+          body: "Emuzikos has an internal messaging system, which means that you don't need to share personal information on your profile and will avoid being spammed by robots crawling the web."
           title: "Care about privacy?"
         sharing: 
-          title: "Spread the love"
+          title: "Spread the love with musicians"
         sign_up: 
-          body: "Create your musician profile in 60sec. and start browsing, sending messages to other musicians and share your profile around you."
+          body: "Creating an account takes less than 60 sec.  With just a couple of basic details, you  can start searching musicians band or agents. As you add more information, you become easier to find by other users."
           title: "Simple & minimal sign up process"
       keywords: "musician, search, musician search, local musicians, search local musician"
       latest_testimonials: "Latest musician's testimonials"
@@ -875,7 +919,7 @@ en:
       processing_search: "Processing search"
       title: "Users Listing"
     location: Location
-    musician_infos: "Musician Infos"
+    musician_infos: "Your infos"
     prefers: 
       message_notifications: "Message notifications"
       newsletters: Neswletters
@@ -887,8 +931,13 @@ en:
       music: music
       title: "%{username}'s profile"
       to_play: "to play"
+      tracks: Tracks
       users_nearby: "Other users nearby"
     types: 
       agent: Agent
       band: Band
       musician: Musician
+  views: 
+    pagination: 
+      last: Last
+      next: Next
