@@ -62,13 +62,13 @@
     #tabs
       %ul.profile_tabs_nav
         %li
-          %a{:href => "#tab_info", :class => "icon-info"} User Infos
+          %a{:href => "#tab_info", :class => "icon-info"}= t(:'.tabs.user_infos')
         - unless @events.results.empty?
           %li
-            %a{:href => "#tab_events", :class => "icon-calendar"} Events
+            %a{:href => "#tab_events", :class => "icon-calendar"}= t(:'.tabs.user_events')
         - if @user.youtube_video_id? || @user.soundcloud_username?
           %li
-            %a{:href => "#tab_medias", :class => "icon-video"} Medias
+            %a{:href => "#tab_medias", :class => "icon-video"}= t(:'.tabs.user_medias')
 
       / INFOS TAB START
       #tab_info

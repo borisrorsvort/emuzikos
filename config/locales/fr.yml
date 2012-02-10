@@ -87,6 +87,7 @@ fr:
     compose: "Nouveau message"
     contact: "Envoyer un message"
     create: Créer
+    create_one_here: "Créez en un ici"
     delete: Effacer
     edit: Modifier
     home_signup: "Inscrivez-vous en 60 sec"
@@ -103,7 +104,7 @@ fr:
     submit: Envoyer
     testimonials: 
       all: "Retour aux témoignages"
-      create: "Ajouter un nouveau témoignages"
+      create: "Ajouter un nouveau témoignage"
     update: "Mettre à jour"
   common: 
     are_you_sure: "Etes-vous sûr"
@@ -820,7 +821,7 @@ fr:
           title: "A quoi ça ressemble?"
         testimonials: 
           title: "Qu'est-ce que les musiciens en disent?"
-      subtitle: "Emuzikos, plus qu'un site d'annonce pour musiciens et groupes"
+      subtitle: "Emuzikos, plus qu'un site d'annonces pour musiciens et groupes"
       title: "Recherche facile et rapide de musicien près de chez vous. L'endroit idéal pour rencontrer musiciens et groupes."
     privacy: 
       description: "La Charte de confidentialité d'Emuzikos vous aide faire respecter votre vie privée."
@@ -857,6 +858,7 @@ fr:
     logged_in_via: "Connecté via"
     signed_in_successful: "Vous vous êtes bien connecté"
     signed_in_successful_via: "Vous vous êtes bien connecté via"
+  souncloud_player: "Lecteur SoundCloud"
   support: 
     array: 
       last_word_connector: " et "
@@ -898,7 +900,7 @@ fr:
         instrument_not_in_list: "Votre instrument ne se trouve pas dans la liste?"
         personal_infos_advice: "Nous vous conseillons de ne pas divulguer d'informations personnelles telles qu'un numéro de téléphone ou une adresse. Cela, afin d'éviter le vol d'informations par des robots. Préférez le système de messagerie d'Emuzikos."
         request_through_dashboard: "Faites-en la demande ici"
-      instruments_in_band_notice: "Si vous êtes un groupe, lister ici les instruments déjà présent dans le groupe."
+      instruments_in_band_notice: "Si vous êtes un groupe, listez ici les instruments déjà présent dans le groupe."
       invisible_notice: "Vérifiez que vous êtes bien \"visible\" afin d'apparaître dans les résultats de recherche"
       medias: "Medias (optionnel)"
       meta_description: "Modification du profil de  %{username}. Musicien, groupe ou agent"
@@ -931,6 +933,10 @@ fr:
       from: de
       is_looking_for: cherche
       music: musique
+      tabs: 
+        user_events: Evénements
+        user_infos: Infos
+        user_medias: Médias
       title: "Profile de %{username}"
       to_play: "pour jouer"
       tracks: Pistes

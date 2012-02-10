@@ -87,6 +87,7 @@ en:
     compose: Compose
     contact: "Send a message"
     create: Create
+    create_one_here: "Create one here"
     delete: Delete
     edit: Edit
     home_signup: "sign up in 60 sec. It's free"
@@ -855,6 +856,7 @@ en:
     logged_in_via: "Logged in via"
     signed_in_successful: "Signed in successfully!"
     signed_in_successful_via: "Signed in successfully via"
+  souncloud_player: "SoundCloud player"
   support: 
     array: 
       last_word_connector: ", and "
@@ -929,6 +931,10 @@ en:
       from: from
       is_looking_for: "is looking for a"
       music: music
+      tabs: 
+        user_events: Events
+        user_infos: Infos
+        user_medias: Medias
       title: "%{username}'s profile"
       to_play: "to play"
       tracks: Tracks
