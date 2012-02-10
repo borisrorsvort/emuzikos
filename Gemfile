@@ -5,6 +5,7 @@ source :gemcutter
 gem 'rails', '3.1.3'
 gem 'mysql'
 gem "jquery-rails"
+gem 'modernizr-rails'
 
 gem "devise"
 gem 'omniauth', '0.3.2'
@@ -40,14 +41,16 @@ gem 'gmaps4rails'
 gem 'rack-no-www'
 gem 'pg'
 
+gem 'meta-tags', :require => 'meta_tags'
+gem "friendly_id", "~> 4.0.0"
+
 gem 'sass-rails', " ~> 3.1.0"
 
 group :assets do
-    
-  gem 'coffee-rails', " ~> 3.1.0"  
-  gem 'uglifier' 
+  gem 'coffee-rails', " ~> 3.1.0"
+  gem 'uglifier'
   gem "compass", "0.12.alpha.1"
-end  
+end
 
 group :development, :test do
   gem 'rails-footnotes', '>= 3.7.5.rc4'
@@ -71,3 +74,4 @@ group :development, :test do
   gem 'rb-fchange', :require => false
 end
 
+gem 'localeapp'

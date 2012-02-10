@@ -1,16 +1,10 @@
-%section#ie_warning{ :style => "display: none;"}
+%section#ie_warning
   .inner_warning_wrapper
-    %h2 Saviez-vous que votre version d'Internet Explorer est périmée?
+    %h2= t(:'title', :scope => [:ie_warning])
     %br
-    %p
-      Afin d'obtenir la meilleure expérience de navigation possible sur notre site web, nous vous recommandons de
-      %strong mettre à jour
-      votre navigateur ou d'en choisir un autre.
-    %p Une liste des navigateurs les plus populaires se trouve ci-dessous.
-    %p
-      Il suffit de cliquer
-      %strong sur l'icône du navigateur
-      correspondant pour se rendre à sa page de téléchargement.
+    %p= t(:'description', :scope => [:ie_warning])
+    %p= t(:'popular_browsers_choice', :scope => [:ie_warning])
+    %p= t(:'click_to_download', :scope => [:ie_warning]).html_safe
     %ul
       %li
         %a{:href => "http://www.mozilla-europe.org/fr/firefox/", :target => "_blank"}

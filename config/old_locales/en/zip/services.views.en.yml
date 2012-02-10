@@ -1,0 +1,12 @@
+en:
+  services:
+    index:
+      title: Authentication services - Settings
+      subtitle: "The following %{account} connected with your local account at Emuzikos:"
+      account: 
+        singular: account is
+        plural: account are
+      last_account_delete_warning: 'Removing the last account linked might lock you out of your account if you do not know the email/password sign-in of your local account!'
+      are_you_sure: 'Are you sure you want to remove this authentication service?'
+      more_services: "You can connect more services to your account:"
+      random_password_warning: "If you signed-up for Emuzikos via an authentication service, a random password has been set for the local password. You can request a new password using the 'Forgot your Password?' link on the sign-in page."

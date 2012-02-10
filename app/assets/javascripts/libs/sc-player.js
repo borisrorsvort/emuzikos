@@ -122,7 +122,8 @@
       // prepare the listeners
       player.addEventListener('play', callbacks.onPlay, false);
       player.addEventListener('pause', callbacks.onPause, false);
-      player.addEventListener('ended', callbacks.onEnd, false);
+      // handled in the onTimeUpdate for now untill all the browsers support 'ended' event
+      // player.addEventListener('ended', callbacks.onEnd, false);
       player.addEventListener('timeupdate', onTimeUpdate, false);
       player.addEventListener('progress', onProgress, false);
 
@@ -157,9 +158,7 @@
           return player.currentTime * 1000;
         },
         setVolume: function(val) {
-          if(a){
-            a.volume = val / 100;
-          }
+          player.volume = val / 100;
         }
       };
 
@@ -539,8 +538,8 @@
             }
           });
           // set the first track's duration
-          $('.sc-duration', $player)[0].innerHTML = timecode(tracks[0].duration);
-          $('.sc-position', $player)[0].innerHTML = timecode(0);
+          $('.sc-duration', $player).html(timecode(tracks[0].duration));
+          $('.sc-position', $player).html(timecode(0));
           // set up the first track info
           updateTrackInfo($player, tracks[0]);
 

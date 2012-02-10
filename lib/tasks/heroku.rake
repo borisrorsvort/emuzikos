@@ -12,10 +12,10 @@ namespace :heroku do
 
   # runs before all the deploys complete
   task :before_deploy do
-    system "bundle exec rake assets:precompile"
-    system "git add ."
-    system "git commit -a -m 'precompile'"
-    system "git push"
+    # system "bundle exec rake assets:precompile"
+    # system "git add ."
+    # system "git commit -a -m 'precompile'"
+    # system "git push"
   end
 
   # runs before each push to a particular heroku deploy environment

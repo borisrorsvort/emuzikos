@@ -4,21 +4,17 @@
 #   helper :layout
 module LayoutHelper
 
-  def title(page_title, show_title = true)
-    content_for(:title) { h(page_title.to_s) }
-    @show_title = show_title
+  def headline(headline, show_headline = true)
+    content_for(:headline) { h(headline.to_s) }
+    @show_headline = show_headline
   end
 
-  def show_title?
-    @show_title
+  def show_headline?
+    @show_headline
   end
 
   def stylesheet(*args)
     content_for(:head) { stylesheet_link_tag(*args) }
-  end
-
-  def description(string)
-    content_for(:head) { tag('meta', :name => 'description', :content => string) }
   end
 
   def javascript(*args)

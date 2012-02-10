@@ -120,6 +120,10 @@
     margin-bottom: 18px;
     width: 50%;
     float:left;
+      .gmaps4rails_map {
+        width: 50% ;
+        height: 400px;
+      }
   }
   .gmaps4rails_map {
     @include white_box_w_shadow;
