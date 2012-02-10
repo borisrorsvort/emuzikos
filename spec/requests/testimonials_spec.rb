@@ -20,7 +20,7 @@ feature "Testimonials" do
 
     within('#new_testimonial') do
       fill_in 'testimonial_body' , :with => "Lorem ipsum dolor sit amet, consectetuer adipiscing elitLorem ipsum dolor sit amet, consectetuer adipiscing elit"
-      click_button('testimonial_submit')
+      click_button('Submit')
     end
 
     page.should have_content('Success')
@@ -40,7 +40,7 @@ feature "Testimonials" do
 
     within('#new_testimonial') do
       fill_in 'testimonial_body' , :with => "Lorem ipsum dolor sit "
-      click_button('testimonial_submit')
+      click_button('Submit')
     end
     page.should have_content('Invalid Fields')
   end
