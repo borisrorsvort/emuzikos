@@ -52,7 +52,7 @@
       .friendly_actions
         = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button contact"
         - unless current_user.is_friend_with(@user)
-          = link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user), :method => :post, :class => "button add_to_contact_list"
+          = link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user.id), :method => :post, :class => "button add_to_contact_list"
     -if !@current_user
       .friendly_actions
         = link_to t(:'buttons.contact'), new_user_registration_path, :class => "button contact"

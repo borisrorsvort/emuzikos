@@ -30,7 +30,7 @@ namespace :heroku do
 
   # runs after all the deploys complete
   task :after_deploy do
-
+    #system "heroku run db:migrate"
   end
 
 end

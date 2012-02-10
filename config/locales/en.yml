@@ -84,6 +84,7 @@ en:
     back_to_homepage: "Back to the home page"
     cancel: Cancel
     change_password: "Save new password"
+    click_here_for_help: "Click here for help"
     compose: Compose
     contact: "Send a message"
     create: Create
@@ -596,6 +597,8 @@ en:
       header: 
         one: "1 error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
+  footer: 
+    emuzikos_language: "Eumzikos in %{language}"
   gflash: 
     common: 
       require_no_user: "You must be logged out to access this page"
@@ -667,6 +670,9 @@ en:
     violin: violin
     voice: voice
     whistles: whistles
+  laguages: 
+    english: English
+    french: French
   menu: 
     all_users: Search
     contact: "Contact us"
@@ -853,7 +859,7 @@ en:
       title: "Authentication services - Settings"
     invalid_callback: "no service (invalid callback)"
     invalid_data_user_id: "returned invalid data for the user id."
-    logged_in_via: "Logged in via"
+    logged_in_via: "Log in via"
     signed_in_successful: "Signed in successfully!"
     signed_in_successful_via: "Signed in successfully via"
   souncloud_player: "SoundCloud player"
@@ -922,6 +928,7 @@ en:
       title: "Users Listing"
     location: Location
     musician_infos: "Your infos"
+    notifications: Notifications
     prefers: 
       message_notifications: "Message notifications"
       newsletters: Neswletters
@@ -939,6 +946,7 @@ en:
       to_play: "to play"
       tracks: Tracks
       users_nearby: "Other users nearby"
+      youtube_video: "Youtube video"
     types: 
       agent: Agent
       band: Band

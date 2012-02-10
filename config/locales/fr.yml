@@ -26,7 +26,7 @@ fr:
         password_confirmation: "Confirmation du mot de passe"
         references: "Références musicales"
         request_message: Requête
-        searching_for: Cherche
+        searching_for: "Ce que je cherche"
         songkick_username: "Nom d'utilisateur Songkick"
         soundcloud_username: "Nom d'utilisateur SoundCloud"
         testimonials: "Témoignages de %{user}"
@@ -84,6 +84,7 @@ fr:
     back_to_homepage: "Retour à la page d'accueil"
     cancel: Annuler
     change_password: "Sauvegarder le nouveau mot de passe"
+    click_here_for_help: "Cliquez ici pour demander de l'aide"
     compose: "Nouveau message"
     contact: "Envoyer un message"
     create: Créer
@@ -110,7 +111,7 @@ fr:
     are_you_sure: "Etes-vous sûr"
     base_title: "Emuzikos, l'outil de recherche pour musiciens"
     by: par
-    created_by: "Créer par"
+    created_by: "Créé par"
     home: Acceuil
     leave_blank: "(laisser vide si vous ne désirez pas le changer)"
     no_script: "Votre navigateur ne supporte pas Javascript!"
@@ -598,6 +599,8 @@ fr:
       header: 
         one: "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
         other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+  footer: 
+    emuzikos_language: "Eumzikos en %{language}"
   gflash: 
     common: 
       require_no_user: "Vous devez être connecté pour avoir accès à cette page"
@@ -669,6 +672,9 @@ fr:
     violin: violon
     voice: voix
     whistles: flûtes
+  laguages: 
+    english: Anglais
+    french: Français
   menu: 
     all_users: Chercher
     contact: Contactez-nous
@@ -841,7 +847,7 @@ fr:
   services: 
     account_created: "Votre compte sur Emuzikos a bien été créé via %{provider}. Vous pouvez changer votre mot de passe et infos personnelles <a href='%{link}'>ici</a>."
     account_creation_error: "ne peut être utilisé pour s'inscire sur Emuzikos parce que nous n'avons pas accès à votre email. Utilisez un autre type de connexion ou le formulaire par défaut. Si vous avez déjà un compte, connectez-vous et ajoutez %{service_route} depuis votre profil."
-    added_to_account: "a bien été lié à votre compte"
+    added_to_account: "a été ajouté à votre compte"
     already_linked_account: "est déjà lié à votre compte"
     index: 
       account: 
@@ -855,7 +861,7 @@ fr:
       title: "Services de connexion - Options"
     invalid_callback: "pas de service (callback invalide)"
     invalid_data_user_id: "a renvoyé des données invalides pour l'identifiant utilisateur"
-    logged_in_via: "Connecté via"
+    logged_in_via: "La connexion via"
     signed_in_successful: "Vous vous êtes bien connecté"
     signed_in_successful_via: "Vous vous êtes bien connecté via"
   souncloud_player: "Lecteur SoundCloud"
@@ -904,7 +910,7 @@ fr:
       invisible_notice: "Vérifiez que vous êtes bien \"visible\" afin d'apparaître dans les résultats de recherche"
       medias: "Medias (optionnel)"
       meta_description: "Modification du profil de  %{username}. Musicien, groupe ou agent"
-      profile_complete_notice: "Félicitation, votre profil est complet!"
+      profile_complete_notice: "Félicitations, votre profil est complet!"
       profile_not_complete_notice: "Pour apparaître dans les résultats de recherche, vous devez compléter votre profil (à l'exception de la section \"médias\")."
       title: "Modifier mon profil"
       tracks: Pistes
@@ -924,6 +930,7 @@ fr:
       title: "Listes des utilisateurs"
     location: Localisation
     musician_infos: "Vos Informations"
+    notifications: Notifications
     prefers: 
       message_notifications: "Notification lors d'un nouveau message"
       newsletters: Newsletter
@@ -941,6 +948,7 @@ fr:
       to_play: "pour jouer"
       tracks: Pistes
       users_nearby: "Autres utilisateurs proches"
+      youtube_video: "Vidéo Youtube"
     types: 
       agent: Agent
       band: Groupe
