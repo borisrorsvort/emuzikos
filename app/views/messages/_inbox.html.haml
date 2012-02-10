@@ -1,4 +1,7 @@
-- title t(:'.title'), false
+- title t(:'.title')
+- description t(:'.description')
+- set_meta_tags :canonical => request.url
+
 
 - content_for :sub_nav do
   %ul#sub_sections

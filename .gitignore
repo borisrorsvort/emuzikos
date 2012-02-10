@@ -18,3 +18,4 @@ public/system/***/**/*
 public/photos/***/**/*
 .idea/*
 .rvmrc
+.sass-cache/

@@ -1,4 +1,7 @@
-- title t(:'.titles.title')
+- title t(:'.title', :username => @user.username)
+- description t(:'.meta_description', :username => @user.username)
+- set_meta_tags :canonical => request.url
+- headline t(:'.title', :username => @user.username)
 
 - if @user == current_user
   - content_for :sub_nav do

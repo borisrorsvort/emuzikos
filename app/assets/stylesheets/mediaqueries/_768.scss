@@ -1,0 +1,255 @@
+@media only screen and (min-width: 768px) {
+
+#pages.homepage {
+  #logo {
+    display:block;
+    float:left;}
+}
+
+#logo {
+  margin: 10px 0 0 0;
+  text-align: left;
+  float: left; }
+
+#messages.index {
+  #inner_content {
+    padding: 18px;
+    .button.delete {
+      margin-left: 0;
+    }
+  }
+}
+
+.friendly_actions {
+  .ui-button-text {
+    font-size: 14px; }
+
+}
+
+#main_nav {
+  ul {
+    li {
+      width: auto;
+      a {
+       font-size: 1em ;
+       padding: 17px 20px 17px 50px; }}}}
+
+
+#main_nav .icon-user a {
+  background-position: 13px -83px  !important; }
+#main_nav .icon-messages a {
+  background-position: 13px -33px !important; }
+#main_nav .icon-search a {
+  background-position: 13px 15px !important; }
+
+.main_nav_current_arrow {
+  $size: 5px;
+  top: 53px - $size; }
+
+
+#user_nav {
+  float: right;
+  clear: none;
+  margin-top: 0;
+  text-align:right;
+  a {
+    margin-left: 20px;
+    float: none;
+    display:inline;
+    &.feedback_link {
+      display:inline;
+    }
+    &.greating_profile {
+      display: inline;
+    }
+  }
+}
+
+#user_nav {
+  $link_color: #333;
+  height: auto;
+  a {
+    display: inline;
+    float: left;
+    width: auto;
+    padding: 8px 13px;
+    margin: 0 !important;
+    background: $link_color;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid darken($link_color, 5%);
+    border-right-color: lighten($link_color, 5%);
+    @include box-shadow(rgba(255,255,255,0.2) 0px 1px 0px inset);
+
+    &:hover {
+      background: darken($link_color, 3%);
+      text-decoration: none;
+    }
+    &:active, &.current {
+      @include box-shadow(rgba(0,0,0,0.8) 0px 0px 1px inset);
+    }
+    &:first-child{
+      @include border-top-left-radius(3px);
+      @include border-bottom-left-radius(3px);
+    }
+    &:last-child{
+      border-right-color: darken($link_color, 5%);
+      @include border-top-right-radius(3px);
+      @include border-bottom-right-radius(3px);
+    }
+  }
+}
+
+
+#sub_nav #actions_set {
+  .ui-button-text {
+    font-size: 14px; }
+
+  .button.add_to_contact_list {
+    width:  auto;
+    .ui-button-text {
+      position:relative;
+      text-indent: 0px;
+      padding: .4em 1em .4em 2.1em; }}
+}
+
+.users_list {
+  .user_profile_listing {
+    clear:both;
+    overflow: hidden; /* Trick to get equal height columns */
+    &:hover {
+      @include single-box-shadow(#999, 0, 0px, 2px );
+      border-color: #fff;
+    }
+    .section {
+      margin-bottom: -99999px; /* Trick to get equal height columns */
+      padding-bottom: 99999px; /* Trick to get equal height columns */
+      float:left;
+      text-align:left  !important;
+      &.user_general_infos {
+        width: 30%; }
+      &.user_type {
+        width: 30%;
+        border-top: 0px solid #dddddd;
+        border-left: 1px solid #dddddd;
+        text-align:center; }
+      &.user_instruments {
+        width: 20%;
+        overflow: hidden;
+        border-top: 0px solid #dddddd;
+        border-left: 1px solid #dddddd; }
+    }
+    .tag_list {
+      padding-bottom: 10px; /* Adding pading cauz .section padding-bottom is taken for the equal height Trick  */
+    }
+  }
+}
+
+#users.index #search_form {
+  .field#location {
+    width: 20%;
+    margin-right: 20px;
+  } 
+  .button.submit.search {
+    margin-top: 3px !important;
+  }
+}
+
+
+/* 10.CONTENT */
+/* 11.MAIN */
+
+.right_drawer {
+  display:inline;
+  float: right;
+  width: 75%;
+}
+.left_drawer {
+  display:inline;
+  float:left;
+  width: 25%;
+  .inner {
+    padding-right: $baseline / 2;
+  }
+}
+.inner_profile_wrapper {
+  margin-left: $baseline / 2;
+}
+.profile_picture {
+  width: 100%  - ($profile_picture_border_width * 2) ;
+  float: none;
+  margin-right: 0;
+}
+.map_container {
+  height: 300px;
+  width: 100%;
+  float: none;
+  .gmaps4rails_map {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.services_used {
+  margin: 10px 10px 10px 0;
+  width: 20%;
+  min-width: 200px;
+  float:left;
+  img {
+    float: none;
+    margin-right: 10px;
+  }
+}
+.service_user {
+  float: none;
+  margin: 5px 0 10px;
+  .field {
+    margin-bottom: 1em;
+  }
+}
+
+/* 12. MESSAGES
+---------------------------------------- */
+
+.message {
+  margin-bottom: 10px;
+  @include white_box;
+}
+
+
+
+/* LOGGUED OUT  */
+.logged_out {
+  #user_forms {
+    width: 55%;
+    .normal_login {
+
+      @include fluid_column(5%, 2);
+      padding: 0 5% 0 0; }
+
+    .services_login {
+      @include fluid_column(5%, 2);
+      margin-top: 0;
+      padding: 5% 0 0 5%;
+      width: 50%; }
+  }
+}
+
+
+/* HOME PAGE */
+
+.homepage {
+  h2.moto {
+    font-size: 3em;
+  }
+  #logo_home, #main-icon {
+    width: 100%;
+    margin: 0 auto;
+  }
+  #logo_home {
+    margin-bottom: 38px;
+  }
+}
+
+
+}/*/mediaquery*/

@@ -2,7 +2,7 @@
   = link_to "Hi #{current_user.username}!" , user_path(current_user)
 
   %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog (powered by UserVoice)"}
-    Help
+    =t(:'menu.help')
   =link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
   =link_to t(:'menu.logout'), destroy_user_session_path, :class => "logout", :rel => "nofollow"
 
@@ -10,5 +10,5 @@
   =link_to t(:'menu.signup'),new_user_registration_path
   =link_to t(:'menu.login'), new_user_session_path
   %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"}
-    Help
+    =t(:'menu.help')
   =link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"

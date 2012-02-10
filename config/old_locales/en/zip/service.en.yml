@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    attributes:
+      service:
+        uname: Name
+        email: Email
+        not_set: Not set

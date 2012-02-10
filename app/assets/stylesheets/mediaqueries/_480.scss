@@ -1,0 +1,146 @@
+@media only screen and (min-width: 480px) {
+#inner_content {
+  background:#efefef;
+  padding: 18px; /* for non mobiel version*/
+}
+.message_count {
+  position: static; }
+
+#user_nav {
+  a {
+    margin: 0 20px;
+    float: none;
+    display:inline; }}
+
+#sub_nav {
+ ul {
+   li {
+     position:relative;
+     padding: 0;
+     margin: 0 10px 10px;
+     .ui-button-text {
+       font-size: 14px;
+     }
+     .button.add_to_contact_list {
+       width:  auto;
+       .ui-button-text {
+         position:relative;
+         text-indent: 0px;
+         padding: .4em 1em .4em 2.1em; }}}}}
+
+  #sub_nav .quick_links {
+    display:block;
+  }
+
+  #sub_nav #sub_sections {
+    li {
+      margin-bottom: 0px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  #sub_sections {
+    @include horizontal-list(15px);
+    display:block;
+    overflow: visible;
+    list-style: none;
+
+    a {
+      @include link-colors($sub-nav-color-base);
+      @include inset(#fff);
+      text-decoration:none;
+      position:relative;
+      display:block;
+      float:left;
+      overflow:visible;
+      &.current {
+        font-weight:bold; }}}
+
+  .top_sub_nav_arrow {
+    display:block;
+  }
+  .main_nav_current_arrow {
+    $size: 5px;
+    top: 44px - $size; }
+
+  #sub_nav #actions_set {
+    .ui-button-text {
+      font-size: 13px;
+    }
+    .button.add_to_contact_list {
+      width:  auto;
+      margin: 0 1.7%;
+      .ui-button-text {
+        position:relative;
+        text-indent: 0px;
+        padding: .4em 1em .4em 2.1em; }}
+  }
+
+  #search_submit {
+    position:relative;
+    top: 5px;
+  }
+  #users.index #search_form .field  {
+    min-width : 140px;
+    width: 140px;
+    &#location {
+      width: 60%;
+      .centered {
+        width: 100%;
+      }
+    }
+    .centered {
+      width: 100%; }
+    .selector {
+      margin: 0;
+    }
+  }
+
+  .users_list {
+    .user_profile_listing {
+      .section {
+        text-align:left  !important;
+      }
+    }
+  }
+  .location_infos {
+    display: block;
+    margin: $baseline 0 $baseline; }
+
+  .profile_picture {
+    width: 50% - ($profile_picture_border_width * 2) - 2%;
+    float:left;
+    margin-right: 2%;
+  }
+
+  .map_container {
+    height: 300px;
+    margin-bottom: 18px;
+    width: 50%;
+    float:left;
+      .gmaps4rails_map {
+        width: 50% ;
+        height: 400px;
+      }
+  }
+  .gmaps4rails_map {
+    @include white_box_w_shadow;
+    width: 90%  !important;
+    height: 300px  !important;
+  }
+
+  .inner_profile_wrapper {
+    @include folded_corner(#fff, 40px, #efefef);
+    @include white-box-w-shadow;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+
+  /* LOGGUED OUT  */
+  .logged_out {
+    #user_forms {
+      width: 80%; }
+  }
+}/*/mediaquery*/

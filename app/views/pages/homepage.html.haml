@@ -1,20 +1,20 @@
--title "The first easy way to find local musicians. Search for local wanted musicians or bands", false
--description('Local Musician Wanted and Band mates at Emuzikos.com. Join for free! Search for Wanted Bands and Musicians.')
+- title t(:'.title')
+- description t(:'.description')
+- keywords t(:'.keywords')
+- set_meta_tags :canonical => request.url
+
 
 #inner_halo
   #main
     %header
       #main-icon.fadeInDownBig
-        %img{:alt => "emuzikos-icon", :src => "/images/homepage/icon-emuzikos.png"}
+        = image_tag('homepage/icon-emuzikos.png', :alt => "emuzikos-icon")
       #logo_home.bounceInDown
-        %img{:alt => "Emuzikos-logo", :src => "/images/homepage/logo.png"}
-      %h1#main_title Emuzikos, The musician search platform
+        = image_tag("homepage/logo.png", :alt => "Emuzikos-logo" )
+      %h1#main_title
+        = t(:'.title')
       %h2.moto
-        The first
-        %strong easy
-        way to find
-        %strong local
-        musicians
+        = t(:'.moto').html_safe
     = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "signup_button"
   #music_notes
 
@@ -23,66 +23,63 @@
 = content_for :features do
   .features_columns
     .inner_block.home_feature
-      %h3 Emuzikos, the musician search tool you were missing
+      %h3= t(:'.subtitle')
 
       .columns
         .inner_column
-          %h4 Simple & minimal sign up process
-          %p Create your musician profile in 60sec. and start browsing, sending messages to other musicians and share your profile around you.
+          %h4= t(:'.home_feature.sign_up.title')
+          %p= t(:'.home_feature.sign_up.body')
       .columns.home_testimonials
         .inner_column
-          %h4 What do you get when you sign up?
-          %p You will get a fully customizable profile, a private message inbox, an awesome musicians, bands & agents listing to search in.
+          %h4= t(:'.home_feature.advantage.title')
+          %p= t(:'.home_feature.advantage.body')
       .columns
         .inner_column
-          %h4 Care about privacy?
-          %p You can use the private inbox to prevent anybody from seeing your email address until you are sure they are truly your band mates.
+          %h4= t(:'.home_feature.privacy.title')
+          %p= t(:'.home_feature.privacy.body')
+
       .clear
 
       .columns
         .inner_column
-          %h4 What services do we integrate with?
+          %h4= t(:'.home_feature.external_services.title')
           %p
-            We don't want to reinvent the wheel, so we have integrated some cool services for you:
+            = t(:'.home_feature.external_services.body')
             %ul
-              %li
-                %strong Soundcloud
-                to play your music
-              %li
-                %strong Songkick
-                to announce your events
-              %li
-                %strong Youtube
-                to show you off
+              %li= t(:'.home_feature.external_services.services.soundcloud').html_safe
+              %li= t(:'.home_feature.external_services.services.songkick').html_safe
+              %li= t(:'.home_feature.external_services.services.youtube').html_safe
+
       .columns
         .inner_column
-          %h4 No credit card required
-          %p The service is completely free. We believe you should never pay to be able to connect with other musicians.
+          %h4= t(:'.home_feature.no_credit_card.title')
+          %p= t(:'.home_feature.no_credit_card.body')
       .columns
         .inner_column
-          %h4 Spread the love
+          %h4= t(:'.home_feature.sharing.title')
           = render "shared/add_this"
       .clear
+
     .note_circle
     .inner_block.home_feature
-      %h3 How does it look like?
+      %h3= t(:'.sections.screenshots.title')
       .columns
         .inner_column
-          %h4 Search page
+          %h4= t(:'.sections.screenshots.search_page')
           =link_to(image_tag("app-samples/search-thumb.jpg"), "#", "data-reveal-id" => "app_sample_search", :class => "app_sample_thumb")
           #app_sample_search.reveal-modal.xlarge
             = image_tag("app-samples/search-normal.jpg")
             %a.close-reveal-modal ×
       .columns
         .inner_column
-          %h4 Profile page
+          %h4= t(:'.sections.screenshots.profile')
           =link_to(image_tag("app-samples/profile-thumb.jpg"), "#", "data-reveal-id" => "app_sample_profile", :class => "app_sample_thumb")
           #app_sample_profile.reveal-modal.xlarge
             = image_tag("app-samples/profile-normal.jpg")
             %a.close-reveal-modal ×
       .columns
         .inner_column
-          %h4 Your private inbox
+          %h4= t(:'.sections.screenshots.inbox')
           =link_to(image_tag("app-samples/inbox-thumb.jpg"), "#", "data-reveal-id" => "app_sample_inbox", :class => "app_sample_thumb")
           #app_sample_inbox.reveal-modal.xlarge
             = image_tag("app-samples/inbox-normal.jpg")
@@ -92,7 +89,7 @@
       .note_circle
       .latest_testimionals
         .inner_block.home_testimonials
-          %h3 What people are saying about it?
+          %h3= t(:'.sections.testimonials.title')
           - @testimonials.in_groups_of(2, false) do |group|
             .t_column
               - for testimonial in group do

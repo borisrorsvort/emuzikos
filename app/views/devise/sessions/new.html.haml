@@ -1,4 +1,6 @@
-- title t(:'.title'), false
+- title t(:'.title')
+- description t(:'.description')
+- set_meta_tags :canonical => request.url
 
 #user_forms.centered
   %header
@@ -17,7 +19,7 @@
       - if devise_mapping.rememberable?
         %p
           = f.check_box :remember_me
-          = f.label :remember_me
+          = f.label :remember_me, t(:'.remember_me')
       %p
         = f.submit(t(:'buttons.login'), :type => "submit", :class => "button submit")
 

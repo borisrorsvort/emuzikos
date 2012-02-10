@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :get_variables
   before_filter :mailer_set_url_options
+  before_filter :set_locale
   #before_filter :check_uri
 
   helper :all
@@ -26,7 +27,7 @@ class ApplicationController < ActionController::Base
       edit_user_path(current_user)
   end
 
-  unless ActionController::Base.consider_all_requests_local
+  unless Rails.application.config.consider_all_requests_local
     rescue_from Exception, :with => :render_error
     rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found
     rescue_from ActionController::RoutingError, :with => :rescue_action_in_public
@@ -36,18 +37,29 @@ class ApplicationController < ActionController::Base
   end
 
   def render_not_found(exception)
+    #log_error(exception)
+    #notify_hoptoad(exception)
     render "/errors/404.html.haml", :layout => "errors", :status => 404
   end
 
   def render_error(exception)
     # you can insert logic in here too to log errors
     # or get more error info and use different templates
+    #log_error(exception)
+    #notify_hoptoad(exception)
     render "/errors/500.html.haml", :layout => "errors", :status => 500
   end
 
-  #def check_uri
-  #  redirect_to request.protocol + "www." + request.host_with_port + request.request_uri if !/^www/.match(request.host) && Rails.env == "production"
-  #end
+  def set_locale
+    I18n.locale = extract_locale_from_subdomain || I18n.default_locale
+  end
+
+  def extract_locale_from_subdomain
+    parsed_locale = request.subdomains.first
+    unless request.subdomains.first.nil?
+      I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale : nil
+    end
+  end
 
   private
 
