@@ -196,3 +196,17 @@ strong {
 /*VARIABLES*/
 
 $profile_picture_border_width: 2%;
+
+// LANGUAGE FLAGS
+
+.flag {
+  width: 15px;
+  height: 10px;
+  display: block;
+  &.en {
+    background-image: inline-image("icons/flags/us.gif", image);
+  }
+  &.fr {
+    background-image: inline-image("icons/flags/fr.gif", image);
+  }
+}

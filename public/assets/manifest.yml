@@ -81,6 +81,8 @@ icons/authbuttons/yahoo_256.png: icons/authbuttons/yahoo_256-e75603930b1d655cb9a
 icons/authbuttons/yahoo_32.png: icons/authbuttons/yahoo_32-6ac7bc5f8023fdbeba20a08515d84269.png
 icons/authbuttons/yahoo_64.png: icons/authbuttons/yahoo_64-2af9b179eea6a078d07aa3d3aed0f930.png
 icons/close.png: icons/close-94e1289e20ed0c2335323cad7eaa6fab.png
+icons/flags/fr.gif: icons/flags/fr-69b803659c4ce2df298d364a7e5c6513.gif
+icons/flags/us.gif: icons/flags/us-bfc9a108d6147c70abe97487cd48e2f2.gif
 icons/h/apple-touch-icon.png: icons/h/apple-touch-icon-0eeb82fd0c13ff25b417ef437b1a0871.png
 icons/h/splash.png: icons/h/splash-070868af0f913bc5240dce763da98c2e.png
 icons/l/apple-touch-icon-precomposed.png: icons/l/apple-touch-icon-precomposed-218e149b8824aac4903baf048e83ccac.png
@@ -96,8 +98,8 @@ marker.png: marker-8ea71feafda1a533971b526ec5954046.png
 active_admin.js: active_admin-412dbb297e3bd4acd32f0017dad67c57.js
 application.js: application-b6d5779e63e819e8c7312a94dded5c72.js
 active_admin.css: active_admin-4d885a26e950640d8e3a0c7940464746.css
-application.css: application-31c024d8475e3b18bad170747817d793.css
-homepage.css: homepage-a49ff1def63837cdbcb9b6f1144a2238.css
+application.css: application-a0dc72015bd419c1f146d2a67b44575d.css
+homepage.css: homepage-37804c482e478f77a814e18564151e37.css
 jquery-ui/bg_fallback.png: jquery-ui/bg_fallback-8a205ebe90eb44637728f56338f3b654.png
 jquery-ui/icon_sprite.png: jquery-ui/icon_sprite-a07dc1ce0bb5e74b2dd3568f29a6cc6e.png
 jquery-ui/progress_bar.gif: jquery-ui/progress_bar-fb60f8e8fc206e76cf7ae37b50a953f4.gif
