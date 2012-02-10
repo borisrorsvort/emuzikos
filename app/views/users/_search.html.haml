@@ -1,7 +1,7 @@
 #search_form
   = search_form_for @q, :url => users_path, :html => {:method => :get} do |f|
     .field
-      = f.select :user_type_cont, user_types, :include_blank => t(:'search_terms.i_search_a')
+      = f.select :user_type_cont, User::USER_TYPES, :include_blank => t(:'search_terms.i_search_a')
       .clear
     .field
       = f.select :genres_name_cont, genres.collect {|g| g.name}, :include_blank => t(:'search_terms.music_style')

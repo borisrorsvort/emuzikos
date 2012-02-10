@@ -809,7 +809,7 @@ fr:
           body: "Le service de recherche est entièrement gratuit. Enfin un site vraiment au service des musiciens! "
           title: "Aucune carte de crédits n'est demandée"
         privacy: 
-          body: "Emuzikos a son propre système de messagerie interne, ce qui vous évite de diffuser vos information personnelles sur votre profil, et d’être spammé par des robots."
+          body: "Emuzikos a son propre système de messagerie interne, ce qui vous évite de diffuser vos informations personnelles sur votre profil, et d’être spammé par des robots."
           title: "Sécurité et vie privée"
         sharing: 
           title: "Partager avec d'autres musiciens!"
