@@ -74,7 +74,7 @@
       #tab_info
         - if @user.searching_for?
           %h3= t(:'activerecord.attributes.user.searching_for') + " :"
-          %p= t(:"users.types.#{@user.searching_for}")
+          %p= @user.searching_for
 
         - if @user.has_profile_complete?
           %h3= t(:'activerecord.attributes.user.genre')
