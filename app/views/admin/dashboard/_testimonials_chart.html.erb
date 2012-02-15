@@ -8,7 +8,7 @@
     new Highcharts.Chart({
       chart: {
          renderTo: 'testimonials_chart',
-         defaultSeriesType: 'line' },
+         defaultSeriesType: 'column' },
       title: { text: 'Testimonials per Day' },
       xAxis: { type: 'datetime' },
       yAxis: {
@@ -20,18 +20,22 @@
         }
       },
       plotOptions: {
-        line: {
+        column: {
           dataLabels: {
             enabled: true
           },
-          enableMouseTracking: true
+          enableMouseTracking: true,
+          pointPadding: 0.1,
+          groupPadding: 0,
+          borderWidth: 0,
+          shadow: false
         }
       },
       series: [{
         name: "Testimonials per Day",
         pointInterval: <%= 1.day * 1000 %>,
-        pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,
-        data: <%= (4.weeks.ago.to_date..Date.today).map { |date| Testimonial.total_on(date).to_f}.inspect %>
+        pointStart: <%= 2.weeks.ago.at_midnight.to_i * 1000 %>,
+        data: <%= (2.weeks.ago.to_date..Date.today).map { |date| Testimonial.total_on(date).to_f}.inspect %>
        }]
     });
   });

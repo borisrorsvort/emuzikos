@@ -77,6 +77,8 @@ fr:
       search: Recherche
       testimonials: Témoignages
       users: Utilisateurs
+  agent: agent
+  band: band
   buttons: 
     add_to_contact_list: "Ajouter à la liste de contacts"
     all: "Voir tous"
@@ -744,6 +746,7 @@ fr:
     spoken_word: "Spoken Word"
     vocal: Vocal
     world: "Musique du monde"
+  musician: musician
   number: 
     currency: 
       format: 
@@ -828,7 +831,7 @@ fr:
         testimonials: 
           title: "Qu'est-ce que les musiciens en disent?"
       subtitle: "Emuzikos, plus qu'un site d'annonces pour musiciens et groupes"
-      title: "Recherche facile et rapide de musicien près de chez vous. L'endroit idéal pour rencontrer musiciens et groupes."
+      title: "Recherche facile et rapide de musiciens près de chez vous. L'endroit idéal pour rencontrer musiciens et groupes."
     privacy: 
       description: "La Charte de confidentialité d'Emuzikos vous aide faire respecter votre vie privée."
       title: "Charte de confidentialité"

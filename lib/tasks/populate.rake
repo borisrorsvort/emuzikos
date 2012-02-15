@@ -47,7 +47,7 @@ namespace :db do
       user.searching_for = USER_TYPES
       user.zip = Faker::Address.zip_code
       user.country = %w(US CA BE FR DE UK)
-      user.created_at = 2.years.ago..Time.now
+      user.created_at = 1.week.ago..Time.now
       user.visible = [true, false]
       user.youtube_video_id = ["JW5meKfy3fY", ""]
       user.songkick_username = ["foo-fighters", ""]

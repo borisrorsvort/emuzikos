@@ -77,6 +77,8 @@ en:
       search: Search
       testimonials: Testimonials
       users: Users
+  agent: agent
+  band: band
   buttons: 
     add_to_contact_list: "Add to contact list"
     all: "View all"
@@ -742,6 +744,7 @@ en:
     spoken_word: "Spoken Word"
     vocal: Vocal
     world: World
+  musician: musician
   number: 
     currency: 
       format: 
