@@ -1,0 +1,39 @@
+<div id="social_chart" style="width: 380px; height: 300px;">
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    new Highcharts.Chart({
+      chart: {
+         renderTo: 'social_chart',
+         plotBackgroundColor: null,
+         plotBorderWidth: null,
+         plotShadow: false },
+      title: { text: 'Social networks representation' },
+      tooltip: {
+         formatter: function() {
+            return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+         }
+      },
+      plotOptions: {
+         pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+               enabled: true,
+               color: '#000000',
+               connectorColor: '#000000',
+               formatter: function() {
+                  return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+               }
+            }
+         }
+      },
+      series: [{
+         type: 'pie',
+         name: 'Social networks share',
+         data: [[ "Facebook", <%= facebook_users.to_f %> ], [ "Twitter", <%= twitter_users.to_f %> ], [ "Rest", <%= users.to_f %> ]]
+       }]
+    });
+  });
+</script>
