@@ -42,9 +42,9 @@ ActiveAdmin::Dashboards.build do
 
   section "Social Stats", :priority => 5 do
     @all_users = User.all.count
-    @facebook_users = Service.where( :provider => "facebook").count  * 100 / @all_users
-    @twitter_users = Service.where( :provider => "twitter").count  * 100 / @all_users
-    @users = ( @all_users - @facebook_users - @twitter_users ) * 100 / @all_users
+    @facebook_users = Service.where( :provider => "facebook").count
+    @twitter_users = Service.where( :provider => "twitter").count
+    @users = @all_users - @facebook_users - @twitter_users
     div do
       render :partial => "social_stats", :locals => { :all_users => @all_users,
                                                       :facebook_users => @facebook_users,
