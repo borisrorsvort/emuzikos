@@ -40,6 +40,19 @@ ActiveAdmin::Dashboards.build do
     end
   end
 
+  section "Social Stats", :priority => 5 do
+    @all_users = User.all.count
+    @facebook_users = Service.where( :provider => "facebook").count  * 100 / @all_users
+    @twitter_users = Service.where( :provider => "twitter").count  * 100 / @all_users
+    @users = ( @all_users - @facebook_users - @twitter_users ) * 100 / @all_users
+    div do
+      render :partial => "social_stats", :locals => { :all_users => @all_users,
+                                                      :facebook_users => @facebook_users,
+                                                      :twitter_users => @twitter_users,
+                                                      :users => @users}
+    end
+  end
+
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.
