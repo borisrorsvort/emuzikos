@@ -14,6 +14,8 @@
       Emuzikos #{Time.now.year} | #{ t(:'common.created_by')} #{ link_to "Boris Rorsvort", "http://www.rorsvort.com", :rel => "external"}
       = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.french'))
       = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.english'))
+      / %a.mixpanel_partner{ :href => "http://mixpanel.com/f/partner" }
+      /   %img{ :src => "http://mixpanel.com/site_media/images/partner/badge_blue.png", :alt => "Real Time Web Analytics" }
     .clear
 
 = javascript_include_tag "application"
@@ -25,6 +27,7 @@
 = gflash
 
 =render "/shared/feedback_box"
+  
 
 / http://t.co/HZe9oJ4
 - if Rails.env.production?

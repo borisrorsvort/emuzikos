@@ -113,10 +113,15 @@ $sub_nav_topbottom_padding: 18px;
 #footer {
   font-size: $basefont;
   padding: $basefont * 3;
-
   .inner_footer {
     background-color: #011120;
     @include border-radius(5px);
+      position: relative;
+      .mixpanel_partner {
+       position: absolute; 
+       top: 3px;
+       right: 20%;
+      }
   }
 
   &.light .inner_footer {
