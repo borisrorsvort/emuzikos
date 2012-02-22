@@ -74,21 +74,21 @@
       #tab_info
         - if @user.searching_for?
           %h3= t(:'activerecord.attributes.user.searching_for') + " :"
-          %p= @user.searching_for
+          %p= t(:"users.types.#{@user.searching_for}")
 
         - if @user.has_profile_complete?
           %h3= t(:'activerecord.attributes.user.genre')
           .tag_list_instruments
             - @user.genres.each do |genre|
               .tag-body.yellow
-                %span.tag= genre.name
+                %span.tag= t(:"musical_genres.#{genre.name}")
 
         - unless @user.instruments.empty?
           %h3= t(:'activerecord.attributes.user.instruments')
           .tag_list_instruments
             - @user.instruments.each do |instrument|
               .tag-body.yellow
-                %span.tag= instrument.name
+                %span.tag= t(:"instruments.#{instrument.name}")
 
         - unless @user.references.blank?
           %h3= t(:'activerecord.attributes.user.references')

@@ -25,7 +25,7 @@ fr:
         password: "Mot de passe"
         password_confirmation: "Confirmation du mot de passe"
         references: "Références musicales"
-        request_message: Requête
+        request_message: Annonce
         searching_for: "Ce que je cherche"
         songkick_username: "Nom d'utilisateur Songkick"
         soundcloud_username: "Nom d'utilisateur SoundCloud"
@@ -660,6 +660,8 @@ fr:
     bouzouki: bouzouki
     cithar: cithare
     congas: congas
+    ? "double bass"
+    : Contrebasse
     double_bass: contrebasse
     drums: batterie
     flute: flute
@@ -726,23 +728,35 @@ fr:
     comedy: Comédie
     country: Country
     dance: Dance
+    ? "easy listening"
+    : "Easy Listening"
     easy_listening: "Easy listening"
     electronic: Electronique
     fusion: Fusion
     gospel: Gospel
+    ? "hip hop"
+    : "Hip Hop"
     hip_hop: "Hip Hop"
+    ? "indian classical"
+    : "Classique indien"
     instrumental: Instrumental
+    irish: Irlandais
     jazz: Jazz
     latino: Latino
     metal: Métal
+    ? "new age"
+    : "New age"
     new_age: "New Age"
     opera: Opera
     pop: Pop
+    r&b: R&B
     r_and_b: R&B
     reggae: Reggae
     rock: Rock
     songwriter: Chanson
     soundtrack: "Bande son"
+    ? "spoken word"
+    : Chanté-parlé
     spoken_word: "Spoken Word"
     vocal: Vocal
     world: "Musique du monde"

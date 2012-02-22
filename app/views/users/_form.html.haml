@@ -46,7 +46,7 @@
           - for instrument in instruments
             .instrument
               = check_box_tag "user[instrument_ids][]", instrument.id, @user.instruments.include?(instrument)
-              = f.label(instrument.name, :class => "habtm")
+              = f.label(t(:"instruments.#{instrument.name}"), :class => "habtm")
     .clear
     %p
       %br
@@ -61,7 +61,7 @@
           - for genre in genres
             .instrument
               = check_box_tag "user[genre_ids][]", genre.id, @user.genres.include?(genre)
-              = f.label(genre.name, :class => "habtm")
+              = f.label(t(:"musical_genres.#{genre.name}"), :class => "habtm")
     .clear
     %p
       %br

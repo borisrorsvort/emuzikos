@@ -658,6 +658,8 @@ en:
     bouzouki: bouzouki
     cithar: cithar
     congas: congas
+    ? "double bass"
+    : "Double Bass"
     double_bass: "doule bass"
     drums: drums
     flute: flute
@@ -724,23 +726,35 @@ en:
     comedy: Comedy
     country: Country
     dance: Dance
+    ? "easy listening"
+    : "Easy Listening"
     easy_listening: "Easy Listening"
     electronic: Electronic
     fusion: Fusion
     gospel: Gospel
+    ? "hip hop"
+    : "Hip Hop"
     hip_hop: "Hip Hop"
+    ? "indian classical"
+    : "Indian Classical"
     instrumental: Instrumental
+    irish: Irish
     jazz: Jazz
     latino: Latino
     metal: Metal
+    ? "new age"
+    : "New Age"
     new_age: "New Age"
     opera: Opera
     pop: Pop
+    r&b: R&B
     r_and_b: R&B
     reggae: Reggae
     rock: Rock
     songwriter: "Song Writer"
     soundtrack: Soundtrack
+    ? "spoken word"
+    : "Spoken Word"
     spoken_word: "Spoken Word"
     vocal: Vocal
     world: World
