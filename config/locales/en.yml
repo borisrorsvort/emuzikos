@@ -653,10 +653,17 @@ en:
     popular_browsers_choice: "Most popular browsers are listed below:"
     title: "Did you know that your browser is outdated?"
   instruments: 
+    accordion: Accordion
+    bagpipe: "Bag Pipe"
     banjo: banjo
     bass: bass
+    bağlama: Bağlama
+    bombo: Bombo
     bouzouki: bouzouki
+    cello: Cello
+    charango: Charango
     cithar: cithar
+    computer: Computer
     congas: congas
     ? "double bass"
     : "Double Bass"
@@ -664,13 +671,25 @@ en:
     drums: drums
     flute: flute
     guitar: guitar
+    hang: Hang
+    harmonica: Harmonica
+    harp: Harp
+    ? "hurdy gurdy"
+    : "Hurdy Gurdy"
     keyboard: keyboard
     mandolin: mandolin
     ocarina: ocarina
+    oud: Oud
     percussions: percussions
     piano: piano
+    saxophone: Saxophone
+    saz: Saz
+    sitar: Sitar
     spoons: spoons
+    tablas: Tablas
+    trombone: Trombone
     turntables: turntables
+    viola: Viola
     violin: violin
     voice: voice
     whistles: whistles
@@ -726,12 +745,16 @@ en:
     comedy: Comedy
     country: Country
     dance: Dance
+    dubstep: Dubstep
     ? "easy listening"
     : "Easy Listening"
     easy_listening: "Easy Listening"
     electronic: Electronic
+    flamenco: Flamenco
+    funk: Fink
     fusion: Fusion
     gospel: Gospel
+    hard-rock: "Hard Rock"
     ? "hip hop"
     : "Hip Hop"
     hip_hop: "Hip Hop"
@@ -744,13 +767,19 @@ en:
     metal: Metal
     ? "new age"
     : "New Age"
+    ? "new wave"
+    : "New Wave"
     new_age: "New Age"
     opera: Opera
     pop: Pop
+    ? "progressive rock"
+    : "Progressive Rock"
+    punk: Punk
     r&b: R&B
     r_and_b: R&B
     reggae: Reggae
     rock: Rock
+    ska: Ska
     songwriter: "Song Writer"
     soundtrack: Soundtrack
     ? "spoken word"
@@ -967,7 +996,13 @@ en:
     types: 
       agent: Agent
       band: Band
+      bass: Bass
+      drums: Drums
       musician: Musician
+      piano: Piano
+      saxophone: Saxophone
+      violin: Violin
+      voice: Voice
   views: 
     pagination: 
       last: Last
