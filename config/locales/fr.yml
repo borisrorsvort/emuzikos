@@ -655,27 +655,46 @@ fr:
     popular_browsers_choice: "Une liste des navigateurs les plus populaires se trouve ci-dessous."
     title: "Saviez-vous que votre version d'Internet Explorer est périmée?"
   instruments: 
-    banjo: banjo
-    bass: basse
-    bouzouki: bouzouki
-    cithar: cithare
-    congas: congas
+    accordion: Accordéon
+    bagpipe: Cornemuse
+    banjo: Banjo
+    bass: Basse
+    bağlama: Bağlama
+    bombo: Bombo
+    bouzouki: Bouzouki
+    cello: Violoncelle
+    charango: Charango
+    cithar: Cithare
+    computer: Ordinateur
+    congas: Congas
     ? "double bass"
     : Contrebasse
-    double_bass: contrebasse
-    drums: batterie
-    flute: flute
-    guitar: guitare
-    keyboard: clavier
-    mandolin: mandoline
-    ocarina: ocarina
-    percussions: percussions
-    piano: piano
-    spoons: cuillères
-    turntables: platines
-    violin: violon
-    voice: voix
-    whistles: flûtes
+    double_bass: Contrebasse
+    drums: Batterie
+    flute: Flute
+    guitar: Guitare
+    hang: Hang
+    harmonica: Harmonica
+    harp: Harpe
+    ? "hurdy gurdy"
+    : "Vielle à roue"
+    keyboard: Clavier
+    mandolin: Mandoline
+    ocarina: Ocarina
+    oud: Oud
+    percussions: Percussions
+    piano: Piano
+    saxophone: Saxophone
+    saz: Saz
+    sitar: Sitare
+    spoons: Cuillères
+    tablas: Tablas
+    trombone: Trombone
+    turntables: Platines
+    viola: Alto
+    violin: Violon
+    voice: Voix
+    whistles: Flûtes
   laguages: 
     english: Anglais
     french: Français
@@ -728,12 +747,16 @@ fr:
     comedy: Comédie
     country: Country
     dance: Dance
+    dubstep: Dubstep
     ? "easy listening"
     : "Easy Listening"
     easy_listening: "Easy listening"
     electronic: Electronique
+    flamenco: Flamenco
+    funk: Funk
     fusion: Fusion
     gospel: Gospel
+    hard-rock: "Hard Rock"
     ? "hip hop"
     : "Hip Hop"
     hip_hop: "Hip Hop"
@@ -746,13 +769,19 @@ fr:
     metal: Métal
     ? "new age"
     : "New age"
+    ? "new wave"
+    : "New Wave"
     new_age: "New Age"
     opera: Opera
     pop: Pop
+    ? "progressive rock"
+    : "Rock progressif"
+    punk: Punk
     r&b: R&B
     r_and_b: R&B
     reggae: Reggae
     rock: Rock
+    ska: Ska
     songwriter: Chanson
     soundtrack: "Bande son"
     ? "spoken word"
@@ -969,7 +998,16 @@ fr:
     types: 
       agent: Agent
       band: Groupe
+      bass: Basse
+      drums: Batterie
+      guitar: Guitare
+      keyboard: Claviers
       musician: Musicien
+      piano: Piano
+      saxophone: Saxophone
+      tablas: Tablas
+      violin: Violon
+      voice: Voix
   views: 
     pagination: 
       last: Dernière

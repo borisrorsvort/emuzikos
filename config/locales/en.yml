@@ -653,27 +653,46 @@ en:
     popular_browsers_choice: "Most popular browsers are listed below:"
     title: "Did you know that your browser is outdated?"
   instruments: 
-    banjo: banjo
-    bass: bass
-    bouzouki: bouzouki
-    cithar: cithar
-    congas: congas
+    accordion: Accordion
+    bagpipe: "Bag Pipe"
+    banjo: Banjo
+    bass: Bass
+    bağlama: Bağlama
+    bombo: Bombo
+    bouzouki: Bouzouki
+    cello: Cello
+    charango: Charango
+    cithar: Cithar
+    computer: Computer
+    congas: Congas
     ? "double bass"
     : "Double Bass"
-    double_bass: "doule bass"
-    drums: drums
-    flute: flute
-    guitar: guitar
-    keyboard: keyboard
-    mandolin: mandolin
-    ocarina: ocarina
-    percussions: percussions
-    piano: piano
-    spoons: spoons
-    turntables: turntables
-    violin: violin
-    voice: voice
-    whistles: whistles
+    double_bass: "Doule bass"
+    drums: Drums
+    flute: Flute
+    guitar: Guitar
+    hang: Hang
+    harmonica: Harmonica
+    harp: Harp
+    ? "hurdy gurdy"
+    : "Hurdy Gurdy"
+    keyboard: Keyboard
+    mandolin: Mandolin
+    ocarina: Ocarina
+    oud: Oud
+    percussions: Percussions
+    piano: Piano
+    saxophone: Saxophone
+    saz: Saz
+    sitar: Sitar
+    spoons: Spoons
+    tablas: Tablas
+    trombone: Trombone
+    turntables: Turntables
+    viola: Viola
+    violin: Violin
+    voice: Voice
+    whistles: Whistles
   laguages: 
     english: English
     french: French
@@ -726,12 +745,16 @@ en:
     comedy: Comedy
     country: Country
     dance: Dance
+    dubstep: Dubstep
     ? "easy listening"
     : "Easy Listening"
     easy_listening: "Easy Listening"
     electronic: Electronic
+    flamenco: Flamenco
+    funk: Fink
     fusion: Fusion
     gospel: Gospel
+    hard-rock: "Hard Rock"
     ? "hip hop"
     : "Hip Hop"
     hip_hop: "Hip Hop"
@@ -744,13 +767,19 @@ en:
     metal: Metal
     ? "new age"
     : "New Age"
+    ? "new wave"
+    : "New Wave"
     new_age: "New Age"
     opera: Opera
     pop: Pop
+    ? "progressive rock"
+    : "Progressive Rock"
+    punk: Punk
     r&b: R&B
     r_and_b: R&B
     reggae: Reggae
     rock: Rock
+    ska: Ska
     songwriter: "Song Writer"
     soundtrack: Soundtrack
     ? "spoken word"
@@ -967,7 +996,16 @@ en:
     types: 
       agent: Agent
       band: Band
+      bass: Bass
+      drums: Drums
+      guitar: Guitar
+      keyboard: Keyboard
       musician: Musician
+      piano: Piano
+      saxophone: Saxophone
+      tablas: Tablas
+      violin: Violin
+      voice: Voice
   views: 
     pagination: 
       last: Last
