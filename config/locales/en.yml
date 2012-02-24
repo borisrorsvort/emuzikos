@@ -655,6 +655,7 @@ en:
   instruments: 
     accordion: Accordion
     bagpipe: "Bag Pipe"
+<<<<<<< HEAD
     banjo: banjo
     bass: bass
     bağlama: Bağlama
@@ -671,11 +672,30 @@ en:
     drums: drums
     flute: flute
     guitar: guitar
+=======
+    banjo: Banjo
+    bass: Bass
+    bağlama: Bağlama
+    bombo: Bombo
+    bouzouki: Bouzouki
+    cello: Cello
+    charango: Charango
+    cithar: Cithar
+    computer: Computer
+    congas: Congas
+    ? "double bass"
+    : "Double Bass"
+    double_bass: "Doule bass"
+    drums: Drums
+    flute: Flute
+    guitar: Guitar
+>>>>>>> 9ef9820c89252699154cb7f482f1e45a5e301114
     hang: Hang
     harmonica: Harmonica
     harp: Harp
     ? "hurdy gurdy"
     : "Hurdy Gurdy"
+<<<<<<< HEAD
     keyboard: keyboard
     mandolin: mandolin
     ocarina: ocarina
@@ -693,6 +713,25 @@ en:
     violin: violin
     voice: voice
     whistles: whistles
+=======
+    keyboard: Keyboard
+    mandolin: Mandolin
+    ocarina: Ocarina
+    oud: Oud
+    percussions: Percussions
+    piano: Piano
+    saxophone: Saxophone
+    saz: Saz
+    sitar: Sitar
+    spoons: Spoons
+    tablas: Tablas
+    trombone: Trombone
+    turntables: Turntables
+    viola: Viola
+    violin: Violin
+    voice: Voice
+    whistles: Whistles
+>>>>>>> 9ef9820c89252699154cb7f482f1e45a5e301114
   laguages: 
     english: English
     french: French
@@ -998,9 +1037,18 @@ en:
       band: Band
       bass: Bass
       drums: Drums
+<<<<<<< HEAD
       musician: Musician
       piano: Piano
       saxophone: Saxophone
+=======
+      guitar: Guitar
+      keyboard: Keyboard
+      musician: Musician
+      piano: Piano
+      saxophone: Saxophone
+      tablas: Tablas
+>>>>>>> 9ef9820c89252699154cb7f482f1e45a5e301114
       violin: Violin
       voice: Voice
   views: 
