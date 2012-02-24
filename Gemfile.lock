@@ -113,7 +113,7 @@ GEM
     friendly_id (4.0.0)
     fssm (0.2.8.1)
     geocoder (1.1.0)
-    gli (1.4.0)
+    gli (1.5.1)
     gmaps4rails (1.4.3)
       json
     gritter (1.0.1)
@@ -151,7 +151,7 @@ GEM
       addressable (~> 2.2.6)
     letter_opener (0.0.2)
       launchy
-    localeapp (0.3.2)
+    localeapp (0.4.0)
       gli
       i18n
       json
@@ -355,7 +355,7 @@ GEM
     xml-simple (1.1.1)
     xpath (0.1.4)
       nokogiri (~> 1.3)
-    ya2yaml (0.30)
+    ya2yaml (0.31)
 
 PLATFORMS
   ruby
