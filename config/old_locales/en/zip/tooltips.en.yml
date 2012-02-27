@@ -1,5 +1,0 @@
-en:
-  tooltips:
-    email: "Must be a valid email address"
-    password: "Must contains at least 5 characters"
-    back_to_home: Back to Homepage

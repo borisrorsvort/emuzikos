@@ -15,6 +15,27 @@
   </table>
 </div>
 
+<div class="users_numbers" style="margin-top: 20px;">
+  <table>
+    <tr>
+      <th>Musicians</th>
+      <th>Bands</th>
+      <th>Agents</th>
+    </tr>
+    <tr>
+      <td><%= users.musicians.count %></td>
+      <td><%= users.bands.count %></td>
+      <td><%= users.agents.count  %></td>
+    </tr>
+    <tr>
+      <td><%= ((users.musicians.count * 100) / users.count).round(2) %>%</td>
+      <td><%= ((users.bands.count * 100) / users.count).round(2) %>%</td>
+      <td><%= ((users.agents.count * 100) / users.count).round(2) %>%</td>
+    </tr>
+  </table>
+</div>
+
+
 <% if signed_in_users %>
   <h3>Signed in Users</h3>
   <div class="loggedin_users">
@@ -34,3 +55,4 @@
     </table>
   </div>
 <% end %>
+

@@ -24,9 +24,7 @@ gem "haml"
 
 gem "settingslogic", "2.0.6"
 gem 'formtastic', '1.1.0'
-#gem "paperclip", "2.3.11"
 gem "paperclip", "2.4"
-#gem "paperclip", "2.4.1"
 gem 'aws-s3', :require => 'aws/s3'
 
 gem "carmen"
