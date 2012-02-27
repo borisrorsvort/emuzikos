@@ -10,6 +10,8 @@
     = devise_error_messages!
     .normal_login
       %p
+        = f.hidden_field :preferred_language, :value => request.subdomains.first.present? ? "fr" : "en"
+      %p
         = f.label :username, t(:'activerecord.attributes.user.username')
         = f.text_field :username
       %p

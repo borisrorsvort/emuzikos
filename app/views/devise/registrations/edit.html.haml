@@ -53,7 +53,9 @@
 
 = form_for @user, :html => { :multipart => true } do |f|
   = f.error_messages
-
+  %h3= t(:'users.preferred.language')
+  .field
+    %p= f.select :preferred_language, [["English", "en"], ["Français", "fr"]], :selected => @user.preferred_language
   %h3= t(:'users.notifications')
 
   .field

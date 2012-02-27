@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
 
   preference :newsletters, :default => true
   preference :message_notifications, :default => true
+  preference :language, :string, :default => 'en'
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude, :prefers_newsletters, :prefers_message_notifications
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
@@ -47,8 +48,7 @@ class User < ActiveRecord::Base
 
   USER_TYPES = %w(band musician agent)
 
-  after_validation :subscribe
-  after_update :check_against_mailchimp
+  after_validation :check_against_mailchimp
   after_validation :geocode, :if => :address_changed?
 
 
@@ -90,6 +90,11 @@ class User < ActiveRecord::Base
   scope :except_current_user, lambda { |user| where("users.id != ?", user.id) }
   scope :visible, where( :visible => true )
 
+  scope :bands, where(:user_type => "band")
+  scope :musicians, where(:user_type => "musician")
+  scope :agents, where(:user_type => "agent")
+
+
   def self.mass_locate(location)
     self.near(location.to_s, 10)
   end
@@ -101,10 +106,6 @@ class User < ActiveRecord::Base
   def has_profile_complete?
     self.country.present? && !self.instruments.empty? && self.zip.present? && self.searching_for.present? && self.user_type.present? && !self.genres.empty?
   end
-
-  # def to_param
-  #   "#{id}-#{username. parameterize}"
-  # end
 
   def self.total_on(date)
     where("date(users.created_at) = ?",date).count
@@ -140,31 +141,12 @@ class User < ActiveRecord::Base
       avatar.reprocess!
     end
 
-    def subscribe
-      @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
-      list_name = AppConfig.mailchimp.list_name
-
-      begin
-        @hominid.list_subscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
-      rescue Hominid::APIError => error
-        errors.add(:email, error.message)
-      end
-    end
-
-    def unsubscribe(u)
-      @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
-      begin
-        @hominid.list_unsubscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
-      rescue Hominid::APIError => error
-        errors.add(:email, error.message)
-      end
-    end
-
     def update_mailchimp(optin)
       # Create a Hominid object (A wrapper to the mailchimp api), and pass in a hash from the yaml file
       # telling which mailing list id to update with subscribe/unsubscribe notifications)
       @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
       list_name = AppConfig.mailchimp.list_name
+      
       begin
         case optin
           when 'subscribe_newsletter'
@@ -180,14 +162,8 @@ class User < ActiveRecord::Base
     end
 
     def check_against_mailchimp
-      logger.info("Checking if changes need to be sent to mailchimp...")
-      if self.preferred_newsletters_changed?
-        logger.info("Newsletter changed...")
-        self.preferred_newsletters ? update_mailchimp('subscribe_newsletter') : update_mailchimp('unsubscribe_newsletter')
-      end
+      self.preferred_newsletters ? update_mailchimp('subscribe_newsletter') : update_mailchimp('unsubscribe_newsletter')
     end
-
-
 
   protected
 

@@ -20,11 +20,11 @@ class ApplicationController < ActionController::Base
   ### DEVISE REDIRECTION SECTION
 
   def after_sign_in_path_for(resource)
-      edit_user_path(resource)
+    edit_user_path(resource)
   end
 
   def after_sign_up_path_for(resource)
-      edit_user_path(current_user)
+    edit_user_path(current_user)
   end
 
   unless Rails.application.config.consider_all_requests_local
@@ -37,21 +37,19 @@ class ApplicationController < ActionController::Base
   end
 
   def render_not_found(exception)
-    #log_error(exception)
-    #notify_hoptoad(exception)
     render "/errors/404.html.haml", :layout => "errors", :status => 404
   end
 
   def render_error(exception)
-    # you can insert logic in here too to log errors
-    # or get more error info and use different templates
-    #log_error(exception)
-    #notify_hoptoad(exception)
     render "/errors/500.html.haml", :layout => "errors", :status => 500
   end
 
   def set_locale
-    I18n.locale = extract_locale_from_subdomain || I18n.default_locale
+    if @current_user
+      I18n.locale = @current_user.preferred_language
+    else
+      I18n.locale = extract_locale_from_subdomain || I18n.default_locale
+    end
   end
 
   def extract_locale_from_subdomain

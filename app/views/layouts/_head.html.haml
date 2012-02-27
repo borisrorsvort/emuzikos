@@ -3,7 +3,7 @@
 <!--[if IE 7]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if gt IE 8]><!-->
-%html.no-js{ :lang => "en" }
+%html.no-js{ :lang => "#{I18n.locale}" }
   <!--<![endif]-->
   %head
     = display_meta_tags :site => t(:'common.base_title'), :reverse => true
