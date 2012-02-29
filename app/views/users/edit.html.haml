@@ -18,8 +18,8 @@
     .clear
 
 
-- if @user.has_profile_complete?
-  - if @user.visible?
+- if current_user.profile_completed?
+  - if current_user.visible?
     %span.notification.success
       = t(:'.profile_complete_notice') + " " + t(:'.visible_notice')
   - else

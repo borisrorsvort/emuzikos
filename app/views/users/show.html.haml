@@ -1,6 +1,6 @@
 - title t(:'.title', :username => @user.username)
 
-- if @user.has_profile_complete?
+- if @user.profile_completed?
   - description "#{ @user.username}" + ": " + "#{"Local " + t(:"users.types.#{@user.user_type}")} looking for #{@user.searching_for if @user.searching_for} in #{Carmen::country_name(@user.country) rescue "N/A"} "
 - else
   - description t(:'.title', :username => @user.username) + " - Emuzikos"
@@ -41,9 +41,10 @@
     %header
       %h1.username= t(:'.title', :username => @user.username)
 
-      - unless @user.user_type.blank? || @user.country.blank? || @user.zip.blank?
-        %span.location_infos
+      %span.location_infos
+        - if @user.user_type.present?
           =t(:"users.types.#{@user.user_type}")
+        - if @user.geocoded?
           =t(:'.from')
           = @user.zip
           = Carmen::country_name(@user.country) rescue "N/A"
@@ -53,7 +54,7 @@
         = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button contact"
         - unless current_user.is_friend_with(@user)
           = link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user.id), :method => :post, :class => "button add_to_contact_list"
-    -if !@current_user
+    -if !current_user
       .friendly_actions
         = link_to t(:'buttons.contact'), new_user_registration_path, :class => "button contact"
     .spread
@@ -72,29 +73,29 @@
 
       / INFOS TAB START
       #tab_info
-        - if @user.searching_for?
+        - if @user.searching_for.present?
           %h3= t(:'activerecord.attributes.user.searching_for') + " :"
           %p= t(:"users.types.#{@user.searching_for}")
 
-        - if @user.has_profile_complete?
+        - if @user.genres.present?
           %h3= t(:'activerecord.attributes.user.genre')
           .tag_list_instruments
             - @user.genres.each do |genre|
               .tag-body.yellow
                 %span.tag= t(:"musical_genres.#{genre.name}")
 
-        - unless @user.instruments.empty?
+        - if @user.instruments.present?
           %h3= t(:'activerecord.attributes.user.instruments')
           .tag_list_instruments
             - @user.instruments.each do |instrument|
               .tag-body.yellow
                 %span.tag= t(:"instruments.#{instrument.name}")
 
-        - unless @user.references.blank?
+        - if @user.references.present?
           %h3= t(:'activerecord.attributes.user.references')
           %p= @user.references
 
-        - unless @user.request_message.blank?
+        - if @user.request_message.present?
           %h3= t(:'activerecord.attributes.user.request_message')
           = simple_format(@user.request_message)
 
@@ -150,5 +151,5 @@
     - else
       = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture"
     - if @user.geocoded?
-      = gmaps({ "map_options" => {"auto_zoom" => false, "zoom" => 11, "center_latitude" => @user.latitude, "center_longitude" => @user.longitude, :raw => '{ scrollwheel: false }' }, "markers" => {"data" => @user_map } })
+      %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "map_container"}
 .clear

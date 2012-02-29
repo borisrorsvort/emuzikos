@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   preference :message_notifications, :default => true
   preference :language, :string, :default => 'en'
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude, :prefers_newsletters, :prefers_message_notifications
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude, :prefers_newsletters, :prefers_message_notifications, :prefers_language, :profile_completed
   attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
 
   #attr_searchable :username, :user_type, :searching_for, :country, :zip
@@ -29,10 +29,6 @@ class User < ActiveRecord::Base
   #assoc_searchable :instruments, :skills, :tastes, :genres
 
   geocoded_by :address
-  acts_as_gmappable :lat => 'latitude', :lng => 'longitude', :checker => :address_changed?,
-                    :address => "address", :normalized_address => "address",
-                    :msg => "Sorry, not even Google could figure out where that is",
-                    :validation => false
 
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
@@ -50,7 +46,7 @@ class User < ActiveRecord::Base
 
   after_validation :check_against_mailchimp
   after_validation :geocode, :if => :address_changed?
-
+  after_save :set_profile_status
 
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
@@ -85,10 +81,10 @@ class User < ActiveRecord::Base
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
     :default_url => '/assets/backgrounds/no-image-:style.gif'
 
-  scope :profiles_completed, where("country IS NOT NULL and user_type IS NOT NULL and zip IS NOT NULL and searching_for IS NOT NULL and users.id = tastes.user_id").joins(:tastes)
+  scope :profiles_completed, where(:profile_completed => true)
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
   scope :except_current_user, lambda { |user| where("users.id != ?", user.id) }
-  scope :visible, where( :visible => true )
+  scope :visible, where(:visible => true)
 
   scope :bands, where(:user_type => "band")
   scope :musicians, where(:user_type => "musician")
@@ -99,13 +95,13 @@ class User < ActiveRecord::Base
     self.near(location.to_s, 10)
   end
 
-  def self.available_for_listing(current_user)
-    self.except_current_user(current_user).visible.geocoded.profiles_completed
+  def self.available_for_listing
+    self.visible.profiles_completed
   end
 
-  def has_profile_complete?
-    self.country.present? && !self.instruments.empty? && self.zip.present? && self.searching_for.present? && self.user_type.present? && !self.genres.empty?
-  end
+  # def has_profile_complete?
+  #   self.country.present? && !self.instruments.empty? && self.zip.present? && self.searching_for.present? && self.user_type.present? && !self.genres.empty?
+  # end
 
   def self.total_on(date)
     where("date(users.created_at) = ?",date).count
@@ -137,6 +133,14 @@ class User < ActiveRecord::Base
 
   private
 
+    def set_profile_status
+      if self.user_type.present? && self.geocoded? && self.searching_for.present? && self.genres.present? && self.instruments.present?
+        self.update_column('profile_completed', true)
+      else
+        self.update_column('profile_completed', false)
+      end
+    end
+
     def reprocess_avatar
       avatar.reprocess!
     end
@@ -146,7 +150,7 @@ class User < ActiveRecord::Base
       # telling which mailing list id to update with subscribe/unsubscribe notifications)
       @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
       list_name = AppConfig.mailchimp.list_name
-      
+
       begin
         case optin
           when 'subscribe_newsletter'

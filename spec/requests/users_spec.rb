@@ -75,3 +75,28 @@ feature "Editing profile infos" do
   end
 
 end
+
+# feature "Completing the profile" do
+
+#   background do
+#     @user = Factory(:user)
+#   end
+  
+#   scenario "add necessary info to complete" do
+#     visit(new_user_session_path)
+#     within("#user_new") do
+#       fill_in 'user_email', :with => @user.email
+#       fill_in 'user_password', :with => @user.password
+#     end
+#     click_button 'Log in'
+#     current_path.should match edit_user_path(@user)
+#     page.should have_content('Log out')
+
+#     visit(edit_user_path(@user))
+
+#     fill_in 'user_youtube_video_id', :with => "vP1x2DbS55E"
+#     click_button 'Update'
+#     page.should have_content "Success"
+#   end
+
+# end

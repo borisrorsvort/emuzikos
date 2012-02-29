@@ -39,3 +39,18 @@ module Emuzikos
 
   end
 end
+#help against freezing when method missing
+module AbstractController
+  module Rendering
+    module Antifreeze
+      def inspect
+        @view_renderer.lookup_context.find_all(@_request[:action], @_request[:controller]).inspect
+      end
+    end
+    def view_context
+      context = view_context_class.new(view_renderer, view_assigns, self)
+      context.extend Antifreeze 
+      return context
+    end
+  end
+end

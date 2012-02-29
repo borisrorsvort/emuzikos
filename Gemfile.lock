@@ -114,8 +114,6 @@ GEM
     fssm (0.2.8.1)
     geocoder (1.1.0)
     gli (1.4.0)
-    gmaps4rails (1.4.3)
-      json
     gritter (1.0.1)
     guard (1.0.0)
       ffi (>= 0.5.0)
@@ -376,7 +374,6 @@ DEPENDENCIES
   formtastic (= 1.1.0)
   friendly_id (~> 4.0.0)
   geocoder
-  gmaps4rails
   gritter
   guard
   haml

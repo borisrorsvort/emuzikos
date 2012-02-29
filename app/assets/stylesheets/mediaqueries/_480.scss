@@ -116,19 +116,9 @@
   }
 
   .map_container {
-    height: 300px;
     margin-bottom: 18px;
-    width: 50%;
+    width: 50% - ($profile_picture_border_width * 2);
     float:left;
-      .gmaps4rails_map {
-        width: 50% ;
-        height: 400px;
-      }
-  }
-  .gmaps4rails_map {
-    @include white_box_w_shadow;
-    width: 90%  !important;
-    height: 300px  !important;
   }
 
   .inner_profile_wrapper {
