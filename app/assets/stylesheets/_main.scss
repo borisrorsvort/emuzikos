@@ -9,31 +9,10 @@
 }
 
 #logo {
-  width: 30%;
+  width: 100%;
   margin: 0 auto 10px;
   float: none;
-  text-align: center;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-
-  -webkit-animation-duration: 1s;
-  -webkit-animation-delay: .2s;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-duration: 1s;
-  -moz-animation-delay: .2s;
-  -moz-animation-timing-function: ease;
-  -moz-animation-fill-mode: both;
-  -ms-animation-duration: 1s;
-  -ms-animation-delay: .2s;
-  -ms-animation-timing-function: ease;
-  -ms-animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-delay: .2s;
-  animation-timing-function: ease;
-  animation-fill-mode: both; }
+  text-align: center; }
 
 
 /* LAyOUT*/
@@ -271,7 +250,7 @@
 
 /* USER SHOW */
 
-.profile_picture {
+.profile_picture, .map_container {
   @include white_box_w_shadow;
   padding: 2%;
   width: 100% - $profile_picture_border_width * 2;
@@ -377,16 +356,6 @@ h1.username {
   max-width: 80%;
   li {
     margin-right: 0 !important;
-  }
-}
-.map_container {
-  width: 100% ;
-  border: none;
-  padding: 0 ;
-  overflow: hidden;
-  .gmaps4rails_map {
-    width: 100%;
-    height: 400px;
   }
 }
 

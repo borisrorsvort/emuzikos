@@ -83,6 +83,8 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
+    configurable (0.7.0)
+      lazydoc (>= 1.0.0)
     database_cleaner (0.7.1)
     devise (2.0.0)
       bcrypt-ruby (~> 3.0)
@@ -114,8 +116,6 @@ GEM
     fssm (0.2.8.1)
     geocoder (1.1.0)
     gli (1.4.0)
-    gmaps4rails (1.4.3)
-      json
     gritter (1.0.1)
     guard (1.0.0)
       ffi (>= 0.5.0)
@@ -149,6 +149,7 @@ GEM
       railties (>= 3.0.0)
     launchy (2.0.5)
       addressable (~> 2.2.6)
+    lazydoc (1.0)
     letter_opener (0.0.2)
       launchy
     localeapp (0.3.2)
@@ -332,6 +333,8 @@ GEM
       activesupport (~> 3.0)
       polyamorous (~> 0.5.0)
     systemu (2.4.2)
+    tap (1.4.0)
+      configurable (~> 0.7.0)
     term-ansicolor (1.0.7)
     thor (0.14.6)
     tilt (1.3.3)
@@ -376,7 +379,6 @@ DEPENDENCIES
   formtastic (= 1.1.0)
   friendly_id (~> 4.0.0)
   geocoder
-  gmaps4rails
   gritter
   guard
   haml
@@ -415,5 +417,6 @@ DEPENDENCIES
   simplecov
   songkickr
   squeel
+  tap
   twitter
   uglifier

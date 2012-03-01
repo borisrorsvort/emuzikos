@@ -45,14 +45,14 @@ namespace :db do
       user.last_sign_in_at = 2.hours.ago..Time.now
       user.user_type = USER_TYPES
       user.searching_for = USER_TYPES
-      user.zip = Faker::Address.zip_code
-      user.country = %w(US CA BE FR DE UK)
+      user.zip = ["1040", "1060", "8400", "6700"]
+      user.country = ["BE"]
       user.created_at = 1.week.ago..Time.now
-      user.visible = [true, false]
+      user.visible = true
       user.youtube_video_id = ["JW5meKfy3fY", ""]
       user.songkick_username = ["foo-fighters", ""]
       user.soundcloud_username = ["desta", ""]
-
+      #user.profile_completed = [true, false]
       Testimonial.populate 1..2 do |t|
         t.user_id = user.id
         t.body = Populator.sentences(2..3)

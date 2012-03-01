@@ -36,42 +36,6 @@ fr:
         visible: Visible
         youtube_video_id: "Numéros Identifiant la video youtube"
         zip: "Code postal"
-    errors: 
-      full_messages: 
-        format: "%{attribute} %{message}"
-      messages: 
-        accepted: "doit être accepté(e)"
-        blank: "doit être rempli(e)"
-        confirmation: "ne concorde pas avec la confirmation"
-        empty: "doit être rempli(e)"
-        equal_to: "doit être égal à %{count}"
-        even: "doit être pair"
-        exclusion: "n'est pas disponible"
-        greater_than: "doit être supérieur à %{count}"
-        greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
-        inclusion: "n'est pas inclus(e) dans la liste"
-        invalid: "n'est pas valide"
-        less_than: "doit être inférieur à %{count}"
-        less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
-        not_a_number: "n'est pas un nombre"
-        not_an_integer: "doit être un nombre entier"
-        odd: "doit être impair"
-        record_invalid: "La validation a échoué : %{errors}"
-        taken: "n'est pas disponible"
-        too_long: 
-          one: "est trop long (pas plus d'un caractère)"
-          other: "est trop long (pas plus de %{count} caractères)"
-        too_short: 
-          one: "est trop court (au moins un caractère)"
-          other: "est trop court (au moins %{count} caractères)"
-        wrong_length: 
-          one: "ne fait pas la bonne longueur (doit comporter un seul caractère)"
-          other: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
-      template: 
-        body: "Veuillez vérifier les champs suivants : "
-        header: 
-          one: "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
-          other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
     models: 
       messages: Messages
       search: Recherche
@@ -114,7 +78,7 @@ fr:
     base_title: "Emuzikos, l'outil de recherche pour musiciens"
     by: par
     created_by: "Créé par"
-    home: Acceuil
+    home: Accueil
     leave_blank: "(laisser vide si vous ne désirez pas le changer)"
     no_script: "Votre navigateur ne supporte pas Javascript!"
     or: ou
@@ -398,104 +362,6 @@ fr:
     ZM: Zambie
     ZW: Zimbabwe
     ZZ: "région indéterminée"
-  date: 
-    abbr_day_names: 
-      - dim
-      - lun
-      - mar
-      - mer
-      - jeu
-      - ven
-      - sam
-    abbr_month_names: 
-      - ~
-      - jan.
-      - fév.
-      - mar.
-      - avr.
-      - mai
-      - juin
-      - juil.
-      - août
-      - sept.
-      - oct.
-      - nov.
-      - déc.
-    day_names: 
-      - dimanche
-      - lundi
-      - mardi
-      - mercredi
-      - jeudi
-      - vendredi
-      - samedi
-    formats: 
-      default: "%d/%m/%Y"
-      long: "%e %B %Y"
-      short: "%e %b"
-    month_names: 
-      - ~
-      - janvier
-      - février
-      - mars
-      - avril
-      - mai
-      - juin
-      - juillet
-      - août
-      - septembre
-      - octobre
-      - novembre
-      - décembre
-    order: 
-      - !ruby/symbol day
-      - !ruby/symbol month
-      - !ruby/symbol year
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
-        one: "environ une heure"
-        other: "environ %{count} heures"
-      about_x_months: 
-        one: "environ un mois"
-        other: "environ %{count} mois"
-      about_x_years: 
-        one: "environ un an"
-        other: "environ %{count} ans"
-      almost_x_years: 
-        one: "presqu'un an"
-        other: "presque %{count} ans"
-      half_a_minute: "une demi-minute"
-      less_than_x_minutes: 
-        one: "moins d'une minute"
-        other: "moins de %{count} minutes"
-        zero: "moins d'une minute"
-      less_than_x_seconds: 
-        one: "moins d'une seconde"
-        other: "moins de %{count} secondes"
-        zero: "moins d'une seconde"
-      over_x_years: 
-        one: "plus d'un an"
-        other: "plus de %{count} ans"
-      x_days: 
-        one: 1 jour
-        other: "%{count} jours"
-      x_minutes: 
-        one: 1 minute
-        other: "%{count} minutes"
-      x_months: 
-        one: 1 mois
-        other: "%{count} mois"
-      x_seconds: 
-        one: 1 seconde
-        other: "%{count} secondes"
-    prompts: 
-      day: Jour
-      hour: Heure
-      minute: Minute
-      month: Mois
-      second: Seconde
-      year: Année
   devise: 
     confirmations: 
       confirmed: "Votre compte a été confirmé. Vous êtes à présent connecté(e)."
@@ -560,47 +426,14 @@ fr:
       send_instructions: "Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour déverrouiller votre compte."
       unlocked: "Votre compte a été déverrouillé. Vous êtes à présent connecté(e)."
   errors: 
-    format: "Le %{attribute} %{message}"
     messages: 
-      accepted: "doit être accepté(e)"
       already_confirmed: "a déjà été confirmé"
-      blank: "doit être rempli(e)"
-      confirmation: "ne concorde pas avec la confirmation"
-      empty: "doit être rempli(e)"
-      equal_to: "doit être égal à %{count}"
-      even: "doit être pair"
-      exclusion: "n'est pas disponible"
       expired: "a expiré, demandez-en un nouveau"
-      greater_than: "doit être supérieur à %{count}"
-      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
-      inclusion: "n'est pas inclus(e) dans la liste"
-      invalid: "n'est pas valide"
-      less_than: "doit être inférieur à %{count}"
-      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
-      not_a_number: "n'est pas un nombre"
-      not_an_integer: "doit être un nombre entier"
       not_found: introuvable
       not_locked: "n’a pas été verrouillé"
       not_saved: 
         one: "1 erreur a empêché %{resource} d'être sauvegardé."
         other: "%{count} erreurs ont empêché %{resource} d'être sauvegardé"
-      odd: "doit être impair"
-      record_invalid: "La validation a échoué : %{errors}"
-      taken: "n'est pas disponible"
-      too_long: 
-        one: "est trop long (pas plus d'un caractère)"
-        other: "est trop long (pas plus de %{count} caractères)"
-      too_short: 
-        one: "est trop court (au moins un caractère)"
-        other: "est trop court (au moins %{count} caractères)"
-      wrong_length: 
-        one: "ne fait pas la bonne longueur (doit comporter un seul caractère)"
-        other: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
-    template: 
-      body: "Veuillez vérifier les champs suivants : "
-      header: 
-        one: "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
-        other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
   footer: 
     emuzikos_language: "Eumzikos en %{language}"
   gflash: 
@@ -642,13 +475,6 @@ fr:
       update: 
         error: "Quelques informations doivent encore être corrigées"
         success: "Votre profil a bien été mis à jour"
-  helpers: 
-    select: 
-      prompt: "Veuillez sélectionner"
-    submit: 
-      create: "Créer un(e) %{model}"
-      submit: "Enregistrer ce(tte) %{model}"
-      update: "Modifier ce(tte) %{model}"
   ie_warning: 
     click_to_download: "Il suffit de cliquer <strong>sur l'icône du navigateur</strong> correspondant pour se rendre à sa page de téléchargement."
     description: "Afin d'obtenir la meilleure expérience de navigation possible sur notre site web, nous vous recommandons de <strong>mettre à jour</strong> votre navigateur ou d'en choisir un autre."
@@ -700,6 +526,7 @@ fr:
     french: Français
   menu: 
     all_users: Chercher
+    blog: Blog
     contact: Contactez-nous
     help: Aide
     login: Connexion
@@ -790,59 +617,12 @@ fr:
     vocal: Vocal
     world: "Musique du monde"
   musician: musician
-  number: 
-    currency: 
-      format: 
-        delimiter: " "
-        format: "%n %u"
-        precision: 2
-        separator: ","
-        significant: false
-        strip_insignificant_zeros: false
-        unit: €
-    format: 
-      delimiter: " "
-      precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: false
-    human: 
-      decimal_units: 
-        format: "%n %u"
-        units: 
-          billion: milliard
-          million: million
-          quadrillion: "million de milliards"
-          thousand: millier
-          trillion: billion
-          unit: ""
-      format: 
-        delimiter: ""
-        precision: 2
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units: 
-        format: "%n %u"
-        units: 
-          byte: 
-            one: octet
-            other: octets
-          gb: Go
-          kb: ko
-          mb: Mo
-          tb: To
-    percentage: 
-      format: 
-        delimiter: ""
-    precision: 
-      format: 
-        delimiter: ""
   pages: 
     homepage: 
       description: "Vous cherchez des musiciens ou groupes près de chez vous? Emuzikos vous aide à trouver des musiciens et former un groupe."
       home_feature: 
         advantage: 
-          body: "En vous inscrivant sur Emuzikos, vous bénéficierez d'un profil 100% customisable, d'une boîte à message privée et d'une grande base de données de musiciens, de groupes et d’agents."
+          body: "En vous inscrivant sur Emuzikos, vous bénéficierez d'un profil 100% customisable, d'une boîte à message privée et d'une grande base de donnée d'annonces de musiciens, de groupes et agents."
           title: "Emuzikos, concrètement?"
         external_services: 
           body: "Nous ne voulions pas réinventer la roue. Nous avons donc intégré des services tels que:"
@@ -862,7 +642,7 @@ fr:
         sign_up: 
           body: "Créer un compte sur Emuzikos prend moins de 60 sec. Et vous n'avez pas besoin de compléter votre profil pour pouvoir chercher et contacter des musiciens. "
           title: "Inscription rapide"
-      keywords: "musicien, chercher, recherche de musicien, musiciens près de chez moi, recherche de musiciens locaux"
+      keywords: "musicien, recherche de musicien, musiciens près de chez moi, recherche de musiciens locaux"
       latest_testimonials: "Derniers témoignages de musiciens"
       moto: "La recherche de musiciens <strong>facile et gratuite</strong>"
       sections: 
@@ -874,7 +654,7 @@ fr:
         testimonials: 
           title: "Qu'est-ce que les musiciens en disent?"
       subtitle: "Emuzikos, plus qu'un site d'annonces pour musiciens et groupes"
-      title: "Recherche facile et rapide de musiciens près de chez vous. L'endroit idéal pour rencontrer musiciens et groupes."
+      title: "Recherche de musiciens & groupes près de chez soi. Annonces gratuites"
     privacy: 
       description: "La Charte de confidentialité d'Emuzikos vous aide faire respecter votre vie privée."
       title: "Charte de confidentialité"
@@ -886,7 +666,7 @@ fr:
   search_terms: 
     country: Pays
     i_search_a: "Je cherche un"
-    mass_locate: "Code postal, ville"
+    mass_locate: "Code postal, ville, région, ..."
     music_style: "Genre musical"
     who_plays: Instruments
     who_search_for: "Qui cherche"
@@ -911,13 +691,6 @@ fr:
     signed_in_successful: "Vous vous êtes bien connecté"
     signed_in_successful_via: "Vous vous êtes bien connecté via"
   souncloud_player: "Lecteur SoundCloud"
-  support: 
-    array: 
-      last_word_connector: " et "
-      two_words_connector: " et "
-      words_connector: ", "
-    select: 
-      prompt: "Veuillez sélectionner"
   tables: 
     headings: 
       actions: Actions
@@ -928,15 +701,8 @@ fr:
       title: "Nouveau témoignages"
     no_testimonials: "Il n'y a pas de témoignages. Revenez bientôt"
     no_testimonials_logged_in: "Il n'y a pas de témoignages. Pourquoi n'en écrireriez-vous pas un?"
-  time: 
-    am: am
-    formats: 
-      default: "%d %B %Y %H:%M:%S"
-      long: "%A %d %B %Y %H:%M"
-      short: "%d %b %H:%M"
-    pm: pm
   tooltips: 
-    back_to_home: "Retour à l'acceuil"
+    back_to_home: "Retour à l'accueil"
     email: "Doit être une adresse email valide"
     password: "Doit contenir au moins 5 caractères"
   users: 
@@ -1003,12 +769,14 @@ fr:
       band: Groupe
       bass: Basse
       drums: Batterie
+      flute: Flute
       guitar: Guitare
       keyboard: Claviers
       musician: Musicien
       piano: Piano
       saxophone: Saxophone
       tablas: Tablas
+      trombone: Trombone
       violin: Violon
       voice: Voix
   views: 

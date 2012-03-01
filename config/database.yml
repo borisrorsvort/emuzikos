@@ -1,3 +1,13 @@
+# development:
+#   adapter: mysql
+#   encoding: ASCII-8BIT
+#   reconnect: false
+#   database: emuzikos
+#   pool: 5
+#   username: root
+#   password:
+#   socket: /tmp/mysql.sock
+
 development:
   adapter: mysql
   encoding: utf8
@@ -7,6 +17,12 @@ development:
   username: root
   password:
   socket: /tmp/mysql.sock
+
+# development:
+#   adapter: sqlite3
+#   database: db/emuzikos_dev.sqlite3
+#   pool: 8
+#   timeout: 5000
 
 production:
   adapter: mysql

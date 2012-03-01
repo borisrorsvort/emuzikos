@@ -1,6 +1,18 @@
 #logo {
   float:left;}
 
+.language_chooser { 
+  background: #333;
+  margin-left: $basefont;
+  display: inline-block;
+  @include border-radius(3px);
+  a {
+    display: inline-block;
+    margin: $basefont / 2;
+  }
+}
+
+
 $sub_nav_topbottom_padding: 18px;
 
 #header {

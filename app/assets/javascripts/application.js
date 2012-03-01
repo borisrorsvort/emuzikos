@@ -1,21 +1,14 @@
-//= require jquery  
+//= require jquery
 //= require jquery_ujs
 //= require jquery-ui
 //= require_directory ./libs
 //= require_directory ./mylibs
-
-//= require gmaps4rails/bing.js
-//= require gmaps4rails/googlemaps.js
-//= require gmaps4rails/mapquest.js
-//= require gmaps4rails/openlayers.js
-//= require gmaps4rails/all_apis.js
-
 //= require gritter
 //= require plugins
-//= require_self  
-  
-  
-/* rest of file omitted */ 
+//= require_self
+
+
+/* rest of file omitted */
 
 if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
   var viewportmeta = document.querySelectorAll('meta[name="viewport"]')[0];
