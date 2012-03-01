@@ -6,7 +6,7 @@
   = render "search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen.countries
 
 - content_for :scripts do
-  = pageless(@users.num_pages, users_path)
+  = pageless(@users.num_pages, request.url)
 
 .progress_bar_wrapper.hidden
   = t(:".processing_search")

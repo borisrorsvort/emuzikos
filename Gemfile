@@ -72,3 +72,4 @@ group :development, :test do
 end
 
 gem 'localeapp'
+gem 'tap'
