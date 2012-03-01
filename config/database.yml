@@ -8,15 +8,15 @@
 #   password:
 #   socket: /tmp/mysql.sock
 
-# development:
-#   adapter: mysql
-#   encoding: utf-8
-#   reconnect: false
-#   database: emuzikos
-#   pool: 5
-#   username: root
-#   password:
-#   socket: /tmp/mysql.sock
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: emuzikos
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
 
 # development:
 #   adapter: sqlite3

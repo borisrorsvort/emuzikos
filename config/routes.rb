@@ -4,7 +4,7 @@ Emuzikos::Application.routes.draw do
   match "terms" => "pages#terms", :as => :terms
   match "privacy" => "pages#privacy", :as => :privacy
   match "sitemap" => "sitemaps#show", :as => :sitemap
-  
+
   match '/mailchimp/callback' =>'mailchimp#callback', :as => :mailchimp_callback
   match '/auth/:service/callback' => 'services#create'
 

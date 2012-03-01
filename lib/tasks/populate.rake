@@ -48,7 +48,7 @@ namespace :db do
       user.zip = ["1040", "1060", "8400", "6700"]
       user.country = ["BE"]
       user.created_at = 1.week.ago..Time.now
-      user.visible = [true, false]
+      user.visible = true
       user.youtube_video_id = ["JW5meKfy3fY", ""]
       user.songkick_username = ["foo-fighters", ""]
       user.soundcloud_username = ["desta", ""]

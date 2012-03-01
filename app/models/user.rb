@@ -99,10 +99,6 @@ class User < ActiveRecord::Base
     self.visible.profiles_completed
   end
 
-  # def has_profile_complete?
-  #   self.country.present? && !self.instruments.empty? && self.zip.present? && self.searching_for.present? && self.user_type.present? && !self.genres.empty?
-  # end
-
   def self.total_on(date)
     where("date(users.created_at) = ?",date).count
   end

@@ -40,7 +40,7 @@ ActiveAdmin.register User do
       status_tag (user.visible ? "Yes" : "No"), (user.visible ? :ok : :error) rescue nil
     end
     column "Profile completed" do |user|
-      status_tag (user.has_profile_complete? ? "Yes" : "No"), (user.has_profile_complete? ? :ok : :error) rescue nil
+      status_tag (user.profile_completed? ? "Yes" : "No"), (user.profile_completed? ? :ok : :error) rescue nil
     end
     column "Newsletter" do |user|
       status_tag (user.prefers_newsletters ? "Yes" : "No"), (user.prefers_newsletters ? :ok : :error) rescue nil

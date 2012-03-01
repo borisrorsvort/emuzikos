@@ -526,6 +526,7 @@ fr:
     french: Français
   menu: 
     all_users: Chercher
+    blog: Blog
     contact: Contactez-nous
     help: Aide
     login: Connexion
@@ -665,7 +666,7 @@ fr:
   search_terms: 
     country: Pays
     i_search_a: "Je cherche un"
-    mass_locate: "Code postal, ville"
+    mass_locate: "Code postal, ville, région, ..."
     music_style: "Genre musical"
     who_plays: Instruments
     who_search_for: "Qui cherche"
@@ -775,6 +776,7 @@ fr:
       piano: Piano
       saxophone: Saxophone
       tablas: Tablas
+      trombone: Trombone
       violin: Violon
       voice: Voix
   views: 
