@@ -666,7 +666,7 @@ fr:
   search_terms: 
     country: Pays
     i_search_a: "Je cherche un"
-    mass_locate: "Code postal, ville, région, ..."
+    mass_locate: "Ville, région, ..."
     music_style: "Genre musical"
     who_plays: Instruments
     who_search_for: "Qui cherche"

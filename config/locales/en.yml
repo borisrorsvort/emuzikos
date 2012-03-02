@@ -666,7 +666,7 @@ en:
   search_terms: 
     country: Country
     i_search_a: "I search a"
-    mass_locate: "Zip, city"
+    mass_locate: "Zip code & City"
     music_style: "Musical genre"
     who_plays: Instruments
     who_search_for: "Who search for"
