@@ -575,11 +575,11 @@ en:
     country: Country
     dance: Dance
     dubstep: Dubstep
-    ? "easy listening"
-    : "Easy Listening"
     easy_listening: "Easy Listening"
     electronic: Electronic
     flamenco: Flamenco
+    ? "french popular"
+    : "French popular"
     funk: Funk
     fusion: Fusion
     gospel: Gospel
@@ -603,6 +603,7 @@ en:
     pop: Pop
     ? "progressive rock"
     : "Progressive Rock"
+    psychedelic_rock: "Psychedelic Rock"
     punk: Punk
     r&b: R&B
     r_and_b: R&B
