@@ -9,4 +9,7 @@ class Instrument < ActiveRecord::Base
     self.users.count
   end
 
+  def translated_name
+    I18n.t(name, :scope => 'instruments')
+  end
 end

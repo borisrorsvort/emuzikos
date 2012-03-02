@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   has_private_messages
+  is_impressionable :counter_cache => true
+
   has_many :services, :dependent => :destroy
   has_many :testimonials, :dependent => :destroy
   has_many :friendships, :dependent => :destroy
@@ -15,7 +17,6 @@ class User < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :username, use: [:slugged, :history]
-
 
   preference :newsletters, :default => true
   preference :message_notifications, :default => true
@@ -130,9 +131,12 @@ class User < ActiveRecord::Base
   private
 
     def set_profile_status
+      logger.debug("Updating profile status ...")
       if self.user_type.present? && self.geocoded? && self.searching_for.present? && self.genres.present? && self.instruments.present?
+        logger.debug("Profile complete!")
         self.update_column('profile_completed', true)
       else
+        logger.debug("Profile not complete")
         self.update_column('profile_completed', false)
       end
     end

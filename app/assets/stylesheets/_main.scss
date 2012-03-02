@@ -250,6 +250,11 @@
 
 /* USER SHOW */
 
+.impressionist_count {
+  margin: $baseline 0;
+  font-size: $basefont;
+}
+
 .profile_picture, .map_container {
   @include white_box_w_shadow;
   padding: 2%;

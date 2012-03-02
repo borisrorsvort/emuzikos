@@ -136,6 +136,7 @@ GEM
       multi_json
       multi_xml
     i18n (0.6.0)
+    impressionist (1.0.1)
     inherited_resources (1.2.2)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
@@ -386,6 +387,7 @@ DEPENDENCIES
   hirb
   hominid
   httparty
+  impressionist
   jquery-rails
   launchy (= 2.0.5)
   letter_opener
