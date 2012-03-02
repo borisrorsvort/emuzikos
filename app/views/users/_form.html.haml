@@ -8,8 +8,7 @@
       = f.text_field :zip
     %p
       = f.label :country, t(:'activerecord.attributes.user.country')
-      = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
-
+      = country_select :user, :country, nil, {}, { :class => 'chosen' }
   %h3= t(:'activerecord.attributes.user.avatar')
   .field
     - if @user.avatar.present?
@@ -41,12 +40,7 @@
     %p
       = f.label :instruments, t(:'activerecord.attributes.user.instruments')
       %i= t(:"instruments_in_band_notice", :scope => [:users, :edit])
-      - @instruments.in_groups_of(4, false) do |instruments|
-        .instrument_column
-          - for instrument in instruments
-            .instrument
-              = check_box_tag "user[instrument_ids][]", instrument.id, @user.instruments.include?(instrument)
-              = f.label(t(:"instruments.#{instrument.name}"), :class => "habtm")
+      = collection_select(:user, :instrument_ids, @instruments, :id, :translated_name, {}, {:multiple => true, :name=>'user[instrument_ids][]', :class => "chosen multiple_select"})
     .clear
     %p
       %br
@@ -56,12 +50,13 @@
 
     %p
       = f.label :genre, t(:'activerecord.attributes.user.genre')
-      - @genres.in_groups_of(4, false) do |genres|
-        .instrument_column
-          - for genre in genres
-            .instrument
-              = check_box_tag "user[genre_ids][]", genre.id, @user.genres.include?(genre)
-              = f.label(t(:"musical_genres.#{genre.name}"), :class => "habtm")
+      = collection_select(:user, :genre_ids, @genres, :id, :translated_name, {}, {:multiple => true, :name=>'user[genre_ids][]', :class => "chosen multiple_select"})
+      / - @genres.in_groups_of(4, false) do |genres|
+      /   .instrument_column
+      /     - for genre in genres
+      /       .instrument
+      /         = check_box_tag "user[genre_ids][]", genre.id, @user.genres.include?(genre)
+      /         = f.label(t(:"musical_genres.#{genre.name}"), :class => "habtm")
     .clear
     %p
       %br

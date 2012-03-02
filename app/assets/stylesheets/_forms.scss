@@ -2,6 +2,9 @@ select {
   border        : 1px solid #ccc;
   @include single-box-shadow(#666,0, 1px, 1px);
 }
+.multiple_select, #user_instrument_ids_chzn {
+  width: 20% !important;
+}
 
 form {
   vertical-align: top;
@@ -50,7 +53,26 @@ input, textarea {
 /* SEARCH FORM */
 
 #search_form {
-  .button {
+  .search_field {
+    float: left;
+    margin: 0 $baseline $baseline 0;
+    input {
+      white-space: nowrap !important;
+    }
+  }
+  #submit_search input{
+    white-space: nowrap;
+    padding: 3px 10px;
+    font-size: 11px !important;
+  }
+  #mass_locate {
+    height: 20px;
+    padding: 2px;
+  }
+  .chzn-search input {
+    padding: 4px 8px !important;
+  }
+  /*.button {
     &.search {
       font-size: 11px;
     }
@@ -77,7 +99,7 @@ input, textarea {
         width: 90px;
       }
     }
-  }
+  }*/
 }
 
 .logged_out {

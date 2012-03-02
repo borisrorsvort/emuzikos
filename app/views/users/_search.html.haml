@@ -1,23 +1,23 @@
 #search_form
   = search_form_for @q, :url => users_path, :html => {:method => :get} do |f|
-    .field
-      = f.select :user_type_cont, User::USER_TYPES.map{|type| [ I18n.t(:"users.types.#{type}"), type ]}, :include_blank => t(:'search_terms.i_search_a')
+    .search_field
+      = f.select :user_type_cont, User::USER_TYPES.map{|type| [ I18n.t(:"users.types.#{type}"), type ]}, :include_blank => t(:'search_terms.i_search_a'), :size => 50
       .clear
-    .field
-      = f.select :genres_name_cont, genres.map{|g| [ I18n.t(:"musical_genres.#{g.name}"), g.name ]}, :include_blank => t(:'search_terms.music_style')
+    .search_field
+      = f.select :genres_name_cont, genres.map{|g| [ I18n.t(:"musical_genres.#{g.name}"), g.name ]}, :include_blank => t(:'search_terms.music_style'), :size => 30
       .clear
-    .field
-      = f.select :instruments_name_cont, instruments.collect{|i| [ I18n.t(:"instruments.#{i.name}"), i.name ]}, :include_blank => t(:'search_terms.who_plays')
+    .search_field
+      = f.select :instruments_name_cont, instruments.collect{|i| [ I18n.t(:"instruments.#{i.name}"), i.name ]}, :include_blank => t(:'search_terms.who_plays'), :size => 30
       .clear
-    .field
-      = f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), :include_blank => t(:'search_terms.who_search_for')
+    .search_field
+      = f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), :include_blank => t(:'search_terms.who_search_for'), :size => 30
 
       .clear
-    .field.wide#location
+    .search_field
       .centered
-        = text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate'), :size => 20
+        = text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate'), :size => 30
         .clear
-    .field.wide#submit_search
+    .search_field#submit_search
       = f.submit(t(:'buttons.search'), :type => "submit", :class => "button submit search small")
 
     .clear

@@ -666,7 +666,7 @@ en:
   search_terms: 
     country: Country
     i_search_a: "I search a"
-    mass_locate: "Zip, city"
+    mass_locate: "Zip code & City"
     music_style: "Musical genre"
     who_plays: Instruments
     who_search_for: "Who search for"
@@ -753,6 +753,9 @@ en:
       donate: "We depend on you! Please consider donate."
       events: "Future events"
       from: from
+      impressions_count: 
+        one: "1 person has seen this profile"
+        other: "%{count} persons has seen this profile"
       is_looking_for: "is looking for a"
       music: music
       tabs: 
@@ -779,6 +782,7 @@ en:
       trombone: Trombone
       violin: Violin
       voice: Voice
+      whistles: Whistles
   views: 
     pagination: 
       last: Last

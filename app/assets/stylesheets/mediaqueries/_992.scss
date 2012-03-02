@@ -34,8 +34,11 @@
   }
 }
 
-#users.index #search_form .field {
-  &#location {
+#users.index #search_form {
+  .search_field {
+    margin: 0 $baseline 0 0;
+  }
+/*  &#location {
     width: 28%;
     .centered input {
     width: 88%;
@@ -48,7 +51,7 @@
   &#submit_search {
     min-width: 129px;
     width: 129px;
-  }
+  }*/
 }
 
 .right_drawer {

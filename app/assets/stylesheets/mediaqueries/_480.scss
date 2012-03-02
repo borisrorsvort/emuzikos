@@ -18,6 +18,7 @@
      position:relative;
      padding: 0;
      margin: 0 10px 10px;
+    white-space: nowrap;
      .ui-button-text {
        font-size: 14px;
      }
@@ -83,7 +84,7 @@
     top: 5px;
   }
   #users.index #search_form .field  {
-    min-width : 140px;
+/*    min-width : 140px;
     width: 140px;
     &#location {
       width: 60%;
@@ -95,7 +96,7 @@
       width: 100%; }
     .selector {
       margin: 0;
-    }
+    }*/
   }
 
   .users_list {
