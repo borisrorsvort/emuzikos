@@ -57,6 +57,8 @@
     -if !current_user
       .friendly_actions
         = link_to t(:'buttons.contact'), new_user_registration_path, :class => "button contact"
+    .impressionist_count
+      = t(:'.impressions_count', :count => @user.impressionist_count(:filter=>:ip_address))
     .spread
       = render "shared/add_this"
       .clear

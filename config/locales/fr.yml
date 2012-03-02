@@ -753,6 +753,9 @@ fr:
       donate: "Nous avons besoin de vous! Faites une donation"
       events: "Evénements futurs"
       from: de
+      impressions_count: 
+        one: "1 personne a visité ce profil"
+        other: "%{count} personnes ont visité ce profil"
       is_looking_for: cherche
       music: musique
       tabs: 
@@ -779,6 +782,7 @@ fr:
       trombone: Trombone
       violin: Violon
       voice: Voix
+      whistles: Flûtes
   views: 
     pagination: 
       last: Dernière

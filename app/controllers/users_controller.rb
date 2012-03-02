@@ -24,6 +24,9 @@ class UsersController < ApplicationController
     @testimonials = @user.testimonials
     @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at") if @user.geocoded?
     @events = @user.get_events(@user.songkick_username)
+    
+
+    impressionist(@user)
 
     if request.path != user_path(@user)
       redirect_to @user, status: :moved_permanently

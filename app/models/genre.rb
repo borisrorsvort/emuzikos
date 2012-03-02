@@ -9,4 +9,7 @@ class Genre < ActiveRecord::Base
     self.users.count
   end
 
+  def translated_name
+    I18n.t(name, :scope => 'musical_genres')
+  end
 end

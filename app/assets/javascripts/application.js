@@ -113,9 +113,11 @@ $(document).ready(function() {
 
   $( ".tabs" ).tabs();
 
+  $("select").chosen({ allow_single_deselect: true }).css( 'width', '' );
+
   $(".checkbox_set").buttonset();
 
-  $("select, input:checkbox, input.radio:radio").uniform();
+  $("input:checkbox, input.radio:radio").uniform();
 
   // CSS ARROWS
 
