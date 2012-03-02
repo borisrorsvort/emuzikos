@@ -268,8 +268,7 @@ en:
     NG: Nigeria
     NI: Nicaragua
     NL: Netherlands
-    ? "NO"
-    : Norway
+    NO: Norway
     NP: Nepal
     NQ: "Dronning Maud Land"
     NR: Nauru
@@ -475,6 +474,7 @@ en:
       update: 
         error: "Some informations need to be corrected"
         success: "Successfully updated your profile."
+  hip: Hip
   ie_warning: 
     click_to_download: "Click on the browser icon to go to the download page."
     description: "In order to provide the best user experience possible, we recommand you <strong>to upgrade</strong> your browser or to download a more modern one"
@@ -482,10 +482,10 @@ en:
     title: "Did you know that your browser is outdated?"
   instruments: 
     accordion: Accordion
+    baglama: Baglama
     bagpipe: "Bag Pipe"
     banjo: Banjo
     bass: Bass
-    bağlama: Bağlama
     bombo: Bombo
     bouzouki: Bouzouki
     cello: Cello
@@ -504,6 +504,7 @@ en:
     harp: Harp
     ? "hurdy gurdy"
     : "Hurdy Gurdy"
+    hurdy_gurdy: "Hurdy Gurdy"
     keyboard: Keyboard
     mandolin: Mandolin
     ocarina: Ocarina
@@ -578,31 +579,24 @@ en:
     easy_listening: "Easy Listening"
     electronic: Electronic
     flamenco: Flamenco
-    ? "french popular"
-    : "French popular"
+    french_popular: "French Popular"
     funk: Funk
     fusion: Fusion
     gospel: Gospel
     hard-rock: "Hard Rock"
-    ? "hip hop"
-    : "Hip Hop"
+    hip: Hip
     hip_hop: "Hip Hop"
-    ? "indian classical"
-    : "Indian Classical"
+    indian_classical: "Indian Classical"
     instrumental: Instrumental
     irish: Irish
     jazz: Jazz
     latino: Latino
     metal: Metal
-    ? "new age"
-    : "New Age"
-    ? "new wave"
-    : "New Wave"
     new_age: "New Age"
+    new_wave: "New Wave"
     opera: Opera
     pop: Pop
-    ? "progressive rock"
-    : "Progressive Rock"
+    progressive_rock: "Progressive Rock"
     psychedelic_rock: "Psychedelic Rock"
     punk: Punk
     r&b: R&B
@@ -612,12 +606,11 @@ en:
     ska: Ska
     songwriter: "Song Writer"
     soundtrack: Soundtrack
-    ? "spoken word"
-    : "Spoken Word"
     spoken_word: "Spoken Word"
     vocal: Vocal
     world: World
   musician: musician
+  new_wave: "New Wave"
   pages: 
     homepage: 
       description: "Looking for a local musician or band mates? Emuzikos.com is quick way to search for wanted bands and musicians"
@@ -664,6 +657,7 @@ en:
       title: "Terms of Agreement"
   pagination: 
     loading_more_results: "Loading more result"
+  progressive_rock: "Progressive rock"
   search_terms: 
     country: Country
     i_search_a: "I search a"
@@ -786,5 +780,8 @@ en:
       whistles: Whistles
   views: 
     pagination: 
+      first: First
       last: Last
       next: Next
+      previous: Previous
+      truncate: "..."

@@ -268,8 +268,6 @@ fr:
     NG: Nigéria
     NI: Nicaragua
     NL: Pays-Bas
-    ? "NO"
-    : Norvège
     NP: Népal
     NQ: "Terre de la Reine-Maud"
     NR: Nauru
@@ -362,6 +360,7 @@ fr:
     ZM: Zambie
     ZW: Zimbabwe
     ZZ: "région indéterminée"
+    false: Norvège
   devise: 
     confirmations: 
       confirmed: "Votre compte a été confirmé. Vous êtes à présent connecté(e)."
@@ -475,6 +474,7 @@ fr:
       update: 
         error: "Quelques informations doivent encore être corrigées"
         success: "Votre profil a bien été mis à jour"
+  hip: Hip
   ie_warning: 
     click_to_download: "Il suffit de cliquer <strong>sur l'icône du navigateur</strong> correspondant pour se rendre à sa page de téléchargement."
     description: "Afin d'obtenir la meilleure expérience de navigation possible sur notre site web, nous vous recommandons de <strong>mettre à jour</strong> votre navigateur ou d'en choisir un autre."
@@ -482,10 +482,10 @@ fr:
     title: "Saviez-vous que votre version d'Internet Explorer est périmée?"
   instruments: 
     accordion: Accordéon
+    baglama: Baglama
     bagpipe: Cornemuse
     banjo: Banjo
     bass: Basse
-    bağlama: Bağlama
     bombo: Bombo
     bouzouki: Bouzouki
     cello: Violoncelle
@@ -493,8 +493,6 @@ fr:
     cithar: Cithare
     computer: Ordinateur
     congas: Congas
-    ? "double bass"
-    : Contrebasse
     double_bass: Contrebasse
     drums: Batterie
     flute: Flute
@@ -502,8 +500,7 @@ fr:
     hang: Hang
     harmonica: Harmonica
     harp: Harpe
-    ? "hurdy gurdy"
-    : "Vielle à roue"
+    hurdy_gurdy: "Vielle à roue"
     keyboard: Clavier
     mandolin: Mandoline
     ocarina: Ocarina
@@ -575,34 +572,27 @@ fr:
     country: Country
     dance: Dance
     dubstep: Dubstep
-    easy_listening: "Easy listening"
+    easy_listening: "Easy Listening"
     electronic: Electronique
     flamenco: Flamenco
-    ? "french popular"
-    : "Chanson française"
+    french_popular: "Chanson française"
     funk: Funk
     fusion: Fusion
     gospel: Gospel
     hard-rock: "Hard Rock"
-    ? "hip hop"
-    : "Hip Hop"
+    hip: Hip
     hip_hop: "Hip Hop"
-    ? "indian classical"
-    : "Classique indien"
+    indian_classical: "Classique indien"
     instrumental: Instrumental
     irish: Irlandais
     jazz: Jazz
     latino: Latino
     metal: Métal
-    ? "new age"
-    : "New age"
-    ? "new wave"
-    : "New Wave"
-    new_age: "New Age"
+    new_age: "New age"
+    new_wave: "New Wave"
     opera: Opera
     pop: Pop
-    ? "progressive rock"
-    : "Rock progressif"
+    progressive_rock: "Rock progressif"
     psychedelic_rock: "Rock psychédélique"
     punk: Punk
     r&b: R&B
@@ -612,12 +602,11 @@ fr:
     ska: Ska
     songwriter: Chanson
     soundtrack: "Bande son"
-    ? "spoken word"
-    : Chanté-parlé
-    spoken_word: "Spoken Word"
+    spoken_word: Chanté-parlé
     vocal: Vocal
     world: "Musique du monde"
   musician: musician
+  new_wave: "New Wave"
   pages: 
     homepage: 
       description: "Vous cherchez des musiciens ou groupes près de chez vous? Emuzikos vous aide à trouver des musiciens et former un groupe."
@@ -664,6 +653,7 @@ fr:
       title: "Conditions générale"
   pagination: 
     loading_more_results: "Chargement en cours"
+  progressive_rock: "Rock progressif"
   search_terms: 
     country: Pays
     i_search_a: "Je cherche un"
@@ -786,5 +776,8 @@ fr:
       whistles: Flûtes
   views: 
     pagination: 
+      first: Premier
       last: Dernière
       next: Suivante
+      previous: Précédent
+      truncate: "..."
