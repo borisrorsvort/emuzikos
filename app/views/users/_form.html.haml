@@ -47,16 +47,9 @@
       %i= t(:'form_helpers.instrument_not_in_list', :scope => [:users, :edit])
       %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])}
         = t(:"form_helpers.request_through_dashboard", :scope => [:users, :edit])
-
     %p
       = f.label :genre, t(:'activerecord.attributes.user.genre')
       = collection_select(:user, :genre_ids, @genres, :id, :translated_name, {}, {:multiple => true, :name=>'user[genre_ids][]', :class => "chosen multiple_select"})
-      / - @genres.in_groups_of(4, false) do |genres|
-      /   .instrument_column
-      /     - for genre in genres
-      /       .instrument
-      /         = check_box_tag "user[genre_ids][]", genre.id, @user.genres.include?(genre)
-      /         = f.label(t(:"musical_genres.#{genre.name}"), :class => "habtm")
     .clear
     %p
       %br

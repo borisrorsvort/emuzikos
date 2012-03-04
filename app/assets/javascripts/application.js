@@ -117,8 +117,6 @@ $(document).ready(function() {
 
   $(".checkbox_set").buttonset();
 
-  $("input:checkbox, input.radio:radio").uniform();
-
   // CSS ARROWS
 
   $('#main_nav li a.current').after('<div class="main_nav_current_arrow"></div>');

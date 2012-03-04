@@ -34,6 +34,8 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
+  validates_format_of :soundcloud_username, :with => /^[^ ]+$/
+
   validates_attachment_content_type :avatar,
     :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'],
     :message => "only image files are allowed"
@@ -121,6 +123,19 @@ class User < ActiveRecord::Base
     remote = Songkickr::Remote.new AppConfig.songkick.api_key
     results = remote.events(:artist_name => songkick_username, :type => 'concert')
     results
+  end
+
+  def get_soundclound_tracks(soundcloud_username)
+    if self.soundcloud_username.present?
+      require 'soundcloud'
+      begin
+        client = Soundcloud.new(:client_id => AppConfig.soundcloud.api_key)
+        tracks = client.get("/users/#{soundcloud_username}/tracks", :limit => 10, :order => 'hotness')
+        tracks
+      rescue Soundcloud::ResponseError => error
+        nil
+      end
+    end
   end
 
   def youtube_video_id_response

@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @testimonials = @user.testimonials
     @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at") if @user.geocoded?
     @events = @user.get_events(@user.songkick_username)
-    
+    @tracks = @user.get_soundclound_tracks(@user.soundcloud_username)
 
     impressionist(@user)
 

@@ -268,7 +268,6 @@ en:
     NG: Nigeria
     NI: Nicaragua
     NL: Netherlands
-    NO: Norway
     NP: Nepal
     NQ: "Dronning Maud Land"
     NR: Nauru
@@ -361,6 +360,7 @@ en:
     ZM: Zambia
     ZW: Zimbabwe
     ZZ: "Unknown Region"
+    false: Norway
   devise: 
     confirmations: 
       confirmed: "Your account was successfully confirmed. You are now logged in."

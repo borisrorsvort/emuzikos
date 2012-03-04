@@ -31,6 +31,7 @@ gem "carmen"
 gem 'httparty'
 
 gem 'songkickr'
+gem "soundcloud"
 gem "hominid"
 gem 'preferences', :git => 'git://github.com/rds/preferences.git'
 gem 'twitter'

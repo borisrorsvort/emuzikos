@@ -96,9 +96,9 @@ mail/logo-banner.jpg: mail/logo-banner-b5cfaace2b328f8dbcfaab97c3dabad2.jpg
 mail/mail_newsletter.jpg: mail/mail_newsletter-56905bd4afbbd42cb8a9e4c074218a4d.jpg
 marker.png: marker-8ea71feafda1a533971b526ec5954046.png
 active_admin.js: active_admin-412dbb297e3bd4acd32f0017dad67c57.js
-application.js: application-79ceb0b8f2e6b2af939ade75dd428aa4.js
+application.js: application-095e035eb074f54e6fbcc00e110256c3.js
 active_admin.css: active_admin-4d885a26e950640d8e3a0c7940464746.css
-application.css: application-fe8f9dba177dbb4c23bc7a978fd28aae.css
+application.css: application-8e156b1be7c46204034ee5762716336e.css
 homepage.css: homepage-37804c482e478f77a814e18564151e37.css
 chosen/chosen-sprite.png: chosen/chosen-sprite-5fe3f5caaeab12ec56e291ba10660c26.png
 jquery-ui/bg_fallback.png: jquery-ui/bg_fallback-8a205ebe90eb44637728f56338f3b654.png
@@ -107,12 +107,6 @@ jquery-ui/progress_bar.gif: jquery-ui/progress_bar-fb60f8e8fc206e76cf7ae37b50a95
 jquery-ui/slider_handles.png: jquery-ui/slider_handles-9c0308b059018ddc66ed5d936eb9cdd0.png
 jquery-ui/ui-icons_222222_256x240.png: jquery-ui/ui-icons_222222_256x240-9dd6b037983905bc5f451acb6fef37fe.png
 jquery-ui/ui-icons_454545_256x240.png: jquery-ui/ui-icons_454545_256x240-532fc54629b2531a0c9be1517126e7ca.png
-sc-player-emuzikos/black_linen_v2.png: sc-player-emuzikos/black_linen_v2-37d653839f456569172351e6c7a5cd4b.png
-uniform/bg-input-focus.png: uniform/bg-input-focus-4d7eef4f3858caf4395300671758b355.png
-uniform/bg-input.png: uniform/bg-input-787893a89e2564fe210cf1480aef8b2c.png
-uniform/sprite-aristo.png: uniform/sprite-aristo-ce53950937e76ee436f295023bbfb93e.png
-uniform/sprite-emuzikos.png: uniform/sprite-emuzikos-33567b0e9e0f8643797c997369a6c914.png
-uniform/sprite.png: uniform/sprite-bc113e0604791413e43e80db0565d19a.png
 active_admin/admin_notes_icon.png: active_admin/admin_notes_icon-adf8d0669e7180f98797e3763cbac4e2.png
 active_admin/datepicker/datepicker-header-bg.png: active_admin/datepicker/datepicker-header-bg-a3ee47618a328c08433d1f8117305674.png
 active_admin/datepicker/datepicker-input-icon.png: active_admin/datepicker/datepicker-input-icon-cdddcc337a9720222e030a3c49c3f7c6.png

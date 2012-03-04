@@ -26,6 +26,7 @@ label {
   display       : block;
   &.habtm {
     margin-top: 3px !important;
+    display: inline-block;
   }}
 
 .inline {
