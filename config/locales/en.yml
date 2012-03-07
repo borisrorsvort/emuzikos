@@ -268,6 +268,8 @@ en:
     NG: Nigeria
     NI: Nicaragua
     NL: Netherlands
+    ? "NO"
+    : Norway
     NP: Nepal
     NQ: "Dronning Maud Land"
     NR: Nauru
@@ -517,6 +519,7 @@ en:
     spoons: Spoons
     tablas: Tablas
     trombone: Trombone
+    trompet: Trompet
     turntables: Turntables
     viola: Viola
     violin: Violin
@@ -766,6 +769,8 @@ en:
       agent: Agent
       band: Band
       bass: Bass
+      cithar: Cithar
+      computer: Computer
       drums: Drums
       flute: Flute
       guitar: Guitar
