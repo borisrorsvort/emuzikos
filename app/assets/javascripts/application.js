@@ -113,7 +113,7 @@ $(document).ready(function() {
 
   $( ".tabs" ).tabs();
 
-  $("select").chosen({ allow_single_deselect: true }).css( 'width', '' );
+  $("select").chosen({ allow_single_deselect: true, width: "100%" });
 
   $(".checkbox_set").buttonset();
 

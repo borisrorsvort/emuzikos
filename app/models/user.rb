@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
-  #validates_format_of :soundcloud_username, :with => /^[^ ]+$/
+  validates_format_of :soundcloud_username, :with => /^[^ ]+$/, :allow_blank => true
 
   validates_attachment_content_type :avatar,
     :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'],

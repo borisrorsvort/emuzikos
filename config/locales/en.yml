@@ -16,7 +16,7 @@ en:
         current_password: "Current password"
         email: Email
         genre: "Musical genres"
-        instruments: Instruments
+        instruments: "My Instruments"
         invisible: Invisible
         last_active: "Recent activity"
         last_updater: "Last updater"
@@ -25,7 +25,7 @@ en:
         password: Password
         password_confirmation: "Password confirmation"
         references: "Musical References"
-        request_message: "Request message"
+        request_message: Message
         searching_for: "Searching for"
         songkick_username: "Songkick username"
         soundcloud_username: "SoundCloud username"
@@ -36,6 +36,16 @@ en:
         visible: Visible
         youtube_video_id: "YouTube Video Id"
         zip: "Zip code"
+    errors: 
+      models: 
+        user: 
+          attributes: 
+            email: 
+              blank: "cannot be blank"
+            password: 
+              blank: "cannot be blank"
+            soundcloud_username: 
+              invalid: "is invalid"
     models: 
       messages: Messages
       search: Search
@@ -517,6 +527,7 @@ en:
     spoons: Spoons
     tablas: Tablas
     trombone: Trombone
+    trompet: Trompet
     turntables: Turntables
     viola: Viola
     violin: Violin
@@ -632,6 +643,7 @@ en:
           body: "Emuzikos has an internal messaging system, which means that you don't need to share personal information on your profile and will avoid being spammed by robots crawling the web."
           title: "Care about privacy?"
         sharing: 
+          body: "Musicians deserve a better search tool. So, if you like the way Emuzikos manages musicians classifieds, please share this page around you."
           title: "Spread the love with musicians"
         sign_up: 
           body: "Creating an account takes less than 60 sec.  With just a couple of basic details, you  can start searching musicians band or agents. As you add more information, you become easier to find by other users."
@@ -663,6 +675,7 @@ en:
     i_search_a: "I search a"
     mass_locate: "Zip code & City"
     music_style: "Musical genre"
+    user_type: "I am a"
     who_plays: Instruments
     who_search_for: "Who search for"
   services: 
@@ -714,7 +727,7 @@ en:
         instrument_not_in_list: "Your instrument is not in the list?"
         personal_infos_advice: "We advice you not to share any personal informations such as email or phone number. Let people contact you using the internal messaging system instead."
         request_through_dashboard: "Please make a request using the help dashboard"
-      instruments_in_band_notice: "If you're a band, list instruments already present in the band"
+      instruments_in_band_notice: "List instruments you play or the ones already present in the band if you're a band."
       invisible_notice: "Make sure you're set as visible in order to appear in search results"
       medias: "Medias (optional)"
       meta_description: "Edit %{username}'s profile page. Musician, band or agents infos"
@@ -766,6 +779,8 @@ en:
       agent: Agent
       band: Band
       bass: Bass
+      cithar: Cithar
+      computer: Computer
       drums: Drums
       flute: Flute
       guitar: Guitar

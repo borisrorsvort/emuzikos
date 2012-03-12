@@ -53,6 +53,15 @@
 
 = form_for @user, :html => { :multipart => true } do |f|
   = f.error_messages
+  .field
+    %h3= t(:'activerecord.attributes.user.visible')
+    %p= t(:"visible_explanation", :scope => [:users, :edit])
+    %br
+    %p.checkbox_set
+      = f.label "visible_true", t(:"activerecord.attributes.user.visible")
+      = radio_button(:user, :visible, true)
+      = f.label "visible_false", t(:"activerecord.attributes.user.invisible")
+      = radio_button(:user, :visible, false)
   %h3= t(:'users.preferred.language')
   .field
     %p= f.select :preferred_language, [["English", "en"], ["Français", "fr"]], :selected => @user.preferred_language
