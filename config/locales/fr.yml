@@ -278,6 +278,8 @@ fr:
     NG: Nigéria
     NI: Nicaragua
     NL: Pays-Bas
+    ? "NO"
+    : Norvège
     NP: Népal
     NQ: "Terre de la Reine-Maud"
     NR: Nauru
@@ -503,6 +505,8 @@ fr:
     cithar: Cithare
     computer: Ordinateur
     congas: Congas
+    ? "double bass"
+    : Contrebasse
     double_bass: Contrebasse
     drums: Batterie
     flute: Flute
@@ -510,6 +514,8 @@ fr:
     hang: Hang
     harmonica: Harmonica
     harp: Harpe
+    ? "hurdy gurdy"
+    : "Vielle à roue"
     hurdy_gurdy: "Vielle à roue"
     keyboard: Clavier
     mandolin: Mandoline
