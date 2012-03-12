@@ -16,7 +16,7 @@ fr:
         current_password: "Mot de passe actuel"
         email: Email
         genre: "Genres musicaux"
-        instruments: "Mes Instruments"
+        instruments: "Mes instruments"
         invisible: Invisible
         last_active: "Activité récente"
         last_updater: "Mis à jour par"
@@ -645,7 +645,7 @@ fr:
           body: "Emuzikos a son propre système de messagerie interne, ce qui vous évite de diffuser vos informations personnelles sur votre profil, et d’être spammé par des robots."
           title: "Sécurité et vie privée"
         sharing: 
-          body: "Les musiciens méritent un meilleur outil de recherche. Alors, si vous aimez la façon dont Emuzikos vous pésente les annonces pour musiciens, partagez cette page sans modération."
+          body: "Les musiciens méritent un meilleur outil de recherche. Alors, si vous aimez la façon dont Emuzikos vous pésente les annonces pour musiciens, partagez cette page sans modération!"
           title: "Partager avec d'autres musiciens!"
         sign_up: 
           body: "Créer un compte sur Emuzikos prend moins de 60 sec. Et vous n'avez pas besoin de compléter votre profil pour pouvoir chercher et contacter des musiciens. "
