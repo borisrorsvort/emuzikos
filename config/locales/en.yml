@@ -678,7 +678,7 @@ en:
     mass_locate: "Zip code & City"
     music_style: "Musical genre"
     user_type: "I am a"
-    who_plays: Instruments
+    who_plays: "who plays"
     who_search_for: "Who search for"
   services: 
     account_created: "Your account on Emuzikos has been created via %{provider}. In your <a href=\"%{link}\">account settings</a> you can change your personal information and add a local password."
@@ -746,6 +746,8 @@ en:
           second: "Then copy the id form the page url. That's the text after 'watch?v='"
           third: "Paste it in your profile youtube video id field"
         title: "How to find your Youtube video id?"
+    form: 
+      searching_for: "What I'm searching for"
     index: 
       invite_more_users: "Invite more user to Emuzikos and help to make the community grow!"
       no_users: "We couldn't find any users corresponding to you search criterias."
@@ -795,6 +797,7 @@ en:
       violin: Violin
       voice: Voice
       whistles: Whistles
+    your_classified_infos: "Your classified infos"
   views: 
     pagination: 
       first: First

@@ -678,8 +678,8 @@ fr:
     mass_locate: "Ville, région, ..."
     music_style: "Genre musical"
     user_type: "Je suis un"
-    who_plays: Instruments
-    who_search_for: "Qui cherche un(e)"
+    who_plays: "qui joue"
+    who_search_for: "qui cherche un(e)"
   services: 
     account_created: "Votre compte sur Emuzikos a bien été créé via %{provider}. Vous pouvez changer votre mot de passe et infos personnelles <a href='%{link}'>ici</a>."
     account_creation_error: "ne peut être utilisé pour s'inscire sur Emuzikos parce que nous n'avons pas accès à votre email. Utilisez un autre type de connexion ou le formulaire par défaut. Si vous avez déjà un compte, connectez-vous et ajoutez %{service_route} depuis votre profil."
@@ -745,7 +745,9 @@ fr:
           fourth: "Appuyer sur \"Mettre à jour\""
           second: "Copiez l'id de la video que vous trouverez dans la barre d'adresse. C'est le texte après  'watch?v=' ."
           third: "Coller-le dans le champ de votre profil ad-hoc"
-        title: "COmment trouver l'id de votre video Youtube?"
+        title: "Comment trouver l'id de votre video Youtube?"
+    form: 
+      searching_for: "Ce que je recherche"
     index: 
       invite_more_users: "Invitez plus d'utilisateurs sur Emuzikos et aidez la communauté à grandir!"
       no_users: "Nous n'avons pu trouver aucun utilisateur correspondant à votre recherche."

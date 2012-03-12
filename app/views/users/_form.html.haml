@@ -17,7 +17,7 @@
     = f.file_field :avatar
     .clear
 
-  %h3= t(:"your_classified_infos", :scope => :users)
+  %h3= t(:'users.your_classified_infos')
 
   .field
 
@@ -46,7 +46,7 @@
       %i= t(:"form_helpers.genre_not_on_list", :scope => [:users, :edit])
       %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])}= t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])
     %p
-      = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
+      = f.label t(:'.searching_for')
       = select(:user, :searching_for, grouped_options_for_select(searching_for_grouped_options, @user.searching_for ))
 
     %p
