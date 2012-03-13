@@ -2,10 +2,10 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require_directory ./libs
-//= require_directory ./mylibs
 //= require gritter
 //= require plugins
 //= require_self
+//= require_directory ./mylibs
 
 
 /* rest of file omitted */
