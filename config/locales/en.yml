@@ -503,6 +503,7 @@ en:
     cello: Cello
     charango: Charango
     cithar: Cithar
+    clarinet: Clarinet
     computer: Computer
     congas: Congas
     ? "double bass"
@@ -592,6 +593,7 @@ en:
     easy_listening: "Easy Listening"
     electronic: Electronic
     flamenco: Flamenco
+    folk: Folk
     french_popular: "French Popular"
     funk: Funk
     fusion: Fusion

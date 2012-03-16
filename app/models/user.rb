@@ -22,8 +22,33 @@ class User < ActiveRecord::Base
   preference :message_notifications, :default => true
   preference :language, :string, :default => 'en'
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude, :prefers_newsletters, :prefers_message_notifications, :prefers_language, :profile_completed
-  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
+  attr_accessible :country, :email, :password, :profile_completed, :password_confirmation, :remember_me, :request_message, :slug, :searching_for, :songkick_username, :soundcloud_username, :username, :youtube_video_id, :zip
+
+    #   t.string   "username"
+    # t.string   "email"
+    # t.string   "encrypted_password"
+    # t.string   "user_type"
+    # t.string   "references"
+    # t.string   "zip"
+    # t.string   "country"
+    # t.string   "searching_for"
+    # t.text     "request_message"
+    # t.string   "reset_password_token"
+    # t.datetime "reset_password_sent_at"
+    # t.datetime "remember_created_at"
+    # t.integer  "sign_in_count"
+    # t.datetime "current_sign_in_at"
+    # t.datetime "last_sign_in_at"
+    # t.string   "current_sign_in_ip"
+    # t.string   "last_sign_in_ip"
+    # t.string   "songkick_username"
+    # t.string   "youtube_video_id"
+    # t.string   "soundcloud_username"
+    # t.string   "slug"
+    # t.boolean  "profile_completed"
+    # t.integer  "impressions_count"
+
+  #attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
 
   #attr_searchable :username, :user_type, :searching_for, :country, :zip
   #attr_unsearchable :songkick_username
@@ -163,17 +188,17 @@ class User < ActiveRecord::Base
     def update_mailchimp(optin)
       # Create a Hominid object (A wrapper to the mailchimp api), and pass in a hash from the yaml file
       # telling which mailing list id to update with subscribe/unsubscribe notifications)
-      @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
+      hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
       list_name = AppConfig.mailchimp.list_name
 
       begin
         case optin
           when 'subscribe_newsletter'
             logger.debug("subscribing to newsletter...")
-            "success!" if @hominid.list_subscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+            "success!" if hominid.list_subscribe(hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
           when 'unsubscribe_newsletter'
             logger.debug("unsubscribing from newsletter...")
-            "success!" if @hominid.list_unsubscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+            "success!" if hominid.list_unsubscribe(hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
           end
       rescue Hominid::APIError => error
         errors.add(:email, error.message)
