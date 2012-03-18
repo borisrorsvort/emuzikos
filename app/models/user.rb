@@ -22,37 +22,7 @@ class User < ActiveRecord::Base
   preference :message_notifications, :default => true
   preference :language, :string, :default => 'en'
 
-  attr_accessible :country, :email, :password, :profile_completed, :password_confirmation, :remember_me, :request_message, :slug, :searching_for, :songkick_username, :soundcloud_username, :username, :youtube_video_id, :zip
-
-    #   t.string   "username"
-    # t.string   "email"
-    # t.string   "encrypted_password"
-    # t.string   "user_type"
-    # t.string   "references"
-    # t.string   "zip"
-    # t.string   "country"
-    # t.string   "searching_for"
-    # t.text     "request_message"
-    # t.string   "reset_password_token"
-    # t.datetime "reset_password_sent_at"
-    # t.datetime "remember_created_at"
-    # t.integer  "sign_in_count"
-    # t.datetime "current_sign_in_at"
-    # t.datetime "last_sign_in_at"
-    # t.string   "current_sign_in_ip"
-    # t.string   "last_sign_in_ip"
-    # t.string   "songkick_username"
-    # t.string   "youtube_video_id"
-    # t.string   "soundcloud_username"
-    # t.string   "slug"
-    # t.boolean  "profile_completed"
-    # t.integer  "impressions_count"
-
-  #attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
-
-  #attr_searchable :username, :user_type, :searching_for, :country, :zip
-  #attr_unsearchable :songkick_username
-  #assoc_searchable :instruments, :skills, :tastes, :genres
+  attr_accessible :country, :email, :genre_ids, :password, :profile_completed, :password_confirmation, :preferred_language, :prefers_message_notifications, :prefers_newsletters, :instrument_ids, :references, :remember_me, :request_message, :slug, :searching_for, :songkick_username, :soundcloud_username, :username, :visible, :youtube_video_id, :zip
 
   geocoded_by :address
 

@@ -628,7 +628,7 @@ en:
   new_wave: "New Wave"
   pages: 
     homepage: 
-      description: "Looking for a local musician or band mates? Emuzikos.com is quick way to search for wanted bands and musicians"
+      description: "Looking for a local musician or band mates? Search and submit musicians classifieds"
       home_feature: 
         advantage: 
           body: "You will get a fully customizable profile, a private message inbox, and an awesome musicians, bands & agents database to search from."
@@ -663,8 +663,8 @@ en:
           title: "How does it look like?"
         testimonials: 
           title: "What people are saying about it?"
-      subtitle: "Emuzikos, the musician search tool you were missing"
-      title: "The first easy way to find local musicians. The place for wanted musicians or bands"
+      subtitle: "Emuzikos, more than a musicians classifieds site"
+      title: "The first easy way to find local musicians. Free musicians classifieds"
     privacy: 
       description: "The privacy policy of Emuzikos help you use the site by defining the scope of your privacy"
       title: "Privacy Policy"
