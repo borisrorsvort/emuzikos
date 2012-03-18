@@ -17,19 +17,9 @@
     = f.file_field :avatar
     .clear
 
-  %h3= t(:"musician_infos", :scope => :users)
+  %h3= t(:'users.your_classified_infos')
 
   .field
-    %p.checkbox_set
-      = f.label :visible, t(:'activerecord.attributes.user.visible')
-      %br
-      = t(:"visible_explanation", :scope => [:users, :edit])
-      %br
-      = f.label "visible_true", t(:"activerecord.attributes.user.visible")
-      = radio_button(:user, :visible, true)
-      = f.label "visible_false", t(:"activerecord.attributes.user.invisible")
-      = radio_button(:user, :visible, false)
-
 
     %p.checkbox_set
       = f.label :user_type, t(:'activerecord.attributes.user.user_type')
@@ -47,23 +37,16 @@
       %i= t(:'form_helpers.instrument_not_in_list', :scope => [:users, :edit])
       %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])}
         = t(:"form_helpers.request_through_dashboard", :scope => [:users, :edit])
-
     %p
       = f.label :genre, t(:'activerecord.attributes.user.genre')
       = collection_select(:user, :genre_ids, @genres, :id, :translated_name, {}, {:multiple => true, :name=>'user[genre_ids][]', :class => "chosen multiple_select"})
-      / - @genres.in_groups_of(4, false) do |genres|
-      /   .instrument_column
-      /     - for genre in genres
-      /       .instrument
-      /         = check_box_tag "user[genre_ids][]", genre.id, @user.genres.include?(genre)
-      /         = f.label(t(:"musical_genres.#{genre.name}"), :class => "habtm")
     .clear
     %p
       %br
       %i= t(:"form_helpers.genre_not_on_list", :scope => [:users, :edit])
       %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])}= t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])
     %p
-      = f.label :searching_for, t(:'activerecord.attributes.user.searching_for')
+      = f.label t(:'.searching_for')
       = select(:user, :searching_for, grouped_options_for_select(searching_for_grouped_options, @user.searching_for ))
 
     %p

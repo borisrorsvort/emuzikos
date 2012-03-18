@@ -69,7 +69,7 @@
         - unless @events.results.empty?
           %li
             %a{:href => "#tab_events", :class => "icon-calendar"}= t(:'.tabs.user_events')
-        - if @user.youtube_video_id? || @user.soundcloud_username?
+        - if @user.youtube_video_id? || @tracks.present?
           %li
             %a{:href => "#tab_medias", :class => "icon-video"}= t(:'.tabs.user_medias')
 
@@ -133,13 +133,16 @@
             = image_tag "songkick/concerts_by_songkick.gif", :alt => "Concerts by Songkick"
           .clear
 
-      - if @user.youtube_video_id? || @user.soundcloud_username?
+      - if @user.youtube_video_id? || @tracks.present?
         / MEDIA TAB START
         #tab_medias
-          - if @user.soundcloud_username?
+          - if @tracks.present?
             %h3= t(:souncloud_player)
-            .soundcloud_block
-              = link_to "#{@user.username} #{t(:'.tracks')}", "http://soundcloud.com/#{@user.soundcloud_username}", :class => "sc-player"
+            / .soundcloud_block
+            /   = link_to "#{@user.username} #{t(:'.tracks')}", "http://soundcloud.com/#{@user.soundcloud_username}", :class => "sc-player"
+            - for track in @tracks do
+              %iframe{:frameborder => "no", :height => "166", :scrolling => "no", :src => "http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{track.id}&show_artwork=true", :width => "100%"}
+
           - if @user.youtube_video_id?
             %h3= t(:'.youtube_video')
             %section

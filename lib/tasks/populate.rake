@@ -13,7 +13,7 @@ namespace :db do
 
     puts 'Creating instruments'
 
-    ["guitar", "bass", "double bass", "drums", "violin", "flute", "piano", "percussions", "voice", "turntables", "banjo", "cithar", "bouzouki", "mandolin", "whistles", "spoons", "keyboard", "ocarina", "congas"].each do |instrument|
+    ["saz", "baglama", "oud", "bombo", "charango", "hang", "accordion", "viola", "harmonica", "harp", "saxophone", "cello", "hurdy_gurdy", "bagpipe", "computer", "tablas", "sitar", "trombone", "congas", "ocarina", "keyboard", "spoons", "whistles", "mandolin", "bouzouki", "cithar", "banjo", "turntables", "voice", "percussions", "piano", "flute", "violin", "drums", "double_bass", "bass", "guitar"].each do |instrument|
       instrument = Instrument.new(:name => instrument)
       instrument.save
       Skill.populate 3 do |skill|
@@ -24,7 +24,7 @@ namespace :db do
 
     puts 'Creating Genres'
 
-    ["alternative", "blues", "indian classical", "irish", "children", "classical", "comedy", "country", "dance", "easy listening", "electronic", "fusion", "gospel", "hip hop", "instrumental", "jazz", "latino", "new age", "opera", "pop", "r&b", "reggae", "rock", "songwriter", "soundtrack", "spoken word", "vocal", "world"].each do |genre|
+    ["french_popular", "new_wave", "hard-rock", "dubstep", "progressive_rock", "flamenco", "ska", "punk", "metal", "funk", "world", "vocal", "spoken_word", "soundtrack", "songwriter", "rock", "reggae", "r&b", "pop", "opera", "new_age", "latino", "jazz", "instrumental", "hip_hop", "gospel", "fusion", "electronic", "easy_listening", "dance", "country", "comedy", "classical", "children", "irish", "indian_classical", "blues", "alternative"].each do |genre|
       genre = Genre.new(:name => genre)
       genre.save
       Taste.populate 3 do |taste|

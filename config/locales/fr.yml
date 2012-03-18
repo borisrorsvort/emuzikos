@@ -16,7 +16,7 @@ fr:
         current_password: "Mot de passe actuel"
         email: Email
         genre: "Genres musicaux"
-        instruments: Instruments
+        instruments: "Mes instruments"
         invisible: Invisible
         last_active: "Activité récente"
         last_updater: "Mis à jour par"
@@ -25,7 +25,7 @@ fr:
         password: "Mot de passe"
         password_confirmation: "Confirmation du mot de passe"
         references: "Références musicales"
-        request_message: Annonce
+        request_message: Message
         searching_for: "Ce que je cherche"
         songkick_username: "Nom d'utilisateur Songkick"
         soundcloud_username: "Nom d'utilisateur SoundCloud"
@@ -36,6 +36,16 @@ fr:
         visible: Visible
         youtube_video_id: "Numéros Identifiant la video youtube"
         zip: "Code postal"
+    errors: 
+      models: 
+        user: 
+          attributes: 
+            email: 
+              blank: "ne peut pas être vide"
+            password: 
+              blank: "ne peut pas être vide"
+            soundcloud_username: 
+              invalid: "est invalide"
     models: 
       messages: Messages
       search: Recherche
@@ -362,6 +372,7 @@ fr:
     ZM: Zambie
     ZW: Zimbabwe
     ZZ: "région indéterminée"
+    false: Norvège
   devise: 
     confirmations: 
       confirmed: "Votre compte a été confirmé. Vous êtes à présent connecté(e)."
@@ -475,6 +486,7 @@ fr:
       update: 
         error: "Quelques informations doivent encore être corrigées"
         success: "Votre profil a bien été mis à jour"
+  hip: Hip
   ie_warning: 
     click_to_download: "Il suffit de cliquer <strong>sur l'icône du navigateur</strong> correspondant pour se rendre à sa page de téléchargement."
     description: "Afin d'obtenir la meilleure expérience de navigation possible sur notre site web, nous vous recommandons de <strong>mettre à jour</strong> votre navigateur ou d'en choisir un autre."
@@ -482,15 +494,16 @@ fr:
     title: "Saviez-vous que votre version d'Internet Explorer est périmée?"
   instruments: 
     accordion: Accordéon
+    baglama: Baglama
     bagpipe: Cornemuse
     banjo: Banjo
     bass: Basse
-    bağlama: Bağlama
     bombo: Bombo
     bouzouki: Bouzouki
     cello: Violoncelle
     charango: Charango
     cithar: Cithare
+    clarinet: Clarinette
     computer: Ordinateur
     congas: Congas
     ? "double bass"
@@ -504,6 +517,7 @@ fr:
     harp: Harpe
     ? "hurdy gurdy"
     : "Vielle à roue"
+    hurdy_gurdy: "Vielle à roue"
     keyboard: Clavier
     mandolin: Mandoline
     ocarina: Ocarina
@@ -516,6 +530,7 @@ fr:
     spoons: Cuillères
     tablas: Tablas
     trombone: Trombone
+    trompet: Trompette
     turntables: Platines
     viola: Alto
     violin: Violon
@@ -575,34 +590,28 @@ fr:
     country: Country
     dance: Dance
     dubstep: Dubstep
-    easy_listening: "Easy listening"
+    easy_listening: "Easy Listening"
     electronic: Electronique
     flamenco: Flamenco
-    ? "french popular"
-    : "Chanson française"
+    folk: Folk
+    french_popular: "Chanson française"
     funk: Funk
     fusion: Fusion
     gospel: Gospel
     hard-rock: "Hard Rock"
-    ? "hip hop"
-    : "Hip Hop"
+    hip: Hip
     hip_hop: "Hip Hop"
-    ? "indian classical"
-    : "Classique indien"
+    indian_classical: "Classique indien"
     instrumental: Instrumental
     irish: Irlandais
     jazz: Jazz
     latino: Latino
     metal: Métal
-    ? "new age"
-    : "New age"
-    ? "new wave"
-    : "New Wave"
-    new_age: "New Age"
+    new_age: "New age"
+    new_wave: "New Wave"
     opera: Opera
     pop: Pop
-    ? "progressive rock"
-    : "Rock progressif"
+    progressive_rock: "Rock progressif"
     psychedelic_rock: "Rock psychédélique"
     punk: Punk
     r&b: R&B
@@ -610,14 +619,13 @@ fr:
     reggae: Reggae
     rock: Rock
     ska: Ska
-    songwriter: Chanson
+    songwriter: "Chanson à textes"
     soundtrack: "Bande son"
-    ? "spoken word"
-    : Chanté-parlé
-    spoken_word: "Spoken Word"
+    spoken_word: Chanté-parlé
     vocal: Vocal
     world: "Musique du monde"
   musician: musician
+  new_wave: "New Wave"
   pages: 
     homepage: 
       description: "Vous cherchez des musiciens ou groupes près de chez vous? Emuzikos vous aide à trouver des musiciens et former un groupe."
@@ -639,13 +647,14 @@ fr:
           body: "Emuzikos a son propre système de messagerie interne, ce qui vous évite de diffuser vos informations personnelles sur votre profil, et d’être spammé par des robots."
           title: "Sécurité et vie privée"
         sharing: 
+          body: "Les musiciens méritent un meilleur outil de recherche. Alors, si vous aimez la façon dont Emuzikos vous pésente les annonces pour musiciens, partagez cette page sans modération!"
           title: "Partager avec d'autres musiciens!"
         sign_up: 
           body: "Créer un compte sur Emuzikos prend moins de 60 sec. Et vous n'avez pas besoin de compléter votre profil pour pouvoir chercher et contacter des musiciens. "
           title: "Inscription rapide"
       keywords: "musicien, recherche de musicien, musiciens près de chez moi, recherche de musiciens locaux"
       latest_testimonials: "Derniers témoignages de musiciens"
-      moto: "La recherche de musiciens <strong>facile et gratuite</strong>"
+      moto: "La recherche de musiciens <strong>facile & rapide</strong>"
       sections: 
         screenshots: 
           inbox: "Votre boîte à message"
@@ -655,7 +664,7 @@ fr:
         testimonials: 
           title: "Qu'est-ce que les musiciens en disent?"
       subtitle: "Emuzikos, plus qu'un site d'annonces pour musiciens et groupes"
-      title: "Recherche de musiciens & groupes près de chez soi. Annonces gratuites"
+      title: "Recherche de musiciens & groupes près de chez soi. Annonces pour musicien gratuites"
     privacy: 
       description: "La Charte de confidentialité d'Emuzikos vous aide faire respecter votre vie privée."
       title: "Charte de confidentialité"
@@ -664,13 +673,15 @@ fr:
       title: "Conditions générale"
   pagination: 
     loading_more_results: "Chargement en cours"
+  progressive_rock: "Rock progressif"
   search_terms: 
     country: Pays
     i_search_a: "Je cherche un"
     mass_locate: "Ville, région, ..."
     music_style: "Genre musical"
-    who_plays: Instruments
-    who_search_for: "Qui cherche"
+    user_type: "Je suis un"
+    who_plays: "qui joue"
+    who_search_for: "qui cherche un(e)"
   services: 
     account_created: "Votre compte sur Emuzikos a bien été créé via %{provider}. Vous pouvez changer votre mot de passe et infos personnelles <a href='%{link}'>ici</a>."
     account_creation_error: "ne peut être utilisé pour s'inscire sur Emuzikos parce que nous n'avons pas accès à votre email. Utilisez un autre type de connexion ou le formulaire par défaut. Si vous avez déjà un compte, connectez-vous et ajoutez %{service_route} depuis votre profil."
@@ -720,7 +731,7 @@ fr:
         instrument_not_in_list: "Votre instrument ne se trouve pas dans la liste?"
         personal_infos_advice: "Nous vous conseillons de ne pas divulguer d'informations personnelles telles qu'un numéro de téléphone ou une adresse. Cela, afin d'éviter le vol d'informations par des robots. Préférez le système de messagerie d'Emuzikos."
         request_through_dashboard: "Faites-en la demande ici"
-      instruments_in_band_notice: "Si vous êtes un groupe, listez ici les instruments déjà présent dans le groupe."
+      instruments_in_band_notice: "Listez ici les instruments que vous jouez ou ceux déjà présents dans le groupe si vous êtes un groupe."
       invisible_notice: "Vérifiez que vous êtes bien \"visible\" afin d'apparaître dans les résultats de recherche"
       medias: "Medias (optionnel)"
       meta_description: "Modification du profil de  %{username}. Musicien, groupe ou agent"
@@ -736,7 +747,9 @@ fr:
           fourth: "Appuyer sur \"Mettre à jour\""
           second: "Copiez l'id de la video que vous trouverez dans la barre d'adresse. C'est le texte après  'watch?v=' ."
           third: "Coller-le dans le champ de votre profil ad-hoc"
-        title: "COmment trouver l'id de votre video Youtube?"
+        title: "Comment trouver l'id de votre video Youtube?"
+    form: 
+      searching_for: "Ce que je recherche"
     index: 
       invite_more_users: "Invitez plus d'utilisateurs sur Emuzikos et aidez la communauté à grandir!"
       no_users: "Nous n'avons pu trouver aucun utilisateur correspondant à votre recherche."
@@ -763,7 +776,7 @@ fr:
         user_events: Evénements
         user_infos: Infos
         user_medias: Médias
-      title: "Profile de %{username}"
+      title: "Profil de %{username}"
       to_play: "pour jouer"
       tracks: Pistes
       users_nearby: "Autres utilisateurs proches"
@@ -772,6 +785,8 @@ fr:
       agent: Agent
       band: Groupe
       bass: Basse
+      cithar: Cithare
+      computer: Ordinateur
       drums: Batterie
       flute: Flute
       guitar: Guitare
@@ -784,7 +799,11 @@ fr:
       violin: Violon
       voice: Voix
       whistles: Flûtes
+    your_classified_infos: "Votre annonce"
   views: 
     pagination: 
+      first: Premier
       last: Dernière
       next: Suivante
+      previous: Précédent
+      truncate: "..."

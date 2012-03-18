@@ -22,18 +22,15 @@ class User < ActiveRecord::Base
   preference :message_notifications, :default => true
   preference :language, :string, :default => 'en'
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :longitude, :latitude, :prefers_newsletters, :prefers_message_notifications, :prefers_language, :profile_completed
-  attr_protected :avatar_file_name, :avatar_content_type, :avatar_size
-
-  #attr_searchable :username, :user_type, :searching_for, :country, :zip
-  #attr_unsearchable :songkick_username
-  #assoc_searchable :instruments, :skills, :tastes, :genres
+  attr_accessible :country, :email, :genre_ids, :password, :profile_completed, :password_confirmation, :preferred_language, :prefers_message_notifications, :prefers_newsletters, :instrument_ids, :references, :remember_me, :request_message, :slug, :searching_for, :songkick_username, :soundcloud_username, :username, :visible, :youtube_video_id, :zip
 
   geocoded_by :address
 
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
+  validates_format_of :soundcloud_username, :with => /^[^ ]+$/, :allow_blank => true
+
   validates_attachment_content_type :avatar,
     :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'],
     :message => "only image files are allowed"
@@ -123,6 +120,19 @@ class User < ActiveRecord::Base
     results
   end
 
+  def get_soundclound_tracks(soundcloud_username)
+    if self.soundcloud_username.present?
+      require 'soundcloud'
+      begin
+        client = Soundcloud.new(:client_id => AppConfig.soundcloud.api_key)
+        tracks = client.get("/users/#{soundcloud_username}/tracks", :limit => 10, :order => 'hotness')
+        tracks
+      rescue Soundcloud::ResponseError => error
+        nil
+      end
+    end
+  end
+
   def youtube_video_id_response
     # Build a url with the video id and check response within the custom validation using the ad-hoc regex
     "http://gdata.youtube.com/feeds/api/videos/#{self.youtube_video_id}"
@@ -148,17 +158,17 @@ class User < ActiveRecord::Base
     def update_mailchimp(optin)
       # Create a Hominid object (A wrapper to the mailchimp api), and pass in a hash from the yaml file
       # telling which mailing list id to update with subscribe/unsubscribe notifications)
-      @hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
+      hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
       list_name = AppConfig.mailchimp.list_name
 
       begin
         case optin
           when 'subscribe_newsletter'
             logger.debug("subscribing to newsletter...")
-            "success!" if @hominid.list_subscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+            "success!" if hominid.list_subscribe(hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
           when 'unsubscribe_newsletter'
             logger.debug("unsubscribing from newsletter...")
-            "success!" if @hominid.list_unsubscribe(@hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+            "success!" if hominid.list_unsubscribe(hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
           end
       rescue Hominid::APIError => error
         errors.add(:email, error.message)

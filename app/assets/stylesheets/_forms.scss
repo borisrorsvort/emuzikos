@@ -26,6 +26,7 @@ label {
   display       : block;
   &.habtm {
     margin-top: 3px !important;
+    display: inline-block;
   }}
 
 .inline {
@@ -62,44 +63,19 @@ input, textarea {
   }
   #submit_search input{
     white-space: nowrap;
-    padding: 3px 10px;
+    padding: 5px 10px;
     font-size: 11px !important;
   }
   #mass_locate {
-    height: 20px;
+    height: 22px;
     padding: 2px;
   }
   .chzn-search input {
     padding: 4px 8px !important;
   }
-  /*.button {
-    &.search {
-      font-size: 11px;
-    }
+  .chzn-results li {
+    padding: $baseline / 2 !important;
   }
-  .field {
-    float       : left;
-    height      : 32px;
-    margin-bottom: 0px;
-    padding: 0;
-    background: none;
-    border: none;
-    input {
-      &#mass_locate {
-        padding: 4px 8px;
-        margin-top: 3px;
-      }
-    }
-    .selector {
-      width: 110px;
-      select {
-        width: 110px;
-      }
-      span {
-        width: 90px;
-      }
-    }
-  }*/
 }
 
 .logged_out {

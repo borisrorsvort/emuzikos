@@ -12,7 +12,8 @@ namespace :heroku do
 
   # runs before all the deploys complete
   task :before_deploy do
-    # system "bundle exec rake assets:precompile"
+    system "rm -rf public/assets/"
+    system "bundle exec rake assets:precompile"
     system "git add ."
     system "git commit -a -m 'precompile'"
     system "git push"
@@ -30,7 +31,7 @@ namespace :heroku do
 
   # runs after all the deploys complete
   task :after_deploy do
-    system "heroku run db:migrate"
+    #system "heroku run db:migrate"
   end
 
 end
