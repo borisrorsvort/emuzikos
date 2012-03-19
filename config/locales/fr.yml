@@ -68,6 +68,7 @@ fr:
     delete: Effacer
     edit: Modifier
     home_signup: "Inscrivez-vous en 60 sec"
+    invite_your_friends_from_fb: "Invitez vos amis Facebook"
     login: Connectez-moi
     registrations: 
       cancel_my_account: "Effacer mon compte"
@@ -702,6 +703,12 @@ fr:
     logged_in_via: "La connexion via"
     signed_in_successful: "Vous vous êtes bien connecté"
     signed_in_successful_via: "Vous vous êtes bien connecté via"
+  social_share: 
+    invite_friends: 
+      invite_your_friends_from_fb: "Je viens de découvrir cette application pour chercher des musiciens et groupes près de chez toi. Rejoins-moi!"
+      meta_description: "Votre profil complété, il est temps d'en parler à vos amis"
+      subtitle: "Il est temps d'en parler à tout vos amis!"
+      title: "Félicitation! Votre profil est bien complété"
   souncloud_player: "Lecteur SoundCloud"
   tables: 
     headings: 
@@ -783,6 +790,7 @@ fr:
       youtube_video: "Vidéo Youtube"
     types: 
       agent: Agent
+      baglama: baglama
       band: Groupe
       bass: Basse
       cithar: Cithare

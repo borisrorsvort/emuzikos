@@ -68,6 +68,7 @@ en:
     delete: Delete
     edit: Edit
     home_signup: "sign up in 60 sec. It's free"
+    invite_your_friends_from_fb: "Invite your friends from Facebook"
     login: "Log in"
     registrations: 
       cancel_my_account: "Cancel my account"
@@ -702,6 +703,12 @@ en:
     logged_in_via: "Log in via"
     signed_in_successful: "Signed in successfully!"
     signed_in_successful_via: "Signed in successfully via"
+  social_share: 
+    invite_friends: 
+      invite_your_friends_from_fb: "I just discovered this awesome app to search for musicians and bands nearby. Check it out!"
+      meta_description: "Your profile is complete, it's time to met people know about it"
+      subtitle: "It's time to let your friends know about it!"
+      title: "Congratulations! your profile is now complete"
   souncloud_player: "SoundCloud player"
   tables: 
     headings: 
@@ -783,6 +790,7 @@ en:
       youtube_video: "Youtube video"
     types: 
       agent: Agent
+      baglama: baglama
       band: Band
       bass: Bass
       cithar: Cithar

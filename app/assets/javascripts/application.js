@@ -8,6 +8,7 @@
 //= require_directory ./mylibs
 
 
+
 /* rest of file omitted */
 
 // Fix links inside mobile safari
@@ -55,12 +56,6 @@ function addLoadEvent(func) {
   }
 }
 
-// addLoadEvent(function() {
-//   if (document.getElementById && document.getElementsByTagName) {
-//   var aImgs = document.getElementById("content").getElementsByTagName("img");
-//   imgSizer.collate(aImgs);
-//   }
-// });
 
 $(document).ready(function() {
 

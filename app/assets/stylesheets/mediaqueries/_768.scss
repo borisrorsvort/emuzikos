@@ -242,5 +242,17 @@
   }
 }
 
+// Invite friends
+
+.invite_friend_block {
+  float: left;
+  width: 44% ;
+  margin-right: 2%;
+  &:last-child {
+    margin-right:  0;
+    width: 46%;
+  }
+}
+
 
 }/*/mediaquery*/

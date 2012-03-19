@@ -546,3 +546,9 @@ h1.username {
     border-color: darken($bg-alert-success, 10%);
   }
 }
+
+// invite friends
+
+.fb-comments, .fb-like-box {
+  margin-top: $baseline;
+}
