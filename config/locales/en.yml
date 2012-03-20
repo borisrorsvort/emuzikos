@@ -387,6 +387,7 @@ en:
       timeout: "Your session expired, please log in again to continue."
       unauthenticated: "You need to log in or sign up before continuing."
       unconfirmed: "You have to confirm your account before continuing."
+    login_with: "Log in with %{provider}"
     mailer: 
       confirmation_instructions: 
         subject: "Confirmation instructions"
@@ -434,9 +435,11 @@ en:
         forgot_password: "Forgot your password?"
         go_to_recovery_page: "Got to recovery page"
         have_account_already: "Have an account already?"
+    signup_with: "Sign up with %{provider}"
     unlocks: 
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       unlocked: "Your account was successfully unlocked. You are now logged in."
+    use_the_normal_form: "Or use the normal form"
   errors: 
     messages: 
       already_confirmed: "was already confirmed, please try to log in"

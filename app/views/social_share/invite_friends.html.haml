@@ -12,7 +12,7 @@
       =t(:'buttons.invite_your_friends_from_fb')
 
   .addthis_toolbox.addthis_default_style{"addthis:url" => user_url(@current_user)}
-    %a.addthis_button_tweet{"tw:url" => user_url(@current_user)}
+    %a.addthis_button_tweet{"tw:url" => user_url(@current_user), "addthis:title" => "An Example Title"}
     %a.addthis_button_facebook_send{"fb:like:href" => user_url(@current_user), "fb:like:layout" => "button_count"}
     .clear
   %script{:src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=borisrorsvort", :type => "text/javascript"}
