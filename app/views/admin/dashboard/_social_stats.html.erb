@@ -1,7 +1,10 @@
+
 <div id="social_chart" style="width: 380px; height: 300px;">
 </div>
 <div id="country_chart" style="width: 380px; height: 300px;">
 </div>
+
+
 <script type="text/javascript">
   $(function () {
     new Highcharts.Chart({
@@ -67,7 +70,7 @@
       series: [{
          type: 'pie',
          name: 'Social networks share',
-         data: 
+         data: <%= raw(countries) %>
        }]
     });
   });

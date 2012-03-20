@@ -45,12 +45,13 @@ ActiveAdmin::Dashboards.build do
     @facebook_users = Service.where( :provider => "facebook").count
     @twitter_users = Service.where( :provider => "twitter").count
     @users = @all_users - @facebook_users - @twitter_users
-    @coutries = users
+    @countries = User.select("users.country, count(users.country) AS country_count").group("country").map{|c| ["#{c.country}", c.country_count * 100 / @all_users]}
     div do
       render :partial => "social_stats", :locals => { :all_users => @all_users,
                                                       :facebook_users => @facebook_users,
                                                       :twitter_users => @twitter_users,
-                                                      :users => @users}
+                                                      :users => @users,
+                                                      :countries => @countries}
     end
   end
 

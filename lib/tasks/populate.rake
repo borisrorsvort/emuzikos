@@ -46,7 +46,7 @@ namespace :db do
       user.user_type = USER_TYPES
       user.searching_for = USER_TYPES
       user.zip = ["1040", "1060", "8400", "6700"]
-      user.country = ["BE"]
+      user.country = ["BE","FR"]
       user.created_at = 1.week.ago..Time.now
       user.visible = true
       user.youtube_video_id = ["JW5meKfy3fY", ""]
