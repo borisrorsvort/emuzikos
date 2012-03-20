@@ -31,6 +31,7 @@ gem "carmen"
 gem 'httparty'
 
 gem 'songkickr'
+gem "soundcloud"
 gem "hominid"
 gem 'preferences', :git => 'git://github.com/rds/preferences.git'
 gem 'twitter'
@@ -43,6 +44,8 @@ gem "friendly_id", "~> 4.0.0"
 
 gem 'sass-rails', " ~> 3.1.0"
 gem 'impressionist'
+
+gem 'wicked'
 
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"

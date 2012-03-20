@@ -45,6 +45,7 @@ ActiveAdmin::Dashboards.build do
     @facebook_users = Service.where( :provider => "facebook").count
     @twitter_users = Service.where( :provider => "twitter").count
     @users = @all_users - @facebook_users - @twitter_users
+    @coutries = users
     div do
       render :partial => "social_stats", :locals => { :all_users => @all_users,
                                                       :facebook_users => @facebook_users,

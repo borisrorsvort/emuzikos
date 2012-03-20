@@ -16,7 +16,7 @@ en:
         current_password: "Current password"
         email: Email
         genre: "Musical genres"
-        instruments: Instruments
+        instruments: "My instruments"
         invisible: Invisible
         last_active: "Recent activity"
         last_updater: "Last updater"
@@ -25,7 +25,7 @@ en:
         password: Password
         password_confirmation: "Password confirmation"
         references: "Musical References"
-        request_message: "Request message"
+        request_message: Message
         searching_for: "Searching for"
         songkick_username: "Songkick username"
         soundcloud_username: "SoundCloud username"
@@ -36,6 +36,16 @@ en:
         visible: Visible
         youtube_video_id: "YouTube Video Id"
         zip: "Zip code"
+    errors: 
+      models: 
+        user: 
+          attributes: 
+            email: 
+              blank: "cannot be blank"
+            password: 
+              blank: "cannot be blank"
+            soundcloud_username: 
+              invalid: "is invalid"
     models: 
       messages: Messages
       search: Search
@@ -58,6 +68,7 @@ en:
     delete: Delete
     edit: Edit
     home_signup: "sign up in 60 sec. It's free"
+    invite_your_friends_from_fb: "Invite your friends from Facebook"
     login: "Log in"
     registrations: 
       cancel_my_account: "Cancel my account"
@@ -362,6 +373,7 @@ en:
     ZM: Zambia
     ZW: Zimbabwe
     ZZ: "Unknown Region"
+    false: Norway
   devise: 
     confirmations: 
       confirmed: "Your account was successfully confirmed. You are now logged in."
@@ -375,6 +387,7 @@ en:
       timeout: "Your session expired, please log in again to continue."
       unauthenticated: "You need to log in or sign up before continuing."
       unconfirmed: "You have to confirm your account before continuing."
+    login_with: "Log in with %{provider}"
     mailer: 
       confirmation_instructions: 
         subject: "Confirmation instructions"
@@ -422,9 +435,11 @@ en:
         forgot_password: "Forgot your password?"
         go_to_recovery_page: "Got to recovery page"
         have_account_already: "Have an account already?"
+    signup_with: "Sign up with %{provider}"
     unlocks: 
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       unlocked: "Your account was successfully unlocked. You are now logged in."
+    use_the_normal_form: "Or use the normal form"
   errors: 
     messages: 
       already_confirmed: "was already confirmed, please try to log in"
@@ -475,6 +490,7 @@ en:
       update: 
         error: "Some informations need to be corrected"
         success: "Successfully updated your profile."
+  hip: Hip
   ie_warning: 
     click_to_download: "Click on the browser icon to go to the download page."
     description: "In order to provide the best user experience possible, we recommand you <strong>to upgrade</strong> your browser or to download a more modern one"
@@ -482,15 +498,16 @@ en:
     title: "Did you know that your browser is outdated?"
   instruments: 
     accordion: Accordion
+    baglama: Baglama
     bagpipe: "Bag Pipe"
     banjo: Banjo
     bass: Bass
-    bağlama: Bağlama
     bombo: Bombo
     bouzouki: Bouzouki
     cello: Cello
     charango: Charango
     cithar: Cithar
+    clarinet: Clarinet
     computer: Computer
     congas: Congas
     ? "double bass"
@@ -504,6 +521,7 @@ en:
     harp: Harp
     ? "hurdy gurdy"
     : "Hurdy Gurdy"
+    hurdy_gurdy: "Hurdy Gurdy"
     keyboard: Keyboard
     mandolin: Mandolin
     ocarina: Ocarina
@@ -516,6 +534,7 @@ en:
     spoons: Spoons
     tablas: Tablas
     trombone: Trombone
+    trompet: Trompet
     turntables: Turntables
     viola: Viola
     violin: Violin
@@ -578,31 +597,25 @@ en:
     easy_listening: "Easy Listening"
     electronic: Electronic
     flamenco: Flamenco
-    ? "french popular"
-    : "French popular"
+    folk: Folk
+    french_popular: "French Popular"
     funk: Funk
     fusion: Fusion
     gospel: Gospel
     hard-rock: "Hard Rock"
-    ? "hip hop"
-    : "Hip Hop"
+    hip: Hip
     hip_hop: "Hip Hop"
-    ? "indian classical"
-    : "Indian Classical"
+    indian_classical: "Indian Classical"
     instrumental: Instrumental
     irish: Irish
     jazz: Jazz
     latino: Latino
     metal: Metal
-    ? "new age"
-    : "New Age"
-    ? "new wave"
-    : "New Wave"
     new_age: "New Age"
+    new_wave: "New Wave"
     opera: Opera
     pop: Pop
-    ? "progressive rock"
-    : "Progressive Rock"
+    progressive_rock: "Progressive Rock"
     psychedelic_rock: "Psychedelic Rock"
     punk: Punk
     r&b: R&B
@@ -612,15 +625,14 @@ en:
     ska: Ska
     songwriter: "Song Writer"
     soundtrack: Soundtrack
-    ? "spoken word"
-    : "Spoken Word"
     spoken_word: "Spoken Word"
     vocal: Vocal
     world: World
   musician: musician
+  new_wave: "New Wave"
   pages: 
     homepage: 
-      description: "Looking for a local musician or band mates? Emuzikos.com is quick way to search for wanted bands and musicians"
+      description: "Looking for a local musician or band mates? Search and submit musicians classifieds"
       home_feature: 
         advantage: 
           body: "You will get a fully customizable profile, a private message inbox, and an awesome musicians, bands & agents database to search from."
@@ -639,6 +651,7 @@ en:
           body: "Emuzikos has an internal messaging system, which means that you don't need to share personal information on your profile and will avoid being spammed by robots crawling the web."
           title: "Care about privacy?"
         sharing: 
+          body: "Musicians deserve a better search tool. So, if you like the way Emuzikos manages musicians classifieds, please share this page around you."
           title: "Spread the love with musicians"
         sign_up: 
           body: "Creating an account takes less than 60 sec.  With just a couple of basic details, you  can start searching musicians band or agents. As you add more information, you become easier to find by other users."
@@ -654,8 +667,8 @@ en:
           title: "How does it look like?"
         testimonials: 
           title: "What people are saying about it?"
-      subtitle: "Emuzikos, the musician search tool you were missing"
-      title: "The first easy way to find local musicians. The place for wanted musicians or bands"
+      subtitle: "Emuzikos, more than a musicians classifieds site"
+      title: "The first easy way to find local musicians. Free musicians classifieds"
     privacy: 
       description: "The privacy policy of Emuzikos help you use the site by defining the scope of your privacy"
       title: "Privacy Policy"
@@ -664,12 +677,14 @@ en:
       title: "Terms of Agreement"
   pagination: 
     loading_more_results: "Loading more result"
+  progressive_rock: "Progressive rock"
   search_terms: 
     country: Country
     i_search_a: "I search a"
     mass_locate: "Zip code & City"
     music_style: "Musical genre"
-    who_plays: Instruments
+    user_type: "I am a"
+    who_plays: "who plays"
     who_search_for: "Who search for"
   services: 
     account_created: "Your account on Emuzikos has been created via %{provider}. In your <a href=\"%{link}\">account settings</a> you can change your personal information and add a local password."
@@ -691,6 +706,12 @@ en:
     logged_in_via: "Log in via"
     signed_in_successful: "Signed in successfully!"
     signed_in_successful_via: "Signed in successfully via"
+  social_share: 
+    invite_friends: 
+      invite_your_friends_from_fb: "I just discovered this awesome app to search for musicians and bands nearby. Check it out!"
+      meta_description: "Your profile is complete, it's time to met people know about it"
+      subtitle: "It's time to let your friends know about it!"
+      title: "Congratulations! your profile is now complete"
   souncloud_player: "SoundCloud player"
   tables: 
     headings: 
@@ -720,7 +741,7 @@ en:
         instrument_not_in_list: "Your instrument is not in the list?"
         personal_infos_advice: "We advice you not to share any personal informations such as email or phone number. Let people contact you using the internal messaging system instead."
         request_through_dashboard: "Please make a request using the help dashboard"
-      instruments_in_band_notice: "If you're a band, list instruments already present in the band"
+      instruments_in_band_notice: "List instruments you play or the ones already present in the band if you're a band."
       invisible_notice: "Make sure you're set as visible in order to appear in search results"
       medias: "Medias (optional)"
       meta_description: "Edit %{username}'s profile page. Musician, band or agents infos"
@@ -737,6 +758,8 @@ en:
           second: "Then copy the id form the page url. That's the text after 'watch?v='"
           third: "Paste it in your profile youtube video id field"
         title: "How to find your Youtube video id?"
+    form: 
+      searching_for: "What I'm searching for"
     index: 
       invite_more_users: "Invite more user to Emuzikos and help to make the community grow!"
       no_users: "We couldn't find any users corresponding to you search criterias."
@@ -756,7 +779,7 @@ en:
       from: from
       impressions_count: 
         one: "1 person has seen this profile"
-        other: "%{count} persons has seen this profile"
+        other: "%{count} persons have seen this profile"
       is_looking_for: "is looking for a"
       music: music
       tabs: 
@@ -770,8 +793,11 @@ en:
       youtube_video: "Youtube video"
     types: 
       agent: Agent
+      baglama: baglama
       band: Band
       bass: Bass
+      cithar: Cithar
+      computer: Computer
       drums: Drums
       flute: Flute
       guitar: Guitar
@@ -784,7 +810,11 @@ en:
       violin: Violin
       voice: Voice
       whistles: Whistles
+    your_classified_infos: "Your classified infos"
   views: 
     pagination: 
+      first: First
       last: Last
       next: Next
+      previous: Previous
+      truncate: "..."

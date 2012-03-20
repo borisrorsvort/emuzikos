@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @testimonials = @user.testimonials
     @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at") if @user.geocoded?
     @events = @user.get_events(@user.songkick_username)
-    
+    @tracks = @user.get_soundclound_tracks(@user.soundcloud_username)
 
     impressionist(@user)
 
@@ -50,12 +50,17 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
         gflash :success => true
 
-        if @user.visible? && !@user.instruments.empty? && !@user.user_type.blank? && @user.geocoded? && Rails.env == "production"
+        if @user.visible? && @user.profile_completed? && Rails.env == "production"
           @tweet = @user.user_type + ": " + @user.instruments.map {|i| i.name}.to_sentence + " available in " + @user.zip + " " + Carmen::country_name(@user.country) + " http://www.emuzikos.com/users/#{@user.id} "
           Twitter.update(@tweet) rescue nil
         end
 
-        redirect_to edit_user_path(@user)
+        if @user.profile_completed?
+          redirect_to social_share_path(:invite_friends)
+        else
+          redirect_to edit_user_path(@user)
+        end
+
     else
       gflash :error => true
       render :edit

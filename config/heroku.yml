@@ -25,6 +25,9 @@ config:
   production:
     GOOGLE_ANALYTICS: "UA–2826331–13"
 
+  staging:
+    RACK_ENV: "staging"
+
 collaborators:
   # Be sure to add yourself as a collaborator, otherwise your
   # access to the app will be revoked.

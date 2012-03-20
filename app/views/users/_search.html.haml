@@ -4,14 +4,13 @@
       = f.select :user_type_cont, User::USER_TYPES.map{|type| [ I18n.t(:"users.types.#{type}"), type ]}, :include_blank => t(:'search_terms.i_search_a'), :size => 50
       .clear
     .search_field
+      = f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), :include_blank => t(:'search_terms.who_search_for'), :size => 30
+      .clear
+    .search_field
       = f.select :genres_name_cont, genres.map{|g| [ I18n.t(:"musical_genres.#{g.name}"), g.name ]}, :include_blank => t(:'search_terms.music_style'), :size => 30
       .clear
     .search_field
       = f.select :instruments_name_cont, instruments.collect{|i| [ I18n.t(:"instruments.#{i.name}"), i.name ]}, :include_blank => t(:'search_terms.who_plays'), :size => 30
-      .clear
-    .search_field
-      = f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), :include_blank => t(:'search_terms.who_search_for'), :size => 30
-
       .clear
     .search_field
       .centered

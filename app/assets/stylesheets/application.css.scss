@@ -1,10 +1,8 @@
 /*
 *= require jquery-ui/jquery-ui-1.8.7.custom
-*= require uniform-themes/uniform.emuzikos
 *= require chosen/chosen
 *= require reveal
 *= require gritter
-*= require soundcloud/sc-player-emuzikos
 */
 
 
@@ -31,6 +29,7 @@
 @import "pagination";
 @import "tags";
 @import "main";
+@import "auth-buttons";
 
 /* MEDIA QUERIES */
 @import "mediaqueries/480";

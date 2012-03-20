@@ -6,11 +6,16 @@
   %header
     %h1= t(:'.title')
     %p!= t(:'.newsletter_agreement')
+
+  %h2= t(:"devise.signup_with", :provider => "Facebook")
+  %p
+    %a.btn-auth.btn-facebook{ :href => "/auth/facebook"}
+      = t(:"devise.signup_with", :provider => "Facebook")
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
     = devise_error_messages!
     .normal_login
-      %p
-        = f.hidden_field :preferred_language, :value => request.subdomains.first.present? ? "fr" : "en"
+      %h2= t(:"devise.use_the_normal_form")
+      = f.hidden_field :preferred_language, :value => request.subdomains.first.present? ? "fr" : "en"
       %p
         = f.label :username, t(:'activerecord.attributes.user.username')
         = f.text_field :username
@@ -35,11 +40,6 @@
 
 
     #remote.services_login
-      #services.box.field
-        %h5= t(:'.or_signup_using')
-        = link_to image_tag("icons/authbuttons/facebook_32.png"), "/auth/facebook"
-
-      .clear
       .shared_links
         = render  "devise/shared/links"
 
