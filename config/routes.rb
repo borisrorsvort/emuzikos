@@ -15,6 +15,7 @@ Emuzikos::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+  resources :social_share
   resources :friendships
   resources :testimonials
   resources :users do

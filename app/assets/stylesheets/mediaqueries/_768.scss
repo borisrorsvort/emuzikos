@@ -221,7 +221,7 @@
     .services_login {
       @include fluid_column(5%, 2);
       margin-top: 0;
-      padding: 5% 0 0 5%;
+      padding: 0% 0 0 5%;
       width: 50%; }
   }
 }
@@ -239,6 +239,18 @@
   }
   #logo_home {
     margin-bottom: 38px;
+  }
+}
+
+// Invite friends
+
+.invite_friend_block {
+  float: left;
+  width: 44% ;
+  margin-right: 2%;
+  &:last-child {
+    margin-right:  0;
+    width: 46%;
   }
 }
 

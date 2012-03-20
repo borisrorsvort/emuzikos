@@ -35,6 +35,9 @@ common: &default_settings
   youtube_it:
     api_key: 'AI39si7FayCLoIiujLg3XPJpYYH1kbn4PoEXev-lz3GVY305SkM9EU7weLeNmdRYvRkBFilD1Ms_nj8QNbeS6rDoBxVCpNK21g'
 
+  facebook:
+    app_id: '226327037396547'
+
   songkick:
     api_key: "cApdrGD0PiCPiJyw"
   social:
@@ -51,6 +54,8 @@ development:
 
 staging:
   <<: *default_settings
+  facebook:
+    app_id: '242929185733501'
   google:
     analytics:
       enabled: false
@@ -62,6 +67,8 @@ staging:
 
 production:
   <<: *default_settings
+  facebook:
+    app_id: '218956201460694'
   google:
     analytics:
       enabled: true

@@ -414,6 +414,8 @@ h1.username {
 }
 
 /* SERVICES */
+
+
 #remote {
   font-size: 0.75em; }
 .services_list {
@@ -545,4 +547,10 @@ h1.username {
     @include inset(lighten($bg-alert-success,20%));
     border-color: darken($bg-alert-success, 10%);
   }
+}
+
+// invite friends
+
+.fb-comments, .fb-like-box {
+  margin-top: $baseline;
 }

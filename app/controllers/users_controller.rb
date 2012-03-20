@@ -55,7 +55,12 @@ class UsersController < ApplicationController
           Twitter.update(@tweet) rescue nil
         end
 
-        redirect_to edit_user_path(@user)
+        if @user.profile_completed?
+          redirect_to social_share_path(:invite_friends)
+        else
+          redirect_to edit_user_path(@user)
+        end
+
     else
       gflash :error => true
       render :edit

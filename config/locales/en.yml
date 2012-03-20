@@ -68,6 +68,7 @@ en:
     delete: Delete
     edit: Edit
     home_signup: "sign up in 60 sec. It's free"
+    invite_your_friends_from_fb: "Invite your friends from Facebook"
     login: "Log in"
     registrations: 
       cancel_my_account: "Cancel my account"
@@ -386,6 +387,7 @@ en:
       timeout: "Your session expired, please log in again to continue."
       unauthenticated: "You need to log in or sign up before continuing."
       unconfirmed: "You have to confirm your account before continuing."
+    login_with: "Log in with %{provider}"
     mailer: 
       confirmation_instructions: 
         subject: "Confirmation instructions"
@@ -433,9 +435,11 @@ en:
         forgot_password: "Forgot your password?"
         go_to_recovery_page: "Got to recovery page"
         have_account_already: "Have an account already?"
+    signup_with: "Sign up with %{provider}"
     unlocks: 
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       unlocked: "Your account was successfully unlocked. You are now logged in."
+    use_the_normal_form: "Or use the normal form"
   errors: 
     messages: 
       already_confirmed: "was already confirmed, please try to log in"
@@ -702,6 +706,12 @@ en:
     logged_in_via: "Log in via"
     signed_in_successful: "Signed in successfully!"
     signed_in_successful_via: "Signed in successfully via"
+  social_share: 
+    invite_friends: 
+      invite_your_friends_from_fb: "I just discovered this awesome app to search for musicians and bands nearby. Check it out!"
+      meta_description: "Your profile is complete, it's time to met people know about it"
+      subtitle: "It's time to let your friends know about it!"
+      title: "Congratulations! your profile is now complete"
   souncloud_player: "SoundCloud player"
   tables: 
     headings: 
@@ -783,6 +793,7 @@ en:
       youtube_video: "Youtube video"
     types: 
       agent: Agent
+      baglama: baglama
       band: Band
       bass: Bass
       cithar: Cithar
