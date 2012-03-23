@@ -374,6 +374,8 @@ fr:
     ZW: Zimbabwe
     ZZ: "région indéterminée"
     false: Norvège
+    ? "false"
+    : Norvège
   devise: 
     confirmations: 
       confirmed: "Votre compte a été confirmé. Vous êtes à présent connecté(e)."
@@ -514,13 +516,13 @@ fr:
     : Contrebasse
     double_bass: Contrebasse
     drums: Batterie
+    euphonium: Euphonium
     flute: Flute
     guitar: Guitare
     hang: Hang
     harmonica: Harmonica
     harp: Harpe
-    ? "hurdy gurdy"
-    : "Vielle à roue"
+    horn: Cor
     hurdy_gurdy: "Vielle à roue"
     keyboard: Clavier
     mandolin: Mandoline
@@ -531,6 +533,7 @@ fr:
     saxophone: Saxophone
     saz: Saz
     sitar: Sitare
+    sousaphone: Soubassophone
     spoons: Cuillères
     tablas: Tablas
     trombone: Trombone
@@ -611,10 +614,13 @@ fr:
     jazz: Jazz
     latino: Latino
     metal: Métal
+    metalcore: "Métal Core"
     new_age: "New age"
     new_wave: "New Wave"
     opera: Opera
     pop: Pop
+    post_hardcore: "Post Hardcore"
+    post_rock: "Post Rock"
     progressive_rock: "Rock progressif"
     psychedelic_rock: "Rock psychédélique"
     punk: Punk
