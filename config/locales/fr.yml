@@ -374,6 +374,8 @@ fr:
     ZW: Zimbabwe
     ZZ: "région indéterminée"
     false: Norvège
+    ? "false"
+    : Norvège
   devise: 
     confirmations: 
       confirmed: "Votre compte a été confirmé. Vous êtes à présent connecté(e)."
@@ -514,11 +516,13 @@ fr:
     : Contrebasse
     double_bass: Contrebasse
     drums: Batterie
+    euphonium: Euphonium
     flute: Flute
     guitar: Guitare
     hang: Hang
     harmonica: Harmonica
     harp: Harpe
+    horn: Cor
     ? "hurdy gurdy"
     : "Vielle à roue"
     hurdy_gurdy: "Vielle à roue"
@@ -531,6 +535,7 @@ fr:
     saxophone: Saxophone
     saz: Saz
     sitar: Sitare
+    sousaphone: Soubassophone
     spoons: Cuillères
     tablas: Tablas
     trombone: Trombone
@@ -611,10 +616,14 @@ fr:
     jazz: Jazz
     latino: Latino
     metal: Métal
+    metalcore: "Métal Core"
     new_age: "New age"
     new_wave: "New Wave"
     opera: Opera
     pop: Pop
+    post_hardcore: "Post Hardcore"
+    post_punk: "Post punk"
+    post_rock: "Post Rock"
     progressive_rock: "Rock progressif"
     psychedelic_rock: "Rock psychédélique"
     punk: Punk
@@ -658,7 +667,7 @@ fr:
           title: "Inscription rapide"
       keywords: "musicien, recherche de musicien, musiciens près de chez moi, recherche de musiciens locaux"
       latest_testimonials: "Derniers témoignages de musiciens"
-      moto: "La recherche de musiciens <strong>facile & rapide</strong>"
+      moto: "La recherche de musiciens <strong>facile & gratuite</strong>"
       sections: 
         screenshots: 
           inbox: "Votre boîte à message"

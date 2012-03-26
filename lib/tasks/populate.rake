@@ -9,7 +9,7 @@ namespace :db do
 
     puts 'Delete previous db'
 
-    [ User, Friendship, Message, Service, Testimonial, Instrument, Skill, Genre, Taste, AdminUser ].each(&:delete_all)
+    system "rake db:drop; rake db:create; rake db:migrate"
 
     puts 'Creating instruments'
 
