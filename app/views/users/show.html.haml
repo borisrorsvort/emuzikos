@@ -111,9 +111,9 @@
                 .section.user_general_infos
                   .avatar.small
                     - if user.avatar.present?
-                      = link_to(image_tag(user.avatar.url(:gallery)), user_path(user), :class => "tooltip", :title => "#{user.username}")
+                      = link_to(image_tag(user.avatar.url(:gallery), :alt => "#{user.username + "'s picture"}"), user_path(user), :class => "tooltip", :title => "#{user.username}")
                     -else
-                      = link_to(image_tag("backgrounds/avatar-default.gif"), user_path(user), :class => "tooltip", :title => "#{user.username}")
+                      = link_to(image_tag("backgrounds/avatar-default.gif", :alt => "#{user.username + "'s picture"}"), user_path(user), :class => "tooltip", :title => "#{user.username}")
                     .clear
               .clear
 
@@ -152,9 +152,9 @@
 %section.left_drawer.fadeInLeft
   .inner
     - if @user.avatar
-      = image_tag @user.avatar.url(:normal), :class => "profile_picture"
+      = image_tag @user.avatar.url(:normal), :class => "profile_picture", :alt => "#{@user.username + "'s picture"}"
     - else
-      = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture"
+      = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture", :alt => "#{@user.username + "'s picture"}"
     - if @user.geocoded?
-      %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "map_container"}
+      %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "map_container", :alt => "#{user.username + "'s location"}"}
 .clear
