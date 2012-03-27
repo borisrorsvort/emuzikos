@@ -38,7 +38,6 @@ gem 'twitter'
 gem 'geocoder'
 gem 'rack-no-www'
 gem 'pg'
-gem "taps"
 gem 'meta-tags', :require => 'meta_tags'
 gem "friendly_id", "~> 4.0.0"
 
@@ -73,6 +72,7 @@ group :development, :test do
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
+  gem "taps"
 end
 
 gem 'localeapp'
