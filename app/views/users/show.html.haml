@@ -138,8 +138,6 @@
         #tab_medias
           - if @tracks.present?
             %h3= t(:souncloud_player)
-            / .soundcloud_block
-            /   = link_to "#{@user.username} #{t(:'.tracks')}", "http://soundcloud.com/#{@user.soundcloud_username}", :class => "sc-player"
             - for track in @tracks do
               %iframe{:frameborder => "no", :height => "166", :scrolling => "no", :src => "http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{track.id}&show_artwork=true", :width => "100%"}
 
@@ -156,5 +154,5 @@
     - else
       = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture", :alt => "#{@user.username + "'s picture"}"
     - if @user.geocoded?
-      %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "map_container", :alt => "#{user.username + "'s location"}"}
+      %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "map_container", :alt => "#{user.username}'s location"}
 .clear
