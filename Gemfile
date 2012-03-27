@@ -38,7 +38,7 @@ gem 'twitter'
 gem 'geocoder'
 gem 'rack-no-www'
 gem 'pg'
-
+gem "taps"
 gem 'meta-tags', :require => 'meta_tags'
 gem "friendly_id", "~> 4.0.0"
 

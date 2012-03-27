@@ -154,5 +154,5 @@
     - else
       = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture", :alt => "#{@user.username + "'s picture"}"
     - if @user.geocoded?
-      %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "map_container", :alt => "#{user.username}'s location"}
+      %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "map_container", :alt => "#{@user.username}'s location"}
 .clear
