@@ -688,7 +688,7 @@ en:
   search_terms: 
     country: Country
     i_search_a: "I search a"
-    mass_locate: "Zip code & City"
+    mass_locate: "Your city"
     music_style: "Musical genre"
     user_type: "I am a"
     who_plays: "who plays"
@@ -718,7 +718,7 @@ en:
       invite_your_friends_from_fb: "I just discovered this awesome app to search for musicians and bands nearby. Check it out!"
       meta_description: "Your profile is complete, it's time to met people know about it"
       subtitle: "It's time to let your friends know about it!"
-      title: "Congratulations! your profile is now complete"
+      title: "Congratulations! Thank you to be a part of Emuzikos community!"
   souncloud_player: "SoundCloud player"
   tables: 
     headings: 

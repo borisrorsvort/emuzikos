@@ -47,7 +47,7 @@ class MessagesController < ApplicationController
       if @message.recipient.prefers_message_notifications == true
         Notifier.user_message(@message, @user, @message.recipient).deliver
       end
-      redirect_to user_messages_path(@user)
+      redirect_to social_share_path(:invite_friends)
     else
       render :new
     end

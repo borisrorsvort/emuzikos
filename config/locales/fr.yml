@@ -688,7 +688,7 @@ fr:
   search_terms: 
     country: Pays
     i_search_a: "Je cherche un"
-    mass_locate: "Ville, région, ..."
+    mass_locate: "Votre ville ou région"
     music_style: "Genre musical"
     user_type: "Je suis un"
     who_plays: "qui joue"
@@ -718,7 +718,7 @@ fr:
       invite_your_friends_from_fb: "Je viens de découvrir cette application pour chercher des musiciens et groupes près de chez toi. Rejoins-moi!"
       meta_description: "Votre profil complété, il est temps d'en parler à vos amis"
       subtitle: "Il est temps d'en parler à tout vos amis!"
-      title: "Félicitation! Votre profil est bien complété"
+      title: "Félicitation! Merci de faire faire partie de le communauté Emuzikos"
   souncloud_player: "Lecteur SoundCloud"
   tables: 
     headings: 

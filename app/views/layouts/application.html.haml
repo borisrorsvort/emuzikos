@@ -1,7 +1,7 @@
 = render "/layouts/head"
 
 %body{:id => @body_id ? @body_id: controller.controller_name, :class => @body_class ? controller.action_name + " clearfix " + @body_class : controller.action_name + " clearfix "}
-
+  #fb-root
   = render  "shared/ie_warning"
 
   %section#header
