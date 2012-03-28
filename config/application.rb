@@ -37,7 +37,7 @@ module Emuzikos
       app.routes.append{ match '*path', :to => 'errors#404', :constraints => lambda{|request| !request.path.starts_with?("/auth") }} unless config.consider_all_requests_local
     end
 
-    config.active_record.whitelist_attributes = true
+    #config.active_record.whitelist_attributes = true
   end
 end
 #help against freezing when method missing
