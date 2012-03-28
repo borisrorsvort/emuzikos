@@ -100,4 +100,8 @@ describe User do
 
   end
 
+  describe "messages" do
+    it { should have_private_messages }
+  end
+
 end

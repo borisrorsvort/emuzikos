@@ -73,6 +73,13 @@ group :development, :test do
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem "taps"
+
+  platforms :mri_18 do
+    gem "ruby-debug"
+  end
+  platforms :mri_19 do
+    gem "ruby-debug19", :require => "ruby-debug"
+  end
 end
 
 gem 'localeapp'

@@ -6,7 +6,7 @@
     %li.icon-messages
       =link_to user_messages_path(current_user), :class => (controller.controller_name == "messages" || current_page?(user_contacts_path(current_user)) ) ? "current" : nil do
         = t(:'menu.messages.messages')
-        = unread_messages_count unless  current_user.received_messages.un_read.count == 0
+        = unread_messages_count if current_user.unread_messages?
 
     %li.icon-user
       =link_to t(:'menu.profile.show'), edit_user_url(current_user),

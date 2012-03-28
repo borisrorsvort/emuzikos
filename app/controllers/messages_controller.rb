@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.read(params[:id], current_user)
+    @message = Message.read_message(params[:id], current_user)
   end
 
   def new

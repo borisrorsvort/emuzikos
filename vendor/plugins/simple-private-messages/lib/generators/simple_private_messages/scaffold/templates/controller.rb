@@ -11,7 +11,7 @@ class <%= plural_camel_case_name %>Controller < ApplicationController
   end
   
   def show
-    @<%= singular_lower_case_name %> = <%= singular_camel_case_name %>.read(params[:id], current_user)
+    @<%= singular_lower_case_name %> = <%= singular_camel_case_name %>.read_message(params[:id], current_user)
   end
   
   def new
@@ -49,7 +49,7 @@ class <%= plural_camel_case_name %>Controller < ApplicationController
         }
         flash[:notice] = "Messages deleted"
       end
-      redirect_to user_<%= singular_lower_case_name %>_path(@<%= singular_lower_case_parent %>, @<%= plural_lower_case_name %>)
+      redirect_to :back
     end
   end
   

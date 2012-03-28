@@ -28,7 +28,6 @@
 
   / Microsoft.
   %meta{:content => "on", "http-equiv" => "cleartype"}
-  %meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}
   %link{:href => 'http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold', :rel => 'stylesheet', :type => 'text/css'}
 
   /[if lt IE 9]
@@ -38,7 +37,7 @@
 
   = javascript_include_tag "polyfills"
 
-  = stylesheet_link_tag "application" 
+  = stylesheet_link_tag "application"
 
   = yield :stylesheets
 

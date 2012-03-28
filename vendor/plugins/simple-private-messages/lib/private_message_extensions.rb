@@ -22,9 +22,7 @@ module Professionalnerd # :nodoc:
             belongs_to :recipient,
                        :class_name => options[:class_name],
                        :foreign_key => 'recipient_id'
-            validates_presence_of :subject, :body
-            validates_presence_of :to, :on => :create, :message => "can't be blank"
-            
+
             extend ClassMethods 
             include InstanceMethods 
           end 
@@ -37,7 +35,7 @@ module Professionalnerd # :nodoc:
       module ClassMethods
         # Ensures the passed user is either the sender or the recipient then returns the message.
         # If the reader is the recipient and the message has yet not been read, it marks the read_at timestamp.
-        def read(id, reader)
+        def read_message(id, reader)
           message = find(id, :conditions => ["sender_id = ? OR recipient_id = ?", reader, reader])
           if message.read_at.nil? && reader == message.recipient
             message.read_at = Time.now
@@ -49,7 +47,7 @@ module Professionalnerd # :nodoc:
 
       module InstanceMethods
         # Returns true or false value based on whether the a message has been read by it's recipient.
-        def read?
+        def message_read?
           self.read_at.nil? ? false : true
         end
 
