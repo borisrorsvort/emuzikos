@@ -30,14 +30,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
   validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
   validates_format_of :soundcloud_username, :with => /^[^ ]+$/, :allow_blank => true
-
-  validates_attachment_content_type :avatar,
-    :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'],
-    :message => "only image files are allowed"
-  validates_attachment_size :avatar,
-      :less_than => 1.megabyte, #another option is :greater_than
-      :message => "max size is 1M"
-
+  validates_attachment_content_type :avatar, :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], :message => "only image files are allowed"
+  validates_attachment_size :avatar, :less_than => 1.megabyte, :message => "max size is 1M"
   validates_uri_existence_of :youtube_video_id_response, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :on => :update, :message => "is not valid. Please check if you didn't put the whole url or your username instead of just the id"
 
   USER_TYPES = %w(band musician agent)
@@ -83,11 +77,9 @@ class User < ActiveRecord::Base
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )
   scope :except_current_user, lambda { |user| where("users.id != ?", user.id) }
   scope :visible, where(:visible => true)
-
   scope :bands, where(:user_type => "band")
   scope :musicians, where(:user_type => "musician")
   scope :agents, where(:user_type => "agent")
-
 
   def self.mass_locate(location)
     self.near(location.to_s, 10)
@@ -143,10 +135,10 @@ class User < ActiveRecord::Base
     def set_profile_status
       logger.debug("Updating profile status ...")
       if self.user_type.present? && self.geocoded? && self.searching_for.present? && self.genres.present? && self.instruments.present?
-        logger.debug("Profile complete!")
+        #logger.debug("Profile complete!")
         self.update_column('profile_completed', true)
       else
-        logger.debug("Profile not complete")
+        #logger.debug("Profile not complete")
         self.update_column('profile_completed', false)
       end
     end
@@ -192,3 +184,43 @@ class User < ActiveRecord::Base
     end
 
 end
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer(4)      not null, primary key
+#  username               :string(255)
+#  email                  :string(255)
+#  encrypted_password     :string(255)
+#  created_at             :datetime
+#  updated_at             :datetime
+#  user_type              :string(255)
+#  references             :string(255)
+#  zip                    :string(255)
+#  country                :string(255)
+#  searching_for          :string(255)
+#  request_message        :text
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer(4)
+#  avatar_updated_at      :datetime
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer(4)      default(0)
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  latitude               :float
+#  longitude              :float
+#  visible                :boolean(1)      default(TRUE)
+#  songkick_username      :string(255)     default("")
+#  youtube_video_id       :string(255)     default("")
+#  soundcloud_username    :string(255)     default("")
+#  slug                   :string(255)
+#  profile_completed      :boolean(1)      default(FALSE)
+#  impressions_count      :integer(4)      default(0)
+#
+

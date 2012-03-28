@@ -11,3 +11,19 @@ class Message < ActiveRecord::Base
   end
 
 end
+# == Schema Information
+#
+# Table name: messages
+#
+#  id                :integer(4)      not null, primary key
+#  sender_id         :integer(4)
+#  recipient_id      :integer(4)
+#  sender_deleted    :boolean(1)      default(FALSE)
+#  recipient_deleted :boolean(1)      default(FALSE)
+#  subject           :string(255)
+#  body              :text
+#  read_at           :datetime
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
