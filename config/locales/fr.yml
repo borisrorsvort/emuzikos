@@ -592,6 +592,7 @@ fr:
   musical_genres: 
     alternative: Alternative
     blues: Blues
+    bossa_nova: "Bossa Nova"
     children: Enfant
     classical: Classique
     comedy: Comédie
@@ -632,8 +633,10 @@ fr:
     rock: Rock
     ska: Ska
     songwriter: "Chanson à textes"
+    soul: Soul
     soundtrack: "Bande son"
     spoken_word: Chanté-parlé
+    spychedelic_rock: "Rock psychédélique"
     vocal: Vocal
     world: "Musique du monde"
   musician: musician
