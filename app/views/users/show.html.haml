@@ -15,26 +15,23 @@
     });
 
 
--if current_user
-  - content_for :sub_nav do
-    - if @user == current_user
-      %ul#sub_sections
-        %li
-          = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
-        %li
-          = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
-        %li
-          = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-        %li
-          = link_to t(:'menu.profile.authentications'), services_path
-      .clear
-
-    - else
-      #actions_set
-        = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), :back, :class => "button back profile"
-        -if !@current_user
-          = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "button submit contact "
+- content_for :sub_nav do
+  - if @user == current_user
+    %ul#sub_sections
+      %li
+        = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+      %li
+        = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
+      %li
+        = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
+      %li
+        = link_to t(:'menu.profile.authentications'), services_path
     .clear
+
+  - else
+    #actions_set
+      = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), :back, :class => "button back profile"
+  .clear
 
 %section.right_drawer.profile
   .inner_profile_wrapper
@@ -56,7 +53,7 @@
           = link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user.id), :method => :post, :class => "button add_to_contact_list"
     -if !current_user
       .friendly_actions
-        = link_to t(:'buttons.contact'), new_user_registration_path, :class => "button contact"
+        = link_to t(:'buttons.contact'), new_user_registration_path, :class => "button contact tooltip", :title => t(:'tooltips.send_message_not_signed_in')
     .impressionist_count
       = t(:'.impressions_count', :count => @user.impressionist_count(:filter=>:ip_address))
     .spread

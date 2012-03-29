@@ -86,7 +86,7 @@ fr:
     update: "Mettre à jour"
   common: 
     are_you_sure: "Etes-vous sûr"
-    base_title: "Emuzikos, l'outil de recherche pour musiciens"
+    base_title: Emuzikos
     by: par
     created_by: "Créé par"
     home: Accueil
@@ -564,6 +564,7 @@ fr:
       edit: "Modifier mon profil"
       public: "Profil public"
       show: Profil
+    search: "Annonces pour musiciens"
     signup: Inscrivez-vous
     terms: "Conditions générales"
     testimonials: Témoignages
@@ -734,6 +735,7 @@ fr:
     back_to_home: "Retour à l'accueil"
     email: "Doit être une adresse email valide"
     password: "Doit contenir au moins 5 caractères"
+    send_message_not_signed_in: "Vous devez créer un compte ou vous connecter pour pouvoir envoyer un message"
   users: 
     contacts: 
       description: "Tout vos contacts"
@@ -768,10 +770,12 @@ fr:
     form: 
       searching_for: "Ce que je recherche"
     index: 
+      description: "Annonces gratuites pour musiciens amateurs et professionnels. Cherchez des musiciens près de chez soi, c'est facile !"
       invite_more_users: "Invitez plus d'utilisateurs sur Emuzikos et aidez la communauté à grandir!"
+      keywords: "musicien, recherche, recherche de musiciens, musiciens près de chez soi, annonces pour musiciens"
       no_users: "Nous n'avons pu trouver aucun utilisateur correspondant à votre recherche."
       processing_search: "Recherche en cours"
-      title: "Listes des utilisateurs"
+      title: "Listes des annonces pour musiciens, groupes et agents près de chez vous."
     location: Localisation
     musician_infos: "Vos Informations"
     notifications: Notifications

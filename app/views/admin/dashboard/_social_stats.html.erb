@@ -3,7 +3,8 @@
 </div>
 <div id="country_chart" style="width: 380px; height: 300px;">
 </div>
-
+<div id="language_chart" style="width: 380px; height: 300px;">
+</div>
 
 <script type="text/javascript">
   $(function () {
@@ -72,6 +73,40 @@
          name: 'Social networks share',
          data: <%= raw(countries) %>
        }]
-    });
-  });
+      });
+   });
+   $(function () {
+      new Highcharts.Chart({
+         chart: {
+            renderTo: 'language_chart',
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false },
+         title: { text: 'Country representation' },
+         tooltip: {
+            formatter: function() {
+               return '<b>'+ this.point.name +'</b>: ' + this.y + " ("+ this.percentage +' %)';
+            }
+         },
+         plotOptions: {
+            pie: {
+               allowPointSelect: true,
+               cursor: 'pointer',
+               dataLabels: {
+                  enabled: true,
+                  color: '#000000',
+                  connectorColor: '#000000',
+                  formatter: function() {
+                     return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+                  }
+               }
+            }
+         },
+         series: [{
+            type: 'pie',
+            name: 'Social networks share',
+            data: <%= raw(languages) %>
+          }]
+      });
+   });
 </script>

@@ -86,7 +86,7 @@ en:
     update: Update
   common: 
     are_you_sure: "Are you sure?"
-    base_title: "Emuzikos, the musicians search tool"
+    base_title: Emuzikos
     by: by
     created_by: "Created by"
     home: Home
@@ -564,6 +564,7 @@ en:
       edit: "Edit my profile"
       public: "Public profile"
       show: Profile
+    search: "Musicians Classifieds"
     signup: "Sign up"
     terms: "Terms of agreement"
     testimonials: Testimonials
@@ -734,6 +735,7 @@ en:
     back_to_home: "Back to Homepage"
     email: "Must be a valid email address"
     password: "Must contains at least 5 characters"
+    send_message_not_signed_in: "You must sign up or log in to send messages"
   users: 
     contacts: 
       description: "All your contacts"
@@ -768,10 +770,12 @@ en:
     form: 
       searching_for: "What I'm searching for"
     index: 
+      description: "Listing of pro and amateur musicians, band classifieds or agents. Find your future band mates."
       invite_more_users: "Invite more user to Emuzikos and help to make the community grow!"
+      keywords: "musician, search, musician search, local musicians, search local musician, musicians classifieds"
       no_users: "We couldn't find any users corresponding to you search criterias."
       processing_search: "Processing search"
-      title: "Users Listing"
+      title: "Search all Musicians Classifieds, local bands or agents nearby."
     location: Location
     musician_infos: "Your infos"
     notifications: Notifications

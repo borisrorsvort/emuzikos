@@ -24,7 +24,7 @@ label {
   margin: #{$baseline / 2} 0 0;
   font-weight   : bold;
   display       : block;
-  &.habtm {
+  &.inline {
     margin-top: 3px !important;
     display: inline-block;
   }}

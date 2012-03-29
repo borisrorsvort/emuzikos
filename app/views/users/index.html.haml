@@ -1,6 +1,6 @@
 - title t(:'.title')
-- description 'Listing of local musicians, bands or agents. Emuzikos.com help you find your future band mates'
-- keywords 'musician, search, musician search, local musicians, search local musician'
+- description t(:'.description')
+- keywords t(:'.keywords')
 
 - content_for :sub_nav do
   = render "search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen.countries
