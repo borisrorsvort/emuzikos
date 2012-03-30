@@ -4,7 +4,7 @@ class SitemapsController < ApplicationController
 
   def show
     @users = User.visible.geocoded.profiles_completed.select("DISTINCT users.*")
-    @other_routes = ["","users/sign_in","users/sign_up","testimonials"]
+    @other_routes = ["","users/sign_in","users/sign_up","testimonials", "users"]
     respond_to do |format|
       format.xml
     end
