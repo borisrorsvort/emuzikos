@@ -4,10 +4,10 @@ xml.instruct! :xml, :version=> '1.0', :encoding => "UTF-8"
 xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @users.each do |user|
     xml.url {
-      if locale == "fr"
-        xml.loc("#{request.protocol}#{request.host}#{user_path(user)}")
+      if request.host == "emuzikos.com"
+        xml.loc("http://emuzikos.com#{user_path(user)}")
       else
-        xml.loc("#{request.protocol}#{request.host}#{user_path(user)}")
+        xml.loc("http://fr.emuzikos.com#{user_path(user)}")
       end
       xml.changefreq("daily")
     }
@@ -15,7 +15,7 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
 
   @other_routes.each do |other_route|
     xml.url {
-      xml.loc("#{request.protocol}#{request.host}/#{other_route.to_s}")
+      xml.loc("#{roo_url}#{other_route.to_s}")
       xml.changefreq("daily")
     }
   end
