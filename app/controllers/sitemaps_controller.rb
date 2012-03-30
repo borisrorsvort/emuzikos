@@ -1,6 +1,6 @@
 class SitemapsController < ApplicationController
   respond_to :xml
-  caches_page :show
+  #caches_page :show
 
   def show
     @users = User.visible.geocoded.profiles_completed.select("DISTINCT users.*")

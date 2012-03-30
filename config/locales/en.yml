@@ -512,33 +512,45 @@ en:
     clarinet: Clarinet
     computer: Computer
     congas: Congas
+    dhoki: Dhoki
+    dholak: Dholak
     ? "double bass"
     : "Double Bass"
     double_bass: "Doule bass"
     drums: Drums
     euphonium: Euphonium
     flute: Flute
+    gatam: Gatam
     guitar: Guitar
     hang: Hang
     harmonica: Harmonica
+    harmonium: Harmonium
     harp: Harp
     horn: Horn
     hurdy_gurdy: "Hurdy Gurdy"
     keyboard: Keyboard
     mandolin: Mandolin
+    mirdangam: Mirdangam
     ocarina: Ocarina
     oud: Oud
     percussions: Percussions
     piano: Piano
+    santoor: Santoor
+    sarod: Sarod
     saxophone: Saxophone
     saz: Saz
+    shennai: Shennai
     sitar: Sitar
     sousaphone: Sousaphone
     spoons: Spoons
+    swaramandal: Swaramandal
     tablas: Tablas
+    tambura: Tambura
+    theremin: Theremin
     trombone: Trombone
     trompet: Trompet
     turntables: Turntables
+    veena: Veena
     viola: Viola
     violin: Violin
     voice: Voice
