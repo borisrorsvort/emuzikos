@@ -5,9 +5,9 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @users.each do |user|
     xml.url {
       if locale == "fr"
-        xml.loc("#{root_url}#{user_path(user)}")
+        xml.loc("#{request.protocol}#{request.host}#{user_path(user)}")
       else
-        xml.loc("#{root_url}#{user_path(user)}")
+        xml.loc("#{request.protocol}#{request.host}#{user_path(user)}")
       end
       xml.changefreq("daily")
     }
@@ -15,7 +15,7 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
 
   @other_routes.each do |other_route|
     xml.url {
-      xml.loc("#{root_url}#{other_route.to_s}")
+      xml.loc("#{request.protocol}#{request.host}/#{other_route.to_s}")
       xml.changefreq("daily")
     }
   end
