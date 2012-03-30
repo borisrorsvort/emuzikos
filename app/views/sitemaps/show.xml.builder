@@ -4,10 +4,10 @@ xml.instruct! :xml, :version=> '1.0', :encoding => "UTF-8"
 xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @users.each do |user|
     xml.url {
-      if request.subdomains.first == "fr"
-        xml.loc("http://fr.emuzikos.com#{user_path(user)}")
+      if locale == "fr"
+        xml.loc("#{root_url}#{user_path(user)}")
       else
-        xml.loc("http://emuzikos.com#{user_path(user)}")
+        xml.loc("#{root_url}#{user_path(user)}")
       end
       xml.changefreq("daily")
     }
