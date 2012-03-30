@@ -4,7 +4,7 @@ xml.instruct! :xml, :version=> '1.0', :encoding => "UTF-8"
 xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @users.each do |user|
     xml.url {
-      xml.loc("#{user_url(user, :subdomain => locale.to_s == 'en' ? false : locale.to_s) }" )
+      xml.loc("#{user_url(user, :subdomain => request.subdomains.first.nil? ? false : request.subdomains.first.to_s) }" )
       xml.changefreq("daily")
     }
   end
