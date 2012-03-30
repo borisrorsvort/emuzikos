@@ -5,9 +5,9 @@ xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @users.each do |user|
     xml.url {
       if request.subdomains.first == "fr"
-        xml.loc("#{user_url(user, :subdomain => 'fr')}")
+        xml.loc("http://fr.emuzikos.com#{user_path(user)}")
       else
-        xml.loc("#{user_url(user, :subdomain => nil)}")
+        xml.loc("http://emuzikos.com#{user_path(user)}")
       end
       xml.changefreq("daily")
     }
