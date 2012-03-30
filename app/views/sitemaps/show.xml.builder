@@ -4,10 +4,10 @@ xml.instruct! :xml, :version=> '1.0', :encoding => "UTF-8"
 xml.tag! 'urlset', 'xmlns' => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
   @users.each do |user|
     xml.url {
-      if request.subdomains.first != ""
-        xml.loc("#{user_url(user)}")
-      else
+      if request.subdomains.present?
         xml.loc("#{user_url(user, :subdomain => request.subdomains.first.to_s)}")
+      else
+        xml.loc("#{user_url(user)}")
       end
       xml.changefreq("daily")
     }
