@@ -7,6 +7,7 @@ end
 
 
 require File.expand_path('../config/application', __FILE__)
+require 'rake/dsl_definition'
 require 'rake'
 # require 'sitemap_generator/tasks' rescue LoadError
 

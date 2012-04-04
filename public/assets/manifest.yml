@@ -7,7 +7,7 @@ app-samples/search-normal.jpg: app-samples/search-normal-5664351f266be6362548912
 app-samples/search-thumb.jpg: app-samples/search-thumb-fa2863d2356be1703b231424d3b4647c.jpg
 backgrounds/Jcrop.gif: backgrounds/Jcrop-a27a4d9b6e3d219e2b1771de607973cf.gif
 backgrounds/avatar-default.gif: backgrounds/avatar-default-a1bb54be49c4925a7b2d09b8ebdb6476.gif
-backgrounds/bg-footer.gif: backgrounds/bg-footer-2ce54adec0642a81bf90878e4cb6121c.gif
+backgrounds/bg-footer.gif: backgrounds/bg-footer-e3d08ead97d5e5ac3f0ae530f6bf03df.gif
 backgrounds/bg-music-notes.png: backgrounds/bg-music-notes-7f65311f4760f85991e21ac48e12d294.png
 backgrounds/bg-sidebar.png: backgrounds/bg-sidebar-d95fadb1d4448367023d137958b7b66a.png
 backgrounds/flag.png: backgrounds/flag-6fcd6a2197a334e59e9889066517817a.png
@@ -60,8 +60,8 @@ marketing/concert.jpg: marketing/concert-5b546e9c5ff305ec4e8e9ef09810160c.jpg
 active_admin.js: active_admin-412dbb297e3bd4acd32f0017dad67c57.js
 application.js: application-4b74021b2bda4b0c906e83e73049d524.js
 active_admin.css: active_admin-4d885a26e950640d8e3a0c7940464746.css
-application.css: application-e96860d3f1f56372eeadcb030947ee83.css
-homepage.css: homepage-8ced7995efe956db758348e4d5085eab.css
+application.css: application-e46b249e4ea3b41774638095fc63528d.css
+homepage.css: homepage-adcdfc23d238b721f4f5e440eeaa6949.css
 chosen/chosen-sprite.png: chosen/chosen-sprite-5fe3f5caaeab12ec56e291ba10660c26.png
 jquery-ui/bg_fallback.png: jquery-ui/bg_fallback-8a205ebe90eb44637728f56338f3b654.png
 jquery-ui/icon_sprite.png: jquery-ui/icon_sprite-a07dc1ce0bb5e74b2dd3568f29a6cc6e.png
