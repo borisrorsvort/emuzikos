@@ -48,60 +48,6 @@
   top: 53px - $size; }
 
 
-#user_nav {
-  float: right;
-  clear: none;
-  margin-top: 0;
-  text-align:right;
-  a {
-    margin-left: 20px;
-    float: none;
-    display:inline;
-    &.feedback_link {
-      display:inline;
-    }
-    &.greating_profile {
-      display: inline;
-    }
-  }
-}
-
-#user_nav {
-  $link_color: #333;
-  height: auto;
-  a {
-    display: inline;
-    float: left;
-    width: auto;
-    padding: 8px 13px;
-    margin: 0 !important;
-    background: $link_color;
-    color: #fff;
-    text-decoration: none;
-    border: 1px solid darken($link_color, 5%);
-    border-right-color: lighten($link_color, 5%);
-    @include box-shadow(rgba(255,255,255,0.2) 0px 1px 0px inset);
-
-    &:hover {
-      background: darken($link_color, 3%);
-      text-decoration: none;
-    }
-    &:active, &.current {
-      @include box-shadow(rgba(0,0,0,0.8) 0px 0px 1px inset);
-    }
-    &:first-child{
-      @include border-top-left-radius(3px);
-      @include border-bottom-left-radius(3px);
-    }
-    &:last-child{
-      border-right-color: darken($link_color, 5%);
-      @include border-top-right-radius(3px);
-      @include border-bottom-right-radius(3px);
-    }
-  }
-}
-
-
 #sub_nav #actions_set {
   .ui-button-text {
     font-size: 14px; }
@@ -145,20 +91,6 @@
     }
   }
 }
-
-#users.index #search_form {
-/*  .field#location {
-    width: 20%;
-    margin-right: 20px;
-  } 
-  .button.submit.search {
-    margin-top: 3px !important;
-  }*/
-}
-
-
-/* 10.CONTENT */
-/* 11.MAIN */
 
 .right_drawer {
   display:inline;

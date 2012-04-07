@@ -3,21 +3,20 @@
 %body{:id => @body_id ? @body_id: controller.controller_name, :class => @body_class ? controller.action_name + " clearfix " + @body_class : controller.action_name + " clearfix "}
   #fb-root
   = render  "shared/ie_warning"
-
-  %section#header
-    #logo
-      = link_to((@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home'), :class => "logo_link") do
-        = image_tag 'logo.png', :alt => "Emuzikos"
-      .language_chooser
-        = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.french'))
-        = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.english'))
-    #user_nav
-      = render "/layouts/top_nav", :current_user => @current_user
-    .clear
+  
+  = render "/layouts/top_nav", :current_user => @current_user
+  / %section#header
+  /   #logo
+  /     = link_to((@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home'), :class => "logo_link") do
+  /       = image_tag 'logo.png', :alt => "Emuzikos"
+  /     .language_chooser
+  /       = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.french'))
+  /       = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.english'))
+  /   #user_nav
+  /     = render "/layouts/top_nav", :current_user => @current_user
+  /   .clear
 
   #container
-
-    = render "/layouts/main_nav"  if @current_user
 
     %section#content
       - flash.each do |key, message|

@@ -58,6 +58,7 @@ GEM
       mime-types
       xml-simple
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.0.2)
     builder (3.0.0)
     bullet (2.1.0)
       uniform_notifier (~> 1.0.0)
@@ -415,6 +416,7 @@ DEPENDENCIES
   airbrake
   annotate
   aws-s3
+  bootstrap-sass
   bullet
   capybara
   carmen

@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
+//= require bootstrap
 //= require_directory ./libs
 //= require gritter
 //= require plugins
@@ -61,78 +61,13 @@ $(document).ready(function() {
 
   // TIPSY
 
-  $('.tooltip').tipsy({trigger: 'hover', gravity: 's'});
+  // $('.tooltip').tipsy({trigger: 'hover', gravity: 's'});
 
-  $('input.form_guide').tipsy({trigger: 'focus', gravity: 'w'});
+  // $('input.form_guide').tipsy({trigger: 'focus', gravity: 'w'});
 
-
-  // UI STUFF
-
-  $("a[rel='external']").click( function() {
-    window.open( $(this).attr('href') );
-    return false;
-  });
-
-	$('.button').button({
-    text: true
-  });
-  $('.button.add').button({
-    icons: {
-      primary: 'ui-icon-plus'
-    },
-    text: true
-  });
-  $('.button.add_to_contact_list').button({
-    icons: {
-      primary: 'ui-icon-star'
-    },
-    text: true
-  });
-  $('.button.contact').button({
-    icons: {
-      primary: 'ui-icon-mail-closed'
-    },
-    text: true
-  });
-  $('.button.contact_from_index').button({
-    icons: {
-      secondary: 'ui-icon-comment'
-    },
-    text: false
-  });
-  $('.button.delete').button({
-    icons: {
-      primary: 'ui-icon-trash'
-    },
-    text: true
-  });
-  $('.button.submit').button({
-    icons: {
-      secondary: 'ui-icon-triangle-1-e'
-    },
-    text: true
-  });
-
-  $('.button.reset').button({
-    icons: {
-      primary: 'ui-icon-arrowreturnthick-1-w'
-    },
-    text: true
-  });
-
-  $('.button.back').button({
-    icons: {
-      primary: 'ui-icon-triangle-1-w'
-    },
-    text: true
-  });
-
-  $( ".tabs" ).tabs();
-
+  $(".collapse").collapse()
   $("select").chosen({ allow_single_deselect: true, width: "100%" });
   $(".search_field select").chosen({ allow_single_deselect: true, width: "100%" });
-
-  $(".checkbox_set").buttonset();
 
   // CSS ARROWS
 
@@ -143,20 +78,6 @@ $(document).ready(function() {
   // MASONRY
   $(".testimonials").masonry({ singleMode: true,resizeable: true, animate: true,itemSelector: '.testimonial' });
 
-  // BOXY MODAL CONFIG
-
-  $('a[rel=boxy]').click(function(){
-    var selector = $(this).attr('href');
-    $(selector).modal({
-      overlayCss: {backgroundColor:"#000"},
-      autoResize: false,
-      autoPosition: true,
-      overlayClose: true,
-      maxWidth: 380,
-      maxHeight: '80%'
-    });
-  });
-
   $('#search_form .button').click(function() {
     $('.progress_bar_wrapper').removeClass('hidden');
     $('.users_list').css('opacity', 0.5);
@@ -164,5 +85,5 @@ $(document).ready(function() {
     $(this).attr("disabled", true);
   });
 
-  $('.habtm').click_checkbox();
+  // $('.habtm').click_checkbox();
 });

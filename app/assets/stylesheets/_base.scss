@@ -1,5 +1,4 @@
 html{
-  font-size:100%;
   min-height:101%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -10,8 +9,8 @@ html{
 body {
   background: $body_bg_default image-url("backgrounds/bg-footer.gif");
   font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
-  font-size: 100%;
-  color:#333; }
+  color:#333;
+  padding-top: 60px; }
 
 
 html.js,

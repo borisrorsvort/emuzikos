@@ -1,15 +1,13 @@
 /*
-*= require jquery-ui/jquery-ui-1.8.7.custom
 *= require chosen/chosen
-*= require reveal
 *= require gritter
 */
 
 
 /* RESETS */
-@import "compass/reset";
-@include reset-html5;
-
+@import "bs_custom_variables";
+@import "bootstrap";
+@import "bootstrap-responsive";
 /* COMPASS */
 @import "compass/css3";
 @import "compass/utilities";
