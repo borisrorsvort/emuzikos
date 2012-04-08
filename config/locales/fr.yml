@@ -492,7 +492,6 @@ fr:
       update: 
         error: "Quelques informations doivent encore être corrigées"
         success: "Votre profil a bien été mis à jour"
-  hip: Hip
   ie_warning: 
     click_to_download: "Il suffit de cliquer <strong>sur l'icône du navigateur</strong> correspondant pour se rendre à sa page de téléchargement."
     description: "Afin d'obtenir la meilleure expérience de navigation possible sur notre site web, nous vous recommandons de <strong>mettre à jour</strong> votre navigateur ou d'en choisir un autre."
@@ -567,6 +566,7 @@ fr:
     logout: Déconnexion
     messages: 
       inbox: "Boîte de réception"
+      languages: Langue
       messages: Message
       sent_messages: "Messages envoyés"
     privacy: "Charte de confidentialité"
@@ -652,7 +652,6 @@ fr:
     vocal: Vocal
     world: "Musique du monde"
   musician: musician
-  new_wave: "New Wave"
   pages: 
     homepage: 
       description: "Vous cherchez des musiciens ou groupes près de chez vous? Emuzikos vous aide à trouver des musiciens et former un groupe."
@@ -700,7 +699,6 @@ fr:
       title: "Conditions générale"
   pagination: 
     loading_more_results: "Chargement en cours"
-  progressive_rock: "Rock progressif"
   search_terms: 
     country: Pays
     i_search_a: "Je cherche un"
@@ -763,9 +761,9 @@ fr:
         dont_have_a_service_account: "Vous n'avez pas de compte %{service}?"
         genre_not_on_list: "Votre style ne se trouve pas dans la liste?"
         instrument_not_in_list: "Votre instrument ne se trouve pas dans la liste?"
-        personal_infos_advice: "Nous vous conseillons de ne pas divulguer d'informations personnelles telles qu'un numéro de téléphone ou une adresse. Cela, afin d'éviter le vol d'informations par des robots. Préférez le système de messagerie d'Emuzikos."
-        request_through_dashboard: "Faites-en la demande ici"
-      instruments_in_band_notice: "Listez ici les instruments que vous jouez ou ceux déjà présents dans le groupe si vous êtes un groupe."
+        personal_infos_advice: "<div class=\"alert alert-info\">Nous vous conseillons de ne pas divulguer d'informations personnelles telles qu'un numéro de téléphone ou une adresse. Cela, afin d'éviter le vol d'informations par des robots. Préférez le système de messagerie d'Emuzikos.</div>"
+        request_through_dashboard: "<a href=\"javascript:UserVoice.showPopupWidget();\" class=\"feedback_link\">Faites-en la demande ici</a>"
+      instruments_in_band_notice: "<div class=\"alert alert-info\">Listez ici les instruments que vous jouez ou ceux déjà présents dans le groupe si vous êtes un groupe.</div>"
       invisible_notice: "Vérifiez que vous êtes bien \"visible\" afin d'apparaître dans les résultats de recherche"
       medias: "Medias (optionnel)"
       meta_description: "Modification du profil de  %{username}. Musicien, groupe ou agent"

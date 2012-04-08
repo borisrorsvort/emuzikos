@@ -2,6 +2,10 @@
 /*992px __________________________________________________________________________________________________________ */
 @media only screen and (min-width: 992px) {
 
+body {
+  padding-top: 40px;
+}
+
 .users_list {
   .user_profile_listing {
     clear:both;

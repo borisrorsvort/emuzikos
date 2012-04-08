@@ -23,11 +23,12 @@ gem "sass"
 gem "haml"
 
 gem "settingslogic", "2.0.6"
-gem 'formtastic', '1.1.0'
+gem 'simple_form'
 gem "paperclip", "2.4"
 gem 'aws-s3', :require => 'aws/s3'
 
 gem "carmen"
+gem 'country_select'
 gem 'httparty'
 
 gem 'songkickr'

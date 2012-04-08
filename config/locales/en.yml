@@ -492,7 +492,6 @@ en:
       update: 
         error: "Some informations need to be corrected"
         success: "Successfully updated your profile."
-  hip: Hip
   ie_warning: 
     click_to_download: "Click on the browser icon to go to the download page."
     description: "In order to provide the best user experience possible, we recommand you <strong>to upgrade</strong> your browser or to download a more modern one"
@@ -558,6 +557,9 @@ en:
   laguages: 
     english: English
     french: French
+  languages: 
+    english: English
+    french: French
   menu: 
     all_users: Search
     blog: Blog
@@ -567,6 +569,7 @@ en:
     logout: "Log out"
     messages: 
       inbox: Inbox
+      languages: Language
       messages: Messages
       sent_messages: "Sent Messages"
     privacy: "Privacy Policy"
@@ -652,7 +655,6 @@ en:
     vocal: Vocal
     world: World
   musician: musician
-  new_wave: "New Wave"
   pages: 
     homepage: 
       description: "Looking for a local musician or band mates? Search and submit musicians classifieds"
@@ -700,7 +702,6 @@ en:
       title: "Terms of Agreement"
   pagination: 
     loading_more_results: "Loading more result"
-  progressive_rock: "Progressive rock"
   search_terms: 
     country: Country
     i_search_a: "I search a"
@@ -763,9 +764,9 @@ en:
         dont_have_a_service_account: "Don't have %{service} account? "
         genre_not_on_list: "Your genre is not in the list?"
         instrument_not_in_list: "Your instrument is not in the list?"
-        personal_infos_advice: "We advice you not to share any personal informations such as email or phone number. Let people contact you using the internal messaging system instead."
-        request_through_dashboard: "Please make a request using the help dashboard"
-      instruments_in_band_notice: "List instruments you play or the ones already present in the band if you're a band."
+        personal_infos_advice: "<div class=\"alert alert-info\">We advice you not to share any personal informations such as email or phone number. Let people contact you using the internal messaging system instead.</div>"
+        request_through_dashboard: "<a href=\"javascript:UserVoice.showPopupWidget();\" class=\"feedback_link\">Please make a request using the help dashboard</a>"
+      instruments_in_band_notice: "<div class=\"alert alert-info\">List instruments you play or the ones already present in the band if you're a band.</div>"
       invisible_notice: "Make sure you're set as visible in order to appear in search results"
       medias: "Medias (optional)"
       meta_description: "Edit %{username}'s profile page. Musician, band or agents infos"

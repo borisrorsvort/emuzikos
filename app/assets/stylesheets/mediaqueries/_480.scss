@@ -1,6 +1,5 @@
 @media only screen and (min-width: 480px) {
 #inner_content {
-  background:#efefef;
   padding: 18px; /* for non mobiel version*/
 }
 .message_count {
@@ -77,21 +76,6 @@
     position:relative;
     top: 5px;
   }
-  #users.index #search_form .field  {
-/*    min-width : 140px;
-    width: 140px;
-    &#location {
-      width: 60%;
-      .centered {
-        width: 100%;
-      }
-    }
-    .centered {
-      width: 100%; }
-    .selector {
-      margin: 0;
-    }*/
-  }
 
   .users_list {
     .user_profile_listing {
@@ -123,9 +107,4 @@
     margin-bottom: 18px;
   }
 
-  /* LOGGUED OUT  */
-  .logged_out {
-    #user_forms {
-      width: 80%; }
-  }
 }/*/mediaquery*/

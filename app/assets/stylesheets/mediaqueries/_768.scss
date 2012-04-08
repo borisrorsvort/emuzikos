@@ -27,27 +27,6 @@
 
 }
 
-#main_nav {
-  ul {
-    li {
-      width: auto;
-      a {
-       font-size: 1em ;
-       padding: 17px 20px 17px 50px; }}}}
-
-
-#main_nav .icon-user a {
-  background-position: 13px -83px  !important; }
-#main_nav .icon-messages a {
-  background-position: 13px -33px !important; }
-#main_nav .icon-search a {
-  background-position: 13px 15px !important; }
-
-.main_nav_current_arrow {
-  $size: 5px;
-  top: 53px - $size; }
-
-
 #sub_nav #actions_set {
   .ui-button-text {
     font-size: 14px; }
@@ -137,25 +116,6 @@
 .message {
   margin-bottom: 10px;
   @include white_box;
-}
-
-
-
-/* LOGGUED OUT  */
-.logged_out {
-  #user_forms {
-    width: 55%;
-    .normal_login {
-
-      @include fluid_column(5%, 2);
-      padding: 0 5% 0 0; }
-
-    .services_login {
-      @include fluid_column(5%, 2);
-      margin-top: 0;
-      padding: 0% 0 0 5%;
-      width: 50%; }
-  }
 }
 
 

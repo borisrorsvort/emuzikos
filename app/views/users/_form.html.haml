@@ -1,97 +1,49 @@
-= form_for @user, :html => { :multipart => true } do |f|
+= simple_form_for @user, :html => { :multipart => true, :class => "form-horizontal" } do |f|
   = f.error_messages
 
-  %h3= t(:"location", :scope => :users)
-  .field
-    %p
-      = f.label :zip, t(:'activerecord.attributes.user.zip')
-      = f.text_field :zip
-    %p
-      = f.label :country, t(:'activerecord.attributes.user.country')
-      = country_select :user, :country, nil, {}, { :class => 'chosen' }
-  %h3= t(:'activerecord.attributes.user.avatar')
-  .field
-    - if @user.avatar.present?
-      .avatar.small
-        = image_tag @user.avatar.url(:gallery)
-    = f.file_field :avatar
-    .clear
+  / %h3= t(:"location", :scope => :users)
+  = f.input :zip, :label => t(:'activerecord.attributes.user.zip')
+  = f.input :country, :label => t(:'activerecord.attributes.user.country'), :class => 'chosen'
+  = f.input :avatar, :as => :file, :label =>  t(:'activerecord.attributes.user.avatar')
+  / %h3= t(:'users.your_classified_infos')
+  = f.input :user_type, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio
+  = f.association :instruments, :label_method => :translated_name, :hint => (t(:"instruments_in_band_notice", :scope => [:users, :edit])).html_safe, :label => t(:'activerecord.attributes.user.instruments'),  :input_html => { :class => "chosen multiple_select" }
+  .control-group
+    .controls
+      %p.help_block= (t(:'form_helpers.instrument_not_in_list', :scope => [:users, :edit]) + " " + t(:"form_helpers.request_through_dashboard", :scope => [:users, :edit])).html_safe
 
-  %h3= t(:'users.your_classified_infos')
-
-  .field
-
-    %p.checkbox_set
-      = f.label :user_type, t(:'activerecord.attributes.user.user_type')
-
-      - User::USER_TYPES.each do |user_type|
-        = radio_button(:user, :user_type, user_type)
-        = f.label "user_type_" + user_type, t(:"users.types.#{user_type}")
-    %p
-      = f.label :instruments, t(:'activerecord.attributes.user.instruments')
-      %i= t(:"instruments_in_band_notice", :scope => [:users, :edit])
-      = collection_select(:user, :instrument_ids, @instruments, :id, :translated_name, {}, {:multiple => true, :name=>'user[instrument_ids][]', :class => "chosen multiple_select"})
-    .clear
-    %p
-      %br
-      %i= t(:'form_helpers.instrument_not_in_list', :scope => [:users, :edit])
-      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])}
-        = t(:"form_helpers.request_through_dashboard", :scope => [:users, :edit])
-    %p
-      = f.label :genre, t(:'activerecord.attributes.user.genre')
-      = collection_select(:user, :genre_ids, @genres, :id, :translated_name, {}, {:multiple => true, :name=>'user[genre_ids][]', :class => "chosen multiple_select"})
-    .clear
-    %p
-      %br
-      %i= t(:"form_helpers.genre_not_on_list", :scope => [:users, :edit])
-      %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])}= t(:'form_helpers.request_through_dashboard', :scope => [:users, :edit])
-    %p
-      = f.label t(:'.searching_for')
+  = f.association :genres, :label_method => :translated_name, :hint => (t(:'form_helpers.genre_not_on_list', :scope => [:users, :edit]) + " " + t(:"form_helpers.request_through_dashboard", :scope => [:users, :edit])).html_safe, :label => t(:'activerecord.attributes.user.genre'), :input_html => { :class => "chosen multiple_select" }
+  .control-group
+    = f.label t(:'.searching_for'), :class => "select optional control-label"
+    .controls
       = select(:user, :searching_for, grouped_options_for_select(searching_for_grouped_options, @user.searching_for ))
 
-    %p
-      = f.label :references, t(:'activerecord.attributes.user.references')
-      = f.text_field :references, :size => 60
+  = f.input :references, :label => t(:'activerecord.attributes.user.references'), :input_html => {:class => "input-xlarge"}
+  = f.input :request_message, :as => :text, :label => t(:'activerecord.attributes.user.request_message'), :hint => (t(:'form_helpers.personal_infos_advice', :scope => [:users, :edit])).html_safe, :input_html => { :class => "input-xlarge" }
+  = f.input :songkick_username, :placeholder => "Example: Lady Gaga", :label => t(:'activerecord.attributes.user.songkick_username'), :hint => (t(:'form_helpers.dont_have_a_service_account', :service => 'Songkick', :scope => [:users, :edit]) + " " + link_to(t(:'buttons.create_one_here'), 'http://www.songkick.com/signup')).html_safe
+  = f.input :soundcloud_username, :placeholder => "Example: john-doe", :label => t(:'activerecord.attributes.user.soundcloud_username'), :hint => (t(:'form_helpers.dont_have_a_service_account', :service => "Soundcloud", :scope => [:users, :edit]) + " " + link_to(t(:'buttons.create_one_here'), "http://www.soundcloud.com/")).html_safe
+  = f.input :youtube_video_id, :placeholder => "Example: JW5meKfy3fY", :label => t(:'activerecord.attributes.user.youtube_video_id'), :hint => (t(:'form_helpers.dont_find_youtube_video_id', :scope => [:users, :edit]) + " " + link_to(t(:'buttons.click_here_for_help'), "#youtube_video_id_help", :data => { "toggle" => "modal" })).html_safe
 
-    %p
-      = f.label :request_message, t(:'activerecord.attributes.user.request_message')
-      = f.text_area :request_message, :size => "45x20"
-      .notification.info= t(:'form_helpers.personal_infos_advice', :scope => [:users, :edit])
+  .control-group
+    .controls
+      %p.help_block= (t(:'form_helpers.dont_have_a_service_account', :service => "Youtube", :scope => [:users, :edit]) + " " + link_to(t(:'buttons.create_one_here'), "http://www.youtube.com/")).html_safe
 
-  .clear
+  .form-actions
+    = f.button :submit, t(:'buttons.update'), :class => "btn btn-primary"
 
-  %h3= t(:'medias', :scope => [:users, :edit])
-  .field
-    %p
-      = f.label :songkick_username, t(:'activerecord.attributes.user.songkick_username')
-      = f.text_field :songkick_username, :placeholder => "Example: Lady Gaga"
-      %i #{t(:'form_helpers.dont_have_a_service_account', :service => "Songkick", :scope => [:users, :edit])} #{ link_to t(:'buttons.create_one_here'), "http://www.songkick.com/signup" }
-    %p
-      = f.label :soundcloud_username, t(:'activerecord.attributes.user.soundcloud_username')
-      = f.text_field :soundcloud_username, :placeholder => "Example: john-doe"
-      %i #{t(:'form_helpers.dont_have_a_service_account', :service => "Soundcloud", :scope => [:users, :edit])} #{ link_to t(:'buttons.create_one_here'), "http://www.soundcloud.com/" }
-    %p
-      = f.label :youtube_video_id, t(:'activerecord.attributes.user.youtube_video_id')
-      = f.text_field :youtube_video_id, :placeholder => "Example: JW5meKfy3fY"
-      %i #{t(:'form_helpers.dont_find_youtube_video_id', :scope => [:users, :edit])} #{ link_to t(:'buttons.click_here_for_help'), "#", "data-reveal-id" => "youtube_video_id_help" }
-      %i #{t(:'form_helpers.dont_have_a_service_account', :service => "Youtube", :scope => [:users, :edit])} #{ link_to t(:'buttons.create_one_here'), "http://www.youtube.com/" }
-  .clear
-
-  = f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"
-
-#youtube_video_id_help.reveal-modal
-  %section
-    %header
-      %h1= t(:'youtube_video_id_help.title', :scope => [:users, :edit])
-  %ol
-    %li
-      = t(:'youtube_video_id_help.steps.first', :scope => [:users, :edit])
-    %li
-      %p= t(:'youtube_video_id_help.steps.second', :scope => [:users, :edit])
-      %p= image_tag "reveal/youtube/url-example.jpg", :alt => "youtube url example"
-    %li
-      = t(:'youtube_video_id_help.steps.third', :scope => [:users, :edit])
-    %li
-      = t(:'youtube_video_id_help.steps.fourth', :scope => [:users, :edit])
-
-  %a.close-reveal-modal ×
+.modal.fade#youtube_video_id_help{:style => 'display:none;'}
+  %section.modal-header
+    =link_to "×", "#", :data => { "dismiss" => "modal"}, :class => "close"
+    %h3= t(:'youtube_video_id_help.title', :scope => [:users, :edit])
+  %section#modal-body
+    .well 
+      %ol
+        %li
+          = t(:'youtube_video_id_help.steps.first', :scope => [:users, :edit])
+        %li
+          %p= t(:'youtube_video_id_help.steps.second', :scope => [:users, :edit])
+          %p= image_tag "modals/youtube/url-example.jpg", :alt => "youtube url example"
+        %li
+          = t(:'youtube_video_id_help.steps.third', :scope => [:users, :edit])
+        %li
+          = t(:'youtube_video_id_help.steps.fourth', :scope => [:users, :edit])

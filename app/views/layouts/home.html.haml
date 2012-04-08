@@ -7,17 +7,18 @@
   #fb-root
   = render  "shared/ie_warning"
 
-  %section#header
-    #logo
-      = link_to((@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home')) do
-        = image_tag 'logo.png', :alt => "Emuzikos - Musicians search plateform"
-      .language_chooser
-        = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.french'))
-        = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.english'))
-    #user_nav
-      = render "/layouts/top_nav", :current_user => @current_user
-    .clear
-
+  / %section#header
+  /   #logo
+  /     = link_to((@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home')) do
+  /       = image_tag 'logo.png', :alt => "Emuzikos - Musicians search plateform"
+  /     .language_chooser
+  /       = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.french'))
+  /       = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.english'))
+  /   #user_nav
+  /     = render "/layouts/top_nav", :current_user => @current_user
+  /   .clear
+  
+  = render "/layouts/top_nav", :current_user => @current_user
   #container
 
     %section#content

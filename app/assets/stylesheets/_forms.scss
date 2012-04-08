@@ -1,107 +1,107 @@
-select {
-  border        : 1px solid #ccc;
-  @include single-box-shadow(#666,0, 1px, 1px);
-}
-.multiple_select, #user_instrument_ids_chzn {
-  width: 20% !important;
-}
+// select {
+//   border        : 1px solid #ccc;
+//   @include single-box-shadow(#666,0, 1px, 1px);
+// }
+// .multiple_select, #user_instrument_ids_chzn {
+//   width: 20% !important;
+// }
 
-form {
-  vertical-align: top;
-}
+// form {
+//   vertical-align: top;
+// }
 
-/* FORMS */
+// /* FORMS */
 
-.field {
-  display       : block;
-  margin-bottom :$baseline;
-  padding: $baseline ;
-  @include white_box;
-  i {
-    display:block;}}
+// .field {
+//   display       : block;
+//   margin-bottom :$baseline;
+//   padding: $baseline ;
+//   @include white_box;
+//   i {
+//     display:block;}}
 
-label {
-  margin: #{$baseline / 2} 0 0;
-  font-weight   : bold;
-  display       : block;
-  &.inline {
-    margin-top: 3px !important;
-    display: inline-block;
-  }}
+// label {
+//   margin: #{$baseline / 2} 0 0;
+//   font-weight   : bold;
+//   display       : block;
+//   &.inline {
+//     margin-top: 3px !important;
+//     display: inline-block;
+//   }}
 
-.inline {
-  display       : inline; }
+// .inline {
+//   display       : inline; }
 
-input, textarea {
-  @include border-radius(3px);
-  background    : #fff;
-  border        : 1px solid #ccc;
-  padding       :  10px ;
-  max-width: 95%;
-  &:focus, &:active {
-    @include single-box-shadow(#666, 0, 0, 3px);
-  }
-}
+// input, textarea {
+//   @include border-radius(3px);
+//   background    : #fff;
+//   border        : 1px solid #ccc;
+//   padding       :  10px ;
+//   max-width: 95%;
+//   &:focus, &:active {
+//     @include single-box-shadow(#666, 0, 0, 3px);
+//   }
+// }
 
-/* USER PROFILE FORM */
+// /* USER PROFILE FORM */
 
-.instrument_column {
-  width         : 150px;
-  float         : left;
-  .instrument {
-    padding     : 5px 0;}}
+// .instrument_column {
+//   width         : 150px;
+//   float         : left;
+//   .instrument {
+//     padding     : 5px 0;}}
 
-/* SEARCH FORM */
+// /* SEARCH FORM */
 
-#search_form {
-  .search_field {
-    float: left;
-    margin: 0 $baseline $baseline 0;
-    input {
-      white-space: nowrap !important;
-    }
-  }
-  #submit_search input{
-    white-space: nowrap;
-    padding: 5px 10px;
-    font-size: 11px !important;
-  }
-  #mass_locate {
-    height: 22px;
-    padding: 2px;
-  }
-  .chzn-search input {
-    padding: 4px 8px !important;
-  }
-  .chzn-results li {
-    padding: $baseline / 2 !important;
-  }
-}
+// #search_form {
+//   .search_field {
+//     float: left;
+//     margin: 0 $baseline $baseline 0;
+//     input {
+//       white-space: nowrap !important;
+//     }
+//   }
+//   #submit_search input{
+//     white-space: nowrap;
+//     padding: 5px 10px;
+//     font-size: 11px !important;
+//   }
+//   #mass_locate {
+//     height: 22px;
+//     padding: 2px;
+//   }
+//   .chzn-search input {
+//     padding: 4px 8px !important;
+//   }
+//   .chzn-results li {
+//     padding: $baseline / 2 !important;
+//   }
+// }
 
-.logged_out {
-  #user_forms {
-    width: 80%;
-    padding: 20px;
-    margin: 20px auto;
-    background:#efefef;
-    color:#666;
-    @include border-radius(8px);
-    @include single-box-shadow(#666, 0, 0, 5px);
+// .logged_out {
+//   #user_forms {
+//     width: 80%;
+//     padding: 20px;
+//     margin: 20px auto;
+//     background:#efefef;
+//     color:#666;
+//     @include border-radius(8px);
+//     @include single-box-shadow(#666, 0, 0, 5px);
 
-    .services_login {
-      font-size: 1em;
-      padding: 0;
-      .shared_links {
-        margin-top: 20px;
-        .field {
-          margin-bottom: $baseline;
-        }
-      }
-    }
-    h2 {
-      color: #666;
-      text-shadow: none;
-      font-size: 14px;
-    }
-  }
-}
+//     .services_login {
+//       font-size: 1em;
+//       padding: 0;
+//       .shared_links {
+//         margin-top: 20px;
+//         .field {
+//           margin-bottom: $baseline;
+//         }
+//       }
+//     }
+//     h2 {
+//       color: #666;
+//       text-shadow: none;
+//       font-size: 14px;
+//     }
+//   }
+// }

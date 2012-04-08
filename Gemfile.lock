@@ -348,6 +348,9 @@ GEM
     settingslogic (2.0.6)
     sexp_processor (3.0.10)
     shoulda (2.11.3)
+    simple_form (2.0.1)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     simple_oauth (0.1.5)
     simplecov (0.5.4)
       multi_json (~> 1.0.3)
@@ -426,7 +429,6 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
-  formtastic (= 1.1.0)
   friendly_id (~> 4.0.0)
   geocoder
   gritter
@@ -467,6 +469,7 @@ DEPENDENCIES
   selenium-webdriver
   settingslogic (= 2.0.6)
   shoulda
+  simple_form
   simplecov
   songkickr
   soundcloud
