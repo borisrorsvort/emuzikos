@@ -10,10 +10,6 @@ body {
   .user_profile_listing {
     clear:both;
     overflow: hidden; /* Trick to get equal height columns */
-    &:hover {
-      @include single-box-shadow(#999, 0, 0px, 2px );
-      border-color: #fff;
-    }
     .section {
       margin-bottom: -99999px; /* Trick to get equal height columns */
       padding-bottom: 99999px; /* Trick to get equal height columns */
@@ -35,13 +31,6 @@ body {
     .tag_list {
       padding-bottom: 10px; /* Adding pading cauz .section padding-bottom is taken for the equal height Trick  */
     }
-  }
-}
-
-#users.index #search_form {
-  .search_field {
-    margin: 0 $baseline 0 0;
-    width: 150px;
   }
 }
 
@@ -70,12 +59,6 @@ body {
     float: right;
     margin-top: 0;
   }
-}
-
-/* LOGGUED OUT  */
-.logged_out {
-  #user_forms {
-    width: 50%; }
 }
 
 }/*/mediaquery*/

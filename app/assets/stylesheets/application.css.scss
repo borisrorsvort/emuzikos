@@ -13,17 +13,13 @@
 @import "compass/utilities";
 
 /* LIBS */
-@import "tipsy";
 @import "colors";
 
 /* APPLICATION */
 @import "base";
 @import "animations";
-@import "typography";
 @import "layout";
 @import "notices";
-@import "forms";
-@import "tables";
 @import "pagination";
 @import "tags";
 @import "main";
@@ -34,3 +30,4 @@
 @import "mediaqueries/768";
 @import "mediaqueries/992";
 @import "mediaqueries/1382";
+

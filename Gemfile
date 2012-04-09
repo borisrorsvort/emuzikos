@@ -77,7 +77,7 @@ group :development, :test do
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem "taps"
-
+  gem 'rails-dev-tweaks', '~> 0.6.1'
   platforms :mri_18 do
     gem "ruby-debug"
   end

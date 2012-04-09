@@ -1,7 +1,8 @@
 /[if lte IE 7]
-  #ie_warning
+  %section#ie_warning
     .inner_warning_wrapper
-      %h2= t(:'title', :scope => [:ie_warning]).html_safe
+      %header
+        %h2= t(:'title', :scope => [:ie_warning]).html_safe
       %br
       %p= t(:'description', :scope => [:ie_warning]).html_safe
       %p= t(:'popular_browsers_choice', :scope => [:ie_warning]).html_safe

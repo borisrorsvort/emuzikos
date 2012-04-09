@@ -63,8 +63,6 @@ $(document).ready(function() {
 
   // $('.tooltip').tipsy({trigger: 'hover', gravity: 's'});
 
-  // $('input.form_guide').tipsy({trigger: 'focus', gravity: 'w'});
-
   $(".collapse").collapse()
   $("select").chosen({ allow_single_deselect: true, width: "100%" });
   $(".search_field select").chosen({ allow_single_deselect: true, width: "100%" });
@@ -78,12 +76,11 @@ $(document).ready(function() {
   // MASONRY
   $(".testimonials").masonry({ singleMode: true,resizeable: true, animate: true,itemSelector: '.testimonial' });
 
-  $('#search_form .button').click(function() {
+  $('#user_search .btn').click(function() {
     $('.progress_bar_wrapper').removeClass('hidden');
     $('.users_list').css('opacity', 0.5);
     $(this).closest('form').submit();
     $(this).attr("disabled", true);
   });
 
-  // $('.habtm').click_checkbox();
 });

@@ -412,6 +412,7 @@ fr:
       destroyed: "Au revoir ! Votre compte a été résilié. Nous espérons vous revoir très bientôt."
       edit: 
         cancel_my_account: "Effacer mon compte"
+        preferences: Préférences
         title: "Modifier mon compte"
       new: 
         newsletter_agreement: "En cliquant sur \"Envoyer\", vous serez inscrit à notre newsletter et vous souscrivez à nos conditions générales."
@@ -555,6 +556,9 @@ fr:
     voice: Voix
     whistles: Flûtes
   laguages: 
+    english: Anglais
+    french: Français
+  languages: 
     english: Anglais
     french: Français
   menu: 
@@ -734,6 +738,11 @@ fr:
       subtitle: "Il est temps d'en parler à tout vos amis!"
       title: "Félicitation! Merci de faire partie de le communauté Emuzikos"
   souncloud_player: "Lecteur SoundCloud"
+  support: 
+    array: 
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
   tables: 
     headings: 
       actions: Actions

@@ -1,7 +1,12 @@
 = link_to user_message_path(user, message), :class => "message #{"unread" if !message.message_read?}" do
-  = check_box_tag "delete[]", message.id
+  .delete_option= check_box_tag "delete[]", message.id
+  .sender_avatar
+    - if message.sender.avatar.present?
+      = image_tag(message.sender.avatar.url(:gallery), :alt => message.sender.username)
+    -else
+      = image_tag("backgrounds/avatar-default.gif", :alt => message.sender.username)
   .headers
     %span.message_date= h message.created_at.to_s(:long)
     %h4.message_sender= h(message.sender.username)
     %span.message_subject= truncate(h(message.subject), :length => 50)
-  .clear
+  .clearfix

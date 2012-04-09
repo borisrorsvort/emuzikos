@@ -6,7 +6,7 @@
   = f.input :country, :label => t(:'activerecord.attributes.user.country'), :class => 'chosen'
   = f.input :avatar, :as => :file, :label =>  t(:'activerecord.attributes.user.avatar')
   / %h3= t(:'users.your_classified_infos')
-  = f.input :user_type, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio
+  = f.input :user_type, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio_buttons
   = f.association :instruments, :label_method => :translated_name, :hint => (t(:"instruments_in_band_notice", :scope => [:users, :edit])).html_safe, :label => t(:'activerecord.attributes.user.instruments'),  :input_html => { :class => "chosen multiple_select" }
   .control-group
     .controls

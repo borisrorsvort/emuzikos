@@ -1,24 +1,29 @@
 -title h(@message.subject)
+- headline h(@message.subject)
+
 - content_for :sub_nav do
   #actions_set
-    = link_to t(:'buttons.back', :model => t(:'messages.inbox.title')), :back, :class => "button back"
+    = link_to :back, :class => "btn back" do
+      %i.icon-arrow-left
+      = t(:'buttons.back', :model => t(:'messages.inbox.title'))
+
   .clear
 
-.field
-  %p
-    %label.inline= t(:'messages.from')
-    = @message.sender == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.sender.username), user_path(@message.sender))
+.well
+  %span= t(:'messages.from')
+  = @message.sender == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.sender.username), user_path(@message.sender))
 
-    %label.inline= t(:'messages.to')
-    = @message.recipient == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.recipient.username), user_path(@message.recipient))
-    |
-    %label.inline= t(:'messages.received')
-    = @message.created_at.to_s(:long)
-.field
-  %p.message_body
-    %label= t(:'messages.message')
-    = h simple_format(@message.body)
-  %p
-    - if @message.recipient == @user
-      = link_to t(:'buttons.reply'), new_user_message_path(@user, :reply_to => @message), :class => "button reply"
+  %span= t(:'messages.to')
+  = @message.recipient == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.recipient.username), user_path(@message.recipient))
+  |
+  %span= t(:'messages.received')
+  = @message.created_at.to_s(:long)
+
+
+%h4= t(:'messages.message')
+= h simple_format(@message.body)
+
+- if @message.recipient == @user
+  .form-actions
+    = link_to t(:'buttons.reply'), new_user_message_path(@user, :reply_to => @message), :class => "btn btn-primary"
 
