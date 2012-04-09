@@ -1,12 +1,12 @@
 .testimonial
-  %span.avatar.small
+  .avatar.small
     - if testimonial.user.avatar.present?
       = image_tag(testimonial.user.avatar.url(:gallery))
     -else
       = image_tag("backgrounds/avatar-default.gif")
 
-  %div.text
-    .span.author
+  .text
+    .author
       = testimonial.created_at.strftime('%b %d, %Y')
       = t(:'common.by')
       = testimonial.user.username

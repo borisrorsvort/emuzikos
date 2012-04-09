@@ -31,7 +31,7 @@
         = t(:'buttons.back', :model => t(:'activerecord.models.search'))
 
 .row-fluid
-  %aside.profile_sidebar.span3.fadeInLeft.hidden-phone
+  %aside.profile_sidebar.span3
     %ul.thumbnails
       - if @user.avatar
         %li.span3= image_tag @user.avatar.url(:normal), :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"

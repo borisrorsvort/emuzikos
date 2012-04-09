@@ -415,7 +415,7 @@ en:
         preferences: Preferences
         title: "Edit my account"
       new: 
-        newsletter_agreement: "By clicking on the 'submit' button, you will be subscribed to our newsletter and you agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>."
+        newsletter_agreement: "By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>."
         or_signup_using: "Or sign up using:"
         title: "Signup to Emuzikos"
       signed_up: "Welcome! You have signed up successfully. Please complete your profile to appear in search results"
@@ -442,7 +442,7 @@ en:
     unlocks: 
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       unlocked: "Your account was successfully unlocked. You are now logged in."
-    use_the_normal_form: "Or use the normal form"
+    use_the_normal_form: "Or use the standart form"
   errors: 
     messages: 
       already_confirmed: "was already confirmed, please try to log in"

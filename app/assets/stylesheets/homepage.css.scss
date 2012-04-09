@@ -1,9 +1,3 @@
-@import "colors";
-@import "base";
-@import "compass/css3";
-@import "compass/utilities";
-
-
 @-webkit-keyframes scale_from_small {
   0% {
     @include scale(0);
@@ -32,8 +26,24 @@
 	100% { opacity: 1;}
 }
 
-#inner_content {
+.homepage .container-fluid[role=main] {
   background: $home_bg !important;
+}
+
+.homepage #user_forms {
+  background: #fff;
+  font-size: 12px;
+  @include border-radius(10px);
+  padding: $gridGutterWidth;
+  @include box-sizing(border-box);
+  text-align: center;
+  .normal_login_trigger  {
+    display: block;
+    margin-bottom: $gridGutterWidth;
+  }
+  .controls, .form-actions {
+    text-align: left;
+  }
 }
 
 img {
@@ -51,15 +61,16 @@ body {
 h1#main_title {
   text-indent: -9990px;
   margin-top: -50px;
-  height: 0; /* keep consistent baseline */
+  height: 0; /* keep consistent baseLineHeight */
 }
 .homepage #container {
   padding: 16px auto 0;
 }
 h2.moto {
-  font-size: $basefont * 2;
+  font-size: $baseFontSize * 2;
   color: #7bb3cf  !important;
   font-weight:normal;
+  margin: #{$baseLineHeight * 2} 0;
   @include text-shadow(#000, 0, 1px, 1px);
   strong {
     color:#7bb3cf  !important;
@@ -79,7 +90,7 @@ h2.moto {
     color: #f5bd14  !important;
     font-size: 14px;
     @include inset(#000, "important");
-    margin-bottom: $baseline / 2  !important; }}
+    margin-bottom: $baseLineHeight / 2  !important; }}
 
 #music_notes {
   background:transparent image-url('homepage/music-notes.png') center -40px repeat-x;
@@ -89,16 +100,13 @@ h2.moto {
   bottom: 0;
   position: absolute;
   z-index: 0;
-  -webkit-animation: opacity 4s ;
-  -moz-animation: opacity 4s;
-  -webkit-animation: slidingFromLeft 4s ;
-
-
-
+  @include animation(slidingFromLeft 4s linear 1);
 }
+
 .homepage.logged_out #inner_content {
   padding: 0;
 }
+
 #inner_halo {
   position:relative;
   background:transparent image-url('homepage/halo.png') center bottom no-repeat;
@@ -115,60 +123,19 @@ h2.moto {
 
 #logo_home {
   margin-bottom: 38px;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-
-  $duration: 1s;
-  $delay: 0.1s;
-
-  -webkit-animation-duration: $duration;
-  -webkit-animation-delay: $delay;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-duration: $duration;
-  -moz-animation-delay: $delay;
-  -moz-animation-timing-function: ease;
-  -moz-animation-fill-mode: both;
-  -ms-animation-duration: $duration;
-  -ms-animation-delay: $delay;
-  -ms-animation-timing-function: ease;
-  -ms-animation-fill-mode: both;
-  animation-duration: $duration;
-  animation-delay:$delay;
-  animation-timing-function: ease;
-  animation-fill-mode: both;
+  @include animation(bounceInDown 1s linear 1);
 }
 
 #main-icon {
   margin-bottom: 10px;
-
-  $duration: 1s;
-  $delay: 0.1s;
-
-  -webkit-animation-duration: $duration;
-  -webkit-animation-delay: $delay;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-duration: $duration;
-  -moz-animation-delay: $delay;
-  -moz-animation-timing-function: ease;
-  -moz-animation-fill-mode: both;
-  -ms-animation-duration: $duration;
-  -ms-animation-delay: $delay;
-  -ms-animation-timing-function: ease;
-  -ms-animation-fill-mode: both;
-  animation-duration: $duration;
-  animation-delay:$delay;
-  animation-timing-function: ease;
-  animation-fill-mode: both; }
+  @include animation(fadeInDownBig 1s linear 1); 
+}
 
 #header {
   background:none;
   background-color:  $home_bg;
-
 }
+
 .signup_button {
   height: 45px;
   line-height: 45px;
@@ -238,15 +205,15 @@ h2.moto {
 }
 
 .latest_testimionals {
-    margin-bottom: $baseline;
+    margin-bottom: $baseLineHeight;
 }
 .home_testimonials {
   .testimonial {
     font-size: $basefont;
     background-color: #030c1a;
     @include border-radius(10px);
-    padding: $baseline;
-    margin: 0 10px $baseline;
+    padding: $baseLineHeight;
+    margin: 0 10px $baseLineHeight;
   }
   .text {
     font-size: 12px;
@@ -255,7 +222,7 @@ h2.moto {
   }
   .author {
     font-weight:bold;
-    margin-bottom: $baseline / 2;
+    margin-bottom: $baseLineHeight / 2;
     color: #496781;
     @include inset(#000);
   }
@@ -266,54 +233,41 @@ h2.moto {
 }
 
 
-/*480px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 480px) {
-
-
-}/*/mediaquery*/
+#terms, #privacy {
+  h3 {
+    background: none;
+  }
+  h4 {
+    margin: $baseLineHeight $baseLineHeight / 2;
+  }
+}
 
 /*768px __________________________________________________________________________________________________________ */
 @media only screen and (min-width: 768px) {
 
-.homepage h2.moto {
-  font-size: 41px;
-}
+  .homepage h2.moto {
+    font-size: 41px;
+  }
 
-.homepage {
-  h3 {
-    text-align: center; }}
+  .inner_block {
+    margin: 0 auto;
 
-.inner_block {
-  margin: 0 auto;
-
-  &.home_feature {
-    max-width: 960px;
-    .columns {
-      @include fluid_column(3%, 3);
-      padding-top: 0;
+    &.home_feature {
+      max-width: 960px;
+      .columns {
+        @include fluid_column(3%, 3);
+        padding-top: 0;
+      }
+    }
+    &.home_testimonials {
+      max-width: 620px;
+      .t_column {
+        @include fluid_column(0, 2);
+      }
     }
   }
-  &.home_testimonials {
-    max-width: 620px;
-    .t_column {
-      @include fluid_column(0, 2);
-    }
-  }
-}
-
 
 }/*/mediaquery*/
 
-/*992px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 992px) {
-
-
-}/*/mediaquery*/
-
-/*1382px __________________________________________________________________________________________________________ */
-@media only screen and (min-width: 1382px) {
-
-
-}/*/mediaquery*/
 
 

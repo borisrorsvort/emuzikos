@@ -36,6 +36,7 @@ gem "soundcloud"
 gem "hominid"
 gem 'preferences', :git => 'git://github.com/rds/preferences.git'
 gem 'twitter'
+
 gem 'geocoder'
 gem 'rack-no-www'
 gem 'pg'
@@ -77,7 +78,7 @@ group :development, :test do
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem "taps"
-  gem 'rails-dev-tweaks', '~> 0.6.1'
+  #gem 'rails-dev-tweaks', '~> 0.6.1'
   platforms :mri_18 do
     gem "ruby-debug"
   end

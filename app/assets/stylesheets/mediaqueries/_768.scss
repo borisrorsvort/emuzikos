@@ -46,24 +46,6 @@
   }
 }
 
-.right_drawer {
-  display:inline;
-  float: right;
-  width: 75%;
-}
-
-.left_drawer {
-  display:inline;
-  float:left;
-  width: 25%;
-  .inner {
-    padding-right: $baseline / 2;
-  }
-}
-.inner_profile_wrapper {
-  margin-left: $baseline / 2;
-}
-
 
 /* 12. MESSAGES
 ---------------------------------------- */
