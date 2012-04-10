@@ -23,7 +23,7 @@
 = content_for :features do
   .features_columns
     .inner_block.home_feature
-      %h3= t(:'.subtitle')
+      %h3.block_separator= t(:'.subtitle')
 
       .columns
         .inner_column
@@ -63,7 +63,7 @@
 
     .note_circle
     .inner_block.home_feature
-      %h3= t(:'.sections.screenshots.title')
+      %h3.block_separator= t(:'.sections.screenshots.title')
       .columns
         .inner_column
           %h4= t(:'.sections.screenshots.search_page')
@@ -101,7 +101,7 @@
       .note_circle
       .latest_testimionals
         .inner_block.home_testimonials
-          %h3= t(:'.sections.testimonials.title')
+          %h3.block_separator= t(:'.sections.testimonials.title')
           - @testimonials.in_groups_of(2, false) do |group|
             .t_column
               - for testimonial in group do

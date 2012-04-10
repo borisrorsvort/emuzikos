@@ -157,6 +157,34 @@ $default-animation-fill-mode: none;
   @include experimental(animation-fill-mode, $fill-mode);
 }
 
+@-webkit-keyframes scale_from_small {
+  0% {
+    @include scale(0);
+    opacity: 0;}
+  60% {
+    @include scale(0.4);
+    opacity: 0;}
+  100% {
+    @include scale(1);
+    opacity: 1;}
+}
+
+@-webkit-keyframes scale_to_big {
+  0% {
+    @include scale(1);
+    opacity: 0.4;}
+  60% {
+    @include scale(1.2);
+    opacity: 0.8;}
+  100% {
+    @include scale(1);
+    opacity: 1;}
+}
+@-webkit-keyframes opacity {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+
 @-webkit-keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}

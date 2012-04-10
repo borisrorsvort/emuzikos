@@ -58,7 +58,7 @@
           = @user.zip
           = Carmen::country_name(@user.country) rescue "N/A"
 
-    -if current_user && current_user != @user
+    - if current_user && current_user != @user
       .friendly_actions
         = link_to new_user_message_path(@current_user, :to => @user.id), :class => "btn btn-primary" do
           %i.icon-envelope.icon-white
@@ -67,9 +67,12 @@
           = link_to friendships_path(:friend_id => @user.id), :method => :post, :class => "btn add_to_contact_list" do
             %i.icon-bookmark
             = t(:'buttons.add_to_contact_list')
-    -if !current_user
+    - unless current_user
       .friendly_actions
-        = link_to t(:'buttons.contact'), new_user_registration_path, :class => "btn contact tooltip", :title => t(:'tooltips.send_message_not_signed_in')
+        = link_to new_user_registration_path, :class => "btn btn-primary", :title => t(:'tooltips.send_message_not_signed_in') do
+          %i.icon-envelope.icon-white
+          = t(:'buttons.contact')
+
     .impressionist_count
       = t(:'.impressions_count', :count => @user.impressionist_count(:filter=>:ip_address))
     .spread

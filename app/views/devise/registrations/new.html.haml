@@ -2,7 +2,7 @@
 - description 'Sign up on Emuzikos.com and start to search for wanted bands and musicians'
 - set_meta_tags :canonical => request.url
 
-#user_forms.span6.offset3
+.boxy_forms.span6.offset3
   %header.page-header
     %h1= t(:'.title')
   %p= t(:'.newsletter_agreement').html_safe
@@ -21,7 +21,7 @@
       = f.input :password_confirmation, :label => t(:'activerecord.attributes.user.password_confirmation')
       .form-actions
         = f.submit(t(:'buttons.submit'), :type => "submit", :class => "btn btn-primary")
-
+    .clearfix
   %hr.clearfix
   #remote.services_login
     .shared_links
