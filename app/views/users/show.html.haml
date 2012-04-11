@@ -36,7 +36,7 @@
       - if @user.avatar
         %li.span3= image_tag @user.avatar.url(:normal), :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
       - else
-        %li.span3= image_tag "backgrounds/avatar-default-profile.gif", :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
+        %li.span3= image_tag "backgrounds/no-image-profile.jpg", :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
       - if @user.geocoded?
         %li.span3
           %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "thumbnail", :alt => "#{@user.username}'s location"}

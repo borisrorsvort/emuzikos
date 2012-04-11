@@ -581,6 +581,7 @@ en:
       public: "Public profile"
       show: Profile
     search: "Musicians Classifieds"
+    share: "Help Emuzikos"
     signup: "Sign up"
     terms: "Terms of agreement"
     testimonials: Testimonials
@@ -735,8 +736,8 @@ en:
     invite_friends: 
       invite_your_friends_from_fb: "I just discovered this awesome app to search for musicians and bands nearby. Check it out!"
       meta_description: "Your profile is complete, it's time to met people know about it"
-      subtitle: "It's time to let your friends know about it!"
-      title: "Congratulations! Thank you to be a part of Emuzikos community!"
+      subtitle: "Like, share, comment or invite your friends"
+      title: "Emuzikos needs you! Help us grow this community and like us on Facebook"
   souncloud_player: "SoundCloud player"
   support: 
     array: 

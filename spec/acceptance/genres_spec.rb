@@ -23,3 +23,4 @@ feature "Genre", :js => true do
   end
 
 end
+

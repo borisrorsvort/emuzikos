@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
     }[Rails.env],
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
-    :default_url => '/assets/backgrounds/no-image-:style.gif'
+    :default_url => '/assets/backgrounds/no-image-:style.jpg'
 
   scope :profiles_completed, where(:profile_completed => true)
   scope :currently_signed_in, where( "last_sign_in_at > ?", 1.hours.ago )

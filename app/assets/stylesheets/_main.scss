@@ -196,6 +196,7 @@ h1.username {
 
 .friendly_actions {
   margin-bottom: $baseline * 2;
+  a { margin-right: $gridGutterWidth;}
 }
 
 .jcrop-holder img, img#preview {

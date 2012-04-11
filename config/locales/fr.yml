@@ -581,6 +581,7 @@ fr:
       public: "Profil public"
       show: Profil
     search: "Annonces pour musiciens"
+    share: Aidez-nous!
     signup: Inscrivez-vous
     terms: "Conditions générales"
     testimonials: Témoignages
@@ -735,8 +736,8 @@ fr:
     invite_friends: 
       invite_your_friends_from_fb: "Je viens de découvrir cette application pour chercher des musiciens et groupes près de chez toi. Rejoins-moi!"
       meta_description: "Votre profil complété, il est temps d'en parler à vos amis"
-      subtitle: "Il est temps d'en parler à tout vos amis!"
-      title: "Félicitation! Merci de faire partie de le communauté Emuzikos"
+      subtitle: "Aimez, partagez, commentez ou invitez vos amis"
+      title: "Nous avons besoin de vous! Faites grandir la communauté, aimez-nous sur Facebook"
   souncloud_player: "Lecteur SoundCloud"
   support: 
     array: 
