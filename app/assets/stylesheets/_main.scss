@@ -33,45 +33,6 @@
 /* NAVIGATION
 ---------------------------------------- */
 
-#main_nav {
-  ul {
-    padding:0; }
-  li {
-    display:block;
-    float:left;
-    border-right: 1px solid #424242;
-    position:relative;
-    width: 33%;
-    &.icon-user a {
-      background-position: 13px -88px; }
-    &.icon-messages a {
-      background-position: 13px -38px; }
-    &.icon-search a{
-      background-position: 13px 11px; }
-
-    a {
-     @include inset(#333);
-     color:#bababa;
-     display:block;
-     font-size: 0.80em;
-     font-weight:bold;
-     position:relative;
-     text-align: center;
-     text-decoration:none;
-     padding: 13px 15px 12px 40px;
-     text-transform:uppercase;
-     border-right: 1px solid #2d2d2d;
-     background:transparent image-url('icons/main-nav-icon-sprite.png') left top no-repeat;
-     &:hover, &.current {
-       background-color: $main_nav_color_current; }}}}
-
-.main_nav_current_arrow {
-   $size: 4px;
-   @include css-arrow("bottom", $main_nav_color_current, $sub_nav_gradient_light, $size );
-   position:absolute;
-   left: 45%;
-   top: 43px - $size; }
-
 .message_count {
    @include border-radius(12px);
    @include box-shadow(#333, 0, 1px, 2px);
@@ -86,34 +47,6 @@
    right: -7px;
    font-weight:normal;
    text-shadow: none; }
-
-
-#user_nav {
-  float:none;
-  clear:left;
-  margin-top: 10px;
-  a {
-    text-align:center;
-    display:block;
-    font-size: $basefont;
-    float:left;
-    width: 50%;
-    margin: 0 0 $basefont 0;
-    &.greating_profile {
-      display:none;
-    }
-    &:hover {
-     text-decoration:underline;
-    }}
-    &.logout {
-      background: $blue_dark;
-      @include border-radius(3px);
-      padding: 2px 10px;
-      &:hover {
-        text-decoration:none;
-        background: darken($blue_dark, 10%);  }}}
-
-
 
 /* USER */
 
@@ -162,7 +95,7 @@
     text-decoration:none;
     display:block;
     font-size:$basefont;
-    .row {
+    .line {
       display:block;
       padding-left: 45px; }
     .tag_list {
@@ -201,37 +134,6 @@
   }
 }
 
-
-#users.index #search_form .field {
-  min-width: 50%;
-
-  .selector {
-    margin: 0 auto;
-    width: 110px;
-    span {
-      width: 100px;
-      font-size: 0.85em;
-    }
-    select {
-      width:133px;
-    }
-  }
-  &#location {
-   width: 100%;
-   .centered {
-     width: 95%;
-     input {
-       width: 100%;
-     }
-   }
-  }
-  .button.submit.search {
-    width: 100%;
-    margin: 10px auto 0;
-    display: block;
-  }
-}
-
 .avatar {
   background: #ccc;
   display:block;
@@ -254,12 +156,6 @@
   margin: $baseline 0;
   font-size: $basefont;
 }
-
-.profile_picture, .map_container {
-  @include white_box_w_shadow;
-  padding: 2%;
-  width: 100% - $profile_picture_border_width * 2;
-  margin-bottom: 18px;}
 
 .looking_for {
   //@extend .normal;
@@ -289,7 +185,7 @@ h1.username {
   margin: 10px 0 18px;
   span {
     padding: 0px 10px;
-    background-color: $blue_basic;
+    background-color: $linkColor;
     @include border-radius(3px);
     margin: 0 5px 5px 0;
     color: #fff;
@@ -300,10 +196,7 @@ h1.username {
 
 .friendly_actions {
   margin-bottom: $baseline * 2;
-  .ui-button-text {
-    font-size: 0.6em;
-    padding: .4em 1em .4em 2.4em;  }
-
+  a { margin-right: $gridGutterWidth;}
 }
 
 .jcrop-holder img, img#preview {
@@ -321,39 +214,6 @@ h1.username {
 .future_events {
   ul {
     list-style: none;
-  }
-}
-
-#tabs {
-  border-color: #ccc;
-  li {
-    margin-right: $baseline / 2;
-  }
-  .ui-state-default {
-    background: #fff ;
-    border: none;
-    a {
-      font-weight: normal;
-      color: #157EBE;
-      @include hover-link;
-      padding: $baseline / 2;
-    }
-  }
-  .ui-tabs-selected {
-    border: 1px solid #ccc;
-    a {
-      color: #666 !important;
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-  .ui-tabs-panel {
-    border: none;
-    padding: #{$baseline} #{$baseline / 2};
-  }
-  .ui-widget-header {
-    border-bottom: 1px solid #ccc;
   }
 }
 
@@ -413,35 +273,6 @@ h1.username {
   visibility: hidden;
 }
 
-/* SERVICES */
-
-
-#remote {
-  font-size: 0.75em; }
-.services_list {
-  img {
-    width: 32px; } }
-
-.services_used {
-  @include white-box-w-shadow;
-  padding: 10px;
-  margin: 10px 0;
-  width: 90%;
-  float:left;
-  img {
-    float:left;
-    margin-right: 10px;
-  }
-}
-.service_user {
-  float:left;
-  margin: 5px 0 10px;
-  .field {
-    margin-bottom: 1em;
-  }
-}
-
-
 /* 12. MESSAGES
 ---------------------------------------- */
 .messages_list {
@@ -449,6 +280,20 @@ h1.username {
 }
 
 .message {
+  .delete_option {
+    width: 20px;
+    margin-left: 0;
+    float: left;
+  }
+  .sender_avatar {
+    width: 30px;
+    margin-left: 0;
+    float: left;
+  }
+  .headers {
+    float: left;
+    margin-left: 20px;
+  }
   font-size: $basefont;
   display:block;
   background-color:#FFF;
@@ -477,18 +322,11 @@ h1.username {
     font-weight:bold;
     margin:0 0 9px;
   }
-  .checker {
-    float: left;
-  }
-  .headers {
-    padding-left: 34px;
-  }
 }
-
 
 /* SEARCH */
 
-#sub_nav .quick_links {
+.sub_nav .quick_links {
   display:none;
   @include horizontal-list(5px);
   list-style: none;
@@ -503,51 +341,6 @@ h1.username {
   span {
     font-weight:bold; }}
 
-
-
-//  Alerts
-.notification {
-
-  $bg-alert-info: #d69c3b;
-  $bg-alert-error: #cf6d6e;
-  $bg-alert-success: #78964e;
-  $bg-alert-base: #4a8cae;
-
-  display: inline-block;
-  padding: $baseline / 2;
-  text-align: left;
-  border: 1px solid;
-  font-size: $basefont;
-  @include border-radius(5px);
-  margin-bottom: $baseline;
-  &.base {
-    background: $bg-alert-base;
-    color: darken($bg-alert-base, 30%);
-    @include inset(lighten($bg-alert-base,20%));
-    border-color: darken($bg-alert-base, 10%);
-  }
-
-  &.info {
-    background: $bg-alert-info;
-    color: darken($bg-alert-info, 30%);
-    @include inset(lighten($bg-alert-info,20%));
-    border-color: darken($bg-alert-info, 10%);
-  }
-
-  &.error {
-    background: $bg-alert-error;
-    color: darken($bg-alert-error, 30%);
-    @include inset(lighten($bg-alert-error,20%));
-    border-color: darken($bg-alert-error, 10%);
-  }
-
-  &.success {
-    background: $bg-alert-success;
-    color: darken($bg-alert-success, 30%);
-    @include inset(lighten($bg-alert-success,20%));
-    border-color: darken($bg-alert-success, 10%);
-  }
-}
 
 // invite friends
 

@@ -17,10 +17,10 @@ module Emuzikos
     config.filter_parameters += [:password,  :password_confirmation]
 
     config.assets.enabled = true
-    config.assets.precompile += %w[active_admin.css active_admin.js homepage.css]
+    config.assets.precompile += %w[active_admin.css active_admin.js]
 
     #config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
-
+    config.autoload_paths << "#{config.root}/lib"
     #Set the Devise layout to home except user_registration_edit
     config.to_prepare do
       Devise::SessionsController.layout "home"

@@ -2,14 +2,14 @@
 /*992px __________________________________________________________________________________________________________ */
 @media only screen and (min-width: 992px) {
 
+body {
+  padding-top: 40px;
+}
+
 .users_list {
   .user_profile_listing {
     clear:both;
     overflow: hidden; /* Trick to get equal height columns */
-    &:hover {
-      @include single-box-shadow(#999, 0, 0px, 2px );
-      border-color: #fff;
-    }
     .section {
       margin-bottom: -99999px; /* Trick to get equal height columns */
       padding-bottom: 99999px; /* Trick to get equal height columns */
@@ -34,25 +34,8 @@
   }
 }
 
-#users.index #search_form {
-  .search_field {
-    margin: 0 $baseline 0 0;
-    width: 150px;
-  }
-}
-
-.right_drawer {
-  float: right;
-  display:inline;
-  margin-left: 0px;
-  width: 80%;
-}
-
-.left_drawer {
-  max-width: 20%;
-  display:inline;
-  float:left;
-}
+.profile_sidebar {
+  display: block;}
 
 #footer {
   a {
@@ -66,12 +49,6 @@
     float: right;
     margin-top: 0;
   }
-}
-
-/* LOGGUED OUT  */
-.logged_out {
-  #user_forms {
-    width: 50%; }
 }
 
 }/*/mediaquery*/

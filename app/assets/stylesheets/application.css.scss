@@ -1,35 +1,25 @@
-/*
-*= require jquery-ui/jquery-ui-1.8.7.custom
-*= require chosen/chosen
-*= require reveal
-*= require gritter
-*/
-
-
 /* RESETS */
-@import "compass/reset";
-@include reset-html5;
-
+@import "bs_custom_variables";
+@import "bootstrap";
+@import "bootstrap-responsive";
 /* COMPASS */
 @import "compass/css3";
 @import "compass/utilities";
 
-/* LIBS */
-@import "tipsy";
-@import "colors";
+// LIBS
+@import "chosen/chosen";
+@import "gritter";
 
 /* APPLICATION */
 @import "base";
 @import "animations";
-@import "typography";
+@import "gritter_custom";
 @import "layout";
-@import "notices";
-@import "forms";
-@import "tables";
 @import "pagination";
 @import "tags";
 @import "main";
 @import "auth-buttons";
+@import "homepage";
 
 /* MEDIA QUERIES */
 @import "mediaqueries/480";

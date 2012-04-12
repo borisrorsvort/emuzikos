@@ -8,10 +8,13 @@
 - content_for :scripts do
   = pageless(@users.num_pages, request.url)
 
+
 .progress_bar_wrapper.hidden
   = t(:".processing_search")
-  .progress_bar
-    = image_tag('icons/ajax-loader-bar.gif', :id => "search_loader")
+  .progress.progress-striped.active
+    .bar{:style => "width: 100%;"}
+  / .progress_bar
+  /   = image_tag('icons/ajax-loader-bar.gif', :id => "search_loader")
 
 -if !@users.blank?
   %section.users_list

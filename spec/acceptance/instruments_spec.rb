@@ -17,7 +17,7 @@ feature "Instrument", :js => true do
 
   scenario "Adding one instrument to the user profile", :js => true do
     visit(edit_user_path(@user))
-    select_from_chosen(@instrument.name, :from => "user_instrument_ids")
+    select_from_chosen(@instrument.translated_name, :from => "user_instrument_ids")
     click_button('Update')
     page.should have_content('Success')
   end

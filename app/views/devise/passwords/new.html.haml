@@ -3,7 +3,7 @@
 - set_meta_tags :canonical => request.url
 
 
-#user_forms.centered
+.boxy_forms.span6.offset3
   %header
     %h1= t(:'.title')
 
@@ -13,6 +13,6 @@
       = f.label :email
       = f.email_field :email
     .field
-      = f.submit t(:'buttons.send_password'), :class => "button submit"
+      = f.submit t(:'buttons.send_password'), :class => "btn btn-primary"
 
   = render "devise/shared/links"

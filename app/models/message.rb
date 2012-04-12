@@ -2,6 +2,7 @@ class Message < ActiveRecord::Base
 
   is_private_message
 
+  validates_presence_of :body, :subject
   attr_accessor :to
 
   scope :un_read, where(:read_at => nil)

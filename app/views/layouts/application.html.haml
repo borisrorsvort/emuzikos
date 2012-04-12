@@ -1,37 +1,23 @@
 = render "/layouts/head"
 
 %body{:id => @body_id ? @body_id: controller.controller_name, :class => @body_class ? controller.action_name + " clearfix " + @body_class : controller.action_name + " clearfix "}
+
   #fb-root
+
   = render  "shared/ie_warning"
+  = render "layouts/topnav", :current_user => @current_user
+  = render "layouts/subnav" if content_for? :sub_nav
 
-  %section#header
-    #logo
-      = link_to((@current_user ? users_path : root_path), :title => t(:'tooltips.back_to_home'), :class => "logo_link") do
-        = image_tag 'logo.png', :alt => "Emuzikos"
-      .language_chooser
-        = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.french'))
-        = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.english'))
-    #user_nav
-      = render "/layouts/top_nav", :current_user => @current_user
-    .clear
 
-  #container
+  .container-fluid{ :role => "main"}
 
-    = render "/layouts/main_nav"  if @current_user
+    / - flash.each do |key, message|
+    /   = content_tag(:div, raw(message), :class => "flash #{key}")
 
-    %section#content
-      - flash.each do |key, message|
-        = content_tag(:div, raw(message), :class => "flash #{key}")
-
-      - if content_for? :sub_nav
-        %nav#sub_nav
-          = yield :sub_nav
-
-      #inner_content
-        - if show_headline?
+    %section.content
+      - if show_headline?
+        %header.page-header
           %h1= yield(:headline)
-
-        = yield
-    .clear
+      = yield
 
   = render "/layouts/footer"

@@ -23,7 +23,7 @@ module ApplicationHelper
 
     container && opts[:container] ||= container
 
-    javascript_tag("$('#inner_content .users_list').pageless(#{opts.to_json});")
+    javascript_tag("$('.users_list').pageless(#{opts.to_json});")
   end
 
   def html_tag(attrs={})

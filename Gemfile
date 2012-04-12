@@ -23,11 +23,12 @@ gem "sass"
 gem "haml"
 
 gem "settingslogic", "2.0.6"
-gem 'formtastic', '1.1.0'
+gem 'simple_form'
 gem "paperclip", "2.4"
 gem 'aws-s3', :require => 'aws/s3'
 
 gem "carmen"
+gem 'country_select'
 gem 'httparty'
 
 gem 'songkickr'
@@ -46,6 +47,8 @@ gem 'impressionist'
 
 gem 'wicked'
 gem 'annotate'
+
+gem 'bootstrap-sass'
 
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"
@@ -74,7 +77,7 @@ group :development, :test do
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem "taps"
-
+  #gem 'rails-dev-tweaks', '~> 0.6.1'
   platforms :mri_18 do
     gem "ruby-debug"
   end

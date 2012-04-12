@@ -1,10 +1,11 @@
 - title t(:'.title')
-
+- headline t(:'.title')
 - content_for :sub_nav do
   #actions_set
-    = link_to t(:'buttons.cancel'), :back, :class => "button back"
+    = link_to :back, :class => "btn" do
+      %i.icon-arrow-left
+      = t(:'buttons.cancel')
   .clear
 
-= form_for @message, :url => user_messages_path(@user) do |f|
-
+= simple_form_for @message, :url => user_messages_path(@user), :html => { :class => "form-horizontal"} do |f|
   = render :partial => "messages/form", :object => f
