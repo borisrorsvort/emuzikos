@@ -1,5 +1,7 @@
+$basefont: 13px;
+$baseline: 18px ;
+
 html{
-  font-size:100%;
   min-height:101%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -9,10 +11,8 @@ html{
 
 body {
   background: $body_bg_default image-url("backgrounds/bg-footer.gif");
-  font-family: 'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
-  font-size: 100%;
-  color:#333; }
-
+  color: #333;
+  padding: 0; }
 
 html.js,
 html.iem7,
@@ -25,71 +25,25 @@ html.ie8 {
   }
 }
 
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-sub {
-  bottom: -0.25em;
-}
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-b, strong {
-  font-weight: bold;
-}
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-input, textarea, button, select {
-  margin: 0;
-  font-size: 100%;
-  line-height: normal;
-  vertical-align: baseline;
-}
 img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
 
-a {
-  color: $blue_dark;
-  img {
-    border: none; }}
-
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;}
-
-.wide {
-  width: 100%;}
 
 .unread_bullet {
   font-size: 20px;
   font-weight:bold;
   line-height: 1em; }
 
-.centered {
-  margin: 0 auto;
-}
-.hidden {
-  display:none;
-}
-b {
-  font-weight:bold;
-}
-strong {
-  font-weight:bold;
-}
+.centered { margin: 0 auto; }
+
+.hidden { display:none; }
+
+b { font-weight:bold; }
+
+strong { font-weight:bold; }
+
 @mixin inset($color, $important: "") {
   @if $important == "important" {
     text-shadow: $color 0 1px 1px  !important;
@@ -97,12 +51,12 @@ strong {
     text-shadow: $color 0 1px 1px;
   }
 }
-
 @mixin white_box {
   background-color: #FFF;
   border: 1px solid #ccc;
   @include border-radius(5px);
 }
+
 @mixin white_box_w_shadow {
   @include border-radius(5px);
   @include single-box-shadow(#999, 0, 1px, 2px );
@@ -191,22 +145,4 @@ strong {
 @-webkit-keyframes opacity {
   0% { opacity: 0;}
   100% { opacity: 1;}
-}
-
-/*VARIABLES*/
-
-$profile_picture_border_width: 2%;
-
-// LANGUAGE FLAGS
-
-.flag {
-  width: 15px;
-  height: 10px;
-  display: block;
-  &.en {
-    background-image: inline-image("icons/flags/us.gif", image);
-  }
-  &.fr {
-    background-image: inline-image("icons/flags/fr.gif", image);
-  }
 }

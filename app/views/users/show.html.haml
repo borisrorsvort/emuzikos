@@ -10,31 +10,43 @@
 
 - content_for :scripts do
   :javascript
-    $( "#tabs" ).tabs({
-      select: function(event, ui) { window.location.hash = ui.tab.hash; }
-    });
+    if (window.location.hash) {
+      $(".nav-tabs a[href=" + window.location.hash+ "]").tab('show');
+    } else {
+      $('.nav-tabs a:first').tab('show');
+    }
 
 
 - content_for :sub_nav do
   - if @user == current_user
     %ul#sub_sections
-      %li
-        = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
-      %li
-        = link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
-      %li
-        = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-      %li
-        = link_to t(:'menu.profile.authentications'), services_path
-    .clear
-
+      %li= link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+      %li= link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
+      %li= link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
+      %li= link_to t(:'menu.profile.authentications'), services_path
   - else
     #actions_set
-      = link_to t(:'buttons.back', :model => t(:'activerecord.models.search')), :back, :class => "button back profile"
-  .clear
+      = link_to :back, :class => "btn back profile" do
+        %i.icon-arrow-left
+        = t(:'buttons.back', :model => t(:'activerecord.models.search'))
 
-%section.right_drawer.profile
-  .inner_profile_wrapper
+.row-fluid
+  %aside.profile_sidebar.span3
+    %ul.thumbnails
+      - if @user.avatar
+        %li.span3= image_tag @user.avatar.url(:normal), :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
+      - else
+        %li.span3= image_tag "backgrounds/no-image-profile.jpg", :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
+      - if @user.geocoded?
+        %li.span3
+          %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "thumbnail", :alt => "#{@user.username}'s location"}
+    - if @user.geocoded? && !@users_nearby.size.nil?
+      %section.users_nearby
+        %header
+          %h4= t(:'.users_nearby')
+        = render :partial => "nearby_user", :collection => @users_nearby
+
+  %section.profile.span9
     %header
       %h1.username= t(:'.title', :username => @user.username)
 
@@ -46,79 +58,72 @@
           = @user.zip
           = Carmen::country_name(@user.country) rescue "N/A"
 
-    -if current_user && current_user != @user
+    - if current_user && current_user != @user
       .friendly_actions
-        = link_to t(:'buttons.contact'), new_user_message_path(@current_user, :to => @user.id), :class => "button contact"
+        = link_to new_user_message_path(@current_user, :to => @user.id), :class => "btn btn-primary" do
+          %i.icon-envelope.icon-white
+          = t(:'buttons.contact')
         - unless current_user.is_friend_with(@user)
-          = link_to t(:'buttons.add_to_contact_list'), friendships_path(:friend_id => @user.id), :method => :post, :class => "button add_to_contact_list"
-    -if !current_user
+          = link_to friendships_path(:friend_id => @user.id), :method => :post, :class => "btn add_to_contact_list" do
+            %i.icon-bookmark
+            = t(:'buttons.add_to_contact_list')
+    - unless current_user
       .friendly_actions
-        = link_to t(:'buttons.contact'), new_user_registration_path, :class => "button contact tooltip", :title => t(:'tooltips.send_message_not_signed_in')
+        = link_to new_user_registration_path, :class => "btn btn-primary", :title => t(:'tooltips.send_message_not_signed_in') do
+          %i.icon-envelope.icon-white
+          = t(:'buttons.contact')
+
     .impressionist_count
       = t(:'.impressions_count', :count => @user.impressionist_count(:filter=>:ip_address))
     .spread
       = render "shared/add_this"
-      .clear
-    #tabs
-      %ul.profile_tabs_nav
-        %li
-          %a{:href => "#tab_info", :class => "icon-info"}= t(:'.tabs.user_infos')
-        - unless @events.results.empty?
-          %li
-            %a{:href => "#tab_events", :class => "icon-calendar"}= t(:'.tabs.user_events')
-        - if @user.youtube_video_id? || @tracks.present?
-          %li
-            %a{:href => "#tab_medias", :class => "icon-video"}= t(:'.tabs.user_medias')
+      .clearfix
 
+    %ul.nav.nav-tabs
+      %li
+        %a{:href => "#tab_info", :class => "info", :data => {:toggle => "tab"}}= t(:'.tabs.user_infos')
+      - unless @events.results.empty?
+        %li
+          %a{:href => "#tab_events", :class => "calendar", :data => {:toggle => "tab"}}= t(:'.tabs.user_events')
+      - if @user.youtube_video_id? || @tracks.present?
+        %li
+          %a{:href => "#tab_medias", :class => "video", :data => {:toggle => "tab"}}= t(:'.tabs.user_medias')
+    .tab-content
       / INFOS TAB START
-      #tab_info
+      #tab_info.tab-pane
         - if @user.searching_for.present?
-          %h3= t(:'activerecord.attributes.user.searching_for') + " :"
+          %h4= t(:'activerecord.attributes.user.searching_for') + " :"
           %p= t(:"users.types.#{@user.searching_for}")
 
         - if @user.genres.present?
-          %h3= t(:'activerecord.attributes.user.genre')
+          %h4= t(:'activerecord.attributes.user.genre')
           .tag_list_instruments
             - @user.genres.each do |genre|
               .tag-body.yellow
                 %span.tag= t(:"musical_genres.#{genre.name}")
 
         - if @user.instruments.present?
-          %h3= t(:'activerecord.attributes.user.instruments')
+          %h4= t(:'activerecord.attributes.user.instruments')
           .tag_list_instruments
             - @user.instruments.each do |instrument|
               .tag-body.yellow
                 %span.tag= t(:"instruments.#{instrument.name}")
 
         - if @user.references.present?
-          %h3= t(:'activerecord.attributes.user.references')
+          %h4= t(:'activerecord.attributes.user.references')
           %p= @user.references
 
         - if @user.request_message.present?
-          %h3= t(:'activerecord.attributes.user.request_message')
+          %h4= t(:'activerecord.attributes.user.request_message')
           = simple_format(@user.request_message)
 
-          .clear
-
-        - if @user.geocoded?
-          - unless @users_nearby.size.nil?
-            .users_nearby
-              %h3= t(:'.users_nearby')
-              - for user in @users_nearby
-                .section.user_general_infos
-                  .avatar.small
-                    - if user.avatar.present?
-                      = link_to(image_tag(user.avatar.url(:gallery), :alt => "#{user.username + "'s picture"}"), user_path(user), :class => "tooltip", :title => "#{user.username}")
-                    -else
-                      = link_to(image_tag("backgrounds/avatar-default.gif", :alt => "#{user.username + "'s picture"}"), user_path(user), :class => "tooltip", :title => "#{user.username}")
-                    .clear
-              .clear
+          .clearfix
 
       - unless @events.results.empty?
         / EVENTS TAB START
-        #tab_events
+        #tab_events.tab-pane
           .future_events
-            %h3= t(:'.events')
+            %h4= t(:'.events')
             %ul
               - @events.results.first(5).each do |event|
                 %li
@@ -132,24 +137,15 @@
 
       - if @user.youtube_video_id? || @tracks.present?
         / MEDIA TAB START
-        #tab_medias
+        #tab_medias.tab-pane
           - if @tracks.present?
-            %h3= t(:souncloud_player)
+            %h4= t(:souncloud_player)
             - for track in @tracks do
               %iframe{:frameborder => "no", :height => "166", :scrolling => "no", :src => "http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{track.id}&show_artwork=true", :width => "100%"}
 
           - if @user.youtube_video_id?
-            %h3= t(:'.youtube_video')
+            %h4= t(:'.youtube_video')
             %section
               %iframe{:src => "http://www.youtube.com/embed/#{@user.youtube_video_id}", :width => "320", :height => "190"}
           .clear
-
-%section.left_drawer.fadeInLeft
-  .inner
-    - if @user.avatar
-      = image_tag @user.avatar.url(:normal), :class => "profile_picture", :alt => "#{@user.username + "'s picture"}"
-    - else
-      = image_tag "backgrounds/avatar-default-profile.gif", :class => "profile_picture", :alt => "#{@user.username + "'s picture"}"
-    - if @user.geocoded?
-      %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "map_container", :alt => "#{@user.username}'s location"}
-.clear
+  .clearfix

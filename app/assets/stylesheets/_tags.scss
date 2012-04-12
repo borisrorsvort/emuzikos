@@ -62,17 +62,12 @@
   width: 17.5px;
 }
 .yellow{
-  border-color: #FFA71D;
   color: white;
-  background: $blue_basic;
-  border-color: $blue_basic;
+  background: $linkColor;
+  border-color: $linkColor;
 }
 
 .yellow .tag:before{
-  border-color: #FFA71D;
-  background: $blue_basic;
-  border-color: $blue_basic;
+  background: $linkColor;
+  border-color: $linkColor;
 }
-
-a.yellow {color: #A96903 !important}
-a.yellow:hover {color: #000 !important}

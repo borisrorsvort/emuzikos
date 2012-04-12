@@ -5,7 +5,7 @@ FactoryGirl.define do
     u.sequence :email do |n|
       "test#{n}@emuzikos.com"
     end
-    u.username { Factory.next(:username) }
+    u.username { username }
     u.password 'password'
     u.password_confirmation 'password'
     u.zip 1050
@@ -14,12 +14,12 @@ FactoryGirl.define do
     u.request_message "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
     u.user_type "musician"
     u.soundcloud_username "desta"
-    u.created_at Factory.next(:time)
-    u.updated_at Factory.next(:time)
+    u.created_at time
+    u.updated_at time
     u.searching_for "band"
     u.sign_in_count 130
-    u.current_sign_in_at Factory.next(:time)
-    u.last_sign_in_at Factory.next(:time)
+    u.current_sign_in_at time
+    u.last_sign_in_at time
     u.current_sign_in_ip "127.0.0.1"
     u.last_sign_in_ip "127.0.0.1"
     u.latitude 50.83323287963867
@@ -30,6 +30,9 @@ FactoryGirl.define do
   end
 
   factory :instrument do |i|
-    i.name 'Guitar'
+    i.name 'guitar'
+  end
+  factory :genre do |i|
+    i.name 'rock'
   end
 end

@@ -11,6 +11,7 @@ feature "Change Profile", %q{
   scenario "Should be able to add a youtube video with a valid id", :js => true do
     visit(edit_user_path(@user))
     fill_in 'user_youtube_video_id', :with => "vP1x2DbS55E"
+    save_and_open_page
     click_button 'Update'
     page.should have_content "Success"
   end

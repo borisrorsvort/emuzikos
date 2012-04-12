@@ -7,9 +7,9 @@
 #inner_halo
   #main
     %header
-      #main-icon.fadeInDownBig
+      #main-icon
         = image_tag('homepage/icon-emuzikos.png', :alt => "emuzikos-icon")
-      #logo_home.bounceInDown
+      #logo_home
         = image_tag("homepage/logo.png", :alt => "Emuzikos-logo" )
       %h1#main_title
         = t(:'.title')
@@ -23,7 +23,7 @@
 = content_for :features do
   .features_columns
     .inner_block.home_feature
-      %h3= t(:'.subtitle')
+      %h3.block_separator= t(:'.subtitle')
 
       .columns
         .inner_column
@@ -38,7 +38,7 @@
           %h4= t(:'.home_feature.privacy.title')
           %p= t(:'.home_feature.privacy.body')
 
-      .clear
+      .clearfix
 
       .columns
         .inner_column
@@ -59,38 +59,49 @@
           %h4= t(:'.home_feature.sharing.title')
           %p= t(:'.home_feature.sharing.body')
           = render "shared/add_this"
-      .clear
+      .clearfix
 
     .note_circle
     .inner_block.home_feature
-      %h3= t(:'.sections.screenshots.title')
+      %h3.block_separator= t(:'.sections.screenshots.title')
       .columns
         .inner_column
           %h4= t(:'.sections.screenshots.search_page')
-          =link_to(image_tag("app-samples/search-thumb.jpg"), "#", "data-reveal-id" => "app_sample_search", :class => "app_sample_thumb")
-          #app_sample_search.reveal-modal.xlarge
-            = image_tag("app-samples/search-normal.jpg")
-            %a.close-reveal-modal ×
+          =link_to(image_tag("app-samples/search-thumb.jpg"), "#app_sample_search", :data => { "toggle" => "modal" }, :class => "app_sample_thumb")
+          #app_sample_search.modal.fade.xlarge{:style => 'display:none;'}
+            %section.modal-header
+              =link_to "×", "#", :data => { "dismiss" => "modal"}, :class => "close"
+              %h5= t(:'.sections.screenshots.search_page')
+            %section#modal-body
+              = image_tag("app-samples/search-normal.jpg")
       .columns
         .inner_column
           %h4= t(:'.sections.screenshots.profile')
-          =link_to(image_tag("app-samples/profile-thumb.jpg"), "#", "data-reveal-id" => "app_sample_profile", :class => "app_sample_thumb")
-          #app_sample_profile.reveal-modal.xlarge
-            = image_tag("app-samples/profile-normal.jpg")
-            %a.close-reveal-modal ×
+          =link_to(image_tag("app-samples/profile-thumb.jpg"), "#app_sample_profile", :data => { "toggle" => "modal" }, :class => "app_sample_thumb")
+          #app_sample_profile.modal.fade.xlarge{:style => 'display:none;'}
+            %section.modal-header
+              =link_to "×", "#", :data => { "dismiss" => "modal"}, :class => "close"
+              %h5= t(:'.sections.screenshots.profile')
+            %section#modal-body
+              = image_tag("app-samples/profile-normal.jpg")
+
       .columns
         .inner_column
           %h4= t(:'.sections.screenshots.inbox')
-          =link_to(image_tag("app-samples/inbox-thumb.jpg"), "#", "data-reveal-id" => "app_sample_inbox", :class => "app_sample_thumb")
-          #app_sample_inbox.reveal-modal.xlarge
-            = image_tag("app-samples/inbox-normal.jpg")
-            %a.close-reveal-modal ×
-      .clear
+          =link_to(image_tag("app-samples/inbox-thumb.jpg"), "#app_sample_inbox", :data => { "toggle" => "modal" }, :class => "app_sample_thumb")
+          #app_sample_inbox.modal.fade.xlarge{:style => 'display:none;'}
+            %section.modal-header
+              =link_to "×", "#", :data => { "dismiss" => "modal"}, :class => "close"
+              %h5= t(:'.sections.screenshots.inbox')
+            %section#modal-body
+              = image_tag("app-samples/inbox-normal.jpg")
+
+      .clearfix
     - unless @testimonials.empty?
       .note_circle
       .latest_testimionals
         .inner_block.home_testimonials
-          %h3= t(:'.sections.testimonials.title')
+          %h3.block_separator= t(:'.sections.testimonials.title')
           - @testimonials.in_groups_of(2, false) do |group|
             .t_column
               - for testimonial in group do
@@ -102,7 +113,7 @@
                       = image_tag("backgrounds/avatar-default.gif")
 
                   %div.text
-                    .span.author
+                    .author
                       = testimonial.created_at.strftime('%b %d, %Y')
                       = t(:'common.by')
                       = testimonial.user_username
@@ -112,7 +123,7 @@
                       %div{ :id => "testimonial_full_#{testimonial.id}", :class => "reveal-modal"}
                         %p= testimonial.body
                         %a.close-reveal-modal ×
-        .clear
-    .clear
+        .clearfix
+    .clearfix
     .center
       = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "signup_button"

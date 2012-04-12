@@ -13,9 +13,9 @@
         = link_to t(:'menu.login'), new_user_session_path
     .copyright
       Emuzikos #{Time.now.year} | #{ t(:'common.created_by')} #{ link_to "Boris Rorsvort", "http://www.rorsvort.com", :rel => "external"}
-      = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.french'))
-      = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'laguages.english'))
-    .clear
+      = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'languages.french'))
+      = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'languages.english'))
+    .clearfix
 
 = javascript_include_tag "application"
 = yield :javascripts
@@ -36,6 +36,11 @@
     xfbml: true,
     oauth: true
   });
+
+- if flash[:error]
+  = js add_gritter(flash[:error], :image => :error, :title => "Something's wrong!", :sticky => true) 
+- elsif flash[:notice]
+  = js add_gritter(flash[:notice], :image => :success, :sticky => true) 
 
 
 

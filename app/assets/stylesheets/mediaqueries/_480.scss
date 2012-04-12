@@ -1,39 +1,21 @@
 @media only screen and (min-width: 480px) {
-#inner_content {
-  background:#efefef;
-  padding: 18px; /* for non mobiel version*/
-}
-.message_count {
-  position: static; }
 
-#user_nav {
-  a {
-    margin: 0 20px;
-    float: none;
-    display:inline; }}
+  .message_count {
+    position: static; }
 
-#sub_nav {
- ul {
-   li {
-     position:relative;
-     padding: 0;
-     margin: 0 10px 10px;
-    white-space: nowrap;
-     .ui-button-text {
-       font-size: 14px;
-     }
-     .button.add_to_contact_list {
-       width:  auto;
-       .ui-button-text {
-         position:relative;
-         text-indent: 0px;
-         padding: .4em 1em .4em 2.1em; }}}}}
+  .sub_nav {
+   ul {
+     li {
+        position:relative;
+        padding: 0;
+        margin: 0 10px 10px;
+        white-space: nowrap; }}}
 
-  #sub_nav .quick_links {
+  .sub_nav .quick_links {
     display:block;
   }
 
-  #sub_nav #sub_sections {
+  .sub_nav #sub_sections {
     li {
       margin-bottom: 0px;
       &:first-child {
@@ -62,42 +44,6 @@
   .top_sub_nav_arrow {
     display:block;
   }
-  .main_nav_current_arrow {
-    $size: 5px;
-    top: 44px - $size; }
-
-  #sub_nav #actions_set {
-    .ui-button-text {
-      font-size: 13px;
-    }
-    .button.add_to_contact_list {
-      width:  auto;
-      margin: 0 1.7%;
-      .ui-button-text {
-        position:relative;
-        text-indent: 0px;
-        padding: .4em 1em .4em 2.1em; }}
-  }
-
-  #search_submit {
-    position:relative;
-    top: 5px;
-  }
-  #users.index #search_form .field  {
-/*    min-width : 140px;
-    width: 140px;
-    &#location {
-      width: 60%;
-      .centered {
-        width: 100%;
-      }
-    }
-    .centered {
-      width: 100%; }
-    .selector {
-      margin: 0;
-    }*/
-  }
 
   .users_list {
     .user_profile_listing {
@@ -106,21 +52,10 @@
       }
     }
   }
+
   .location_infos {
     display: block;
     margin: $baseline 0 $baseline; }
-
-  .profile_picture {
-    width: 50% - ($profile_picture_border_width * 2) - 2%;
-    float:left;
-    margin-right: 2%;
-  }
-
-  .map_container {
-    margin-bottom: 18px;
-    width: 50% - ($profile_picture_border_width * 2);
-    float:left;
-  }
 
   .inner_profile_wrapper {
     @include folded_corner(#fff, 40px, #efefef);
@@ -129,9 +64,4 @@
     margin-bottom: 18px;
   }
 
-  /* LOGGUED OUT  */
-  .logged_out {
-    #user_forms {
-      width: 80%; }
-  }
 }/*/mediaquery*/

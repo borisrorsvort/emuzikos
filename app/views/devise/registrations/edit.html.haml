@@ -1,6 +1,7 @@
 - title t(:'.title')
 - description 'Edit your account, notification settings on Emuzikos.com and start to search for wanted bands and musicians'
 - set_meta_tags :canonical => request.url
+- headline t(:'.title')
 
 - if @user == current_user
   - content_for :sub_nav do
@@ -16,64 +17,39 @@
 
     .clear
 
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => "form-horizontal" }) do |f|
   = devise_error_messages!
+  = f.input :username, :label => t(:'activerecord.attributes.user.username')
+  = f.input :email, :label => t(:'activerecord.attributes.user.email')
+  = f.input :password, :label => t(:'activerecord.attributes.user.password'), :hint => t(:'common.leave_blank')
+  = f.input :password_confirmation, :label => t(:'activerecord.attributes.user.password_confirmation')
+  = f.input :current_password, :label => t(:'activerecord.attributes.user.current_password')
+  .form-actions
+    = f.submit t(:'buttons.update'), :class => "btn btn-primary"
 
-  .field
-    %p
-      = f.label :username, t(:'activerecord.attributes.user.username')
-      = f.text_field :username
+%section
+  .page-header
+    %header
+      %h1= t(:'.preferences')
 
-    %p
-      = f.label :email, t(:'activerecord.attributes.user.email')
-      = f.email_field :email
+  = simple_form_for @user, :html => { :multipart => true, :class => "form-horizontal" } do |f|
+    = f.error_messages
+    = f.input :visible, :as => :boolean, :label =>  t(:'activerecord.attributes.user.visible')
+    .control-group
+      .controls
+        .alert.alert-info
+          %p= t(:"visible_explanation", :scope => [:users, :edit])
+    = f.input :preferred_language, :collection => [["English", "en"], ["Français", "fr"]], :as => :radio_buttons, :selected => @user.preferred_language, :label => t(:'users.preferred.language')
+    = f.input :prefers_newsletters, :as => :boolean, :label => t(:"users.prefers.newsletters")
+    = f.input :prefers_message_notifications, :as => :boolean, :label => t(:"users.prefers.message_notifications")
+    .form-actions
+      =f.submit t(:'buttons.update'), :type => "submit", :class => "btn btn-primary"
 
-    %p
-      = f.label t(:'activerecord.attributes.user.password')
-      %i= t(:'common.leave_blank')
-      = f.password_field :password
+%section
+  .page-header
+    %header
+      %h1= t(:'.cancel_my_account')
 
-    %p
-      = f.label t(:'activerecord.attributes.user.password_confirmation')
-      = f.password_field :password_confirmation
+  = link_to t(:'buttons.registrations.cancel_my_account'), registration_path(resource_name), :confirm => t(:'common.are_you_sure'), :method => :delete, :class => "btn btn-danger"
 
-    %p
-      = f.label t(:'activerecord.attributes.user.current_password')
-      = f.password_field :current_password
-
-    %p= f.submit t(:'buttons.update'), :class => "button update"
-
-  %h3= t(:'.cancel_my_account')
-
-  .field
-    %p
-      = link_to t(:'buttons.registrations.cancel_my_account'), registration_path(resource_name), :confirm => t(:'common.are_you_sure'), :method => :delete, :class => "button delete"
-
-
-
-= form_for @user, :html => { :multipart => true } do |f|
-  = f.error_messages
-  .field
-    %h3= t(:'activerecord.attributes.user.visible')
-    %p= t(:"visible_explanation", :scope => [:users, :edit])
-    %br
-    %p.checkbox_set
-      = f.label "visible_true", t(:"activerecord.attributes.user.visible")
-      = radio_button(:user, :visible, true)
-      = f.label "visible_false", t(:"activerecord.attributes.user.invisible")
-      = radio_button(:user, :visible, false)
-  %h3= t(:'users.preferred.language')
-  .field
-    %p= f.select :preferred_language, [["English", "en"], ["Français", "fr"]], :selected => @user.preferred_language
-  %h3= t(:'users.notifications')
-
-  .field
-    %p
-      = f.check_box :prefers_newsletters
-      = f.label "prefers_newsletters", t(:"users.prefers.newsletters"), :class => "habtm"
-    %p
-      = f.check_box :prefers_message_notifications
-      = f.label "prefers_message_notifications", t(:"users.prefers.message_notifications"), :class => "habtm"
-    .clear
-    =f.submit t(:'buttons.update'), :type => "submit", :class => "button submit"
-
+  .clearfix

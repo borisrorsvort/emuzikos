@@ -2,45 +2,34 @@
 - description 'Sign up on Emuzikos.com and start to search for wanted bands and musicians'
 - set_meta_tags :canonical => request.url
 
-#user_forms
-  %header
-    %h1= t(:'.title')
-    %p!= t(:'.newsletter_agreement')
+.row-fluid
+  .spacer.span3
+    &nbsp;
+  .boxy_forms.span6
+    %header.page-header
+      %h1= t(:'.title')
+    %p= t(:'.newsletter_agreement').html_safe
 
-  %h2= t(:"devise.signup_with", :provider => "Facebook")
-  %p
     %a.btn-auth.btn-facebook{ :href => "/auth/facebook"}
       = t(:"devise.signup_with", :provider => "Facebook")
-  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .normal_login
-      %h2= t(:"devise.use_the_normal_form")
-      = f.hidden_field :preferred_language, :value => request.subdomains.first.present? ? "fr" : "en"
-      %p
-        = f.label :username, t(:'activerecord.attributes.user.username')
-        = f.text_field :username
-      %p
-        = f.label :email, t(:'activerecord.attributes.user.email')
-        = f.email_field :email
-      %p
-        = f.label :password, t(:'activerecord.attributes.user.password')
-        = f.password_field :password, :class => 'form_guide', :title => t(:'tooltips.password')
-      %p
-        = f.label :password_confirmation, t(:'activerecord.attributes.user.password_confirmation')
-        = f.password_field :password_confirmation
-      %p
-        = f.label :zip, t(:'activerecord.attributes.user.zip')
-        = f.text_field :zip
-
-      %p
-        = f.label :country, t(:'activerecord.attributes.user.country')
-        = country_select(:user, :country, [], :include_blank => t(:'common.please_choose'))
-      %p
-        = f.submit(t(:'buttons.submit'), :type => "submit", :class => "button submit")
-
-
+    %hr.clearfix
+    %a.normal_login_trigger{"data-target" => ".normal_login", "data-toggle" => "collapse"}= t(:"devise.use_the_normal_form")
+    .normal_login.collapse
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-horizontal"}, :validate => true) do |f|
+        //= devise_error_messages!
+        = f.input :preferred_language, :as => :hidden, :value => request.subdomains.first.present? ? "fr" : "en"
+        = f.input :username, :label => t(:'activerecord.attributes.user.username')
+        = f.input :email, :label => t(:'activerecord.attributes.user.email')
+        = f.input :password, :label => t(:'activerecord.attributes.user.password'), :hint => t(:'tooltips.password')
+        = f.input :password_confirmation, :label => t(:'activerecord.attributes.user.password_confirmation')
+        .form-actions
+          = f.submit(t(:'buttons.submit'), :type => "submit", :class => "btn btn-primary")
+      .clearfix
+    %hr.clearfix
     #remote.services_login
       .shared_links
         = render  "devise/shared/links"
 
-  .clear
+    .clear
+  .spacer.span3
+    &nbsp;

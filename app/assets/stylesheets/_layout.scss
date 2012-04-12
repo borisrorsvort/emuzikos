@@ -1,62 +1,20 @@
+// Base Container
+
+.container-fluid[role="main"] {
+  background: #ffffff;
+  padding-top: $gridGutterWidth;
+  padding-bottom: $gridGutterWidth;
+}
+
+// Header / topnav
+
 #logo {
   float:left;}
 
-.language_chooser { 
-  background: #333;
-  margin-left: $basefont;
-  display: inline-block;
-  @include border-radius(3px);
-  a {
-    display: inline-block;
-    margin: $basefont / 2;
-  }
-}
-
-
-$sub_nav_topbottom_padding: 18px;
-
-#header {
-  padding: 18px 20px;
-  background: $blue_dark;
-  color: $header-data-color;
-  //@include background-image(linear-gradient($blue_light, $blue_dark));
-  background: #111;
-  @include background-image(linear-gradient(#333, #111));
-  a {
-    @include link-colors($header-data-color);
-    @include hover-link;}
-}
-
-#container{
-  margin:0 auto;
-}
-
-#content {
-  float:left;
-  width: 100%; }
-
-
-#main_nav {
-  position:relative;
-  float:left;
-  display:inline;
-  width: 100%;
-  background: $main_nav_color_default;
-  ul {
-    margin: 0;
-    display:block;
-    width: 100%;
-    top: 0;
-    li {
-      margin: 0;
-      a {
-        font-size: 8px;
-      }} }}
-
-#sub_nav {
+.sub_nav {
   background-color: $sub_nav_gradient_light;
   @include background-image(linear-gradient($sub_nav_gradient_light, $sub_nav_gradient_dark));
-  padding: $sub_nav_topbottom_padding 20px;
+  padding: $gridGutterWidth;
   border-bottom: #fff 1px solid;
   ul {
     @extend .normal;
@@ -68,15 +26,24 @@ $sub_nav_topbottom_padding: 18px;
       margin: 0 2px 0 ;
 }}}
 
-#sub_nav #sub_sections {
+.subnav-fixed {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  z-index: 1020;
+}
+
+// Sub nav
+
+.sub_nav #sub_sections {
   display:block;
   overflow: visible;
   padding: 0;
   margin: 0;
   li {
     margin-bottom: 10px;
-    list-style: disc inside;
-  }
+    list-style: disc inside; }
   a {
     text-align:left;
     @include link-colors($sub-nav-color-base);
@@ -95,33 +62,25 @@ $sub_nav_topbottom_padding: 18px;
   position:absolute;
   left: 45%;
   z-index: 2;
-  bottom: 0 - $sub_nav_topbottom_padding; }
+  bottom: 0 - $gridGutterWidth; }
 
 
-#sub_nav #actions_set {
+.sub_nav #actions_set {
   @extend #sub_sections;
   a {
     display:inline-block;
   }
   .button {
     &.back.profile {
-      margin-right: 5px;
-    }
+      margin-right: 5px; }
     &.contact {
-      margin-left: 5px;
-    }
+      margin-left: 5px; }
     &.add_to_contact_list {
-      width: 2em;
-      .ui-button-text {
-        position:relative;
-        text-indent: -99999px;
-        padding: .35em; }}
+      width: 2em; }
   }
-  .ui-button-text {
-    font-size: 0.6em;
-    padding: .4em 1em .4em 2.4em;  }
 }
 
+// Footer
 
 #footer {
   font-size: $basefont;
@@ -171,35 +130,44 @@ $sub_nav_topbottom_padding: 18px;
 /* PROFILE SHOW
 ---------------------------------------- */
 
-.left_drawer {
-  width: 100%;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-
-  -webkit-animation-duration: 1s;
-  -webkit-animation-delay: .2s;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-duration: 1s;
-  -moz-animation-delay: .2s;
-  -moz-animation-timing-function: ease;
-  -moz-animation-fill-mode: both;
-  -ms-animation-duration: 1s;
-  -ms-animation-delay: .2s;
-  -ms-animation-timing-function: ease;
-  -ms-animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-delay: .2s;
-  animation-timing-function: ease;
-  animation-fill-mode: both;
+.profile, .profile_sidebar {
+  h4 {
+    margin: $baseLineHeight 0 #{$baseLineHeight / 2};
+  }
 }
 
-.right_drawer {
- margin-left: 0;
- width: 100%;
+.profile_sidebar {
+  display: none;
+  img,
+  object {
+    width: 100%;
+  }
+  h4 {
+    font-weight: normal;
+    padding-bottom: #{$baseLineHeight / 2};
+    border-bottom: 1px solid $grayLighter;
+  }
 }
+.nearby-user {
+  a {
+    padding: #{$baseLineHeight / 2};
+    border-bottom: 1px solid #ccc;
+    display: block;
+    background: #efefef;
+    &:hover {
+      text-decoration: none;
+      background: #ccc;
+    }
+  }
+}
+
+.nearby-user-instruments {
+  font-style: italic;
+  font-size: 12px;
+  color: #666;
+  margin-left: 44px;
+}
+
 
 // IE overlay
 #ie_warning {

@@ -1,10 +1,5 @@
-Factory.sequence :username do |x|
-  "testuser" + x.to_s  # make sure it's unique by appending sequence number
-end
-Factory.sequence :time do |x|
-  Time.now - x.hours
-end
-
-Factory.sequence :date do |x|
-  Date.today - x.days
+FactoryGirl.define do
+  sequence(:username) {|n| "testuser" + n.to_s }
+  sequence(:time) {|x| "testuser" + Time.now - x.hours }
+  sequence(:date) {|x| "testuser" + Date.today - x.days }
 end

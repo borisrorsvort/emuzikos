@@ -1,5 +1,8 @@
 - title t(:'.title')
-%p= link_to t(:'buttons.testimonials.create'), new_testimonial_path, :class => "button add"
+%p
+  = link_to new_testimonial_path, :class => "btn btn-primary" do
+    %i.icon-plus.icon-white
+    = t(:'buttons.testimonials.create')
 .testimonials{ :class => (@current_user ? nil : "wide")}
   - if !@testimonials.blank?
     = render @testimonials
