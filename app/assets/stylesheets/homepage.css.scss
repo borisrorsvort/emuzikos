@@ -18,7 +18,7 @@
   font-weight:normal;
   margin: #{$baseLineHeight * 2} 0;
   @include text-shadow(#000, 0, 1px, 1px);
-  @include animation(bounceInUp 1s linear 1s 1);
+  @include animation(bounceInUp 1.5s linear 1);
   strong {
     color:#7bb3cf  !important;
   }
@@ -93,7 +93,7 @@
   font-weight:bold;
   text-align: center;  
   font-size: 14px;
-  @include animation(bounceInUp 1s linear 2s 1);
+  @include animation(bounceInUp 2s linear 1);
   &:hover {
     color: darken(#5e501e, 10%);
     @include scale(1.02);
