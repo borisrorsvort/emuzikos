@@ -26,6 +26,14 @@
       margin: 0 2px 0 ;
 }}}
 
+.subnav-fixed {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
+  z-index: 1020;
+}
+
 // Sub nav
 
 .sub_nav #sub_sections {

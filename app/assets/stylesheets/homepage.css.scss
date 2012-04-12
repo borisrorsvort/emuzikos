@@ -74,11 +74,6 @@
   @include animation(fadeInDownBig 1s linear 1); 
 }
 
-#header {
-  background:none;
-  background-color:  $home_bg;
-}
-
 .signup_button {
   height: 45px;
   line-height: 45px;
