@@ -6,11 +6,13 @@ Emuzikos::Application.routes.draw do
   resources :services, :only => [:index, :destroy]
 
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
+    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
   # devise_scope :user do
   #   get '/users/auth/:provider' => 'users/services#passthru'
   # end
-  #devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   ActiveAdmin.routes(self)
 

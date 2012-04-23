@@ -10,7 +10,6 @@ gem 'modernizr-rails'
 gem "devise", "2.0"
 gem 'omniauth', '1.0'
 gem "omniauth-facebook"
-gem "omniauth-twitter"
 gem "omniauth-soundcloud"
 
 gem 'activeadmin'

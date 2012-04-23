@@ -113,15 +113,6 @@ class User < ActiveRecord::Base
     self.services.find_by_provider(service)
   end
 
-  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
-    data = access_token.extra.raw_info
-    if user = User.where(:email => data.email).first
-      user
-    else # Create a user with a stub password. 
-      user = User.create!(:email => data.email, :password => Devise.friendly_token[0,20], :username => data.username.gsub(/ /,'').downcase.parameterize )
-    end
-  end
-
   def get_events(songkick_username)
     require 'songkickr'
     remote = Songkickr::Remote.new AppConfig.songkick.api_key

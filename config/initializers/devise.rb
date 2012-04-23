@@ -3,9 +3,8 @@
 Devise.setup do |config|
 
   require "omniauth-facebook"
-  require "omniauth-twitter"
+  require "omniauth-soundcloud"
 
-  config.omniauth :twitter, '76zeThKPzGSMABaPJRxfA', 'CLPWwv4ZUGe2hVth09JAzkvqi8veVbslb7bH3CavBY'
   config.omniauth :soundcloud, "eabbf1f936c1dad49fe9e0d38cc34c5f", "6526f6a25058f3cfdcb9463fe071db65"
 
   if Rails.env == "development"
@@ -15,8 +14,7 @@ Devise.setup do |config|
   else
     config.omniauth :facebook, '218956201460694', '51b7eeef805ce7858fb312c3a444e5ad', {:iframe => true, :scope => "email, user_hometown, publish_stream, user_about_me, user_birthday, user_interests, user_photos, user_website", :client_options => {:ssl => {:ca_file => "/usr/lib/ssl/certs/ca-certificates.crt"}}}
   end
-  
-  
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.

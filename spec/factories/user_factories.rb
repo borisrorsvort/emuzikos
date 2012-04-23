@@ -14,12 +14,12 @@ FactoryGirl.define do
     u.request_message "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
     u.user_type "musician"
     u.soundcloud_username "desta"
-    u.created_at time
-    u.updated_at time
+    u.created_at Time.now
+    u.updated_at Time.now
     u.searching_for "band"
     u.sign_in_count 130
-    u.current_sign_in_at time
-    u.last_sign_in_at time
+    u.current_sign_in_at Time.now
+    u.last_sign_in_at Time.now
     u.current_sign_in_ip "127.0.0.1"
     u.last_sign_in_ip "127.0.0.1"
     u.latitude 50.83323287963867

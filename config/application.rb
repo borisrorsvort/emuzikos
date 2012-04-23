@@ -2,9 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
-if defined?(Bundler)  
+if defined?(Bundler)
   Bundler.require *Rails.groups(:assets => %w(development test))
-end  
+end
 
 module Emuzikos
   class Application < Rails::Application
@@ -32,15 +32,9 @@ module Emuzikos
     if Rails.env.production?
       config.middleware.insert_before Rack::Lock, Rack::NoWWW
     end
-
-    # config.after_initialize do |app|
-    #   app.routes.append{ match '*path', :to => 'errors#404', :constraints => lambda{|request| !request.path.starts_with?("/auth") }} unless config.consider_all_requests_local
-    # end
-
-    #config.active_record.whitelist_attributes = true
   end
 end
-#help against freezing when method missing
+
 module AbstractController
   module Rendering
     module Antifreeze
@@ -50,7 +44,7 @@ module AbstractController
     end
     def view_context
       context = view_context_class.new(view_renderer, view_assigns, self)
-      context.extend Antifreeze 
+      context.extend Antifreeze
       return context
     end
   end

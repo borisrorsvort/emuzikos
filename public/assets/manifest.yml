@@ -33,14 +33,11 @@ homepage/note-circle.png: homepage/note-circle-b0908b82c81be8a193ddd1499b32794e.
 icons/ajax-loader-bar.gif: icons/ajax-loader-bar-4700ac63ecc61b667d34242984457891.gif
 icons/ajax-loader-pagiantion.gif: icons/ajax-loader-pagiantion-558ef4b4fd76a8b00f5607d7d4fc6831.gif
 icons/authbuttons/auth-icons.png: icons/authbuttons/auth-icons-06145a27fe77a0a346041d23fef7d694.png
-icons/authbuttons/facebook_128.png: icons/authbuttons/facebook_128-f86b1f3f2f1229c00db2597a03e4c243.png
-icons/authbuttons/facebook_256.png: icons/authbuttons/facebook_256-84dcd94c1f1121a687d164acaa78dae2.png
 icons/authbuttons/facebook_32.png: icons/authbuttons/facebook_32-075ab1bef292edaeeb3c2f320c3c6cfc.png
 icons/authbuttons/facebook_64.png: icons/authbuttons/facebook_64-12b54871a3471cd8a89518d1fe64bece.png
-icons/authbuttons/twitter_128.png: icons/authbuttons/twitter_128-e7bfd9399b2b1e631d0511a1c33f7d29.png
-icons/authbuttons/twitter_256.png: icons/authbuttons/twitter_256-565ab05d65b2cabeb7d9c0519a35f059.png
-icons/authbuttons/twitter_32.png: icons/authbuttons/twitter_32-b6d4dcd745bf105ed7da12cee566af34.png
-icons/authbuttons/twitter_64.png: icons/authbuttons/twitter_64-1244350d1277d25b1d722fbd65e53629.png
+icons/authbuttons/soundcloud-button.png: icons/authbuttons/soundcloud-button-2f0866d092cb0ccb3fdce7d48dc275c1.png
+icons/authbuttons/soundcloud_32.png: icons/authbuttons/soundcloud_32-a01af5dc518b2bfa126a0e0b5ada1912.png
+icons/authbuttons/soundcloud_64.png: icons/authbuttons/soundcloud_64-5bc5ff1c403f5f470ae4f59450ca9162.png
 icons/close.png: icons/close-94e1289e20ed0c2335323cad7eaa6fab.png
 icons/flags/fr.gif: icons/flags/fr-69b803659c4ce2df298d364a7e5c6513.gif
 icons/flags/us.gif: icons/flags/us-bfc9a108d6147c70abe97487cd48e2f2.gif

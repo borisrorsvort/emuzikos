@@ -48,6 +48,12 @@ module ApplicationHelper
     end
   end
 
+  def soundcloud_button
+    link_to omniauth_authorize_path(:user, "soundcloud") do
+      image_tag "icons/authbuttons/soundcloud-button.png", :alt => "Soundcloud connect"
+    end
+  end
+
   private
 
     def add_class(name, attrs)
