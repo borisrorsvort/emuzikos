@@ -7,8 +7,11 @@ gem 'mysql'
 gem "jquery-rails"
 gem 'modernizr-rails'
 
-gem "devise"
-gem 'omniauth', '0.3.2'
+gem "devise", "2.0"
+gem 'omniauth', '1.0'
+gem "omniauth-facebook"
+gem "omniauth-twitter"
+gem "omniauth-soundcloud"
 
 gem 'activeadmin'
 gem 'meta_search'
@@ -77,6 +80,7 @@ group :development, :test do
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem "taps"
+  gem 'quiet_assets'
   #gem 'rails-dev-tweaks', '~> 0.6.1'
   platforms :mri_18 do
     gem "ruby-debug"

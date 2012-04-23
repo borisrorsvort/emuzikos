@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
 
   has_private_messages
   is_impressionable :counter_cache => true
@@ -28,7 +33,7 @@ class User < ActiveRecord::Base
 
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
-  validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
+  #validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
   validates_format_of :soundcloud_username, :with => /^[^ ]+$/, :allow_blank => true
   validates_attachment_content_type :avatar, :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], :message => "only image files are allowed"
   validates_attachment_size :avatar, :less_than => 1.megabyte, :message => "max size is 1M"
@@ -106,6 +111,15 @@ class User < ActiveRecord::Base
 
   def has_service?(service)
     self.services.find_by_provider(service)
+  end
+
+  def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
+    data = access_token.extra.raw_info
+    if user = User.where(:email => data.email).first
+      user
+    else # Create a user with a stub password. 
+      user = User.create!(:email => data.email, :password => Devise.friendly_token[0,20], :username => data.username.gsub(/ /,'').downcase.parameterize )
+    end
   end
 
   def get_events(songkick_username)

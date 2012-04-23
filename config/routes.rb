@@ -1,17 +1,16 @@
 Emuzikos::Application.routes.draw do
 
-  match "about" => "pages#about", :as => :about
-  match "terms" => "pages#terms", :as => :terms
-  match "privacy" => "pages#privacy", :as => :privacy
-  match "sitemap" => "sitemaps#show", :as => :sitemap
 
-  match '/mailchimp/callback' =>'mailchimp#callback', :as => :mailchimp_callback
-  match '/auth/:service/callback' => 'services#create'
+  #match '/auth/:service/callback' => 'services#create'
 
-  resources :services, :only => [:index, :create, :destroy]
+  resources :services, :only => [:index, :destroy]
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  devise_for :users
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  # devise_scope :user do
+  #   get '/users/auth/:provider' => 'users/services#passthru'
+  # end
+  #devise_for :admin_users, ActiveAdmin::Devise.config
 
   ActiveAdmin.routes(self)
 
@@ -28,6 +27,12 @@ Emuzikos::Application.routes.draw do
     end
   end
 
+  match "about" => "pages#about", :as => :about
+  match "terms" => "pages#terms", :as => :terms
+  match "privacy" => "pages#privacy", :as => :privacy
+  match "sitemap" => "sitemaps#show", :as => :sitemap
+  match '/mailchimp/callback' =>'mailchimp#callback', :as => :mailchimp_callback
+  
   root :to => "pages#homepage"
 
 end

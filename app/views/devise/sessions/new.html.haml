@@ -11,11 +11,9 @@
 
     .field
       %p
-        %a.btn-auth.btn-facebook{ :href => "/auth/facebook"}
-          = t(:"devise.login_with", :provider => "Facebook")
+        = link_to t(:"devise.signup_with", :provider => "Facebook"), user_omniauth_authorize_path(:facebook), :class => "btn-auth btn-facebook"
       %p
-        %a.btn-auth.btn-twitter{ :href => "/auth/twitter"}
-          = t(:"devise.login_with", :provider => "Twitter")
+        = link_to t(:"devise.signup_with", :provider => "Twitter"), user_omniauth_authorize_path(:twitter), :class => "btn-auth btn-twitter"
     %hr.clearfix
     %a.normal_login_trigger{"data-target" => ".normal_login", "data-toggle" => "collapse"}= t(:"devise.use_the_normal_form")
     .normal_login.collapse.in

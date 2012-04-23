@@ -22,7 +22,7 @@
                 = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
                 = link_to t(:'menu.profile.public'),  user_path(current_user)
                 = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-                = link_to t(:'menu.profile.authentications'), services_path
+                /= link_to t(:'menu.profile.authentications'), services_path
             %li.dropdown
               =link_to "#", :class => "dropdown-toggle", :data => {"toggle" => "dropdown"} do
                 %i.icon-inbox.icon-white

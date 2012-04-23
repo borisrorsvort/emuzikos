@@ -33,9 +33,9 @@ module Emuzikos
       config.middleware.insert_before Rack::Lock, Rack::NoWWW
     end
 
-    config.after_initialize do |app|
-      app.routes.append{ match '*path', :to => 'errors#404', :constraints => lambda{|request| !request.path.starts_with?("/auth") }} unless config.consider_all_requests_local
-    end
+    # config.after_initialize do |app|
+    #   app.routes.append{ match '*path', :to => 'errors#404', :constraints => lambda{|request| !request.path.starts_with?("/auth") }} unless config.consider_all_requests_local
+    # end
 
     #config.active_record.whitelist_attributes = true
   end
