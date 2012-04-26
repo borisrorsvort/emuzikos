@@ -24,7 +24,7 @@ module Emuzikos
     config.filter_parameters += [:password,  :password_confirmation]
 
     config.assets.enabled = true
-    config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
+    
     config.assets.precompile += %w[active_admin.css active_admin.js]
 
     #config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
@@ -40,7 +40,9 @@ module Emuzikos
     if Rails.env.production?
       config.middleware.insert_before Rack::Lock, Rack::NoWWW
     end
-    
+    unless Rails.env.prodution?
+      config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
+    end
   end
 end
 
