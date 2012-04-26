@@ -5,7 +5,7 @@ feature "Instrument", :js => true do
 
   background do
     do_login_if_not_already
-    @instrument = Factory.create(:instrument)
+    @instrument = FactoryGirl.create(:instrument)
   end
 
   def select_from_chosen(item_text, options)

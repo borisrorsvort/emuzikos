@@ -5,7 +5,7 @@ feature "Genre", :js => true do
 
   background do
     do_login_if_not_already
-    @genre = Factory.create(:genre)
+    @genre = FactoryGirl.create(:genre)
   end
 
   def select_from_chosen(item_text, options)
@@ -21,6 +21,5 @@ feature "Genre", :js => true do
     click_button('Update')
     page.should have_content('Success')
   end
-
 end
 

@@ -43,8 +43,6 @@ gem 'rack-no-www'
 gem 'pg'
 gem 'meta-tags', :require => 'meta_tags'
 gem "friendly_id", "~> 4.0.0"
-
-gem 'sass-rails', " ~> 3.1.0"
 gem 'impressionist'
 
 gem 'wicked'
@@ -55,7 +53,8 @@ gem 'bootstrap-sass'
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"
   gem 'uglifier'
-  gem "compass", "0.12.alpha.1"
+  gem 'sass-rails'
+  gem "compass-rails"
 end
 
 group :development, :test do
@@ -67,13 +66,19 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem "letter_opener"
   gem 'heroku-rails'
-  gem "rspec-rails"
+  gem 'rspec-rails','2.7.0'
+  gem 'watchr'
+  gem "guard-rspec"
+  gem 'growl'
+  gem 'growl_notify'
+  gem 'webrat'
+  gem "spork"
+  gem "guard-spork"
   gem "factory_girl_rails"
   gem "shoulda"
   gem "database_cleaner"
   gem "capybara"
   gem 'selenium-webdriver'
-  gem 'guard'
   gem "launchy", '2.0.5'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false

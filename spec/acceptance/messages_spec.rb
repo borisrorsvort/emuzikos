@@ -4,7 +4,7 @@ feature "Send a Message" do
   background do
     do_login_if_not_already
     @sender = @user
-    @recipient = Factory(:user)
+    @recipient = FactoryGirl.create(:user)
   end
 
   scenario "to visible user", :js => true do

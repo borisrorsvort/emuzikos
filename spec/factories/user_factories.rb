@@ -32,7 +32,7 @@ FactoryGirl.define do
   factory :instrument do |i|
     i.name 'guitar'
   end
-  factory :genre do |i|
-    i.name 'rock'
+  factory :genre do |g|
+    g.name 'rock'
   end
 end
