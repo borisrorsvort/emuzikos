@@ -1,9 +1,10 @@
 require 'spec_helper'
+require 'devise/test_helpers'
 
 describe UsersController do
 
   before (:each) do
-    @user = FactoryGirl.create(:user)
+    @user = create(:user)
     sign_in @user
   end
 

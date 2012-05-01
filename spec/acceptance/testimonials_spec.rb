@@ -3,7 +3,13 @@ require 'spec_helper'
 feature "Testimonials" do
 
   background do
-    do_login_if_not_already
+    @user = create(:user)
+    visit(new_user_session_path)
+    fill_in 'user_email', :with => @user.email
+    fill_in 'user_password', :with => @user.password
+    click_button 'Log in'
+    current_path.should match edit_user_path(@user)
+    page.should have_content('Log out')
   end
 
   scenario "Create a new testimonial with valid data", :js => true do

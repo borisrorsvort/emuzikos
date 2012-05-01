@@ -66,19 +66,19 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem "letter_opener"
   gem 'heroku-rails'
-  gem 'rspec-rails','2.7.0'
+  gem 'rspec-rails'
   gem 'watchr'
   gem "guard-rspec"
   gem 'growl'
-  gem 'growl_notify'
-  gem 'webrat'
+  #gem 'growl_notify'
+  #gem 'webrat'
   gem "spork"
   gem "guard-spork"
   gem "factory_girl_rails"
   gem "shoulda"
   gem "database_cleaner"
   gem "capybara"
-  gem 'selenium-webdriver'
+  gem "selenium-webdriver", "2.21.1"
   gem "launchy", '2.0.5'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
