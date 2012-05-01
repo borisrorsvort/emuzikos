@@ -40,7 +40,7 @@ module Emuzikos
     if Rails.env.production?
       config.middleware.insert_before Rack::Lock, Rack::NoWWW
     end
-    unless Rails.env.prodution? || Rails.env.staging?
+    unless Rails.env.production? || Rails.env.staging?
       config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
     end
   end
