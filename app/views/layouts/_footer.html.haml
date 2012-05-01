@@ -21,6 +21,8 @@
 = yield :javascripts
 = yield :scripts
 
+= render "shared/mixpanel" if Rails.env.development? || Rails.env.staging? 
+
 /[if (lt IE 9) & (!IEMobile)]
   = javascript_include_tag "ie_js_pack"
 
@@ -38,14 +40,11 @@
   });
 
 - if flash[:error]
-  = js add_gritter(flash[:error], :image => :error, :title => "Something's wrong!", :sticky => true) 
+  = js add_gritter(flash[:error], :image => :error, :title => "Something's wrong!", :sticky => true)
 - elsif flash[:notice]
-  = js add_gritter(flash[:notice], :image => :success, :sticky => true) 
-
-
+  = js add_gritter(flash[:notice], :image => :success, :sticky => true)
 
 =render "/shared/feedback_box"
-  
 
 / http://t.co/HZe9oJ4
 - if Rails.env.production?
