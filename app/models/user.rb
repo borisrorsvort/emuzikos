@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
 
   has_private_messages
   is_impressionable :counter_cache => true
@@ -28,7 +33,7 @@ class User < ActiveRecord::Base
 
   validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of :username
-  validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
+  #validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
   validates_format_of :soundcloud_username, :with => /^[^ ]+$/, :allow_blank => true
   validates_attachment_content_type :avatar, :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], :message => "only image files are allowed"
   validates_attachment_size :avatar, :less_than => 1.megabyte, :message => "max size is 1M"

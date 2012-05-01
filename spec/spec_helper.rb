@@ -1,71 +1,90 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
-require 'simplecov'
-SimpleCov.start 'rails'
+require 'rubygems'
 
-ENV["RAILS_ENV"] ||= 'test'
-require File.expand_path("../../config/environment", __FILE__)
-require 'rspec/rails'
-require 'rspec/autorun'
-require 'capybara/rspec'
-require 'capybara/rails'
-require 'simple-private-messages/matchers'
-# Requires supporting ruby files with custom matchers and macros, etc,
-# in spec/support/ and its subdirectories.
-Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+def start_simplecov
+  require 'simplecov'
+  SimpleCov.start 'rails' unless ENV["SKIP_COV"]
+end
 
-RSpec.configure do |config|
-  # == Mock Framework
-  #
-  # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
-  #
-  # config.mock_with :mocha
-  # config.mock_with :flexmock
-  # config.mock_with :rr
-  config.mock_with :rspec
+def spork?
+  defined?(Spork) && Spork.using_spork?
+end
 
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+def setup_environment
+  # This file is copied to spec/ when you run 'rails generate rspec:install'
+  ENV["RAILS_ENV"] ||= 'test'
 
-  # If you're not using ActiveRecord, or you'd prefer not to run each of your
-  # examples within a transaction, remove the following line or assign false
-  # instead of true.
-  config.use_transactional_fixtures = false
+  start_simplecov unless spork?
 
-  # If true, the base class of anonymous controllers will be inferred
-  # automatically. This will be the default behavior in future versions of
-  # rspec-rails.
-  config.infer_base_class_for_anonymous_controllers = false
-
-  config.include Professionalnerd::SimplePrivateMessages::Shoulda::Matchers
-
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.clean_with(:truncation)
+  if spork?
+    ENV['DRB'] = 'true'
+    Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
   end
 
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
+  require File.expand_path("../../config/environment", __FILE__)
 
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
+  require 'rspec/rails'
+  require 'capybara/rspec'
+  require 'simple-private-messages/matchers'
+  require 'factory_girl'
+    # For Devise
+  require "rails/application"
+  Spork.trap_method(Rails::Application, :reload_routes!)
+  Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
 
+  #FactoryGirl.find_definitions
 
-  def do_login(options = {})
-    @user = Factory(:user, options)
-    visit(new_user_session_path)
-    within("#user_new") do
-      fill_in 'user_email', :with => @user.email
-      fill_in 'user_password', :with => @user.password
+  Rails.backtrace_cleaner.remove_silencers!
+
+  require 'database_cleaner'
+  DatabaseCleaner.strategy = :truncation
+  RSpec.configure do |config|
+    config.include Professionalnerd::SimplePrivateMessages::Shoulda::Matchers
+    config.mock_with :rspec
+    config.include FactoryGirl::Syntax::Methods
+    config.before(:suite) do
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.clean_with(:truncation)
     end
-    click_button 'Log in'
-    current_path.should match edit_user_path(@user)
-    page.should have_content('Log out')
+
+    config.before(:each) do
+      DatabaseCleaner.start
+    end
+
+    config.after(:each) do
+      DatabaseCleaner.clean
+    end
+
+    config.include Devise::TestHelpers, :type => :controller
   end
 
-  # if we're already logged in, don't bother doing it again
-  def do_login_if_not_already(options = {})
-    do_login(options) unless @user.present?
+  Capybara.default_driver = :selenium
+  #Capybara.javascript_driver = :webkit
+end
+
+def each_run
+  if spork?
+    ActiveSupport::Dependencies.clear
+    FactoryGirl.reload
   end
+  # Requires supporting ruby files with custom matchers and macros, etc,
+  # in spec/support/ and its subdirectories.
+  Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+end
+
+# If spork is available in the Gemfile it'll be used but we don't force it.
+unless (begin; require 'spork'; rescue LoadError; nil end).nil?
+  Spork.prefork do
+    # Loading more in this block will cause your tests to run faster. However,
+    # if you change any configuration or code from libraries loaded here, you'll
+    # need to restart spork for it take effect.
+    setup_environment
+  end
+
+  Spork.each_run do
+    # This code will be run each time you run your specs.
+    each_run
+  end
+else
+  setup_environment
+  each_run
 end

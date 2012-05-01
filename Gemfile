@@ -7,8 +7,10 @@ gem 'mysql'
 gem "jquery-rails"
 gem 'modernizr-rails'
 
-gem "devise"
-gem 'omniauth', '0.3.2'
+gem "devise", "2.0"
+gem 'omniauth', '1.0'
+gem "omniauth-facebook"
+gem "omniauth-soundcloud"
 
 gem 'activeadmin'
 gem 'meta_search'
@@ -41,8 +43,6 @@ gem 'rack-no-www'
 gem 'pg'
 gem 'meta-tags', :require => 'meta_tags'
 gem "friendly_id", "~> 4.0.0"
-
-gem 'sass-rails', " ~> 3.1.0"
 gem 'impressionist'
 
 gem 'wicked'
@@ -53,7 +53,8 @@ gem 'bootstrap-sass'
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"
   gem 'uglifier'
-  gem "compass", "0.12.alpha.1"
+  gem 'sass-rails'
+  gem "compass-rails"
 end
 
 group :development, :test do
@@ -65,18 +66,25 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem "letter_opener"
   gem 'heroku-rails'
-  gem "rspec-rails"
+  gem 'rspec-rails'
+  gem 'watchr'
+  gem "guard-rspec"
+  gem 'growl'
+  #gem 'growl_notify'
+  #gem 'webrat'
+  gem "spork"
+  gem "guard-spork"
   gem "factory_girl_rails"
   gem "shoulda"
   gem "database_cleaner"
   gem "capybara"
-  gem 'selenium-webdriver'
-  gem 'guard'
+  gem "selenium-webdriver", "2.21.1"
   gem "launchy", '2.0.5'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem "taps"
+  gem 'quiet_assets'
   #gem 'rails-dev-tweaks', '~> 0.6.1'
   platforms :mri_18 do
     gem "ruby-debug"

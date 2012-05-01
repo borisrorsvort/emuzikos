@@ -45,9 +45,8 @@
       .services_list
 
         - unless @current_user.has_service?("facebook")
-          %a.services{:href => "/auth/facebook"}
+          %a.services{:href => "/users/auth/facebook"}
             = image_tag "icons/authbuttons/facebook_32.png",  :alt => "Facebook"
-
-        - unless @current_user.has_service?("twitter")
-          %a.services{:href => "/auth/twitter"}
-            = image_tag "icons/authbuttons/twitter_32.png",  :alt => "Twitter"
+        - unless @current_user.has_service?("soundcloud")
+          %a.services{:href => "/users/auth/soundcloud"}
+            = image_tag "icons/authbuttons/soundcloud_32.png",  :alt => "Soundcloud"
