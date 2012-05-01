@@ -38,14 +38,11 @@
   });
 
 - if flash[:error]
-  = js add_gritter(flash[:error], :image => :error, :title => "Something's wrong!", :sticky => true) 
+  = js add_gritter(flash[:error], :image => :error, :title => "Something's wrong!", :sticky => true)
 - elsif flash[:notice]
-  = js add_gritter(flash[:notice], :image => :success, :sticky => true) 
-
-
+  = js add_gritter(flash[:notice], :image => :success, :sticky => true)
 
 =render "/shared/feedback_box"
-  
 
 / http://t.co/HZe9oJ4
 - if Rails.env.production?
