@@ -21,7 +21,7 @@
 = yield :javascripts
 = yield :scripts
 
-= render "shared/mixpanel" if Rails.env.development? || Rails.env.staging? 
+= render "shared/mixpanel" if Rails.env.production?
 
 /[if (lt IE 9) & (!IEMobile)]
   = javascript_include_tag "ie_js_pack"
