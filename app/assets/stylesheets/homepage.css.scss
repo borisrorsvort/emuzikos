@@ -93,6 +93,8 @@
   font-weight:bold;
   text-align: center;  
   font-size: 14px;
+  z-index: 9999;
+  position: relative;
   @include animation(bounceInUp 2s linear 1);
   &:hover {
     color: darken(#5e501e, 10%);

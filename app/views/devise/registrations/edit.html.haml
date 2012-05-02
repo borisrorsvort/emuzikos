@@ -27,23 +27,23 @@
   .form-actions
     = f.submit t(:'buttons.update'), :class => "btn btn-primary"
 
-%section
-  .page-header
-    %header
-      %h1= t(:'.preferences')
+/ %section
+/   .page-header
+/     %header
+/       %h1= t(:'.preferences')
 
-  = simple_form_for @user, :html => { :multipart => true, :class => "form-horizontal" } do |f|
-    = f.error_messages
-    = f.input :visible, :as => :boolean, :label =>  t(:'activerecord.attributes.user.visible')
-    .control-group
-      .controls
-        .alert.alert-info
-          %p= t(:"visible_explanation", :scope => [:users, :edit])
-    = f.input :preferred_language, :collection => [["English", "en"], ["Français", "fr"]], :as => :radio_buttons, :selected => @user.preferred_language, :label => t(:'users.preferred.language')
-    = f.input :prefers_newsletters, :as => :boolean, :label => t(:"users.prefers.newsletters")
-    = f.input :prefers_message_notifications, :as => :boolean, :label => t(:"users.prefers.message_notifications")
-    .form-actions
-      =f.submit t(:'buttons.update'), :type => "submit", :class => "btn btn-primary"
+/   = simple_form_for @current_user, :as => :user,  :html => {:class => "form-horizontal" } do |f|
+/     = f.error_messages
+/     = f.input :visible, :as => :boolean, :label =>  t(:'activerecord.attributes.user.visible')
+/     .control-group
+/       .controls
+/         .alert.alert-info
+/           %p= t(:"visible_explanation", :scope => [:users, :edit])
+/     = f.input :preferred_language, :collection => [["English", "en"], ["Français", "fr"]], :as => :radio_buttons, :selected => @user.preferred_language, :label => t(:'users.preferred.language')
+/     = f.input :prefers_newsletters, :as => :boolean, :label => t(:"users.prefers.newsletters")
+/     = f.input :prefers_message_notifications, :as => :boolean, :label => t(:"users.prefers.message_notifications")
+/     .form-actions
+/       =f.submit t(:'buttons.update'), :type => "submit", :class => "btn btn-primary"
 
 %section
   .page-header

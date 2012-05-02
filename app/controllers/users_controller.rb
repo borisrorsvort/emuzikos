@@ -70,8 +70,4 @@ class UsersController < ApplicationController
   def contacts
     @friendships = @current_user.friendships
   end
-
-  def crop
-    @user = @current_user
-  end
 end
