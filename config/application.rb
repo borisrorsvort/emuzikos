@@ -1,17 +1,12 @@
 require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
-module Compass
-  RAILS_LOADED = true
-end
-
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
-
 
 module Emuzikos
   class Application < Rails::Application
@@ -24,7 +19,7 @@ module Emuzikos
     config.filter_parameters += [:password,  :password_confirmation]
 
     config.assets.enabled = true
-    
+
     config.assets.precompile += %w[active_admin.css active_admin.js]
 
     #config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
@@ -40,9 +35,7 @@ module Emuzikos
     if Rails.env.production?
       config.middleware.insert_before Rack::Lock, Rack::NoWWW
     end
-    unless Rails.env.production? || Rails.env.staging?
-      config.sass.load_paths << Compass::Frameworks['compass'].stylesheets_directory
-    end
+
   end
 end
 

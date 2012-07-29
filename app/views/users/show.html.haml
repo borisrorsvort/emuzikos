@@ -31,17 +31,16 @@
         = t(:'buttons.back', :model => t(:'activerecord.models.search'))
 
 .row-fluid
-  %aside.profile_sidebar.span3
-    %ul.thumbnails
-      - if @user.avatar
-        %li.span3= image_tag @user.avatar.url(:normal), :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
-      - else
-        %li.span3= image_tag "backgrounds/no-image-profile.jpg", :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
-      - if @user.geocoded?
-        %li.span3
-          %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "thumbnail", :alt => "#{@user.username}'s location"}
+  %aside.profile_sidebar.span3.hidden-phone
+    - if @user.avatar
+      .span12= image_tag @user.avatar.url(:normal), :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
+    - else
+      .span12= image_tag "backgrounds/no-image-profile.jpg", :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
+    - if @user.geocoded?
+      .span12
+        %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "thumbnail", :alt => "#{@user.username}'s location"}
     - if @user.geocoded? && !@users_nearby.size.nil?
-      %section.users_nearby
+      %section.users_nearby.hidden-phone
         %header
           %h4= t(:'.users_nearby')
         = render :partial => "nearby_user", :collection => @users_nearby
