@@ -90,7 +90,7 @@
     @include border-radius(5px);
       position: relative;
       .mixpanel_partner {
-       position: absolute; 
+       position: absolute;
        top: 3px;
        right: 20%;
       }
@@ -137,7 +137,13 @@
 }
 
 .profile_sidebar {
-  display: none;
+  .thumbnail {
+    @include box-sizing('border-box');
+    margin-bottom: $gridGutterWidth;
+  }
+  .span12 {
+    margin-left: 0;
+  }
   img,
   object {
     width: 100%;

@@ -76,26 +76,28 @@
 }
 
 .signup_button {
+  @include background(linear-gradient(#f1d260 0%, #efbf26 100%));
+  @include inset(#fff);
+  @include border-radius(45px);
+  @include box-shadow( #cbc5a1, 0, 0, 2px, inset);
+  @include animation(bounceInUp 2s linear 1);
   height: 45px;
   line-height: 45px;
-  width: 280px;
+  max-width: 260px;
   display:block;
   margin: 0 auto 20px;
   background: #f1d260; /* Old browsers */
-  @include background(linear-gradient(#f1d260 0%, #efbf26 100%));
   color: #5e501e;
-  @include inset(#fff);
-  @include border-radius(45px);
   text-decoration:none;
   border: 7px solid #273b52;
-  @include box-shadow( #cbc5a1, 0, 0, 2px, inset);
   text-transform: uppercase;
   font-weight:bold;
-  text-align: center;  
+  text-align: center;
   font-size: 14px;
   z-index: 9999;
   position: relative;
   @include animation(bounceInUp 2s linear 1);
+
   &:hover {
     color: darken(#5e501e, 10%);
     @include scale(1.02);
@@ -107,26 +109,39 @@
 
 .features_columns {
   background-color: $home_bg;
-  padding: 0 20px 48px;
+  padding: 0 0px 48px;
+  .inner_block {
+    padding: 0 $gridGutterWidth;
+  }
   .columns {
     padding: 3%;
+    width: 250px;
+    .inner_column {
+      @include box-sizing('border-box');
+    }
   }
   p, li {
     color: $grayLight ;
   }
 }
 
-.app_sample_thumb img {
-  border: 5px solid #fff;
-  @include box-shadow(#000, 0, 1px, 1px);
-  @include border-radius(5px);
-  @include transition-property(all);
-  @include transition-duration(0.2s);
-  @include transition-timing-function(ease-in);
-  position: relative;
-  &:hover{
-    border-color: #f5bd14;
-    top: 5px;
+.app_sample_thumb {
+  display: block;
+  width: 100%;
+  img {
+    border: 5px solid #fff;
+    @include box-sizing('border-box');
+    @include box-shadow(#000, 0, 1px, 1px);
+    @include border-radius(5px);
+    @include transition-property(all);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease-in);
+    max-width: 100%;
+    position: relative;
+    &:hover{
+      border-color: #f5bd14;
+      top: 5px;
+    }
   }
 }
 
