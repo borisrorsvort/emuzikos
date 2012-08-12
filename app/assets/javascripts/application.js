@@ -8,7 +8,6 @@
 //= require_directory ./mylibs
 
 
-
 /* rest of file omitted */
 
 // Fix links inside mobile safari
@@ -64,7 +63,7 @@ $(document).ready(function() {
   // $('.tooltip').tipsy({trigger: 'hover', gravity: 's'});
 
   $(".collapse").collapse();
-  
+
   if ($(".boxy_forms .control-group.error").size() > 1) {
     $(".normal_login").collapse('show');
   };

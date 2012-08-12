@@ -49,6 +49,7 @@ gem 'wicked'
 gem 'annotate'
 
 gem 'bootstrap-sass'
+gem "highcharts-rails", "~> 2.2.1"
 
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"
@@ -95,5 +96,4 @@ group :development, :test do
   end
 end
 
-gem 'localeapp'
 gem 'tap'
