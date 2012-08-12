@@ -56,7 +56,11 @@ def setup_environment
 
     config.include Devise::TestHelpers, :type => :controller
   end
+  # Capybara.register_driver :chrome do |app|
+  #   Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  # end
 
+  # Capybara.javascript_driver = :chrome
   Capybara.default_driver = :selenium
   #Capybara.javascript_driver = :webkit
 end

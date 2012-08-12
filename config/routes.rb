@@ -3,8 +3,6 @@ Emuzikos::Application.routes.draw do
 
   #match '/auth/:service/callback' => 'services#create'
 
-  resources :services, :only => [:index, :destroy]
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -13,6 +11,7 @@ Emuzikos::Application.routes.draw do
     get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
   end
 
+  resources :services, :only => [:index, :destroy]
   resources :social_share
   resources :friendships
   resources :testimonials
@@ -31,7 +30,7 @@ Emuzikos::Application.routes.draw do
   match "privacy" => "pages#privacy", :as => :privacy
   match "sitemap" => "sitemaps#show", :as => :sitemap
   match '/mailchimp/callback' =>'mailchimp#callback', :as => :mailchimp_callback
-  
+
   root :to => "pages#homepage"
 
 end
