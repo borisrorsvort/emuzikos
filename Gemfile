@@ -36,7 +36,7 @@ gem 'httparty'
 gem 'songkickr'
 gem "soundcloud"
 gem "hominid"
-gem 'preferences', :git => 'git://github.com/rds/preferences.git'
+gem 'preferences', :git => 'git://github.com/mojotech/preferences.git'
 gem 'twitter'
 gem 'geocoder'
 gem 'rack-no-www'
@@ -68,6 +68,7 @@ group :development, :test do
   gem 'heroku-rails'
   gem 'rspec-rails'
   gem 'watchr'
+  gem "guard-livereload"
   gem "guard-rspec"
   gem 'growl'
   #gem 'growl_notify'
@@ -78,8 +79,8 @@ group :development, :test do
   gem "shoulda"
   gem "database_cleaner"
   gem "capybara"
-  gem "selenium-webdriver", "2.21.1"
-  gem "launchy", '2.0.5'
+  gem 'selenium-webdriver'
+  gem "launchy"
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false

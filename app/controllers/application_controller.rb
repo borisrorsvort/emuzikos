@@ -19,9 +19,20 @@ class ApplicationController < ActionController::Base
 
   ### DEVISE REDIRECTION SECTION
 
+  # def after_sign_in_path_for(resource)
+  #   edit_user_path(resource)
+  # end
+
   def after_sign_in_path_for(resource)
-    edit_user_path(current_user)
+    stored_location_for(resource) ||
+    if resource.is_a?(AdminUser)
+      admin_dashboard_path
+    else
+      edit_user_path(resource)
+    end
   end
+
+
 
   def after_sign_up_path_for(resource)
     edit_user_path(current_user)

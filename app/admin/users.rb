@@ -17,7 +17,7 @@ ActiveAdmin.register User do
       end
     end
   end
-  
+
   index do
     column :id do |user|
       link_to user.id, admin_user_path(user)
