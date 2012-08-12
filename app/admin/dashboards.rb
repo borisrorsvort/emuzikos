@@ -45,8 +45,7 @@ ActiveAdmin::Dashboards.build do
     @facebook_users = Service.where( :provider => "facebook").count
     @soundcloud_users = Service.where( :provider => "soundcloud").count
     @twitter_users = Service.where( :provider => "twitter").count
-    @countries = User.geocoded.select("users.country, count(users.country) AS country_count").group("country").first(10).map{|c| ["#{c.country}", c.country_count.to_i * 100 / User.geocoded.count]}
-
+    @countries = User.geocoded.select("users.country, count(users.country) AS country_count").group("country").order('country_count DESC').map{|c| ["#{c.country}", c.country_count.to_i * 100 / User.geocoded.count]}
     div do
       render :partial => "social_stats", :locals => { :all_users => @all_users,
                                                       :soundcloud_users => @soundcloud_users,
