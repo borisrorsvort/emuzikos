@@ -66,7 +66,7 @@ $(document).ready(function() {
 
   if ($(".boxy_forms .control-group.error").size() > 1) {
     $(".normal_login").collapse('show');
-  };
+  }
   $("select").chosen({ allow_single_deselect: true, width: "100%" });
   $(".search_field select").chosen({ allow_single_deselect: true, width: "100%" });
 
@@ -85,5 +85,7 @@ $(document).ready(function() {
     $(this).closest('form').submit();
     $(this).attr("disabled", true);
   });
+
+  Socialite.load();
 
 });

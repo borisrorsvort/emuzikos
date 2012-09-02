@@ -1,6 +1,6 @@
 class SocialShareController < ApplicationController
   include Wicked::Wizard
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: :update
 
   steps :invite_friends
 

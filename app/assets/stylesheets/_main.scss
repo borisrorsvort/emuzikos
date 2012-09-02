@@ -183,6 +183,9 @@ h1.username {
 
 .spread {
   margin-bottom: $baseline;
+  .socialite {
+    float: left;
+  }
   .left {
     float:left;
     margin-right: 10px; }}
@@ -351,6 +354,17 @@ h1.username {
 
 // invite friends
 
-.fb-comments, .fb-like-box {
-  margin-top: $baseline;
+#social_share {
+  h2 {
+    color:  $grayLight;
+    font-weight: normal;
+  }
+  .span4 {
+    margin-bottom: $baseline;
+  }
+}
+.paypal {
+  form input {
+    width: 100px;
+  }
 }
