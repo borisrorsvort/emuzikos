@@ -33,10 +33,10 @@
                 = link_to t(:'menu.messages.inbox'), user_messages_path(current_user), :class => "current"
                 = link_to t(:'menu.messages.sent_messages'), user_messages_path(current_user, :mailbox => :sent)
                 = link_to t(:'menu.users.contacts'), user_contacts_path(current_user)
-            %li
-              =link_to "/social_share/invite_friends" do
-                %i.icon-share.icon-white
-                = t(:'menu.share')
+          %li
+            =link_to "/social_share/invite_friends" do
+              %i.icon-share.icon-white
+              = t(:'menu.share')
         %ul.nav.pull-right
           %li.divider-vertical
           %li.dropdown
