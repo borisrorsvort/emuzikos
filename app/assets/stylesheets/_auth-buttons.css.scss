@@ -33,6 +33,7 @@
     *overflow: visible;  /* 2 */
     *display: inline; /* 3 */
     *zoom: 1; /* 3 */
+    z-index: 999;
 }
 
 .btn-auth:hover,
@@ -284,7 +285,7 @@
 .btn-twitter:hover,
 .btn-twitter:focus,
 .btn-twitter:active {
-    color: #327695;    
+    color: #327695;
     border-color: #8dc2e4;
     background-color: #cadde9;
 }

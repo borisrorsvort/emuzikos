@@ -1,9 +1,9 @@
 .row#search_form{ :role => "search" }
   = search_form_for @q, :url => users_path, :html => {:method => :get} do |f|
     .span2= f.select :user_type_cont, User::USER_TYPES.map{|type| [ I18n.t(:"users.types.#{type}"), type ]}, :include_blank => t(:'search_terms.i_search_a'), :size => 50
-    .span2= f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), :include_blank => t(:'search_terms.who_search_for'), :size => 30
-    .span2= f.select :genres_name_cont, genres.map{|g| [ I18n.t(:"musical_genres.#{g.name}"), g.name ]}, :include_blank => t(:'search_terms.music_style'), :size => 30
     .span2= f.select :instruments_name_cont, instruments.collect{|i| [ I18n.t(:"instruments.#{i.name}"), i.name ]}, :include_blank => t(:'search_terms.who_plays'), :size => 30
+    .span2= f.select :genres_name_cont, genres.map{|g| [ I18n.t(:"musical_genres.#{g.name}"), g.name ]}, :include_blank => t(:'search_terms.music_style'), :size => 30
+    .span2= f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), :include_blank => t(:'search_terms.who_search_for'), :size => 30
     .span3= text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate'), :size => 30
     .span1= f.submit(t(:'buttons.search'), :type => "submit", :class => "btn btn-primary")
 
