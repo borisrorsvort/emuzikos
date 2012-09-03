@@ -1,11 +1,11 @@
 Emuzikos::Application.configure do
-    
+
   config.assets.compress                      = true
-  config.assets.digest                        = true  
+  config.assets.digest                        = true
   config.cache_classes                        = true
-  config.consider_all_requests_local          = false  
+  config.consider_all_requests_local          = false
   config.action_controller.perform_caching    = true
-  
+
   config.active_support.deprecation           = :notify
 
   config.action_mailer.default_url_options    = { :host => 'emuzikos.com' }
