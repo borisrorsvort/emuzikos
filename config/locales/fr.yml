@@ -439,6 +439,7 @@ fr:
         go_to_recovery_page: "Demandez un nouveau mote de passe."
         have_account_already: "Vous avez déjà un compte?"
     signup_with: "Créez votre compte avec  %{provider}"
+    signin_with: "Connectez-vous avec  %{provider}"
     unlocks:
       send_instructions: "Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour déverrouiller votre compte."
       unlocked: "Votre compte a été déverrouillé. Vous êtes à présent connecté(e)."
@@ -740,7 +741,7 @@ fr:
       donate: "Aides-nous en faisant un don"
       meta_description: "Votre profil complété, il est temps d'en parler à vos amis"
       subtitle: "Aimez, partagez, commentez ou invitez vos amis"
-      title: "Nous avons besoin de vous! Faites grandir la communauté, aimez-nous sur Facebook"
+      title: "Nous avons besoin de vous! Aidez-nous à faire grandir la communauté!"
   souncloud_player: "Lecteur SoundCloud"
   support:
     array:

@@ -5,8 +5,8 @@
         = image_tag(friendship.friend.avatar.url(:gallery))
       -else
         = image_tag("backgrounds/avatar-default.gif")
-    .row.username= friendship.friend.username
-    .row.location= t(:'common.users.from') + " " + friendship.friend.zip + ", " + Carmen::country_name(friendship.friend.country) rescue nil
+    .line.username= friendship.friend.username
+    .line.location= t(:'common.users.from') + " " + friendship.friend.zip + ", " + Carmen::country_name(friendship.friend.country) rescue nil
 
   .section.user_type
     .title
@@ -27,5 +27,7 @@
   .clear
 
 .actions
-  = link_to t(:'buttons.remove_from_contact_list'), friendship, :method => :delete, :class => "button delete"
-  = link_to t(:'buttons.contact'), new_user_message_path(current_user, :to => friendship.friend.id), :class => "button submit contact"
+  = link_to t(:'buttons.remove_from_contact_list'), friendship, :method => :delete, :class => "btn delete"
+  = link_to new_user_message_path(current_user, :to => friendship.friend.id), :class => "btn btn-primary submit contact" do
+    %i.icon-envelope.icon-white
+    = t(:'buttons.contact')

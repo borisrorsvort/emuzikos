@@ -439,6 +439,7 @@ en:
         go_to_recovery_page: "Got to recovery page"
         have_account_already: "Have an account already?"
     signup_with: "Sign up with %{provider}"
+    signin_with: "Sign in with %{provider}"
     unlocks:
       send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
       unlocked: "Your account was successfully unlocked. You are now logged in."
@@ -740,7 +741,7 @@ en:
       donate: "Help Emuzikos, make a donation"
       meta_description: "Your profile is complete, it's time to met people know about it"
       subtitle: "Like, share, comment or invite your friends"
-      title: "Emuzikos needs you! Help us grow this community and like us on Facebook"
+      title: "Emuzikos needs you! Help us grow this community!"
   souncloud_player: "SoundCloud player"
   support:
     array:
