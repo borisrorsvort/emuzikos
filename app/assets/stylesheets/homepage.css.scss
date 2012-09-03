@@ -18,7 +18,7 @@
   font-weight:normal;
   margin: #{$baseLineHeight * 2} 0;
   @include text-shadow(#000, 0, 1px, 1px);
-  @include animation(bounceInUp 1.5s linear 1);
+  @include animation(bounceIn 1s linear 1);
   strong {
     color:#7bb3cf  !important;
   }
@@ -67,12 +67,12 @@
 
 #logo_home {
   margin-bottom: 38px;
-  @include animation(bounceInUp 1s linear 1);
+  @include animation(bounceIn 1s linear 1);
 }
 
 #main-icon {
   margin-bottom: 10px;
-  @include animation(bounceInUp 1s linear 1);
+  @include animation(bounceIn 1s linear 1);
 }
 
 .signup_button {
@@ -80,7 +80,6 @@
   @include inset(#fff);
   @include border-radius(45px);
   @include box-shadow( #cbc5a1, 0, 0, 2px, inset);
-  @include animation(bounceInUp 2s linear 1);
   height: 45px;
   line-height: 45px;
   max-width: 260px;
@@ -96,7 +95,7 @@
   font-size: 14px;
   z-index: 9999;
   position: relative;
-  @include animation(bounceInUp 2s linear 1);
+  @include animation(bounceIn 1s linear 1);
 
   &:hover {
     color: darken(#5e501e, 10%);

@@ -16,6 +16,7 @@
       %h2.moto
         = t(:'.moto').html_safe
     = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "signup_button"
+    = link_to t(:"devise.signin_with", :provider => "Facebook"), user_omniauth_authorize_path(:facebook), :class => "btn-auth btn-facebook"
   #music_notes
 
 
@@ -58,7 +59,6 @@
         .inner_column
           %h4= t(:'.home_feature.sharing.title')
           %p= t(:'.home_feature.sharing.body')
-          = render "shared/add_this"
       .clearfix
 
     .note_circle
