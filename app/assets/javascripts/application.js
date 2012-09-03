@@ -7,7 +7,6 @@
 //= require_self
 //= require_directory ./mylibs
 
-
 /* rest of file omitted */
 
 // Fix links inside mobile safari
@@ -60,8 +59,6 @@ $(document).ready(function() {
 
   // TIPSY
 
-  // $('.tooltip').tipsy({trigger: 'hover', gravity: 's'});
-
   $(".collapse").collapse();
 
   if ($(".boxy_forms .control-group.error").size() > 1) {
@@ -85,6 +82,8 @@ $(document).ready(function() {
     $(this).closest('form').submit();
     $(this).attr("disabled", true);
   });
+
+  // /$('#search_form .nav-tabs a:first').tab('show');
 
   Socialite.load();
 

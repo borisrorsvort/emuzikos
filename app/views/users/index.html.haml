@@ -2,7 +2,7 @@
 - description t(:'.description')
 - keywords t(:'.keywords')
 
-- content_for :sub_nav do
+- content_for :sidebar do
   = render "search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen.countries
 
 - content_for :scripts do
@@ -10,7 +10,7 @@
 
 
 .progress_bar_wrapper.hidden
-  = t(:".processing_search")
+  / = t(:".processing_search")
   .progress.progress-striped.active
     .bar{:style => "width: 100%;"}
   / .progress_bar

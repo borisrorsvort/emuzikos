@@ -64,6 +64,7 @@
   margin-bottom: $basefont;
   text-align: center;
   font-size: $basefont;
+  background: #fff;
   .progress_bar,  {
     width: 220px;
     height: 19px;
@@ -234,6 +235,30 @@ h1.username {
   }
 }
 
+/* SEARCH */
+
+.searchbar {
+  h3 {
+    margin-bottom: $baseLineHeight;
+  }
+  #search_form {
+    @include white_box;
+    padding: $gridGutterWidth;
+    // position: fixed;
+    // top: 60px;
+    .tab-content {
+      overflow: visible;
+    }
+  }
+}
+.searchbar-field {
+  margin-bottom: $baseLineHeight;
+}
+
+#mass_locate {
+  width: 90%;
+}
+
 /* CONTACT LIST*/
 
 #users.contacts {
@@ -333,24 +358,6 @@ h1.username {
     margin:0 0 9px;
   }
 }
-
-/* SEARCH */
-
-.sub_nav .quick_links {
-  display:none;
-  @include horizontal-list(5px);
-  list-style: none;
-  margin-bottom: 0.7em;
-  color:$sub-nav-color-base;
-  @include inset(#fff);
-  ul {
-    li {
-      margin: 0 5px 0 0; }}
-  a {
-    @include hover-link; }
-  span {
-    font-weight:bold; }}
-
 
 // invite friends
 

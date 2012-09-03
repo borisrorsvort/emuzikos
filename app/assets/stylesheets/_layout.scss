@@ -4,6 +4,9 @@
   background: #ffffff;
   padding-top: $gridGutterWidth;
   padding-bottom: $gridGutterWidth;
+  &.gray {
+    background: #efefef;
+  }
 }
 
 // Header / topnav
