@@ -706,6 +706,11 @@ en:
   pagination:
     loading_more_results: "Loading more result"
   search_terms:
+    title: Who are you searching for?
+    tabs:
+      musician: Musician
+      band: Band
+      agent: Agent
     country: Country
     i_search_a: "I search a"
     mass_locate: "Your city (ex: New York, Brussels)"

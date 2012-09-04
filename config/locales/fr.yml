@@ -706,6 +706,11 @@ fr:
   pagination:
     loading_more_results: "Chargement en cours"
   search_terms:
+    title: Qui recherchez-vous?
+    tabs:
+      musician: Musician
+      band: Band
+      agent: Agent
     country: Pays
     i_search_a: "Je cherche un"
     mass_locate: "Votre ville ou région (ex: Paris ou Loire)"
