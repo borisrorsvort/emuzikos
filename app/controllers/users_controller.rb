@@ -9,9 +9,10 @@ class UsersController < ApplicationController
     else
       @q = User.available_for_listing.select("DISTINCT users.*").search(params[:q])
     end
+    @current_tab = params[:q][:user_type_cont] rescue "musician"
     @users = @q.result.order("updated_at DESC").page(params[:page]).per(AppConfig.site.results_per_page)
-    @genres = Genre.order("name asc")
-    @instruments = Instrument.order("name asc")
+    @genres = Genre.order("name ASC")
+    @instruments = Instrument.order("name ASC")
     @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
 
     if request.xhr?
