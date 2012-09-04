@@ -1,5 +1,21 @@
 @media only screen and (min-width: 768px) {
 
+
+  // SEARCH
+
+  .searchbar {
+    h3 {
+      font-size: 12px;
+    }
+  }
+  #search_form {
+    margin: 0;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+
 #pages.homepage {
   #logo {
     display:block;
@@ -83,6 +99,10 @@
     margin-right:  0;
     width: 46%;
   }
+}
+
+#footer {
+  display: block;
 }
 
 

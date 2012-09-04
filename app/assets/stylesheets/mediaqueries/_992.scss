@@ -6,6 +6,17 @@ body {
   padding-top: 40px;
 }
 
+  // SEARCH
+  .searchbar {
+    h3 {
+      font-size: 13px;
+    }
+  }
+  #search_form {
+    @include white_box;
+    padding: $gridGutterWidth;
+  }
+
 .users_list {
   .user_profile_listing {
     clear:both;

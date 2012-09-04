@@ -31,6 +31,7 @@
 }
 .content {
   padding: $gridGutterWidth;
+  min-height: 400px !important;
 }
 
 
@@ -237,26 +238,38 @@ h1.username {
 
 /* SEARCH */
 
+
 .searchbar {
   h3 {
+    font-size: 16px;
     margin-bottom: $baseLineHeight;
   }
-  #search_form {
-    @include white_box;
-    padding: $gridGutterWidth;
-    // position: fixed;
-    // top: 60px;
-    .tab-content {
-      overflow: visible;
-    }
+}
+#search_form {
+  margin: 0 $gridGutterWidth;
+  @include white_box;
+  padding: $gridGutterWidth;
+  .tab-content {
+    overflow: visible;
   }
 }
 .searchbar-field {
   margin-bottom: $baseLineHeight;
 }
-
 #mass_locate {
-  width: 90%;
+  width: 95%;
+}
+.no_users {
+  @include white_box;
+  padding: $gridGutterWidth;
+}
+
+@media (min-width: 768px) {
+  .sidebar-nav-fixed {
+    position:fixed;
+    top:60px;
+    width:21.97%;
+  }
 }
 
 /* CONTACT LIST*/

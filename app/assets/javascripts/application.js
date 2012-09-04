@@ -54,17 +54,37 @@ function addLoadEvent(func) {
   }
 }
 
+function clear_form_elements(ele) {
+
+  $(ele).find('input').each(function() {
+      switch(this.type) {
+          case 'password':
+          case 'select-multiple':
+          case 'select-one':
+          case 'text':
+          case 'textarea':
+              $(this).val('');
+              break;
+          case 'checkbox':
+          case 'radio':
+              this.checked = false;
+      }
+  });
+
+}
+
 
 $(document).ready(function() {
 
   // TIPSY
 
   $(".collapse").collapse();
+  $('[rel=tooltip]').tooltip();
 
   if ($(".boxy_forms .control-group.error").size() > 1) {
     $(".normal_login").collapse('show');
   }
-  $("select").chosen({ allow_single_deselect: true, width: "100%" });
+  $("select").not(".no-chosen").chosen({ allow_single_deselect: true, width: "100%" });
   $(".search_field select").chosen({ allow_single_deselect: true, width: "100%" });
 
   // CSS ARROWS
@@ -82,8 +102,6 @@ $(document).ready(function() {
     $(this).closest('form').submit();
     $(this).attr("disabled", true);
   });
-
-  // /$('#search_form .nav-tabs a:first').tab('show');
 
   Socialite.load();
 

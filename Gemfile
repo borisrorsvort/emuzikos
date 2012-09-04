@@ -52,6 +52,7 @@ gem 'annotate'
 gem 'bootstrap-sass'
 gem "highcharts-rails", "~> 2.2.1"
 gem "newrelic_rpm"
+gem 'font-awesome-sass-rails'
 
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"

@@ -130,6 +130,9 @@ GEM
       rack (~> 1.1)
     fastercsv (1.5.5)
     ffi (1.1.5)
+    font-awesome-sass-rails (2.0.0.0)
+      railties (>= 3.1.1)
+      sass-rails (>= 3.1.1)
     formtastic (2.1.1)
       actionpack (~> 3.0)
     friendly_id (4.0.0)
@@ -414,6 +417,7 @@ DEPENDENCIES
   devise (= 2.0)
   factory_girl_rails
   faker
+  font-awesome-sass-rails
   friendly_id (~> 4.0.0)
   geocoder
   gritter
