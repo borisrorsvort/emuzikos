@@ -708,10 +708,10 @@ fr:
   search_terms:
     country: Pays
     i_search_a: "Je cherche un"
-    mass_locate: "Votre ville ou région"
+    mass_locate: "Votre ville ou région (ex: Paris ou Loire)"
     music_style: "Genre musical"
     user_type: "Je suis un"
-    who_plays: "qui joue"
+    who_plays: "Instrument joué"
     who_search_for: "qui cherche un(e)"
   services:
     account_created: "Votre compte sur Emuzikos a bien été créé via %{provider}. Vous pouvez changer votre mot de passe et infos personnelles <a href='%{link}'>ici</a>."

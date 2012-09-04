@@ -19,7 +19,8 @@ gem "airbrake"
 gem "populator"
 gem "faker"
 gem "squeel"
-gem "ransack"
+# gem "ransack", "0.6.0"
+gem "ransack", :git => "git://github.com/Eric-Guo/ransack.git"
 gem "gritter"
 gem "sass"
 gem "haml"
@@ -51,6 +52,7 @@ gem 'annotate'
 gem 'bootstrap-sass'
 gem "highcharts-rails", "~> 2.2.1"
 gem "newrelic_rpm"
+gem 'font-awesome-sass-rails'
 
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"

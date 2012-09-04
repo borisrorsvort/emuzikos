@@ -708,10 +708,10 @@ en:
   search_terms:
     country: Country
     i_search_a: "I search a"
-    mass_locate: "Your city"
+    mass_locate: "Your city (ex: New York, Brussels)"
     music_style: "Musical genre"
     user_type: "I am a"
-    who_plays: "who plays"
+    who_plays: "Instrument played"
     who_search_for: "Who search for"
   services:
     account_created: "Your account on Emuzikos has been created via %{provider}. In your <a href=\"%{link}\">account settings</a> you can change your personal information and add a local password."
