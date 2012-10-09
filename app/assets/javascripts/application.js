@@ -116,12 +116,11 @@ function initApplication() {
   });
 
   Socialite.load();
-  displaySpinner();
 }
 
 
 document.addEventListener("page:change", initApplication);
-// document.addEventListener("page:fetch", displaySpinner);
-// document.addEventListener("page:change", hideSpinner);
+document.addEventListener("page:fetch", displaySpinner);
+document.addEventListener("page:change", hideSpinner);
 
 $(document).ready(initApplication);
