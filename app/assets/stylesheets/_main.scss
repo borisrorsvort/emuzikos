@@ -388,3 +388,14 @@ h1.username {
     width: 100px;
   }
 }
+
+.jspinner {
+  height: 100px;
+  background: #EFEFEF;
+  width: 10%;
+  position: absolute;
+  left: 45%;
+  @include border-radius(10px);
+  @include opacity(0.7);
+  z-index: 20000000000;
+}

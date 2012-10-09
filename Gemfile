@@ -55,6 +55,7 @@ gem "newrelic_rpm"
 gem 'font-awesome-sass-rails'
 
 gem 'turbolinks'
+gem 'spinjs-rails'
 
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"

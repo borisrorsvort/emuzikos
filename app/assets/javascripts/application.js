@@ -7,6 +7,7 @@
 //= require_self
 //= require_directory ./mylibs
 //= require turbolinks
+//= require jquery.spin
 
 /* rest of file omitted */
 
@@ -74,6 +75,17 @@ function clear_form_elements(ele) {
 
 }
 
+function  displaySpinner() {
+  var spinner = '<div class="jspinner"></div>';
+  $('.container-fluid[role=main]').prepend(spinner);
+  $('.jspinner').spin();
+}
+
+function hideSpinner() {
+  $('.jspinner').fadeOut();
+}
+
+
 function initApplication() {
   // TIPSY
 
@@ -104,9 +116,12 @@ function initApplication() {
   });
 
   Socialite.load();
-
+  displaySpinner();
 }
 
 
 document.addEventListener("page:change", initApplication);
+// document.addEventListener("page:fetch", displaySpinner);
+// document.addEventListener("page:change", hideSpinner);
+
 $(document).ready(initApplication);
