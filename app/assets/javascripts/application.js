@@ -6,6 +6,7 @@
 //= require plugins
 //= require_self
 //= require_directory ./mylibs
+//= require turbolinks
 
 /* rest of file omitted */
 
@@ -73,9 +74,7 @@ function clear_form_elements(ele) {
 
 }
 
-
-$(document).ready(function() {
-
+function initApplication() {
   // TIPSY
 
   $(".collapse").collapse();
@@ -105,4 +104,8 @@ $(document).ready(function() {
 
   Socialite.load();
 
-});
+}
+
+
+document.addEventListener("page:change", initApplication);
+$(document).ready(initApplication);
