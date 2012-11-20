@@ -1,8 +1,6 @@
-require 'factory_girl'
-
 FactoryGirl.define do
   factory :user do
-    username 
+    username
     email
     password 'password'
     password_confirmation 'password'
@@ -26,11 +24,13 @@ FactoryGirl.define do
     songkick_username "borisrorsvort"
     youtube_video_id "JW5meKfy3fY"
 
-    after_build do |u|
+    after(:build) do |u|
       u.class.skip_callback(:validate, :after, :geocode)
       u.class.skip_callback(:validate, :after, :check_against_mailchimp)
     end
+
   end
+
   factory :instrument do
     name 'guitar'
   end

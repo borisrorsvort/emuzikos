@@ -1,4 +1,169 @@
+# require 'rubygems'
+# require 'spork'
+
+# Spork.prefork do
+#   # This file is copied to spec/ when you run 'rails generate rspec:install'
+#   ENV["RAILS_ENV"] ||= 'test'
+#   require File.expand_path("../../config/environment", __FILE__)
+#   require 'rspec/rails'
+#   require 'capybara/rspec'
+#   require 'capybara/poltergeist'
+#   require 'simple-private-messages/matchers'
+#   # Requires supporting ruby files with custom matchers and macros, etc,
+#   # in spec/support/ and its subdirectories.
+#   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+#   RSpec.configure do |config|
+#     config.mock_with :rspec
+#     config.use_transactional_fixtures = true
+
+#     config.treat_symbols_as_metadata_keys_with_true_values = true
+#     config.filter_run :focus => true
+#     config.run_all_when_everything_filtered = true
+
+#     config.mock_with :rspec
+#     config.use_transactional_fixtures = true
+#     config.include FactoryGirl::Syntax::Methods
+#     config.before(:suite) do
+#       DatabaseCleaner.strategy = :transaction
+#       DatabaseCleaner.clean_with(:truncation)
+#     end
+
+#     config.before(:each) do
+#       DatabaseCleaner.start
+#     end
+
+#     config.after(:each) do
+#       DatabaseCleaner.clean
+#     end
+#   end
+
+#   FactoryGirl.definition_file_paths = [
+#     File.join(Rails.root, 'factories'),
+#     File.join(Rails.root, 'test', 'factories'),
+#     File.join(Rails.root, 'spec', 'factories')
+#   ]
+
+#   Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
+
+#   Capybara.javascript_driver = :poltergeist
+# end
+
+# Spork.each_run do
+#   # This code will be run each time you run your specs.
+#   FactoryGirl.reload
+# end
+
+# require 'rubygems'
+
+# def start_simplecov
+#   require 'simplecov'
+#   SimpleCov.start 'rails' unless ENV["SKIP_COV"]
+# end
+
+# def spork?
+#   defined?(Spork) && Spork.using_spork?
+# end
+
+# def setup_environment
+#   # This file is copied to spec/ when you run 'rails generate rspec:install'
+#   ENV["RAILS_ENV"] ||= 'test'
+
+#   start_simplecov unless spork?
+
+#   if spork?
+#     ENV['DRB'] = 'true'
+#     # require "rails/mongoid"
+#     # Spork.trap_class_method(Rails::Mongoid, :load_models)
+#     Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
+#   end
+
+
+#   require File.expand_path("../../config/environment", __FILE__)
+
+#   require 'rspec/rails'
+#   require 'capybara/rspec'
+#   require 'capybara/poltergeist'
+#   # require 'shoulda/matchers/integrations/rspec'
+#   require 'simple-private-messages/matchers'
+#   # require 'factory_girl_rails'
+
+#   # FactoryGirl.definition_file_paths = [
+#   #   File.join(Rails.root, 'factories'),
+#   #   File.join(Rails.root, 'test', 'factories'),
+#   #   File.join(Rails.root, 'spec', 'factories')
+#   # ]
+#   # FactoryGirl.find_definitions
+
+#   Rails.backtrace_cleaner.remove_silencers!
+
+#   require 'database_cleaner'
+
+#   # DatabaseCleaner.orm = "mongoid"
+#   DatabaseCleaner.strategy = :truncation
+
+#   RSpec.configure do |config|
+
+#     config.mock_with :rspec
+#     config.use_transactional_fixtures = true
+
+#     config.before(:suite) do
+#       DatabaseCleaner.strategy = :transaction
+#       DatabaseCleaner.clean_with(:truncation)
+#     end
+
+#     config.before(:each) do
+#       DatabaseCleaner.start
+#     end
+
+#     config.after(:each) do
+#       DatabaseCleaner.clean
+#     end
+
+#     config.include Devise::TestHelpers, :type => :controller
+#   end
+
+#   Capybara.javascript_driver = :poltergeist
+# end
+
+# def each_run
+#   if spork?
+#     ActiveSupport::Dependencies.clear
+#     # FactoryGirl.reload
+#   end
+
+#   # Requires supporting ruby files with custom matchers and macros, etc,
+#   # in spec/support/ and its subdirectories.
+#   Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+# end
+
+# # If spork is available in the Gemfile it'll be used but we don't force it.
+# unless (begin; require 'spork'; rescue LoadError; nil end).nil?
+#   Spork.prefork do
+#     # Loading more in this block will cause your tests to run faster. However,
+#     # if you change any configuration or code from libraries loaded here, you'll
+#     # need to restart spork for it take effect.
+#     setup_environment
+#   end
+
+#   Spork.each_run do
+#     # This code will be run each time you run your specs.
+#     each_run
+#   end
+# else
+#   setup_environment
+#   each_run
+# end
+
+
+
+
+
+
+
+
 require 'rubygems'
+
 
 def start_simplecov
   require 'simplecov'
@@ -21,26 +186,36 @@ def setup_environment
   end
 
   require File.expand_path("../../config/environment", __FILE__)
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   require 'rspec/rails'
   require 'capybara/rspec'
+  # require 'capybara/poltergeist'
+  # require 'shoulda/matchers/integrations/rspec'
   require 'simple-private-messages/matchers'
   require 'factory_girl'
-    # For Devise
+  require 'database_cleaner'
   require "rails/application"
-  Spork.trap_method(Rails::Application, :reload_routes!)
-  Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
-
-  #FactoryGirl.find_definitions
 
   Rails.backtrace_cleaner.remove_silencers!
+  # Capybara.javascript_driver = :poltergeist
+  Capybara.javascript_driver = :selenium
 
-  require 'database_cleaner'
+  # For Devise
+  # Spork.trap_method(Rails::Application, :reload_routes!)
+  Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
+
   DatabaseCleaner.strategy = :truncation
   RSpec.configure do |config|
-    config.include Professionalnerd::SimplePrivateMessages::Shoulda::Matchers
     config.mock_with :rspec
+    config.use_transactional_fixtures = true
+    config.treat_symbols_as_metadata_keys_with_true_values = true
+    config.filter_run :focus => true
+    config.run_all_when_everything_filtered = true
+
+    config.include Professionalnerd::SimplePrivateMessages::Shoulda::Matchers
     config.include FactoryGirl::Syntax::Methods
+
     config.before(:suite) do
       DatabaseCleaner.strategy = :transaction
       DatabaseCleaner.clean_with(:truncation)
@@ -55,37 +230,26 @@ def setup_environment
     end
 
     config.include Devise::TestHelpers, :type => :controller
+    config.extend ControllerMacros, :type => :controller
   end
-  # Capybara.register_driver :chrome do |app|
-  #   Capybara::Selenium::Driver.new(app, :browser => :chrome)
-  # end
 
-  # Capybara.javascript_driver = :chrome
-  Capybara.default_driver = :selenium
-  #Capybara.javascript_driver = :webkit
 end
 
 def each_run
   if spork?
+    require 'factory_girl_rails'
     ActiveSupport::Dependencies.clear
     FactoryGirl.reload
   end
-  # Requires supporting ruby files with custom matchers and macros, etc,
-  # in spec/support/ and its subdirectories.
-  Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 end
 
 # If spork is available in the Gemfile it'll be used but we don't force it.
 unless (begin; require 'spork'; rescue LoadError; nil end).nil?
   Spork.prefork do
-    # Loading more in this block will cause your tests to run faster. However,
-    # if you change any configuration or code from libraries loaded here, you'll
-    # need to restart spork for it take effect.
     setup_environment
   end
 
   Spork.each_run do
-    # This code will be run each time you run your specs.
     each_run
   end
 else

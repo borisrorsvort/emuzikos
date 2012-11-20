@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require twitter/bootstrap
 //= require_directory ./libs
 //= require gritter
 //= require plugins
@@ -91,7 +91,7 @@ function initApplication() {
 
   $(".collapse").collapse();
   $('[rel=tooltip]').tooltip();
-  $('data-toggle=dropdown').dropdown();
+  // $('data-toggle=dropdown').dropdown();
 
   if ($(".boxy_forms .control-group.error").size() > 1) {
     $(".normal_login").collapse('show');

@@ -1,8 +1,9 @@
 /* RESETS */
 @import "bs_custom_variables";
-@import "bootstrap";
-@import "bootstrap-responsive";
+@import "twitter/bootstrap-no-sprites";
+@import "twitter/bootstrap/responsive";
 @import 'font-awesome';
+
 /* COMPASS */
 @import "compass/css3";
 @import "compass/utilities";

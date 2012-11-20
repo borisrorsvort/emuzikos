@@ -1,10 +1,6 @@
 require 'spec_helper'
 
-feature "Change Profile", %q{
-  In order to increase customer satisfaction
-  As a user
-  I want to manage my profile
-} do
+feature "Users" do
 
   background do
     @user = create(:user)
@@ -27,6 +23,21 @@ feature "Change Profile", %q{
     page.execute_script("$('##{field[:id]}').trigger('liszt:updated').trigger('change')")
   end
 
+  scenario "Has access to search page without being logged in", js: true do
+    visit(destroy_user_session_path)
+    visit(users_path)
+    page.should have_content("Who are you searching for?")
+  end
+
+  scenario "Shoud be able to login" do
+    visit(destroy_user_session_path)
+    visit(new_user_session_path)
+    fill_in 'user_email', :with => @user.email
+    fill_in 'user_password', :with => @user.password
+    click_button 'Log in'
+    page.should have_content("Edit your profile")
+  end
+
   scenario "Should be able to add a youtube video with a valid id", :js => true do
     page.should have_content('Log out')
     visit(edit_user_path(@user))
@@ -37,7 +48,7 @@ feature "Change Profile", %q{
     page.should have_content "Success"
   end
 
-  scenario "Should not be able to add a youtube video with a invalid id", :js => true do   
+  scenario "Should not be able to add a youtube video with a invalid id", :js => true do
     visit(edit_user_path(@user))
     fill_in 'user_youtube_video_id', :with => "vP1xbS55E"
     click_button 'Update'
