@@ -1,7 +1,6 @@
 <div id="messages_chart" style="width: 380px; height: 300px;">
 </div>
 
-
 <script type="text/javascript">
   $(function () {
     new Highcharts.Chart({
@@ -31,10 +30,10 @@
         }
       },
       series: [{
-        name: "Messages per Weeks",
-        pointInterval: <%= 1.month * 1000 %>,
-        pointStart: <%= 1.year.ago.at_midnight.to_i %>,
-        data: <%= Message.where('created_at > ?', 1.year.ago).group("month(created_at)").count.map{|month_count| month_count[1]}.reverse.inspect %>
+        name: "Messages per Day",
+        pointInterval: <%= 1.day * 1000 %>,
+        pointStart: <%= 2.weeks.ago.at_midnight.to_i * 1000 %>,
+        data: <%= (2.weeks.ago.to_date..Date.today).map { |date| Message.total_on(date).to_f}.inspect %>
        }]
     });
   });
