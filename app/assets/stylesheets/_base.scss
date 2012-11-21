@@ -12,7 +12,7 @@ html{
 body {
   background: $body_bg_default image-url("backgrounds/bg-footer.gif");
   color: #333;
-  padding: 0; }
+}
 
 html.js,
 html.iem7,
@@ -29,8 +29,6 @@ img {
   border: 0;
   -ms-interpolation-mode: bicubic;
 }
-
-
 
 .unread_bullet {
   font-size: 20px;

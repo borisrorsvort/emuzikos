@@ -1,7 +1,7 @@
 /* RESETS */
 @import "bs_custom_variables";
 @import "twitter/bootstrap-no-sprites";
-@import "twitter/bootstrap/responsive";
+
 @import 'font-awesome';
 
 /* COMPASS */
@@ -14,17 +14,16 @@
 
 /* APPLICATION */
 @import "base";
-@import "animations";
-@import "gritter_custom";
 @import "layout";
-@import "pagination";
-@import "tags";
+@import 'modules/**/*';
+@import 'sections/**/*';
+// @import 'pages/**/*';
 @import "main";
-@import "auth-buttons";
 @import "homepage";
 
-/* MEDIA QUERIES */
+// /* MEDIA QUERIES */
+@import "twitter/bootstrap/responsive";
 @import "mediaqueries/480";
-@import "mediaqueries/768";
-@import "mediaqueries/992";
-@import "mediaqueries/1382";
+// @import "mediaqueries/768";
+// @import "mediaqueries/992";
+// @import "mediaqueries/1200";

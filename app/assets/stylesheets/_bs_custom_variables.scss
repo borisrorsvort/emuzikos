@@ -11,10 +11,11 @@ $linkColor:                 #1b517f;
 
 // Nav bar colors
 
-$navbarBackground:          #0e1b28;
-$navbarBackgroundHighlight: darken($linkColor, 10%);
+$navbarInverseBackground:          #0e1b28;
+$navbarInverseBackgroundHighlight: darken($linkColor, 10%);
 $navbarText:                #acb5b7;
 $navbarLinkColor:           #acb5b7;
+$navbarInverseLinkColor:           #acb5b7;
 
 // Subnav
 

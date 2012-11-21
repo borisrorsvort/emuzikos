@@ -76,13 +76,22 @@ function clear_form_elements(ele) {
 }
 
 function  displaySpinner() {
-  var spinner = '<div class="jspinner"></div>';
-  $('.container-fluid[role=main]').prepend(spinner);
-  $('.jspinner').spin();
+  var spinner = '<div class="jspinner-container"><div class="jspinner-innner"></div></div>';
+  $('body').prepend(spinner);
+  $('.jspinner-container').spin({
+    lines: 6, // The number of lines to draw
+    length: 3, // The length of each line
+    width: 2, // The line thickness
+    radius: 1, // The radius of the inner circle
+    color: '#000', // #rgb or #rrggbb
+    speed: 2, // Rounds per second
+    trail: 60, // Afterglow percentage
+    shadow: false // Whether to render a shadow
+  });
 }
 
 function hideSpinner() {
-  $('.jspinner').fadeOut();
+  $('.jspinner-container').fadeOut();
 }
 
 

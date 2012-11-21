@@ -206,11 +206,6 @@ h1.username {
   }
 }
 
-.friendly_actions {
-  margin-bottom: $baseline * 2;
-  a { margin-right: $gridGutterWidth;}
-}
-
 .jcrop-holder img, img#preview {
   max-width: none  !important;
   max-height: none  !important;
@@ -389,13 +384,20 @@ h1.username {
   }
 }
 
-.jspinner {
-  height: 100px;
+.jspinner-container {
+  height: 20px;
   background: #EFEFEF;
-  width: 10%;
-  position: absolute;
-  left: 45%;
-  @include border-radius(10px);
-  @include opacity(0.7);
+  width: 100px;
+  top: 0;
+  left: 50%;
+  position: fixed;
+  text-align: center;
+  @include animation(fadeInDown 0.5s linear 1);
+  @include border-bottom-radius(5px);
   z-index: 20000000000;
+  .jspinner-inner {
+    position: absolute;
+    left: -50px;
+  }
+
 }

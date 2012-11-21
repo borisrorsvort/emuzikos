@@ -1,5 +1,14 @@
-@media only screen and (min-width: 768px) {
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
 
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 768px) {
 
   // SEARCH
 

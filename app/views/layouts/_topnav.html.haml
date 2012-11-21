@@ -1,4 +1,4 @@
-%nav.navbar.navbar-fixed-top{ :role => "navigation"}
+%nav.navbar.navbar-inverse.navbar-fixed-top{ :role => "navigation"}
   .navbar-inner
     .container-fluid
       %a.btn.btn-navbar{:data => {"toggle" => "collapse", "target" => ".nav-collapse"}}
@@ -6,7 +6,7 @@
         %span.icon-bar
         %span.icon-bar
       %a.brand{:href => root_url}= image_tag 'logo.png', :alt => "Emuzikos"
-      .nav-collapse
+      .nav-collapse.collapse
         %ul.nav
           %li
             =link_to users_url do
@@ -19,10 +19,10 @@
                 = t(:'menu.profile.show')
                 %b.caret
               %ul.dropdown-menu
-                = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
-                = link_to t(:'menu.profile.public'),  user_path(current_user)
-                = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-                = link_to t(:'menu.profile.authentications'), services_path
+                %li= link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+                %li= link_to t(:'menu.profile.public'),  user_path(current_user)
+                %li= link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
+                %li= link_to t(:'menu.profile.authentications'), services_path
             %li.dropdown
               =link_to "#", :class => "dropdown-toggle", :data => {"toggle" => "dropdown"} do
                 %i.icon-inbox.icon-white
@@ -30,9 +30,9 @@
                 = unread_messages_count if current_user.unread_messages?
                 %b.caret
               %ul.dropdown-menu
-                = link_to t(:'menu.messages.inbox'), user_messages_path(current_user), :class => "current"
-                = link_to t(:'menu.messages.sent_messages'), user_messages_path(current_user, :mailbox => :sent)
-                = link_to t(:'menu.users.contacts'), user_contacts_path(current_user)
+                %li= link_to t(:'menu.messages.inbox'), user_messages_path(current_user), :class => "current"
+                %li= link_to t(:'menu.messages.sent_messages'), user_messages_path(current_user, :mailbox => :sent)
+                %li= link_to t(:'menu.users.contacts'), user_contacts_path(current_user)
           %li
             =link_to "/social_share/invite_friends" do
               %i.icon-share.icon-white
@@ -45,8 +45,8 @@
               = t(:'menu.messages.languages')
               %b.caret
             %ul.dropdown-menu
-              = link_to t(:'languages.french'), root_url(:subdomain => 'fr'), :title => t(:'footer.emuzikos_language', :language => t(:'languages.french'))
-              = link_to t(:'languages.english'), "#{request.protocol}#{request.domain}", :title => t(:'footer.emuzikos_language', :language => t(:'languages.english'))
+              %li= link_to t(:'languages.french'), root_url(:subdomain => 'fr'), :title => t(:'footer.emuzikos_language', :language => t(:'languages.french'))
+              %li= link_to t(:'languages.english'), "#{request.protocol}#{request.domain}", :title => t(:'footer.emuzikos_language', :language => t(:'languages.english'))
 
           - if user_signed_in?
             %li
