@@ -5,7 +5,6 @@ source :gemcutter
 gem 'rails', '3.1.3'
 gem 'mysql'
 gem "jquery-rails"
-gem 'modernizr-rails'
 
 gem "devise", "2.0"
 gem 'omniauth', '1.0'
@@ -49,10 +48,14 @@ gem 'impressionist'
 gem 'wicked'
 gem 'annotate'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass-rails'
 gem "highcharts-rails", "~> 2.2.1"
 gem "newrelic_rpm"
 gem 'font-awesome-sass-rails'
+
+gem 'turbolinks'
+gem 'spinjs-rails'
+# gem 'masonry-rails'
 
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"
@@ -62,6 +65,7 @@ group :assets do
 end
 
 group :development, :test do
+  # gem 'thin'
   gem 'rails-footnotes', '>= 3.7.5.rc4'
   gem "hirb"
   gem "bullet"
@@ -75,27 +79,26 @@ group :development, :test do
   gem "guard-livereload"
   gem "guard-rspec"
   gem 'growl'
-  #gem 'growl_notify'
-  #gem 'webrat'
   gem "spork"
   gem "guard-spork"
+  # gem "factory_girl_rails", "3.3.0"
   gem "factory_girl_rails"
   gem "shoulda"
   gem "database_cleaner"
   gem "capybara"
-  gem 'selenium-webdriver'
+  gem 'poltergeist'
+  gem 'rack-contrib'
   gem "launchy"
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem "taps"
   gem 'quiet_assets'
-  #gem 'rails-dev-tweaks', '~> 0.6.1'
   platforms :mri_18 do
     gem "ruby-debug"
   end
   platforms :mri_19 do
-    gem "ruby-debug19", :require => "ruby-debug"
+    gem 'debugger'
   end
 end
 

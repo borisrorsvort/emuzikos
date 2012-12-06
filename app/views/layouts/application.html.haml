@@ -6,15 +6,15 @@
 
   = render  "shared/ie_warning"
   = render "layouts/topnav", :current_user => @current_user
-  = render "layouts/subnav" if content_for? :sub_nav
-
 
   .container-fluid{ :role => "main", class: (if content_for? :sidebar then "gray" end) }
     .row-fluid
       - if content_for? :sidebar
         %aside{role: "search", class: "span3 searchbar"}
           = yield(:sidebar)
-      %section.content{class: (if content_for? :sidebar then "span9" else "span12" end) }
+      / %section.content{class: (if content_for? :sidebar then "span9" else "span12" end) }
+      %section.content
+        = render "layouts/subnav" if content_for? :sub_nav
         - if show_headline?
           %header.page-header
             %h1= yield(:headline)

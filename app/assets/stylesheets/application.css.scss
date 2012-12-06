@@ -1,8 +1,9 @@
 /* RESETS */
 @import "bs_custom_variables";
-@import "bootstrap";
-@import "bootstrap-responsive";
+@import "twitter/bootstrap-no-sprites";
+
 @import 'font-awesome';
+
 /* COMPASS */
 @import "compass/css3";
 @import "compass/utilities";
@@ -10,20 +11,23 @@
 // LIBS
 @import "chosen/chosen";
 @import "gritter";
+// @import 'isotope';
+// @import 'masonry/infinitescroll';
+// @import 'masonry/transitions';
 
 /* APPLICATION */
 @import "base";
-@import "animations";
-@import "gritter_custom";
 @import "layout";
-@import "pagination";
-@import "tags";
+@import 'modules/**/*';
+@import 'sections/**/*';
+// @import 'pages/**/*';
 @import "main";
-@import "auth-buttons";
 @import "homepage";
 
-/* MEDIA QUERIES */
+// /* MEDIA QUERIES */
+@import "twitter/bootstrap/responsive";
 @import "mediaqueries/480";
 @import "mediaqueries/768";
-@import "mediaqueries/992";
-@import "mediaqueries/1382";
+
+// @import "mediaqueries/992";
+// @import "mediaqueries/1200";

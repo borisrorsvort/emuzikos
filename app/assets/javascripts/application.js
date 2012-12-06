@@ -1,11 +1,13 @@
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require twitter/bootstrap
 //= require_directory ./libs
 //= require gritter
 //= require plugins
 //= require_self
 //= require_directory ./mylibs
+//= require turbolinks
+//= require jquery.spin
 
 /* rest of file omitted */
 
@@ -73,13 +75,34 @@ function clear_form_elements(ele) {
 
 }
 
+function  displaySpinner() {
+  var spinner = '<div class="jspinner-container"><div class="jspinner-innner"></div></div>';
+  $('body').prepend(spinner);
+  $('.jspinner-container').spin({
+    lines: 6, // The number of lines to draw
+    length: 3, // The length of each line
+    width: 2, // The line thickness
+    radius: 1, // The radius of the inner circle
+    color: '#000', // #rgb or #rrggbb
+    speed: 2, // Rounds per second
+    trail: 60, // Afterglow percentage
+    shadow: false // Whether to render a shadow
+  });
 
-$(document).ready(function() {
 
+}
+
+function hideSpinner() {
+  $('.jspinner-container').fadeOut();
+}
+
+
+function initApplication() {
   // TIPSY
 
   $(".collapse").collapse();
   $('[rel=tooltip]').tooltip();
+  // $('data-toggle=dropdown').dropdown();
 
   if ($(".boxy_forms .control-group.error").size() > 1) {
     $(".normal_login").collapse('show');
@@ -93,16 +116,38 @@ $(document).ready(function() {
   $('#sub_sections li a.current').after('<div class="top_sub_nav_arrow"></div>');
   $('#footer .inner_footer th').after('<div class="footer_headers_current_arrow"></div>');
 
-  // MASONRY
-  $(".testimonials").masonry({ singleMode: true,resizeable: true, animate: true,itemSelector: '.testimonial' });
+  // // MASONRY
+  // $(".testimonials").masonry({
+  //   resizeable: true,
+  //   animate: true,
+  //   itemSelector: '.testimonial'
+  // });
 
-  $('#user_search .btn').click(function() {
-    $('.progress_bar_wrapper').removeClass('hidden');
+
+
+  $(document).on("click", '.search-form-users .btn', function(e) {
+    e.preventDefault();
+    // $('.progress_bar_wrapper').removeClass('hidden');
     $('.users_list').css('opacity', 0.5);
-    $(this).closest('form').submit();
+    displaySpinner();
+    $(this).closest('form').unbind('submit').submit();
     $(this).attr("disabled", true);
   });
 
+  $("h1").fitText(1.2, { minFontSize: '20px', maxFontSize: '36px' });
+  $("#search_form h3").fitText(1, { minFontSize: '14px', maxFontSize: '20px' });
   Socialite.load();
 
-});
+  var jPM = $.jPanelMenu({
+    menu: '.mobile-menu',
+    trigger: '.btn.btn-navbar',
+    keyboardShortcuts: false
+  });
+  jPM.on();
+}
+
+
+document.addEventListener("page:change", initApplication, hideSpinner);
+document.addEventListener("page:fetch", displaySpinner);
+
+$(document).ready(initApplication);

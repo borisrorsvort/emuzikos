@@ -1,4 +1,7 @@
 // Base Container
+body {
+  padding-top: 40px;
+}
 
 .container-fluid[role="main"] {
   background: #ffffff;
@@ -14,74 +17,75 @@
 #logo {
   float:left;}
 
-.sub_nav {
-  background-color: $sub_nav_gradient_light;
-  @include background-image(linear-gradient($sub_nav_gradient_light, $sub_nav_gradient_dark));
-  padding: $gridGutterWidth;
-  border-bottom: #fff 1px solid;
-  ul {
-    @extend .normal;
-    padding-left: 0;
-    top: 0;
-    li {
-      position:relative;
-      padding: 0;
-      margin: 0 2px 0 ;
-}}}
 
-.subnav-fixed {
-  position: fixed;
-  top: 40px;
-  left: 0;
-  right: 0;
-  z-index: 1020;
-}
+// .sub_nav {
+//   background-color: $sub_nav_gradient_light;
+//   @include background-image(linear-gradient($sub_nav_gradient_light, $sub_nav_gradient_dark));
+//   padding: $gridGutterWidth;
+//   border-bottom: #fff 1px solid;
+//   ul {
+//     @extend .normal;
+//     padding-left: 0;
+//     top: 0;
+//     li {
+//       position:relative;
+//       padding: 0;
+//       margin: 0 2px 0 ;
+// }}}
 
-// Sub nav
+// .subnav-fixed {
+//   position: fixed;
+//   top: 40px;
+//   left: 0;
+//   right: 0;
+//   z-index: 1020;
+// }
 
-.sub_nav #sub_sections {
-  display:block;
-  overflow: visible;
-  padding: 0;
-  margin: 0;
-  li {
-    margin-bottom: 10px;
-    list-style: disc inside; }
-  a {
-    text-align:left;
-    @include link-colors($sub-nav-color-base);
-    @include inset(#fff);
-    text-decoration:none;
-    position:relative;
-    display:block;
-    overflow:visible;
-    &.current {
-      font-weight:bold; }}}
+// // Sub nav
 
-.top_sub_nav_arrow {
-  display:none;
-  $size: 5px;
-  @include css-arrow("bottom", $sub_nav_gradient_dark, #fff, $size );
-  position:absolute;
-  left: 45%;
-  z-index: 2;
-  bottom: 0 - $gridGutterWidth; }
+// .sub_nav #sub_sections {
+//   display:block;
+//   overflow: visible;
+//   padding: 0;
+//   margin: 0;
+//   li {
+//     margin-bottom: 10px;
+//     list-style: disc inside; }
+//   a {
+//     text-align:left;
+//     @include link-colors($sub-nav-color-base);
+//     @include inset(#fff);
+//     text-decoration:none;
+//     position:relative;
+//     display:block;
+//     overflow:visible;
+//     &.current {
+//       font-weight:bold; }}}
+
+// .top_sub_nav_arrow {
+//   display:none;
+//   $size: 5px;
+//   @include css-arrow("bottom", $sub_nav_gradient_dark, #fff, $size );
+//   position:absolute;
+//   left: 45%;
+//   z-index: 2;
+//   bottom: 0 - $gridGutterWidth; }
 
 
-.sub_nav #actions_set {
-  @extend #sub_sections;
-  a {
-    display:inline-block;
-  }
-  .button {
-    &.back.profile {
-      margin-right: 5px; }
-    &.contact {
-      margin-left: 5px; }
-    &.add_to_contact_list {
-      width: 2em; }
-  }
-}
+// .sub_nav #actions_set {
+//   @extend #sub_sections;
+//   a {
+//     display:inline-block;
+//   }
+//   .button {
+//     &.back.profile {
+//       margin-right: 5px; }
+//     &.contact {
+//       margin-left: 5px; }
+//     &.add_to_contact_list {
+//       width: 2em; }
+//   }
+// }
 
 // Footer
 

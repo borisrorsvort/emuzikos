@@ -21,7 +21,6 @@
 = yield :javascripts
 = yield :scripts
 
-= render "shared/mixpanel" if Rails.env.production?
 
 /[if (lt IE 9) & (!IEMobile)]
   = javascript_include_tag "ie_js_pack"
@@ -46,7 +45,14 @@
 - elsif flash[:notice]
   = js add_gritter(flash[:notice], :image => :success, :sticky => true)
 
-=render "/shared/feedback_box"
+= render "shared/feedback_box"
+= render "shared/mixpanel"    if Rails.env.production?
+= render "shared/inspectlet"  if Rails.env.production?
+= render "shared/quantcast"   if Rails.env.production?
+= render "shared/userfox"     if Rails.env.production?
+
+
+
 
 / http://t.co/HZe9oJ4
 - if Rails.env.production?

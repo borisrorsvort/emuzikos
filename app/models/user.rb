@@ -44,9 +44,9 @@ class User < ActiveRecord::Base
 
   USER_TYPES = %w(band musician agent)
 
-  after_validation :check_against_mailchimp
+  after_validation :check_against_mailchimp, :if => :newsletter_preference_changed?
   after_validation :geocode, :if => :address_changed?
-  after_save :set_profile_status
+  # after_save :set_profile_status
 
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
@@ -138,18 +138,19 @@ class User < ActiveRecord::Base
     "http://gdata.youtube.com/feeds/api/videos/#{self.youtube_video_id}"
   end
 
+  def set_profile_status
+    logger.debug("Updating profile status ...")
+    if self.user_type.present? && self.geocoded? && self.searching_for.present? && self.genres.present? && self.instruments.present?
+      #logger.debug("Profile complete!")
+      self.update_column('profile_completed', true)
+      raise "complete"
+    else
+      #logger.debug("Profile not complete")
+      self.update_column('profile_completed', false)
+    end
+  end
   private
 
-    def set_profile_status
-      logger.debug("Updating profile status ...")
-      if self.user_type.present? && self.geocoded? && self.searching_for.present? && self.genres.present? && self.instruments.present?
-        #logger.debug("Profile complete!")
-        self.update_column('profile_completed', true)
-      else
-        #logger.debug("Profile not complete")
-        self.update_column('profile_completed', false)
-      end
-    end
 
     def reprocess_avatar
       avatar.reprocess!
@@ -185,6 +186,10 @@ class User < ActiveRecord::Base
       if country.present? || zip.present?
         "#{zip} #{Carmen::country_name(country)}"
       end
+    end
+
+    def newsletter_preference_changed?
+      self.preferred_newsletters_changed?
     end
 
     def address_changed?

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Send a Message" do
+feature "Send a Message", :js => true do
   background do
     @user = create(:user)
     @sender = @user

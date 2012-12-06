@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Testimonials" do
+feature "Testimonials", :js => true do
 
   background do
     @user = create(:user)

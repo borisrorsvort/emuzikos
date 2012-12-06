@@ -3,39 +3,36 @@ require 'devise/test_helpers'
 
 describe UsersController do
 
-  before (:each) do
-    @user = create(:user)
-    sign_in @user
-  end
+  login_user
 
   render_views
-  
-  describe "GET 'show'" do
-    
-    # it "should be successful" do
-    #   get :show, :id => @user.id
-    #   response.should be_success
-    # end
 
-    it "should find the right user" do
-      get :show, :id => @user.id
-      assigns(:user).should == @user
-    end
+  # describe "GET 'show'" do
 
-  end
+  #   it "should be successful" do
+  #     get :show, @user
+  #     response.should be_success
+  #   end
 
-  describe "GET 'edit'" do
+  #   it "should find the right user" do
+  #     get :show
+  #     assigns(:user).should == @user
+  #   end
 
-    it "should be successful" do
-      get :edit, :id => @user.id
-      response.should be_success
-    end
+  # end
 
-    it "should find the right user" do
-      get :edit, :id => @user.id
-      assigns(:user).should == @user
-    end
+  # describe "GET 'edit'" do
 
-  end
+  #   it "should be successful" do
+  #     get :edit
+  #     response.should be_success
+  #   end
+
+  #   it "should find the right user" do
+  #     get :edit
+  #     assigns(:user).should == @user
+  #   end
+
+  # end
 
 end

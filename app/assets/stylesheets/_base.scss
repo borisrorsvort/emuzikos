@@ -12,7 +12,7 @@ html{
 body {
   background: $body_bg_default image-url("backgrounds/bg-footer.gif");
   color: #333;
-  padding: 0; }
+}
 
 html.js,
 html.iem7,
@@ -30,8 +30,6 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-
-
 .unread_bullet {
   font-size: 20px;
   font-weight:bold;
@@ -45,6 +43,21 @@ b { font-weight:bold; }
 
 strong { font-weight:bold; }
 
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+
 @mixin inset($color, $important: "") {
   @if $important == "important" {
     text-shadow: $color 0 1px 1px  !important;
@@ -52,13 +65,13 @@ strong { font-weight:bold; }
     text-shadow: $color 0 1px 1px;
   }
 }
-@mixin white_box {
+@mixin white_box() {
   background-color: #FFF;
   border: 1px solid #ccc;
   @include border-radius(5px);
 }
 
-@mixin white_box_w_shadow {
+@mixin white_box_w_shadow() {
   @include border-radius(5px);
   @include single-box-shadow(#999, 0, 1px, 2px );
   background-color: #FFF;

@@ -1,12 +1,11 @@
 = link_to user_path(user), :class => "user_profile_listing" do
+  - if user.avatar.present?
+    .section
+      = image_tag(user.avatar.url(:normal))
+
   .section.user_general_infos
-    .avatar.small
-      - if user.avatar.present?
-        = image_tag(user.avatar.url(:gallery))
-      -else
-        = image_tag("backgrounds/avatar-default.gif")
-    .line.username= user.username
-    .line.location
+    .username= user.username
+    .location
       = t(:'common.users.from') + " "
       = user.zip + ", "
       = Carmen::country_name(user.country)
@@ -28,3 +27,5 @@
         %span= t(:"instruments.#{instrument.name}")
 
   .clear
+
+/ .item.w1

@@ -17,28 +17,28 @@
     }
 
 
-- content_for :sub_nav do
-  - if @user == current_user
-    %ul#sub_sections
-      %li= link_to t(:'menu.profile.edit'), edit_user_path(current_user)
-      %li= link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
-      %li= link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-      %li= link_to t(:'menu.profile.authentications'), services_path
-  - else
-    #actions_set
-      = link_to :back, :class => "btn back profile" do
-        %i.icon-arrow-left
-        = t(:'buttons.back', :model => t(:'activerecord.models.search'))
+/ - content_for :sub_nav do
+/   - if @user == current_user
+/     %ul#sub_sections
+/       %li= link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+/       %li= link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
+/       %li= link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
+/       %li= link_to t(:'menu.profile.authentications'), services_path
+/   - else
+/     #actions_set
+/       = link_to :back, :class => "btn back profile" do
+/         %i.icon-arrow-left
+/         = t(:'buttons.back', :model => t(:'activerecord.models.search'))
 
 .row-fluid
   %aside.profile_sidebar.span3.hidden-phone
-    - if @user.avatar
-      .span12= image_tag @user.avatar.url(:normal), :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
-    - else
-      .span12= image_tag "backgrounds/no-image-profile.jpg", :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
+    - if @user.avatar.present?
+      .row-fluid
+        .span12= image_tag @user.avatar.url(:normal), :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
     - if @user.geocoded?
-      .span12
-        %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "thumbnail", :alt => "#{@user.username}'s location"}
+      .row-fluid
+        .span12
+          %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=400x400", :class => "thumbnail", :alt => "#{@user.username}'s location"}
     - if @user.geocoded? && !@users_nearby.size.nil?
       %section.users_nearby.hidden-phone
         %header
@@ -58,7 +58,7 @@
           = Carmen::country_name(@user.country) rescue "N/A"
 
     - if current_user && current_user != @user
-      .friendly_actions
+      .friendly-actions
         = link_to new_user_message_path(@current_user, :to => @user.id), :class => "btn btn-primary" do
           %i.icon-envelope.icon-white
           = t(:'buttons.contact')
@@ -67,7 +67,7 @@
             %i.icon-bookmark
             = t(:'buttons.add_to_contact_list')
     - unless current_user
-      .friendly_actions
+      .friendly-actions
         = link_to new_user_registration_path, :class => "btn btn-primary", :title => t(:'tooltips.send_message_not_signed_in') do
           %i.icon-envelope.icon-white
           = t(:'buttons.contact')

@@ -1,33 +1,16 @@
-= link_to user_path(friendship.friend), :class => "user_profile_listing" do
-  .section.user_general_infos
+%tr
+  %td
     .avatar.small
       - if friendship.friend.avatar.present?
         = image_tag(friendship.friend.avatar.url(:gallery))
       -else
         = image_tag("backgrounds/avatar-default.gif")
-    .line.username= friendship.friend.username
-    .line.location= t(:'common.users.from') + " " + friendship.friend.zip + ", " + Carmen::country_name(friendship.friend.country) rescue nil
+  %td
+    = link_to friendship.friend.username, user_path(friendship.friend)
+  %td
+    .actions
+      = link_to t(:'buttons.remove_from_contact_list'), friendship, :method => :delete, :class => "btn btn-mini delete"
+      = link_to new_user_message_path(current_user, :to => friendship.friend.id), :class => "btn btn-primary btn-mini submit contact" do
+        %i.icon-envelope.icon-white
+        = t(:'buttons.contact')
 
-  .section.user_type
-    .title
-      %strong= t(:"users.types.#{friendship.friend.user_type}")
-      = t(:'users.show.is_looking_for')
-      %strong= t(:"users.types.#{friendship.friend.searching_for}")
-      = t(:'users.show.to_play')
-    .tag_list
-      - friendship.friend.genres.each do |genre|
-        %span= genre.name
-  .section.user_instruments
-    .title
-      = t(:'activerecord.attributes.user.instruments')
-    .tag_list
-      - friendship.friend.instruments.each do |instrument|
-        %span= instrument.name
-
-  .clear
-
-.actions
-  = link_to t(:'buttons.remove_from_contact_list'), friendship, :method => :delete, :class => "btn delete"
-  = link_to new_user_message_path(current_user, :to => friendship.friend.id), :class => "btn btn-primary submit contact" do
-    %i.icon-envelope.icon-white
-    = t(:'buttons.contact')

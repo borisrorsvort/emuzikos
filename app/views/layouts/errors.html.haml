@@ -47,7 +47,7 @@
 
     = javascript_include_tag "polyfills"
 
-    = stylesheet_link_tag "application" 
+    = stylesheet_link_tag "application"
 
     = yield :head
 
@@ -66,7 +66,7 @@
 
       %section#content
         - if content_for? :sub_nav
-          %nav#sub_nav
+          %nav.sub-nab
             = yield :sub_nav
 
         - flash.each do |key, message|

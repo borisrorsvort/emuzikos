@@ -1,0 +1,14 @@
+- if @current_user
+  :javascript
+    var _ufq = _ufq || [];
+    _ufq.push(['init', {
+        email: "#{@current_user.email}", // email: "peter@userfox.com"
+        clientId: "54xiyazgt8z5wz6avok2d1jp9"  // can't touch this
+    }]);
+    _ufq.push(['track', {
+     signup_date: "#{@current_user.created_at.to_time.iso8601}", // signup_date: "2012-11-10T00:53:14.920Z" or "2012-11-09 16:53:14 -0800"  (ISO String format or default time.now to string in rails)
+                                // feeling beta? pass additional information here. like so, shh!:
+                                // pricing_plan: "free",
+                                // you can then reference this data in emails via {{pricing_plan}} COOL!
+    }]);
+    (function() {var ufs = document.createElement("script"); ufs.type='text/javascript'; ufs.src=document.location.protocol+'//d2y71mjhnajxcg.cloudfront.net/js/userfox-stable.js'; ufs.async=true; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ufs, s);})();
