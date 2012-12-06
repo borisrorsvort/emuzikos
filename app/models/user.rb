@@ -143,7 +143,6 @@ class User < ActiveRecord::Base
     if self.user_type.present? && self.geocoded? && self.searching_for.present? && self.genres.present? && self.instruments.present?
       #logger.debug("Profile complete!")
       self.update_column('profile_completed', true)
-      raise "complete"
     else
       #logger.debug("Profile not complete")
       self.update_column('profile_completed', false)
