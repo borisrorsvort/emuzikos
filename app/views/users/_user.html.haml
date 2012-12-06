@@ -1,9 +1,8 @@
 = link_to user_path(user), :class => "user_profile_listing" do
-  .section
-    - if user.avatar.present?
+  - if user.avatar.present?
+    .section
       = image_tag(user.avatar.url(:normal))
-    -else
-      = image_tag("http://flickholdr.com/400/#{rand(200-500)}/#{cycle("super-nova","milkyway","planet", "space", "solar")}/#{rand(1-20)}")
+
   .section.user_general_infos
     .username= user.username
     .location
