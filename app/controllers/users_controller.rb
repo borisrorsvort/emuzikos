@@ -5,12 +5,12 @@ class UsersController < ApplicationController
     #@users = []
     if params[:mass_locate] && !params[:mass_locate].empty?
       # select distinct must be inside near scope (https://github.com/alexreisner/geocoder)
-      @q = User.available_for_listing.near(params[:mass_locate].to_s, 20, :select => "DISTINCT users.*").search(params[:q])
+      @q = User.available_for_listing.near(params[:mass_locate].to_s, 200, :select => "DISTINCT users.*").search(params[:q])
     else
       @q = User.available_for_listing.select("DISTINCT users.*").search(params[:q])
     end
     @current_tab = params[:q][:user_type_cont] rescue "musician"
-    @users = @q.result.order("updated_at DESC").page(params[:page]).per(AppConfig.site.results_per_page)
+    @users = @q.result.order("updated_at DESC, avatar_updated_at DESC").page(params[:page]).per(AppConfig.site.results_per_page)
     @genres = Genre.order("name ASC")
     @instruments = Instrument.order("name ASC")
     @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
