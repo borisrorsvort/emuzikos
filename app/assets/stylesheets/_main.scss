@@ -161,6 +161,11 @@ h1.username {
 
 /* SEARCH */
 
+#users.index {
+  .container-fluid[role="main"] {
+      background: $body_bg_default image-url("backgrounds/bg-footer.gif");
+  }
+}
 
 .searchbar {
   h3 {
