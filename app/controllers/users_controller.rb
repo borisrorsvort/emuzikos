@@ -32,7 +32,9 @@ class UsersController < ApplicationController
     @events = @user.get_events(@user.songkick_username)
     @tracks = @user.get_soundclound_tracks(@user.soundcloud_username)
 
-    impressionist(@user)
+    if Rails.env.production?
+      endimpressionist(@user)
+    end
 
     if request.path != user_path(@user)
       redirect_to @user, status: :moved_permanently
