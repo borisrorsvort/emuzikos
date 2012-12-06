@@ -4,11 +4,10 @@
 
 
 - content_for :sub_nav do
-  %ul#sub_sections
-    %li= link_to t(:'menu.messages.inbox'), user_messages_path(user), :class => "current"
-    %li= link_to t(:'menu.messages.sent_messages'), user_messages_path(user, :mailbox => :sent)
-    %li= link_to t(:'menu.users.contacts'), user_contacts_path(user)
-  .clear
+  %ul.nav.nav-tabs
+    %li.active= link_to t(:'menu.messages.inbox'), user_messages_path(current_user), :class => "current"
+    %li= link_to t(:'menu.messages.sent_messages'), user_messages_path(current_user, :mailbox => :sent)
+    %li= link_to t(:'menu.users.contacts'), user_contacts_path(current_user)
 
 - if messages.size == 0
   .no_records

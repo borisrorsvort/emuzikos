@@ -5,16 +5,23 @@
 
 - if @user == current_user
   - content_for :sub_nav do
-    %ul#sub_sections
+    %ul.nav.nav-tabs
       %li
-        = link_to t(:'menu.profile.edit'), edit_user_path(current_user)
+        = link_to edit_user_path(current_user) do
+          %i.icon-pencil
+          = t(:'menu.profile.edit')
       %li
-        = link_to t(:'menu.profile.public'),  user_path(current_user)
+        = link_to user_path(current_user) do
+          %i.icon-user
+          = t(:'menu.profile.public')
+      %li.active
+        = link_to edit_user_registration_path(current_user) do
+          %i.icon-briefcase
+          = t(:'menu.profile.account')
       %li
-        = link_to t(:'menu.profile.account'), edit_user_registration_path(current_user), :class => "current"
-      %li
-        = link_to t(:'menu.profile.authentications'), services_path
-
+        = link_to services_path, :class => "current" do
+          %i.icon-globe
+          = t(:'menu.profile.authentications')
     .clear
 
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => "form-horizontal" }) do |f|

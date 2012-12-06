@@ -32,12 +32,9 @@
 
 .row-fluid
   %aside.profile_sidebar.span3.hidden-phone
-    - if @user.avatar
+    - if @user.avatar.present?
       .row-fluid
         .span12= image_tag @user.avatar.url(:normal), :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
-    - else
-      .row-fluid
-        .span12= image_tag "backgrounds/no-image-profile.jpg", :class => "thumbnail", :alt => "#{@user.username + "'s picture"}"
     - if @user.geocoded?
       .row-fluid
         .span12

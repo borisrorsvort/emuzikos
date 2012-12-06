@@ -5,3 +5,5 @@
 = form.input :body, :as => :text, :label => t(:'messages.message')
 .form-actions
   = submit_tag t(:'buttons.submit'), :class => "btn btn-primary"
+  = link_to :back, :class => "btn" do
+    = t(:'buttons.cancel')
