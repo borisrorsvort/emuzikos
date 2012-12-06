@@ -49,7 +49,7 @@
 = render "shared/mixpanel"    if Rails.env.production?
 = render "shared/inspectlet"  if Rails.env.production?
 = render "shared/quantcast"   if Rails.env.production?
-= render "shared/userfox"
+= render "shared/userfox"     if Rails.env.production?
 
 
 

@@ -1,12 +1,61 @@
 %nav.navbar.navbar-inverse.navbar-fixed-top{ :role => "navigation"}
   .navbar-inner
     .container-fluid
-      %a.btn.btn-navbar{:data => {"toggle" => "collapse", "target" => ".nav-collapse"}}
+      %a.btn.btn-navbar
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
       %a.brand{:href => root_url}= image_tag 'logo.png', :alt => "Emuzikos"
-      .nav-collapse.collapse
+      %ul.mobile-menu
+
+        %li
+          =link_to users_url do
+            %i.icon-search.icon-white
+            = t(:'menu.all_users')
+        - if user_signed_in?
+          %li
+            = link_to user_messages_path(current_user) do
+              %i.icon-inbox
+              = t(:'menu.messages.inbox')
+          %li
+            = link_to user_messages_path(current_user, :mailbox => :sent) do
+              %i.icon-signin
+              = t(:'menu.messages.sent_messages')
+          %li
+            = link_to user_contacts_path(current_user) do
+              %i.icon-book
+              =t(:'menu.users.contacts')
+          %li
+            = link_to edit_user_path(current_user) do
+              %i.icon-pencil
+              = t(:'menu.profile.edit')
+          %li
+            = link_to user_path(current_user) do
+              %i.icon-user
+              = t(:'menu.profile.public')
+          %li.active
+            = link_to edit_user_registration_path(current_user) do
+              %i.icon-briefcase
+              = t(:'menu.profile.account')
+          %li
+            = link_to services_path, :class => "current" do
+              %i.icon-globe
+              = t(:'menu.profile.authentications')
+          %li
+            = link_to destroy_user_session_path, :class => "logout", :rel => "nofollow" do
+              %i.icon-signin
+              = t(:'menu.logout')
+        - else
+          %li
+            = link_to new_user_registration_path do
+              %i.icon-plus
+              =t(:'menu.signup')
+          %li
+            = link_to t(:'menu.login'), new_user_session_path do
+              %i.icon-signin
+              =t(:'menu.login')
+
+      .nav-collapse
         %ul.nav
           %li
             =link_to users_url do

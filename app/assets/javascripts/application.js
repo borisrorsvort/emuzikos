@@ -137,6 +137,13 @@ function initApplication() {
   $("h1").fitText(1.2, { minFontSize: '20px', maxFontSize: '36px' });
   $("#search_form h3").fitText(1, { minFontSize: '14px', maxFontSize: '20px' });
   Socialite.load();
+
+  var jPM = $.jPanelMenu({
+    menu: '.mobile-menu',
+    trigger: '.btn.btn-navbar',
+    keyboardShortcuts: false
+  });
+  jPM.on();
 }
 
 
