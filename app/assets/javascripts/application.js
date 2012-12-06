@@ -143,7 +143,17 @@ function initApplication() {
     trigger: '.btn.btn-navbar',
     keyboardShortcuts: false
   });
-  jPM.on();
+
+
+  enquire.register("screen and (max-width:768px)", {
+
+    match : function() {
+      jPM.on();
+    }
+
+  }).listen(); // More on this next
+
+
 }
 
 
