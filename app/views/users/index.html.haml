@@ -2,11 +2,8 @@
 - description t(:'.description')
 - keywords t(:'.keywords')
 
-- content_for :sidebar do
-  = render "search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen.countries
+/ - content_for :sidebar do
 
-- content_for :scripts do
-  = pageless(@users.num_pages, request.url)
 
 
 .progress_bar_wrapper.hidden
@@ -16,21 +13,64 @@
   / .progress_bar
   /   = image_tag('icons/ajax-loader-bar.gif', :id => "search_loader")
 
--if !@users.blank?
-  %section.users_list
+%section.users_list
+  = render "search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen.countries
+  -if !@users.blank?
     = render @users
-    .clear
 
-  = paginate @users
 
--else
-  .no_users
-    %h3=t(:'.no_users')
-    %p= t(:'.invite_more_users')
-    .spread
-      %a{:onclick => "sendRequestViaMultiFriendSelector(); return false;", :class => "btn btn-primary x-large"}
-        =t(:'buttons.invite_your_friends_from_fb')
-      .clear
+    = paginate @users
+
+  -else
+    .no_users
+      %h3=t(:'.no_users')
+      %p= t(:'.invite_more_users')
+      .spread
+        %a{:onclick => "sendRequestViaMultiFriendSelector(); return false;", :class => "btn btn-primary x-large"}
+          =t(:'buttons.invite_your_friends_from_fb')
+        .clear
+  .clearfix
+- content_for :scripts do
+  :javascript
+    var handler = null;
+    // Prepare layout options.
+    var options = {
+      autoResize: true, // This will auto-update the layout when the browser window is resized.
+      container: $('.users_list'), // Optional, used for some extra CSS styling
+      offset: 10, // Optional, the distance between grid items
+      itemWidth: 250 // Optional, the width of a grid item
+    };
+    /**
+     * When scrolled all the way to the bottom, add more tiles.
+     */
+    $('.users_list').infinitescroll({
+      navSelector  : '.pagination',    // selector for the paged navigation
+      nextSelector : '.pagination .next a',  // selector for the NEXT link (to page 2)
+      itemSelector : '.user_profile_listing',     // selector for all items you'll retrieve
+      loading: {
+          finishedMsg: "#{t(:'pagination.loading_more_results')}",
+          img: "/assets/icons/ajax-loader-pagiantion.gif"
+        }
+      },
+      // trigger Masonry as a callback
+      function( newElements ) {
+        // hide new items while they are loading
+        var $newElems = $( newElements ).css({ opacity: 0 });
+        // show elems now they're ready
+        $newElems.animate({ opacity: 1 });
+        if(handler) handler.wookmarkClear();
+        // Create a new layout handler.
+        handler = $('.user_profile_listing');
+        handler.wookmark(options);
+      }
+    );
+    $(document).ready(new function() {
+      // Call the layout function.
+      handler = $('.user_profile_listing');
+      handler.wookmark(options);
+    });
+
+
 
 :javascript
   function sendRequestViaMultiFriendSelector() {
@@ -46,3 +86,6 @@
     js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
+
+
+

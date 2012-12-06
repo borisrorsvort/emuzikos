@@ -88,6 +88,8 @@ function  displaySpinner() {
     trail: 60, // Afterglow percentage
     shadow: false // Whether to render a shadow
   });
+
+
 }
 
 function hideSpinner() {
@@ -114,22 +116,31 @@ function initApplication() {
   $('#sub_sections li a.current').after('<div class="top_sub_nav_arrow"></div>');
   $('#footer .inner_footer th').after('<div class="footer_headers_current_arrow"></div>');
 
-  // MASONRY
-  $(".testimonials").masonry({ singleMode: true,resizeable: true, animate: true,itemSelector: '.testimonial' });
+  // // MASONRY
+  // $(".testimonials").masonry({
+  //   resizeable: true,
+  //   animate: true,
+  //   itemSelector: '.testimonial'
+  // });
 
-  $('#user_search .btn').click(function() {
-    $('.progress_bar_wrapper').removeClass('hidden');
+
+
+  $(document).on("click", '.search-form-users .btn', function(e) {
+    e.preventDefault();
+    // $('.progress_bar_wrapper').removeClass('hidden');
     $('.users_list').css('opacity', 0.5);
-    $(this).closest('form').submit();
+    displaySpinner();
+    $(this).closest('form').unbind('submit').submit();
     $(this).attr("disabled", true);
   });
 
+  $("h1").fitText(1.2, { minFontSize: '20px', maxFontSize: '36px' });
+  $("#search_form h3").fitText(1, { minFontSize: '14px', maxFontSize: '24px' });
   Socialite.load();
 }
 
 
-document.addEventListener("page:change", initApplication);
+document.addEventListener("page:change", initApplication, hideSpinner);
 document.addEventListener("page:fetch", displaySpinner);
-document.addEventListener("page:change", hideSpinner);
 
 $(document).ready(initApplication);

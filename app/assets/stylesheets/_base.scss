@@ -43,6 +43,21 @@ b { font-weight:bold; }
 
 strong { font-weight:bold; }
 
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+
 @mixin inset($color, $important: "") {
   @if $important == "important" {
     text-shadow: $color 0 1px 1px  !important;

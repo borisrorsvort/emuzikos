@@ -1,12 +1,12 @@
 = link_to user_path(user), :class => "user_profile_listing" do
+  .section
+    - if user.avatar.present?
+      = image_tag(user.avatar.url(:normal))
+    -else
+      = image_tag("http://flickholdr.com/400/#{rand(200..500)}/#{cycle("super-nova","milkyway","planet", "space", "solar")}/#{rand(1..20)}")
   .section.user_general_infos
-    .avatar.small
-      - if user.avatar.present?
-        = image_tag(user.avatar.url(:gallery))
-      -else
-        = image_tag("backgrounds/avatar-default.gif")
-    .line.username= user.username
-    .line.location
+    .username= user.username
+    .location
       = t(:'common.users.from') + " "
       = user.zip + ", "
       = Carmen::country_name(user.country)
@@ -28,3 +28,5 @@
         %span= t(:"instruments.#{instrument.name}")
 
   .clear
+
+/ .item.w1

@@ -1,0 +1,19 @@
+$('.progress_bar_wrapper').addClass('hidden');
+$('.users_list').css('opacity', 1);
+$('.search-form-users .btn').removeAttr('disabled');
+$(".users_list").html("<%= escape_javascript(render(@users)) %>");
+hideSpinner();
+<%
+  @users.num_pages, request.url
+    opts = {
+      :totalPages => total_pages,
+      :url        => url,
+      :loaderMsg  => t(:'pagination.loading_more_results'),
+      :pagination => ".pagination",
+      :loaderImage => "/assets/icons/ajax-loader-pagiantion.gif"
+    }
+
+    container && opts[:container] ||= container
+%>
+
+$('.users_list').pageless(<%= opts.to_json %>});

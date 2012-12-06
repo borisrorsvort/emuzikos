@@ -14,7 +14,8 @@
       - if content_for? :sidebar
         %aside{role: "search", class: "span3 searchbar"}
           = yield(:sidebar)
-      %section.content{class: (if content_for? :sidebar then "span9" else "span12" end) }
+      / %section.content{class: (if content_for? :sidebar then "span9" else "span12" end) }
+      %section.content
         - if show_headline?
           %header.page-header
             %h1= yield(:headline)

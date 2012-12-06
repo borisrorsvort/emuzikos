@@ -1,118 +1,141 @@
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
 
-}
+  // Layout
 
-@media only screen and (min-width: 768px) {
-
-  // SEARCH
-
-  .searchbar {
-    h3 {
-      font-size: 12px;
-    }
-  }
-  #search_form {
-    margin: 0;
-    border: none;
-    background: none;
+  body {
     padding: 0;
   }
 
+  .navbar.navbar-fixed-top {
+    margin: 0;
+  }
 
-#pages.homepage {
-  #logo {
-    display:block;
-    float:left;}
-}
+  .content {
+    padding-top: 0;
+  }
 
-#messages.index {
-  #inner_content {
-    padding: 18px;
-    .button.delete {
-      margin-left: 0;
+  form {
+    .control-group {
+      textarea {
+        width: 100%;
+      }
     }
   }
+  // .container-fluid[role="main"] {
+  //   padding: 0;
+  // }
 }
 
-.content {
-  padding: 0;
-}
+// @media only screen and (min-width: 768px) {
 
-.users_list {
-  .user_profile_listing {
-    clear:both;
-    overflow: hidden; /* Trick to get equal height columns */
-    &:hover {
-      border-color: $linkColor;
-    }
-    .section {
-      margin-bottom: -99999px; /* Trick to get equal height columns */
-      padding-bottom: 99999px; /* Trick to get equal height columns */
-      float:left;
-      text-align:left  !important;
-      &.user_general_infos {
-        width: 30%; }
-      &.user_type {
-        width: 30%;
-        border-top: 0px solid #dddddd;
-        border-left: 1px solid #dddddd;
-        text-align:center; }
-      &.user_instruments {
-        width: 20%;
-        overflow: hidden;
-        border-top: 0px solid #dddddd;
-        border-left: 1px solid #dddddd; }
-    }
-    .tag_list {
-      padding-bottom: 10px; /* Adding pading cauz .section padding-bottom is taken for the equal height Trick  */
-    }
-  }
-}
+//   // SEARCH
+
+//   .searchbar {
+//     h3 {
+//       font-size: 12px;
+//     }
+//   }
+//   #search_form {
+//     margin: 0;
+//     border: none;
+//     background: none;
+//     padding: 0;
+//   }
 
 
-/* 12. MESSAGES
----------------------------------------- */
+// #pages.homepage {
+//   #logo {
+//     display:block;
+//     float:left;}
+// }
 
-.message {
-  margin-bottom: 10px;
-}
+// #messages.index {
+//   #inner_content {
+//     padding: 18px;
+//     .button.delete {
+//       margin-left: 0;
+//     }
+//   }
+// }
 
-/* HOME PAGE */
+// .content {
+//   padding: 0;
+// }
 
-.homepage {
-  h2.moto {
-    font-size: 3em;
-  }
-  #logo_home, #main-icon {
-    width: 100%;
-    margin: 0 auto;
-  }
-  #logo_home {
-    margin-bottom: 38px;
-  }
-}
+// .users_list {
+//   .user_profile_listing {
+//     clear:both;
+//     overflow: hidden; /* Trick to get equal height columns */
+//     &:hover {
+//       border-color: $linkColor;
+//     }
+//     .section {
+//       margin-bottom: -99999px; /* Trick to get equal height columns */
+//       padding-bottom: 99999px; /* Trick to get equal height columns */
+//       float:left;
+//       text-align:left  !important;
+//       &.user_general_infos {
+//         width: 30%; }
+//       &.user_type {
+//         width: 30%;
+//         border-top: 0px solid #dddddd;
+//         border-left: 1px solid #dddddd;
+//         text-align:center; }
+//       &.user_instruments {
+//         width: 20%;
+//         overflow: hidden;
+//         border-top: 0px solid #dddddd;
+//         border-left: 1px solid #dddddd; }
+//     }
+//     .tag_list {
+//       padding-bottom: 10px; /* Adding pading cauz .section padding-bottom is taken for the equal height Trick  */
+//     }
+//   }
+// }
 
-// Invite friends
 
-.invite_friend_block {
-  float: left;
-  width: 44% ;
-  margin-right: 2%;
-  &:last-child {
-    margin-right:  0;
-    width: 46%;
-  }
-}
+// /* 12. MESSAGES
+// ---------------------------------------- */
 
-#footer {
-  display: block;
-}
+// .message {
+//   margin-bottom: 10px;
+// }
+
+// /* HOME PAGE */
+
+// .homepage {
+//   h2.moto {
+//     font-size: 3em;
+//   }
+//   #logo_home, #main-icon {
+//     width: 100%;
+//     margin: 0 auto;
+//   }
+//   #logo_home {
+//     margin-bottom: 38px;
+//   }
+// }
+
+// // Invite friends
+
+// .invite_friend_block {
+//   float: left;
+//   width: 44% ;
+//   margin-right: 2%;
+//   &:last-child {
+//     margin-right:  0;
+//     width: 46%;
+//   }
+// }
+
+// #footer {
+//   display: block;
+// }
 
 
-}/*/mediaquery*/
+// }/*/mediaquery*/

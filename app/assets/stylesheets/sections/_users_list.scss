@@ -1,0 +1,78 @@
+.users_list {
+  position: relative;
+  .user_profile_listing {
+    @include animation(fadeIn 1s);
+    background-color:#FFF;
+    border: 1px solid #dddddd;
+    margin-bottom: 10px;
+    @include border-radius(5px);
+    text-decoration:none;
+    display:block;
+    font-size:$basefont;
+    float: left;
+    // margin: 5px 0.9% 5px 1%;
+    // padding: 5px 1%;
+    // margin: 0 0 $gridGutterWidth !important;
+    width: 250px;
+    display: none;
+
+
+    .tag_list {
+      margin: 0;
+      font-size: $basefont / 1.2; }
+    .section {
+      padding: 10px;
+      .title {
+        margin-bottom: 5px;
+        color: #666; }
+
+      &.user_general_infos {
+        .username {
+          text-transform: uppercase;
+          a {
+            @include hover-link; }}
+        .location {
+          font-size: 0.9em;
+          color: lighten(#666, 10%); }
+      }
+      &.user_type {
+        /* text-align:center; */
+        border-top: 1px solid #dddddd;
+      }
+      &.user_instruments {
+        /*text-align:center;*/
+        border-top: 1px solid #dddddd;
+        span {
+          font-size: $basefont / 1.2;
+          background: none;
+          border: 1px solid #ddd;
+          color: lighten(#666, 10%);
+        }
+      }
+    }
+
+  }
+}
+
+#infscr-loading {
+  position: fixed;
+  text-align: center;
+  bottom: 30px;
+  left: 42%;
+  z-index: 100;
+  background: white;
+  background: hsla( 0, 0%, 100%, 0.9 );
+  padding: 20px;
+  color: #222;
+  font-size: 15px;
+  font-weight: bold;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+
+
+/* The Magnificent Clearfix: nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }

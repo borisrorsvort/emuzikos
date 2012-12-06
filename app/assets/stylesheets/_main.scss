@@ -30,8 +30,17 @@
   }
 }
 .content {
-  padding: $gridGutterWidth;
+
   min-height: 400px !important;
+}
+
+form {
+  max-width: 768px;
+  .control-group {
+    textarea {
+      width: 97%;
+    }
+  }
 }
 
 
@@ -73,91 +82,9 @@
   }
 }
 
-.users_list {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-
-  -webkit-animation-duration: 1s;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-timing-function: ease;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-duration: 1s;
-  -moz-animation-delay: 0s;
-  -moz-animation-timing-function: ease;
-  -moz-animation-fill-mode: both;
-  -ms-animation-duration: 1s;
-  -ms-animation-delay: 0s;
-  -ms-animation-timing-function: ease;
-  -ms-animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-delay: 0s;
-  animation-timing-function: ease;
-  animation-fill-mode: both;
-  .user_profile_listing {
-    -webkit-animation: fadeIn 2s ;
-    background-color:#FFF;
-    border: 1px solid #dddddd;
-    margin-bottom: 10px;
-    @include border-radius(5px);
-    text-decoration:none;
-    display:block;
-    font-size:$basefont;
-    .line {
-      display:block;
-      padding-left: 45px; }
-    .tag_list {
-      margin: 0;
-      font-size: $basefont / 1.2; }
-    .section {
-      padding: 10px;
-      .title {
-        margin-bottom: 5px;
-        color: #666; }
-
-      &.user_general_infos {
-        .username {
-          text-transform: uppercase;
-          a {
-            @include hover-link; }}
-        .location {
-          font-size: 0.9em;
-          color: lighten(#666, 10%); }
-      }
-      &.user_type {
-        /* text-align:center; */
-        border-top: 1px solid #dddddd;
-      }
-      &.user_instruments {
-        /*text-align:center;*/
-        border-top: 1px solid #dddddd;
-        span {
-          font-size: $basefont / 1.2;
-          background: none;
-          border: 1px solid #ddd;
-          color: lighten(#666, 10%);
-        }
-      }
-    }
-  }
+.pagination {
+  visibility: hidden;
 }
-
-.avatar {
-  background: #ccc;
-  display:block;
-  float:left;
-  &.small {
-    height: 30px;
-    width:30px;
-    border: 2px solid #fff;
-    @include box-shadow(#ccc, 0px, 0px, 3px);
-    margin-right: 10px;
-    @include border-radius(2px);
-    a {
-      display:block;
-    } }}
-
 
 /* USER SHOW */
 
@@ -176,7 +103,8 @@
 
 h1.username {
   margin-bottom: 3px;
-  display:inline; }
+  display: inline-block;
+  width: 100%; }
 
 .location_infos {
   color: #999;
@@ -241,8 +169,6 @@ h1.username {
   }
 }
 #search_form {
-  margin: 0 $gridGutterWidth;
-  @include white_box;
   padding: $gridGutterWidth;
   .tab-content {
     overflow: visible;
@@ -259,13 +185,13 @@ h1.username {
   padding: $gridGutterWidth;
 }
 
-@media (min-width: 768px) {
-  .sidebar-nav-fixed {
-    position:fixed;
-    top:60px;
-    width:21.97%;
-  }
-}
+// @media (min-width: 768px) {
+//   .sidebar-nav-fixed {
+//     position:fixed;
+//     top:60px;
+//     width:21.97%;
+//   }
+// }
 
 /* CONTACT LIST*/
 

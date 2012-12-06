@@ -35,7 +35,7 @@ namespace :db do
 
     puts 'Start population'
 
-    User.populate 50 do |user|
+    User.populate 100 do |user|
       user.username = Faker::Name.first_name
       user.email = Faker::Internet.email
       user.encrypted_password = SecureRandom.hex(10)
@@ -77,7 +77,7 @@ namespace :db do
     end
 
     puts 'Creating admin user'
-    
+
     admin_user = AdminUser.new(:email => "admin@example.com", :password => "cacacaca", :password_confirmation => "cacacaca")
     admin_user.save
 

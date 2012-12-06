@@ -5,7 +5,6 @@ source :gemcutter
 gem 'rails', '3.1.3'
 gem 'mysql'
 gem "jquery-rails"
-gem 'modernizr-rails'
 
 gem "devise", "2.0"
 gem 'omniauth', '1.0'
@@ -56,6 +55,7 @@ gem 'font-awesome-sass-rails'
 
 gem 'turbolinks'
 gem 'spinjs-rails'
+# gem 'masonry-rails'
 
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"
@@ -65,6 +65,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'thin'
   gem 'rails-footnotes', '>= 3.7.5.rc4'
   gem "hirb"
   gem "bullet"

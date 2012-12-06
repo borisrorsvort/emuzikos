@@ -186,7 +186,6 @@ def setup_environment
   end
 
   require File.expand_path("../../config/environment", __FILE__)
-  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   require 'rspec/rails'
   require 'capybara/rspec'
@@ -197,18 +196,20 @@ def setup_environment
   require 'database_cleaner'
   require "rails/application"
 
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
   Rails.backtrace_cleaner.remove_silencers!
   # Capybara.javascript_driver = :poltergeist
   Capybara.javascript_driver = :selenium
 
   # For Devise
-  # Spork.trap_method(Rails::Application, :reload_routes!)
+  Spork.trap_method(Rails::Application, :reload_routes!)
   Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
 
   DatabaseCleaner.strategy = :truncation
   RSpec.configure do |config|
     config.mock_with :rspec
-    config.use_transactional_fixtures = true
+    # config.use_transactional_fixtures = true
     config.treat_symbols_as_metadata_keys_with_true_values = true
     config.filter_run :focus => true
     config.run_all_when_everything_filtered = true
