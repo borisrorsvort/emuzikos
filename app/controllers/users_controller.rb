@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @tracks = @user.get_soundclound_tracks(@user.soundcloud_username)
 
     if Rails.env.production?
-      endimpressionist(@user)
+      impressionist(@user)
     end
 
     if request.path != user_path(@user)
