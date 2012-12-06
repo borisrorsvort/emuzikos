@@ -65,7 +65,7 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'thin'
+  # gem 'thin'
   gem 'rails-footnotes', '>= 3.7.5.rc4'
   gem "hirb"
   gem "bullet"
