@@ -49,7 +49,7 @@
       itemSelector : '.user_profile_listing',     // selector for all items you'll retrieve
       loading: {
           finishedMsg: "#{t(:'pagination.loading_more_results')}",
-          img: "/assets/icons/ajax-loader-pagiantion.gif"
+          img: ""
         }
       },
       // trigger Masonry as a callback
@@ -61,13 +61,18 @@
         if(handler) handler.wookmarkClear();
         // Create a new layout handler.
         handler = $('.user_profile_listing');
-        handler.wookmark(options);
+        handler.imagesLoaded( function() {
+          handler.wookmark(options);
+        });
       }
     );
     $(document).ready(new function() {
       // Call the layout function.
       handler = $('.user_profile_listing');
-      handler.wookmark(options);
+      handler.imagesLoaded( function() {
+        handler.wookmark(options);
+      });
+
     });
 
 
