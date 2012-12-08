@@ -56,6 +56,8 @@ gem 'font-awesome-sass-rails'
 gem 'turbolinks'
 gem 'spinjs-rails'
 
+gem 'thin'
+
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"
   gem 'uglifier'
