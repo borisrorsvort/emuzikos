@@ -3,7 +3,7 @@ source :gemcutter
 # Core Gems
 
 gem 'rails', '3.1.3'
-gem 'mysql'
+gem 'mysql2'
 gem "jquery-rails"
 
 gem "devise", "2.0"
@@ -11,7 +11,7 @@ gem 'omniauth', '1.0'
 gem "omniauth-facebook"
 gem "omniauth-soundcloud"
 
-gem 'activeadmin'
+gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
 gem 'meta_search'
 
 gem "airbrake"
@@ -55,12 +55,13 @@ gem 'font-awesome-sass-rails'
 
 gem 'turbolinks'
 gem 'spinjs-rails'
-# gem 'masonry-rails'
+
+gem 'thin'
 
 group :assets do
   gem 'coffee-rails', " ~> 3.1.0"
   gem 'uglifier'
-  gem 'sass-rails'
+  gem 'sass-rails', '3.1.4'
   gem "compass-rails"
 end
 
