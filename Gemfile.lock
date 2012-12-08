@@ -338,10 +338,11 @@ GEM
       linecache (>= 0.3)
     rubyzip (0.9.9)
     sass (3.2.3)
-    sass-rails (3.1.6)
+    sass-rails (3.1.4)
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
-      sass (>= 3.1.10)
+      sass (>= 3.1.4)
+      sprockets (~> 2.0.0)
       tilt (~> 1.3.2)
     selenium-webdriver (2.25.0)
       childprocess (>= 0.2.5)
@@ -485,7 +486,7 @@ DEPENDENCIES
   rspec-rails
   ruby-debug
   sass
-  sass-rails
+  sass-rails (= 3.1.4)
   settingslogic (= 2.0.6)
   shoulda
   simple_form

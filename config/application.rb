@@ -21,7 +21,7 @@ module Emuzikos
 
     config.assets.enabled = true
 
-    config.assets.precompile += %w( active_admin.css active_admin.js )
+    config.assets.precompile += %w( active_admin.css active_admin.js active_admin/print.css )
 
     #config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
     config.autoload_paths << "#{config.root}/lib"
