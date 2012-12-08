@@ -1,6 +1,13 @@
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+
+//= require twitter/bootstrap/collapse
+//= require twitter/bootstrap/transition
+//= require twitter/bootstrap/dropdown
+//= require twitter/bootstrap/modal
+//= require twitter/bootstrap/tab
+//= require twitter/bootstrap/tooltip
+
 //= require_directory ./libs
 //= require gritter
 //= require plugins

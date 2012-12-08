@@ -17,6 +17,7 @@ coverage
 coverage/**/*
 public/system/***/**/*
 public/photos/***/**/*
+public/assets/
 .idea/*
 .rvmrc
 .sass-cache/
