@@ -49,7 +49,7 @@ gem 'wicked'
 gem 'annotate'
 
 gem 'bootstrap-sass-rails'
-gem "highcharts-rails", "~> 2.2.1"
+gem "highcharts-rails", "~> 2.3.0"
 gem "newrelic_rpm"
 gem 'font-awesome-sass-rails'
 
