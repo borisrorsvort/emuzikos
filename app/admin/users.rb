@@ -26,7 +26,7 @@ ActiveAdmin.register User do
     column :user_type
     column :zip
     column :country do |user|
-      Carmen::country_name(user.country) unless user.country.nil?
+      i18n_country(user) unless user.country.nil?
     end
     column :created_at do |user|
       user.created_at.strftime("%I:%M %p %b %d")

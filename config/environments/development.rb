@@ -38,22 +38,6 @@ Emuzikos::Application.configure do
   #   :authentication       => 'plain',
   #   :enable_starttls_auto => true  }
 
-
-
-  config.after_initialize do
-    Bullet.enable = false
-    Bullet.alert = false
-    Bullet.bullet_logger = true
-    #Bullet.console = true
-    Bullet.rails_logger = true
-    Bullet.disable_browser_cache = true
-    begin
-       require 'ruby-growl'
-       Bullet.growl = true
-     rescue MissingSourceFile, Exception
-     end
-  end
-
   config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"),3,5*1024*1024)
 
   if $0 == "irb"
@@ -68,5 +52,7 @@ Emuzikos::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   Paperclip.options[:command_path] = "/usr/local/bin"
+
+  ENV["REDISTOGO_URL"] = 'redis://redistogo:783ce13beaeac541f0caad5893fe4031@cowfish.redistogo.com:9416/'
 end
 

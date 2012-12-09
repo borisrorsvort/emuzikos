@@ -1,7 +1,7 @@
 - title t(:'.title', :username => @user.username)
 
 - if @user.profile_completed?
-  - description t('users.show.description', username: @user.username, user_type: t(:"users.types.#{@user.user_type}"), searching_for: (@user.searching_for ? @user.searching_for : ''), country: (Carmen::country_name(@user.country) rescue t(:somewhere_in_the_world)))
+  - description t('users.show.description', username: @user.username, user_type: t(:"users.types.#{@user.user_type}"), searching_for: (@user.searching_for ? @user.searching_for : ''), country: (i18n_country(@user) rescue t(:somewhere_in_the_world)))
 - else
   - description t(:'.title', :username => @user.username) + " - Emuzikos"
 
@@ -15,20 +15,6 @@
     } else {
       $('.nav-tabs a:first').tab('show');
     }
-
-
-/ - content_for :sub_nav do
-/   - if @user == current_user
-/     %ul#sub_sections
-/       %li= link_to t(:'menu.profile.edit'), edit_user_path(current_user)
-/       %li= link_to t(:'menu.profile.public'),  user_path(current_user), :class => "current"
-/       %li= link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-/       %li= link_to t(:'menu.profile.authentications'), services_path
-/   - else
-/     #actions_set
-/       = link_to :back, :class => "btn back profile" do
-/         %i.icon-arrow-left
-/         = t(:'buttons.back', :model => t(:'activerecord.models.search'))
 
 .row-fluid
   %aside.profile_sidebar.span3.hidden-phone
@@ -55,7 +41,7 @@
         - if @user.geocoded?
           =t(:'.from')
           = @user.zip
-          = Carmen::country_name(@user.country) rescue "N/A"
+          = i18n_country(@user) rescue "N/A"
 
     - if current_user && current_user != @user
       .friendly-actions

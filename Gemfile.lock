@@ -90,7 +90,10 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    carmen (0.2.12)
+    carmen (1.0.0.beta2)
+    carmen-rails (1.0.0.beta3)
+      carmen (~> 1.0.0.beta2)
+      rails
     childprocess (0.3.5)
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.6)
@@ -314,6 +317,7 @@ GEM
     rbx-require-relative (0.0.9)
     rdoc (3.12)
       json (~> 1.4)
+    redis (3.0.2)
     responders (0.9.3)
       railties (~> 3.1)
     rest-client (1.6.7)
@@ -434,6 +438,7 @@ DEPENDENCIES
   bullet
   capybara
   carmen
+  carmen-rails
   coffee-rails (~> 3.1.0)
   compass-rails
   country_select
@@ -483,6 +488,7 @@ DEPENDENCIES
   rb-fchange
   rb-fsevent
   rb-inotify
+  redis
   rspec-rails
   ruby-debug
   sass

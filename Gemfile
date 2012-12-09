@@ -5,6 +5,7 @@ source :gemcutter
 gem 'rails', '3.1.3'
 gem 'mysql2'
 gem "jquery-rails"
+gem 'redis'
 
 gem "devise", "2.0"
 gem 'omniauth', '1.0'
@@ -29,10 +30,10 @@ gem 'simple_form'
 gem "paperclip", "2.4"
 gem 'aws-s3', :require => 'aws/s3'
 
-gem "carmen"
 gem 'country_select'
 gem 'httparty'
-
+gem 'carmen'
+gem 'carmen-rails'
 gem 'songkickr'
 gem "soundcloud"
 gem "hominid"
