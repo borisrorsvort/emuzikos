@@ -238,9 +238,7 @@ en:
     congas: Congas
     dhoki: Dhoki
     dholak: Dholak
-    ? "double bass"
-    : "Double Bass"
-    double_bass: "Doule bass"
+    double_bass: "Double bass"
     drums: Drums
     euphonium: Euphonium
     flute: Flute

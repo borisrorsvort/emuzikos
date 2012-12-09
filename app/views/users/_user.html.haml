@@ -8,7 +8,7 @@
     .location
       = t(:'common.users.from') + " "
       = user.zip + ", "
-      = Carmen::country_name(user.country)
+      = i18n_country(user)
 
   .section.user_type
     .title

@@ -14,7 +14,7 @@
   /   = image_tag('icons/ajax-loader-bar.gif', :id => "search_loader")
 
 %section.users_list
-  = render "search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen.countries
+  = render "search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen::Country.all
   -if !@users.blank?
     = render @users
 

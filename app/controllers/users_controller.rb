@@ -54,7 +54,7 @@ class UsersController < ApplicationController
         gflash :success => true
 
         if @user.visible? && @user.profile_completed? && Rails.env == "production"
-          @tweet = @user.user_type + ": " + @user.instruments.map {|i| i.name}.to_sentence + " available in " + @user.zip + " " + Carmen::country_name(@user.country) + " http://www.emuzikos.com/users/#{@user.id} "
+          @tweet = @user.user_type + ": " + @user.instruments.map {|i| i.name}.to_sentence + " available in " + @user.zip + " " + i18n_country(@user) + " http://www.emuzikos.com/users/#{@user.id} "
           Twitter.update(@tweet) rescue nil
         end
         @user.set_profile_status
