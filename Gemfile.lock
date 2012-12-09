@@ -314,6 +314,7 @@ GEM
     rbx-require-relative (0.0.9)
     rdoc (3.12)
       json (~> 1.4)
+    redis (3.0.2)
     responders (0.9.3)
       railties (~> 3.1)
     rest-client (1.6.7)
@@ -483,6 +484,7 @@ DEPENDENCIES
   rb-fchange
   rb-fsevent
   rb-inotify
+  redis
   rspec-rails
   ruby-debug
   sass

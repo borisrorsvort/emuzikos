@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
 
   after_validation :check_against_mailchimp, :if => :newsletter_preference_changed?
   after_validation :geocode, :if => :address_changed?
-  # after_save :set_profile_status
+
 
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
