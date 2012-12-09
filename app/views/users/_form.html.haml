@@ -3,7 +3,10 @@
 
   / %h3= t(:"location", :scope => :users)
   = f.input :zip, :label => t(:'activerecord.attributes.user.zip')
-  = f.input :country, :label => t(:'activerecord.attributes.user.country'), :class => 'chosen'
+  .control-group
+    = f.label t(:'activerecord.attributes.user.country'), :class => "select control-label"
+    .controls
+      = f.country_select :country, selected: @user.country
   = f.input :avatar, :as => :file, :label =>  t(:'activerecord.attributes.user.avatar')
   - if @user.avatar.present?
     .control-group

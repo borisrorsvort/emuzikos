@@ -30,10 +30,10 @@ gem 'simple_form'
 gem "paperclip", "2.4"
 gem 'aws-s3', :require => 'aws/s3'
 
-gem "carmen"
 gem 'country_select'
 gem 'httparty'
-
+gem 'carmen'
+gem 'carmen-rails'
 gem 'songkickr'
 gem "soundcloud"
 gem "hominid"

@@ -107,9 +107,8 @@ function hideSpinner() {
 function initApplication() {
   // TIPSY
 
-  $(".collapse").collapse();
+
   $('[rel=tooltip]').tooltip();
-  // $('data-toggle=dropdown').dropdown();
 
   if ($(".boxy_forms .control-group.error").size() > 1) {
     $(".normal_login").collapse('show');

@@ -12,12 +12,12 @@
     .field
       %p
         = link_to t(:"devise.login_with", :provider => "Facebook"), user_omniauth_authorize_path(:facebook), :class => "btn-auth btn-facebook"
-      %p 
+      %p
         = link_to omniauth_authorize_path(:user, "soundcloud") do
           = image_tag "icons/authbuttons/soundcloud-button.png", :alt => "Soundcloud connect"
     %hr.clearfix
     %a.normal_login_trigger{"data-target" => ".normal_login", "data-toggle" => "collapse"}= t(:"devise.use_the_normal_form")
-    .normal_login
+    .normal_login.collapse
       = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f|
         = devise_error_messages!
         = f.input :email, :label => t(:'activerecord.attributes.user.email')
