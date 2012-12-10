@@ -5,7 +5,7 @@ source :gemcutter
 gem 'rails', '3.1.3'
 gem 'mysql2'
 gem "jquery-rails"
-gem 'redis'
+# gem 'redis'
 
 gem "devise", "2.0"
 gem 'omniauth', '1.0'

@@ -26,5 +26,5 @@ Emuzikos::Application.configure do
   config.serve_static_assets                  = true
   config.i18n.fallbacks                       = true
   config.active_support.deprecation           = :notify
-  ENV["REDISTOGO_URL"] = 'redis://redistogo:783ce13beaeac541f0caad5893fe4031@cowfish.redistogo.com:9416/'
+
 end

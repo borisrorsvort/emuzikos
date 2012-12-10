@@ -53,6 +53,6 @@ Emuzikos::Application.configure do
 
   Paperclip.options[:command_path] = "/usr/local/bin"
 
-  ENV["REDISTOGO_URL"] = 'redis://redistogo:783ce13beaeac541f0caad5893fe4031@cowfish.redistogo.com:9416/'
+
 end
 
