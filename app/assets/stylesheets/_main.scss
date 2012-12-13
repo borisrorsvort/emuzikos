@@ -51,21 +51,6 @@ form {
   margin: 0;
 }
 
-.message_count {
-   @include border-radius(12px);
-   @include box-shadow(#333, 0, 1px, 2px);
-   padding: 0px 7px;
-   margin-left: 5px;
-   background-color:#ce2f2f;
-   border: 1px solid #fff;
-   font-size: 11px;
-   color:#fff;
-   position: absolute;
-   top: -15px;
-   right: -7px;
-   font-weight:normal;
-   text-shadow: none; }
-
 /* USER */
 
 .progress_bar_wrapper {
@@ -239,63 +224,13 @@ h1.username {
 .testimonials.wide .testimonial {
  width: 225px !important;
 }
+
 #testimonials:after {
   clear: both;
   content: '';
   display: block;
   height: 0px;
   visibility: hidden;
-}
-
-/* 12. MESSAGES
----------------------------------------- */
-.messages_list {
-  margin-bottom: 10px;
-}
-
-.message {
-  .delete_option {
-    width: 20px;
-    margin-left: 0;
-    float: left;
-  }
-  .sender_avatar {
-    width: 30px;
-    margin-left: 0;
-    float: left;
-  }
-  .headers {
-    float: left;
-    margin-left: 20px;
-  }
-  font-size: $basefont;
-  display:block;
-  background-color:#FFF;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  text-decoration:none;
-  color: #666;
-  position:relative;
-  &.unread {
-    background-color: lighten($blue_light, 40%);
-  }
-  span {
-    display:block;
-    &.message_date {
-      position:absolute;
-      top: 10px;
-      right: 10px;
-    }
-    &.message_subject {
-      color:#999;;
-    }
-  }
-  .message_sender {
-    font-size: $basefont;
-    color: $blue_basic;
-    font-weight:bold;
-    margin:0 0 9px;
-  }
 }
 
 // invite friends

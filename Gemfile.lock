@@ -74,6 +74,10 @@ GEM
       mime-types
       xml-simple
     bcrypt-ruby (3.0.1)
+    better_errors (0.2.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.7.0)
+    binding_of_caller (0.6.8)
     bootstrap-sass-rails (2.2.1.1)
       railties (~> 3.1)
       sass-rails (~> 3.1)
@@ -98,6 +102,7 @@ GEM
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.6)
     cocaine (0.2.1)
+    coderay (1.0.8)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0)
@@ -434,6 +439,8 @@ DEPENDENCIES
   airbrake
   annotate
   aws-s3
+  better_errors
+  binding_of_caller
   bootstrap-sass-rails
   bullet
   capybara
@@ -493,6 +500,7 @@ DEPENDENCIES
   ruby-debug
   sass
   sass-rails (= 3.1.4)
+  selenium-webdriver
   settingslogic (= 2.0.6)
   shoulda
   simple_form

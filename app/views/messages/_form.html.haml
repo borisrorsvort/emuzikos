@@ -1,6 +1,6 @@
 = form.error_messages
 
-= form.input :to, :as => :hidden
+= form.input :to, as: :hidden, input_html: { value: params[:reply_to] ? params[:reply_to] : @user.id }
 = form.input :subject, :label => t(:'messages.subject')
 = form.input :body, :as => :text, :label => t(:'messages.message')
 .form-actions

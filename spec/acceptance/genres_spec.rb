@@ -9,6 +9,7 @@ feature "Genre", :js => true do
     @genre = create(:genre)
     @instrument = create(:instrument)
     visit(new_user_session_path)
+    click_link 'Or use the standart form'
     fill_in 'user_email', :with => @user.email
     fill_in 'user_password', :with => @user.password
     click_button 'Log in'

@@ -33,7 +33,9 @@
 
   %section.profile.span7
     %header
-      %h1.username= t(:'.title', :username => @user.username)
+      %h1.username
+        = t(:'.title', :username => @user.username)
+        = @user.id
 
       %span.location_infos
         - if @user.user_type.present?
@@ -45,7 +47,7 @@
 
     - if current_user && current_user != @user
       .friendly-actions
-        = link_to new_user_message_path(@current_user, :to => @user.id), :class => "btn btn-primary" do
+        = link_to "#contactform", :class => "btn btn-primary" do
           %i.icon-envelope.icon-white
           = t(:'buttons.contact')
         - unless current_user.is_friend_with(@user)
@@ -133,6 +135,10 @@
             %section
               %iframe{:src => "http://www.youtube.com/embed/#{@user.youtube_video_id}", :width => "320", :height => "190"}
           .clear
-  %section.advertising.span2
-    = render "shared/adsense_profile" unless Rails.env == "development"
-  .clearfix
+    - if @current_user
+      %section#contactform
+        %h4 Message
+        = simple_form_for @message, :url => user_messages_path(@current_user), :html => { :class => ""} do |f|
+          = render :partial => "messages/form", :object => f
+
+    .clearfix

@@ -11,7 +11,7 @@ gem "devise", "2.0"
 gem 'omniauth', '1.0'
 gem "omniauth-facebook"
 gem "omniauth-soundcloud"
-
+# gem 'fb_graph'
 gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
 gem 'meta_search'
 
@@ -22,8 +22,8 @@ gem "squeel"
 # gem "ransack", "0.6.0"
 gem "ransack", :git => "git://github.com/Eric-Guo/ransack.git"
 gem "gritter"
-gem "sass"
 gem "haml"
+gem "sass"
 
 gem "settingslogic", "2.0.6"
 gem 'simple_form'
@@ -85,6 +85,8 @@ group :development, :test do
   gem "guard-spork"
   # gem "factory_girl_rails", "3.3.0"
   gem "factory_girl_rails"
+  gem "selenium-webdriver"
+
   gem "shoulda"
   gem "database_cleaner"
   gem "capybara"
@@ -96,6 +98,8 @@ group :development, :test do
   gem 'rb-fchange', :require => false
   gem "taps"
   gem 'quiet_assets'
+  gem "better_errors"
+  gem "binding_of_caller"
   platforms :mri_18 do
     gem "ruby-debug"
   end
