@@ -2,17 +2,17 @@
   %td.delete_option= check_box_tag "delete[]", message.id
   - if message.sender
     %td
-      = link_to user_message_path(user, message) do
+      = link_to user_message_path(current_user, message) do
         .sender_avatar
           - if message.sender.avatar.present?
             = image_tag(message.sender.avatar.url(:gallery), :alt => message.sender.username)
           -else
             = image_tag("backgrounds/avatar-default.gif", :alt => message.sender.username)
   %td
-    = link_to user_message_path(user, message) do
+    = link_to user_message_path(current_user, message) do
       = message.sender ? h(message.sender.username) : "N/A"
   %td
-    = link_to user_message_path(user, message) do
+    = link_to user_message_path(current_user, message) do
       = truncate(h(message.subject), :length => 50)
   %td
     = h message.created_at.to_s(:long)

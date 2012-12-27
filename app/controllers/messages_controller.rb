@@ -1,12 +1,11 @@
 class MessagesController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :set_user
 
   def index
     if params[:mailbox] == "sent"
-      @messages = @user.sent_messages.order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
+      @messages = @current_user.sent_messages.order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
     else
-      @messages = @user.received_messages.order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
+      @messages = @current_user.received_messages.order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
     end
     if request.xhr?
       render @messages
@@ -48,7 +47,7 @@ class MessagesController < ApplicationController
     if request.post?
       if params[:delete]
         params[:delete].each { |id|
-          @message = Message.find(:first, :conditions => ["messages.id = ? AND (sender_id = ? OR recipient_id = ?)", id, @user, @user])
+          @message = Message.find(:first, :conditions => ["messages.id = ? AND (sender_id = ? OR recipient_id = ?)", id, @current_user, @current_user])
           @message.mark_deleted(@current_user) unless @message.nil?
         }
         gflash :success => true
@@ -56,9 +55,4 @@ class MessagesController < ApplicationController
       redirect_to :back
     end
   end
-
-  private
-    def set_user
-      @user = @current_user
-    end
 end

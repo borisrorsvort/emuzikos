@@ -4,13 +4,7 @@ feature "Testimonials", :js => true do
 
   background do
     @user = create(:user)
-    visit(new_user_session_path)
-    click_link 'normal_login_trigger'
-    fill_in 'user_email', :with => @user.email
-    fill_in 'user_password', :with => @user.password
-    click_button 'Log in'
-    current_path.should match edit_user_path(@user)
-    page.should have_content('Log out')
+    login_as(@user, :scope => :user)
   end
 
   scenario "Create a new testimonial with valid data", :js => true do
