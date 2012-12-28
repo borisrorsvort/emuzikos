@@ -14,6 +14,7 @@ feature "Send a Message", :js => true do
     fill_in 'Message', :with => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
     click_button('Submit')
     page.should have_content('Success')
+    current_path.should == social_share_path(:invite_friends)
     #todo should check if message exist
     # visit(user_messages_path(@sender, :mailbox => :sent))
   end
