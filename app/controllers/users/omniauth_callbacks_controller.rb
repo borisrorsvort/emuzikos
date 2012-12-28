@@ -23,18 +23,26 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
                          :password => Devise.friendly_token[0,20],
                          :username => data.username.gsub(/ /,'').downcase.parameterize
                         )
+
         if omniauth.extra.raw_info.location.present?
-          coordinates     = Geocoder.coordinates(data.location)
-          location        = data.location.name.split(",")
-          user.latitude   = coordinates[0]
-          user.longitude  = coordinates[1]
-          user.zip        = location[0]
-          user.country  = Carmen::Country.named(location[1].gsub(/ /,'')).code
+          locationName    = data.location.name
+          coordinates     = Geocoder.coordinates(locationName)
+          locationResult  = Geocoder.search(locationName).first
+          user.latitude   = coordinates[0] rescue nil
+          user.longitude  = coordinates[1] rescue nil
+
+          if locationResult.city.blank?
+            user.zip      = locationResult.state rescue nil
+          else
+            user.zip      = locationResult.city rescue locationResult.state
+          end
+          user.country    = locationResult.country_code rescue nil
         end
+
         user.services.build(:provider => "facebook", :uid => data.id.to_s, :uname => data.username, :uemail => data.email)
         user.save!
+
         if user.persisted?
-          # flash[:notice] = I18n.t("devise.omniauth_callbacks.success", :kind => "Facebook")
           sign_in_and_redirect(:user, user)
         else
           session["devise.facebook_data"] = omniauth
