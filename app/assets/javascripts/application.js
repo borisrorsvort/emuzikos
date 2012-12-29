@@ -129,6 +129,8 @@ function initApplication() {
   //   itemSelector: '.testimonial'
   // });
 
+  // Fluid video
+  $(".uservideo").fitVids();
 
 
   $(document).on("click", '.search-form-users .btn', function(e) {

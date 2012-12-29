@@ -25,7 +25,7 @@ en:
         password: Password
         password_confirmation: "Password confirmation"
         references: "Musical References"
-        request_message: Message
+        request_message: Classified ad
         searching_for: "Searching for"
         songkick_username: "Songkick username"
         soundcloud_username: "SoundCloud username"
@@ -318,7 +318,7 @@ en:
       title: "Your Messages"
     message: Message
     new:
-      title: "New message"
+      title: "Send a message"
     no_messages: "You have no messages"
     received: "Received on"
     sender: "Send by"

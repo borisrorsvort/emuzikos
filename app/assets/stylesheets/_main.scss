@@ -30,7 +30,6 @@
   }
 }
 .content {
-
   min-height: 400px !important;
 }
 
@@ -71,78 +70,6 @@ form {
   visibility: hidden;
 }
 
-/* USER SHOW */
-
-.impressionist_count {
-  margin: $baseline 0;
-  font-size: $basefont;
-}
-
-.looking_for {
-  //@extend .normal;
-  margin: $baseline 0 #{$baseline / 4};
-  text-transform:lowercase;
-  color: $blue_basic;
-  font-weight:bold;
-  @include inset(#fff); }
-
-h1.username {
-  margin-bottom: 3px;
-  display: inline-block;
-  width: 100%; }
-
-.location_infos {
-  color: #999;
-  margin: $baseline 0;
-  display: block; }
-
-.spread {
-  margin-bottom: $baseline;
-  .socialite {
-    float: left;
-  }
-  .left {
-    float:left;
-    margin-right: 10px; }}
-
-.tag_list {
-  font-size: $basefont / 1.2;
-  margin: 10px 0 18px;
-  span {
-    padding: 0px 10px;
-    background-color: $linkColor;
-    @include border-radius(3px);
-    margin: 0 5px 5px 0;
-    color: #fff;
-    display:inline-block;
-    @include single-box-shadow(#fff, 0, 1px, 2px );
-  }
-}
-
-.jcrop-holder img, img#preview {
-  max-width: none  !important;
-  max-height: none  !important;
-}
-
-.users_nearby {
-  .avatar {
-    margin: 0 10px 10px 0;
-  }
-  margin-bottom: 18px;
-}
-
-.future_events {
-  ul {
-    list-style: none;
-  }
-}
-
-.soundcloud_block {
-  max-width: 80%;
-  li {
-    margin-right: 0 !important;
-  }
-}
 
 /* SEARCH */
 

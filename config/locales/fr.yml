@@ -25,7 +25,7 @@ fr:
         password: "Mot de passe"
         password_confirmation: "Confirmation du mot de passe"
         references: "Références musicales"
-        request_message: Message
+        request_message: Annonce
         searching_for: "Ce que je cherche"
         songkick_username: "Nom d'utilisateur Songkick"
         soundcloud_username: "Nom d'utilisateur SoundCloud"
@@ -318,7 +318,7 @@ fr:
       title: "Vos messages"
     message: Message
     new:
-      title: "Nouveau message"
+      title: "Envoyer un message"
     no_messages: "Vous n'avez pas de messages"
     received: "Reçu le"
     sender: "Envoyé par"

@@ -109,6 +109,10 @@ class User < ActiveRecord::Base
     self.services.find_by_provider(service)
   end
 
+  def has_medias?
+    youtube_video_id.present? || soundcloud_username.present?
+  end
+
   def get_events(songkick_username)
     require 'songkickr'
     remote = Songkickr::Remote.new AppConfig.songkick.api_key
