@@ -19,7 +19,7 @@
 .row-fluid
   - if @user.avatar.present? || @user.geocoded?
     .span3
-      %aside.profile_sidebar.profile-section.hidden-phone
+      %aside.profile_sidebar.profile-section
         - if @user.avatar.present?
           .row-fluid
             = image_tag @user.avatar.url(:normal), :class => "span12", :alt => "#{@user.username + "'s picture"}"
@@ -68,7 +68,7 @@
         .profile-section--usermap
           - if @user.geocoded?
             .row-fluid
-              %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=800x200", :class => "span12 usermap", :alt => "#{@user.username}'s location"}
+              %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=900x200", :class => "span12 usermap", :alt => "#{@user.username}'s location"}
           .row-fluid
             .span12.location_infos
               %i.icon-globe
