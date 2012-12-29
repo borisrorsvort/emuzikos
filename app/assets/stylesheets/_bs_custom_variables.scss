@@ -6,7 +6,7 @@
 
 // Typogrpahy
 
-$baseFontFamily:            'Droid Sans', "Verdana", "Helvetica", "Arial", sans-serif;
+$baseFontFamily:            'Open Sans', Calibri, Candara, Arial, sans-serif;
 $linkColor:                 #1b517f;
 
 // Nav bar colors
@@ -41,20 +41,6 @@ $paginate-disabled-bg:      $paginate-normal-bg ;
 $paginate-disabled-color:   $paginate-normal-color;
 $paginate-current-bg:       $blue_basic;
 $paginate-current-color:    $paginate-normal-bg;
-
-
-// Legacy colors
-
-$body_bg_default:  #333;
-$primary_color: #4b7399;
-
-$blue_light: #34afe0;
-$blue_basic: #1d8cc8;
-$blue_dark: #1b517f;
-
-$header-data-color: #fff;
-
-$home_bg: #041021;
 
 /* SUBNAV COLORS
 ---------------------------------------- */

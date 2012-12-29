@@ -1,7 +1,7 @@
 
-// #uvTab {
-//   display:none  !important;
-// }
+#uvTab {
+  display:none  !important;
+}
 
 #pages.homepage {
   #logo {
@@ -13,34 +13,6 @@
   margin: 0 auto 10px;
   float: none;
   text-align: center; }
-
-
-/* LAyOUT*/
-
-#inner_content {
-  background:#fff;
-  padding: 18px; /* for non mobiel version*/
-}
-#messages.index {
-  #inner_content {
-    padding: 0 0 18px 0;
-    .button.delete {
-      margin-left: 10px;
-    }
-  }
-}
-.content {
-  min-height: 400px !important;
-}
-
-form {
-  max-width: 768px;
-  .control-group {
-    textarea {
-      width: 97%;
-    }
-  }
-}
 
 
 /* NAVIGATION
@@ -72,12 +44,6 @@ form {
 
 
 /* SEARCH */
-
-#users.index {
-  .container-fluid[role="main"] {
-      background: $body_bg_default image-url("backgrounds/bg-footer.gif");
-  }
-}
 
 .searchbar {
   h3 {

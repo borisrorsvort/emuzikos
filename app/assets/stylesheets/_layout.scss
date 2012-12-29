@@ -6,10 +6,38 @@ body {
 .container-fluid[role="main"] {
   padding-top: $gridGutterWidth;
   padding-bottom: $gridGutterWidth;
-  &.gray {
-    background: #efefef;
+  background: #fff ;
+  &.nobg {
+    background: none;
   }
 }
+
+
+#inner_content {
+  background:#fff;
+  padding: 18px; /* for non mobiel version*/
+}
+#messages.index {
+  #inner_content {
+    padding: 0 0 18px 0;
+    .button.delete {
+      margin-left: 10px;
+    }
+  }
+}
+.content {
+  min-height: 400px !important;
+}
+
+form {
+  max-width: 768px;
+  .control-group {
+    textarea {
+      width: 97%;
+    }
+  }
+}
+
 
 // Header / topnav
 
