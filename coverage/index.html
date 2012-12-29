@@ -23,7 +23,7 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-12-28T12:33:41+01:00">2012-12-28T12:33:41+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-12-29T01:46:32+01:00">2012-12-29T01:46:32+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -41,9 +41,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>33</b> files in total.
-    <b>613</b> relevant lines. 
-    <span class="green"><b>314</b> lines covered</span> and
-    <span class="red"><b>299</b> lines missed </span>
+    <b>615</b> relevant lines. 
+    <span class="green"><b>315</b> lines covered</span> and
+    <span class="red"><b>300</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -311,11 +311,11 @@
       
       <tr>
         <td class="strong"><a href="#15c9bd78b3946c94b0d2f0af543761f902cd8ac0" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">59.38 %</td>
+        <td class="red strong">59.18 %</td>
         <td>238</td>
-        <td>96</td>
-        <td>57</td>
-        <td>39</td>
+        <td>98</td>
+        <td>58</td>
+        <td>40</td>
         <td>0.6</td>
       </tr>
       
@@ -475,7 +475,7 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="red">68.83%</span></span>
+    (<span class="covered_percent"><span class="red">68.59%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -486,9 +486,9 @@
   <a name="Models"></a>
   <div>
     <b>10</b> files in total.
-    <b>154</b> relevant lines. 
-    <span class="green"><b>106</b> lines covered</span> and
-    <span class="red"><b>48</b> lines missed </span>
+    <b>156</b> relevant lines. 
+    <span class="green"><b>107</b> lines covered</span> and
+    <span class="red"><b>49</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -596,11 +596,11 @@
       
       <tr>
         <td class="strong"><a href="#15c9bd78b3946c94b0d2f0af543761f902cd8ac0" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">59.38 %</td>
+        <td class="red strong">59.18 %</td>
         <td>238</td>
-        <td>96</td>
-        <td>57</td>
-        <td>39</td>
+        <td>98</td>
+        <td>58</td>
+        <td>40</td>
         <td>0.6</td>
       </tr>
       
@@ -6275,11 +6275,11 @@
         <div class="source_table" id="15c9bd78b3946c94b0d2f0af543761f902cd8ac0">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="red">59.38 %</span> covered</h4>
+    <h4><span class="red">59.18 %</span> covered</h4>
     <div>
-      <b>96</b> relevant lines. 
-      <span class="green"><b>57</b> lines covered</span> and
-      <span class="red"><b>39</b> lines missed.</span>
+      <b>98</b> relevant lines. 
+      <span class="green"><b>58</b> lines covered</span> and
+      <span class="red"><b>40</b> lines missed.</span>
     </div>
   </div>
   
@@ -6361,55 +6361,55 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :services, :dependent =&gt; :destroy</code>
+          <code class="ruby">  has_many :services,     :dependent  =&gt; :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :testimonials, :dependent =&gt; :destroy</code>
+          <code class="ruby">  has_many :testimonials, :dependent  =&gt; :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :friendships, :dependent =&gt; :destroy</code>
+          <code class="ruby">  has_many :friendships,  :dependent  =&gt; :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :friends, :through =&gt; :friendships</code>
+          <code class="ruby">  has_many :friends,      :through    =&gt; :friendships</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :followers, :class_name =&gt; 'Friendship', :foreign_key =&gt; 'friend_id', :dependent =&gt; :destroy</code>
+          <code class="ruby">  has_many :followers,    :class_name =&gt; 'Friendship', :foreign_key =&gt; 'friend_id', :dependent =&gt; :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :instruments, :through =&gt; :skills</code>
+          <code class="ruby">  has_many :instruments,  :through    =&gt; :skills</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :skills, :dependent =&gt; :destroy</code>
+          <code class="ruby">  has_many :skills,       :dependent  =&gt; :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :tastes, :dependent =&gt; :destroy</code>
+          <code class="ruby">  has_many :tastes,       :dependent  =&gt; :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :genres, :through =&gt; :tastes</code>
+          <code class="ruby">  has_many :genres,       :through    =&gt; :tastes</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -6487,43 +6487,43 @@
         <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :password, :confirmation =&gt; {:unless =&gt; Proc.new { |a| a.password.blank? }}</code>
+          <code class="ruby">  validates                         :password, :confirmation =&gt; {:unless =&gt; Proc.new { |a| a.password.blank? }}</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_uniqueness_of :username</code>
+          <code class="ruby">  validates_uniqueness_of           :username</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #validates_format_of :username, :with =&gt; /^\w+$/i, :message =&gt; &quot;can only contain letters and numbers.&quot;</code>
+          <code class="ruby">  validates_format_of               :soundcloud_username, :with =&gt; /^[^ ]+$/, :allow_blank =&gt; true</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_format_of :soundcloud_username, :with =&gt; /^[^ ]+$/, :allow_blank =&gt; true</code>
+          <code class="ruby">  validates_attachment_content_type :avatar, :content_type =&gt; ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], :message =&gt; &quot;only image files are allowed&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_attachment_content_type :avatar, :content_type =&gt; ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], :message =&gt; &quot;only image files are allowed&quot;</code>
+          <code class="ruby">  validates_attachment_size         :avatar, :less_than =&gt; 1.megabyte, :message =&gt; &quot;max size is 1M&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_attachment_size :avatar, :less_than =&gt; 1.megabyte, :message =&gt; &quot;max size is 1M&quot;</code>
+          <code class="ruby">  validates_uri_existence_of        :youtube_video_id_response, :with =&gt; /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :on =&gt; :update, :message =&gt; &quot;is not valid. Please check if you didn't put the whole url or your username instead of just the id&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_uri_existence_of :youtube_video_id_response, :with =&gt; /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :on =&gt; :update, :message =&gt; &quot;is not valid. Please check if you didn't put the whole url or your username instead of just the id&quot;</code>
+          <code class="ruby">  validates_presence_of             :user_type, :zip, :country, :genres, :instruments, :searching_for, :on =&gt; :update</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
@@ -6535,13 +6535,13 @@
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates_presence_of :user_type, :zip, :country, :genres, :instruments, :searching_for, :on =&gt; :update</code>
+          <code class="ruby">  after_validation :check_against_mailchimp, :if =&gt; :newsletter_preference_changed?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  after_validation :geocode, :if =&gt; :address_changed?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
@@ -6553,277 +6553,277 @@
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">  USER_TYPES = %w(band musician agent)</code>
+          <code class="ruby">  has_attached_file :avatar,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="46">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  after_validation :check_against_mailchimp, :if =&gt; :newsletter_preference_changed?</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="48">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  after_validation :geocode, :if =&gt; :address_changed?</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  has_attached_file :avatar,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
           <code class="ruby">    :url =&gt; &quot;/system/avatar/:style/:id/:filename&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">    :styles =&gt; {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">      :normal =&gt; &quot;500x500&gt;&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">      :medium =&gt; &quot;200x200#&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">      :gallery =&gt; &quot;30x30#&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">    },</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">    :whiny =&gt; true,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">    :storage =&gt; {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby">      'development' =&gt; :filesystem,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">      'staging' =&gt; :s3,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">      'production' =&gt; :s3,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">      'test' =&gt; :filesystem,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">      'cucumber' =&gt; :filesystem</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">    }[Rails.env],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">    :path =&gt; {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">      'development' =&gt; &quot;:rails_root/public/photos/avatars/:id/:id_:style.:extension&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">      'staging' =&gt; &quot;photos/avatars/:id/:id_:style.:extension&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">      'production' =&gt; &quot;photos/avatars/:id/:id_:style.:extension&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">      'test' =&gt; &quot;:rails_root/public/photos/avatars/:id/:id_:style.:extension&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">      'cucumber' =&gt; &quot;:rails_root/public/photos/avatars/:id/:id_:style.:extension&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">    }[Rails.env],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">    :url =&gt; {</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">      'development' =&gt; &quot;/photos/avatars/:id/:id_:style.:extension&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">      'staging' =&gt; &quot;:s3_domain_url&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby">      'production' =&gt; &quot;:s3_domain_url&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">      'test' =&gt; &quot;/photos/avatars/:id/:id_:style.:extension&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="78">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">      'cucumber' =&gt; &quot;/photos/avatars/:id/:id_:style.:extension&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">    }[Rails.env],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">    :s3_credentials =&gt; &quot;#{Rails.root}/config/s3.yml&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">    :s3_headers =&gt; {'Expires' =&gt; 1.year.from_now.httpdate},</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">    :default_url =&gt; '/assets/backgrounds/no-image-:style.jpg'</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
+        <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
           <code class="ruby">  scope :profiles_completed, where(:profile_completed =&gt; true)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
+        <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
           <code class="ruby">  scope :currently_signed_in, where( &quot;last_sign_in_at &gt; ?&quot;, 1.hours.ago )</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="86">
+        <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
           <code class="ruby">  scope :except_current_user, lambda { |user| where(&quot;users.id != ?&quot;, user.id) }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="87">
+        <li class="covered" data-hits="1" data-linenumber="81">
           <span class="hits">1</span>
           
           <code class="ruby">  scope :visible, where(:visible =&gt; true)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="88">
+        <li class="covered" data-hits="1" data-linenumber="82">
           <span class="hits">1</span>
           
           <code class="ruby">  scope :bands, where(:user_type =&gt; &quot;band&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="89">
+        <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
           <code class="ruby">  scope :musicians, where(:user_type =&gt; &quot;musician&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="90">
+        <li class="covered" data-hits="1" data-linenumber="84">
           <span class="hits">1</span>
           
           <code class="ruby">  scope :agents, where(:user_type =&gt; &quot;agent&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  USER_TYPES = %w(band musician agent)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.mass_locate(location)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="89">
+          
+          
+          <code class="ruby">    self.near(location.to_s, 10)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="90">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
@@ -6835,13 +6835,13 @@
         <li class="covered" data-hits="1" data-linenumber="92">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.mass_locate(location)</code>
+          <code class="ruby">  def self.available_for_listing</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="93">
           
           
-          <code class="ruby">    self.near(location.to_s, 10)</code>
+          <code class="ruby">    self.visible.profiles_completed</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
@@ -6859,13 +6859,13 @@
         <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.available_for_listing</code>
+          <code class="ruby">  def self.total_on(date)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="97">
           
           
-          <code class="ruby">    self.visible.profiles_completed</code>
+          <code class="ruby">    where(&quot;date(users.created_at) = ?&quot;,date).count</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="98">
@@ -6883,13 +6883,13 @@
         <li class="covered" data-hits="1" data-linenumber="100">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.total_on(date)</code>
+          <code class="ruby">  def geocoded?</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="101">
           
           
-          <code class="ruby">    where(&quot;date(users.created_at) = ?&quot;,date).count</code>
+          <code class="ruby">    self.latitude.present? &amp;&amp; self.longitude.present?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="102">
@@ -6907,13 +6907,13 @@
         <li class="covered" data-hits="1" data-linenumber="104">
           <span class="hits">1</span>
           
-          <code class="ruby">  def geocoded?</code>
+          <code class="ruby">  def is_friend_with(user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="105">
           
           
-          <code class="ruby">    self.latitude.present? &amp;&amp; self.longitude.present?</code>
+          <code class="ruby">    self.friendships.find_by_friend_id(user.id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="106">
@@ -6931,13 +6931,13 @@
         <li class="covered" data-hits="1" data-linenumber="108">
           <span class="hits">1</span>
           
-          <code class="ruby">  def is_friend_with(user)</code>
+          <code class="ruby">  def has_service?(service)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="109">
           
           
-          <code class="ruby">    self.friendships.find_by_friend_id(user.id)</code>
+          <code class="ruby">    self.services.find_by_provider(service)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="110">
@@ -6955,13 +6955,13 @@
         <li class="covered" data-hits="1" data-linenumber="112">
           <span class="hits">1</span>
           
-          <code class="ruby">  def has_service?(service)</code>
+          <code class="ruby">  def has_medias?</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="113">
           
           
-          <code class="ruby">    self.services.find_by_provider(service)</code>
+          <code class="ruby">    youtube_video_id.present? || soundcloud_username.present?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="114">
@@ -7186,16 +7186,16 @@
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="151">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="152">
+        <li class="never" data-hits="" data-linenumber="151">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="152">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="153">
