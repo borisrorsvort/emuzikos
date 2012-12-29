@@ -54,6 +54,7 @@ gem 'font-awesome-sass-rails'
 
 gem 'turbolinks'
 gem 'spinjs-rails'
+gem 'dynamic_errors'
 
 gem 'thin'
 

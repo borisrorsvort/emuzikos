@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   before_filter :get_variables
   before_filter :mailer_set_url_options
   before_filter :set_locale
-  #before_filter :check_uri
 
   helper :all
   helper_method :current_user
@@ -19,40 +18,17 @@ class ApplicationController < ActionController::Base
 
   ### DEVISE REDIRECTION SECTION
 
-  # def after_sign_in_path_for(resource)
-  #   edit_user_path(resource)
-  # end
-
   def after_sign_in_path_for(resource)
     stored_location_for(resource) ||
     if resource.is_a?(AdminUser)
       admin_dashboard_path
     else
-      edit_user_path(resource)
+      redirect_back_or_default(edit_user_path(resource))
     end
   end
 
-
-
   def after_sign_up_path_for(resource)
     edit_user_path(current_user)
-  end
-
-  unless Rails.application.config.consider_all_requests_local
-    rescue_from Exception, :with => :render_error
-    rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found
-    rescue_from ActionController::RoutingError, :with => :rescue_action_in_public
-    rescue_from ActionController::UnknownController, :with => :render_not_found
-    # customize these as much as you want, ie, different for every error or all the same
-    rescue_from ActionController::UnknownAction, :with => :render_not_found
-  end
-
-  def render_not_found(exception)
-    render "/errors/404.html.haml", :layout => "errors", :status => 404
-  end
-
-  def render_error(exception)
-    render "/errors/500.html.haml", :layout => "errors", :status => 500
   end
 
   def set_locale
