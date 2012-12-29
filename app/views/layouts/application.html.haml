@@ -7,7 +7,7 @@
   = render  "shared/ie_warning"
   = render "layouts/topnav", :current_user => @current_user
 
-  .container-fluid{ :role => "main", class: (if content_for? :sidebar then "gray" end) }
+  .container-fluid{ :role => "main", class: (if @nobg then "nobg" end) }
     .row-fluid
       - if content_for? :sidebar
         %aside{role: "search", class: "span3 searchbar"}

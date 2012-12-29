@@ -105,4 +105,6 @@ describe User do
     it { should have_private_messages }
   end
 
+
+
 end

@@ -1,7 +1,7 @@
 
-// #uvTab {
-//   display:none  !important;
-// }
+#uvTab {
+  display:none  !important;
+}
 
 #pages.homepage {
   #logo {
@@ -15,56 +15,12 @@
   text-align: center; }
 
 
-/* LAyOUT*/
-
-#inner_content {
-  background:#fff;
-  padding: 18px; /* for non mobiel version*/
-}
-#messages.index {
-  #inner_content {
-    padding: 0 0 18px 0;
-    .button.delete {
-      margin-left: 10px;
-    }
-  }
-}
-.content {
-
-  min-height: 400px !important;
-}
-
-form {
-  max-width: 768px;
-  .control-group {
-    textarea {
-      width: 97%;
-    }
-  }
-}
-
-
 /* NAVIGATION
 ---------------------------------------- */
 
 .navbar-fixed-top, .navbar-fixed-bottom {
   margin: 0;
 }
-
-.message_count {
-   @include border-radius(12px);
-   @include box-shadow(#333, 0, 1px, 2px);
-   padding: 0px 7px;
-   margin-left: 5px;
-   background-color:#ce2f2f;
-   border: 1px solid #fff;
-   font-size: 11px;
-   color:#fff;
-   position: absolute;
-   top: -15px;
-   right: -7px;
-   font-weight:normal;
-   text-shadow: none; }
 
 /* USER */
 
@@ -86,86 +42,8 @@ form {
   visibility: hidden;
 }
 
-/* USER SHOW */
-
-.impressionist_count {
-  margin: $baseline 0;
-  font-size: $basefont;
-}
-
-.looking_for {
-  //@extend .normal;
-  margin: $baseline 0 #{$baseline / 4};
-  text-transform:lowercase;
-  color: $blue_basic;
-  font-weight:bold;
-  @include inset(#fff); }
-
-h1.username {
-  margin-bottom: 3px;
-  display: inline-block;
-  width: 100%; }
-
-.location_infos {
-  color: #999;
-  margin: $baseline 0;
-  display: block; }
-
-.spread {
-  margin-bottom: $baseline;
-  .socialite {
-    float: left;
-  }
-  .left {
-    float:left;
-    margin-right: 10px; }}
-
-.tag_list {
-  font-size: $basefont / 1.2;
-  margin: 10px 0 18px;
-  span {
-    padding: 0px 10px;
-    background-color: $linkColor;
-    @include border-radius(3px);
-    margin: 0 5px 5px 0;
-    color: #fff;
-    display:inline-block;
-    @include single-box-shadow(#fff, 0, 1px, 2px );
-  }
-}
-
-.jcrop-holder img, img#preview {
-  max-width: none  !important;
-  max-height: none  !important;
-}
-
-.users_nearby {
-  .avatar {
-    margin: 0 10px 10px 0;
-  }
-  margin-bottom: 18px;
-}
-
-.future_events {
-  ul {
-    list-style: none;
-  }
-}
-
-.soundcloud_block {
-  max-width: 80%;
-  li {
-    margin-right: 0 !important;
-  }
-}
 
 /* SEARCH */
-
-#users.index {
-  .container-fluid[role="main"] {
-      background: $body_bg_default image-url("backgrounds/bg-footer.gif");
-  }
-}
 
 .searchbar {
   h3 {
@@ -239,63 +117,13 @@ h1.username {
 .testimonials.wide .testimonial {
  width: 225px !important;
 }
+
 #testimonials:after {
   clear: both;
   content: '';
   display: block;
   height: 0px;
   visibility: hidden;
-}
-
-/* 12. MESSAGES
----------------------------------------- */
-.messages_list {
-  margin-bottom: 10px;
-}
-
-.message {
-  .delete_option {
-    width: 20px;
-    margin-left: 0;
-    float: left;
-  }
-  .sender_avatar {
-    width: 30px;
-    margin-left: 0;
-    float: left;
-  }
-  .headers {
-    float: left;
-    margin-left: 20px;
-  }
-  font-size: $basefont;
-  display:block;
-  background-color:#FFF;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  text-decoration:none;
-  color: #666;
-  position:relative;
-  &.unread {
-    background-color: lighten($blue_light, 40%);
-  }
-  span {
-    display:block;
-    &.message_date {
-      position:absolute;
-      top: 10px;
-      right: 10px;
-    }
-    &.message_subject {
-      color:#999;;
-    }
-  }
-  .message_sender {
-    font-size: $basefont;
-    color: $blue_basic;
-    font-weight:bold;
-    margin:0 0 9px;
-  }
 }
 
 // invite friends

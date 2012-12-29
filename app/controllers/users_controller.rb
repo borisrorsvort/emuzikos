@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @message = Message.new
     @testimonials = @user.testimonials
     @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at").limit(5) if @user.geocoded?
     @events = @user.get_events(@user.songkick_username)

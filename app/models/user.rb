@@ -10,15 +10,15 @@ class User < ActiveRecord::Base
   has_private_messages
   is_impressionable :counter_cache => true
 
-  has_many :services, :dependent => :destroy
-  has_many :testimonials, :dependent => :destroy
-  has_many :friendships, :dependent => :destroy
-  has_many :friends, :through => :friendships
-  has_many :followers, :class_name => 'Friendship', :foreign_key => 'friend_id', :dependent => :destroy
-  has_many :instruments, :through => :skills
-  has_many :skills, :dependent => :destroy
-  has_many :tastes, :dependent => :destroy
-  has_many :genres, :through => :tastes
+  has_many :services,     :dependent  => :destroy
+  has_many :testimonials, :dependent  => :destroy
+  has_many :friendships,  :dependent  => :destroy
+  has_many :friends,      :through    => :friendships
+  has_many :followers,    :class_name => 'Friendship', :foreign_key => 'friend_id', :dependent => :destroy
+  has_many :instruments,  :through    => :skills
+  has_many :skills,       :dependent  => :destroy
+  has_many :tastes,       :dependent  => :destroy
+  has_many :genres,       :through    => :tastes
 
   extend FriendlyId
   friendly_id :username, use: [:slugged, :history]
@@ -31,22 +31,16 @@ class User < ActiveRecord::Base
 
   geocoded_by :address
 
-  validates :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
-  validates_uniqueness_of :username
-  #validates_format_of :username, :with => /^\w+$/i, :message => "can only contain letters and numbers."
-  validates_format_of :soundcloud_username, :with => /^[^ ]+$/, :allow_blank => true
+  validates                         :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
+  validates_uniqueness_of           :username
+  validates_format_of               :soundcloud_username, :with => /^[^ ]+$/, :allow_blank => true
   validates_attachment_content_type :avatar, :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], :message => "only image files are allowed"
-  validates_attachment_size :avatar, :less_than => 1.megabyte, :message => "max size is 1M"
-  validates_uri_existence_of :youtube_video_id_response, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :on => :update, :message => "is not valid. Please check if you didn't put the whole url or your username instead of just the id"
-
-  validates_presence_of :user_type, :zip, :country, :genres, :instruments, :searching_for, :on => :update
-
-
-  USER_TYPES = %w(band musician agent)
+  validates_attachment_size         :avatar, :less_than => 1.megabyte, :message => "max size is 1M"
+  validates_uri_existence_of        :youtube_video_id_response, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :on => :update, :message => "is not valid. Please check if you didn't put the whole url or your username instead of just the id"
+  validates_presence_of             :user_type, :zip, :country, :genres, :instruments, :searching_for, :on => :update
 
   after_validation :check_against_mailchimp, :if => :newsletter_preference_changed?
   after_validation :geocode, :if => :address_changed?
-
 
   has_attached_file :avatar,
     :url => "/system/avatar/:style/:id/:filename",
@@ -89,6 +83,8 @@ class User < ActiveRecord::Base
   scope :musicians, where(:user_type => "musician")
   scope :agents, where(:user_type => "agent")
 
+  USER_TYPES = %w(band musician agent)
+
   def self.mass_locate(location)
     self.near(location.to_s, 10)
   end
@@ -111,6 +107,10 @@ class User < ActiveRecord::Base
 
   def has_service?(service)
     self.services.find_by_provider(service)
+  end
+
+  def has_medias?
+    youtube_video_id.present? || soundcloud_username.present?
   end
 
   def get_events(songkick_username)
@@ -148,8 +148,8 @@ class User < ActiveRecord::Base
       self.update_column('profile_completed', false)
     end
   end
-  private
 
+  private
 
     def reprocess_avatar
       avatar.reprocess!

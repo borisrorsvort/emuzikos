@@ -4,88 +4,46 @@ body {
 }
 
 .container-fluid[role="main"] {
-  background: #ffffff;
   padding-top: $gridGutterWidth;
   padding-bottom: $gridGutterWidth;
-  &.gray {
-    background: #efefef;
+  background: #fff ;
+  &.nobg {
+    background: none;
   }
 }
+
+
+#inner_content {
+  background:#fff;
+  padding: 18px; /* for non mobiel version*/
+}
+#messages.index {
+  #inner_content {
+    padding: 0 0 18px 0;
+    .button.delete {
+      margin-left: 10px;
+    }
+  }
+}
+.content {
+  min-height: 400px !important;
+}
+
+form {
+  max-width: 768px;
+  .control-group {
+    textarea {
+      width: 97%;
+    }
+  }
+}
+
 
 // Header / topnav
 
 #logo {
   float:left;}
 
-
-// .sub_nav {
-//   background-color: $sub_nav_gradient_light;
-//   @include background-image(linear-gradient($sub_nav_gradient_light, $sub_nav_gradient_dark));
-//   padding: $gridGutterWidth;
-//   border-bottom: #fff 1px solid;
-//   ul {
-//     @extend .normal;
-//     padding-left: 0;
-//     top: 0;
-//     li {
-//       position:relative;
-//       padding: 0;
-//       margin: 0 2px 0 ;
-// }}}
-
-// .subnav-fixed {
-//   position: fixed;
-//   top: 40px;
-//   left: 0;
-//   right: 0;
-//   z-index: 1020;
-// }
-
-// // Sub nav
-
-// .sub_nav #sub_sections {
-//   display:block;
-//   overflow: visible;
-//   padding: 0;
-//   margin: 0;
-//   li {
-//     margin-bottom: 10px;
-//     list-style: disc inside; }
-//   a {
-//     text-align:left;
-//     @include link-colors($sub-nav-color-base);
-//     @include inset(#fff);
-//     text-decoration:none;
-//     position:relative;
-//     display:block;
-//     overflow:visible;
-//     &.current {
-//       font-weight:bold; }}}
-
-// .top_sub_nav_arrow {
-//   display:none;
-//   $size: 5px;
-//   @include css-arrow("bottom", $sub_nav_gradient_dark, #fff, $size );
-//   position:absolute;
-//   left: 45%;
-//   z-index: 2;
-//   bottom: 0 - $gridGutterWidth; }
-
-
-// .sub_nav #actions_set {
-//   @extend #sub_sections;
-//   a {
-//     display:inline-block;
-//   }
-//   .button {
-//     &.back.profile {
-//       margin-right: 5px; }
-//     &.contact {
-//       margin-left: 5px; }
-//     &.add_to_contact_list {
-//       width: 2em; }
-//   }
-// }
 
 // Footer
 
@@ -134,53 +92,6 @@ body {
   margin: 0 auto;
 }
 
-
-/* PROFILE SHOW
----------------------------------------- */
-
-.profile, .profile_sidebar {
-  h4 {
-    margin: $baseLineHeight 0 #{$baseLineHeight / 2};
-  }
-}
-
-.profile_sidebar {
-  .thumbnail {
-    @include box-sizing('border-box');
-    margin-bottom: $gridGutterWidth;
-  }
-  .span12 {
-    margin-left: 0;
-  }
-  img,
-  object {
-    width: 100%;
-  }
-  h4 {
-    font-weight: normal;
-    padding-bottom: #{$baseLineHeight / 2};
-    border-bottom: 1px solid $grayLighter;
-  }
-}
-.nearby-user {
-  a {
-    padding: #{$baseLineHeight / 2};
-    border-bottom: 1px solid #ccc;
-    display: block;
-    background: #efefef;
-    &:hover {
-      text-decoration: none;
-      background: #ccc;
-    }
-  }
-}
-
-.nearby-user-instruments {
-  font-style: italic;
-  font-size: 12px;
-  color: #666;
-  margin-left: 44px;
-}
 
 
 // IE overlay

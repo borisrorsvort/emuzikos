@@ -15,8 +15,9 @@
 
 -else
 
-  .messages_list
-    = render messages, :user => user
+  %table.table.table-striped.messages_list
+    %tbody
+      = render messages
 
-  %p
+  .clear
     = submit_tag t(:'buttons.delete'), :class => "btn btn-danger"

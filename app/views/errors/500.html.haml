@@ -1,12 +1,5 @@
-#inner_halo
-  #main
-    %header
-      #main-icon.fadeInDownBig
-        = image_tag('homepage/icon-emuzikos.png', :alt => "emuzikos-icon")
-      #logo_home.bounceInDown
-        = image_tag("homepage/logo.png", :alt => "Emuzikos-logo" )
-      %h1#main_title Emuzikos, The musician search platform
-      %h2.moto
-        Something went wrong. Our dev team has been alerted.
-    = link_to t(:'buttons.back_to_homepage'), root_path, :class => "signup_button"
-  #music_notes
+%section.errorpage.row-fluid
+  .span4.offset4
+    %h2.moto
+      Something went wrong. Our dev team has been alerted.
+    = link_to t(:'buttons.back_to_homepage'), root_path, :class => "btn"

@@ -8,13 +8,7 @@ feature "Genre", :js => true do
     @user = create(:user)
     @genre = create(:genre)
     @instrument = create(:instrument)
-    visit(new_user_session_path)
-    fill_in 'user_email', :with => @user.email
-    fill_in 'user_password', :with => @user.password
-    click_button 'Log in'
-    # save_and_open_page
-    current_path.should match edit_user_path(@user)
-    page.should have_content('Log out')
+    login_as(@user, :scope => :user)
   end
 
   def select_from_chosen(item_text, options)

@@ -11,7 +11,6 @@ gem "devise", "2.0"
 gem 'omniauth', '1.0'
 gem "omniauth-facebook"
 gem "omniauth-soundcloud"
-
 gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
 gem 'meta_search'
 
@@ -19,11 +18,10 @@ gem "airbrake"
 gem "populator"
 gem "faker"
 gem "squeel"
-# gem "ransack", "0.6.0"
 gem "ransack", :git => "git://github.com/Eric-Guo/ransack.git"
 gem "gritter"
-gem "sass"
 gem "haml"
+gem "sass"
 
 gem "settingslogic", "2.0.6"
 gem 'simple_form'
@@ -56,6 +54,7 @@ gem 'font-awesome-sass-rails'
 
 gem 'turbolinks'
 gem 'spinjs-rails'
+gem 'dynamic_errors'
 
 gem 'thin'
 
@@ -67,7 +66,6 @@ group :assets do
 end
 
 group :development, :test do
-  # gem 'thin'
   gem 'rails-footnotes', '>= 3.7.5.rc4'
   gem "hirb"
   gem "bullet"
@@ -76,32 +74,41 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem "letter_opener"
   gem 'heroku-rails'
-  gem 'rspec-rails'
   gem 'watchr'
+
   gem "guard-livereload"
   gem "guard-rspec"
   gem 'growl'
   gem "spork"
   gem "guard-spork"
-  # gem "factory_girl_rails", "3.3.0"
+
   gem "factory_girl_rails"
+  gem 'rspec-rails'
   gem "shoulda"
   gem "database_cleaner"
   gem "capybara"
-  gem 'poltergeist'
-  gem 'rack-contrib'
+  gem "selenium-webdriver"
+  # attempt to fix ttf phantomjs issue gem 'rack-contrib'
   gem "launchy"
+
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem "taps"
   gem 'quiet_assets'
+  gem "better_errors"
+  gem "binding_of_caller"
+
   platforms :mri_18 do
     gem "ruby-debug"
   end
   platforms :mri_19 do
     gem 'debugger'
   end
+end
+
+group :test do
+  gem 'rack-contrib'
 end
 
 gem 'tap'
