@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(AdminUser)
       admin_dashboard_path
     else
-      redirect_back_or_default(edit_user_path(resource))
+      edit_user_path(resource)
     end
   end
 
