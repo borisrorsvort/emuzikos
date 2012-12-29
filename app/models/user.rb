@@ -113,6 +113,10 @@ class User < ActiveRecord::Base
     youtube_video_id.present? || soundcloud_username.present?
   end
 
+  def tracking_id
+    "#{self.id}--#{self.email}"
+  end
+
   def get_events(songkick_username)
     require 'songkickr'
     remote = Songkickr::Remote.new AppConfig.songkick.api_key

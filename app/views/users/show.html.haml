@@ -15,6 +15,12 @@
     } else {
       $('.nav-tabs a:first').tab('show');
     }
+    $(document).ready(new function() {
+      analytics.track('Viewed user index');
+      $('#contactform form').on('submit', function() {
+        analytics.track('Submit message form');
+      });
+    });
 
 .row-fluid
   - if @user.avatar.present? || @user.geocoded?

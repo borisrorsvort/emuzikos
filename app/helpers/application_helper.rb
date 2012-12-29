@@ -26,6 +26,10 @@ module ApplicationHelper
     javascript_tag("$('.users_list').pageless(#{opts.to_json});")
   end
 
+  def current_user_tracking_id
+    current_user ? current_user.tracking_id : nil
+  end
+
   def html_tag(attrs={})
     attrs.symbolize_keys!
     html = ""
