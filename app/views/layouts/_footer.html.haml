@@ -19,10 +19,6 @@
 
 = javascript_include_tag "application"
 
-
-
-:javascript
-
 - if Rails.env.production?
   :javascript
     var _gaq = _gaq || [];
@@ -43,8 +39,6 @@
 
 :javascript
   analytics.identify("#{current_user_tracking_id}");
-
-
 
 = yield :javascripts
 = yield :scripts
@@ -78,10 +72,6 @@
 = render "shared/feedback_box"
 
 =# render "shared/inspectlet"  if Rails.env.production?
-
-
-
-
 
 
 %noscript
