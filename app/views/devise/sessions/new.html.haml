@@ -2,10 +2,11 @@
 - description t(:'.description')
 - set_meta_tags :canonical => request.url
 
-:javascript
-  $(document).ready(function() {
-    mixpanel.track('Viewed login page');
-  });
+- content_for :scripts do
+  :javascript
+    $(document).ready(function() {
+      mixpanel.track('Viewed login page');
+    });
 
 .row-fluid
   .spacer.span3

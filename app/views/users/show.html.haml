@@ -7,13 +7,14 @@
 
 - set_meta_tags :canonical => request.url
 
-:javascript
-  $(document).ready(function() {
-    mixpanel.track('Viewed user profile');
-    $('#contactform .btn-primary').on('click', function() {
-      mixpanel.track('Submited message form');
+- content_for :scripts do
+  :javascript
+    $(document).ready(function() {
+      mixpanel.track('Viewed user profile');
+      $('#contactform .btn-primary').on('click', function() {
+        mixpanel.track('Submited message form');
+      });
     });
-  });
 
 .row-fluid
   - if @user.avatar.present? || @user.geocoded?
