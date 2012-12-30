@@ -2,6 +2,11 @@
 - description 'Sign up on Emuzikos.com and start to search for wanted bands and musicians'
 - set_meta_tags :canonical => request.url
 
+:javascript
+  $(document).ready(function() {
+    mixpanel.track('Viewed signup page');
+  });
+
 .row-fluid
   .spacer.span3
     &nbsp;
@@ -16,7 +21,7 @@
     %a.normal_login_trigger{"data-target" => ".normal_login", "data-toggle" => "collapse"}= t(:"devise.use_the_normal_form")
     .normal_login.collapse
       = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-horizontal"}, :validate => true) do |f|
-        //= devise_error_messages!
+        =# devise_error_messages!
         = f.input :preferred_language, :as => :hidden, :value => request.subdomains.first.present? ? "fr" : "en"
         = f.input :username, :label => t(:'activerecord.attributes.user.username')
         = f.input :email, :label => t(:'activerecord.attributes.user.email')

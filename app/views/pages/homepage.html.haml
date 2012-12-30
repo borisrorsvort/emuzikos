@@ -3,6 +3,10 @@
 - keywords t(:'.keywords')
 - set_meta_tags :canonical => request.url
 
+:javascript
+  $(document).ready(function() {
+    mixpanel.track('Viewed homepage');
+  });
 
 #inner_halo
   #main

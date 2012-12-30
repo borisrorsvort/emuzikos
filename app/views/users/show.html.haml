@@ -7,21 +7,13 @@
 
 - set_meta_tags :canonical => request.url
 
-
-- content_for :scripts do
-  :javascript
-    if (window.location.hash) {
-      $(".nav-tabs a[href=" + window.location.hash+ "]").tab('show');
-    } else {
-      $('.nav-tabs a:first').tab('show');
-    }
-    $(document).ready(function() {
-      mixpanel.track('Viewed user index');
-      $('#contactform form button').on('click', function() {
-        alert('dzefzef');
-        mixpanel.track('Submit message form');
-      });
+:javascript
+  $(document).ready(function() {
+    mixpanel.track('Viewed user profile');
+    $('#contactform .btn-primary').on('click', function() {
+      mixpanel.track('Submited message form');
     });
+  });
 
 .row-fluid
   - if @user.avatar.present? || @user.geocoded?
@@ -44,9 +36,7 @@
               = t(:'buttons.contact')
         .impressionist_count
           = t(:'.impressions_count', :count => @user.impressionist_count(:filter=>:ip_address))
-        /  .spread
-        /   =# render "shared/add_this"
-        / /   .clearfix
+
         - if @user.searching_for.present?
           %h4= t(:'activerecord.attributes.user.searching_for') + " :"
           %p= t(:"users.types.#{@user.searching_for}")
