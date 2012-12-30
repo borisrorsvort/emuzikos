@@ -15,10 +15,11 @@
     } else {
       $('.nav-tabs a:first').tab('show');
     }
-    $(document).ready(new function() {
-      analytics.track('Viewed user index');
-      $('#contactform form').on('submit', function() {
-        analytics.track('Submit message form');
+    $(document).ready(function() {
+      mixpanel.track('Viewed user index');
+      $('#contactform form button').on('click', function() {
+        alert('dzefzef');
+        mixpanel.track('Submit message form');
       });
     });
 
@@ -43,9 +44,9 @@
               = t(:'buttons.contact')
         .impressionist_count
           = t(:'.impressions_count', :count => @user.impressionist_count(:filter=>:ip_address))
-        .spread
-          = render "shared/add_this"
-          .clearfix
+        /  .spread
+        /   =# render "shared/add_this"
+        / /   .clearfix
         - if @user.searching_for.present?
           %h4= t(:'activerecord.attributes.user.searching_for') + " :"
           %p= t(:"users.types.#{@user.searching_for}")

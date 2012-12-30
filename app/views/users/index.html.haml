@@ -68,13 +68,13 @@
         });
       }
     );
-    $(document).ready(new function() {
+    $(document).ready(function() {
       // Call the layout function.
       handler = $('.user_profile_listing');
       handler.imagesLoaded( function() {
         handler.wookmark(options);
       });
-      analytics.track('Viewed user index');
+      mixpanel.track('Viewed user index');
     });
 
 

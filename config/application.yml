@@ -38,6 +38,8 @@ common: &default_settings
   facebook:
     app_id: '226327037396547'
 
+  mixpanel:
+    api_key: 'ba08fcc820faf968fe94d4b7ea74d89c'
   songkick:
     api_key: "cApdrGD0PiCPiJyw"
   social:
@@ -75,7 +77,8 @@ production:
       key: UA-4782653-1
   addthis:
     enabled: true
-
+  mixpanel:
+    api_key: 'd781e333edf9372a90391186604386f5'
   mailchimp:
     api_key: '613dcd0b1e941fc982eefabed484c3c5-us2'
     list_name: Emuzikos

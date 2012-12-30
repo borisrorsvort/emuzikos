@@ -15,34 +15,16 @@
       Emuzikos #{Time.now.year} | #{ t(:'common.created_by')} #{ link_to "Boris Rorsvort", "http://www.rorsvort.com", :rel => "external"}
       = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'languages.french'))
       = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'languages.english'))
+      %a{:href => "https://mixpanel.com/f/partner"}
+        %img{:alt => "Mobile Analytics", :src => "//cdn.mxpnl.com/site_media/images/partner/badge_light.png"}/
+
     .clearfix
 
+
 = javascript_include_tag "application"
-
-- if Rails.env.production?
-  :javascript
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-2826331-13']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net"+"/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},s=["identify","track"];for(var i=0;i<s.length;i++)analytics[s[i]]=r(s[i])},
-    analytics.load("etvhrm0");
-
-- else
-  :javascript
-    var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net"+"/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},s=["identify","track"];for(var i=0;i<s.length;i++)analytics[s[i]]=r(s[i])},
-    analytics.load("3qmlomy");
-
-:javascript
-  analytics.identify("#{current_user_tracking_id}");
-
+= render(:partial => "shared/trackings")
 = yield :javascripts
 = yield :scripts
-
 
 /[if (lt IE 9) & (!IEMobile)]
   = javascript_include_tag "ie_js_pack"
@@ -68,11 +50,7 @@
   = js add_gritter(flash[:notice], :image => :success, :sticky => true)
 
 
-
 = render "shared/feedback_box"
-
-=# render "shared/inspectlet"  if Rails.env.production?
-
 
 %noscript
   = t(:'common.no_script')
