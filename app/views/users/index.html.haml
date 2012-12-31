@@ -24,13 +24,14 @@
     = paginate @users
 
   -else
-    .no_users
-      %h3=t(:'.no_users')
-      %p= t(:'.invite_more_users')
-      .spread
-        %a{:onclick => "sendRequestViaMultiFriendSelector(); return false;", :class => "btn btn-primary x-large"}
-          =t(:'buttons.invite_your_friends_from_fb')
-        .clear
+    .user_profile_listing
+      .section
+        %p=t(:'.no_users')
+        %p= t(:'.invite_more_users')
+        .spread
+          %a{:onclick => "sendRequestViaMultiFriendSelector(); return false;", :class => "btn btn-mini"}
+            =t(:'buttons.invite_your_friends_from_fb')
+          .clear
   .clearfix
 - content_for :scripts do
   :javascript
@@ -58,6 +59,8 @@
       function( newElements ) {
         // hide new items while they are loading
         var $newElems = $( newElements ).css({ opacity: 0 });
+        // Track the scroll event
+        mixpanel.track('Scrolled users index');
         // show elems now they're ready
         $newElems.animate({ opacity: 1 });
         if(handler) handler.wookmarkClear();

@@ -1,7 +1,9 @@
 - content_for :scripts do
   :javascript
     $(document).ready(function() {
-      mixpanel.track('Viewed user profile');
+      $('#search_form form').on('ajax:success', function() {
+        alert('searched');
+      });
       mixpanel.track_forms('#search_form form', 'Submited search form');
     });
 
