@@ -24,9 +24,12 @@
     mixpanel.people.set({
       "$email": "#{current_user.email}",
       "$username": "#{current_user.username}",
+      "$user_type": "#{current_user.user_type}",
       "$created": "#{current_user.created_at}",
       "$udpated": "#{current_user.updated_at}",
+      "$visible": "#{current_user.visible}",
       "$last_login": "#{current_user.last_sign_in_at}",
+      "$login_count": "#{current_user.sign_in_count}",
       "$profile_completed": "#{current_user.profile_completed}",
       "$soundcloud_username": "#{current_user.soundcloud_username}",
       "$youtube_video_id": "#{current_user.youtube_video_id}"

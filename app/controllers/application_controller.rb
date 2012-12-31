@@ -46,6 +46,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def mixpanel
+    @mixpanel ||= Mixpanel::Tracker.new AppConfig.mixpanel.api_key, { :env => request.env }
+  end
+
   private
 
     def store_location

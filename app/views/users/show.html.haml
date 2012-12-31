@@ -11,9 +11,7 @@
   :javascript
     $(document).ready(function() {
       mixpanel.track('Viewed user profile');
-      $('#contactform .btn-primary').on('click', function() {
-        mixpanel.track('Submited message form');
-      });
+      mixpanel.track_forms('#contactform form', 'Submited message form');
     });
 
 .row-fluid

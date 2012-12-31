@@ -1,3 +1,10 @@
+- content_for :scripts do
+  :javascript
+    $(document).ready(function() {
+      mixpanel.track('Viewed user profile');
+      mixpanel.track_forms('#search_form form', 'Submited search form');
+    });
+
 .sidebar.user_profile_listing
   #search_form
     %header
