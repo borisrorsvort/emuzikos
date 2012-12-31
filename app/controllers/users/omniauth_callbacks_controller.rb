@@ -9,6 +9,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     auth = Service.find_by_provider_and_uid("facebook", data.id.to_s)
     if auth
+      mixpanel.track 'Signed in', {
+        :via => 'Facebook'
+      }
       flash[:notice] = t(:'services.signed_in_successful_via') + " facebook"
       sign_in_and_redirect(:user, auth.user)
     else
