@@ -13,7 +13,7 @@ guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAIL
   watch('test/test_helper.rb') { :test_unit }
 end
 
-guard 'rspec', :version => 2, :cli => '--drb', :all_on_start => false, :all_after_pass => false do
+guard 'rspec', :version => 2, :cli => '--format Fuubar --color', :all_on_start => false, :all_after_pass => false do
   watch('spec/spec_helper.rb')                        { "spec" }
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }

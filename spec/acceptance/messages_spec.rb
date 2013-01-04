@@ -14,7 +14,6 @@ feature "Message" do
     fill_in 'message_body', :with => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
     click_button('Submit')
     page.should have_content('Success')
-    current_path.should == social_share_path(:invite_friends)
     visit(user_messages_path(@sender, :mailbox => :sent))
     within('.message') do
       click_link('HI from Belgium')
@@ -50,6 +49,5 @@ feature "Message" do
     find_field('message_body').value.should have_content("*Original message*")
     click_button('Submit')
     page.should have_content('Success')
-    current_path.should == social_share_path(:invite_friends)
   end
 end
