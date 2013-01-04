@@ -110,6 +110,7 @@ end
 
 group :test do
   gem 'rack-contrib'
+  gem 'fuubar'
 end
 
 gem 'tap'
