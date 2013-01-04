@@ -11,16 +11,12 @@
 // LIBS
 @import "chosen/chosen";
 @import "gritter";
-// @import 'isotope';
-// @import 'masonry/infinitescroll';
-// @import 'masonry/transitions';
 
 /* APPLICATION */
 @import "base";
 @import "layout";
 @import 'modules/**/*';
 @import 'sections/**/*';
-// @import 'pages/**/*';
 @import "main";
 @import "homepage";
 
@@ -28,6 +24,3 @@
 @import "twitter/bootstrap/responsive";
 @import "mediaqueries/480";
 @import "mediaqueries/768";
-
-// @import "mediaqueries/992";
-// @import "mediaqueries/1200";

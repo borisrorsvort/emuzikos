@@ -7,6 +7,7 @@
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/tab
 //= require twitter/bootstrap/tooltip
+//= require twitter/bootstrap/button
 
 //= require_directory ./libs
 //= require gritter
@@ -16,7 +17,6 @@
 //= require turbolinks
 //= require jquery.spin
 
-/* rest of file omitted */
 
 // Fix links inside mobile safari
 (function(document,navigator,standalone) {
@@ -66,20 +66,19 @@ function addLoadEvent(func) {
 function clear_form_elements(ele) {
 
   $(ele).find('input').each(function() {
-      switch(this.type) {
-          case 'password':
-          case 'select-multiple':
-          case 'select-one':
-          case 'text':
-          case 'textarea':
-              $(this).val('');
-              break;
-          case 'checkbox':
-          case 'radio':
-              this.checked = false;
-      }
+    switch(this.type) {
+      case 'password':
+      case 'select-multiple':
+      case 'select-one':
+      case 'text':
+      case 'textarea':
+        $(this).val('');
+        break;
+      case 'checkbox':
+      case 'radio':
+        this.checked = false;
+    }
   });
-
 }
 
 function  displaySpinner() {
@@ -95,75 +94,76 @@ function  displaySpinner() {
     trail: 60, // Afterglow percentage
     shadow: false // Whether to render a shadow
   });
-
-
 }
 
 function hideSpinner() {
   $('.jspinner-container').fadeOut();
 }
 
-
 function initApplication() {
-  // TIPSY
 
+  // Init Radio toggles
+  var radio_wrapper = $('.btn-radio-toggles');
+  radio_wrapper.find('.controls').attr('data-toggle', 'buttons-radio').addClass('btn-group');
+  radio_wrapper.find('.radio').each(function(event) {
+    $(this).addClass('btn');
+    $(this).find('input').addClass('hide');
+  });
+  $('.radio').on('click', function() {
+    $(this).children('input').attr('checked', 'checked');
+    $(this).siblings().children('input').attr('checked', null);
+  });
+  radio_wrapper.button();
+  $('.radio input:checked').parents().addClass('active');
 
+  // init Tooltip
   $('[rel=tooltip]').tooltip();
 
+  // Open collapsed form if errors
   if ($(".boxy_forms .control-group.error").size() > 1) {
     $(".normal_login").collapse('show');
   }
+
+  // init chosen select input
   $("select").not(".no-chosen").chosen({ allow_single_deselect: true, width: "100%" });
   $(".search_field select").chosen({ allow_single_deselect: true, width: "100%" });
 
-  // CSS ARROWS
-
+  // css arrows
   $('#main_nav li a.current').after('<div class="main_nav_current_arrow"></div>');
   $('#sub_sections li a.current').after('<div class="top_sub_nav_arrow"></div>');
   $('#footer .inner_footer th').after('<div class="footer_headers_current_arrow"></div>');
 
-  // // MASONRY
-  // $(".testimonials").masonry({
-  //   resizeable: true,
-  //   animate: true,
-  //   itemSelector: '.testimonial'
-  // });
-
   // Fluid video
   $(".uservideo").fitVids();
 
-
+  // Search UX
   $(document).on("click", '.search-form-users .btn', function(e) {
     e.preventDefault();
-    // $('.progress_bar_wrapper').removeClass('hidden');
     $('.users_list').css('opacity', 0.5);
     displaySpinner();
     $(this).closest('form').unbind('submit').submit();
     $(this).attr("disabled", true);
   });
 
+  // Fit text
   $("h1").fitText(1.2, { minFontSize: '20px', maxFontSize: '36px' });
   $("#search_form h3").fitText(1, { minFontSize: '14px', maxFontSize: '20px' });
   Socialite.load();
 
+  // Mobile menu
   var jPM = $.jPanelMenu({
     menu: '.mobile-menu',
     trigger: '.btn.btn-navbar',
     keyboardShortcuts: false
   });
 
-
   enquire.register("screen and (max-width:768px)", {
-
     match : function() {
       jPM.on();
     }
-
   }).listen(); // More on this next
 
-
 }
-
 
 document.addEventListener("page:change", initApplication, hideSpinner);
 document.addEventListener("page:fetch", displaySpinner);

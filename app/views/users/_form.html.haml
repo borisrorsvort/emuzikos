@@ -13,7 +13,7 @@
       .controls
         %p= image_tag(@user.avatar.url(:gallery))
   / %h3= t(:'users.your_classified_infos')
-  = f.input :user_type, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio_buttons
+  = f.input :user_type, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio_buttons, wrapper_html: {class: "btn-radio-toggles"}
   = f.association :instruments, :label_method => :translated_name, :hint => (t(:"instruments_in_band_notice", :scope => [:users, :edit])).html_safe, :label => t(:'activerecord.attributes.user.instruments'),  :input_html => { :class => "chosen multiple_select" }
   .control-group
     .controls

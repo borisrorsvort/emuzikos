@@ -27,6 +27,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         data.username = data.username[0, 39] if data.username.length > 39
         user = User.new( :email =>  data.email,
                          :password => Devise.friendly_token[0,20],
+                         :user_type => "musician"
                          :username => data.username.gsub(/ /,'').downcase.parameterize
                         )
 

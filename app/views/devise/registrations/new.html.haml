@@ -7,6 +7,8 @@
     $(document).ready(function() {
       mixpanel.track('Viewed signup page');
       mixpanel.track_forms('#user_new', 'Signed up');
+
+
     });
 
 .row-fluid{data: {:"no-turbolink" => "true"}}
@@ -29,6 +31,7 @@
         = f.input :email, :label => t(:'activerecord.attributes.user.email')
         = f.input :password, :label => t(:'activerecord.attributes.user.password'), :hint => t(:'tooltips.password')
         = f.input :password_confirmation, :label => t(:'activerecord.attributes.user.password_confirmation')
+        = f.input :user_type, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio_buttons, wrapper_html: {class: "btn-radio-toggles"}, checked: "musician"
         .form-actions
           = f.submit(t(:'buttons.submit'), :type => "submit", :class => "btn btn-primary")
       .clearfix
@@ -40,3 +43,4 @@
     .clear
   .spacer.span3
     &nbsp;
+
