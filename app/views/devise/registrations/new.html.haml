@@ -17,7 +17,6 @@
   .boxy_forms.span6
     %header.page-header
       %h1= t(:'.title')
-    %p= t(:'.newsletter_agreement').html_safe
 
     = link_to t(:"devise.signup_with", :provider => "Facebook"), user_omniauth_authorize_path(:facebook), :class => "btn-auth btn-facebook"
 
@@ -39,7 +38,8 @@
     #remote.services_login
       .shared_links
         = render  "devise/shared/links"
-
+    %hr.clearfix
+    %p= t(:'.newsletter_agreement').html_safe
     .clear
   .spacer.span3
     &nbsp;
