@@ -23,12 +23,14 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(AdminUser)
       admin_dashboard_path
     else
+      if session["origin"]
+        mixpanel.track 'Signed in', {via: session["origin"]}
+      else
+        mixpanel.track 'Signed in'
+      end
+
       edit_user_path(resource)
     end
-  end
-
-  def after_sign_up_path_for(resource)
-    edit_user_path(current_user)
   end
 
   def set_locale
