@@ -9,19 +9,16 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     auth = Service.find_by_provider_and_uid("facebook", data.id.to_s)
     if auth
-      mixpanel.track 'Signed in', {
-        :via => 'Facebook'
-      }
+      session[:origin] = "Facebook"
       flash[:notice] = t(:'services.signed_in_successful_via') + " facebook"
       sign_in_and_redirect(:user, auth.user)
     else
       existinguser = User.where(:email => data.email).first
+
       if existinguser
         existinguser.services.create(:provider => "facebook", :uid => data.id.to_s, :uname => data.username, :uemail =>  data.email)
         flash[:notice] = t(:'services.logged_in_via') + " Facebook " + t(:'services.added_to_account') + " " + data.email + " " + t(:'services.signed_in_successful')
-        mixpanel.track 'Signed in', {
-          :via => 'Facebook'
-        }
+        session[:origin] = "Facebook"
         sign_in_and_redirect(:user, existinguser)
       else
         data.username = data.username[0, 39] if data.username.length > 39
@@ -50,6 +47,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         user.save!
 
         if user.persisted?
+          # Track sign up
           mixpanel.track 'Signed up', {
             :via => 'Facebook'
           }
@@ -70,9 +68,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if auth
       flash[:notice] = t(:'services.signed_in_successful_via') + " soundcloud"
       sign_in_and_redirect(:user, auth.user)
-      mixpanel.track 'Signed in', {
-        :via => 'Soundcloud'
-      }
+      session["origin"] = "Soundcloud"
     else
       if user_signed_in?
         current_user.update_column('soundcloud_username', data.permalink)

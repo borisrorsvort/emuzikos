@@ -54,7 +54,6 @@ gem 'font-awesome-sass-rails'
 
 gem 'turbolinks'
 gem 'spinjs-rails'
-gem 'dynamic_errors'
 gem 'mixpanel'
 
 gem 'thin'
@@ -66,6 +65,9 @@ group :assets do
   gem "compass-rails"
 end
 
+group :production do
+  gem 'dynamic_errors'
+end
 group :development, :test do
   gem 'rails-footnotes', '>= 3.7.5.rc4'
   gem "hirb"

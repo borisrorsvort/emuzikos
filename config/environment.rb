@@ -17,4 +17,6 @@ Carmen.i18n_backend.locale = :en
 
 #Encoding.default_internal = 'UTF-8'
 
-require 'dynamic_errors'
+if Rails.env.production?
+  require 'dynamic_errors'
+end
