@@ -7,10 +7,4 @@ class Spinach::Features::UserSessionsLogin < Spinach::FeatureSteps
     click_button "Log in"
   end
 
-  step 'I should be the profile edit page' do
-    current_path.should == edit_user_path(@current_user)
-    page.should have_content 'Edit your profile'
-  end
-
-
 end
