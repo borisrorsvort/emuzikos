@@ -91,6 +91,8 @@ group :development, :test do
   gem "database_cleaner"
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'poltergeist'
+  gem 'spinach-rails'
   # attempt to fix ttf phantomjs issue gem 'rack-contrib'
   gem "launchy"
 
