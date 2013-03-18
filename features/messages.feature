@@ -4,7 +4,6 @@ Feature: Messages management
     Given I am logged in
     And a second user exists
 
-  @now
   Scenario: I should be able to send a message a to visible user
     Given I go to the other visible user page
     And I submit the message form
@@ -12,14 +11,12 @@ Feature: Messages management
     And I go to my sentbox
     And I should see the message in my send box
 
-  @now
   Scenario: I should be able to delete a message
     Given I have sent a message
     And I go to my sentbox
     And I delete the message
     Then I should not see the message
 
-  @now
   Scenario: I should be able to reply to a message
     Given I have sent a message
     And I login as the other user
