@@ -20,4 +20,14 @@ class Spinach::Features::UserAccount < Spinach::FeatureSteps
     click_button "Log in"
     current_path.should == user_session_path
   end
+
+  # step 'And I go to the manage account page' do
+  # end
+  # step 'And I delete my account' do
+  # end
+  # step 'Then I should be on the home page' do
+  # end
+  # step '' do
+  # end
+
 end
