@@ -2,19 +2,25 @@ ENV["RAILS_ENV"] ||= "test"
 
 require 'spinach-rails'
 require './config/environment'
+require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'factory_girl'
 require 'database_cleaner'
 require 'rspec'
+
+include Warden::Test::Helpers
+Warden.test_mode!
+
 Capybara.default_selector = :css
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, {
-    timeout: 100,
+    timeout: 10000,
     inspector: true
   })
 end
 
-Capybara.javascript_driver = :selenium
+Capybara.javascript_driver = :poltergeist
+
 begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError

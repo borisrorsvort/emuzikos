@@ -229,7 +229,7 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    launchy (2.1.2)
+    launchy (2.2.0)
       addressable (~> 2.3)
     lazydoc (1.0)
     letter_opener (0.0.2)
