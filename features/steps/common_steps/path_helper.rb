@@ -8,11 +8,15 @@ module PathHelper
       visit user_session_path
     end
 
-    step 'I got to the registration page' do
+    step 'I go to the registration page' do
       visit new_user_registration_path
     end
 
-    step 'I got to the manage account page' do
+    step 'I go to the profile edit page' do
+      visit("/users/#{@current_user.slug}/edit")
+    end
+
+    step 'I go to the manage account page' do
       visit("/users/edit.#{@current_user.slug}")
     end
 

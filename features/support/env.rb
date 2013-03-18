@@ -13,8 +13,8 @@ Capybara.register_driver :poltergeist do |app|
     inspector: true
   })
 end
-Capybara.javascript_driver = :poltergeist
 
+Capybara.javascript_driver = :selenium
 begin
   DatabaseCleaner.strategy = :transaction
 rescue NameError
@@ -27,6 +27,13 @@ end
 
 Spinach.hooks.after_scenario do
   DatabaseCleaner.clean
+end
+
+
+Spinach.hooks.on_tag('selenium') do |scenario|
+  puts 'using selenium'
+  Capybara.default_driver = :selenium
+  Capybara.javascript_driver = :selenium
 end
 
 class ActiveRecord::Base
