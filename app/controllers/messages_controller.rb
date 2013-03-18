@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
     @message.recipient = User.find(params[:message][:to])
 
     if @message.save
-      redirect_to social_share_path(:invite_friends)
+      redirect_to :back
       gflash :success => true
       gflash :notice => t(:'gflash.testimonials.please_write', :link => new_testimonial_url) if @current_user.testimonials.first.nil?
       if @message.recipient.prefers_message_notifications == true
