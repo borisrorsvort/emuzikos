@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  # attr_accessible :email, :password, :password_confirmation, :remember_me
 
   has_private_messages
   is_impressionable :counter_cache => true
@@ -26,8 +26,6 @@ class User < ActiveRecord::Base
   preference :newsletters, :default => true
   preference :message_notifications, :default => true
   preference :language, :string, :default => 'en'
-
-  attr_accessible :avatar, :country, :email, :genre_ids, :password, :profile_completed, :password_confirmation, :preferred_language, :prefers_message_notifications, :prefers_newsletters, :instrument_ids, :references, :remember_me, :request_message, :slug, :searching_for, :songkick_username, :soundcloud_username, :username, :user_type, :visible, :youtube_video_id, :zip
 
   geocoded_by :address
 

@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
-    #@users = []
     if params[:mass_locate] && !params[:mass_locate].empty?
       # select distinct must be inside near scope (https://github.com/alexreisner/geocoder)
       @q = User.available_for_listing.near(params[:mass_locate].to_s, 200, :select => "DISTINCT users.*").search(params[:q])
@@ -51,7 +50,7 @@ class UsersController < ApplicationController
     @instruments = Instrument.order("name asc")
     @genres = Genre.order('name asc')
 
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(user_params)
         gflash :success => true
 
         if @user.visible? && @user.profile_completed? && Rails.env == "production"
@@ -74,4 +73,9 @@ class UsersController < ApplicationController
   def contacts
     @friendships = @current_user.friendships
   end
+
+  private
+    def user_params
+      params.require(:user).permit(:avatar, :country, :email, {:genre_ids => []}, :password, :profile_completed, :password_confirmation, :preferred_language, :prefers_message_notifications, :prefers_newsletters, {:instrument_ids => []}, :references, :remember_me, :request_message, :slug, :searching_for, :songkick_username, :soundcloud_username, :username, :user_type, :visible, :youtube_video_id, :zip)
+    end
 end

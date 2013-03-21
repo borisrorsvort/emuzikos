@@ -31,7 +31,7 @@ Emuzikos::Application.configure do
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = false
   config.action_mailer.delivery_method = :letter_opener
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.

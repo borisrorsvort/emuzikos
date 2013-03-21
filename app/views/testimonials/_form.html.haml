@@ -1,6 +1,5 @@
 = form_for testimonial do |f|
   = f.error_messages
-  = f.hidden_field :approved, :value => false
   .field
     %p= f.text_area :body
     %p= f.submit t(:'buttons.submit'), :class => "button sumbit"

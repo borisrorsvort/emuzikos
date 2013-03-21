@@ -10,8 +10,9 @@ class TestimonialsController < ApplicationController
   end
 
   def create
-    @testimonial = Testimonial.new(params[:testimonial])
+    @testimonial = Testimonial.new(testimonial_params)
     @testimonial.user = @current_user
+    @testimonial.approved = false
 
     if @testimonial.save
       gflash :success => true
@@ -21,4 +22,9 @@ class TestimonialsController < ApplicationController
     end
   end
 
+  private
+
+    def testimonial_params
+      params.required(:testimonial).permit(:body)
+    end
 end

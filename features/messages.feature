@@ -7,7 +7,6 @@ Feature: Messages management
   Scenario: I should be able to send a message a to visible user
     Given I go to the other visible user page
     And I submit the message form
-    Then I should see the success notification
     And I go to my sentbox
     And I should see the message in my send box
 
@@ -22,5 +21,4 @@ Feature: Messages management
     And I login as the other user
     And I go to the message reply page
     And I submit the reply form
-    Then I should see the success notification
     And I should see the reply in my inbox

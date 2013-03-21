@@ -17,10 +17,6 @@ class Spinach::Features::MessagesManagement < Spinach::FeatureSteps
     click_link('Reply')
   end
 
-  step 'I should see the success notification' do
-    page.should have_content('Success')
-  end
-
   step 'I should see the message in my send box' do
     click_link('HI from Belgium')
     page.should have_content(@recipient.username)
@@ -31,7 +27,6 @@ class Spinach::Features::MessagesManagement < Spinach::FeatureSteps
     fill_in 'message_subject', :with => "HI from Belgium"
     fill_in 'message_body', :with => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
     click_button('Submit')
-    sleep 5
   end
 
   step 'I delete the message' do
