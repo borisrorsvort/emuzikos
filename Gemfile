@@ -1,4 +1,4 @@
-source :gemcutter
+source "https://rubygems.org"
 
 # Core Gems
 
@@ -28,6 +28,7 @@ gem 'simple_form'
 gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
 gem "paperclip"
 gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-sdk'
 
 gem 'country_select'
 gem 'httparty'
