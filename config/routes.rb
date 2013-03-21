@@ -1,6 +1,5 @@
 Emuzikos::Application.routes.draw do
 
-
   #match '/auth/:service/callback' => 'services#create'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
