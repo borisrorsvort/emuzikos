@@ -49,21 +49,24 @@ class User < ActiveRecord::Base
     },
     :whiny => true,
     :storage => {
-      'development' => :filesystem,
+      # 'development' => :filesystem,
+      'development' => :s3,
       'staging' => :s3,
       'production' => :s3,
       'test' => :filesystem,
       'cucumber' => :filesystem
     }[Rails.env],
     :path => {
-      'development' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
+      # 'development' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
+      'development' => "photos/avatars/:id/:id_:style.:extension",
       'staging' => "photos/avatars/:id/:id_:style.:extension",
       'production' => "photos/avatars/:id/:id_:style.:extension",
       'test' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
       'cucumber' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension"
     }[Rails.env],
     :url => {
-      'development' => "/photos/avatars/:id/:id_:style.:extension",
+      # 'development' => "/photos/avatars/:id/:id_:style.:extension",
+      'development' => ":s3_domain_url",
       'staging' => ":s3_domain_url",
       'production' => ":s3_domain_url",
       'test' => "/photos/avatars/:id/:id_:style.:extension",
