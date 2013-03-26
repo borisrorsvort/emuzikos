@@ -4,8 +4,8 @@ class Spinach::Features::UserAccount < Spinach::FeatureSteps
   step 'I submit the form' do
     fill_in "Username", with: "Boris"
     fill_in "Email", with: "1234@example.com"
-    fill_in "Password", with: "1234AZERT"
-    fill_in "Password confirmation", with: "1234AZERT"
+    fill_in "user_password", with: "1234AZERT"
+    fill_in "user_password_confirmation", with: "1234AZERT"
     click_button "Submit"
   end
 

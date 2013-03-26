@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  # attr_accessible :email, :password, :password_confirmation, :remember_me
 
   has_private_messages
   is_impressionable :counter_cache => true
@@ -26,8 +26,6 @@ class User < ActiveRecord::Base
   preference :newsletters, :default => true
   preference :message_notifications, :default => true
   preference :language, :string, :default => 'en'
-
-  attr_accessible :avatar, :country, :email, :genre_ids, :password, :profile_completed, :password_confirmation, :preferred_language, :prefers_message_notifications, :prefers_newsletters, :instrument_ids, :references, :remember_me, :request_message, :slug, :searching_for, :songkick_username, :soundcloud_username, :username, :user_type, :visible, :youtube_video_id, :zip
 
   geocoded_by :address
 
@@ -51,21 +49,24 @@ class User < ActiveRecord::Base
     },
     :whiny => true,
     :storage => {
-      'development' => :filesystem,
+      # 'development' => :filesystem,
+      'development' => :s3,
       'staging' => :s3,
       'production' => :s3,
       'test' => :filesystem,
       'cucumber' => :filesystem
     }[Rails.env],
     :path => {
-      'development' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
+      # 'development' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
+      'development' => "photos/avatars/:id/:id_:style.:extension",
       'staging' => "photos/avatars/:id/:id_:style.:extension",
       'production' => "photos/avatars/:id/:id_:style.:extension",
       'test' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
       'cucumber' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension"
     }[Rails.env],
     :url => {
-      'development' => "/photos/avatars/:id/:id_:style.:extension",
+      # 'development' => "/photos/avatars/:id/:id_:style.:extension",
+      'development' => ":s3_domain_url",
       'staging' => ":s3_domain_url",
       'production' => ":s3_domain_url",
       'test' => "/photos/avatars/:id/:id_:style.:extension",

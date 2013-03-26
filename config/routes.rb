@@ -1,12 +1,11 @@
 Emuzikos::Application.routes.draw do
 
-
   #match '/auth/:service/callback' => 'services#create'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",:passwords => "passwords",  :registrations => "registrations" }
   devise_scope :user do
     get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
   end

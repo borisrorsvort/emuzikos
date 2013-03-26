@@ -12,9 +12,9 @@
 //= require_directory ./libs
 //= require gritter
 //= require plugins
+//= require chosen-jquery
 //= require_self
 //= require_directory ./mylibs
-//= require turbolinks
 //= require jquery.spin
 
 
@@ -49,37 +49,19 @@ if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) 
   }
 }
 
-function addLoadEvent(func) {
-  var oldonload = window.onload;
-  if (typeof window.onload != 'function') {
-    window.onload = func;
-  } else {
-    window.onload = function() {
-      if (oldonload) {
-        oldonload();
-      }
-      func();
-    };
-  }
-}
-
-function clear_form_elements(ele) {
-
-  $(ele).find('input').each(function() {
-    switch(this.type) {
-      case 'password':
-      case 'select-multiple':
-      case 'select-one':
-      case 'text':
-      case 'textarea':
-        $(this).val('');
-        break;
-      case 'checkbox':
-      case 'radio':
-        this.checked = false;
-    }
-  });
-}
+// function addLoadEvent(func) {
+//   var oldonload = window.onload;
+//   if (typeof window.onload != 'function') {
+//     window.onload = func;
+//   } else {
+//     window.onload = function() {
+//       if (oldonload) {
+//         oldonload();
+//       }
+//       func();
+//     };
+//   }
+// }
 
 function  displaySpinner() {
   var spinner = '<div class="jspinner-container"><div class="jspinner-innner"></div></div>';
@@ -113,7 +95,9 @@ function initApplication() {
     $(this).children('input').attr('checked', 'checked');
     $(this).siblings().children('input').attr('checked', null);
   });
+
   radio_wrapper.button();
+
   $('.radio input:checked').parents().addClass('active');
 
   // init Tooltip

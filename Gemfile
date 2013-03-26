@@ -1,14 +1,14 @@
-source :gemcutter
+source "https://rubygems.org"
 
 # Core Gems
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.2.13'
 gem 'mysql2'
 gem "jquery-rails"
 # gem 'redis'
 
-gem "devise", "2.0"
-gem 'omniauth', '1.0'
+gem "devise"
+gem 'omniauth'
 gem "omniauth-facebook"
 gem "omniauth-soundcloud"
 gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
@@ -23,10 +23,12 @@ gem "gritter"
 gem "haml"
 gem "sass"
 
-gem "settingslogic", "2.0.6"
+gem "settingslogic"
 gem 'simple_form'
-gem "paperclip", "2.4"
+gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
+gem "paperclip"
 gem 'aws-s3', :require => 'aws/s3'
+gem 'aws-sdk'
 
 gem 'country_select'
 gem 'httparty'
@@ -53,15 +55,16 @@ gem "newrelic_rpm"
 gem 'font-awesome-sass-rails'
 
 gem 'turbolinks'
+gem 'strong_parameters', git: "git://github.com/rails/strong_parameters.git"
 gem 'spinjs-rails'
 gem 'mixpanel'
 
+gem 'chosen-rails'
 gem 'thin'
 
 group :assets do
-  gem 'coffee-rails', " ~> 3.1.0"
   gem 'uglifier'
-  gem 'sass-rails', '3.1.4'
+  gem 'sass-rails'
   gem "compass-rails"
 end
 

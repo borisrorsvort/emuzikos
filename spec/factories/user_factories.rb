@@ -29,11 +29,15 @@ FactoryGirl.define do
       u.class.skip_callback(:validate, :after, :check_against_mailchimp)
     end
 
+    # instruments { |d| [d.association(:instrument)] }
+    # genres { |d| [d.association(:genre)] }
+
   end
 
   factory :instrument do
     name 'guitar'
   end
+
   factory :genre do
     name 'rock'
   end

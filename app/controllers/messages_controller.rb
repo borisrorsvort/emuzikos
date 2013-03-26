@@ -26,12 +26,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:message])
+    @message = Message.new(message_params)
     @message.sender = @current_user
     @message.recipient = User.find(params[:message][:to])
 
     if @message.save
-      redirect_to :back
+      redirect_to user_messages_path(@current_user)
       gflash :success => true
       gflash :notice => t(:'gflash.testimonials.please_write', :link => new_testimonial_url) if @current_user.testimonials.first.nil?
       if @message.recipient.prefers_message_notifications == true
@@ -55,4 +55,10 @@ class MessagesController < ApplicationController
       redirect_to :back
     end
   end
+
+  private
+
+    def message_params
+      params.require(:message).permit(:to, :subject, :body, :reply_to)
+    end
 end
