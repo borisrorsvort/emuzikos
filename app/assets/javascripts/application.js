@@ -49,20 +49,6 @@ if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) 
   }
 }
 
-// function addLoadEvent(func) {
-//   var oldonload = window.onload;
-//   if (typeof window.onload != 'function') {
-//     window.onload = func;
-//   } else {
-//     window.onload = function() {
-//       if (oldonload) {
-//         oldonload();
-//       }
-//       func();
-//     };
-//   }
-// }
-
 function  displaySpinner() {
   var spinner = '<div class="jspinner-container"><div class="jspinner-innner"></div></div>';
   $('body').prepend(spinner);
@@ -81,6 +67,100 @@ function  displaySpinner() {
 function hideSpinner() {
   $('.jspinner-container').fadeOut();
 }
+
+
+
+var OBC = (function (OBC, $) {
+
+    'use strict';
+
+    OBC.susyOffCanvasToggle = {
+        init: function (triggers) {
+            $(triggers).click(function (e) {
+                e.preventDefault();
+                OBC.susyOffCanvasToggle.toggleClasses(this);
+                OBC.susyOffCanvasToggle.toggleText(triggers);
+            });
+            return triggers;
+        },
+        toggleClasses: function (el) {
+            var body = $('body');
+            var dir = $(el).attr('href');
+            if (dir === '#left') {
+                body.toggleClass('show-left').removeClass('show-right');
+            }
+            if (dir === '#right') {
+                body.toggleClass('show-right').removeClass('show-left');
+            }
+            return body.attr('class');
+        },
+        toggleText: function (triggers) {
+            var left = $(triggers).filter('[href="#left"]');
+            var right = $(triggers).filter('[href="#right"]');
+            var body = $('body');
+            if (body.hasClass('show-left')) {
+                left.find('i').toggleClass('icon-search').toggleClass('icon-cancel');
+            } else {
+                left.find('i').toggleClass('icon-search').toggleClass('icon-cancel');
+            }
+            if (body.hasClass('show-right')) {
+                right.find('i').toggleClass('icon-user').toggleClass('icon-cancel');
+            } else {
+                right.find('i').toggleClass('icon-user').toggleClass('icon-cancel');
+            }
+        }
+    };
+
+    $(function () {
+        OBC.susyOffCanvasToggle.init($('.toggle'));
+    });
+
+    return OBC;
+
+}(OBC || {}, jQuery));
+
+// Debounced resize
+
+(function($,sr){
+
+  // debouncing function from John Hann
+  // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  var debounce = function (func, threshold, execAsap) {
+      var timeout;
+
+      return function debounced () {
+          var obj = this, args = arguments;
+          function delayed () {
+              if (!execAsap)
+                  func.apply(obj, args);
+              timeout = null;
+          }
+
+          if (timeout)
+              clearTimeout(timeout);
+          else if (execAsap)
+              func.apply(obj, args);
+
+          timeout = setTimeout(delayed, threshold || 100);
+      };
+  };
+  // smartresize
+  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+})(jQuery,'smartresize');
+
+// Images functions
+
+Images = {
+  adjustProfileThumbs: function(selector) {
+    console.log('resized');
+    $(selector).resizeToParent();
+  }
+};
+
+
+
+
 
 function initApplication() {
 
@@ -132,20 +212,8 @@ function initApplication() {
   // Fit text
   $("h1").fitText(1.2, { minFontSize: '20px', maxFontSize: '36px' });
   $("#search_form h3").fitText(1, { minFontSize: '14px', maxFontSize: '20px' });
+
   Socialite.load();
-
-  // Mobile menu
-  var jPM = $.jPanelMenu({
-    menu: '.mobile-menu',
-    trigger: '.btn.btn-navbar',
-    keyboardShortcuts: false
-  });
-
-  enquire.register("screen and (max-width:768px)", {
-    match : function() {
-      jPM.on();
-    }
-  }).listen(); // More on this next
 
 }
 

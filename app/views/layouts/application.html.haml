@@ -7,17 +7,23 @@
   = render  "shared/ie_warning"
   = render "layouts/topnav", :current_user => @current_user
 
-  .container-fluid{ :role => "main", class: (if @nobg then "nobg" end) }
-    .row-fluid
-      - if content_for? :sidebar
-        %aside{role: "search", class: "span3 searchbar"}
-          = yield(:sidebar)
-      / %section.content{class: (if content_for? :sidebar then "span9" else "span12" end) }
-      %section.content
-        = render "layouts/subnav" if content_for? :sub_nav
-        - if show_headline?
-          %header.page-header
-            %h1= yield(:headline)
+  .container{ :role => "main", class: (if @nobg then "nobg" end) }
+    = render(:partial => "layouts/left_panel")
+    .main
+      .content
         = yield
+    = render(:partial => "layouts/right_panel")
+  / .container-fluid{ :role => "main", class: (if @nobg then "nobg" end) }
+  /   .row-fluid
+  /     - if content_for? :sidebar
+  /       %aside{role: "search", class: "span3 searchbar"}
+  /         = yield(:sidebar)
+  /     / %section.content{class: (if content_for? :sidebar then "span9" else "span12" end) }
+  /     %section.content
+  /       = render "layouts/subnav" if content_for? :sub_nav
+  /       - if show_headline?
+  /         %header.page-header
+  /           %h1= yield(:headline)
+  /       = yield
 
   = render "/layouts/footer"

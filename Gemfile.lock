@@ -472,6 +472,9 @@ GEM
       activerecord (~> 3.0)
       activesupport (~> 3.0)
       polyamorous (~> 0.5.0)
+    susy (1.0.8)
+      compass (>= 0.12.2)
+      sass (>= 3.2.0)
     tap (1.4.0)
       configurable (~> 0.7.0)
     taps (0.3.24)
@@ -597,6 +600,7 @@ DEPENDENCIES
   spork
   squeel
   strong_parameters!
+  susy
   tap
   taps
   thin

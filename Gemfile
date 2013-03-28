@@ -66,6 +66,7 @@ group :assets do
   gem 'uglifier'
   gem 'sass-rails'
   gem "compass-rails"
+  gem 'susy'
 end
 
 group :production do

@@ -1,125 +1,124 @@
-// Base Container
+// --------------------------------------------
+// layout
+
+@include border-box-sizing;
+
 body {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
-.container-fluid[role="main"] {
-  padding-top: $gridGutterWidth;
-  padding-bottom: $gridGutterWidth;
-  background: #fff ;
-  &.nobg {
-    background: none;
+.container {
+  @include container;
+  overflow: hidden;
+  padding: 0;
+  background-color: $menuPanelColor;
+}
+
+// --------------------------------------------
+// small
+
+.menu-panel-left {
+  @include span-columns($mobile-side-panel-cols);
+  margin-left: -100%;
+  .show-left & { margin-left: 0; }
+}
+
+.main {
+  @include span-columns($total-columns);
+  margin-right: 0;
+  .show-left & { margin-right: - space($mobile-side-panel-cols); }
+  .show-right & { margin-left: - space($mobile-side-panel-cols); }
+}
+
+.menu-panel-right {
+  @include span-columns($mobile-side-panel-cols);
+  margin-right: -100%;
+  .show-right & {
+    margin-right: 0;
   }
 }
 
-
-#inner_content {
-  background:#fff;
-  padding: 18px; /* for non mobiel version*/
+.main-nav {
+  background: $menuPanelColor;
 }
-#messages.index {
-  #inner_content {
-    padding: 0 0 18px 0;
-    .button.delete {
-      margin-left: 10px;
+
+// --------------------------------------------
+// medium
+
+@include at-breakpoint($two-cols) {
+
+  .menu-panel-left {
+    @include span-columns($navbar);
+    margin-left: 0;
+    .show-right & { margin-left: - 100%; }
+  }
+
+  .main {
+    @include span-columns($two-cols-main);
+    margin-right: 0;
+    .show-right & { margin-left: 0; }
+    .show-left & { margin-right: 0; }
+  }
+
+  .menu-panel-right {
+    @include span-columns($navbar);
+    margin-right: -100%;
+    .show-right & { margin-right: 0; }
+  }
+}
+
+@include at-breakpoint($three-cols) {
+
+  .menu-panel-left {
+    @include span-columns($three-cols-nav);
+  }
+
+  .main {
+    @include span-columns($three-cols-main);
+    margin-right: 0;
+    .show-right & { margin-left: 0; }
+    .show-left & { margin-right: 0; }
+  }
+
+  .menu-panel-right {
+    @include span-columns($three-cols-nav);
+    margin-right: -100%;
+    .show-right & {
+      margin-right: 0;
     }
   }
 }
+
+header, footer {
+  @include clearfix;
+  clear: both;
+}
+
+.menu-panel-left, .menu-panel-right, .main {
+  @include transition(.2s all ease);
+  height: 100%;
+}
+
+.logo {
+  font-size: emCalc(20px);
+  font-weight: bold;
+  position: relative;
+  top: 10px;
+  color: #fff;
+}
+
+.main {
+  @include box-shadow(#333 0 0 3px);
+  position: relative;
+}
+
 .content {
-  min-height: 400px !important;
+  $gutter-width: 1em;
+  $grid-padding : 1em;
+  @include container;
+  padding: $gutter-width;
 }
 
-form {
-  max-width: 768px;
-  .control-group {
-    textarea {
-      width: 97%;
-    }
-  }
+.clearfix {
+  @include pie-clearfix();
 }
-
-
-// Header / topnav
-
-#logo {
-  float:left;}
-
-
-// Footer
-
-#footer {
-
-  font-size: $basefont;
-  padding: $basefont * 3;
-  .inner_footer {
-    background-color: #011120;
-    @include border-radius(5px);
-      position: relative;
-      .mixpanel_partner {
-       position: absolute;
-       top: 3px;
-       right: 20%;
-      }
-  }
-
-  &.light .inner_footer {
-    padding: 18px;
-  }
-
-  .left_links {
-    float:left;
-    width: 100%;
-  }
-  .copyright {
-    margin-top: 20px;
-    float:left;
-  }
-  a {
-    margin: 0 20px 15px 0;
-    display:block;
-    color:#666;
-    @include hover-link;
-  }
-}
-
-
-/* HOMEPAGE
----------------------------------------- */
-
-.centered_grid {
-  max-width: 600px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
-
-
-
-// IE overlay
-#ie_warning {
-  display: block !important;
-  background: #fff;
-  width: 90%;
-  height: 400px;
-  z-index: 10000;
-  padding: 10%;
-  .inner_warning_wrapper {
-    width:  80%;
-    margin: 0 auto;
-    h2 {
-      color: #333;
-      text-shadow: none !important;
-    }
-    li {
-      float: left;
-      margin-right:  30px;
-      list-style-type: none;
-      a {
-        text-decoration: none;
-      }
-      img {
-        border: 2px #ccc solid;
-      }
-    }
-  }
-}
-

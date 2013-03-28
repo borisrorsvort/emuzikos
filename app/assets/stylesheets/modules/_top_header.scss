@@ -1,0 +1,24 @@
+.top-header .navbar-inner {
+  padding: $gutter-width / 2  $gutter-width;
+  text-align: center;
+  background-image: url('backgrounds/noisy_net.png') !important;
+  background-position: initial initial; background-repeat: initial initial;
+  ul {
+    margin: 0;
+  }
+  .brand {
+    margin: 0 auto;
+  }
+}
+
+.navbar .btn, .navbar .btn-group {
+  margin: 6px;
+}
+
+@include at-breakpoint($two-cols) {
+  .left-nav-trigger {
+    display: none;
+  }
+}
+@include at-breakpoint($three-cols) {
+}

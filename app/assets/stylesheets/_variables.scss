@@ -1,0 +1,39 @@
+
+// --------------------------------------------
+// settings
+$column-width           : 4em;
+$gutter-width           : 0em;
+$grid-padding           : 0;
+$total-columns          : 4;
+$two-cols               : 8;
+$three-cols             : 12;
+$container-style        : fluid;
+
+$menu-offset-anchor     : 1;
+$mobile-side-panel-cols : $total-columns - $menu-offset-anchor;
+
+$two-cols-main          : 6;
+$navbar                 : $two-cols - $two-cols-main ;
+
+$three-cols-main        : 10;
+$three-cols-nav         : $three-cols - $three-cols-main;
+
+$baseBorderadius        :3px;
+
+// Colors
+$primary-color: $linkColor;
+$content-bg-color: #e9eaed;
+
+// Mini-profiles
+
+$mini-profile-bg: #fff;
+
+$mini-profile-border-color: darken($content-bg-color, 5%) ;
+
+// panel nav
+
+$menuPanelColor: #22262c;
+
+@function emCalc($pxWidth) {
+  @return $pxWidth / $baseFontSize * 1em;
+}

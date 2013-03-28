@@ -1,31 +1,63 @@
-= link_to user_path(user), :class => "user_profile_listing" do
-  - if user.avatar.present?
-    .section
-      = image_tag(user.avatar.url(:normal))
+%li.mini-profile
+  %a.mini-profile--inner{'data-largesrc' => "user.avatar.url(:normal)", 'data-title' => "Azuki bean", 'data-description' => "Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot."}
+    .mini-profile--thumb
+      - if user.avatar.present?
+        = image_tag(user.avatar.url(:normal))
+      - else
+        = image_tag("http://pipsum.com/#{rand(200..600)}x#{rand(200..600)}.jpg")
+    .mini-profile--content
 
-  .section.user_general_infos
-    .username= user.username
-    .location
-      = t(:'common.users.from') + " "
-      = user.zip + ", "
-      = i18n_country(user)
+      .section.user_general_infos
+        .username
+          = user.username
+          = " - "
+          %span.muted
+            = user.zip + ", "
+            = i18n_country(user)
 
-  .section.user_type
-    .title
-      %strong= t(:"users.types.#{user.user_type}")
-      = t(:'users.show.is_looking_for')
-      %strong= t(:"users.types.#{user.searching_for}")
-    .tag_list
-      - user.genres.each do |genre|
-        %span= t(:"musical_genres.#{genre.name}")
+      .section.user_type
+        .title
+          %strong= t(:"users.types.#{user.user_type}")
+          = t(:'users.show.is_looking_for')
+          %strong= t(:"users.types.#{user.searching_for}")
+      .section.user_genre
+        %i.icon-tag
+        %span.tag_list
+          = user.genres.first(2).collect {|i| i.translated_name}.to_sentence
 
-  .section.user_instruments
-    .title
-      = t(:'activerecord.attributes.user.instruments')
-    .tag_list
-      - user.instruments.each do |instrument|
-        %span= t(:"instruments.#{instrument.name}")
+      .section.user_instruments
+        %i.icon-note-beamed
+        %span.tag_list
+          = user.instruments.first(2).collect {|i| i.translated_name}.to_sentence
 
-  .clear
+/ = link_to user_path(user), :class => "user_profile_listing" do
+/   - if user.avatar.present?
+/     .section
+/       = image_tag(user.avatar.url(:normal))
 
-/ .item.w1
+/   .section.user_general_infos
+/     .username= user.username
+/     .location
+/       = t(:'common.users.from') + " "
+/       = user.zip + ", "
+/       = i18n_country(user)
+
+/   .section.user_type
+/     .title
+/       %strong= t(:"users.types.#{user.user_type}")
+/       = t(:'users.show.is_looking_for')
+/       %strong= t(:"users.types.#{user.searching_for}")
+/     .tag_list
+/       - user.genres.each do |genre|
+/         %span= t(:"musical_genres.#{genre.name}")
+
+/   .section.user_instruments
+/     .title
+/       = t(:'activerecord.attributes.user.instruments')
+/     .tag_list
+/       - user.instruments.each do |instrument|
+/         %span= t(:"instruments.#{instrument.name}")
+
+/   .clear
+
+/ / .item.w1
