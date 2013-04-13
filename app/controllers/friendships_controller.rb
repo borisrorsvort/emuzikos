@@ -1,7 +1,9 @@
 class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
+
     if @friendship.save
+      mixpanel.track 'Contact added'
       redirect_to :back
       gflash :success => t(:'gflash.friendships.create.success', :user => User.find(@friendship.friend_id).username)
     else

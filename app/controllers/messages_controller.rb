@@ -4,8 +4,14 @@ class MessagesController < ApplicationController
   def index
     if params[:mailbox] == "sent"
       @messages = @current_user.sent_messages.order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
+      mixpanel.track 'Message box view', {
+        :box => "Sentbox"
+      }
     else
       @messages = @current_user.received_messages.order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
+      mixpanel.track 'Message box view', {
+        :box => "Inbox"
+      }
     end
     if request.xhr?
       render @messages
@@ -34,6 +40,7 @@ class MessagesController < ApplicationController
       redirect_to user_messages_path(@current_user)
       gflash :success => true
       gflash :notice => t(:'gflash.testimonials.please_write', :link => new_testimonial_url) if @current_user.testimonials.first.nil?
+      mixpanel.track 'Message created'
       if @message.recipient.prefers_message_notifications == true
         Notifier.user_message(@message, @current_user, @message.recipient).deliver
       end
