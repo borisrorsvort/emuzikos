@@ -11,7 +11,7 @@ module Authentication
     end
 
     step 'I login as the other user' do
-      login_as(@recipient, :scope => :user)
+      login_as(@user2, :scope => :user)
     end
 
     step 'I logout' do
@@ -20,7 +20,7 @@ module Authentication
     end
 
     step 'a second user exists' do
-      @recipient = FactoryGirl.create(:user)
+      @user2 = FactoryGirl.create(:user)
     end
 
     # def login_as(user = nil)

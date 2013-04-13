@@ -38,8 +38,9 @@ end
 
 Spinach.hooks.on_tag('selenium') do |scenario|
   puts 'using selenium'
-  Capybara.default_driver = :selenium
-  Capybara.javascript_driver = :selenium
+  Spinach.hooks.on_tag("selenium") do
+    ::Capybara.current_driver = :selenium
+  end
 end
 
 class ActiveRecord::Base

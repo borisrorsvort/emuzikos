@@ -4,7 +4,7 @@ class Spinach::Features::MessagesManagement < Spinach::FeatureSteps
   include MessagesHelper
 
   step 'I go to the other visible user page' do
-    visit "/users/#{@recipient.slug}"
+    visit "/users/#{@user2.slug}"
   end
 
   step 'I go to my sentbox' do
@@ -12,18 +12,18 @@ class Spinach::Features::MessagesManagement < Spinach::FeatureSteps
   end
 
   step 'I go to the message reply page' do
-    visit(user_messages_path(@recipient, :mailbox => :inbox))
+    visit(user_messages_path(@user2, :mailbox => :inbox))
     click_link('HI from Belgium')
     click_link('Reply')
   end
 
   step 'I should see the message in my send box' do
     click_link('HI from Belgium')
-    page.should have_content(@recipient.username)
+    page.should have_content(@user2.username)
   end
 
   step 'I have sent a message' do
-    visit(user_path(@recipient))
+    visit(user_path(@user2))
     fill_in 'message_subject', :with => "HI from Belgium"
     fill_in 'message_body', :with => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
     click_button('Submit')

@@ -1,3 +1,1 @@
-Geocoder.configure do |config|
-  config.lookup = :yandex
-end
+Geocoder.configure(:lookup => :yandex)

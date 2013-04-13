@@ -8,9 +8,8 @@ class Spinach::Features::Users < Spinach::FeatureSteps
   end
 
   step 'I should see the list of users with completed profile' do
-    save_and_open_page
     within('.users_list') do
-      User.find(:all).each do |user|
+      User.all.each do |user|
         page.should have_content user.username
       end
     end
