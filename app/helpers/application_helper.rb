@@ -12,20 +12,6 @@ module ApplicationHelper
     "&bull;"
   end
 
-  def pageless(total_pages, url=nil, container=nil)
-    opts = {
-      :totalPages => total_pages,
-      :url        => url,
-      :loaderMsg  => t(:'pagination.loading_more_results'),
-      :pagination => ".pagination",
-      :loaderImage => "/assets/icons/ajax-loader-pagiantion.gif"
-    }
-
-    container && opts[:container] ||= container
-
-    javascript_tag("$('.users_list').pageless(#{opts.to_json});")
-  end
-
   def current_user_tracking_id
     current_user ? current_user.tracking_id : nil
   end
