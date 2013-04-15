@@ -1,3 +1,5 @@
+require 'faker'
+
 FactoryGirl.define do
   factory :user do
     username
@@ -34,11 +36,22 @@ FactoryGirl.define do
 
   end
 
-  factory :instrument do
-    name 'guitar'
+  factory :skill do |skill|
+    skill.association(:instrument)
+    skill.association(:user)
   end
 
-  factory :genre do
-    name 'rock'
+  factory :taste do |taste|
+    taste.association(:genre)
+    taste.association(:user)
   end
+
+  factory :instrument do |i|
+    i.name "guitar"
+  end
+
+  factory :genre do |c|
+    c.name "rock"
+  end
+
 end

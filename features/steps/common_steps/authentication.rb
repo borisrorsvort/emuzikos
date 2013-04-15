@@ -16,7 +16,6 @@ module Authentication
 
     step 'I logout' do
       visit "/users/sign_out"
-      save_and_open_page
     end
 
     step 'a second user exists' do
