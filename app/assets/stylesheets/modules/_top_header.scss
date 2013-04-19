@@ -1,4 +1,5 @@
 .top-header .navbar-inner {
+  @include box-sizing(border-box);
   padding: $gutter-width / 2  $gutter-width;
   text-align: center;
   background-image: url('backgrounds/noisy_net.png') !important;
@@ -12,13 +13,12 @@
 }
 
 .navbar .btn, .navbar .btn-group {
-  margin: 6px;
+  margin: 0;
+  margin-top: $gutter-width/2;
 }
 
-@include at-breakpoint($two-cols) {
+@include at-breakpoint($three-cols) {
   .left-nav-trigger {
     display: none;
   }
-}
-@include at-breakpoint($three-cols) {
 }

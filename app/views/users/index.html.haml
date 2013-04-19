@@ -9,7 +9,7 @@
 %section.users-list
   =# render "search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen::Country.all
   -if !@users.blank?
-    %ul.mini-profiles#og-grid.og-grid
+    %ul.mini-profiles
       = render @users
 
     .clearfix
@@ -28,8 +28,11 @@
   :javascript
     $(document).ready(function() {
       Images.adjustProfileThumbs('.mini-profile--thumb img');
-      Grid.init();
     });
+    $(window).smartresize(function() {
+      Images.adjustProfileThumbs('.mini-profile--thumb img');
+    });
+
 
 / - content_for :scripts do
 /   :javascript

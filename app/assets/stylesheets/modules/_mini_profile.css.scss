@@ -20,45 +20,70 @@
   display: block;
   position: relative;
   background-color: $mini-profile-bg;
-  height: 310px;
   @include border-radius($baseBorderadius);
   border: 1px solid $mini-profile-border-color;
   &:hover {
-    @include box-shadow(#c0c0c0 0 0 25px);
+    // @include box-shadow(#c0c0c0 0 0 25px);
     text-decoration: none;
     cursor: handler;
   }
 }
 
 .mini-profile--thumb {
-  height: 200px;
+  max-height: 300px;
   overflow: hidden;
   position: relative;
+  width: 100%;
   @include border-top-radius($baseBorderadius);
-}
+  @include box-sizing(border-box);
+    @include box-shadow(rgba(255,255,255,0.5) 0 1px 1px inset);
 
-.mini-profile--content {
-  padding: 10px;
-  font-size: emCalc(13px);
-}
-
-@include at-breakpoint($two-cols) {
-  .mini-profile {
-    @include span-columns(4, $two-cols);
-    &:nth-child(2n) {
-      margin-right: 0;
-    }
+  img {
+    height: 100%;
   }
 }
 
-@include at-breakpoint($three-cols) {
-  .mini-profile {
-    @include span-columns(3, $three-cols);
-    &:nth-child(2n) {
-      @include span-columns(3, $three-cols);
-    }
-    &:nth-child(4n) {
-      margin-right: 0;
-    }
+.mini-profile--content {
+  @include box-sizing(border-box);
+  padding: $gutter-width;
+  font-size: emCalc(13px);
+}
+
+.icon-circle {
+  $size: 30px;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  background-color: $grayLighter;
+  @include background(linear-gradient($grayLighter, darken($grayLighter, 5%)));
+  border: 1px solid darken($grayLighter, 5%);
+  @include box-shadow(#fff 0 0 1px inset);
+  @include border-radius(999px);
+  text-align: center;
+  position: relative;
+  top: -5px;
+
+  .mini-profile--content & {
+    margin-right: 5px;
+  }
+}
+
+.user-properties {
+  margin-top: $baseLineHeight / 2;
+}
+
+.user-general-infos {
+  margin-bottom: $baseLineHeight / 4;
+  h5  {
+    margin: 0;
+  }
+}
+
+@include at-breakpoint($two-cols) {
+  .mini-profile--thumb   {
+    @include border-radius(0px);
+    @include border-left-radius($baseBorderadius);
+
+    width: 20%;
   }
 }

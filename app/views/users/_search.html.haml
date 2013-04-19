@@ -2,27 +2,30 @@
   :javascript
     $(document).ready(function() {
       $('#search_form form').on('ajax:success', function() {
-        alert('searched');
+        // alert('searched');
       });
       mixpanel.track_forms('#search_form form', 'Submited search form');
     });
 
 .sidebar.user_profile_listing
   #search_form
-    %header
-      %h3= t(:'search_terms.title')
+    =#/ %header
+    =#/   %h3= t(:'search_terms.title')
 
-    %ul.nav.nav-tabs
+    %ul.nav.nav-tabs.nav-tabs-dark
       %li{class: if @current_tab == 'musician' then 'active' end}
-        %a{:href => "#tab_musician", rel: "tooltip", title: t(:'search_terms.tabs.musician'), data: {toggle: "tab"}}
+        %a{:href => "#tab_musician", rel: "tooltip", data: {toggle: "tab"}}
           %i.icon-user
+          %span.hidden-phone= t(:'search_terms.tabs.musician')
       %li{class: if @current_tab == 'band' then 'active' end}
-        %a{:href => "#tab_band", rel: "tooltip", title: t(:'search_terms.tabs.band'), data: {toggle: "tab"}}
-          %i.icon-group
+        %a{:href => "#tab_band", rel: "tooltip", data: {toggle: "tab"}}
+          %i.icon-users
+          %span.hidden-phone= t(:'search_terms.tabs.band')
       %li{class: if @current_tab == 'agent' then 'active' end}
-        %a{:href => "#tab_agent", rel: "tooltip", title: t(:'search_terms.tabs.agent'), :data => {:toggle => "tab"}}
+        %a{:href => "#tab_agent", rel: "tooltip", :data => {:toggle => "tab"}}
           %i.icon-briefcase
-    .tab-content
+          %span.hidden-phone= t(:'search_terms.tabs.agent')
+    .tab-content.tab-content-dark
       #tab_musician.tab-pane{class: if @current_tab == 'musician' then 'active' end}
         = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-musicians", class: "search-form-users", data: {:"no-turbolink" => "1"}} do |f|
           .searchbar-field.hidden= f.text_field :user_type_cont, :value => "musician", class: 'no-chosen'

@@ -17,7 +17,6 @@
 //= require_directory ./mylibs
 //= require jquery.spin
 
-
 // Fix links inside mobile safari
 (function(document,navigator,standalone) {
     // prevents links from apps from oppening in mobile safari
@@ -87,7 +86,8 @@ var OBC = (function (OBC, $) {
             var body = $('body');
             var dir = $(el).attr('href');
             if (dir === '#left') {
-                body.toggleClass('show-left').removeClass('show-right');
+              body.toggleClass('show-left').removeClass('show-right');
+              $('html, body').animate({scrollTop:0}, 'fast'); // Scroll top
             }
             if (dir === '#right') {
                 body.toggleClass('show-right').removeClass('show-left');
@@ -157,9 +157,6 @@ Images = {
     $(selector).resizeToParent();
   }
 };
-
-
-
 
 
 function initApplication() {

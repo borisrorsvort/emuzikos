@@ -18,7 +18,7 @@ jQuery.fn.resizeToParent = function(options) {
     var obj = jQuery(this);
 
     // bind to load of image
-    obj.hide();
+    obj.css('visibility', 'hidden');
     obj.load(function() {
       // dimensions of the parent
       var parentWidth = obj.parents(o.parent).width();
@@ -51,8 +51,7 @@ jQuery.fn.resizeToParent = function(options) {
       var leftOffset = (imageWidth - parentWidth) / -2;
       var topOffset = (imageHeight - parentHeight) / -2;
 
-      obj.css({'left': leftOffset, 'top': topOffset});
-      obj.fadeIn(1000);
+      obj.css({'left': leftOffset, 'top': topOffset, 'visibility': 'visible'});
     });
 
     // force ie to run the load function if the image is cached

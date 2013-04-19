@@ -1,7 +1,7 @@
 // --------------------------------------------
 // layout
 
-@include border-box-sizing;
+// @include border-box-sizing;
 
 body {
   padding-top: 60px;
@@ -12,18 +12,21 @@ body {
   overflow: hidden;
   padding: 0;
   background-color: $menuPanelColor;
+  @include box-sizing(border-box);
 }
 
 // --------------------------------------------
 // small
 
 .menu-panel-left {
+  @include box-sizing(border-box);
   @include span-columns($mobile-side-panel-cols);
   margin-left: -100%;
   .show-left & { margin-left: 0; }
 }
 
 .main {
+  @include box-sizing(border-box);
   @include span-columns($total-columns);
   margin-right: 0;
   .show-left & { margin-right: - space($mobile-side-panel-cols); }
@@ -31,6 +34,7 @@ body {
 }
 
 .menu-panel-right {
+  @include box-sizing(border-box);
   @include span-columns($mobile-side-panel-cols);
   margin-right: -100%;
   .show-right & {
@@ -39,38 +43,41 @@ body {
 }
 
 .main-nav {
+  @include box-sizing(border-box);
   background: $menuPanelColor;
 }
 
 // --------------------------------------------
 // medium
 
-@include at-breakpoint($two-cols) {
+// @include at-breakpoint($two-cols) {
 
-  .menu-panel-left {
-    @include span-columns($navbar);
-    margin-left: 0;
-    .show-right & { margin-left: - 100%; }
-  }
+//   .menu-panel-left {
+//     @include span-columns($navbar);
+//     margin-left: 0;
+//     .show-right & { margin-left: - 100%; }
+//   }
 
-  .main {
-    @include span-columns($two-cols-main);
-    margin-right: 0;
-    .show-right & { margin-left: 0; }
-    .show-left & { margin-right: 0; }
-  }
+//   .main {
+//     @include span-columns($two-cols-main);
+//     margin-right: 0;
+//     .show-right & { margin-left: 0; }
+//     .show-left & { margin-right: 0; }
+//   }
 
-  .menu-panel-right {
-    @include span-columns($navbar);
-    margin-right: -100%;
-    .show-right & { margin-right: 0; }
-  }
-}
+//   .menu-panel-right {
+//     @include span-columns($navbar);
+//     margin-right: -100%;
+//     .show-right & { margin-right: 0; }
+//   }
+// }
 
 @include at-breakpoint($three-cols) {
 
   .menu-panel-left {
     @include span-columns($three-cols-nav);
+    margin-left: 0;
+    .show-right & { margin-left: - 100%; }
   }
 
   .main {
@@ -83,11 +90,31 @@ body {
   .menu-panel-right {
     @include span-columns($three-cols-nav);
     margin-right: -100%;
-    .show-right & {
-      margin-right: 0;
-    }
+    .show-right & { margin-right: 0; }
   }
 }
+
+// @include at-breakpoint($three-cols) {
+
+//   .menu-panel-left {
+//     @include span-columns($three-cols-nav);
+//   }
+
+//   .main {
+//     @include span-columns($three-cols-main);
+//     margin-right: 0;
+//     .show-right & { margin-left: 0; }
+//     .show-left & { margin-right: 0; }
+//   }
+
+//   .menu-panel-right {
+//     @include span-columns($three-cols-nav);
+//     margin-right: -100%;
+//     .show-right & {
+//       margin-right: 0;
+//     }
+//   }
+// }
 
 header, footer {
   @include clearfix;
@@ -96,7 +123,6 @@ header, footer {
 
 .menu-panel-left, .menu-panel-right, .main {
   @include transition(.2s all ease);
-  height: 100%;
 }
 
 .logo {
@@ -108,6 +134,7 @@ header, footer {
 }
 
 .main {
+  @include box-sizing(border-box);
   @include box-shadow(#333 0 0 3px);
   position: relative;
 }
@@ -117,6 +144,7 @@ header, footer {
   $grid-padding : 1em;
   @include container;
   padding: $gutter-width;
+  @include box-sizing(border-box);
 }
 
 .clearfix {
