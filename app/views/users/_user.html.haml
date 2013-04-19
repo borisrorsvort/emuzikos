@@ -44,34 +44,3 @@
             %span.tag_list
               = user.references
     .clearfix
-/ = link_to user_path(user), :class => "user_profile_listing" do
-/   - if user.avatar.present?
-/     .section
-/       = image_tag(user.avatar.url(:normal))
-
-/   .section.user_general_infos
-/     .username= user.username
-/     .location
-/       = t(:'common.users.from') + " "
-/       = user.zip + ", "
-/       = i18n_country(user)
-
-/   .section.user_type
-/     .title
-/       %strong= t(:"users.types.#{user.user_type}")
-/       = t(:'users.show.is_looking_for')
-/       %strong= t(:"users.types.#{user.searching_for}")
-/     .tag_list
-/       - user.genres.each do |genre|
-/         %span= t(:"musical_genres.#{genre.name}")
-
-/   .section.user_instruments
-/     .title
-/       = t(:'activerecord.attributes.user.instruments')
-/     .tag_list
-/       - user.instruments.each do |instrument|
-/         %span= t(:"instruments.#{instrument.name}")
-
-/   .clear
-
-/ / .item.w1
