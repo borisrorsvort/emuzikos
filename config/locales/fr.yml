@@ -74,7 +74,10 @@ fr:
       cancel_my_account: "Effacer mon compte"
     remove_from_contact_list: Enlever
     reply: Répondre
-    search: Rechercher
+    search:
+      musicians: Chercher des musiciens
+      bands: Chercher des groupes
+      agents: Chercher des agents
     send_password: "Envoyer le mail de ré-initialisation de mon mot passe"
     services:
       delete: "Déconnecter ce service"
@@ -429,9 +432,9 @@ fr:
   search_terms:
     title: Qui recherchez-vous?
     tabs:
-      musician: Musician
-      band: Band
-      agent: Agent
+      musician: Musiciens
+      band: Groupes
+      agent: Agents
     country: Pays
     i_search_a: "Je cherche un"
     mass_locate: "Votre ville ou région (ex: Paris ou Loire)"
@@ -576,6 +579,7 @@ fr:
       voice: Voix
       whistles: Flûtes
     your_classified_infos: "Votre annonce"
+    from: 'de'
   views:
     pagination:
       first: Premier

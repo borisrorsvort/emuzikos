@@ -12,9 +12,10 @@
 //= require_directory ./libs
 //= require gritter
 //= require plugins
-//= require chosen-jquery
+//= require select2
 //= require_self
 //= require_directory ./mylibs
+//= require_directory ./sections
 //= require jquery.spin
 
 // Fix links inside mobile safari
@@ -186,8 +187,8 @@ function initApplication() {
   }
 
   // init chosen select input
-  $("select").not(".no-chosen").chosen({ allow_single_deselect: true, width: "100%" });
-  $(".search_field select").chosen({ allow_single_deselect: true, width: "100%" });
+  $("select").not(".no-chosen").select2({width: '100%'});
+  $(".search_field select").select2({width: '100%'});
 
   // css arrows
   $('#main_nav li a.current').after('<div class="main_nav_current_arrow"></div>');
@@ -207,14 +208,14 @@ function initApplication() {
   });
 
   // Fit text
-  $("h1").fitText(1.2, { minFontSize: '20px', maxFontSize: '36px' });
+  $("h1").fitText(1, { minFontSize: '20px', maxFontSize: '28px' });
   $("#search_form h3").fitText(1, { minFontSize: '14px', maxFontSize: '20px' });
 
   Socialite.load();
 
 }
 
-document.addEventListener("page:change", initApplication, hideSpinner);
-document.addEventListener("page:fetch", displaySpinner);
+// document.addEventListener("page:change", initApplication, hideSpinner);
+// document.addEventListener("page:fetch", displaySpinner);
 
 $(document).ready(initApplication);

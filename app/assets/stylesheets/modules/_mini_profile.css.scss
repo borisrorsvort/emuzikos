@@ -72,10 +72,16 @@
   margin-top: $baseLineHeight / 2;
 }
 
-.user-general-infos {
-  margin-bottom: $baseLineHeight / 4;
-  h5  {
-    margin: 0;
+.section {
+  &.user-general-infos {
+    margin-bottom: $baseLineHeight / 4;
+    h5  {
+      margin: 0;
+    }
+  }
+
+  &.user-type {
+    margin: $baseLineHeight / 2 0 $baseLineHeight;
   }
 }
 

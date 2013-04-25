@@ -1,0 +1,25 @@
+@mixin verticalAlign($size) {
+  height: $size;
+  line-height: $size;
+}
+
+#contactform {
+  form {
+    padding: $gutter-width;
+  }
+  input, textarea {
+    @include box-sizing(border-box);
+  }
+  input {
+    @include verticalAlign(40px);
+  }
+}
+
+.profile--contacform--title {
+  background-color: $menuPanelColor;
+  padding: $gutter-width /2 $gutter-width;
+  margin: ($gutter-width*2) (0) $gutter-width;
+  h4 {
+    color: white;
+  }
+}

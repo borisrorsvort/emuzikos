@@ -5,6 +5,7 @@
 
 body {
   padding-top: 60px;
+  background: $body-bg-default image-url("backgrounds/bg-footer.gif");
 }
 
 .container {
@@ -140,6 +141,7 @@ header, footer {
 }
 
 .content {
+  position: relative;
   $gutter-width: 1em;
   $grid-padding : 1em;
   @include container;

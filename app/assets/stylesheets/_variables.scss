@@ -23,7 +23,7 @@ $baseBorderadius        :3px;
 // Colors
 $primary-color: $linkColor;
 $content-bg-color: #e9eaed;
-
+$body-bg-default: #e9eaed;
 // Mini-profiles
 
 $mini-profile-bg: #fff;
@@ -37,3 +37,7 @@ $menuPanelColor: #22262c;
 @function emCalc($pxWidth) {
   @return $pxWidth / $baseFontSize * 1em;
 }
+
+// overlay
+
+$overlay-topbar-size: 50px;

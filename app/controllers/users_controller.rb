@@ -20,16 +20,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params[:mass_locate] && !params[:mass_locate].empty?
-      # select distinct must be inside near scope (https://github.com/alexreisner/geocoder)
-      @q = User.available_for_listing.near(params[:mass_locate].to_s, 200, :select => "DISTINCT users.*").search(params[:q])
-    else
-      @q = User.available_for_listing.select("DISTINCT users.*").search(params[:q])
-    end
-    @genres = Genre.order("name ASC")
-    @instruments = Instrument.order("name ASC")
-    @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
-
     @user = User.find(params[:id])
     @message = Message.new
     @testimonials = @user.testimonials
@@ -43,6 +33,12 @@ class UsersController < ApplicationController
 
     if request.path != user_path(@user)
       redirect_to @user, status: :moved_permanently
+    end
+
+    if request.xhr?
+      render partial: "users/profile", locals: {user: @user}
+    else
+      render :show
     end
   end
 

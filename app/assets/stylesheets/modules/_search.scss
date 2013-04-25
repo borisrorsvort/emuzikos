@@ -33,6 +33,7 @@
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+  background-color: $menuPanelColor;
 }
 
 .nav-tabs-dark > li {
@@ -41,10 +42,10 @@
   margin: 0;
   width: 33.33333333%;
 
-  &:last-child a{
+  &:last-child a {
     border-right: 0 !important;
   }
-  &:first-child a{
+  &:first-child a {
     border-left: 0 !important;
   }
   a {
@@ -82,5 +83,14 @@
       cursor: default;
       @include border-radius(0px);
     }
+  }
+}
+
+.search-form--tab-label span{
+  display: none;
+}
+@include at-breakpoint($two-cols) {
+  .search-form--tab-label span {
+    display: block;
   }
 }

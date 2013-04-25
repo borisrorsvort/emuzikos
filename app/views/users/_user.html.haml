@@ -1,10 +1,10 @@
-%li.mini-profile.media
+%li.mini-profile.media{data: {profile_url: user_path(user) }}
   = link_to user, class: 'mini-profile--inner' do
     .mini-profile--thumb.pull-left
       - if user.avatar.present?
         = image_tag(user.avatar.url(:normal), class: "media-object")
       - else
-        = image_tag("http://pipsum.com/400x600.jpg", class: "media-object")
+        = image_tag("http://instasrc.com/400x400/instrument/music", class: "media-object")
     .mini-profile--content.media-body
       .section.user-general-infos
         .username
@@ -16,7 +16,7 @@
               = i18n_country(user)
 
       .section.user-type
-        .title
+        .badge.badge-info.title
           %strong= t(:"users.types.#{user.user_type}")
           = t(:'users.show.is_looking_for')
           %strong= t(:"users.types.#{user.searching_for}")

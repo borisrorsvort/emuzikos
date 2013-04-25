@@ -59,7 +59,8 @@ gem 'strong_parameters', git: "git://github.com/rails/strong_parameters.git"
 gem 'spinjs-rails'
 gem 'mixpanel'
 
-gem 'chosen-rails'
+# gem 'chosen-rails'
+gem "select2-rails"
 gem 'thin'
 
 group :assets do
