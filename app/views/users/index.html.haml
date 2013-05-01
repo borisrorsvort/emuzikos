@@ -2,19 +2,12 @@
 - description t(:'.description')
 - keywords t(:'.keywords')
 
-/ .progress_bar_wrapper.hidden
-/   .progress.progress-striped.active
-/     .bar{:style => "width: 100%;"}
-
 %section.users-list
-  =# render "search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen::Country.all
   -if !@users.blank?
     %ul.mini-profiles
       = render @users
-
     .clearfix
     = paginate @users
-
   -else
     .well
       %p=t(:'.no_users')
@@ -23,18 +16,6 @@
         %a{:onclick => "sendRequestViaMultiFriendSelector(); return false;", :class => "btn btn-mini"}
           =t(:'buttons.invite_your_friends_from_fb')
         .clearfix
-
-
-#overlay.overlay
-  .overlay--inner
-    %header.overlay--topbar
-      .pull-right
-        = link_to '#', class: 'btn btn-primary', data: {trigger: 'overlay-close'} do
-          %i.icon-cancel
-      .clearfix
-    .overlay--body
-      =# render partial: 'users/profile', locals: {user: User.last}
-
 
 - content_for :scripts do
   :javascript
@@ -59,7 +40,7 @@
       $('.mini-profile.media').on('click', function(event) {
         event.preventDefault();
         var url = $(this).attr('data-profile-url');
-        RemoteProfile._load(url);
+        RemoteProfile._load($(this), url);
         return false;
       });
     });

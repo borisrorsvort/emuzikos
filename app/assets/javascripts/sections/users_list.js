@@ -1,34 +1,46 @@
 RemoteProfile = {
-  init: function() {
-    RemoteProfile._load(url);
-  },
-  _load: function(url) {
+  _load: function(selector, url) {
     $.ajax({
       url: url,
       type: 'GET',
       dataType: 'html',
       beforeSend: function(xhr, settings) {
-        Overlay.clearThat();
-        Overlay._show();
-        $('#overlay').spin();
+        Expander.clearMarkup();
+        selector.spin();
       },
       success: function(data, textStatus, xhr) {
-        $('#overlay .overlay--body').html(data);
-        $('#overlay').addClass('loaded');
-        $("#overlay h1").fitText(1, { minFontSize: '20px', maxFontSize: '28px' });
+        Expander.init(selector, data);
         RemoteProfile.initBinding();
-        $('#overlay').spin(false);
+        Expander.scrollToOffset();
+        selector.spin(false);
       },
       error: function(xhr, textStatus, errorThrown) {
-        //called when there is an error
+        $.gritter.add({image:'/assets/error.png',title:'Error',text:'We could not load this profile'});
       }
     });
   },
   initBinding: function() {
     $('[data-trigger=overlay-close]').on('click', function(event) {
-      Overlay._hide();
+      Expander.clearMarkup();
     });
-    var avatarSize = $('.user-profile--header--avatar img');
-    $(avatarSize).resizeToParent();
+    $('.user-profile--header--avatar img').resizeToParent();
+  }
+};
+
+Expander = {
+  init: function(selector, data) {
+    Expander.createMarkup(selector);
+    $('.profile-expander').html(data);
+    $(".profile-expander h1").fitText(1, { minFontSize: '20px', maxFontSize: '28px' });
+  },
+  createMarkup: function(selector){
+    selector.after('<li class="profile-expander"></div>');
+  },
+  clearMarkup: function() {
+    $('.profile-expander').remove();
+  },
+  scrollToOffset: function() {
+    var offset = $('.profile-expander').position().top;
+    $('html, body').animate({scrollTop: offset-30}, 'fast'); // Scroll top
   }
 };
