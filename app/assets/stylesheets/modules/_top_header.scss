@@ -3,7 +3,8 @@
   padding: $gutter-width / 2  $gutter-width;
   text-align: center;
   background-image: url('backgrounds/noisy_net.png') !important;
-  background-position: initial initial; background-repeat: initial initial;
+  background-position: initial initial;
+  background-repeat: initial initial;
   ul {
     margin: 0;
   }
@@ -17,8 +18,24 @@
   margin-top: $gutter-width/2;
 }
 
-@include at-breakpoint($three-cols) {
-  .left-nav-trigger {
-    display: none;
+@include at-breakpoint($tablet-cols) {
+  .right-panel-layout {
+    .right-nav-trigger {
+      display: none;
+    }
   }
+  .left-panel-layout {
+    .left-nav-trigger {
+      display: none;
+    }
+  }
+}
+
+
+.logo {
+  font-size: emCalc(20px);
+  font-weight: bold;
+  position: relative;
+  top: 10px;
+  color: #fff;
 }

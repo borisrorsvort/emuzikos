@@ -89,8 +89,13 @@
 .search-form--tab-label span{
   display: none;
 }
-@include at-breakpoint($two-cols) {
+@include at-breakpoint($tablet-cols) {
   .search-form--tab-label span {
     display: block;
   }
+}
+
+.search-loader {
+  height: 100px;
+  display: none;
 }

@@ -87,3 +87,13 @@ h1.username {
   margin-bottom: 18px;
 }
 
+
+.user-profile--tab-label{
+  display: none;
+}
+@include at-breakpoint(40em) {
+  .user-profile--tab-label {
+    display: block;
+  }
+}
+

@@ -16,8 +16,13 @@ body {
   @include box-sizing(border-box);
 }
 
-// --------------------------------------------
-// small
+.menu-panel-left, .menu-panel-right, .main {
+  @include transition(.2s all ease);
+}
+
+// ---------------------
+// Mobile layout
+// ---------------------
 
 .menu-panel-left {
   @include box-sizing(border-box);
@@ -28,7 +33,7 @@ body {
 
 .main {
   @include box-sizing(border-box);
-  @include span-columns($total-columns);
+  @include span-columns($mobile-cols);
   margin-right: 0;
   .show-left & { margin-right: - space($mobile-side-panel-cols); }
   .show-right & { margin-left: - space($mobile-side-panel-cols); }
@@ -48,90 +53,53 @@ body {
   background: $menuPanelColor;
 }
 
-// --------------------------------------------
-// medium
+// ---------------------
+// tablet layout
+// ---------------------
 
-// @include at-breakpoint($two-cols) {
+@include at-breakpoint($tablet-cols) {
 
-//   .menu-panel-left {
-//     @include span-columns($navbar);
-//     margin-left: 0;
-//     .show-right & { margin-left: - 100%; }
-//   }
+  .menu-panel-left,
+  .menu-panel-right {
+    @include span-columns($tablet-cols-nav);
+  }
 
-//   .main {
-//     @include span-columns($two-cols-main);
-//     margin-right: 0;
-//     .show-right & { margin-left: 0; }
-//     .show-left & { margin-right: 0; }
-//   }
+  .left-panel-layout {
+    .menu-panel-left {
+      margin-left: 0;
+      .show-right & { margin-left: - 100%; }
+    }
 
-//   .menu-panel-right {
-//     @include span-columns($navbar);
-//     margin-right: -100%;
-//     .show-right & { margin-right: 0; }
-//   }
-// }
+    .menu-panel-right {
+      margin-right: -100%;
+      .show-right & { margin-right: 0; }
+    }
+  }
 
-@include at-breakpoint($three-cols) {
+  .right-panel-layout {
+    .menu-panel-left {
+      margin-left: -100%;
+      .show-left & { margin-left: 0; }
+    }
 
-  .menu-panel-left {
-    @include span-columns($three-cols-nav);
-    margin-left: 0;
-    .show-right & { margin-left: - 100%; }
+    .menu-panel-right {
+      margin-right: 0;
+      .show-left & { margin-right: -100%; }
+    }
   }
 
   .main {
-    @include span-columns($three-cols-main);
+    @include span-columns($tablet-cols-main);
     margin-right: 0;
     .show-right & { margin-left: 0; }
     .show-left & { margin-right: 0; }
   }
 
-  .menu-panel-right {
-    @include span-columns($three-cols-nav);
-    margin-right: -100%;
-    .show-right & { margin-right: 0; }
-  }
 }
-
-// @include at-breakpoint($three-cols) {
-
-//   .menu-panel-left {
-//     @include span-columns($three-cols-nav);
-//   }
-
-//   .main {
-//     @include span-columns($three-cols-main);
-//     margin-right: 0;
-//     .show-right & { margin-left: 0; }
-//     .show-left & { margin-right: 0; }
-//   }
-
-//   .menu-panel-right {
-//     @include span-columns($three-cols-nav);
-//     margin-right: -100%;
-//     .show-right & {
-//       margin-right: 0;
-//     }
-//   }
-// }
 
 header, footer {
   @include clearfix;
   clear: both;
-}
-
-.menu-panel-left, .menu-panel-right, .main {
-  @include transition(.2s all ease);
-}
-
-.logo {
-  font-size: emCalc(20px);
-  font-weight: bold;
-  position: relative;
-  top: 10px;
-  color: #fff;
 }
 
 .main {
@@ -147,8 +115,7 @@ header, footer {
   @include container;
   padding: $gutter-width;
   @include box-sizing(border-box);
+  min-height: 800px;
 }
 
-.clearfix {
-  @include pie-clearfix();
-}
+

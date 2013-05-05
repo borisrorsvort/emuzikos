@@ -12,6 +12,9 @@
 .mini-profile {
   width: 100%; // Mobile width
   margin-bottom: $gutter-width;
+  &.faded {
+    @include opacity(50);
+  }
 }
 
 .mini-profile--inner {
@@ -85,11 +88,21 @@
   }
 }
 
-@include at-breakpoint($two-cols) {
+@include at-breakpoint($tablet-cols) {
   .mini-profile--thumb   {
     @include border-radius(0px);
     @include border-left-radius($baseBorderadius);
 
     width: 20%;
   }
+}
+
+
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
 }

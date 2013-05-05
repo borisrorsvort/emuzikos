@@ -66,10 +66,10 @@
 }
 
 .user-profile--info-box {
-  @include span-columns(6, $two-cols-main);
+  @include span-columns(6, $tablet-cols-main);
 }
 
-@include at-breakpoint($two-cols) {
+@include at-breakpoint($tablet-cols) {
   .user-profile--header--title {
     width: 60%;
     float: left;
@@ -82,7 +82,7 @@
     float: right;
   }
   .user-profile--info-box {
-    @include span-columns(3, $two-cols-main);
+    @include span-columns(3, $tablet-cols-main);
     &:nth-child(2n) {
       margin-right: 0;
     }

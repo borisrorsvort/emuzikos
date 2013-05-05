@@ -20,3 +20,7 @@
 .noscroll {
   overflow: hidden !important;
 }
+
+.clearfix {
+  @include pie-clearfix();
+}

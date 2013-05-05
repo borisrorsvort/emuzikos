@@ -26,15 +26,15 @@
   %li.active
     %a{:href => "#tab_user_infos", rel: "tooltip", data: {toggle: "tab"}}
       %i.icon-info
-      %span.hidden-phone= t(:'.tabs.user_infos')
+      %span.user-profile--tab-label= t(:'.tabs.user_infos')
   %li
     %a{:href => "#tab_music", rel: "tooltip", data: {toggle: "tab"}}
       %i.icon-note-beamed
-      %span.hidden-phone= t(:'.tabs.music')
+      %span.user-profile--tab-label= t(:'.tabs.music')
   %li
     %a{:href => "#tab_videos", rel: "tooltip", data: {toggle: "tab"}}
       %i.icon-video
-      %span.hidden-phone= t(:'.tabs.videos')
+      %span.user-profile--tab-label= t(:'.tabs.videos')
 
 // INFOS TAB
 .tab-content.tab-content-dark.tab-content-profile

@@ -2,6 +2,7 @@
 - description t(:'.meta_description', :username => @user.username)
 - set_meta_tags :canonical => request.url
 - headline t(:'.title', :username => @user.username)
+- @body_class = "right-panel-layout"
 
 - if @user == current_user
   - content_for :sub_nav do

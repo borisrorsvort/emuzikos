@@ -1,5 +1,7 @@
 - title t(:'.title', :username => @user.username)
 - @nobg = true
+- @body_class = "right-panel-layout"
+
 - if @user.profile_completed?
   - description t('users.show.description', username: @user.username, user_type: t(:"users.types.#{@user.user_type}"), searching_for: (@user.searching_for ? @user.searching_for : ''), country: (i18n_country(@user) rescue t(:somewhere_in_the_world)))
 - else

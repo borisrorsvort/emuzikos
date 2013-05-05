@@ -15,7 +15,12 @@ class UsersController < ApplicationController
     @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
 
     if request.xhr?
-      render @users
+      respond_to do |format|
+        # Pagination
+        format.html { render @users }
+        # Search
+        format.js { render :index}
+      end
     end
   end
 
