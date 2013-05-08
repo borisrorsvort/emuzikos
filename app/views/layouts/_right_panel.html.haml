@@ -35,7 +35,16 @@
           = link_to t(:'languages.french'), root_url(:subdomain => 'fr'), :title => t(:'footer.emuzikos_language', :language => t(:'languages.french'))
         %li
           = link_to t(:'languages.english'), "#{request.protocol}#{request.domain}", :title => t(:'footer.emuzikos_language', :language => t(:'languages.english'))
-
+  - else
+    %section.main-nav
+      / %h4= t(:'menu.messages.messages')
+      %ul
+        %li= link_to t(:'menu.signup'),new_user_registration_path
+        %li= link_to t(:'menu.login'), new_user_session_path
+        %li
+          %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"}
+            = t(:'menu.help')
+        %li= link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
 /       .nav-collapse
 /         %ul.nav
 /           %li

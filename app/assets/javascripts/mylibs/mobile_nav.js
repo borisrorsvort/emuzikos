@@ -15,8 +15,12 @@ var OBC = (function (OBC, $) {
     bindCloseButton: function() {
       $('[data-trigger=close]').click(function(event) {
         event.preventDefault();
+        var left = $('[href="#left"]');
+        var right = $('[href="#right"]');
+        left.show();
+        right.show();
         $('body').removeClass('show-left show-right');
-        $('.logo').show();
+        $('[data-trigger=close]').hide();
       });
     },
     toggleClasses: function (el) {
@@ -24,11 +28,12 @@ var OBC = (function (OBC, $) {
       var dir = $(el).attr('href');
       if (dir === '#left') {
         body.toggleClass('show-left').removeClass('show-right');
-        $('html, body').animate({scrollTop:0}, 'fast'); // Scroll top
       }
       if (dir === '#right') {
-          body.toggleClass('show-right').removeClass('show-left');
+        body.toggleClass('show-right').removeClass('show-left');
       }
+      $('html, body').animate({scrollTop:0}, 'fast'); // Scroll top
+
       return body.attr('class');
     },
     toggleText: function (triggers) {
@@ -36,16 +41,17 @@ var OBC = (function (OBC, $) {
       var right = $(triggers).filter('[href="#right"]');
       var body = $('body');
       if (body.hasClass('show-left')) {
-        right.toggle();
-        left.toggle();
-        right.siblings('[data-trigger=close]').toggle();
+        left.hide();
+        right.show();
+        $('[data-trigger=close]').hide();
+        left.siblings('[data-trigger=close]').show();
       }
       if (body.hasClass('show-right')) {
-        right.toggle();
-        left.toggle();
-        left.siblings('[data-trigger=close]').toggle();
+        right.hide();
+        left.show();
+        $('[data-trigger=close]').hide();
+        right.siblings('[data-trigger=close]').show();
       }
-      $('.logo').hide();
     }
   };
 

@@ -21,12 +21,12 @@
 @include at-breakpoint($tablet-cols) {
   .right-panel-layout {
     .right-nav-trigger {
-      display: none;
+      visibility: hidden;
     }
   }
   .left-panel-layout {
     .left-nav-trigger {
-      display: none;
+      visibility: hidden;
     }
   }
 }

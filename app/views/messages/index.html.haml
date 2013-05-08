@@ -1,3 +1,5 @@
+- @body_class = "right-panel-layout"
+
 = form_tag delete_selected_user_messages_path(@current_user, :method => :post)  do
 
   - if params[:mailbox] == "sent"

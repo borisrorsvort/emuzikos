@@ -67,24 +67,26 @@ body {
   .left-panel-layout {
     .menu-panel-left {
       margin-left: 0;
-      .show-right & { margin-left: - 100%; }
     }
-
     .menu-panel-right {
       margin-right: -100%;
-      .show-right & { margin-right: 0; }
+    }
+    &.show-right {
+      .menu-panel-left { margin-left: -100%; }
+      .menu-panel-right { margin-left: 0; }
     }
   }
 
   .right-panel-layout {
     .menu-panel-left {
       margin-left: -100%;
-      .show-left & { margin-left: 0; }
     }
-
     .menu-panel-right {
       margin-right: 0;
-      .show-left & { margin-right: -100%; }
+    }
+    &.show-left {
+      .menu-panel-left { margin-left: 0; }
+      .menu-panel-right { margin-right: -100%; }
     }
   }
 
