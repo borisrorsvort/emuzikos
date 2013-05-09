@@ -37,6 +37,7 @@ $mini-profile-border-color: darken($content-bg-color, 5%) ;
 // panel nav
 
 $menuPanelColor: #22262c;
+$btn-nav-bg: lighten($menuPanelColor, 10%);
 
 @function emCalc($pxWidth) {
   @return $pxWidth / $baseFontSize * 1em;

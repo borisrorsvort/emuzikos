@@ -1,0 +1,26 @@
+.btn-nav {
+  background-color: $btn-nav-bg;
+  @include background(linear-gradient($btn-nav-bg, darken($btn-nav-bg, 5%)));
+  display: inline-block;
+  padding: 6px 10px;
+  position: relative;
+  top: 5px;
+  border: 1px solid darken($btn-nav-bg, 25%);
+  @include border-radius($baseBorderRadius);
+  @include ie7-restore-left-whitespace();
+  @include box-shadow(0 1px 0px rgba(lighten($btn-nav-bg, 10%), 0.2), inset 0 1px 0px rgba(lighten($btn-nav-bg, 10%), 0.2));
+  @include text-shadow(rgba(black, 0.7) 0 1px 1px);
+  color: #fff;
+  margin-bottom: 0; // For input.btn
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}

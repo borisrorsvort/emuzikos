@@ -33,6 +33,7 @@
 }
 
 .mini-profile--thumb {
+  max-height: 150px;
   max-height: 300px;
   overflow: hidden;
   position: relative;
@@ -92,7 +93,6 @@
   .mini-profile--thumb   {
     @include border-radius(0px);
     @include border-left-radius($baseBorderadius);
-
     width: 20%;
   }
 }
