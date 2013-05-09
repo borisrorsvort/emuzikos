@@ -26,13 +26,13 @@ module Emuzikos
     #config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
     config.autoload_paths << "#{config.root}/lib"
     #Set the Devise layout to home except user_registration_edit
-    config.to_prepare do
-      Devise::SessionsController.layout "home"
-      Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "home" }
-      Devise::ConfirmationsController.layout "home"
-      Devise::UnlocksController.layout "home"
-      Devise::PasswordsController.layout "home"
-    end
+    # config.to_prepare do
+    #   Devise::SessionsController.layout "home"
+    #   Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "home" }
+    #   Devise::ConfirmationsController.layout "home"
+    #   Devise::UnlocksController.layout "home"
+    #   Devise::PasswordsController.layout "home"
+    # end
     if Rails.env.production?
       config.middleware.insert_before Rack::Lock, Rack::NoWWW
     end

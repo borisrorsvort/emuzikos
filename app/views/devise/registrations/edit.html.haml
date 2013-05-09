@@ -2,6 +2,7 @@
 - description 'Edit your account, notification settings on Emuzikos.com and start to search for wanted bands and musicians'
 - set_meta_tags :canonical => request.url
 - headline t(:'.title')
+- @body_class = "right-panel-layout"
 
 - if @user == current_user
   - content_for :sub_nav do

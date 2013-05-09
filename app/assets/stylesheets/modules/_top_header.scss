@@ -11,6 +11,9 @@
   .brand {
     margin: 0 auto;
   }
+  .toggle {
+    @include animation(fadeIn 1s ease-in 1);
+  }
 }
 
 .navbar .btn, .navbar .btn-group {
