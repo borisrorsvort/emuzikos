@@ -22,5 +22,7 @@
   &:focus {
     color: #fff;
     text-decoration: none;
+    background-color: darken($btn-nav-bg, 5%);
+    @include background(linear-gradient(darken($btn-nav-bg, 5%), darken(darken($btn-nav-bg, 5%), 5%)));
   }
 }
