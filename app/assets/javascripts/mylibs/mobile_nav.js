@@ -8,6 +8,7 @@ var OBC = (function (OBC, $) {
             e.preventDefault();
             OBC.susyOffCanvasToggle.toggleClasses(this);
             OBC.susyOffCanvasToggle.toggleText(triggers);
+            return false;
         });
         OBC.susyOffCanvasToggle.bindCloseButton();
         return triggers;
@@ -21,6 +22,7 @@ var OBC = (function (OBC, $) {
         right.show();
         $('body').removeClass('show-left show-right');
         $('[data-trigger=close]').hide();
+        return false;
       });
     },
     toggleClasses: function (el) {
