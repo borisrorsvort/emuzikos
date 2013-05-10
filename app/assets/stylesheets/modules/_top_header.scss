@@ -12,7 +12,7 @@
     margin: 0 auto;
   }
   .toggle {
-    @include animation(fadeIn 1s ease-in 1);
+    @include animation(fadeIn 0.2s ease-in 0);
   }
 }
 

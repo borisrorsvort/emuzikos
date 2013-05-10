@@ -12,6 +12,12 @@ module ApplicationHelper
     "&bull;"
   end
 
+  def current_page_class(url)
+    if current_page?(url)
+      "current"
+    end
+  end
+
   def current_user_tracking_id
     current_user ? current_user.tracking_id : nil
   end

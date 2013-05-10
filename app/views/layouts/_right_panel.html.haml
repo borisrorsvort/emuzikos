@@ -4,29 +4,29 @@
       %h4= t(:'menu.messages.messages')
       %ul
         %li
-          = link_to user_messages_path(current_user), :class => "current" do
+          = link_to user_messages_path(current_user), class: current_page_class(user_messages_path(current_user)) do
             %i.icon-mail
             = t(:'menu.messages.inbox')
         %li
-          = link_to user_contacts_path(current_user) do
+          = link_to user_contacts_path(current_user), class: current_page_class(user_contacts_path(current_user)) do
             %i.icon-users
             = t(:'menu.users.contacts')
       %h4= t(:'menu.profile.show')
       %ul
         %li
-          = link_to edit_user_path(current_user) do
+          = link_to edit_user_path(current_user), class: current_page_class(edit_user_path(current_user)) do
             %i.icon-pencil
             = t(:'menu.profile.edit')
         %li
-          = link_to user_path(current_user) do
+          = link_to user_path(current_user), class: current_page_class(user_path(current_user)) do
             %i.icon-globe
             = t(:'menu.profile.public')
         %li
-          = link_to edit_user_registration_path(current_user) do
+          = link_to edit_user_registration_path(current_user), class: current_page_class(edit_user_registration_path(current_user)) do
             %i.icon-cog
             = t(:'menu.profile.account')
         %li
-          = link_to services_path do
+          = link_to services_path, class: current_page_class(services_path) do
             %i.icon-share
             = t(:'menu.profile.authentications')
       %h4= t(:'menu.messages.languages')

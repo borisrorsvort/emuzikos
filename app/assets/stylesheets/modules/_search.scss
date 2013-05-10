@@ -61,7 +61,7 @@
     @include box-sizing('border-box');
 
     &:hover {
-      @include box-shadow(lighten($menuPanelColor, 30%) 0 3px 1px inset);
+      @include box-shadow(lighten($menuPanelColor, 30%) 0 3px 0px inset);
       border-left-color: darken($menuPanelColor, 5%);
       border-right-color: lighten($menuPanelColor, 5%);
       background-color: $menuPanelColor;
@@ -76,7 +76,7 @@
       outline: 0;
       color: lighten($menuPanelColor, 40%);
       background-color: $menuPanelColor;
-      @include box-shadow(lighten($menuPanelColor, 30%) 0 3px 1px inset);
+      @include box-shadow(lighten($menuPanelColor, 30%) 0 3px 0px inset);
       border: none;
       border-left: 1px solid darken($menuPanelColor, 5%) !important;
       border-right: 1px solid lighten($menuPanelColor, 5%);

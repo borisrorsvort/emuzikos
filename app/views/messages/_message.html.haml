@@ -1,5 +1,5 @@
 %tr{:class => "message #{"unread" if !message.message_read?}"}
-  %td.delete_option= check_box_tag "delete[]", message.id
+
   - if message.sender && message.sender == current_user
     %td
       = link_to user_message_path(current_user, message) do
@@ -9,11 +9,13 @@
           -else
             = image_tag("backgrounds/avatar-default.gif", :alt => message.recipient.username)
     %td
-      = link_to user_message_path(current_user, message) do
-        = message.recipient ? h(message.recipient.username) : "N/A"
-    %td
-      = link_to user_message_path(current_user, message) do
-        = truncate(h(message.subject), :length => 50)
+      %p
+        = link_to user_message_path(current_user, message) do
+          = message.recipient ? h(message.recipient.username) : "N/A"
+
+      %p
+        = link_to user_message_path(current_user, message) do
+          = truncate(h(message.body), :length => 50)
     %td
       = h message.created_at.to_s(:long)
 
@@ -33,3 +35,4 @@
         = truncate(h(message.subject), :length => 50)
     %td
       = h message.created_at.to_s(:long)
+  %td.delete_option= check_box_tag "delete[]", message.id

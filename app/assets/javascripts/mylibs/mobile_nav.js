@@ -64,3 +64,29 @@ var OBC = (function (OBC, $) {
   return OBC;
 
 }(OBC || {}, jQuery));
+
+
+// Swipe navigation
+$(document).ready(function() {
+  $('body').hammer().on('swipeleft', function(event) {
+    event.gesture.preventDefault();
+    $('html, body').animate({scrollTop:0}, 0); // Scroll top
+    if ($('body').hasClass('show-left')) {
+      $('[data-trigger=close]').click();
+    } else {
+      $('[href="#right"]').click();
+    }
+    return false;
+  });
+  $('body').hammer().on('swiperight', function(event) {
+    event.gesture.preventDefault();
+    $('html, body').animate({scrollTop:0}, 0); // Scroll top
+    if ($('body').hasClass('show-right')) {
+      $('[data-trigger=close]').click();
+    } else {
+      $('[href="#left"]').click();
+    }
+    return false;
+  });
+});
+

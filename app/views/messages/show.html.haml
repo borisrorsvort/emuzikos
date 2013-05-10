@@ -29,7 +29,7 @@
 %h4= t(:'messages.message')
 = h simple_format(@message.body)
 
-- if @message.recipient && @message.recipient == @current_user
-  .form-actions
+.form-actions
+  - if @message.recipient && @message.recipient == @current_user
     = link_to t(:'buttons.reply'), new_user_message_path(@current_user, :reply_to => @message.sender.id, :old_message => @message), :class => "btn btn-primary"
-
+  = link_to t('buttons.cancel'), user_messages_path(current_user), class: 'btn'
