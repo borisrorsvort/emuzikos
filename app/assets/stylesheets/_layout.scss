@@ -104,6 +104,11 @@ header, footer {
   clear: both;
 }
 
+#footer {
+  min-height: 200px;
+  @include box-shadow(black 0 3px 3px inset);
+  padding: 20px;
+}
 .main {
   @include box-sizing(border-box);
   @include box-shadow(#333 0 0 3px);

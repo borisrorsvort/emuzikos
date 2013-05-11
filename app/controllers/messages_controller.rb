@@ -25,6 +25,9 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
     @old_message = Message.find(params[:old_message])
+    @message.sender = @current_user
+    @message.recipient = User.find(params[:reply_to])
+
     if params[:reply_to]
       @message.subject = "Re: #{@old_message.subject}"
       @message.body = "\n\n*Original message*\n\n #{@old_message.body}"
@@ -48,6 +51,13 @@ class MessagesController < ApplicationController
       redirect_to :back
       gflash :error => true
     end
+  end
+
+  def destroy
+    @message = Message.find(params[:id])
+    @message.mark_deleted(@current_user) unless @message.nil?
+
+    redirect_to :back
   end
 
   def delete_selected

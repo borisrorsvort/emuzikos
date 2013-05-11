@@ -7,6 +7,7 @@
           = link_to user_messages_path(current_user), class: current_page_class(user_messages_path(current_user)) do
             %i.icon-mail
             = t(:'menu.messages.inbox')
+            = unread_messages_count if current_user.unread_messages?
         %li
           = link_to user_contacts_path(current_user), class: current_page_class(user_contacts_path(current_user)) do
             %i.icon-users
@@ -43,69 +44,12 @@
     %section.main-nav
       %h4= t('menu.connexion')
       %ul
-        %li= link_to t(:'menu.signup'),new_user_registration_path
-        %li= link_to t(:'menu.login'), new_user_session_path
+        %li
+          = link_to t(:'menu.signup'),new_user_registration_path, class: current_page_class(new_user_registration_path)
+        %li= link_to t(:'menu.login'), new_user_session_path, class: current_page_class(new_user_session_path)
       %h4= t('menu.more')
       %ul
         %li
           %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"}
             = t(:'menu.help')
-        %li= link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
-/       .nav-collapse
-/         %ul.nav
-/           %li
-/             =link_to users_url do
-/               %i.icon-search.icon-white
-/               = t(:'menu.all_users')
-/           - if user_signed_in?
-/             %li.dropdown
-/               =link_to "#", :class => "dropdown-toggle", :data => {"toggle" => "dropdown"} do
-/                 %i.icon-user.icon-white
-/                 = t(:'menu.profile.show')
-/                 %b.caret
-/               %ul.dropdown-menu
-/                 %li= link_to t(:'menu.profile.edit'), edit_user_path(current_user)
-/                 %li= link_to t(:'menu.profile.public'),  user_path(current_user)
-/                 %li= link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-/                 %li= link_to t(:'menu.profile.authentications'), services_path
-/             %li.dropdown
-/               =link_to "#", :class => "dropdown-toggle", :data => {"toggle" => "dropdown"} do
-/                 %i.icon-inbox.icon-white
-/                 = t(:'menu.messages.messages')
-/                 = unread_messages_count if current_user.unread_messages?
-/                 %b.caret
-/               %ul.dropdown-menu
-/                 %li= link_to t(:'menu.messages.inbox'), user_messages_path(current_user), :class => "current"
-/                 %li= link_to t(:'menu.messages.sent_messages'), user_messages_path(current_user, :mailbox => :sent)
-/                 %li= link_to t(:'menu.users.contacts'), user_contacts_path(current_user)
-/           %li
-/             =link_to "/social_share/invite_friends" do
-/               %i.icon-share.icon-white
-/               = t(:'menu.share')
-/         %ul.nav.pull-right
-/           %li.divider-vertical
-/           %li.dropdown
-/             =link_to "#", :class => "dropdown-toggle", :data => {"toggle" => "dropdown"} do
-/               %i.icon-comment.icon-white
-/               = t(:'menu.messages.languages')
-/               %b.caret
-/             %ul.dropdown-menu
-/               %li= link_to t(:'languages.french'), root_url(:subdomain => 'fr'), :title => t(:'footer.emuzikos_language', :language => t(:'languages.french'))
-/               %li= link_to t(:'languages.english'), "#{request.protocol}#{request.domain}", :title => t(:'footer.emuzikos_language', :language => t(:'languages.english'))
-
-/           - if user_signed_in?
-/             %li
-/               %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog (powered by UserVoice)"}
-/                 =t(:'menu.help')
-/             %li= link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
-/             %li= link_to t(:'menu.logout'), destroy_user_session_path, :class => "logout", :rel => "nofollow"
-/           -else
-/             %li= link_to t(:'menu.signup'),new_user_registration_path
-/             %li= link_to t(:'menu.login'), new_user_session_path
-/             %li
-/               %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"}
-/                 = t(:'menu.help')
-/             %li= link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
-
-
-
+        %li= link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow", class: current_page_class(testimonials_path)

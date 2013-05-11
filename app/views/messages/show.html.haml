@@ -2,14 +2,6 @@
 - headline h(@message.subject)
 - @body_class = "right-panel-layout"
 
-- content_for :sub_nav do
-  #actions_set
-    = link_to :back, :class => "btn back" do
-      %i.icon-arrow-left
-      = t(:'buttons.back', :model => t(:'messages.inbox.title'))
-
-  .clear
-
 .well
   %span= t(:'messages.from')
   - if @message.sender
@@ -25,11 +17,10 @@
   %span= t(:'messages.received')
   = @message.created_at.to_s(:long)
 
+.message
+  = simple_format(h(@message.body))
 
-%h4= t(:'messages.message')
-= h simple_format(@message.body)
-
-.form-actions
-  - if @message.recipient && @message.recipient == @current_user
-    = link_to t(:'buttons.reply'), new_user_message_path(@current_user, :reply_to => @message.sender.id, :old_message => @message), :class => "btn btn-primary"
-  = link_to t('buttons.cancel'), user_messages_path(current_user), class: 'btn'
+  .form-actions
+    - if @message.recipient && @message.recipient == @current_user
+      = link_to t(:'buttons.reply'), new_user_message_path(@current_user, :reply_to => @message.sender.id, :old_message => @message), :class => "btn btn-primary"
+    = link_to t('buttons.cancel'), user_messages_path(current_user), class: 'btn-cancel'

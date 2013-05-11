@@ -21,6 +21,16 @@
   margin-top: $gutter-width/2;
 }
 
+.right-nav-trigger{
+  position: relative;
+  .badge {
+    position: absolute;
+    top: -5px;
+    left: -10px;
+  }
+}
+
+
 @include at-breakpoint($tablet-cols) {
   .right-panel-layout {
     .right-nav-trigger {
