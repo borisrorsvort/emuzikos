@@ -75,13 +75,20 @@ form,
     .control-group {
       margin-bottom: $baseLineHeight;
       @include clearfix();
+      .btn-group {
+        display: block;
+      }
     }
     // Float the labels left
     .control-label {
       float: left;
       width: $horizontalComponentOffset - 20;
-      padding-top: 5px;
+      padding-top: 0;
       text-align: right;
+    }
+    .controls > .radio:first-child,
+    .controls > .checkbox:first-child {
+      padding-top: 4px;
     }
     // Move over all input controls and content
     .controls {
@@ -109,6 +116,13 @@ form,
       + .help-block {
         margin-top: $baseLineHeight / 2;
       }
+    }
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    textarea,
+    .select2-container {
+      margin-top: -5px;
     }
     // Move over buttons in .form-actions to align with .controls
     .form-actions {

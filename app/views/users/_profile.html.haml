@@ -8,7 +8,7 @@
             =t(:"users.types.#{user.user_type}")
           = t(:'users.from')
           = user.zip
-          = i18n_country(user) rescue "N/A"
+          = i18n_country(user) rescue ""
     - else
       .user-profile--map
       %h1.username= user.username.capitalize

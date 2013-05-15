@@ -1,0 +1,24 @@
+
+
+.signup-form--sidebar,
+.signup-form--form {
+  margin-bottom: $gutter-width * 2;
+  @include span-columns($tablet-cols, $mobile-cols);
+}
+
+@include at-breakpoint($tablet-cols) {
+  .signup-form--sidebar {
+    @include span-columns($tablet-cols, $tablet-cols);
+  }
+  .signup-form--form {
+    @include span-columns($tablet-cols, $tablet-cols);
+  }
+}
+@include at-breakpoint($desktop-cols) {
+  .signup-form--sidebar {
+    @include span-columns($desktop-cols/2, $desktop-cols);
+  }
+  .signup-form--form {
+    @include span-columns(($desktop-cols/2) omega, $desktop-cols);
+  }
+}

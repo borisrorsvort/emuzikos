@@ -8,34 +8,32 @@
   :javascript
     $(document).ready(function() {
       mixpanel.track('Viewed signup page');
+      LocationAutocomplete.init("#{t(:'activerecord.attributes.user.zip')}");
     });
 
-%header.page-header
-  %h1= t(:'.title')
 
-= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large" do
-  %i.icon-facebook
-  = t(:"devise.signup_with", :provider => "Facebook")
+.signup-form
+  .signup-form--sidebar
+    %header.page-header
+      %h1= t(:'.title')
 
-
-%hr.clearfix
-%a.normal_login_trigger{"data-target" => ".normal_login", "data-toggle" => "collapse"}= t(:"devise.use_the_normal_form")
-.normal_login.collapse
-  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-horizontal"}, :validate => true) do |f|
-    =# devise_error_messages!
-    = f.input :preferred_language, :as => :hidden, :value => request.subdomains.first.present? ? "fr" : "en"
-    = f.input :username, :label => t(:'activerecord.attributes.user.username')
-    = f.input :email, :label => t(:'activerecord.attributes.user.email')
-    = f.input :password, :label => t(:'activerecord.attributes.user.password'), :hint => t(:'tooltips.password')
-    = f.input :password_confirmation, :label => t(:'activerecord.attributes.user.password_confirmation')
-    = f.input :user_type, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio_buttons, wrapper_html: {class: "btn-radio-toggles"}, checked: "musician"
-    .form-actions
-      = f.submit(t(:'buttons.submit'), :type => "submit", :class => "btn btn-large btn-primary")
-  .clearfix
-%hr.clearfix
-#remote.services_login
-  .shared_links
-    = render  "devise/shared/links"
+    = link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large" do
+      %i.icon-facebook
+      = t(:"devise.signup_with", :provider => "Facebook")
+    .shared_links
+      = render  "devise/shared/links"
+  .signup-form--form
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form"}, :validate => true) do |f|
+      =# devise_error_messages!
+      = f.input :preferred_language, :as => :hidden, :value => request.subdomains.first.present? ? "fr" : "en"
+      = f.input :username, label: false, :placeholder => t(:'activerecord.attributes.user.username')
+      = f.input :email, label: false, :placeholder => t(:'activerecord.attributes.user.email')
+      = f.input :password, label: false, :placeholder => t(:'activerecord.attributes.user.password'), :hint => t(:'tooltips.password')
+      = f.input :password_confirmation, label: false, :placeholder => t(:'activerecord.attributes.user.password_confirmation')
+      = f.input :zip, label: false, input_html: {id: 'zip_autocomplete'}
+      = f.input :user_type, label: false, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio_buttons, wrapper_html: {class: "btn-radio-toggles"}, checked: "musician"
+      .form-actions
+        = f.submit(t(:'buttons.submit'), :type => "submit", :class => "btn btn-large btn-primary")
 %hr.clearfix
 %p= t(:'.newsletter_agreement').html_safe
 .clear

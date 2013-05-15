@@ -35,7 +35,7 @@ fr:
         username: "Nom d'utilisateur"
         visible: Visible
         youtube_video_id: "Numéros Identifiant la video youtube"
-        zip: "Code postal"
+        zip: "Ville"
     errors:
       models:
         user:

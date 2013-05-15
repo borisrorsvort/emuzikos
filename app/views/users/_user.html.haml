@@ -12,8 +12,10 @@
             = user.username.titleize
             = " - "
             %span.muted
-              = user.zip + ", "
-              = i18n_country(user)
+              = user.zip
+              - if user.country.present?
+                = ","
+                = i18n_country(user)
 
       .section.user-type
         .badge.badge-info.title

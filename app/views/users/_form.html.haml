@@ -1,18 +1,17 @@
+- content_for :scripts do
+  :javascript
+    $(document).ready(function() {
+      LocationAutocomplete.init("#{t(:'activerecord.attributes.user.zip')}");
+    });
+
 = simple_form_for @user, :html => { :multipart => true, :class => "form-horizontal" } do |f|
   = f.error_messages
-
-  / %h3= t(:"location", :scope => :users)
-  = f.input :zip, :label => t(:'activerecord.attributes.user.zip')
-  .control-group
-    = f.label t(:'activerecord.attributes.user.country'), :class => "select control-label"
-    .controls
-      = f.country_select :country, selected: @user.country
+  = f.input :zip, :label => t(:'activerecord.attributes.user.zip'), input_html: {id: 'zip_autocomplete'}
   = f.input :avatar, :as => :file, :label =>  t(:'activerecord.attributes.user.avatar')
   - if @user.avatar.present?
     .control-group
       .controls
         %p= image_tag(@user.avatar.url(:gallery))
-  / %h3= t(:'users.your_classified_infos')
   = f.input :user_type, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio_buttons, wrapper_html: {class: "btn-radio-toggles"}
   = f.association :instruments, :label_method => :translated_name, :hint => (t(:"instruments_in_band_notice", :scope => [:users, :edit])).html_safe, :label => t(:'activerecord.attributes.user.instruments'),  :input_html => { :class => "chosen multiple_select" }
   .control-group
