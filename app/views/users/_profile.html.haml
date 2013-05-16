@@ -87,5 +87,5 @@
   %section#contactform
     .profile--contacform--title
       %h4= t(:'messages.new.title')
-    = simple_form_for @message, :url => user_messages_path(@current_user), :html => { :class => ""} do |f|
+    = simple_form_for @message, :url => user_messages_path(@current_user), remote: true, :html => { :class => ""} do |f|
       = render :partial => "messages/form", :object => f

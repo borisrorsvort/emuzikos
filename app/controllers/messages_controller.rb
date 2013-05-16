@@ -20,36 +20,56 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.read_message(params[:id], current_user)
+
+    @reply_to = @message.sender.id
+
+    @new_message = Message.new
+    @new_message.body = "\n\n*Original message*\n\n #{@message.body}"
+    @new_message.sender = @current_user
+    @new_message.recipient = @message.sender
   end
 
-  def new
-    @message = Message.new
-    @old_message = Message.find(params[:old_message])
-    @message.sender = @current_user
-    @message.recipient = User.find(params[:reply_to])
+  # def new
+  #   @message = Message.new
+  #   @old_message = Message.find(params[:old_message])
+  #   @message.sender = @current_user
+  #   @message.recipient = User.find(params[:reply_to])
 
-    if params[:reply_to]
-      @message.subject = "Re: #{@old_message.subject}"
-      @message.body = "\n\n*Original message*\n\n #{@old_message.body}"
-    end
-  end
+  #   if params[:reply_to]
+  #     @message.subject = "Re: #{@old_message.subject}"
+  #     @message.body = "\n\n*Original message*\n\n #{@old_message.body}"
+  #   end
+  # end
 
   def create
     @message = Message.new(message_params)
     @message.sender = @current_user
     @message.recipient = User.find(params[:message][:to])
 
-    if @message.save
-      redirect_to user_messages_path(@current_user)
-      gflash :success => true
-      gflash :notice => t(:'gflash.testimonials.please_write', :link => new_testimonial_url) if @current_user.testimonials.first.nil?
-      mixpanel.track 'Message created'
-      if @message.recipient.prefers_message_notifications == true
-        Notifier.user_message(@message, @current_user, @message.recipient).deliver
+    respond_to do |format|
+      if @message.save
+        mixpanel.track 'Message created'
+
+        format.html {
+          redirect_to :back, succss: t('gflash.messages.create.success')
+          # redirect_to user_messages_path(@current_user)
+          gflash :success => true
+        }
+        format.js {
+          flash.now[:success] = t('gflash.messages.create.success')
+        }
+
+
+        Notifier.user_message(@message, @current_user, @message.recipient).deliver if @message.recipient.prefers_message_notifications == true
+      else
+        format.html {
+          redirect_to :back
+          gflash :error => true
+        }
+        format.js {
+          flash.now[:error] = t('gflash.messages.create.error')
+        }
       end
-    else
-      redirect_to :back
-      gflash :error => true
     end
   end
 
@@ -76,6 +96,6 @@ class MessagesController < ApplicationController
   private
 
     def message_params
-      params.require(:message).permit(:to, :subject, :body, :reply_to)
+      params.require(:message).permit(:to, :body, :reply_to)
     end
 end

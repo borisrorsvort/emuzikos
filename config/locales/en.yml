@@ -73,7 +73,7 @@ en:
     registrations:
       cancel_my_account: "Cancel my account"
     remove_from_contact_list: Remove
-    reply: Reply
+    reply: Submit Reply
     search:
       musicians: Search musicians
       bands: Search bands
@@ -157,7 +157,7 @@ en:
         remember_me: "Remember me"
         title: "Log in to your account"
       signed_in: "Logged in in successfully."
-      signed_out: "Logged out successfully."
+      signed_out: ""
     shared:
       links:
         dont_have_account_yet: "Don't have an account yet?"
@@ -193,6 +193,7 @@ en:
     messages:
       create:
         success: "Your message was successfully sent!"
+        error: 'Your message has not been sent. Try again'
       delete_selected:
         success: "Deleted! Congrats"
     services:

@@ -1,12 +1,12 @@
 = link_to user_message_path(current_user, message), :class => "media message message-inbox #{"unread" if !message.message_read?}" do
   .pull-left
-    - if message.recipient.avatar.present?
-      = image_tag(message.recipient.avatar.url(:gallery), :alt => message.recipient.username, class: 'media-oject')
+    - if message.sender.avatar.present?
+      = image_tag(message.recipient.avatar.url(:gallery), :alt => message.sender.username, class: 'media-oject')
     -else
-      = image_tag("backgrounds/avatar-default.gif", :alt => message.recipient.username, class: 'media-oject')
+      = image_tag("backgrounds/avatar-default.gif", :alt => message.sender.username, class: 'media-oject')
   .media-body
     %p
-      %strong= message.recipient ? h(message.recipient.username) : "N/A"
+      %strong= message.sender ? h(message.sender.username) : "N/A"
     %p
       = truncate(h(message.body), :length => 50, :separator => ' ')
     %p.muted

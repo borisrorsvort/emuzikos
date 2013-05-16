@@ -67,6 +67,7 @@
 
 .user-profile--info-box {
   @include span-columns(6, $tablet-cols-main);
+  overflow: hidden;
 }
 
 @include at-breakpoint($tablet-cols) {

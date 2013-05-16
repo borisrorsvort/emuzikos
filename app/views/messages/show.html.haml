@@ -20,7 +20,6 @@
 .message
   = simple_format(h(@message.body))
 
-  .form-actions
-    - if @message.recipient && @message.recipient == @current_user
-      = link_to t(:'buttons.reply'), new_user_message_path(@current_user, :reply_to => @message.sender.id, :old_message => @message), :class => "btn btn-primary"
-    = link_to t('buttons.cancel'), user_messages_path(current_user), class: 'btn-cancel'
+.message
+  = simple_form_for @new_message, :url => user_messages_path(@current_user), :html => { :class => "form"} do |f|
+    = render :partial => "messages/form", :object => f
