@@ -51,14 +51,13 @@ class MessagesController < ApplicationController
         mixpanel.track 'Message created'
 
         format.html {
-          redirect_to :back, succss: t('gflash.messages.create.success')
-          # redirect_to user_messages_path(@current_user)
+          # redirect_to :back, success: t('gflash.messages.create.success')
+          redirect_to user_messages_path(@current_user), success: t('gflash.messages.create.success')
           gflash :success => true
         }
         format.js {
           flash.now[:success] = t('gflash.messages.create.success')
         }
-
 
         Notifier.user_message(@message, @current_user, @message.recipient).deliver if @message.recipient.prefers_message_notifications == true
       else

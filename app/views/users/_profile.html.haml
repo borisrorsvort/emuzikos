@@ -9,6 +9,10 @@
           = t(:'users.from')
           = user.zip
           = i18n_country(user) rescue ""
+        - if current_user && current_user != @user && !current_user.is_friend_with(@user)
+          = link_to friendships_path(:friend_id => @user.id), :method => :post, :class => "add_to_contact_list" do
+            %i.icon-bookmark
+            = t(:'buttons.add_to_contact_list')
     - else
       .user-profile--map
       %h1.username= user.username.capitalize
