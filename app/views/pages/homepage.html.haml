@@ -9,11 +9,15 @@
     tinyProfiles = {
       init: function() {
         profiles = $('.tiny-profile-member');
-        profiles.each(function() {
-          Images.adjustProfileThumbs(image);
+        $.each(profiles, function(index, val) {
+          var image = $(this).find('img');
+          image.imagesLoaded({
+            callback: function ($images, $proper, $broken) {
+              $images.resizeToParent();
+            }
+          });
           var animation_class = $(this).attr('data-animated-class');
           $(this).addClass(animation_class).delay(600).addClass('animated');
-          var image = $(this).find('img');
         });
       }
     }
@@ -23,16 +27,18 @@
     $(window).on('load', function() {
       tinyProfiles.init();
     });
+    $(window).smartresize(function() {
+      tinyProfiles.init();
+    });
 
 .home-wrapper
   %header
-    #main-icon
+    .main-icon
       = image_tag('homepage/icon-emuzikos.png', :alt => "emuzikos-icon")
       %h5 EMUZIKOS
-    %h1#main_title
+    %h1
       = t(:'.title')
     %hr.fade-out
-    =# link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "signup_button"
     .centered
       = facebook_button
   .home-content
@@ -82,109 +88,3 @@
     .clearfix
     .centered
       = facebook_button
-= content_for :features do
-  .features_columns
-    .inner_block.home_feature
-      %h3.block_separator= t(:'.subtitle')
-
-      .columns
-        .inner_column
-          %h4= t(:'.home_feature.sign_up.title')
-          %p= t(:'.home_feature.sign_up.body')
-      .columns.home_testimonials
-        .inner_column
-          %h4= t(:'.home_feature.advantage.title')
-          %p= t(:'.home_feature.advantage.body')
-      .columns
-        .inner_column
-          %h4= t(:'.home_feature.privacy.title')
-          %p= t(:'.home_feature.privacy.body')
-
-      .clearfix
-
-      .columns
-        .inner_column
-          %h4= t(:'.home_feature.external_services.title')
-          %p
-            = t(:'.home_feature.external_services.body')
-          %ul
-            %li= t(:'.home_feature.external_services.services.soundcloud').html_safe
-            %li= t(:'.home_feature.external_services.services.songkick').html_safe
-            %li= t(:'.home_feature.external_services.services.youtube').html_safe
-
-      .columns
-        .inner_column
-          %h4= t(:'.home_feature.no_credit_card.title')
-          %p= t(:'.home_feature.no_credit_card.body')
-      .columns
-        .inner_column
-          %h4= t(:'.home_feature.sharing.title')
-          %p= t(:'.home_feature.sharing.body')
-      .clearfix
-
-    .note_circle
-    .inner_block.home_feature
-      %h3.block_separator= t(:'.sections.screenshots.title')
-      .columns
-        .inner_column
-          %h4= t(:'.sections.screenshots.search_page')
-          =link_to(image_tag("app-samples/search-thumb.jpg"), "#app_sample_search", :data => { "toggle" => "modal" }, :class => "app_sample_thumb")
-          #app_sample_search.modal.fade.xlarge{:style => 'display:none;'}
-            %section.modal-header
-              =link_to "×", "#", :data => { "dismiss" => "modal"}, :class => "close"
-              %h5= t(:'.sections.screenshots.search_page')
-            %section#modal-body
-              = image_tag("app-samples/search-normal.jpg")
-      .columns
-        .inner_column
-          %h4= t(:'.sections.screenshots.profile')
-          =link_to(image_tag("app-samples/profile-thumb.jpg"), "#app_sample_profile", :data => { "toggle" => "modal" }, :class => "app_sample_thumb")
-          #app_sample_profile.modal.fade.xlarge{:style => 'display:none;'}
-            %section.modal-header
-              =link_to "×", "#", :data => { "dismiss" => "modal"}, :class => "close"
-              %h5= t(:'.sections.screenshots.profile')
-            %section#modal-body
-              = image_tag("app-samples/profile-normal.jpg")
-
-      .columns
-        .inner_column
-          %h4= t(:'.sections.screenshots.inbox')
-          =link_to(image_tag("app-samples/inbox-thumb.jpg"), "#app_sample_inbox", :data => { "toggle" => "modal" }, :class => "app_sample_thumb")
-          #app_sample_inbox.modal.fade.xlarge{:style => 'display:none;'}
-            %section.modal-header
-              =link_to "×", "#", :data => { "dismiss" => "modal"}, :class => "close"
-              %h5= t(:'.sections.screenshots.inbox')
-            %section#modal-body
-              = image_tag("app-samples/inbox-normal.jpg")
-
-      .clearfix
-    - unless @testimonials.empty?
-      .note_circle
-      .latest_testimionals
-        .inner_block.home_testimonials
-          %h3.block_separator= t(:'.sections.testimonials.title')
-          - @testimonials.in_groups_of(2, false) do |group|
-            .t_column
-              - for testimonial in group do
-                .testimonial
-                  %span.avatar.small
-                    - if testimonial.user.avatar.present?
-                      = image_tag(testimonial.user.avatar.url(:gallery))
-                    -else
-                      = image_tag("backgrounds/avatar-default.gif")
-
-                  %div.text
-                    .author
-                      = testimonial.created_at.strftime('%b %d, %Y')
-                      = t(:'common.by')
-                      = testimonial.user_username
-                    = truncate(testimonial.body, :length => 500, :omission =>"...")
-                    - if testimonial.body.length > 500
-                      =link_to("read more", "#", "data-reveal-id" => "testimonial_full_#{testimonial.id}", :class => "testimonial_read_more")
-                      %div{ :id => "testimonial_full_#{testimonial.id}", :class => "reveal-modal"}
-                        %p= testimonial.body
-                        %a.close-reveal-modal ×
-        .clearfix
-    .clearfix
-    .center
-      = link_to t(:'buttons.home_signup'), new_user_registration_path, :class => "signup_button"
