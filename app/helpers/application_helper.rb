@@ -44,6 +44,13 @@ module ApplicationHelper
     end
   end
 
+  def facebook_button
+    link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary centered" do
+      content_tag(:i, '', class: "icon-facebook") +
+      t(:"devise.signin_with", :provider => "Facebook")
+    end
+  end
+
   private
 
     def add_class(name, attrs)

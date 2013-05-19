@@ -16,6 +16,9 @@ a:active {
   margin: 0;
 }
 
+.invisible-opacity {
+  @include opacity(0);
+}
 .borderless {
   border: 0;
 }
@@ -129,4 +132,36 @@ form,
       padding-left: $horizontalComponentOffset;
     }
   }
+}
+
+.centered {
+  text-align: center;
+}
+
+
+blockquote {
+  padding: 0.25em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+  border: none;
+}
+blockquote:before {
+  display: block;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -$gutter-width;
+  top: -20px;
+  color: #7a7a7a;
+}
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite:before {
+  content: "\2014 \2009";
 }
