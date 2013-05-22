@@ -78,13 +78,16 @@
           %h4= t(:'.home_feature.sharing.title')
           %p= t(:'.home_feature.sharing.body')
       .home-content--features--columns.home-content--quotes
-        %h3.home-content--quotes--title= t(:'.subtitle')
+        %h4.home-content--quotes--title= t(:'.subtitle')
         %blockquote
           %p Emuzikos is a good application for musicians, bands and agents of small groups to be aware of. It can help connect these artists to gigs and they could find some additional benefits in the classifieds search.
           %cite by AppAppeal
         %blockquote
           %p  I have found that newer companies in the startup space have more ambitious goals about accomplishing their work with serious gratification.
           %cite by DevGarage
+        %hr
+        .feature-block
+          %h4= t(:'.sign_up')
+        = render 'devise/registrations/signup_form', locals: {resource: resource}
     .clearfix
-    .centered
-      = facebook_button
+

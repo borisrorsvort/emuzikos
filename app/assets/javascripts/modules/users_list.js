@@ -16,6 +16,21 @@ UserList = {
   init: function() {
     UserList.animateProfiles();
     UserList.initInfiniteLoad();
+    UserList.resizeMiniThumb($('.mini-profile'));
+  },
+  resizeMiniThumb: function(elements) {
+    $.each(elements, function(index, val) {
+      var image = $(this).find('img');
+      var height = $(this).find('.mini-profile--inner').height();
+      image.imagesLoaded({
+        callback: function ($images, $proper, $broken) {
+          $images.parent().css('height', height);
+          $images.resizeToParent();
+          var animation_class = $images.attr('data-animated-class');
+          $images.addClass(animation_class).delay(600).addClass('animated');
+        }
+      });
+    });
   },
   initInfiniteLoad: function() {
     $('.mini-profiles').infinitescroll({
@@ -27,6 +42,7 @@ UserList = {
       prefill: true
     },function(arrayOfNewElems){
       RemoteProfile.init();
+      UserList.resizeMiniThumb(arrayOfNewElems);
     });
   },
   animateProfiles: function() {

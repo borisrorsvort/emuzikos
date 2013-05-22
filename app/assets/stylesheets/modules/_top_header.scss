@@ -51,4 +51,8 @@
   position: relative;
   top: 10px;
   color: #fff;
+  &:hover {
+    text-decoration:  none;
+    color: #fff;
+  }
 }

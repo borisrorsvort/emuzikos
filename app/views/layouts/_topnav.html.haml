@@ -9,9 +9,9 @@
     %ul.pull-right
       %li
         %a.btn-nav.right-nav-trigger.toggle{:href => "#right"}
-          %i.icon-user
+          %i.icon-list
           - if user_signed_in?
             = unread_messages_count if current_user.unread_messages?
         %a.btn-nav.toggle{href: "#", style: "display:none;", data: {trigger: 'close'}}
           %i.icon-cancel
-    %span.logo EMUZIKOS
+    = link_to 'EMUZIKOS', root_path, class: "logo"

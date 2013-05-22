@@ -386,6 +386,7 @@ en:
   pages:
     homepage:
       description: "Looking for a local musician or band mates? Search and submit musicians classifieds"
+      sign_up: Create your profile
       home_feature:
         advantage:
           body: "You will get a fully customizable profile, a private message inbox, and an awesome musicians, bands & agents database to search from."
@@ -560,6 +561,7 @@ en:
       tracks: Tracks
       users_nearby: "Other users nearby"
       youtube_video: "Youtube video"
+      login_before_messaging: 'You must be logged in to be able to send a message'
     types:
       agent: Agent
       baglama: baglama
