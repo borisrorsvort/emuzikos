@@ -25,7 +25,7 @@
 
 @import "susy";
 
-@import 'bootstrap_overwrite/emuzikos_bootstrap';
+@import 'bootstrap_overwrite/variables';
 
 // Core variables and mixins
 @import "twitter/bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
@@ -79,10 +79,15 @@
 
 // Utility classes
 @import "twitter/bootstrap/utilities"; // Has to be last to override when necessary
-
+@import 'bootstrap_overwrite/emuzikos_bootstrap';
 
 @import 'variables';
 @import "utils";
+@import 'type';
 @import 'layout';
 @import 'modules/**/*';
 @import 'sections/**/*';
+
+body{
+  background-color:red ;
+}

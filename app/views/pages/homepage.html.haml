@@ -53,41 +53,58 @@
           = render partial: 'tiny_profile', locals: {user: user, fade: 'right'}
     .home-content--features
       .home-content--features--columns.home-content--features
-        .feature-block
-          %h4= t(:'.home_feature.sign_up.title')
-          %p= t(:'.home_feature.sign_up.body')
-        .feature-block
-          %h4= t(:'.home_feature.advantage.title')
-          %p= t(:'.home_feature.advantage.body')
-        .feature-block
-          %h4= t(:'.home_feature.privacy.title')
-          %p= t(:'.home_feature.privacy.body')
-        .feature-block
-          %h4= t(:'.home_feature.external_services.title')
-          %p
-            = t(:'.home_feature.external_services.body')
-          %ul
-            %li= t(:'.home_feature.external_services.services.soundcloud').html_safe
-            %li= t(:'.home_feature.external_services.services.songkick').html_safe
-            %li= t(:'.home_feature.external_services.services.youtube').html_safe
+        .box
+          .box-header
+            %h4= t(:'.home_feature.sign_up.title')
+          .box-body
+            %p= t(:'.home_feature.sign_up.body')
+        .box
+          .box-header
+            %h4= t(:'.home_feature.advantage.title')
+          .box-body
+            %p= t(:'.home_feature.advantage.body')
+        .box
+          .box-header
+            %h4= t(:'.home_feature.privacy.title')
+          .box-body
+            %p= t(:'.home_feature.privacy.body')
+        .box
+          .box-header
+            %h4= t(:'.home_feature.external_services.title')
+          .box-body
+            %p
+              = t(:'.home_feature.external_services.body')
+            %ul
+              %li= t(:'.home_feature.external_services.services.soundcloud').html_safe
+              %li= t(:'.home_feature.external_services.services.songkick').html_safe
+              %li= t(:'.home_feature.external_services.services.youtube').html_safe
+        .box
+          .box-header
+            %h4= t(:'.home_feature.no_credit_card.title')
+          .box-body
+            %p= t(:'.home_feature.no_credit_card.body')
+        .box
+          .box-header
+            %h4= t(:'.home_feature.sharing.title')
+          .box-body
+            %p= t(:'.home_feature.sharing.body')
 
-        .feature-block
-          %h4= t(:'.home_feature.no_credit_card.title')
-          %p= t(:'.home_feature.no_credit_card.body')
-        .feature-block
-          %h4= t(:'.home_feature.sharing.title')
-          %p= t(:'.home_feature.sharing.body')
       .home-content--features--columns.home-content--quotes
-        %h4.home-content--quotes--title= t(:'.subtitle')
-        %blockquote
-          %p Emuzikos is a good application for musicians, bands and agents of small groups to be aware of. It can help connect these artists to gigs and they could find some additional benefits in the classifieds search.
-          %cite by AppAppeal
-        %blockquote
-          %p  I have found that newer companies in the startup space have more ambitious goals about accomplishing their work with serious gratification.
-          %cite by DevGarage
-        %hr
-        .feature-block
-          %h4= t(:'.sign_up')
-        = render 'devise/registrations/signup_form', locals: {resource: resource}
+        .box
+          .box-header
+            %h4t= t(:'.subtitle')
+          .box-body
+            %blockquote
+              %p Emuzikos is a good application for musicians, bands and agents of small groups to be aware of. It can help connect these artists to gigs and they could find some additional benefits in the classifieds search.
+              %cite by AppAppeal
+            %blockquote
+              %p  I have found that newer companies in the startup space have more ambitious goals about accomplishing their work with serious gratification.
+              %cite by DevGarage
+
+        .box
+          .box-header
+            %h4= t(:'.sign_up')
+          .box-body
+            = render 'devise/registrations/signup_form', locals: {resource: resource}
     .clearfix
 

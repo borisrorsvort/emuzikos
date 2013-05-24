@@ -1,0 +1,37 @@
+.box {
+  background-color: #fff;
+  border: 1px solid #c9c9c9;
+  @include border-top-radius($baseBorderRadius);
+  @include box-sizing(border-box);
+  margin-bottom: $baseLineHeight;
+  overflow: hidden;
+
+  form {
+    margin-bottom: 0;
+  }
+  hr {
+    margin: 1em -1em;
+  }
+  .box-actions {
+    margin: 0 -1em -1em -1em;
+  }
+}
+
+.box-header {
+  background: lighten(#c9c9c9, 15%);
+  @include background(linear-gradient(lighten(#c9c9c9, 20%), lighten(#c9c9c9, 15%)));
+  border-bottom: 1px solid #c9c9c9;
+  h1, h2, h3, h4, h5 {
+    font-size: 18px;
+    color: $gray;
+    line-height: $baseLineHeight;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.box-body,
+.box-header {
+  padding: 1em;
+}
+

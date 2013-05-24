@@ -4,60 +4,23 @@
 - headline t(:'.title')
 - @body_class = "right-panel-layout"
 
-- if @user == current_user
-  - content_for :sub_nav do
-    %ul.nav.nav-tabs
-      %li
-        = link_to edit_user_path(current_user) do
-          %i.icon-pencil
-          = t(:'menu.profile.edit')
-      %li
-        = link_to user_path(current_user) do
-          %i.icon-user
-          = t(:'menu.profile.public')
-      %li.active
-        = link_to edit_user_registration_path(current_user) do
-          %i.icon-briefcase
-          = t(:'menu.profile.account')
-      %li
-        = link_to services_path, :class => "current" do
-          %i.icon-globe
-          = t(:'menu.profile.authentications')
-    .clear
+.box
+  %header.box-header
+    %h1= t('.title')
+  .box-body
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => "form-horizontal" }) do |f|
+      = devise_error_messages!
+      = f.input :username, :label => t(:'activerecord.attributes.user.username')
+      = f.input :email, :label => t(:'activerecord.attributes.user.email')
+      = f.input :password, :label => t(:'activerecord.attributes.user.password'), :hint => t(:'common.leave_blank')
+      = f.input :password_confirmation, :label => t(:'activerecord.attributes.user.password_confirmation')
+      = f.input :current_password, :label => t(:'activerecord.attributes.user.current_password')
+      .form-actions.box-actions
+        = f.submit t(:'buttons.update'), :class => "btn btn-primary"
 
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => "form" }) do |f|
-  = devise_error_messages!
-  = f.input :username, :label => t(:'activerecord.attributes.user.username')
-  = f.input :email, :label => t(:'activerecord.attributes.user.email')
-  = f.input :password, :label => t(:'activerecord.attributes.user.password'), :hint => t(:'common.leave_blank')
-  = f.input :password_confirmation, :label => t(:'activerecord.attributes.user.password_confirmation')
-  = f.input :current_password, :label => t(:'activerecord.attributes.user.current_password')
-  .form-actions
-    = f.submit t(:'buttons.update'), :class => "btn btn-primary"
+.box
+  %header.box-header
+    %h1= t(:'.cancel_my_account')
+  .box-body
+    = link_to t(:'buttons.registrations.cancel_my_account'), registration_path(resource_name), :confirm => t(:'common.are_you_sure'), :method => :delete, :class => "btn btn-danger"
 
-/ %section
-/   .page-header
-/     %header
-/       %h1= t(:'.preferences')
-
-/   = simple_form_for @current_user, :as => :user,  :html => {:class => "form-horizontal" } do |f|
-/     = f.error_messages
-/     = f.input :visible, :as => :boolean, :label =>  t(:'activerecord.attributes.user.visible')
-/     .control-group
-/       .controls
-/         .alert.alert-info
-/           %p= t(:"visible_explanation", :scope => [:users, :edit])
-/     = f.input :preferred_language, :collection => [["English", "en"], ["Français", "fr"]], :as => :radio_buttons, :selected => @user.preferred_language, :label => t(:'users.preferred.language')
-/     = f.input :prefers_newsletters, :as => :boolean, :label => t(:"users.prefers.newsletters")
-/     = f.input :prefers_message_notifications, :as => :boolean, :label => t(:"users.prefers.message_notifications")
-/     .form-actions
-/       =f.submit t(:'buttons.update'), :type => "submit", :class => "btn btn-primary"
-
-%section
-  .page-header
-    %header
-      %h1= t(:'.cancel_my_account')
-
-  = link_to t(:'buttons.registrations.cancel_my_account'), registration_path(resource_name), :confirm => t(:'common.are_you_sure'), :method => :delete, :class => "btn btn-danger"
-
-  .clearfix

@@ -157,7 +157,7 @@
   .home-content--features {
     & > .home-content--features--columns {
       @include span-columns(5,$desktop-cols-main);
-      padding: $gutter-width * 2;
+      padding: 0;
       &:first-child {
         margin-left: 0;
       }
