@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 
   validates                         :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of           :username
-  validates_format_of               :soundcloud_username, :with => /\A\w+\z/, :allow_blank => true
+  validates_format_of               :soundcloud_username, :with => /\A[^ ]+\z/, :allow_blank => true
   validates_attachment_content_type :avatar, :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], :message => "only image files are allowed"
   validates_attachment_size         :avatar, :less_than => 1.megabyte, :message => "max size is 1M"
   validates_uri_existence_of        :youtube_video_id_response, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :on => :update, :message => "is not valid. Please check if you didn't put the whole url or your username instead of just the id"

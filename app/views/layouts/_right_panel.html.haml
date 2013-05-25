@@ -16,9 +16,7 @@
 
       %h4= t('menu.more')
       %ul
-        %li
-          %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"}
-            = t(:'menu.help')
+        %li= menu_item(t(:'menu.help'), false,'http://emuzikos.uservoice.com')
         %li= menu_item(t(:'menu.testimonials'), false,testimonials_path)
 
 
@@ -39,8 +37,5 @@
 
       %h4= t('menu.more')
       %ul
-        %li
-          %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"}
-            = t(:'menu.help')
-
+        %li= menu_item(t(:'menu.help'), false,'http://emuzikos.uservoice.com')
         %li= menu_item(t(:'menu.testimonials'), false,testimonials_path)
