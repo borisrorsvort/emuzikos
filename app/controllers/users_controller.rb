@@ -49,11 +49,7 @@ class UsersController < ApplicationController
 
     if @user.update_attributes(user_params)
         gflash :success => true
-
-        if @user.visible? && @user.profile_completed? && Rails.env == "production"
-          @tweet = @user.user_type + ": " + @user.instruments.map {|i| i.name}.to_sentence + " available in " + @user.zip + " " + Carmen::Country.coded(@user.country).name + " http://www.emuzikos.com/users/#{@user.id} "
-          Twitter.update(@tweet) rescue nil
-        end
+        send_tweet(@user)
         @user.set_profile_status
         if @user.profile_completed?
           redirect_to social_share_path(:invite_friends)
@@ -72,6 +68,13 @@ class UsersController < ApplicationController
   end
 
   private
+    def send_tweet(tweeter)
+      if tweeter.visible? && tweeter.profile_completed? && Rais.env.production?
+        @tweet = tweeter.user_type + ": " + tweeter.instruments.map {|i| i.name}.to_sentence + " available in " + tweeter.zip + " " + Carmen::Country.coded(tweeter.try(:country)).name + " http://www.emuzikos.com/users/#{tweeter.id} "
+        Twitter.update(@tweet) rescue nil
+      end
+    end
+
     def user_params
       params.require(:user).permit(:avatar, :country, :email, {:genre_ids => []}, :password, :profile_completed, :password_confirmation, :preferred_language, :prefers_message_notifications, :prefers_newsletters, {:instrument_ids => []}, :references, :remember_me, :request_message, :slug, :searching_for, :songkick_username, :soundcloud_username, :username, :user_type, :visible, :youtube_video_id, :zip)
     end

@@ -4,24 +4,26 @@
 - headline t(:'.title')
 - @body_class = "right-panel-layout"
 
-.row-fluid
-  .span4
-    %h2= t(:".invite_your_friends_from_fb")
-    %hr.clearfix
+.box
+  %header.box-header
+    %h1= t(:".invite_your_friends_from_fb")
+  .box-body
     %p
       %a{:onclick => "sendRequestViaMultiFriendSelector(); return false;", :class => "btn btn-primary x-large"}
         =t(:'buttons.invite_your_friends_from_fb')
 
     .fb-like-box{"data-header" => "false", "data-href" => "http://www.facebook.com/emuzikos", "data-show-faces" => "true", "data-stream" => "false", "data-width" => "292"}
     .clear
-  .span4
-    %h2= t(:'.leave_comment')
-    %hr.clearfix
+.box
+  %header.box-header
+    %h1= t(:'.leave_comment')
+  .box-body
     .fb-comments{"data-href" => "http://emuzikos.com", "data-num-posts" => "2", "data-width" => "300"}
 
-  .span4
+.box
+  %header.box-header
     %h2= t(:'.donate')
-    %hr.clearfix
+  .box-body
     = render(:partial => "shared/paypal_widget")
 
 .clear
