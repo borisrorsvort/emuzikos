@@ -15,6 +15,9 @@ a:active {
 .marginless {
   margin: 0;
 }
+.strong {
+  font-weight: bold;
+}
 
 .invisible-opacity {
   @include opacity(0);

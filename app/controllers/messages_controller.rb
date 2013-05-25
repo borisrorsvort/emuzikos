@@ -52,7 +52,7 @@ class MessagesController < ApplicationController
 
         format.html {
           # redirect_to :back, success: t('gflash.messages.create.success')
-          redirect_to user_messages_path(@current_user), success: t('gflash.messages.create.success')
+          redirect_to users_path, success: t('gflash.messages.create.success')
           gflash :success => true
         }
         format.js {

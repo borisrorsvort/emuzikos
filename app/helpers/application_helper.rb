@@ -59,6 +59,15 @@ module ApplicationHelper
     end
   end
 
+  def menu_item(text, icon, link)
+    link_to link , class: current_page_class(link), class: 'media' do
+      content_tag(:div, content_tag(:i, '', class: "icon-#{icon} media-object"), class: 'pull-left') +
+      content_tag(:div, class: "media-body") do
+        text.html_safe
+      end
+    end
+  end
+
   private
 
     def add_class(name, attrs)

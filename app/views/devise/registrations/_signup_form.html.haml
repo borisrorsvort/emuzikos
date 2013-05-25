@@ -13,5 +13,5 @@
   = f.input :email, label: false, :placeholder => t(:'activerecord.attributes.user.email')
   = f.input :password, label: false, :placeholder => t(:'activerecord.attributes.user.password'), :input_html => {rel: 'tooltip', title: t(:'tooltips.password'), data: {trigger: 'focus'}}
   = f.input :password_confirmation, label: false, :placeholder => t(:'activerecord.attributes.user.password_confirmation'), :input_html => {rel: 'tooltip', title: t(:'tooltips.password'), data: {trigger: 'focus'}}
-  .form-actions
+  .form-actions.box-actions
     = f.submit(t(:'buttons.submit'), :type => "submit", :class => "btn btn-primary")

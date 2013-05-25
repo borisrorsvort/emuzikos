@@ -100,14 +100,7 @@
   & > .home-content--features--columns {
     @include span-columns($desktop-cols-main,$desktop-cols-main);
     @include box-sizing(border-box);
-    padding: $gutter-width * 2;
     margin: 0;
-
-    .home-content--quotes--title {
-      margin: 0 0 $gutter-width 0;
-      font-size: 18px;
-      display: block;
-    }
   }
   .feature-block {
     margin-bottom: $gutter-width * 2;
@@ -183,4 +176,3 @@
 
 
 }
-

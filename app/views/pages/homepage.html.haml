@@ -55,44 +55,35 @@
       .home-content--features--columns.home-content--features
         .box
           .box-header
+            %h4= t(:'.subtitle')
+          .box-body
             %h4= t(:'.home_feature.sign_up.title')
-          .box-body
             %p= t(:'.home_feature.sign_up.body')
-        .box
-          .box-header
+          .box-body
             %h4= t(:'.home_feature.advantage.title')
-          .box-body
             %p= t(:'.home_feature.advantage.body')
-        .box
-          .box-header
+          .box-body
             %h4= t(:'.home_feature.privacy.title')
-          .box-body
             %p= t(:'.home_feature.privacy.body')
-        .box
-          .box-header
-            %h4= t(:'.home_feature.external_services.title')
           .box-body
+            %h4= t(:'.home_feature.external_services.title')
             %p
               = t(:'.home_feature.external_services.body')
             %ul
               %li= t(:'.home_feature.external_services.services.soundcloud').html_safe
               %li= t(:'.home_feature.external_services.services.songkick').html_safe
               %li= t(:'.home_feature.external_services.services.youtube').html_safe
-        .box
-          .box-header
+          .box-body
             %h4= t(:'.home_feature.no_credit_card.title')
-          .box-body
             %p= t(:'.home_feature.no_credit_card.body')
-        .box
-          .box-header
-            %h4= t(:'.home_feature.sharing.title')
           .box-body
+            %h4= t(:'.home_feature.sharing.title')
             %p= t(:'.home_feature.sharing.body')
 
       .home-content--features--columns.home-content--quotes
         .box
           .box-header
-            %h4t= t(:'.subtitle')
+            %h4= t('.what_people_say_about_it')
           .box-body
             %blockquote
               %p Emuzikos is a good application for musicians, bands and agents of small groups to be aware of. It can help connect these artists to gigs and they could find some additional benefits in the classifieds search.
@@ -102,7 +93,7 @@
               %cite by DevGarage
 
         .box
-          .box-header
+          .box-header.box-header-dark
             %h4= t(:'.sign_up')
           .box-body
             = render 'devise/registrations/signup_form', locals: {resource: resource}

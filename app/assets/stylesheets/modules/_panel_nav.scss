@@ -6,7 +6,7 @@
     padding: 4px $gutter-width;
     @include background(linear-gradient(darken($menuPanelColor, 4%), darken($menuPanelColor, 6%)));
     font-weight: bold;
-    color: lighten($menuPanelColor, 15%);
+    color: $menuPanelTextColor;
     text-transform: uppercase;
   }
   ul {
@@ -37,7 +37,9 @@
       }
     }
   }
-
+  .unread-count {
+    margin-left: 10px;
+  }
 }
 
 

@@ -1,11 +1,8 @@
 - title t(:'.title')
 - @body_class = "right-panel-layout"
 
-- content_for :sub_nav do
-  %ul#sub_sections
-    %li
-      = link_to t(:'buttons.back', :model => t(:'activerecord.models.testimonials')), testimonials_path(@user), :class => "button back"
-  .clear
-
-
-= render 'form', :testimonial => @testimonial
+.box
+  .box-header
+    %h1= t('.title')
+  .box-body
+    = render 'form', :testimonial => @testimonial

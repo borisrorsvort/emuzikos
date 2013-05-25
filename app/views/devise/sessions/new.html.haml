@@ -9,20 +9,20 @@
       mixpanel.track('Viewed login page');
     });
 
-.signup-form.box
+.centered-box.box
   %header.box-header
     %h1= t(:'.title')
   .box-body
     %p
       = link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large" do
         %i.icon-facebook
-          = t(:"devise.signup_with", :provider => "Facebook")
+          = t(:"devise.signin_with", :provider => "Facebook")
     %p
       = link_to omniauth_authorize_path(:user, "soundcloud") do
         = image_tag "icons/authbuttons/soundcloud-button.png", :alt => "Soundcloud connect"
     %hr.clearfix
 
-    .signup-form--form
+    .centered-box--form
       = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form"}) do |f|
         = devise_error_messages!
         = f.input :email, :label => t(:'activerecord.attributes.user.email')
@@ -30,10 +30,9 @@
 
         - if devise_mapping.rememberable?
           = f.input :remember_me, :as => :boolean, :label => t(:'.remember_me')
-        .form-actions
+        .form-actions.box-actions
           = f.submit(t(:'buttons.login'), :type => "submit", :class => "btn btn-primary")
-    .shared_links
-      = render  "devise/shared/links"
-    %hr.clearfix
-    %p= t(:'.newsletter_agreement').html_safe
-    .clear
+
+.centered-box.box.box-headless.shared_links
+  .box-body
+    = render  "devise/shared/links"

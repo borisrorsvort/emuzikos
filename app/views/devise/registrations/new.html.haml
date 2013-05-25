@@ -11,18 +11,19 @@
     });
 
 
-.signup-form.box
+.centered-box.box
   %header.box-header
     %h1= t(:'.title')
+    %p.muted= t(:'devise.registrations.new.newsletter_agreement').html_safe
   .box-body
     = link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large" do
       %i.icon-facebook
       = t(:"devise.signup_with", :provider => "Facebook")
     %hr.clearfix
-    .signup-form--form
+    .centered-box--form
       = render("signup_form", locals: {resource: resource})
-    .shared_links
-      = render  "devise/shared/links"
-    %hr.clearfix
-    %p= t(:'.newsletter_agreement').html_safe
+.centered-box.box.box-headless.shared_links
+  .box-body
+    = render  "devise/shared/links"
+
 
