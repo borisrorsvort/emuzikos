@@ -17,6 +17,8 @@
     |
     %span= t(:'messages.received')
     = @message.created_at.to_s(:long)
+    .pull-right
+      = link_to t('buttons.cancel'), user_messages_path(current_user), class: 'btn-cancel btn btn-mini'
 
   .box-body
     = simple_format(h(@message.body))

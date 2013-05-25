@@ -53,24 +53,21 @@ class User < ActiveRecord::Base
       'development' => :s3,
       'staging' => :s3,
       'production' => :s3,
-      'test' => :filesystem,
-      'cucumber' => :filesystem
+      'test' => :filesystem
     }[Rails.env],
     :path => {
       # 'development' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
       'development' => "photos/avatars/:id/:id_:style.:extension",
       'staging' => "photos/avatars/:id/:id_:style.:extension",
       'production' => "photos/avatars/:id/:id_:style.:extension",
-      'test' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
-      'cucumber' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension"
+      'test' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension"
     }[Rails.env],
     :url => {
       # 'development' => "/photos/avatars/:id/:id_:style.:extension",
       'development' => ":s3_domain_url",
       'staging' => ":s3_domain_url",
       'production' => ":s3_domain_url",
-      'test' => "/photos/avatars/:id/:id_:style.:extension",
-      'cucumber' => "/photos/avatars/:id/:id_:style.:extension"
+      'test' => "/photos/avatars/:id/:id_:style.:extension"
     }[Rails.env],
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
