@@ -98,6 +98,10 @@ class User < ActiveRecord::Base
     where("date(users.created_at) = ?",date).count
   end
 
+  def translated_user_type
+    I18n.t(user_type, :scope => 'users.types')
+  end
+
   def geocoded?
     self.latitude.present? && self.longitude.present?
   end

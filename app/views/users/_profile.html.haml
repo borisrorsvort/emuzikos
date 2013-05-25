@@ -8,14 +8,10 @@
         - if user.geocoded? &&
           %span.location-infos
             - if user.user_type.present?
-              =t(:"users.types.#{user.user_type}")
+              = user.translated_user_type
             = t(:'users.from')
             = user.zip
             = i18n_country(user) rescue ""
-        / - if current_user && current_user != @user && !current_user.is_friend_with(@user)
-        /   = link_to friendships_path(:friend_id => @user.id), :method => :post, :class => "add_to_contact_list" do
-        /     %i.icon-bookmark
-        /     = t(:'buttons.add_to_contact_list')
 
       .user-profile--header--avatar
         - if user.avatar.present? && !is_remote_profile
@@ -57,7 +53,7 @@
         .tag_list_instruments
           - user.genres.each do |genre|
             .tag-body.yellow
-              %span.tag= t(:"musical_genres.#{genre.name}")
+              %span.tag= genre.translated_name
 
     - if user.instruments.present?
       %section.user-profile--info-box
@@ -65,7 +61,7 @@
         .tag_list_instruments
           - user.instruments.each do |instrument|
             .tag-body.yellow
-              %span.tag= t(:"instruments.#{instrument.name}")
+              %span.tag= instrument.translated_name
 
 
   // MEDIA TAB
