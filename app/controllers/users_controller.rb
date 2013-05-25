@@ -2,17 +2,9 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
-    if params[:mass_locate] && !params[:mass_locate].empty?
-      # select distinct must be inside near scope (https://github.com/alexreisner/geocoder)
-      @q = User.available_for_listing.near(params[:mass_locate].to_s, 200, :select => "DISTINCT users.*").search(params[:q])
-    else
-      @q = User.available_for_listing.select("DISTINCT users.*").search(params[:q])
-    end
+    # Searh Query set in application controller
     @current_tab = params[:q][:user_type_cont] rescue "musician"
     @users = @q.result.order("updated_at DESC, avatar_updated_at DESC").page(params[:page]).per(AppConfig.site.results_per_page)
-    @genres = Genre.order("name ASC")
-    @instruments = Instrument.order("name ASC")
-    @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
 
     if request.xhr?
       respond_to do |format|
@@ -27,9 +19,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @message = Message.new
-    # @testimonials = @user.testimonials
-    # @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at").limit(5) if @user.geocoded?
-    # @events = @user.get_events(@user.songkick_username)
     @tracks = @user.get_soundclound_tracks(@user.soundcloud_username)
     @is_remote_profile = false
 
@@ -50,8 +39,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = @current_user
-    @genres = Genre.order('name asc')
-    @instruments = Instrument.order("name asc")
   end
 
   def update
@@ -59,8 +46,6 @@ class UsersController < ApplicationController
     params[:user][:genre_ids] ||= []
 
     @user = @current_user
-    @instruments = Instrument.order("name asc")
-    @genres = Genre.order('name asc')
 
     if @user.update_attributes(user_params)
         gflash :success => true
