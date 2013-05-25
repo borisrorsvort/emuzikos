@@ -1,0 +1,93 @@
+.user-profile {
+  min-height: 900px;
+  width: 100%;
+  z-index: 99;
+  background-color: #fff;
+}
+
+.user-profile--header {
+  position: relative;
+  background-color: $gray;
+}
+
+.user-profile--header--title
+.user-profile--map,
+.user-profile--map.user-profile--map-full  {
+  width: 100%;
+}
+
+.user-profile--header--avatar {
+  overflow: hidden;
+  max-height: 300px;
+  img {
+    height: 300px;
+    max-width: none;
+  }
+}
+
+.user-profile--map {
+  @include box-shadow(#000 0 0 20px inset);
+  background-size: auto 100% !important;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.user-profile--header--title {
+  font-size: emCalc(20px);
+  min-height: 300px;
+  position: relative;
+
+  .user-profile--username {
+    color: #fff;
+    position: absolute;
+    display: block;
+    width: 100%;
+    @include box-sizing(border-box);
+    margin: 0;
+    padding: $gutter-width*2 $gutter-width $gutter-width;
+    bottom: 0;
+    font-weight: 150;
+    left: 0;
+    @include background(80% linear-gradient(rgba(darken($menuPanelColor,30%),0), rgba(darken($menuPanelColor,30%),1)));
+    span {
+      display: block;
+    }
+  }
+}
+
+.location-infos {
+  font-size: 14px !important;
+  clear: both;
+  font-weight: normal;
+  line-height:  1em;
+  @include opacity(60);
+}
+
+.tab-content-profile {
+  padding: $gutter-width  $gutter-width*2 ;
+}
+
+.user-profile--info-box {
+  @include span-columns(6, $tablet-cols-main);
+  overflow: hidden;
+}
+
+@include at-breakpoint($tablet-cols) {
+  .user-profile--header--title {
+    width: 60%;
+    float: left;
+    .user-profile--header-nogeocoded & {
+      width: 100%;
+    }
+  }
+  .user-profile--map {
+    width: 40%;
+    float: right;
+  }
+  .user-profile--info-box {
+    @include span-columns(3, $tablet-cols-main);
+    &:nth-child(2n) {
+      margin-right: 0;
+    }
+  }
+}

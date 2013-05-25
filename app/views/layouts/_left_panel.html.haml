@@ -1,0 +1,3 @@
+%aside.menu-panel-left{name: 'left'}
+  %section
+    = render "users/search", :q => @q, :genres => @genres, :instruments => @instruments, :user_types => @user_types, :countries => Carmen::Country.all

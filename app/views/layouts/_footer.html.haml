@@ -20,6 +20,7 @@
 
     .clearfix
 
+= render "shared/overlay"
 
 = javascript_include_tag "application"
 = render(:partial => "shared/trackings")
@@ -42,14 +43,8 @@
     oauth: true
   });
 
-- if flash[:error]
-  = js add_gritter(flash[:error], :image => :error, :title => "Something's wrong!", :sticky => true)
--elsif flash[:alert]
-  = js add_gritter(flash[:alert], :image => :error, :title => "Something's wrong!", :sticky => true)
-- elsif flash[:notice]
-  = js add_gritter(flash[:notice], :image => :success, :sticky => true)
 
-
+= render partial: 'shared/flashes', locals: {js: false}
 = render "shared/feedback_box"
 
 %noscript

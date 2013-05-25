@@ -35,7 +35,7 @@ fr:
         username: "Nom d'utilisateur"
         visible: Visible
         youtube_video_id: "Numéros Identifiant la video youtube"
-        zip: "Code postal"
+        zip: "Ville"
     errors:
       models:
         user:
@@ -73,8 +73,11 @@ fr:
     registrations:
       cancel_my_account: "Effacer mon compte"
     remove_from_contact_list: Enlever
-    reply: Répondre
-    search: Rechercher
+    reply: Envoyez la réponse
+    search:
+      musicians: Chercher des musiciens
+      bands: Chercher des groupes
+      agents: Chercher des agents
     send_password: "Envoyer le mail de ré-initialisation de mon mot passe"
     services:
       delete: "Déconnecter ce service"
@@ -154,7 +157,7 @@ fr:
         remember_me: "Se souvenir de moi"
         title: "Connectez-vous à Emuzikos"
       signed_in: "Vous êtes à présent connecté(e)."
-      signed_out: "Vous êtes à présent déconnecté(e)."
+      signed_out: ""
     shared:
       links:
         dont_have_account_yet: "Vous n'avez pas encore de compte?"
@@ -189,6 +192,7 @@ fr:
         success: "%{user} a bien été effacé de votre liste de contact"
     messages:
       create:
+        error: 'Your message has not been sent. Try again'
         success: "Votre message a bien été envoyé!"
       delete_selected:
         success: "Message(s) effacé(s)"
@@ -429,9 +433,9 @@ fr:
   search_terms:
     title: Qui recherchez-vous?
     tabs:
-      musician: Musician
-      band: Band
-      agent: Agent
+      musician: Musiciens
+      band: Groupes
+      agent: Agents
     country: Pays
     i_search_a: "Je cherche un"
     mass_locate: "Votre ville ou région (ex: Paris ou Loire)"
@@ -576,6 +580,7 @@ fr:
       voice: Voix
       whistles: Flûtes
     your_classified_infos: "Votre annonce"
+    from: 'de'
   views:
     pagination:
       first: Premier

@@ -35,7 +35,7 @@ en:
         username: Username
         visible: Visible
         youtube_video_id: "YouTube Video Id"
-        zip: "Zip code"
+        zip: "City"
     errors:
       models:
         user:
@@ -73,8 +73,11 @@ en:
     registrations:
       cancel_my_account: "Cancel my account"
     remove_from_contact_list: Remove
-    reply: Reply
-    search: Search
+    reply: Submit Reply
+    search:
+      musicians: Search musicians
+      bands: Search bands
+      agents: Search agents
     send_password: "Send the password reset email"
     services:
       delete: "Remove this service"
@@ -154,7 +157,7 @@ en:
         remember_me: "Remember me"
         title: "Log in to your account"
       signed_in: "Logged in in successfully."
-      signed_out: "Logged out successfully."
+      signed_out: ""
     shared:
       links:
         dont_have_account_yet: "Don't have an account yet?"
@@ -190,6 +193,7 @@ en:
     messages:
       create:
         success: "Your message was successfully sent!"
+        error: 'Your message has not been sent. Try again'
       delete_selected:
         success: "Deleted! Congrats"
     services:
@@ -382,6 +386,7 @@ en:
   pages:
     homepage:
       description: "Looking for a local musician or band mates? Search and submit musicians classifieds"
+      sign_up: Create your profile
       home_feature:
         advantage:
           body: "You will get a fully customizable profile, a private message inbox, and an awesome musicians, bands & agents database to search from."
@@ -429,16 +434,16 @@ en:
   search_terms:
     title: Who are you searching for?
     tabs:
-      musician: Musician
-      band: Band
-      agent: Agent
+      musician: Musicians
+      band: Bands
+      agent: Agents
     country: Country
     i_search_a: "I search a"
     mass_locate: "Your city (ex: New York, Brussels)"
     music_style: "Musical genre"
     user_type: "I am a"
     who_plays: "Instrument played"
-    who_search_for: "Who search for"
+    who_search_for: "Who's searching for"
   services:
     account_created: "Your account on Emuzikos has been created via %{provider}. In your <a href=\"%{link}\">account settings</a> you can change your personal information and add a local password."
     account_creation_error: " can not be used to sign-up on Emuzikos as no valid email address has been provided. Please use another authentication provider or use local sign-up. If you already have an account, please sign-in and add %{service_route} from your profile."
@@ -556,6 +561,7 @@ en:
       tracks: Tracks
       users_nearby: "Other users nearby"
       youtube_video: "Youtube video"
+      login_before_messaging: 'You must be logged in to be able to send a message'
     types:
       agent: Agent
       baglama: baglama
@@ -576,6 +582,7 @@ en:
       voice: Voice
       whistles: Whistles
     your_classified_infos: "Your classified infos"
+    from: 'From'
   views:
     pagination:
       first: First

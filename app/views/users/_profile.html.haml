@@ -1,0 +1,96 @@
+- is_remote_profile ||= false
+
+%header.user-profile--header{class: "#{'user-profile--header-nogeocoded' unless user.geocoded?}"}
+  - if !is_remote_profile
+    .user-profile--header--title
+      %h1.user-profile--username
+        %span= user.username.capitalize
+        - if user.geocoded? &&
+          %span.location-infos
+            - if user.user_type.present?
+              =t(:"users.types.#{user.user_type}")
+            = t(:'users.from')
+            = user.zip
+            = i18n_country(user) rescue ""
+        / - if current_user && current_user != @user && !current_user.is_friend_with(@user)
+        /   = link_to friendships_path(:friend_id => @user.id), :method => :post, :class => "add_to_contact_list" do
+        /     %i.icon-bookmark
+        /     = t(:'buttons.add_to_contact_list')
+
+      .user-profile--header--avatar
+        - if user.avatar.present? && !is_remote_profile
+          = image_tag user.avatar.url(:normal), :class => "span12", :alt => "#{user.username + "'s picture"}"
+  - if user.geocoded?
+    .user-profile--map{class: ('user-profile--map-full' if is_remote_profile) , style: "background: url(http://maps.googleapis.com/maps/api/staticmap?center=#{user.latitude},#{user.longitude}&zoom=10&sensor=false&markers=#{user.latitude},#{user.longitude}&size=640x150&maptype=roadmap&style=saturation:-40|hue:0x22262c|invert_lightness:true|weight:0.2|gamma:1.18&scale=2) no-repeat top center"}
+  .clearfix
+
+%ul.nav.nav-tabs.nav-tabs-dark.marginless
+  %li.active
+    %a{:href => "#tab_user_infos", rel: "tooltip", data: {toggle: "tab"}}
+      %i.icon-info
+      %span.user-profile--tab-label= t(:'users.show.tabs.user_infos')
+  %li
+    %a{:href => "#tab_music", rel: "tooltip", data: {toggle: "tab"}}
+      %i.icon-note-beamed
+      %span.user-profile--tab-label= t(:'users.show.tabs.music')
+  %li
+    %a{:href => "#tab_videos", rel: "tooltip", data: {toggle: "tab"}}
+      %i.icon-video
+      %span.user-profile--tab-label= t(:'users.show.tabs.videos')
+
+// INFOS TAB
+.tab-content.tab-content-dark.tab-content-profile
+  #tab_user_infos.tab-pane.active
+    - if user.request_message.present?
+      %section.user-profile--info-box
+        %h4= t(:'activerecord.attributes.user.request_message')
+        = simple_format(user.request_message)
+
+    - if user.references.present?
+      %section.user-profile--info-box
+        %h4= t(:'activerecord.attributes.user.references')
+        %p= user.references
+
+    - if user.genres.present?
+      %section.user-profile--info-box
+        %h4= t(:'activerecord.attributes.user.genre')
+        .tag_list_instruments
+          - user.genres.each do |genre|
+            .tag-body.yellow
+              %span.tag= t(:"musical_genres.#{genre.name}")
+
+    - if user.instruments.present?
+      %section.user-profile--info-box
+        %h4= t(:'activerecord.attributes.user.instruments')
+        .tag_list_instruments
+          - user.instruments.each do |instrument|
+            .tag-body.yellow
+              %span.tag= t(:"instruments.#{instrument.name}")
+
+
+  // MEDIA TAB
+  #tab_music.tab-pane
+    - if @tracks.present?
+      - for track in @tracks do
+        %iframe{:frameborder => "no", :height => "166", :scrolling => "no", :src => "http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{track.id}&show_artwork=true", :width => "100%"}
+    - else
+      = t('.no_media_available')
+    .clearfix
+
+  // EVENTS TAB
+  #tab_videos.tab-pane
+    - if user.youtube_video_id?
+      .uservideo
+        %iframe{:src => "http://www.youtube.com/embed/#{user.youtube_video_id}", :width => "320", :height => "190"}
+    - else
+      = t('.no_media_available')
+  .clearfix
+%section#contactform
+  .profile--contacform--title
+    %h4= t(:'messages.new.title')
+  - if @current_user
+    = simple_form_for @message, :url => user_messages_path(@current_user), remote: true, :html => { :class => ""} do |f|
+      = render :partial => "messages/form", :object => f
+  - else
+    .alert.info
+      = t('users.show.login_before_messaging')

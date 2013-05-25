@@ -1,11 +1,11 @@
-= form_tag delete_selected_user_messages_path(@current_user, :method => :post)  do
+- @body_class = "right-panel-layout"
 
-  - if params[:mailbox] == "sent"
-    = render "sent", :messages => @messages, :innner_content_class => "no_padding"
-  - else
-    = render "inbox", :messages => @messages, :innner_content_class => "no_padding"
+- if params[:mailbox] == "sent"
+  = render "sent", :messages => @messages, :innner_content_class => "no_padding"
+- else
+  = render "inbox", :messages => @messages, :innner_content_class => "no_padding"
 
-  = paginate @messages
+= paginate @messages
 
 = content_for :javascripts do
   :javascript

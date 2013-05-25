@@ -8,8 +8,22 @@ module ApplicationHelper
     AppConfig.site.devise
   end
 
-  def unread_bullet
-    "&bull;"
+  def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
+
+  def current_page_class(url)
+    if current_page?(url)
+      "current"
+    end
   end
 
   def current_user_tracking_id
@@ -35,6 +49,22 @@ module ApplicationHelper
       html << tag(:html, attrs, true)
       html << " <!--<![endif]-->\n".html_safe
       html
+    end
+  end
+
+  def facebook_button
+    link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary centered" do
+      content_tag(:i, '', class: "icon-facebook") +
+      t(:"devise.signin_with", :provider => "Facebook")
+    end
+  end
+
+  def menu_item(text, icon, link)
+    link_to link , class: current_page_class(link), class: 'media' do
+      content_tag(:div, content_tag(:i, '', class: "icon-#{icon} media-object"), class: 'pull-left') +
+      content_tag(:div, class: "media-body") do
+        text.html_safe
+      end
     end
   end
 

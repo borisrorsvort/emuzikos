@@ -1,0 +1,35 @@
+.message {
+  background-color: white;
+  border: 3px solid $grayLighter;
+  padding: $gutter-width;
+  display: block;
+  position: relative;
+  @include border-radius($baseBorderRadius);
+  &.message-inbox {
+    &:hover {
+      text-decoration: none;
+      border-color: #ccc;
+      background-color: darken(white, 3%);
+    }
+    &.unread {
+      border: 3px solid lighten($menuPanelColor, 15%);
+    }
+  }
+}
+
+.message-delete-form {
+  position: absolute;
+  top: $gutter-width;
+  right: $gutter-width;
+}
+
+@include at-breakpoint($desktop-cols) {
+  .message-delete-form {
+    display: none;
+  }
+  .message:hover {
+    .message-delete-form {
+      display: inline-block;
+    }
+  }
+}

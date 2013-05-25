@@ -1,52 +1,47 @@
 - content_for :scripts do
   :javascript
-    $(document).ready(function() {
-      $('#search_form form').on('ajax:success', function() {
-        alert('searched');
-      });
-      mixpanel.track_forms('#search_form form', 'Submited search form');
-    });
+    Search.init();
 
 .sidebar.user_profile_listing
   #search_form
-    %header
-      %h3= t(:'search_terms.title')
-
-    %ul.nav.nav-tabs
+    %ul.nav.nav-tabs.nav-tabs-dark
       %li{class: if @current_tab == 'musician' then 'active' end}
-        %a{:href => "#tab_musician", rel: "tooltip", title: t(:'search_terms.tabs.musician'), data: {toggle: "tab"}}
+        %a.search-form--tab-label{:href => "#tab_musician", rel: "tooltip", data: {toggle: "tab"}}
           %i.icon-user
+          %span= t(:'search_terms.tabs.musician')
       %li{class: if @current_tab == 'band' then 'active' end}
-        %a{:href => "#tab_band", rel: "tooltip", title: t(:'search_terms.tabs.band'), data: {toggle: "tab"}}
-          %i.icon-group
+        %a.search-form--tab-label{:href => "#tab_band", rel: "tooltip", data: {toggle: "tab"}}
+          %i.icon-users
+          %span= t(:'search_terms.tabs.band')
       %li{class: if @current_tab == 'agent' then 'active' end}
-        %a{:href => "#tab_agent", rel: "tooltip", title: t(:'search_terms.tabs.agent'), :data => {:toggle => "tab"}}
+        %a.search-form--tab-label{:href => "#tab_agent", rel: "tooltip", :data => {:toggle => "tab"}}
           %i.icon-briefcase
-    .tab-content
-      #tab_musician.tab-pane{class: if @current_tab == 'musician' then 'active' end}
-        = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-musicians", class: "search-form-users", data: {:"no-turbolink" => "1"}} do |f|
+          %span= t(:'search_terms.tabs.agent')
+    .tab-content.tab-content-dark
+      #tab_musician.active.tab-pane{class: if @current_tab == 'musician' then 'active' end}
+        = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-musicians", class: "search-form-users"} do |f|
           .searchbar-field.hidden= f.text_field :user_type_cont, :value => "musician", class: 'no-chosen'
-          .searchbar-field= f.select :instruments_name_cont, instruments.collect{|i| [ I18n.t(:"instruments.#{i.name}"), i.name ]}, {:include_blank => t(:'search_terms.who_plays')}
-          .searchbar-field= f.select :genres_name_cont, genres.map{|g| [ I18n.t(:"musical_genres.#{g.name}"), g.name ]}, {:include_blank => t(:'search_terms.music_style')}
+          .searchbar-field= f.select :instruments_name_cont, instruments.collect{|i| [ i.translated_name, i.name ]}, {:include_blank => t(:'search_terms.who_plays')}
+          .searchbar-field= f.select :genres_name_cont, genres.map{|g| [g.translated_name, g.name ]}, {:include_blank => t(:'search_terms.music_style')}
           .searchbar-field= f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), {:include_blank => t(:'search_terms.who_search_for')}
           .searchbar-field= text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate')
-          .searchbar-field= f.submit(t(:'buttons.search'),:name => nil, :class => "btn btn-primary")
+          .searchbar-field= f.submit(t(:'buttons.search.musicians'),:name => nil, :class => "btn btn-primary")
       #tab_band.tab-pane{class: if @current_tab == 'band' then 'active' end}
-        = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-bands", class: "search-form-users", data: {:"no-turbolink" => "1"}} do |f|
+        = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-bands", class: "search-form-users"} do |f|
           .searchbar-field.hidden= f.text_field :user_type_cont, :value => "band", class: 'no-chosen'
           .searchbar-field.hidden= f.select :instruments_name_cont, "", {}, :id => "search_band_instruments_name_cont", class: 'no-chosen'
-          .searchbar-field= f.select :genres_name_cont, genres.map{|g| [ I18n.t(:"musical_genres.#{g.name}"), g.name ]}, {:include_blank => t(:'search_terms.music_style')}, :id => "search_band_genre"
+          .searchbar-field= f.select :genres_name_cont, genres.map{|g| [ g.translated_name, g.name ]}, {:include_blank => t(:'search_terms.music_style')}, :id => "search_band_genre"
           .searchbar-field= f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), {:include_blank => t(:'search_terms.who_search_for')}, :id => "search_band_searching_for"
           .searchbar-field= text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate')
-          .searchbar-field= f.submit(t(:'buttons.search'),:name => nil, :class => "btn btn-primary")
+          .searchbar-field= f.submit(t(:'buttons.search.bands'),:name => nil, :class => "btn btn-primary")
       #tab_agent.tab-pane{class: if @current_tab == 'agent' then 'active' end}
-        = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-agent", class: "search-form-users", data: {:"no-turbolink" => "1"}} do |f|
+        = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-agent", class: "search-form-users"} do |f|
           .searchbar-field.hidden= f.text_field :user_type_cont, :value => "agent", class: 'no-chosen'
           .searchbar-field.hidden= f.select :instruments_name_cont, "", {}, :id => "search_agent_instruments_name_cont", class: 'no-chosen'
           .searchbar-field.hidden= f.select :genres_name_cont, "", {}, :id => "search_agent_genres_name_cont"
           .searchbar-field= f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), {:include_blank => t(:'search_terms.who_search_for')}, :id => "search_agent_searching_for"
           .searchbar-field= text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate')
-          .searchbar-field= f.submit(t(:'buttons.search'),:name => nil, :class => "btn btn-primary")
+          .searchbar-field= f.submit(t(:'buttons.search.agents'),:name => nil, :class => "btn btn-primary")
 
 
 

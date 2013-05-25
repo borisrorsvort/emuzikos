@@ -1,6 +1,6 @@
 module UsersHelper
   def unread_messages_count
-    content_tag(:span, current_user.received_messages.un_read.count.to_s, :class =>"badge badge-important")
+    content_tag(:span, current_user.received_messages.un_read.count.to_s, :class =>"badge badge-important unread-count")
   end
   def searching_for_grouped_options
   	localized_types = User::USER_TYPES.map{|type| [ I18n.t(:"users.types.#{type}"), type ]}

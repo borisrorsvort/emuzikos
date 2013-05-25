@@ -2,39 +2,23 @@
 - description t(:'.meta_description', :username => @user.username)
 - set_meta_tags :canonical => request.url
 - headline t(:'.title', :username => @user.username)
-
-- if @user == current_user
-  - content_for :sub_nav do
-    %ul.nav.nav-tabs
-      %li.active
-        = link_to edit_user_path(current_user) do
-          %i.icon-pencil
-          = t(:'menu.profile.edit')
-      %li
-        = link_to user_path(current_user) do
-          %i.icon-user
-          = t(:'menu.profile.public')
-      %li
-        = link_to edit_user_registration_path(current_user) do
-          %i.icon-briefcase
-          = t(:'menu.profile.account')
-      %li
-        = link_to services_path, :class => "current" do
-          %i.icon-globe
-          = t(:'menu.profile.authentications')
-    .clear
+- @body_class = "right-panel-layout"
 
 
-- if current_user.profile_completed?
-  - if current_user.visible?
-    .alert.alert-success
-      = t(:'.profile_complete_notice') + " " + t(:'.visible_notice')
-  - else
-    .alert.alert-info
-      = t(:'.profile_complete_notice') + " " + t(:'.invisible_notice')
-- else
-  .alert.alert
-    = t(:'.profile_not_complete_notice')
+.box
+  .box-header
+    %h1= t('.title')
+  .box-body
+    - if current_user.profile_completed?
+      - if current_user.visible?
+        .alert.alert-success
+          = t(:'.profile_complete_notice') + " " + t(:'.visible_notice')
+      - else
+        .alert.alert-info
+          = t(:'.profile_complete_notice') + " " + t(:'.invisible_notice')
+    - else
+      .alert.alert
+        = t(:'.profile_not_complete_notice')
 
-= render 'form'
+    = render 'form'
 

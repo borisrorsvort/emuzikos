@@ -1,0 +1,23 @@
+$tooltipColor: $linkColor;
+
+.tooltip-inner {
+  @include background(linear-gradient($tooltipColor, darken($tooltipColor, 10%)));
+  border: 1px solid darken($tooltipColor, 5%);
+  color: invert($tooltipColor);
+  @include box-shadow(0 1px 1px lighten($tooltipColor, 20%) inset);
+}
+.tooltip {
+  @include text-shadow(0 0 1px darken($tooltipColor, 10%));
+  font-weight: bold;
+  &.in {
+    opacity: 1 !important;
+  }
+
+  @each $position in left, right, top, bottom {
+    &.#{$position} {
+      .tooltip-arrow {
+        border-#{$position}-color: darken($tooltipColor, 5%);
+      }
+    }
+  }
+}

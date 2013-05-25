@@ -1,125 +1,128 @@
-// Base Container
+// --------------------------------------------
+// layout
+
+// @include border-box-sizing;
+
 body {
-  padding-top: 40px;
+  padding-top: 60px;
+  background: $body-bg-default image-url("backgrounds/bg-footer.gif");
 }
 
-.container-fluid[role="main"] {
-  padding-top: $gridGutterWidth;
-  padding-bottom: $gridGutterWidth;
-  background: #fff ;
-  &.nobg {
-    background: none;
+.container {
+  @include container;
+  overflow: hidden;
+  padding: 0;
+  background-color: $menuPanelColor;
+  @include box-sizing(border-box);
+}
+
+.menu-panel-left, .menu-panel-right, .main {
+  @include transition(.2s all ease);
+}
+
+// ---------------------
+// Mobile layout
+// ---------------------
+
+.menu-panel-left {
+  @include box-sizing(border-box);
+  @include span-columns($mobile-side-panel-cols);
+  margin-left: -100%;
+  .show-left & { margin-left: 0; }
+}
+
+.main {
+  @include box-sizing(border-box);
+  @include span-columns($mobile-cols);
+  margin-right: 0;
+  .show-left & { margin-right: - space($mobile-side-panel-cols); }
+  .show-right & { margin-left: - space($mobile-side-panel-cols); }
+}
+
+.menu-panel-right {
+  @include box-sizing(border-box);
+  @include span-columns($mobile-side-panel-cols);
+  margin-right: -100%;
+  .show-right & {
+    margin-right: 0;
   }
 }
 
-
-#inner_content {
-  background:#fff;
-  padding: 18px; /* for non mobiel version*/
+.main-nav {
+  @include box-sizing(border-box);
+  background: $menuPanelColor;
 }
-#messages.index {
-  #inner_content {
-    padding: 0 0 18px 0;
-    .button.delete {
-      margin-left: 10px;
+
+// ---------------------
+// tablet layout
+// ---------------------
+
+@include at-breakpoint($tablet-cols) {
+
+  .menu-panel-left,
+  .menu-panel-right {
+    @include span-columns($tablet-cols-nav);
+  }
+
+  .left-panel-layout {
+    .menu-panel-left {
+      margin-left: 0;
+    }
+    .menu-panel-right {
+      margin-right: -100%;
+    }
+    &.show-right {
+      .menu-panel-left { margin-left: -100%; }
+      .menu-panel-right { margin-left: 0; }
     }
   }
-}
-.content {
-  min-height: 400px !important;
-}
 
-form {
-  max-width: 768px;
-  .control-group {
-    textarea {
-      width: 97%;
+  .right-panel-layout {
+    .menu-panel-left {
+      margin-left: -100%;
+    }
+    .menu-panel-right {
+      margin-right: 0;
+    }
+    &.show-left {
+      .menu-panel-left { margin-left: 0; }
+      .menu-panel-right { margin-right: -100%; }
     }
   }
+
+  .main {
+    @include span-columns($tablet-cols-main);
+    margin-right: 0;
+    .show-right & { margin-left: 0; }
+    .show-left & { margin-right: 0; }
+  }
+
 }
 
-
-// Header / topnav
-
-#logo {
-  float:left;}
-
-
-// Footer
+header, footer {
+  @include clearfix;
+  clear: both;
+}
 
 #footer {
-
-  font-size: $basefont;
-  padding: $basefont * 3;
-  .inner_footer {
-    background-color: #011120;
-    @include border-radius(5px);
-      position: relative;
-      .mixpanel_partner {
-       position: absolute;
-       top: 3px;
-       right: 20%;
-      }
-  }
-
-  &.light .inner_footer {
-    padding: 18px;
-  }
-
-  .left_links {
-    float:left;
-    width: 100%;
-  }
-  .copyright {
-    margin-top: 20px;
-    float:left;
-  }
-  a {
-    margin: 0 20px 15px 0;
-    display:block;
-    color:#666;
-    @include hover-link;
-  }
+  min-height: 200px;
+  @include box-shadow(black 0 3px 3px inset);
+  padding: 20px;
+}
+.main {
+  @include box-sizing(border-box);
+  @include box-shadow(#333 0 0 3px);
+  position: relative;
 }
 
-
-/* HOMEPAGE
----------------------------------------- */
-
-.centered_grid {
-  max-width: 600px;
-  padding: 0 20px;
-  margin: 0 auto;
+.content {
+  position: relative;
+  $gutter-width: 1em;
+  $grid-padding : 1em;
+  @include container;
+  padding: $gutter-width;
+  @include box-sizing(border-box);
+  min-height: 800px;
 }
 
-
-
-// IE overlay
-#ie_warning {
-  display: block !important;
-  background: #fff;
-  width: 90%;
-  height: 400px;
-  z-index: 10000;
-  padding: 10%;
-  .inner_warning_wrapper {
-    width:  80%;
-    margin: 0 auto;
-    h2 {
-      color: #333;
-      text-shadow: none !important;
-    }
-    li {
-      float: left;
-      margin-right:  30px;
-      list-style-type: none;
-      a {
-        text-decoration: none;
-      }
-      img {
-        border: 2px #ccc solid;
-      }
-    }
-  }
-}
 

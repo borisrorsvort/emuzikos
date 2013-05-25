@@ -1,0 +1,58 @@
+.top-header .navbar-inner {
+  @include box-sizing(border-box);
+  padding: $gutter-width / 2  $gutter-width;
+  text-align: center;
+  background-image: url('backgrounds/noisy_net.png') !important;
+  background-position: initial initial;
+  background-repeat: initial initial;
+  ul {
+    margin: 0;
+  }
+  .brand {
+    margin: 0 auto;
+  }
+  .toggle {
+    @include animation(fadeIn 0.2s ease-in 0);
+  }
+}
+
+.navbar .btn, .navbar .btn-group {
+  margin: 0;
+  margin-top: $gutter-width/2;
+}
+
+.right-nav-trigger{
+  position: relative;
+  .badge {
+    position: absolute;
+    top: -5px;
+    left: -10px;
+  }
+}
+
+
+@include at-breakpoint($tablet-cols) {
+  .right-panel-layout {
+    .right-nav-trigger {
+      visibility: hidden;
+    }
+  }
+  .left-panel-layout {
+    .left-nav-trigger {
+      visibility: hidden;
+    }
+  }
+}
+
+
+.logo {
+  font-size: emCalc(20px);
+  font-weight: bold;
+  position: relative;
+  top: 10px;
+  color: #fff;
+  &:hover {
+    text-decoration:  none;
+    color: #fff;
+  }
+}

@@ -15,24 +15,36 @@ class UsersController < ApplicationController
     @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
 
     if request.xhr?
-      render @users
+      respond_to do |format|
+        # Pagination
+        format.html { render @users }
+        # Search
+        format.js { render :index}
+      end
     end
   end
 
   def show
     @user = User.find(params[:id])
     @message = Message.new
-    @testimonials = @user.testimonials
-    @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at").limit(5) if @user.geocoded?
-    @events = @user.get_events(@user.songkick_username)
+    # @testimonials = @user.testimonials
+    # @users_nearby = @user.nearbys(10, :select => "DISTINCT users.*").profiles_completed.visible.order("last_sign_in_at").limit(5) if @user.geocoded?
+    # @events = @user.get_events(@user.songkick_username)
     @tracks = @user.get_soundclound_tracks(@user.soundcloud_username)
+    @is_remote_profile = false
 
     if Rails.env.production?
       impressionist(@user)
     end
 
-    if request.path != user_path(@user)
-      redirect_to @user, status: :moved_permanently
+    if request.xhr?
+      render partial: "users/profile", locals: {user: @user, is_remote_profile: true}
+    else
+      if request.path != user_path(@user)
+        redirect_to @user, status: :moved_permanently
+      else
+        render :show
+      end
     end
   end
 
