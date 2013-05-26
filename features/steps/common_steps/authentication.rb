@@ -6,12 +6,14 @@ module Authentication
     include Utils
 
     step 'I am logged in' do
-      @current_user = FactoryGirl.create(:user)
-      login_as(@current_user, :scope => :user)
+      @user1 = FactoryGirl.create(:user)
+      login_as(@user1, :scope => :user)
+      @current_user = @user1
     end
 
     step 'I login as the other user' do
       login_as(@user2, :scope => :user)
+      @current_user = @user2
     end
 
     step 'I logout' do

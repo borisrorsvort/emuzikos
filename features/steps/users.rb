@@ -13,15 +13,18 @@ class Spinach::Features::Users < Spinach::FeatureSteps
     @genre = FactoryGirl.create(:genre)
     @instrument = FactoryGirl.create(:instrument)
     click_button('Update')
-    page.execute_script("$('#user_genre_ids').val(1).trigger('liszt:updated');")
-    page.execute_script("$('#user_instrument_ids').val(1).trigger('liszt:updated');")
+    page.execute_script("$('#user_genre_ids').select2('val', #{@instrument.id});")
+    page.execute_script("$('#user_instrument_ids').select2('val', #{@genre.id});")
+    # sleep 20000
     click_button('Update')
     page.should have_content('Success')
+    assert @current_user.geocoded? == true
+    page.should have_content 'Congratulations, your profile is complete'
   end
 
   step 'I should see my profile' do
-    within('.users_list') do
-      page.should have_content @current_user.username.upcase
+    within('.users-list') do
+      page.should have_content @current_user.username.capitalize
     end
     # @current_user.profile_completed.should == true
   end

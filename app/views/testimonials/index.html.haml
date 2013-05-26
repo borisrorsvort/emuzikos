@@ -7,7 +7,7 @@
     %h1
       = t(:'.title')
       - if @current_user
-        = link_to new_testimonial_path, :class => "btn btn-mini pull-right" do
+        = link_to new_testimonial_path, :class => "btn btn-mini pull-right", id: "new_testimonial" do
           %i.icon-plus.icon-white
           = t(:'buttons.testimonials.create')
   .box-body

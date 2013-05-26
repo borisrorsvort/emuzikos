@@ -52,7 +52,7 @@ class UsersController < ApplicationController
         send_tweet(@user)
         @user.set_profile_status
         if @user.profile_completed?
-          redirect_to social_share_path(:invite_friends)
+          redirect_to edit_user_path(@user)
         else
           redirect_to edit_user_path(@user)
         end

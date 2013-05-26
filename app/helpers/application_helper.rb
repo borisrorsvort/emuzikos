@@ -63,9 +63,9 @@ module ApplicationHelper
     link_to link , class:  "media #{current_page_class(link)}" do
       content_tag(:div, content_tag(:i, '', class: "icon-#{icon} media-object"), class: 'pull-left') +
       content_tag(:div, class: "media-body") do
-        text.html_safe
+        text
       end
-    end
+    end.html_safe
   end
 
   private

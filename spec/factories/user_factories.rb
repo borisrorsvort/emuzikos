@@ -6,8 +6,7 @@ FactoryGirl.define do
     email
     password 'password'
     password_confirmation 'password'
-    zip 1050
-    country "BE"
+    zip '1050 Ixelles, Belgium'
     references 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
     request_message "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
     user_type "musician"

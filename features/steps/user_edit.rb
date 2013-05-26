@@ -4,7 +4,7 @@ class Spinach::Features::UserEdit < Spinach::FeatureSteps
   step 'I submit the form with a genre' do
     @genre = FactoryGirl.create(:genre)
     click_button('Update')
-    page.execute_script("$('#user_genre_ids').val(1).trigger('liszt:updated');")
+    page.execute_script("$('#user_genre_ids').select2('val', #{@genre.id});")
     click_button('Update')
     page.should have_content('Success')
   end
@@ -17,7 +17,7 @@ class Spinach::Features::UserEdit < Spinach::FeatureSteps
   step 'I submit the form with a instrument' do
     @instrument = FactoryGirl.create(:instrument)
     click_button('Update')
-    page.execute_script("$('#user_instrument_ids').val(1).trigger('liszt:updated');")
+    page.execute_script("$('#user_instrument_ids').select2('val', #{@instrument.id});")
     click_button('Update')
     page.should have_content('Success')
   end
