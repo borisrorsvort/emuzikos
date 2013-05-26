@@ -11,5 +11,10 @@ require 'rake/dsl_definition'
 require 'rake'
 # require 'sitemap_generator/tasks' rescue LoadError
 
+begin
+  require 'heroku/rails/tasks'
+rescue LoadError
+  STDERR.puts "Run `rake gems:install` to install heroku-rails"
+end
 
 Emuzikos::Application.load_tasks
