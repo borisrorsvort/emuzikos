@@ -3,6 +3,7 @@
     Search.init();
 
 .sidebar.user_profile_listing
+  %h4.menu-section= t(:'menu.search')
   #search_form
     %ul.nav.nav-tabs.nav-tabs-dark
       %li{class: if @current_tab == 'musician' then 'active' end}

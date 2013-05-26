@@ -1,6 +1,7 @@
 .centered-box {
   @include span-columns($mobile-cols, $mobile-cols);
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   display: inline-block;
 }
 

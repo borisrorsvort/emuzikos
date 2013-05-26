@@ -2,10 +2,15 @@
 // layout
 
 // @include border-box-sizing;
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
 
 body {
-  padding-top: 60px;
-  background: $body-bg-default image-url("backgrounds/bg-footer.gif");
+  background: $body-bg-default;
+  overflow: hidden;
 }
 
 .container {
@@ -16,9 +21,24 @@ body {
   @include box-sizing(border-box);
 }
 
-.menu-panel-left, .menu-panel-right, .main {
+.menu-panel-left,
+.menu-panel-right,
+.main {
   @include transition(.2s all ease);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 0;
+  @include border-top-radius($baseBorderRadius);
+  background: $menuPanelColor;
 }
+
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 
 // ---------------------
 // Mobile layout
@@ -27,24 +47,33 @@ body {
 .menu-panel-left {
   @include box-sizing(border-box);
   @include span-columns($mobile-side-panel-cols);
-  margin-left: -100%;
-  .show-left & { margin-left: 0; }
+  left: 0;
+  .show-right & {
+    left: space($mobile-side-panel-cols) * -1;
+  }
 }
 
 .main {
   @include box-sizing(border-box);
   @include span-columns($mobile-cols);
   margin-right: 0;
-  .show-left & { margin-right: - space($mobile-side-panel-cols); }
-  .show-right & { margin-left: - space($mobile-side-panel-cols); }
+  z-index: 10;
+  .show-left & {
+    left: space($mobile-side-panel-cols);
+    overflow: hidden;
+  }
+  .show-right & {
+    left: space($mobile-side-panel-cols) * -1;
+    overflow: hidden;
+  }
 }
 
 .menu-panel-right {
   @include box-sizing(border-box);
   @include span-columns($mobile-side-panel-cols);
-  margin-right: -100%;
-  .show-right & {
-    margin-right: 0;
+  right: 0;
+  .show-left & {
+    left: space($mobile-side-panel-cols);
   }
 }
 
@@ -59,45 +88,58 @@ body {
 
 @include at-breakpoint($tablet-cols) {
 
+  .main {
+    @include span-columns($tablet-cols-main);
+  }
   .menu-panel-left,
   .menu-panel-right {
     @include span-columns($tablet-cols-nav);
   }
 
   .left-panel-layout {
-    .menu-panel-left {
-      margin-left: 0;
-    }
-    .menu-panel-right {
-      margin-right: -100%;
+    .main {
+      left: space($tablet-cols-nav);
     }
     &.show-right {
-      .menu-panel-left { margin-left: -100%; }
-      .menu-panel-right { margin-left: 0; }
+      .main {
+        left: 0;
+        right: space($tablet-cols-nav);
+      }
     }
   }
 
   .right-panel-layout {
-    .menu-panel-left {
-      margin-left: -100%;
-    }
-    .menu-panel-right {
-      margin-right: 0;
+    .main {
+      right: space($tablet-cols-nav);
     }
     &.show-left {
-      .menu-panel-left { margin-left: 0; }
-      .menu-panel-right { margin-right: -100%; }
+      .main {
+        right: 0;
+        left: space($tablet-cols-nav);
+      }
     }
   }
+}
+
+@include at-breakpoint($desktop-cols) {
 
   .main {
-    @include span-columns($tablet-cols-main);
-    margin-right: 0;
-    .show-right & { margin-left: 0; }
-    .show-left & { margin-right: 0; }
+    @include span-columns($desktop-cols-main);
+  }
+  .menu-panel-left,
+  .menu-panel-right {
+    @include span-columns($desktop-cols-nav);
   }
 
+  .left-panel-layout,
+  .right-panel-layout {
+    .main {
+      left: space($desktop-cols-nav);
+    }
+  }
 }
+
+
 
 header, footer {
   @include clearfix;
@@ -105,6 +147,7 @@ header, footer {
 }
 
 #footer {
+  background: transparent image-url("backgrounds/bg-footer.gif");
   min-height: 200px;
   @include box-shadow(black 0 3px 3px inset);
   padding: 20px;
@@ -112,17 +155,24 @@ header, footer {
 .main {
   @include box-sizing(border-box);
   @include box-shadow(#333 0 0 3px);
-  position: relative;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  overflow: hidden;
 }
 
 .content {
-  position: relative;
   $gutter-width: 1em;
   $grid-padding : 1em;
   @include container;
   padding: $gutter-width;
+  padding-top: 74px;
   @include box-sizing(border-box);
-  min-height: 800px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  @extend .scrollable;
+  width: 100%;
 }
 
 

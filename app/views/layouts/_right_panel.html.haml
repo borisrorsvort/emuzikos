@@ -1,12 +1,12 @@
-%aside.menu-panel.menu-panel-right
+%aside.menu-panel.menu-panel-right.scrollable
   - if user_signed_in?
     %section.main-nav
-      %h4= t(:'menu.messages.messages')
+      %h4.menu-section= t(:'menu.messages.messages')
       %ul
         %li= menu_item((t(:'menu.messages.inbox') + unread_messages_count if current_user.unread_messages?),'mail',user_messages_path(current_user))
         %li= menu_item(t(:'menu.users.contacts'),'users',user_contacts_path(current_user))
 
-      %h4= t(:'menu.profile.show')
+      %h4.menu-section= t(:'menu.profile.show')
       %ul
         %li= menu_item(t(:'menu.profile.edit'),'pencil',edit_user_path(current_user))
         %li= menu_item(t(:'menu.profile.public'),'globe',user_path(current_user))
@@ -14,28 +14,28 @@
         %li= menu_item(t(:'menu.profile.authentications'),'share',services_path)
 
 
-      %h4= t('menu.more')
+      %h4.menu-section= t('menu.more')
       %ul
         %li= menu_item(t(:'menu.help'), false,'http://emuzikos.uservoice.com')
         %li= menu_item(t(:'menu.testimonials'), false,testimonials_path)
 
 
-      %h4= t(:'menu.messages.languages')
+      %h4.menu-section= t(:'menu.messages.languages')
       %ul
         %li= menu_item(t(:'languages.french'), false,root_url(:subdomain => 'fr'))
         %li= menu_item(t(:'languages.english'), false, "#{request.protocol}#{request.domain}")
 
-      %h4= t('menu.connexion')
+      %h4.menu-section= t('menu.connexion')
       %ul
         %li= menu_item(t(:'menu.logout'), false,destroy_user_session_path)
   - else
     %section.main-nav
-      %h4= t('menu.connexion')
+      %h4.menu-section= t('menu.connexion')
       %ul
         %li= menu_item(t(:'menu.signup'), false,new_user_registration_path)
         %li= menu_item(t(:'menu.login'), false,new_user_session_path)
 
-      %h4= t('menu.more')
+      %h4.menu-section= t('menu.more')
       %ul
         %li= menu_item(t(:'menu.help'), false,'http://emuzikos.uservoice.com')
         %li= menu_item(t(:'menu.testimonials'), false,testimonials_path)

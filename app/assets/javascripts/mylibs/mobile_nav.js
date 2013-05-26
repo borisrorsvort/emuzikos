@@ -34,7 +34,7 @@ var OBC = (function (OBC, $) {
       if (dir === '#right') {
         body.toggleClass('show-right').removeClass('show-left');
       }
-      $('html, body').animate({scrollTop:0}, 0); // Scroll top
+      $('aside').animate({scrollTop:0}, 0); // Scroll top
 
       return body.attr('class');
     },
@@ -80,7 +80,7 @@ $(document).ready(function() {
   });
   $('body').hammer().on('swiperight', function(event) {
     event.gesture.preventDefault();
-    $('html, body').animate({scrollTop:0}, 0); // Scroll top
+    $('aside').animate({scrollTop:0}, 0); // Scroll top
     if ($('body').hasClass('show-right')) {
       $('[data-trigger=close]').click();
     } else {

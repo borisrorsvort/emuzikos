@@ -1,14 +1,4 @@
 .menu-panel {
-  h4 {
-    font-size: emCalc(12px);
-    margin: 0;
-    border-bottom: 1px solid darken($menuPanelColor, 10%);
-    padding: 4px $gutter-width;
-    @include background(linear-gradient(darken($menuPanelColor, 4%), darken($menuPanelColor, 6%)));
-    font-weight: bold;
-    color: $menuPanelTextColor;
-    text-transform: uppercase;
-  }
   ul {
     margin: 0;
 
@@ -43,3 +33,15 @@
 }
 
 
+h4.menu-section {
+  font-size: emCalc(12px);
+  margin: 0;
+  border-bottom: 1px solid darken($menuPanelColor, 10%);
+  padding: 4px $gutter-width;
+  @include background(linear-gradient(darken($menuPanelColor, 4%), darken($menuPanelColor, 6%)));
+  font-weight: bold;
+  color: $menuPanelTextColor;
+  text-transform: uppercase;
+  @include border-top-radius($baseBorderRadius);
+
+}

@@ -129,6 +129,6 @@ Expander = {
   },
   scrollToOffset: function() {
     var offset = $('.profile-expander').position().top;
-    $('html, body').animate({scrollTop: offset-30}, 'fast'); // Scroll top
+    $('.content').animate({scrollTop: offset-30}, 'fast'); // Scroll top
   }
 };

@@ -12,13 +12,13 @@ $mobile-side-panel-cols : $mobile-cols - $menu-offset-anchor;
 
 // Tablet columns 8
 $tablet-cols            : 8;
-$tablet-cols-main       : 6;
+$tablet-cols-main       : 5;
 $tablet-cols-nav        : $tablet-cols - $tablet-cols-main ;
 
 // Desktop columns 12
-$desktop-cols           : 12;
-$desktop-cols-main      : 10;
-$desktop-cols-nav       : $desktop-cols - $desktop-cols-main;
+$desktop-cols           : 16;
+$desktop-cols-main      : 8;
+$desktop-cols-nav       : ($desktop-cols - $desktop-cols-main) / 2;
 
 // Misc
 $baseBorderadius         : 3px;
@@ -26,7 +26,7 @@ $baseBorderadius         : 3px;
 // Colors
 $primary-color: $linkColor;
 $content-bg-color: #e9eaed;
-$body-bg-default: #e9eaed;
+
 
 // Mini-profiles
 
@@ -43,6 +43,10 @@ $btn-nav-bg: lighten($menuPanelColor, 10%);
 @function emCalc($pxWidth) {
   @return $pxWidth / $baseFontSize * 1em;
 }
+
+// Body
+$body-bg-default: $menuPanelColor;
+$body-bg-default: $menuPanelTextColor;
 
 // overlay
 

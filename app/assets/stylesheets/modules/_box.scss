@@ -5,7 +5,6 @@
   @include box-sizing(border-box);
   margin-bottom: $baseLineHeight;
   overflow: hidden;
-
   form {
     margin-bottom: 0;
   }
@@ -42,12 +41,11 @@
     }
   }
 }
+
 .box-body-dark {
   background: $menuPanelTextColor;
   color: $menuPanelColor;
 }
-
-
 
 .box-body,
 .box-header {
