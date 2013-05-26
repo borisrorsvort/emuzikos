@@ -2,60 +2,43 @@
 - headline t(:'.title')
 - @body_class = "right-panel-layout"
 
-- content_for :sub_nav do
-  %ul.nav.nav-tabs
-    %li
-      = link_to edit_user_path(current_user) do
-        %i.icon-pencil
-        = t(:'menu.profile.edit')
-    %li
-      = link_to user_path(current_user) do
-        %i.icon-user
-        = t(:'menu.profile.public')
-    %li
-      = link_to edit_user_registration_path(current_user) do
-        %i.icon-briefcase
-        = t(:'menu.profile.account')
-    %li.active
-      = link_to services_path, :class => "current" do
-        %i.icon-globe
-        = t(:'menu.profile.authentications')
-  .clear
+.box#deviseauth
+  %header.box-header
+    %h1= t('.title')
+  .box-body
+    .well
+      %header
+        %h4=t(:'.subtitle', :account => (@services.count == 1 ? t(:'.account.singular') : t(:'.account.plural')))
+      #currservices
+        %p= t(:'.random_password_warning')
+    .clearfix
+    %ul.thumbnails
+      - @services.each do |service|
+        %li
+          .services_used.thumbnail
+            = image_tag "icons/authbuttons/#{service.provider}_64.png", :size => "64x64"
+            .service_user.caption
+              %p
+                =t(:'activerecord.attributes.service.uname')
+                %br
+                #{service.uname} (ID: #{service.uid})
+              %p
+                =t(:'activerecord.attributes.service.email')
+                %br
+                #{service.uemail? ? service.uemail : t(:'activerecord.attributes.service.not_set')}
+              %p
+                - @services.count == 1 ? @msg = t(:'.last_account_delete_warning') : @msg = ''
+                = link_to t(:'buttons.services.delete'), service, :confirm => t(:'.are_you_sure') + @msg, :method => :delete, :class => "remove btn"
 
-%section#deviseauth
-  .well
-    %header
-      %h3=t(:'.subtitle', :account => (@services.count == 1 ? t(:'.account.singular') : t(:'.account.plural')))
-    #currservices
-      %p= t(:'.random_password_warning')
-  .clearfix
-  %ul.thumbnails
-    - @services.each do |service|
-      %li.span3
-        .services_used.thumbnail
-          = image_tag "icons/authbuttons/#{service.provider}_64.png", :size => "64x64"
-          .service_user.caption
-            %p
-              =t(:'activerecord.attributes.service.uname')
-              %br
-              #{service.uname} (ID: #{service.uid})
-            %p
-              =t(:'activerecord.attributes.service.email')
-              %br
-              #{service.uemail? ? service.uemail : t(:'activerecord.attributes.service.not_set')}
-            %p
-              - @services.count == 1 ? @msg = t(:'.last_account_delete_warning') : @msg = ''
-              = link_to t(:'buttons.services.delete'), service, :confirm => t(:'.are_you_sure') + @msg, :method => :delete, :class => "remove btn"
+    .clearfix
+    - unless @services.count >= 2
+      #availableservices
+        %h3= t(:'.more_services')
+        .services_list
 
-  .clearfix
-  - unless @services.count >= 2
-    #availableservices
-      %h3= t(:'.more_services')
-      .services_list
-
-        - unless @current_user.has_service?("facebook")
-          %a.services{:href => "/users/auth/facebook"}
-            = image_tag "icons/authbuttons/facebook_32.png",  :alt => "Facebook"
-        - unless @current_user.has_service?("soundcloud")
-          %a.services{:href => "/users/auth/soundcloud"}
-            = image_tag "icons/authbuttons/soundcloud_32.png",  :alt => "Soundcloud"
+          - unless @current_user.has_service?("facebook")
+            %a.services{:href => "/users/auth/facebook"}
+              = image_tag "icons/authbuttons/facebook_32.png",  :alt => "Facebook"
+          - unless @current_user.has_service?("soundcloud")
+            %a.services{:href => "/users/auth/soundcloud"}
+              = image_tag "icons/authbuttons/soundcloud_32.png",  :alt => "Soundcloud"

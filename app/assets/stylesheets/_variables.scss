@@ -16,8 +16,8 @@ $tablet-cols-main       : 5;
 $tablet-cols-nav        : $tablet-cols - $tablet-cols-main ;
 
 // Desktop columns 12
-$desktop-cols           : 16;
-$desktop-cols-main      : 8;
+$desktop-cols           : 18;
+$desktop-cols-main      : 10;
 $desktop-cols-nav       : ($desktop-cols - $desktop-cols-main) / 2;
 
 // Misc

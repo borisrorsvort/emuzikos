@@ -47,6 +47,7 @@ body {
 .menu-panel-left {
   @include box-sizing(border-box);
   @include span-columns($mobile-side-panel-cols);
+  @include box-shadow(#333 -3px 0 3px inset);
   left: 0;
   .show-right & {
     left: space($mobile-side-panel-cols) * -1;
@@ -154,7 +155,6 @@ header, footer {
 }
 .main {
   @include box-sizing(border-box);
-  @include box-shadow(#333 0 0 3px);
   position: absolute;
   top: 0px;
   bottom: 0px;
