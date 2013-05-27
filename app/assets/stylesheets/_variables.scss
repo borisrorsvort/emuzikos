@@ -16,9 +16,15 @@ $tablet-cols-main       : 5;
 $tablet-cols-nav        : $tablet-cols - $tablet-cols-main ;
 
 // Desktop columns 12
-$desktop-cols           : 18;
-$desktop-cols-main      : 10;
+$desktop-cols           : 14;
+$desktop-cols-main      : 8;
 $desktop-cols-nav       : ($desktop-cols - $desktop-cols-main) / 2;
+
+// Desktop columns 12 but cols (mainly-for public pages)
+$public-desktop-cols           : 14;
+$public-desktop-cols-main      : 10;
+$public-desktop-cols-nav       : ($public-desktop-cols - $public-desktop-cols-main);
+
 
 // Misc
 $baseBorderadius         : 3px;

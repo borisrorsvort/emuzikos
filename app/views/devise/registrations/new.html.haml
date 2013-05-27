@@ -1,7 +1,7 @@
 - title t(:'.title')
 - description 'Sign up on Emuzikos.com and start to search for wanted bands and musicians'
 - set_meta_tags :canonical => request.url
-- @body_class = "right-panel-layout"
+- @body_class = "right-panel-layout public"
 
 
 - content_for :scripts do
@@ -22,8 +22,6 @@
     %hr.clearfix
     .centered-box--form
       = render("signup_form", locals: {resource: resource})
-.centered-box.box.box-headless.shared_links
-  .box-body
-    = render  "devise/shared/links"
+= render  "devise/shared/links"
 
 

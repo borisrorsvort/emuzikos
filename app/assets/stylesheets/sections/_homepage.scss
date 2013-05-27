@@ -42,9 +42,10 @@
   display: none;
   padding: $gutter-width 0;
 }
+
 .tiny-profile {
   background: #22262c;
-  @include span-columns(2,$desktop-cols-main);
+  @include span-columns($public-desktop-cols-main/5,$public-desktop-cols-main);
   @include border-radius($baseBorderRadius);
   overflow: hidden;
   &:first-child {
@@ -98,7 +99,7 @@
 
 .home-content--features {
   & > .home-content--features--columns {
-    @include span-columns($desktop-cols-main,$desktop-cols-main);
+    @include span-columns($public-desktop-cols-main,$public-desktop-cols-main);
     @include box-sizing(border-box);
     margin: 0;
   }
@@ -154,7 +155,7 @@
   }
   .home-content--features {
     & > .home-content--features--columns {
-      @include span-columns(5,$desktop-cols-main);
+      @include span-columns($public-desktop-cols-main/2,$public-desktop-cols-main);
       padding: 0;
       &:first-child {
         margin-left: 0;

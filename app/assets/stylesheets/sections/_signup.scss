@@ -35,7 +35,7 @@
 }
 @include at-breakpoint($desktop-cols) {
   .centered-box {
-    @include span-columns(6, $desktop-cols);
+    @include span-columns($desktop-cols-main, $desktop-cols);
     @include squish(3,3, $desktop-cols);
   }
 }

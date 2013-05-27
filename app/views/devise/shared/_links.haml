@@ -1,15 +1,17 @@
-- if controller_name != 'sessions'
-  .share-link.pull-left
-    = t(:'.have_account_already')
-    %br
-    = link_to t(:'menu.login'), new_session_path(resource_name)
-- if devise_mapping.registerable? && controller_name != 'registrations'
-  .share-link.pull-left
-    = t(:'.dont_have_account_yet')
-    %br
-    = link_to t(:'menu.signup'), new_registration_path(resource_name)
-- if devise_mapping.recoverable? && controller_name != 'passwords'
-  .share-link.pull-left
-    =t(:'.forgot_password')
-    %br
-    = link_to t(:'.go_to_recovery_page'), new_password_path(resource_name)
+.centered-box.box.box-headless.shared_links
+  .box-body
+    - if controller_name != 'sessions'
+      .share-link.pull-left
+        = t(:'.have_account_already')
+        %br
+        = link_to t(:'menu.login'), new_session_path(resource_name)
+    - if devise_mapping.registerable? && controller_name != 'registrations'
+      .share-link.pull-left
+        = t(:'.dont_have_account_yet')
+        %br
+        = link_to t(:'menu.signup'), new_registration_path(resource_name)
+    - if devise_mapping.recoverable? && controller_name != 'passwords'
+      .share-link.pull-left
+        =t(:'.forgot_password')
+        %br
+        = link_to t(:'.go_to_recovery_page'), new_password_path(resource_name)

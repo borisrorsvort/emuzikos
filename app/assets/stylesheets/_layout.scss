@@ -122,6 +122,10 @@ body {
   }
 }
 
+// ---------------------
+// Desktop layout
+// ---------------------
+
 @include at-breakpoint($desktop-cols) {
 
   .main {
@@ -140,7 +144,51 @@ body {
   }
 }
 
+// ---------------------
+// Public desktop layout
+// ---------------------
 
+@include at-breakpoint($public-desktop-cols) {
+  .public {
+    .main {
+      @include span-columns($public-desktop-cols-main);
+    }
+    .menu-panel-left,
+    .menu-panel-right {
+      @include span-columns($public-desktop-cols-nav);
+    }
+
+    &.left-panel-layout {
+      .main {
+        right: 0;
+        left: space($public-desktop-cols-nav);
+      }
+      &.show-right {
+        .main {
+          left: 0;
+          right: space($public-desktop-cols-nav);
+        }
+      }
+    }
+
+    &.right-panel-layout {
+      .main {
+        left: 0;
+        right: space($public-desktop-cols-nav);
+      }
+      &.show-left {
+        .main {
+          right: 0;
+          left: space($public-desktop-cols-nav);
+        }
+      }
+    }
+  }
+}
+
+// ---------------------
+// General stuff
+// ---------------------
 
 header, footer {
   @include clearfix;

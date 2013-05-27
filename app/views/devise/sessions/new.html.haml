@@ -1,7 +1,7 @@
 - title t(:'.title')
 - description t(:'.description')
 - set_meta_tags :canonical => request.url
-- @body_class = "right-panel-layout"
+- @body_class = "right-panel-layout public"
 
 - content_for :scripts do
   :javascript
@@ -33,6 +33,4 @@
         .form-actions.box-actions
           = f.submit(t(:'buttons.login'), :type => "submit", :class => "btn btn-primary")
 
-.centered-box.box.box-headless.shared_links
-  .box-body
-    = render  "devise/shared/links"
+= render  "devise/shared/links"
