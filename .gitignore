@@ -1,7 +1,6 @@
 .bundle
 db/*.sqlite3
 config/initializers/paperclip.rb
-config/database.yml
 nbproject
 log/*.log
 log/*.output
