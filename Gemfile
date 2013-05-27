@@ -3,7 +3,7 @@ source "https://rubygems.org"
 # Core Gems
 
 gem 'rails', '3.2.13'
-gem 'mysql2'
+gem 'pg'
 gem "jquery-rails"
 # gem 'redis'
 
@@ -41,7 +41,6 @@ gem 'preferences', :git => 'git://github.com/mojotech/preferences.git'
 gem 'twitter'
 gem 'geocoder'
 gem 'rack-no-www'
-gem 'pg'
 gem 'meta-tags', :require => 'meta_tags'
 gem "friendly_id", "~> 4.0.0"
 gem 'impressionist'

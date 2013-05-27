@@ -35,7 +35,7 @@ en:
         username: Username
         visible: Visible
         youtube_video_id: "YouTube Video Id"
-        zip: "City"
+        zip: "Zip, City, Country"
     errors:
       models:
         user:

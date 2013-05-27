@@ -53,6 +53,7 @@ function initApplication() {
 
   // Fit text
   $("h1.fitText").fitText(1, { minFontSize: '20px', maxFontSize: '28px' });
+
 }
 
 // document.addEventListener("page:change", initApplication, hideSpinner);

@@ -2,43 +2,21 @@
 = html_tag :class => "no-js", :lang => "#{I18n.locale}"
 %head
   = display_meta_tags :site => t(:'common.base_title'), :reverse => true
-
   %meta{:charset => "utf-8"}/
   %meta{ :name => "google-site-verification", :content => "U84a4JsWjHvENwEbAWcsSTecF326rTo9L_5oDKJKA5c"}
   %meta{:content => "Boris Rorsvort", :name => "author"}
-  / http://t.co/dKP3o1e
   %meta{:content => "True", :name => "HandheldFriendly"}
-  %meta{:content => "320", :name => "MobileOptimized"}
-  %meta{:content => "width=device-width, initial-scale=1.0, user-scalable=no", :name => "viewport"}
   %meta{:property => "fb:app_id", :content => "#{AppConfig.facebook.app_id}"}
-
-  / For iPhone 4
-  %link{:href => "/assets/icons/h/apple-touch-icon.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}
-  / For iPad 1
-  %link{:href => "/assets/icons/m/apple-touch-icon.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}
-  / For iPhone 3G, iPod Touch and Android
-  %link{:href => "/assets/icons/l/apple-touch-icon-precomposed.png", :rel => "apple-touch-icon-precomposed"}
-  / For Nokia
-  %link{:href => "/assets/icons/l/apple-touch-icon.png", :rel => "shortcut icon"}
-  / For everything else
+  %meta{:content => "Emuzikos", :name => "apple-mobile-web-app-title"}/
   %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
-
-  / iOS.
-  %meta{:content => "yes", :name => "apple-mobile-web-app-capable"}
-  %meta{:content => "black", :name => "apple-mobile-web-app-status-bar-style"}
-
-  / Microsoft.
-  %meta{:content => "on", "http-equiv" => "cleartype"}
+  = render partial: 'shared/mobile_icons'
 
   /[if lt IE 9]
     %script{:src => "http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"}
 
   = csrf_meta_tag
-
   = javascript_include_tag "polyfills"
-
   = stylesheet_link_tag "application"
 
   = yield :stylesheets
-
   = yield :head

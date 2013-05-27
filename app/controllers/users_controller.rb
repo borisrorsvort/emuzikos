@@ -69,7 +69,7 @@ class UsersController < ApplicationController
 
   private
     def send_tweet(tweeter)
-      if tweeter.visible? && tweeter.profile_completed? && Rais.env.production?
+      if tweeter.visible? && tweeter.profile_completed? && Rails.env.production?
         @tweet = tweeter.user_type + ": " + tweeter.instruments.map {|i| i.name}.to_sentence + " available in " + tweeter.zip + " " + Carmen::Country.coded(tweeter.try(:country)).name + " http://www.emuzikos.com/users/#{tweeter.id} "
         Twitter.update(@tweet) rescue nil
       end
