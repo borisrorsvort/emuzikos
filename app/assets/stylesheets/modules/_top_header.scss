@@ -52,6 +52,20 @@
   }
 }
 
+@include at-breakpoint($desktop-cols) {
+  .right-panel-layout {
+    .right-nav-trigger,
+    .left-nav-trigger {
+      visibility: hidden;
+    }
+  }
+  .left-panel-layout {
+    .left-nav-trigger,
+    .right-nav-trigger {
+      visibility: hidden;
+    }
+  }
+}
 
 .logo {
   font-size: emCalc(20px);
