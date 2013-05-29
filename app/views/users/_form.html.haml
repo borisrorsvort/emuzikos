@@ -1,12 +1,6 @@
-- content_for :scripts do
-  :javascript
-    $(document).ready(function() {
-      LocationAutocomplete.init("#{t(:'activerecord.attributes.user.zip')}");
-    });
-
 = simple_form_for @user, :html => { :multipart => true, :class => "form-horizontal" } do |f|
   = f.error_messages
-  = f.input :zip, :label => t(:'activerecord.attributes.user.zip'), input_html: {id: 'zip_autocomplete'}
+  = f.input :zip, :label => t(:'activerecord.attributes.user.zip'), input_html: {id: 'zip_autocomplete', data: {placeholder: t(:'activerecord.attributes.user.zip')}}
   = f.input :avatar, :as => :file, :label =>  t(:'activerecord.attributes.user.avatar')
   - if @user.avatar.present?
     .control-group

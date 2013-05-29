@@ -8,7 +8,7 @@
   =# devise_error_messages!
   = f.input :preferred_language, :as => :hidden, :value => request.subdomains.first.present? ? "fr" : "en"
   = f.input :user_type, label: false, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio_buttons, wrapper_html: {class: "btn-radio-toggles"}, checked: "musician"
-  = f.input :zip, label: false, input_html: {id: 'zip_autocomplete'}
+  = f.input :zip, label: false, input_html: {id: 'zip_autocomplete', data: {placeholder: t(:'activerecord.attributes.user.zip')}}
   = f.input :username, label: false, :placeholder => t(:'activerecord.attributes.user.username')
   = f.input :email, label: false, :placeholder => t(:'activerecord.attributes.user.email')
   = f.input :password, label: false, :placeholder => t(:'activerecord.attributes.user.password'), :input_html => {rel: 'tooltip', title: t(:'tooltips.password'), data: {trigger: 'focus'}}

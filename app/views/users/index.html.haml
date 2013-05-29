@@ -9,12 +9,6 @@
 - content_for :scripts do
   :javascript
     $(document).ready(function() {
-      Images.adjustProfileThumbs('.mini-profile--thumb img');
-    });
-    $(window).smartresize(function() {
-      Images.adjustProfileThumbs('.mini-profile--thumb img');
-    });
-    $(document).ready(function() {
       UserList.init();
       RemoteProfile.init();
       mixpanel.track('Viewed user index');

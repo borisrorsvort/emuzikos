@@ -14,4 +14,4 @@
             = unread_messages_count
         %a.btn-nav.toggle{href: "#", style: "display:none;", data: {trigger: 'close'}}
           %i.icon-cancel
-    = link_to 'EMUZIKOS', root_path, class: "logo"
+    = link_to 'EMUZIKOS', root_path, class: "logo", data: {push: true, target: '.content'}

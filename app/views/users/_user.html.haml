@@ -2,7 +2,7 @@
   = link_to user, class: 'mini-profile--inner' do
     .mini-profile--thumb.pull-left
       - if user.avatar.present?
-        = image_tag(user.avatar.url(:normal), class: "media-object", data: {'animated-class' => 'fadeIn'})
+        = image_tag(user.avatar.url(:medium), class: "media-object resizable", data: {'animated-class' => 'fadeIn'})
       / - else
       /   = image_tag("http://instasrc.com/100x100/people", class: "media-object", data: {'animated-class' => 'fadeIn'})
     .mini-profile--content.media-body

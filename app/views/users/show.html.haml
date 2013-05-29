@@ -9,13 +9,6 @@
 
 - canonical request.url
 
-- content_for :scripts do
-  :javascript
-    $(document).ready(function() {
-      mixpanel.track('Viewed user profile');
-      mixpanel.track_forms('#contactform form', 'Submited message form');
-    });
-
 %section.user-profile
   - if @is_remote_profile
     %nav.action-bar

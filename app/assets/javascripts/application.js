@@ -19,49 +19,84 @@
 //= require jquery.spin
 //= require wiselinks
 
+App = {
+  init: function() {
+    App.generalStuff();
+    Images.adjustProfileThumbs();
+    UserList.init();
+    RemoteProfile.init();
+    tinyProfiles.init();
+    App.initLocationAutocomplete();
+  },
 
-function initApplication() {
+  initWizeLink: function() {
+    window.wiselinks = new Wiselinks($('.content'), {'html4': true});
+  },
 
-  // Init Radio toggles
-  var radio_wrapper = $('.btn-radio-toggles');
-  radio_wrapper.find('.controls').attr('data-toggle', 'buttons-radio').addClass('btn-group');
-  radio_wrapper.find('.radio').each(function(event) {
-    $(this).addClass('btn');
-    $(this).find('input').addClass('hide');
-  });
-  $('.radio').on('click', function() {
-    $(this).children('input').attr('checked', 'checked');
-    $(this).siblings().children('input').attr('checked', null);
-  });
+  generalStuff: function() {
+    // Init Radio toggles
+    var radio_wrapper = $('.btn-radio-toggles');
+    radio_wrapper.find('.controls').attr('data-toggle', 'buttons-radio').addClass('btn-group');
+    radio_wrapper.find('.radio').each(function(event) {
+      $(this).addClass('btn');
+      $(this).find('input').addClass('hide');
+    });
+    $('.radio').on('click', function() {
+      $(this).children('input').attr('checked', 'checked');
+      $(this).siblings().children('input').attr('checked', null);
+    });
 
-  radio_wrapper.button();
+    radio_wrapper.button();
 
-  $('.radio input:checked').parents().addClass('active');
+    $('.radio input:checked').parents().addClass('active');
 
-  // init Tooltip
-  $('[rel=tooltip]').tooltip();
+    // init Tooltip
+    $('[rel=tooltip]').tooltip();
 
-  // Open collapsed form if errors
-  if ($(".boxy_forms .control-group.error").size() > 1) {
-    $(".normal_login").collapse('show');
+    // Open collapsed form if errors
+    if ($(".boxy_forms .control-group.error").size() > 1) {
+      $(".normal_login").collapse('show');
+    }
+
+    // init select2 select input
+    $("select").not(".no-chosen").select2({width: '100%'});
+    $(".search_field select").select2({width: '100%'});
+
+    // Fluid video
+    $(".uservideo").fitVids();
+
+    // Fit text
+    $("h1.fitText").fitText(1, { minFontSize: '20px', maxFontSize: '28px' });
+  },
+  currentPage: function(url) {
+    $('.menu-panel-right a').off('click').on('click', function() {
+      $('.menu-panel-right a').removeClass('current');
+      $(this).addClass('current');
+    });
+  },
+  initLocationAutocomplete: function() {
+    if ($('#zip_autocomplete').length > 0) {
+      placeholder = $('#zip_autocomplete').attr('data-placeholder');
+      LocationAutocomplete.init(placeholder);
+    }
   }
-
-  // init select2 select input
-  $("select").not(".no-chosen").select2({width: '100%'});
-  $(".search_field select").select2({width: '100%'});
-
-  // Fluid video
-  $(".uservideo").fitVids();
-
-  // Fit text
-  $("h1.fitText").fitText(1, { minFontSize: '20px', maxFontSize: '28px' });
-
-  window.wiselinks = new Wiselinks($('body'), {'html4': true});
-
-  Images.init();
 }
 
-// document.addEventListener("page:change", initApplication, hideSpinner);
-// document.addEventListener("page:fetch", displaySpinner);
 
-$(document).ready(initApplication);
+$(document).ready(function() {
+  App.init();
+  App.initWizeLink(); // Not in page:done to avoid double binding
+  App.currentPage();
+});
+$(document)
+  .off('page:loading').on('page:loading', function(event, $target, render, url) {
+    $('.spinner-wrapper').show().find('.spinner').spin();
+  })
+  .off('page:done').on('page:done', function(event, $target, status, url, data) {
+    App.init();
+    App.currentPage();
+    $('.spinner-wrapper').hide();
+    console.log('page loaded done');
+  });
+
+

@@ -25,11 +25,16 @@ class UsersController < ApplicationController
     if Rails.env.production?
       impressionist(@user)
     end
-
+    mixpanel.track 'Viewed user profile', {
+      via: 'Listing'
+    }
     unless request.xhr?
       if request.path != user_path(@user)
         redirect_to @user, status: :moved_permanently
       else
+        mixpanel.track 'Viewed user profile', {
+          via: 'Full profile'
+        }
         render :show
       end
     end

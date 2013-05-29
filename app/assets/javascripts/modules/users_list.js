@@ -14,9 +14,11 @@
 
 UserList = {
   init: function() {
-    UserList.animateProfiles();
-    UserList.initInfiniteLoad();
-    UserList.resizeMiniThumb($('.mini-profile'));
+    if ($(".mini-profile").length > 0) {
+      UserList.animateProfiles();
+      UserList.initInfiniteLoad();
+      UserList.resizeMiniThumb($('.mini-profile'));
+    }
   },
   resizeMiniThumb: function(elements) {
     $.each(elements, function(index, val) {

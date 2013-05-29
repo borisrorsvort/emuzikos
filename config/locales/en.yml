@@ -321,6 +321,8 @@ en:
       subtitle: Inbox
       title: "Your Messages"
     message: Message
+    show:
+      title: "Message from %{sender}"
     new:
       title: "Send a message"
     no_messages: "You have no messages"

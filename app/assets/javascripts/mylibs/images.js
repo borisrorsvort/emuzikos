@@ -2,7 +2,8 @@
 
 Images = {
   adjustProfileThumbs: function(selector) {
-    console.log('resized');
-    $('resizable').resizeToParent();
+    if ($('.resizable').length > 0) {
+      $('.resizable').resizeToParent();
+    }
   }
 };

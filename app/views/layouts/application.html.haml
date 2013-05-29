@@ -9,6 +9,8 @@
   .container{ :role => "main"}
     = render(:partial => "layouts/left_panel")
     .main
+      .spinner-wrapper
+        .spinner
       = render "layouts/topnav", :current_user => @current_user
       .content#content
         = yield

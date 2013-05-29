@@ -4,33 +4,6 @@
 - canonical request.url
 - @body_class = "right-panel-layout homepage public"
 
-- content_for :scripts do
-  :javascript
-    tinyProfiles = {
-      init: function() {
-        profiles = $('.tiny-profile-member');
-        $.each(profiles, function(index, val) {
-          var image = $(this).find('img');
-          image.imagesLoaded({
-            callback: function ($images, $proper, $broken) {
-              $images.resizeToParent();
-            }
-          });
-          var animation_class = $(this).attr('data-animated-class');
-          $(this).addClass(animation_class).delay(600).addClass('animated');
-        });
-      }
-    }
-    $(document).ready(function() {
-      mixpanel.track('Viewed homepage');
-    });
-    $(window).on('load', function() {
-      tinyProfiles.init();
-    });
-    $(window).smartresize(function() {
-      tinyProfiles.init();
-    });
-
 .home-wrapper
   %header
     .main-icon
