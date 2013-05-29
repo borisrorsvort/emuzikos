@@ -122,6 +122,10 @@ Expander = {
     Expander.createMarkup(selector);
     $('.profile-expander').html(data);
     $(".profile-expander h1").fitText(1, { minFontSize: '20px', maxFontSize: '28px' });
+    $('.profile-expander .icon-cancel').on('click', function(event) {
+      event.preventDefault();
+      Expander.clearMarkup();
+    });
   },
   createMarkup: function(selector){
     selector.after('<li class="profile-expander"></div>');

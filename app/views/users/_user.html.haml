@@ -1,4 +1,4 @@
-%li.mini-profile.media{data: {profile_url: user_path(user) }}
+%li.mini-profile.media{data: {profile_url: user_path(user, is_remote_profile: true) }}
   = link_to user, class: 'mini-profile--inner' do
     .mini-profile--thumb.pull-left
       - if user.avatar.present?

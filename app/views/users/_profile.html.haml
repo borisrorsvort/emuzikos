@@ -1,7 +1,5 @@
-- is_remote_profile ||= false
-
 %header.user-profile--header{class: "#{'user-profile--header-nogeocoded' unless user.geocoded?}"}
-  - if !is_remote_profile
+  - unless @is_remote_profile == true
     .user-profile--header--title
       %h1.user-profile--username
         %span= user.username.capitalize
@@ -14,10 +12,10 @@
             = i18n_country(user) rescue ""
 
       .user-profile--header--avatar
-        - if user.avatar.present? && !is_remote_profile
+        - if user.avatar.present? && !  @is_remote_profile
           = image_tag user.avatar.url(:normal), :class => "span12 resizable", :alt => "#{user.username + "'s picture"}"
   - if user.geocoded?
-    .user-profile--map{class: ('user-profile--map-full' if is_remote_profile) , style: "background: url(http://maps.googleapis.com/maps/api/staticmap?center=#{user.latitude},#{user.longitude}&zoom=10&sensor=false&markers=#{user.latitude},#{user.longitude}&size=640x150&maptype=roadmap&style=saturation:-40|hue:0x22262c|invert_lightness:true|weight:0.2|gamma:1.18&scale=2) no-repeat top center"}
+    .user-profile--map{class: ('user-profile--map-full' if @is_remote_profile) , style: "background: url(http://maps.googleapis.com/maps/api/staticmap?center=#{user.latitude},#{user.longitude}&zoom=10&sensor=false&markers=#{user.latitude},#{user.longitude}&size=640x150&maptype=roadmap&style=saturation:-40|hue:0x22262c|invert_lightness:true|weight:0.2|gamma:1.18&scale=2) no-repeat top center"}
   .clearfix
 
 %ul.nav.nav-tabs.nav-tabs-dark.marginless

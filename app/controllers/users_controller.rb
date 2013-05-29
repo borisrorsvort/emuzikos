@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @message = Message.new
     @tracks = @user.get_soundclound_tracks(@user.soundcloud_username)
-    @is_remote_profile = false
+    @is_remote_profile = params[:is_remote_profile] == 'true' ? true : false
 
     if Rails.env.production?
       impressionist(@user)

@@ -5,7 +5,11 @@
   #fb-root
 
   = render  "shared/ie_warning"
-
+  - if Rails.env.development?
+    .alert.alert-info.alert-mobile Mobile
+    .alert.alert-info.alert-tablet Tablet
+    .alert.alert-info.alert-desktop Desktop
+    .alert.alert-info.alert-public Public
   .container{ :role => "main"}
     = render(:partial => "layouts/left_panel")
     .main

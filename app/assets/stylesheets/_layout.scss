@@ -224,3 +224,32 @@ header, footer {
 }
 
 
+//// Media query helper
+
+.alert.alert-info.alert-tablet,
+.alert.alert-info.alert-desktop,
+.alert.alert-info.alert-public {
+  display: none;
+  position: fixed;
+  z-index: 999999;
+  bottom: 0;
+  @include opacity(50);
+}
+
+@include at-breakpoint($tablet-cols) {
+  .alert.alert-info.alert-mobile { display: none;}
+  .alert.alert-info.alert-tablet{
+    display: block;
+  }
+}
+@include at-breakpoint($desktop-cols) {
+  .alert.alert-info.alert-desktop {
+    display: block;
+  }
+}
+@include at-breakpoint($public-desktop-cols) {
+  .alert.alert-info.alert-public {
+    display: block;
+  }
+}
+
