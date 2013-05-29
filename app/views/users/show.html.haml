@@ -1,4 +1,4 @@
-- title t(:'.title', :username => @user.username)
+- set_title t(:'.title', :username => @user.username)
 - @nobg = true
 - @body_class = "right-panel-layout"
 
@@ -14,8 +14,6 @@
     $(document).ready(function() {
       mixpanel.track('Viewed user profile');
       mixpanel.track_forms('#contactform form', 'Submited message form');
-      var avatarSize = $('.user-profile--header--avatar img');
-      $(avatarSize).resizeToParent();
     });
 
 %section.user-profile

@@ -27,7 +27,7 @@
 
       %h4.menu-section= t('menu.connexion')
       %ul
-        %li= menu_item(t(:'menu.logout'), false,destroy_user_session_path)
+        %li= menu_item(t(:'menu.logout'), false,destroy_user_session_path, false)
   - else
     %section.main-nav
       %h4.menu-section= t('menu.connexion')

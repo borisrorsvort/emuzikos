@@ -3,6 +3,6 @@
 Images = {
   adjustProfileThumbs: function(selector) {
     console.log('resized');
-    $(selector).resizeToParent();
+    $('resizable').resizeToParent();
   }
 };

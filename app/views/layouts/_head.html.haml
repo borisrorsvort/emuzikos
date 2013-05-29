@@ -1,7 +1,15 @@
 !!! 5
 = html_tag :class => "no-js", :lang => "#{I18n.locale}"
 %head
-  = display_meta_tags :site => t(:'common.base_title'), :reverse => true
+  - if content_for?(:title)
+    %title
+      = yield(:title)
+      = " - Emuzikos"
+  - if content_for?(:description)
+    %meta{ name: 'description', content: yield(:description) }
+  - if content_for?(:keywords)
+    %meta{ name: 'keywords', content: yield(:keywords) }
+
   %meta{:charset => "utf-8"}/
   %meta{ :name => "google-site-verification", :content => "U84a4JsWjHvENwEbAWcsSTecF326rTo9L_5oDKJKA5c"}
   %meta{:content => "Boris Rorsvort", :name => "author"}
@@ -15,6 +23,7 @@
     %script{:src => "http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"}
 
   = csrf_meta_tag
+  = wiselinks_meta_tag
   = javascript_include_tag "polyfills"
   = stylesheet_link_tag "application"
 

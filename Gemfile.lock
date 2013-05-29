@@ -132,13 +132,6 @@ GEM
     code_analyzer (0.3.1)
       sexp_processor
     coderay (1.0.9)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.6.1)
     colored (1.2)
     colorize (0.5.8)
     columnize (0.3.6)
@@ -280,8 +273,6 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta-tags (1.4.1)
-      actionpack
     meta_search (1.1.3)
       actionpack (~> 3.1)
       activerecord (~> 3.1)
@@ -490,8 +481,6 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (1.0.0)
-      coffee-rails
     twitter (4.6.1)
       faraday (~> 0.8, < 0.10)
       multi_json (~> 1.0)
@@ -509,6 +498,7 @@ GEM
     wicked (0.5.0)
       activesupport (>= 3.0.7)
       rails (>= 3.0.7)
+    wiselinks (0.5.6)
     xml-simple (1.1.2)
     xpath (1.0.0)
       nokogiri (~> 1.3)
@@ -556,7 +546,6 @@ DEPENDENCIES
   jquery-rails
   launchy
   letter_opener
-  meta-tags
   meta_search
   mixpanel
   newrelic_rpm
@@ -601,8 +590,8 @@ DEPENDENCIES
   tap
   taps
   thin
-  turbolinks
   twitter
   uglifier
   watchr
   wicked
+  wiselinks

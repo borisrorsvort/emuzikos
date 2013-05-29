@@ -17,6 +17,8 @@
 //= require_directory ./mylibs
 //= require_directory ./modules
 //= require jquery.spin
+//= require wiselinks
+
 
 function initApplication() {
 
@@ -54,6 +56,9 @@ function initApplication() {
   // Fit text
   $("h1.fitText").fitText(1, { minFontSize: '20px', maxFontSize: '28px' });
 
+  window.wiselinks = new Wiselinks($('body'), {'html4': true});
+
+  Images.init();
 }
 
 // document.addEventListener("page:change", initApplication, hideSpinner);

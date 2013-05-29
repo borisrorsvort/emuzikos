@@ -10,7 +10,7 @@
     = render(:partial => "layouts/left_panel")
     .main
       = render "layouts/topnav", :current_user => @current_user
-      .content
+      .content#content
         = yield
     = render "layouts/right_panel"
 

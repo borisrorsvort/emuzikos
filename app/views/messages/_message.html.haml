@@ -1,4 +1,4 @@
-= link_to user_message_path(current_user, message), :class => "media message message-inbox #{"unread" if !message.message_read?}" do
+= link_to user_message_path(current_user, message), :class => "media message message-inbox #{"unread" if !message.message_read?}", data: {push: true, target: '.content'} do
   .pull-left
     - if message.sender.avatar.present?
       = image_tag(message.recipient.avatar.url(:gallery), :alt => message.sender.username, class: 'media-oject')

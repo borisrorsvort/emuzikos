@@ -41,7 +41,6 @@ gem 'preferences', :git => 'git://github.com/mojotech/preferences.git'
 gem 'twitter'
 gem 'geocoder'
 gem 'rack-no-www'
-gem 'meta-tags', :require => 'meta_tags'
 gem "friendly_id", "~> 4.0.0"
 gem 'impressionist'
 
@@ -52,8 +51,6 @@ gem 'bootstrap-sass-rails'
 gem "highcharts-rails", "~> 2.3.0"
 gem "newrelic_rpm"
 gem 'font-awesome-sass-rails'
-
-gem 'turbolinks'
 gem 'strong_parameters', git: "git://github.com/rails/strong_parameters.git"
 gem 'spinjs-rails'
 gem 'mixpanel'
@@ -61,6 +58,8 @@ gem 'mixpanel'
 # gem 'chosen-rails'
 gem "select2-rails"
 gem 'thin'
+
+gem 'wiselinks'
 
 group :assets do
   gem 'uglifier'

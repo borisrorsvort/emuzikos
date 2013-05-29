@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   helper :all
   helper_method :current_user
+  layout :set_layout
 
   def get_variables
     @current_path = "#{params[:controller]}_#{params[:action]}"
@@ -59,6 +60,10 @@ class ApplicationController < ActionController::Base
 
   def mixpanel
     @mixpanel ||= Mixpanel::Tracker.new AppConfig.mixpanel.api_key, { :env => request.env }
+  end
+
+  def set_layout
+    request.xhr? ? false : 'application'
   end
 
   private

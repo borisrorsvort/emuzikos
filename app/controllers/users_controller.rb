@@ -26,9 +26,7 @@ class UsersController < ApplicationController
       impressionist(@user)
     end
 
-    if request.xhr?
-      render partial: "users/profile", locals: {user: @user, is_remote_profile: true}
-    else
+    unless request.xhr?
       if request.path != user_path(@user)
         redirect_to @user, status: :moved_permanently
       else

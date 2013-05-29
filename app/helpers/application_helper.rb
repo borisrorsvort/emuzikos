@@ -1,5 +1,26 @@
 module ApplicationHelper
 
+  def default_meta_tags
+    {
+      :description => t('pages.homepage.description'),
+      :keywords    => t('pages.homepage.keywords'),
+      :separator   => "&mdash;".html_safe,
+      :site        => "Emuzikos",
+      :reverse => true
+    }
+  end
+
+  def set_title(value)
+    content_for(:title, value)
+    wiselinks_title(value)
+  end
+
+  %w(description keywords).each do |section|
+    define_method section do |value|
+      content_for(section.to_sym, value)
+    end
+  end
+
   def company
     AppConfig.company.name
   end
@@ -59,8 +80,8 @@ module ApplicationHelper
     end
   end
 
-  def menu_item(text, icon, link)
-    link_to link , class:  "media #{current_page_class(link)}" do
+  def menu_item(text, icon, link, push = true)
+    link_to link , class:  "media #{current_page_class(link)}", data: ({push: true, target: '.content'} if push == true) do
       content = []
       content << content_tag(:div, content_tag(:i, '', class: "icon-#{icon} media-object"), class: 'pull-left')
       content << content_tag(:div, class: "media-body") do
