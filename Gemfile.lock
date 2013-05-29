@@ -132,6 +132,10 @@ GEM
     code_analyzer (0.3.1)
       sexp_processor
     coderay (1.0.9)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.1)
     colored (1.2)
     colorize (0.5.8)
     columnize (0.3.6)
@@ -519,6 +523,7 @@ DEPENDENCIES
   capybara
   carmen
   carmen-rails
+  coffee-script
   compass-rails
   country_select
   database_cleaner

@@ -59,6 +59,7 @@ gem 'mixpanel'
 gem "select2-rails"
 gem 'thin'
 
+gem 'coffee-script'
 gem 'wiselinks'
 
 group :assets do
