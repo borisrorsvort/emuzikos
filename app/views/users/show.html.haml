@@ -7,7 +7,7 @@
 - else
   - description t(:'.title', :username => @user.username) + " - Emuzikos"
 
-- set_meta_tags :canonical => request.url
+- canonical  request.url
 
 - content_for :scripts do
   :javascript

@@ -15,7 +15,7 @@ module ApplicationHelper
     wiselinks_title(value)
   end
 
-  %w(description keywords).each do |section|
+  %w(description keywords canonical).each do |section|
     define_method section do |value|
       content_for(section.to_sym, value)
     end
