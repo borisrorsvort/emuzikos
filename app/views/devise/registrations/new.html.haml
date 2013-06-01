@@ -1,14 +1,8 @@
 - set_title t(:'.title')
 - description 'Sign up on Emuzikos.com and start to search for wanted bands and musicians'
 - canonical request.url
-- @body_class = "right-panel-layout public"
-
-
-- content_for :scripts do
-  :javascript
-    $(document).ready(function() {
-      mixpanel.track('Viewed signup page');
-    });
+= everywhere_js do
+  Layout.init("right-panel-layout public page-signup"
 
 
 .centered-box.box
@@ -24,4 +18,6 @@
       = render("signup_form", locals: {resource: resource})
 = render  "devise/shared/links"
 
+= everywhere_js do
+  App.initLocationAutocomplete();
 

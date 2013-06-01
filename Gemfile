@@ -17,8 +17,9 @@ gem 'meta_search'
 gem "airbrake"
 gem "populator"
 gem "faker"
-gem "squeel"
-gem "ransack", :git => "git://github.com/Eric-Guo/ransack.git"
+# gem "squeel"
+gem 'searchlight'
+# gem "ransack", :git => "git://github.com/Eric-Guo/ransack.git"
 gem "gritter"
 gem "haml"
 gem "sass"
@@ -60,7 +61,7 @@ gem "select2-rails"
 gem 'thin'
 
 gem 'coffee-script'
-gem 'wiselinks'
+gem 'wiselinks', git: 'git://github.com/igor-alexandrov/wiselinks.git'
 
 group :assets do
   gem 'uglifier'

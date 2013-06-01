@@ -1,6 +1,7 @@
 - set_title t(:'.title')
 - headline t(:'.title')
-- @body_class = "right-panel-layout"
+= everywhere_js do
+  Layout.init("right-panel-layout");
 
 .box#deviseauth
   %header.box-header

@@ -25,8 +25,7 @@ App = {
     Images.adjustProfileThumbs();
     UserList.init();
     RemoteProfile.init();
-    tinyProfiles.init();
-    App.initLocationAutocomplete();
+    // Search.init();
   },
 
   initWizeLink: function() {
@@ -61,6 +60,7 @@ App = {
     // init select2 select input
     $("select").not(".no-chosen").select2({width: '100%'});
     $(".search_field select").select2({width: '100%'});
+    $(".search_field select").select2({width: '100%', maximumSelectionSize: 3});
 
     // Fluid video
     $(".uservideo").fitVids();
@@ -80,7 +80,7 @@ App = {
       LocationAutocomplete.init(placeholder);
     }
   }
-}
+};
 
 
 $(document).ready(function() {
@@ -96,7 +96,10 @@ $(document)
     App.init();
     App.currentPage();
     $('.spinner-wrapper').hide();
-    console.log('page loaded done');
   });
 
+$(document).on('page:done', '.page-signup', function(event) {
+  event.preventDefault();
+  alert('Pqge signup');
+});
 

@@ -2,18 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
-    # Searh Query set in application controller
-    @current_tab = params[:q][:user_type_cont] rescue "musician"
-    @users = @q.result.order("updated_at DESC, avatar_updated_at DESC").page(params[:page]).per(AppConfig.site.results_per_page)
-
-    if request.xhr?
-      respond_to do |format|
-        # Pagination
-        format.html { render @users }
-        # Search
-        format.js { render :index}
-      end
-    end
+    @users = @search.results.order("updated_at DESC, avatar_updated_at DESC").page(params[:page]).per(AppConfig.site.results_per_page)
   end
 
   def show
@@ -81,4 +70,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:avatar, :country, :email, {:genre_ids => []}, :password, :profile_completed, :password_confirmation, :preferred_language, :prefers_message_notifications, :prefers_newsletters, {:instrument_ids => []}, :references, :remember_me, :request_message, :slug, :searching_for, :songkick_username, :soundcloud_username, :username, :user_type, :visible, :youtube_video_id, :zip)
     end
+
 end

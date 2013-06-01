@@ -93,6 +93,18 @@ module ApplicationHelper
     end
   end
 
+  def everywhere_js(&block)
+    content = "<script>"+capture(&block)+"</script>"
+    if request.wiselinks?
+      content.html_safe
+    else
+      content_for :scripts do
+        wrap = "$(document).ready(function($) {"+content+"});"
+        wrap.html_safe
+      end
+    end
+  end
+
   private
 
     def add_class(name, attrs)

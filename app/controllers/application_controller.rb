@@ -9,17 +9,13 @@ class ApplicationController < ActionController::Base
   layout :set_layout
 
   def get_variables
-    @current_path = "#{params[:controller]}_#{params[:action]}"
-    @current_user = current_user
-    if params[:mass_locate] && !params[:mass_locate].empty?
-      # select distinct must be inside near scope (https://github.com/alexreisner/geocoder)
-      @q = User.available_for_listing.near(params[:mass_locate].to_s, 200, :select => "DISTINCT users.*").search(params[:q])
-    else
-      @q = User.available_for_listing.select("DISTINCT users.*").search(params[:q])
-    end
-    @genres = Genre.order("name ASC")
-    @instruments = Instrument.order("name ASC")
-    @user_types = I18n.t(User::USER_TYPES, :scope => [:users, :types])
+    @current_path   = "#{params[:controller]}_#{params[:action]}"
+    @current_user   = current_user
+    @current_tab    = params[:search][:user_type] rescue ''
+    @search         = UserSearch.new(search_params)
+    @genres         = Genre.order("name ASC")
+    @instruments    = Instrument.order("name ASC")
+    @user_types     = I18n.t(User::USER_TYPES, :scope => [:users, :types])
   end
 
   def mailer_set_url_options
@@ -67,6 +63,9 @@ class ApplicationController < ActionController::Base
   end
 
   private
+    def search_params
+      params[:search] || {}
+    end
 
     def store_location
       session[:return_to] = request.request_uri

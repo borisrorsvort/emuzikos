@@ -1,7 +1,8 @@
 - set_title t(:'.title')
 - description t(:'.description')
 - canonical request.url
-- @body_class = "right-panel-layout public"
+= everywhere_js do
+  Layout.init("right-panel-layout public"
 
 - content_for :scripts do
   :javascript

@@ -2,7 +2,11 @@
 - description t(:'.description')
 - keywords t(:'.keywords')
 - canonical request.url
-- @body_class = "right-panel-layout homepage public"
+= everywhere_js do
+  Layout.init("right-panel-layout homepage public"
+
+= everywhere_js do
+  tinyProfiles.init();
 
 .home-wrapper
   %header
@@ -71,4 +75,5 @@
           .box-body
             = render 'devise/registrations/signup_form', locals: {resource: resource}
     .clearfix
+
 

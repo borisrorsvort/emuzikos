@@ -1,7 +1,3 @@
-- content_for :scripts do
-  :javascript
-    Search.init();
-
 .sidebar.user_profile_listing
   %h4.menu-section= t(:'menu.search')
   #search_form
@@ -20,30 +16,9 @@
           %span= t(:'search_terms.tabs.agent')
     .tab-content.tab-content-dark
       #tab_musician.active.tab-pane{class: if @current_tab == 'musician' then 'active' end}
-        = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-musicians", class: "search-form-users"} do |f|
-          .searchbar-field.hidden= f.text_field :user_type_cont, :value => "musician", class: 'no-chosen'
-          .searchbar-field= f.select :instruments_name_cont, instruments.collect{|i| [ i.translated_name, i.name ]}, {:include_blank => t(:'search_terms.who_plays')}
-          .searchbar-field= f.select :genres_name_cont, genres.map{|g| [g.translated_name, g.name ]}, {:include_blank => t(:'search_terms.music_style')}
-          .searchbar-field= f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), {:include_blank => t(:'search_terms.who_search_for')}
-          .searchbar-field= text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate')
-          .searchbar-field= f.submit(t(:'buttons.search.musicians'),:name => nil, :class => "btn btn-primary")
+        = render :partial => "users/search_forms/search_musicians", locals: {:genres => genres, :instruments => instruments, :user_types => user_types}
       #tab_band.tab-pane{class: if @current_tab == 'band' then 'active' end}
-        = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-bands", class: "search-form-users"} do |f|
-          .searchbar-field.hidden= f.text_field :user_type_cont, :value => "band", class: 'no-chosen'
-          .searchbar-field.hidden= f.select :instruments_name_cont, "", {}, :id => "search_band_instruments_name_cont", class: 'no-chosen'
-          .searchbar-field= f.select :genres_name_cont, genres.map{|g| [ g.translated_name, g.name ]}, {:include_blank => t(:'search_terms.music_style')}, :id => "search_band_genre"
-          .searchbar-field= f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), {:include_blank => t(:'search_terms.who_search_for')}, :id => "search_band_searching_for"
-          .searchbar-field= text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate')
-          .searchbar-field= f.submit(t(:'buttons.search.bands'),:name => nil, :class => "btn btn-primary")
+        = render :partial => "users/search_forms/search_bands", locals: {:genres => genres, :instruments => instruments, :user_types => user_types}
       #tab_agent.tab-pane{class: if @current_tab == 'agent' then 'active' end}
-        = search_form_for @q, :url => users_path, :html => {:method => :get, id: "search-form-agent", class: "search-form-users"} do |f|
-          .searchbar-field.hidden= f.text_field :user_type_cont, :value => "agent", class: 'no-chosen'
-          .searchbar-field.hidden= f.select :instruments_name_cont, "", {}, :id => "search_agent_instruments_name_cont", class: 'no-chosen'
-          .searchbar-field.hidden= f.select :genres_name_cont, "", {}, :id => "search_agent_genres_name_cont"
-          .searchbar-field= f.select :searching_for_cont, grouped_options_for_select(searching_for_grouped_options, (params[:q][:searching_for_cont] rescue "")), {:include_blank => t(:'search_terms.who_search_for')}, :id => "search_agent_searching_for"
-          .searchbar-field= text_field_tag :mass_locate, "#{params[:mass_locate] if params[:mass_locate]}", :placeholder => t(:'search_terms.mass_locate')
-          .searchbar-field= f.submit(t(:'buttons.search.agents'),:name => nil, :class => "btn btn-primary")
-
-
-
+        = render :partial => "users/search_forms/search_agents", locals: {:genres => genres, :instruments => instruments, :user_types => user_types}
 

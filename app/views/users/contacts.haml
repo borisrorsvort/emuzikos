@@ -1,7 +1,8 @@
 - set_title t(:'.title')
 - description t(:'.description')
 - canonical request.url
-- @body_class = "right-panel-layout"
+= everywhere_js do
+  Layout.init("right-panel-layout");
 
 - content_for :sub_nav do
   %ul.nav.nav-tabs
@@ -12,10 +13,6 @@
 
 -if !@friendships.blank?
   %table.table.table-bordered
-    / %thead
-    /   %tr
-    /     %th ...
-    /     %th ...
     %tbody
       = render :partial => "friendship", :collection => @friendships, :current_user => @current_user
 

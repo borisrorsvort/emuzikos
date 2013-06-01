@@ -2,7 +2,8 @@
 - description 'Edit your account, notification settings on Emuzikos.com and start to search for wanted bands and musicians'
 - canonical request.url
 - headline t(:'.title')
-- @body_class = "right-panel-layout"
+= everywhere_js do
+  Layout.init("right-panel-layout"
 
 .box
   %header.box-header
