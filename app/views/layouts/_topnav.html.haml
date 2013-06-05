@@ -2,7 +2,7 @@
   .navbar-inner
     %ul.pull-left
       %li
-        %a.btn-nav.toggle{href: "#", style: "display:none;", data: {trigger: 'close'}}
+        %a.btn-nav.toggle.toggle-close.toggle-close-left{href: "#", data: {trigger: 'close'}}
           %i.icon-cancel
         %a.btn-nav.left-nav-trigger.toggle{:href => "#left"}
           %i.icon-search
@@ -12,6 +12,6 @@
           %i.icon-list
           - if user_signed_in?
             = unread_messages_count
-        %a.btn-nav.toggle{href: "#", style: "display:none;", data: {trigger: 'close'}}
+        %a.btn-nav.toggletoggle.toggle-close.toggle-close-right{href: "#", data: {trigger: 'close'}}
           %i.icon-cancel
     = link_to 'EMUZIKOS', root_path, class: "logo", data: {push: true, target: '.content'}

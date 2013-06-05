@@ -34,8 +34,6 @@ var OBC = (function (OBC, $) {
       if (dir === '#right') {
         body.toggleClass('show-right').removeClass('show-left');
       }
-      $('aside').animate({scrollTop:0}, 0); // Scroll top
-
       return body.attr('class');
     },
     toggleText: function (triggers) {
@@ -45,14 +43,14 @@ var OBC = (function (OBC, $) {
       if (body.hasClass('show-left')) {
         left.hide();
         right.show();
-        $('[data-trigger=close]').hide();
-        left.siblings('[data-trigger=close]').show();
+        // $('[data-trigger=close]').hide();
+        // left.siblings('[data-trigger=close]').show();
       }
       if (body.hasClass('show-right')) {
         right.hide();
         left.show();
-        $('[data-trigger=close]').hide();
-        right.siblings('[data-trigger=close]').show();
+        // $('[data-trigger=close]').hide();
+        // right.siblings('[data-trigger=close]').show();
       }
     }
   };

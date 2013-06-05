@@ -2,7 +2,7 @@
   %h4.menu-section= t(:'menu.search')
   #search_form
     %ul.nav.nav-tabs.nav-tabs-dark
-      %li{class: if @current_tab == 'musician' then 'active' end}
+      %li{class: if (@current_tab == 'musician' || @current_tab == '') then 'active' end}
         %a.search-form--tab-label{:href => "#tab_musician", rel: "tooltip", data: {toggle: "tab"}}
           %i.icon-user
           %span= t(:'search_terms.tabs.musician')
@@ -15,7 +15,7 @@
           %i.icon-briefcase
           %span= t(:'search_terms.tabs.agent')
     .tab-content.tab-content-dark
-      #tab_musician.active.tab-pane{class: if @current_tab == 'musician' then 'active' end}
+      #tab_musician.tab-pane{class: if (@current_tab == 'musician' || @current_tab == '') then 'active' end}
         = render :partial => "users/search_forms/search_musicians", locals: {:genres => genres, :instruments => instruments, :user_types => user_types}
       #tab_band.tab-pane{class: if @current_tab == 'band' then 'active' end}
         = render :partial => "users/search_forms/search_bands", locals: {:genres => genres, :instruments => instruments, :user_types => user_types}

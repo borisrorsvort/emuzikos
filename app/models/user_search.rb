@@ -7,15 +7,15 @@ class UserSearch < Searchlight::Search
   end
 
   def search_instruments_like
-    search.joins(:instruments).where('instruments.name LIKE ?', instruments_like)
+    search.joins(:instruments).where('instruments.name = ?', instruments_like)
   end
 
   def search_genres_like
-    search.joins(:genres).where('genres.name LIKE ?', genres_like)
+    search.joins(:genres).where('genres.name = ?', genres_like)
   end
 
   def search_searching_for
-    search.where('searching_for LIKE ?', searching_for)
+    search.where('searching_for = ?', searching_for)
   end
 
   def search_location
