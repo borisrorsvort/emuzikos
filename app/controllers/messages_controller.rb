@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
   end
 
   def show
+    mixpanel.track 'Viewed message'
     @message = Message.read_message(params[:id], current_user)
 
     @reply_to = @message.sender.id
@@ -48,7 +49,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        mixpanel.track 'Message created'
+        mixpanel.track 'Submited message form'
 
         format.html {
           # redirect_to :back, success: t('gflash.messages.create.success')
