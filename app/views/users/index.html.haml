@@ -5,10 +5,8 @@
 %section.users-list
   = render(:partial => "users_list")
 
-- content_for :scripts do
-  :javascript
-    $(document).ready(function() {
-      UserList.init();
-      RemoteProfile.init();
-      mixpanel.track('Viewed user index');
-    });
+= everywhere_js do
+  UserList.init();
+  RemoteProfile.init();
+  Layout.init("left-panel-layout");
+  mixpanel.track('Viewed user index');

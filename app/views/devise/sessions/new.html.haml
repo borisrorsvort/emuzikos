@@ -2,13 +2,10 @@
 - description t(:'.description')
 - canonical request.url
 = everywhere_js do
-  Layout.init("right-panel-layout public"
+  Layout.init("right-panel-layout public");
 
-- content_for :scripts do
-  :javascript
-    $(document).ready(function() {
-      mixpanel.track('Viewed login page');
-    });
+= everywhere_js do
+  mixpanel.track('Viewed login page');
 
 .centered-box.box
   %header.box-header

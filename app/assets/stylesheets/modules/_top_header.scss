@@ -39,40 +39,40 @@
 }
 
 .toggle-close-left,
-.toggle-close-left {
+.toggle-close-right {
   display: none;
 }
-.show-left {
-  .toggle-close-left {
-    display: inline-block;
-  }
-  .toggle-close-right {
-    display: none;
-  }
-}
-.show-right {
-  .toggle-close-right {
-    display: inline-block;
-  }
-  .toggle-close-left {
-    display: none;
-  }
-}
+// .show-left {
+//   .toggle-close-left {
+//     display: inline-block;
+//   }
+//   .toggle-close-right {
+//     display: none;
+//   }
+// }
+// .show-right {
+//   .toggle-close-right {
+//     display: inline-block;
+//   }
+//   .toggle-close-left {
+//     display: none;
+//   }
+// }
 
 
-@include at-breakpoint($tablet-cols) {
-  .right-panel-layout {
-    .right-nav-trigger{
-      visibility: hidden;
-    }
-  }
+// @include at-breakpoint($tablet-cols) {
+//   .right-panel-layout {
+//     .right-nav-trigger{
+//       visibility: hidden;
+//     }
+//   }
 
-  .left-panel-layout {
-    .left-nav-trigger {
-      visibility: hidden;
-    }
-  }
-}
+//   .left-panel-layout {
+//     .left-nav-trigger {
+//       visibility: hidden;
+//     }
+//   }
+// }
 
 @include at-breakpoint($desktop-cols) {
   .toggle-close {

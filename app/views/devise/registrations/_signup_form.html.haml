@@ -1,8 +1,5 @@
-- content_for :scripts do
-  :javascript
-    $(document).ready(function() {
-      LocationAutocomplete.init("#{t(:'activerecord.attributes.user.zip')}");
-    });
+= everywhere_js do
+  LocationAutocomplete.init("#{t(:'activerecord.attributes.user.zip')}");
 
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form"}, :validate => true) do |f|
   =# devise_error_messages!

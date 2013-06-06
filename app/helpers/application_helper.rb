@@ -94,12 +94,12 @@ module ApplicationHelper
   end
 
   def everywhere_js(&block)
-    content = "<script>"+capture(&block)+"</script>"
     if request.wiselinks?
+      content = "<script>"+capture(&block)+"</script>"
       content.html_safe
     else
       content_for :scripts do
-        wrap = "$(document).ready(function($) {"+content+"});"
+        wrap = "<script>$(document).ready(function($) {"+capture(&block)+"});</script>"
         wrap.html_safe
       end
     end

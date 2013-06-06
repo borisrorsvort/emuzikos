@@ -95,6 +95,7 @@ $(document)
   .off('page:done').on('page:done', function(event, $target, status, url, data) {
     App.init();
     App.currentPage();
+    $($target).animate({scrollTop: 0}, 'fast'); // Scroll top
     $('.spinner-wrapper').hide();
   });
 

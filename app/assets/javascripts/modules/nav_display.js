@@ -1,6 +1,10 @@
 Layout = {
   init: function(bodyclass) {
     Layout.updateBodyClasses(bodyclass);
+    Layout.displaToggleButtons(bodyclass);
+    $(window).on("resize", function( event ) {
+      Layout.displaToggleButtons();
+    });
   },
   updateBodyClasses: function(bodyclass) {
     $el = $('body');
@@ -22,15 +26,20 @@ Layout = {
     return $('.menu-panel-right').is(':visible');
   },
   displaToggleButtons: function() {
+    $('[data-trigger=close]').hide();
     if (Layout.leftPanelVisible() === true) {
-      $('[href="#left"]:hidden').show();
+      console.log('Left panel visible');
+      $('[href="#left"]').hide();
     } else {
-      $('[href="#left"]:visible').hide();
+      console.log('Left panel not visible');
+      $('[href="#left"]:hidden').show();
     }
     if (Layout.rightPanelVisible() === true) {
-      $('[href="#right"]:hidden').show();
+      console.log('Right panel visible');
+      $('[href="#right"]').hide();
     } else {
-      $('[href="#right"]:visible').hide();
+      console.log('Left panel not visible');
+      $('[href="#right"]:hidden').show();
     }
   }
 };

@@ -3,7 +3,7 @@ class UserSearch < Searchlight::Search
   searches  :user_type, :instruments_like, :genres_like, :searching_for, :location
 
   def search_user_type
-    search.where('user_type LIKE ?', user_type)
+    search.where('user_type = ?', user_type)
   end
 
   def search_instruments_like
@@ -22,16 +22,6 @@ class UserSearch < Searchlight::Search
     search.near(location, 200, :select => "DISTINCT users.*")
   end
 end
-
-
-
-
-
-
-
-
-
-
 
 
 
