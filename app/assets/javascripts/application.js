@@ -25,6 +25,7 @@ App = {
     Images.adjustProfileThumbs();
     UserList.init();
     RemoteProfile.init();
+    App.removeNotificationBinding();
     // Search.init();
   },
 
@@ -74,6 +75,14 @@ App = {
       $(this).addClass('current');
     });
   },
+  removeAllNotifications: function() {
+    $.gritter.removeAll();
+  },
+  removeNotificationBinding: function() {
+    $('body').off('click').on('click', function() {
+      $.gritter.removeAll();
+    });
+  },
   initLocationAutocomplete: function() {
     if ($('#zip_autocomplete').length > 0) {
       placeholder = $('#zip_autocomplete').attr('data-placeholder');
@@ -81,7 +90,6 @@ App = {
     }
   }
 };
-
 
 $(document).ready(function() {
   App.init();
@@ -95,12 +103,9 @@ $(document)
   .off('page:done').on('page:done', function(event, $target, status, url, data) {
     App.init();
     App.currentPage();
+    App.removeNotifications();
     $($target).animate({scrollTop: 0}, 'fast'); // Scroll top
     $('.spinner-wrapper').hide();
   });
 
-$(document).on('page:done', '.page-signup', function(event) {
-  event.preventDefault();
-  alert('Pqge signup');
-});
 

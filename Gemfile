@@ -11,15 +11,13 @@ gem "devise"
 gem 'omniauth'
 gem "omniauth-facebook"
 gem "omniauth-soundcloud"
-gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
+gem "activeadmin"
 gem 'meta_search'
 
 gem "airbrake"
 gem "populator"
 gem "faker"
-# gem "squeel"
 gem 'searchlight'
-# gem "ransack", :git => "git://github.com/Eric-Guo/ransack.git"
 gem "gritter"
 gem "haml"
 gem "sass"

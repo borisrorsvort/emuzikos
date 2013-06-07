@@ -72,16 +72,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @omniauth.extra.raw_info.location.present?
       locationName    = @data.location.name
       coordinates     = Geocoder.coordinates(locationName)
-      locationResult  = Geocoder.search(locationName).first
       user.latitude   = coordinates[0] rescue nil
       user.longitude  = coordinates[1] rescue nil
-
-      user.zip = if locationResult.city.blank?
-        locationResult.state rescue nil
-      else
-        locationResult.city rescue locationResult.state
-      end
-      user.country    = locationResult.country_code rescue nil
+      user.zip        = locationName   rescue ""
     end
   end
 

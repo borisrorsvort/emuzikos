@@ -1,5 +1,4 @@
 .gritter-item.gritter-css3 {
-  @include animation(bounceIn 1s linear 1);
   margin: 10px;
   padding: 10px;
   margin: 20% auto;
@@ -20,14 +19,15 @@
     font-weight: normal;
   }
 }
-
+.gritter-close {
+  display: block !important;
+}
 #gritter-notice-wrapper {
   position: fixed;
   top: 20%;
-  right: 50%;
+  right: 10px;
   width: 300px;
   z-index: 9999;
-  @include translateX(150px)
 }
 
 #error_explanation {

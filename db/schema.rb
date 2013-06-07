@@ -207,9 +207,12 @@ ActiveRecord::Schema.define(:version => 20130606171853) do
     t.integer  "impressions_count",      :default => 0
   end
 
+  add_index "users", ["latitude", "longitude"], :name => "index_users_on_latitude_longitude"
+  add_index "users", ["profile_completed"], :name => "index_users_on_profile_completed"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
+  add_index "users", ["user_type"], :name => "index_users_on_user_type"
   add_index "users", ["username", "email"], :name => "index_users_on_username_and_email", :unique => true
-  add_index "users", ["username", "visible", "profile_completed", "searching_for", "user_type", "zip", "country", "latitude", "longitude"], :name => "index_users_on_searchable_fields"
+  add_index "users", ["visible"], :name => "index_users_on_visible"
 
 end
