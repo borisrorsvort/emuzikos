@@ -16,7 +16,7 @@
 
       %h4.menu-section= t('menu.more')
       %ul
-        %li= menu_item(t(:'menu.help'), false,'http://emuzikos.uservoice.com')
+        %li#Intercom= menu_item(t(:'menu.help'), false,'')
         %li= menu_item(t(:'menu.testimonials'), false,testimonials_path)
 
 
@@ -41,5 +41,7 @@
         %li= menu_item(t(:'menu.search'), false, users_path)
       %h4.menu-section= t('menu.more')
       %ul
-        %li= menu_item(t(:'menu.help'), false,'http://emuzikos.uservoice.com')
         %li= menu_item(t(:'menu.testimonials'), false,testimonials_path)
+        %li
+          %a{:href => "https://mixpanel.com/f/partner"}
+            %img{:alt => "Mobile Analytics", :src => "//cdn.mxpnl.com/site_media/images/partner/badge_light.png"}/

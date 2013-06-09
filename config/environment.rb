@@ -20,3 +20,6 @@ Carmen.i18n_backend.locale = :en
 if Rails.env.production?
   require 'dynamic_errors'
 end
+if Rails.env.test?
+  Dir[Rails.root.join("features/steps/common_steps/*.rb")].each {|f| require f}
+end

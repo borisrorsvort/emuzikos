@@ -33,10 +33,12 @@ module ApplicationHelper
     :user
   end
 
+  # special for devise form outside of devise views
   def resource
     @resource ||= User.new
   end
 
+  # special for devise form outside of devise views
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
