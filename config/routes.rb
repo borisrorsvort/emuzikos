@@ -3,7 +3,7 @@ Emuzikos::Application.routes.draw do
   #match '/auth/:service/callback' => 'services#create'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  # ActiveAdmin.routes(self)
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",:passwords => "passwords",  :registrations => "registrations" }
   devise_scope :user do
@@ -32,4 +32,5 @@ Emuzikos::Application.routes.draw do
 
   root :to => "pages#homepage"
 
+  ActiveAdmin.routes(self)
 end

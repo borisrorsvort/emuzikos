@@ -12,7 +12,7 @@ gem "devise"
 gem 'omniauth'
 gem "omniauth-facebook"
 gem "omniauth-soundcloud"
-gem "activeadmin"
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'meta_search'
 
 gem "airbrake"
