@@ -12,7 +12,7 @@ class Instrument < ActiveRecord::Base
   end
 
   def translated_name
-    I18n.t(name, :scope => 'instruments')
+    I18n.t("instruments.#{name}")
   end
 end
 

@@ -96,7 +96,7 @@ class User < ActiveRecord::Base
   end
 
   def translated_user_type
-    I18n.t(user_type, :scope => 'users.user_types').html_safe
+    I18n.t("users.user_types.#{user_type}").html_safe
   end
 
   def geocoded?

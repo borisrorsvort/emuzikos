@@ -12,7 +12,7 @@ class Genre < ActiveRecord::Base
   end
 
   def translated_name
-    I18n.t(name, :scope => 'musical_genres')
+    I18n.t("musical_genres.#{name}")
   end
 end
 
