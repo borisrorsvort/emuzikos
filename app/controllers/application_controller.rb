@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
     @search         = UserSearch.new(search_params)
     @genres         = Genre.order("name ASC")
     @instruments    = Instrument.order("name ASC")
-    @user_types     = I18n.t(User::USER_TYPES, :scope => [:users, :types])
   end
 
   def mailer_set_url_options

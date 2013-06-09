@@ -3,82 +3,45 @@ en:
     transliterate:
       rule: {}
   accordion: 
-  active_admin:
-    batch_actions:
-      action_label: 
-      button_label: 
-      delete_confirmation: 
-      labels:
-        destroy: 
-      link: 
-      selection_toggle_explanation: 
-      succesfully_destroyed: 
-    blank_slate:
-      content: 
-      link: 
-    comments:
-      add: 
-      author: 
-      body: 
-      errors:
-        empty_text: 
-      no_comments_yet: 
-      resource: 
-      title: 
-      title_content: 
-    dashboard_welcome:
-      call_to_action: 
-      welcome: 
-    devise:
-      change_password:
-        submit: 
-        title: 
-      links:
-        forgot_your_password: 
-        sign_in: 
-      login:
-        remember_me: 
-        submit: 
-        title: 
-      reset_password:
-        submit: 
-        title: 
-    equal_to: 
-    filter: 
-    greater_than: 
-    has_many_delete: 
-    has_many_new: 
-    less_than: 
-    logout: 
-    main_content: 
-    new_model: 
-    next: 
-    pagination:
-      empty: 
-      entry: 
-      multiple: 
-      one_page: 
-    previous: 
-    search_field: 
-    sidebars:
-      filters: 
-    update_model: 
-    view: 
   activerecord:
     attributes:
       user:
+        email: email
+        instruments: instruments
+        password: password
+        password_confirmation: password confirmation
+        user_type: user type
+        username: username
+        zip: zip code, city, country
+        avatar: 
+        birthdate: 
+        country: 
+        created_at: 
+        current_password: 
+        genre: 
+        invisible: 
+        last_active: 
+        last_updater: 
+        location: 
+        new_password: 
+        references: 
+        request_message: 
+        searching_for: 
+        soundcloud_username: 
+        testimonials: 
+        updated_at: 
+        visible: 
+        youtube_video_id: 
+      service:
         email: 
-        instruments: 
-        password: 
-        password_confirmation: 
-        user_type: 
-        username: 
-        zip: 
-  agent: 
+        not_set: 
+        uname: 
+      testimonial:
+        body: 
+        user: 
   alternative: 
   baglama: 
   bagpipe: 
-  band: 
   banjo: 
   bass: 
   blues: 
@@ -87,12 +50,12 @@ en:
   bouzouki: 
   buttons:
     search:
-      agents: 
-      bands: 
-      musicians: 
-    submit: 
+      agents: search agents
+      bands: search bands
+      musicians: search musicians
+    submit: submit
     testimonials:
-      create: 
+      create: create testimonial
   cello: 
   charango: 
   children: 
@@ -101,8 +64,8 @@ en:
   classical: 
   comedy: 
   common:
-    no_script: 
-    by: 
+    no_script: You must have Javascript installed!
+    by: by
   computer: 
   congas: 
   country: 
@@ -226,7 +189,7 @@ en:
       unlock_instructions:
         subject: Unlock Instructions
     omniauth_callbacks:
-      failure: 
+      failure: Could not authorize you from %{kind} because %{reason}.
       success: Successfully authenticated from %{kind} account.
     passwords:
       no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
@@ -245,7 +208,7 @@ en:
     sessions:
       signed_in: Signed in successfully.
       signed_out: Signed out successfully.
-    signin_with: 
+    signin_with: Sign in with %{provider}
     unlocks:
       send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
       send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
@@ -331,39 +294,39 @@ en:
   jazz: 
   keyboard: 
   languages:
-    english: 
-    french: 
+    english: english
+    french: français
   latino: 
   mandolin: 
   menu:
-    blog: 
-    connexion: 
-    help: 
-    legal: 
-    login: 
-    logout: 
+    blog: blog
+    connexion: connexion
+    help: help
+    legal: legal
+    login: login
+    logout: logout
     messages:
-      inbox: 
+      inbox: inbox
       languages: 
-      messages: 
-    more: 
-    privacy: 
+      messages: messages
+    more: more
+    privacy: privacy Policy
     profile:
-      account: 
-      authentications: 
-      edit: 
-      public: 
-      show: 
-    search: 
-    signup: 
-    terms: 
-    testimonials: 
+      account: edit my account
+      authentications: authentication services
+      edit: edit my profile
+      public: my public profile
+      show: profile
+    search: musicians classifieds
+    signup: sign up
+    terms: Terms of agreement
+    testimonials: Testimonials
     users:
-      contacts: 
+      contacts: contacts list
+    languages: Laguages
   metal: 
   metalcore: 
   mirdangam: 
-  musician: 
   new_age: 
   new_wave: 
   number:
@@ -418,34 +381,50 @@ en:
   oud: 
   pages:
     homepage:
-      description: 
+      description: Looking for a local musician or band mates? Search and submit musicians classifieds
       home_feature:
         advantage:
-          body: 
-          title: 
+          body: You will get a fully customizable profile, a private message inbox, and an awesome musicians, bands & agents database to search from.
+          title: What do you get when you sign up?
         external_services:
-          body: 
+          body: ! 'We don''t want to reinvent the wheel, so we have integrated some cool services for you:'
           services:
-            soundcloud: 
-            youtube: 
-          title: 
+            soundcloud: <strong>Soundcloud</strong> to play your music
+            youtube: <strong>Youtube</strong> to show you off
+          title: What services do we integrate with?
         no_credit_card:
-          body: 
-          title: 
+          body: The service is completely free. We believe you should never pay to be able to connect with other musicians.
+          title: No credit card required
         privacy:
-          body: 
-          title: 
+          body: Emuzikos has an internal messaging system, which means that you don't need to share personal information on your profile and will avoid being spammed by robots crawling the web.
+          title: Care about privacy?
         sharing:
-          body: 
-          title: 
+          body: Musicians deserve a better search tool. So, if you like the way Emuzikos manages musicians classifieds, please share this page around you.
+          title: Spread the love with musicians
         sign_up:
-          body: 
-          title: 
-      keywords: 
-      sign_up: 
-      subtitle: 
-      title: 
-      what_people_say_about_it: 
+          body: Creating an account takes less than 60 sec.  With just a couple of basic details, you  can start searching musicians band or agents. As you add more information, you become easier to find by other users.
+          title: Simple & minimal sign up process
+      keywords: musician, search, musician search, local musicians, search local musician
+      sign_up: Create your profile
+      subtitle: Emuzikos, more than a musicians classifieds site
+      title: The first easy way to find local musicians. Free musicians classifieds
+      what_people_say_about_it: What people say about it
+      latest_testimonials: Latest musician's testimonials
+      moto: The first <strong>easy</strong> way to find <strong>local</strong> musicians
+      sections:
+        screenshots:
+          inbox: Your private inbox
+          profile: Profile page
+          search_page: Search page
+          title: How does it look like?
+        testimonials:
+          title: What people are saying about it?
+    privacy:
+      description: The privacy policy of Emuzikos help you use the site by defining the scope of your privacy
+      title: Privacy Policy
+    terms:
+      description: The terms of agreements of Emuzikos help you use the site by defining the scope of your rights
+      title: Terms of Agreement
   percussions: 
   piano: 
   pop: 
@@ -461,14 +440,14 @@ en:
   saxophone: 
   saz: 
   search_terms:
-    mass_locate: 
-    music_style: 
+    mass_locate: ! 'search area (ex: Manhattan, New York)'
+    music_style: ! 'Search Area (ex: Manhattan, New York)'
     tabs:
-      agent: 
-      band: 
-      musician: 
-    who_plays: 
-    who_search_for: 
+      agent: agent
+      band: and
+      musician: musician
+    who_plays: Instruments
+    who_search_for: who's searching for a
   shennai: 
   sitar: 
   ska: 
@@ -496,7 +475,7 @@ en:
       short: ! '%d %b %H:%M'
     pm: pm
   tooltips:
-    password: 
+    password: Must contains at least 5 characters
   trombone: 
   trompet: 
   turntables: 
@@ -504,6 +483,10 @@ en:
     types:
       agent: 
       band: 
+      musician: 
+    user_types:
+      agent: agent
+      band: band
       musician: 
   veena: 
   viola: 
@@ -514,4 +497,112 @@ en:
   world: 
   testimonials:
     index:
-      title: 
+      title: Testimonials
+  agent: agent
+  band: band
+  instruments:
+    accordion: Accordion
+    baglama: Baglama
+    bagpipe: Bag Pipe
+    banjo: Banjo
+    bass: Bass
+    bombo: Bombo
+    bouzouki: Bouzouki
+    cello: Cello
+    charango: Charango
+    cithar: Cithar
+    clarinet: Clarinet
+    computer: Computer
+    congas: Congas
+    dhoki: Dhoki
+    dholak: Dholak
+    double_bass: Double bass
+    drums: Drums
+    euphonium: Euphonium
+    flute: Flute
+    gatam: Gatam
+    guitar: Guitar
+    hang: Hang
+    harmonica: Harmonica
+    harmonium: Harmonium
+    harp: Harp
+    horn: Horn
+    hurdy_gurdy: Hurdy Gurdy
+    keyboard: Keyboard
+    mandolin: Mandolin
+    mirdangam: Mirdangam
+    ocarina: Ocarina
+    oud: Oud
+    percussions: Percussions
+    piano: Piano
+    santoor: Santoor
+    sarod: Sarod
+    saxophone: Saxophone
+    saz: Saz
+    shennai: Shennai
+    sitar: Sitar
+    sousaphone: Sousaphone
+    spoons: Spoons
+    swaramandal: Swaramandal
+    tablas: Tablas
+    tambura: Tambura
+    theremin: Theremin
+    trombone: Trombone
+    trompet: Trompet
+    turntables: Turntables
+    veena: Veena
+    viola: Viola
+    violin: Violin
+    voice: Voice
+    whistles: Whistles
+  musical_genres:
+    alternative: Alternative
+    blues: Blues
+    bossa_nova: Bossa Nova
+    children: Children
+    classical: Classical
+    comedy: Comedy
+    country: Country
+    dance: Dance
+    dubstep: Dubstep
+    easy_listening: Easy Listening
+    electronic: Electronic
+    flamenco: Flamenco
+    folk: Folk
+    french_popular: French Popular
+    funk: Funk
+    fusion: Fusion
+    gospel: Gospel
+    hard-rock: Hard Rock
+    hip: Hip
+    hip_hop: Hip Hop
+    indian_classical: Indian Classical
+    instrumental: Instrumental
+    irish: Irish
+    jazz: Jazz
+    latino: Latino
+    metal: Metal
+    metalcore: Metal Core
+    new_age: New Age
+    new_wave: New Wave
+    opera: Opera
+    pop: Pop
+    post_hardcore: Post Hardcore
+    post_punk: Post punk
+    post_rock: Post Rock
+    progressive_rock: Progressive Rock
+    psychedelic_rock: Psychedelic Rock
+    punk: Punk
+    r&b: R&B
+    r_and_b: R&B
+    reggae: Reggae
+    rock: Rock
+    ska: Ska
+    songwriter: Song Writer
+    soul: Soul
+    soundtrack: Soundtrack
+    spoken_word: Spoken Word
+    spychedelic_rock: Psychedelic Rock
+    vocal: Vocal
+    world: World
+  musician: musician

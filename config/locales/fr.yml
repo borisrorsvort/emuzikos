@@ -1,0 +1,525 @@
+fr:
+  activerecord:
+    attributes:
+      service:
+        email: Email
+        not_set: Non défini
+        uname: Nom
+      testimonial:
+        body: Texte
+        user: Utilisateur
+      user:
+        avatar: Photo de profil
+        birthdate: Date de naissance
+        country: Pays
+        created_at: Créé le
+        current_password: Mot de passe actuel
+        email: Email
+        genre: Genres musicaux
+        instruments: Mes instruments
+        invisible: Invisible
+        last_active: Activité récente
+        last_updater: Mis à jour par
+        location: Localisation
+        new_password: Nouveau mot de passe
+        password: Mot de passe
+        password_confirmation: Confirmation du mot de passe
+        references: Références musicales
+        request_message: Annonce
+        searching_for: Ce que je cherche
+        soundcloud_username: Nom d'utilisateur SoundCloud
+        testimonials: Témoignages de %{user}
+        updated_at: Mis à jour le
+        user_type: Type d'utilisateur
+        username: Nom d'utilisateur
+        visible: Visible
+        youtube_video_id: Numéros Identifiant la video youtube
+        zip: Ville
+  agent: 
+  band: 
+  buttons:
+    search:
+      agents: 
+      bands: 
+      musicians: 
+    submit: 
+    testimonials:
+      create: 
+  common:
+    by: 
+    no_script: 
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    - 
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%e %B %Y'
+      short: ! '%e %b'
+    month_names:
+    - 
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi-minute
+      less_than_x_minutes:
+        one: moins d'une minute
+        other: moins de %{count} minutes
+        zero: moins d'une minute
+      less_than_x_seconds:
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+        zero: moins d'une seconde
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      x_days:
+        one: ! '%{count} jour'
+        other: ! '%{count} jours'
+      x_minutes:
+        one: ! '%{count} minute'
+        other: ! '%{count} minutes'
+      x_months:
+        one: ! '%{count} mois'
+        other: ! '%{count} mois'
+      x_seconds:
+        one: ! '%{count} seconde'
+        other: ! '%{count} secondes'
+    prompts:
+      day: Jour
+      hour: Heure
+      minute: Minute
+      month: Mois
+      second: Seconde
+      year: Année
+  devise:
+    confirmations:
+      confirmed: Votre compte a été confirmé avec succès. Vous êtes désormais connecté(e).
+      send_instructions: Vous allez recevoir sous quelques minutes un email comportant des instructions pour confirmer votre compte.
+      send_paranoid_instructions: Si votre email existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
+    failure:
+      already_authenticated: Vous êtes déjà connecté(e).
+      inactive: Votre compte n’est pas encore activé.
+      invalid: Email ou mot de passe incorrect.
+      invalid_token: Jeton d'authentification incorrect.
+      locked: Votre compte est verrouillé.
+      not_found_in_database: Email ou mot de passe incorrect.
+      timeout: Votre session est périmée, veuillez vous reconnecter pour continuer.
+      unauthenticated: Vous devez vous connecter ou vous enregistrer pour continuer.
+      unconfirmed: Vous devez confirmer votre compte par email.
+    mailer:
+      confirmation_instructions:
+        subject: Instructions de confirmation
+      reset_password_instructions:
+        subject: Instructions pour changer le mot de passe
+      unlock_instructions:
+        subject: Instructions pour déverrouiller le compte
+    omniauth_callbacks:
+      failure: ! 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
+      success: Autorisé avec succès par votre compte %{kind}.
+    passwords:
+      no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
+      send_instructions: Vous allez recevoir sous quelques minutes un email vous indiquant comment réinitialiser votre mot de passe.
+      send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
+      updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté(e).
+      updated_not_active: Votre mot de passe a été modifié avec succès.
+    registrations:
+      destroyed: Au revoir ! Votre compte a été annulé avec succès. Nous espérons vous revoir bientôt.
+      signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
+      signed_up_but_inactive: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte n’a pas encore été activé.
+      signed_up_but_locked: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte est verrouillé.
+      signed_up_but_unconfirmed: Un message avec un lien de confirmation vous a été envoyé par mail. Veuillez suivre ce lien pour activer votre compte.
+      update_needs_confirmation: Vous avez modifié votre compte avec succès, mais nous devons vérifier votre nouvelle adresse email. Veuillez consulter vos emails et cliquer sur le lien de confirmation pour finalizer votre nouvelle adresse.
+      updated: Votre compte a été modifié avec succès.
+    sessions:
+      signed_in: Connecté avec succès.
+      signed_out: Déconnecté avec succès.
+    signin_with: 
+    unlocks:
+      send_instructions: Vous allez recevoir un email sous quelques minutes contenant les instructions nécessaires au déblocage de votre compte.
+      send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
+      unlocked: Votre compte a été débloqué avec succès. Veuillez vous connecter.
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: doit être accepté(e)
+      already_confirmed: a déjà été confirmé(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec la confirmation
+      confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      expired: est périmé, veuillez en demander un autre
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      not_found: n’a pas été trouvé(e)
+      not_locked: n’était pas verrouillé(e)
+      not_saved:
+        one: ! 'une erreur a empêché ce (ou cette) %{resource} d’être enregistré(e) :'
+        other: ! '%{count} erreurs ont empêché ce (ou cette) %{resource} d’être enregistré(e) :'
+      odd: doit être impair
+      record_invalid: ! 'La validation a échoué : %{errors}'
+      taken: n'est pas disponible
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+    template:
+      body: ! 'Veuillez vérifier les champs suivants : '
+      header:
+        one: ! 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreur'
+        other: ! 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: ! '%{entry_name}  <b>%{first} - %{last}</b> sur <b>%{total}</b> au total'
+      one_page:
+        display_entries:
+          one: <b>%{count}</b> %{entry_name}
+          other: <b>tous les %{count}</b> %{entry_name}
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  i18n:
+    transliterate:
+      rule: 
+  instruments:
+    accordion: 
+    baglama: 
+    bagpipe: 
+    banjo: 
+    bass: 
+    bombo: 
+    bouzouki: 
+    cello: 
+    charango: 
+    cithar: 
+    clarinet: 
+    computer: 
+    congas: 
+    dhoki: 
+    dholak: 
+    double_bass: 
+    drums: 
+    euphonium: 
+    flute: 
+    gatam: 
+    guitar: 
+    hang: 
+    harmonica: 
+    harmonium: 
+    harp: 
+    horn: 
+    hurdy_gurdy: 
+    keyboard: 
+    mandolin: 
+    mirdangam: 
+    ocarina: 
+    oud: 
+    percussions: 
+    piano: 
+    santoor: 
+    sarod: 
+    saxophone: 
+    saz: 
+    shennai: 
+    sitar: 
+    sousaphone: 
+    spoons: 
+    swaramandal: 
+    tablas: 
+    tambura: 
+    theremin: 
+    trombone: 
+    trompet: 
+    turntables: 
+    veena: 
+    viola: 
+    violin: 
+    voice: 
+    whistles: 
+  languages:
+    english: 
+    french: 
+  menu:
+    blog: 
+    connexion: 
+    help: 
+    languages: 
+    legal: 
+    login: 
+    logout: 
+    messages:
+      inbox: 
+      languages: 
+      messages: 
+    more: 
+    privacy: 
+    profile:
+      account: 
+      authentications: 
+      edit: 
+      public: 
+      show: 
+    search: 
+    signup: 
+    terms: 
+    testimonials: 
+    users:
+      contacts: 
+  musical_genres:
+    alternative: 
+    blues: 
+    bossa_nova: 
+    children: 
+    classical: 
+    comedy: 
+    country: 
+    dance: 
+    dubstep: 
+    easy_listening: 
+    electronic: 
+    flamenco: 
+    folk: 
+    french_popular: 
+    funk: 
+    fusion: 
+    gospel: 
+    hard-rock: 
+    hip: 
+    hip_hop: 
+    indian_classical: 
+    instrumental: 
+    irish: 
+    jazz: 
+    latino: 
+    metal: 
+    metalcore: 
+    new_age: 
+    new_wave: 
+    opera: 
+    pop: 
+    post_hardcore: 
+    post_punk: 
+    post_rock: 
+    progressive_rock: 
+    psychedelic_rock: 
+    punk: 
+    r&b: 
+    r_and_b: 
+    reggae: 
+    rock: 
+    ska: 
+    songwriter: 
+    soul: 
+    soundtrack: 
+    spoken_word: 
+    spychedelic_rock: 
+    vocal: 
+    world: 
+  musician: 
+  number:
+    currency:
+      format:
+        delimiter: ! ' '
+        format: ! '%n %u'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: ! ' '
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: octet
+            other: octets
+          gb: Go
+          kb: ko
+          mb: Mo
+          tb: To
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  pages:
+    homepage:
+      description: 
+      home_feature:
+        advantage:
+          body: 
+          title: 
+        external_services:
+          body: 
+          services:
+            soundcloud: 
+            youtube: 
+          title: 
+        no_credit_card:
+          body: 
+          title: 
+        privacy:
+          body: 
+          title: 
+        sharing:
+          body: 
+          title: 
+        sign_up:
+          body: 
+          title: 
+      keywords: 
+      latest_testimonials: 
+      moto: 
+      sections:
+        screenshots:
+          inbox: 
+          profile: 
+          search_page: 
+          title: 
+        testimonials:
+          title: 
+      sign_up: 
+      subtitle: 
+      title: 
+      what_people_say_about_it: 
+    privacy:
+      description: 
+      title: 
+    terms:
+      description: 
+      title: 
+  search_terms:
+    mass_locate: 
+    music_style: 
+    tabs:
+      agent: 
+      band: 
+      musician: 
+    who_plays: 
+    who_search_for: 
+  support:
+    array:
+      last_word_connector: ! ' et '
+      two_words_connector: ! ' et '
+      words_connector: ! ', '
+  testimonials:
+    index:
+      title: 
+  time:
+    am: am
+    formats:
+      default: ! '%d %B %Y %H:%M:%S'
+      long: ! '%A %d %B %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
+  tooltips:
+    password: 
+  users:
+    types:
+      agent: 
+      band: 
+      musician: 
+    user_types:
+      agent: 
+      band: 
+      musician: 
+  views:
+    pagination:
+      first: ! '&laquo; Premier'
+      last: Dernier &raquo;
+      next: Suivant &rsaquo;
+      previous: ! '&lsaquo; Précédent'
+      truncate: ! '&hellip;'
