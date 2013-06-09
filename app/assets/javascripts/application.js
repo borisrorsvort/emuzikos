@@ -103,7 +103,7 @@ $(document)
   .off('page:done').on('page:done', function(event, $target, status, url, data) {
     App.init();
     App.currentPage();
-    App.removeNotifications();
+    App.removeAllNotifications();
     $($target).animate({scrollTop: 0}, 'fast'); // Scroll top
     $('.spinner-wrapper').hide();
   });
