@@ -44,19 +44,20 @@
   .form-actions
     = f.button :submit, t(:'buttons.update'), :class => "btn btn-primary"
 
-.modal.fade#youtube_video_id_help{:style => 'display:none;'}
-  %section.modal-header
-    =link_to "×", "#", :data => { "dismiss" => "modal"}, :class => "close"
-    %h3= t(:'youtube_video_id_help.title', :scope => [:users, :edit])
-  %section#modal-body
-    .well
-      %ol
-        %li
-          = t(:'youtube_video_id_help.steps.first', :scope => [:users, :edit])
-        %li
-          %p= t(:'youtube_video_id_help.steps.second', :scope => [:users, :edit])
-          %p= image_tag "modals/youtube/url-example.jpg", :alt => "youtube url example"
-        %li
-          = t(:'youtube_video_id_help.steps.third', :scope => [:users, :edit])
-        %li
-          = t(:'youtube_video_id_help.steps.fourth', :scope => [:users, :edit])
+= content_for :modal do
+  .modal.fade#youtube_video_id_help{:style => 'display:none;'}
+    %section.modal-header
+      =link_to "×", "#", :data => { "dismiss" => "modal"}, :class => "close"
+      %h3= t(:'youtube_video_id_help.title', :scope => [:users, :edit])
+    %section#modal-body
+      .well
+        %ol
+          %li
+            = t(:'youtube_video_id_help.steps.first', :scope => [:users, :edit])
+          %li
+            %p= t(:'youtube_video_id_help.steps.second', :scope => [:users, :edit])
+            %p= image_tag "modals/youtube/url-example.jpg", :alt => "youtube url example"
+          %li
+            = t(:'youtube_video_id_help.steps.third', :scope => [:users, :edit])
+          %li
+            = t(:'youtube_video_id_help.steps.fourth', :scope => [:users, :edit])

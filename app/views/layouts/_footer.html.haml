@@ -21,7 +21,7 @@
 /     .clearfix
 
 / = render "shared/overlay"
-
+= yield :modal
 = javascript_include_tag "application"
 = render(:partial => "shared/trackings")
 = yield :javascripts
