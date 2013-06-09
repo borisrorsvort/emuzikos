@@ -50,7 +50,6 @@ namespace :db do
       user.created_at = 1.week.ago..Time.now
       user.visible = true
       user.youtube_video_id = ["JW5meKfy3fY", ""]
-      user.songkick_username = ["foo-fighters", ""]
       user.soundcloud_username = ["desta", ""]
       #user.profile_completed = [true, false]
       Testimonial.populate 1..2 do |t|

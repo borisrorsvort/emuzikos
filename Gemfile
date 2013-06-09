@@ -34,7 +34,6 @@ gem 'country_select'
 gem 'httparty'
 gem 'carmen'
 gem 'carmen-rails'
-gem 'songkickr'
 gem "soundcloud"
 gem "hominid"
 gem 'preferences', :git => 'git://github.com/mojotech/preferences.git'
@@ -122,5 +121,3 @@ group :test do
   gem 'rack-contrib'
   gem 'fuubar'
 end
-
-gem 'tap'

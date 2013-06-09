@@ -27,9 +27,8 @@ en:
         references: "Musical References"
         request_message: Classified ad
         searching_for: "Searching for"
-        songkick_username: "Songkick username"
         soundcloud_username: "SoundCloud username"
-        testimonials: "%{user}'s Testimonials"
+        testimonials: "Testimonials"
         updated_at: "Updated at"
         user_type: "User Type"
         username: Username
@@ -377,7 +376,6 @@ en:
         external_services:
           body: "We don't want to reinvent the wheel, so we have integrated some cool services for you:"
           services:
-            songkick: "<strong>Songkick</strong> to announce your events"
             soundcloud: "<strong>Soundcloud</strong> to play your music"
             youtube: "<strong>Youtube</strong> to show you off"
           title: "What services do we integrate with?"

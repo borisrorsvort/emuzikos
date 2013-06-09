@@ -27,7 +27,6 @@ fr:
         references: "Références musicales"
         request_message: Annonce
         searching_for: "Ce que je cherche"
-        songkick_username: "Nom d'utilisateur Songkick"
         soundcloud_username: "Nom d'utilisateur SoundCloud"
         testimonials: "Témoignages de %{user}"
         updated_at: "Mis à jour le"
@@ -393,7 +392,6 @@ fr:
         external_services:
           body: "Nous ne voulions pas réinventer la roue. Nous avons donc intégré des services tels que:"
           services:
-            songkick: "<strong>Songkick</strong> pour annoncer vos concerts"
             soundcloud: "<strong>Soundcloud</strong> pour jouer votre musique"
             youtube: "<strong>Youtube</strong> pour frimer à la télé"
           title: "Nous avons aussi intégré vos services préférés! "

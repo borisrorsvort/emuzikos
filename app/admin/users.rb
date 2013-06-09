@@ -25,9 +25,7 @@ ActiveAdmin.register User do
     column :username, :sortable => false
     column :user_type
     column :zip
-    column :country do |user|
-      i18n_country(user) unless user.country.nil?
-    end
+
     column :created_at do |user|
       user.created_at.strftime("%I:%M %p %b %d")
     end
@@ -56,8 +54,6 @@ ActiveAdmin.register User do
       f.input :references, :as => :string
       f.input :request_message, :as => :text
       f.input :zip, :as => :string
-      f.input :country, :as => :country, :locale => :en
-      f.input :songkick_username
       f.input :youtube_video_id
       f.input :soundcloud_username
       f.input :prefers_newsletters, :as => :boolean

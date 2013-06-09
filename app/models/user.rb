@@ -119,13 +119,6 @@ class User < ActiveRecord::Base
     "#{self.id}--#{self.email}"
   end
 
-  def get_events(songkick_username)
-    require 'songkickr'
-    remote = Songkickr::Remote.new AppConfig.songkick.api_key
-    results = remote.events(:artist_name => songkick_username, :type => 'concert')
-    results
-  end
-
   def get_soundclound_tracks(soundcloud_username)
     if self.soundcloud_username.present?
       require 'soundcloud'
