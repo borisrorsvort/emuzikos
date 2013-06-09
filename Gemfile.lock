@@ -105,6 +105,9 @@ GEM
       thor
     bourne (1.2.1)
       mocha (= 0.12.7)
+    browser (0.1.6)
+    browsernizer (0.2.1)
+      browser (~> 0.1.4)
     builder (3.0.4)
     bullet (4.4.0)
       uniform_notifier
@@ -515,6 +518,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass-rails
+  browsernizer
   bullet
   capybara
   carmen
