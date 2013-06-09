@@ -63,6 +63,8 @@ gem 'thin'
 gem 'coffee-script'
 gem 'wiselinks', git: 'git://github.com/igor-alexandrov/wiselinks.git'
 
+gem 'localeapp'
+
 group :assets do
   gem 'uglifier'
   gem 'sass-rails'

@@ -198,6 +198,7 @@ GEM
       ruby-progressbar (~> 1.0.0)
     geocoder (1.1.6)
     gherkin-ruby (0.2.1)
+    gli (2.5.6)
     gritter (1.0.3)
     growl (1.0.3)
     guard (1.6.2)
@@ -271,6 +272,12 @@ GEM
     linecache (0.46)
       rbx-require-relative (> 0.0.4)
     listen (0.7.3)
+    localeapp (0.6.9)
+      gli
+      i18n
+      json
+      rest-client
+      ya2yaml
     lumberjack (1.0.2)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -499,6 +506,7 @@ GEM
     xml-simple (1.1.2)
     xpath (1.0.0)
       nokogiri (~> 1.3)
+    ya2yaml (0.31)
 
 PLATFORMS
   ruby
@@ -546,6 +554,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   letter_opener
+  localeapp
   meta_search
   mixpanel
   newrelic_rpm
