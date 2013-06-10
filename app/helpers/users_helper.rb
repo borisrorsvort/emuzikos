@@ -8,6 +8,6 @@ module UsersHelper
     grouped_options = [[t(:'activerecord.attributes.user.user_type'), localized_types ], [t(:'activerecord.attributes.user.instruments'), localized_instruments]]
   end
   def i18n_country(user)
-    Carmen::Country.coded(user.country).name
+    Carmen::Country.coded(user.country).name rescue ""
   end
 end
