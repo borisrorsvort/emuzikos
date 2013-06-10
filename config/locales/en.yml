@@ -533,6 +533,31 @@ en:
         user_infos: Infos
         videos: Videos
       title: ! '%{username}''s profile'
+    edit:
+      form_helpers:
+        dont_find_youtube_video_id: Don't find your Youtube video id?
+        dont_have_a_service_account: ! 'Don''t have %{service} account? '
+        genre_not_on_list: Your genre is not in the list?
+        instrument_not_in_list: Your instrument is not in the list?
+        personal_infos_advice: <div class='alert alert-info'>We advice you not to share any personal informations such as email or phone number. Let people contact you using the internal messaging system instead.</div>
+        request_through_dashboard: <a href='javascript:UserVoice.showPopupWidget();' class='feedback_link'>Please make a request using the help dashboard</a>
+      instruments_in_band_notice: <div class='alert alert-info'>List instruments you play or the ones already present in the band if you're a band.</div>
+      invisible_notice: Make sure you're set as visible in order to appear in search results
+      medias: Medias (optional)
+      meta_description: Edit %{username}'s profile page. Musician, band or agents infos
+      profile_complete_notice: Congratulations, your profile is complete!
+      profile_not_complete_notice: In order to appear in search results, you need to complete your profile fully (except the media section).
+      title: Edit your profile
+      tracks: Tracks
+      visible_explanation: When 'visible', you will appear in search results if your profile is complete (except medias). When "invisible", you will be removed you from any search results.
+      visible_notice: You now appear in search results!
+      youtube_video_id_help:
+        steps:
+          first: First go to your youtube video page
+          fourth: Press update
+          second: Then copy the id form the page url. That's the text after 'watch?v='
+          third: Paste it in your profile youtube video id field
+        title: How to find your Youtube video id?
   veena: 
   viola: 
   violin: 

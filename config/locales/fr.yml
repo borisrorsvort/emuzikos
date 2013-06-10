@@ -561,6 +561,31 @@ fr:
         user_infos: Infos
         videos: Videos
       title: Profil de %{username}
+    edit:
+      form_helpers:
+        dont_find_youtube_video_id: Vous ne trouvez pas le numéro identifiant la video Youtube?
+        dont_have_a_service_account: Vous n'avez pas de compte %{service}?
+        genre_not_on_list: Votre style ne se trouve pas dans la liste?
+        instrument_not_in_list: Votre instrument ne se trouve pas dans la liste?
+        personal_infos_advice: <div class='alert alert-info'>Nous vous conseillons de ne pas divulguer d'informations personnelles telles qu'un numéro de téléphone ou une adresse. Cela, afin d'éviter le vol d'informations par des robots. Préférez le système de messagerie d'Emuzikos.</div>
+        request_through_dashboard: <a href='javascript:UserVoice.showPopupWidget();' class='feedback_link'>Faites-en la demande ici</a>
+      instruments_in_band_notice: <div class='alert alert-info'>Listez ici les instruments que vous jouez ou ceux déjà présents dans le groupe si vous êtes un groupe.</div>
+      invisible_notice: Vérifiez que vous êtes bien 'visible' afin d'apparaître dans les résultats de recherche
+      medias: Medias (optionnel)
+      meta_description: Modification du profil de  %{username}. Musicien, groupe ou agent
+      profile_complete_notice: Félicitations, votre profil est complet!
+      profile_not_complete_notice: Pour apparaître dans les résultats de recherche, vous devez compléter votre profil (à l'exception de la section 'médias').
+      title: Modifier mon profil
+      tracks: Pistes
+      visible_explanation: Quand vous êtes 'visible', vous apparaîtrez dans les recherches si votre profil est complet (sauf 'Médias') et vice versa.
+      visible_notice: Vous apparaissez dans les résultats de recherche!
+      youtube_video_id_help:
+        steps:
+          first: Aller sur la page de la video Youtube
+          fourth: Appuyer sur 'Mettre à jour'
+          second: Copiez l'id de la video que vous trouverez dans la barre d'adresse. C'est le texte après  'watch?v=' .
+          third: Coller-le dans le champ de votre profil ad-hoc
+        title: Comment trouver l'id de votre video Youtube?
   views:
     pagination:
       first: ! '&laquo; Premier'
