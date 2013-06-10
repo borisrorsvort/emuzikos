@@ -35,19 +35,20 @@ fr:
         visible: Visible
         youtube_video_id: Numéros Identifiant la video youtube
         zip: Ville
-  agent: 
-  band: 
+  agent: agent
+  band: groupe
   buttons:
     search:
-      agents: 
-      bands: 
-      musicians: 
-    submit: 
+      agents: recherchez des agents
+      bands: recherchez des groupes
+      musicians: cherchez les musiciens
+    submit: envoyez
     testimonials:
-      create: 
+      create: créez le témoignagne
+    login: Connexion
   common:
-    by: 
-    no_script: 
+    by: par
+    no_script: Vous devez avoir javascript installé
   date:
     abbr_day_names:
     - dim
@@ -148,51 +149,78 @@ fr:
       year: Année
   devise:
     confirmations:
-      confirmed: Votre compte a été confirmé avec succès. Vous êtes désormais connecté(e).
-      send_instructions: Vous allez recevoir sous quelques minutes un email comportant des instructions pour confirmer votre compte.
+      confirmed: Votre compte a été confirmé. Vous êtes à présent connecté(e).
+      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour confirmer votre compte.
       send_paranoid_instructions: Si votre email existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
     failure:
-      already_authenticated: Vous êtes déjà connecté(e).
-      inactive: Votre compte n’est pas encore activé.
-      invalid: Email ou mot de passe incorrect.
-      invalid_token: Jeton d'authentification incorrect.
+      already_authenticated: Vous êtes déjà connecté.
+      inactive: Votre compte n’a pas encore été activé.
+      invalid: Pseudo ou mot de passe invalide.
+      invalid_token: Jeton d’authentification invalide.
       locked: Votre compte est verrouillé.
       not_found_in_database: Email ou mot de passe incorrect.
-      timeout: Votre session est périmée, veuillez vous reconnecter pour continuer.
-      unauthenticated: Vous devez vous connecter ou vous enregistrer pour continuer.
-      unconfirmed: Vous devez confirmer votre compte par email.
+      timeout: Votre session a expiré, veuillez vous connecter de nouveau afin de continuer.
+      unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
+      unconfirmed: Vous devez confirmer votre compte avant de continuer.
     mailer:
       confirmation_instructions:
         subject: Instructions de confirmation
       reset_password_instructions:
-        subject: Instructions pour changer le mot de passe
+        subject: Instructions de réinitialisation de mot de passe
       unlock_instructions:
-        subject: Instructions pour déverrouiller le compte
+        subject: Instructions de déverrouillage
     omniauth_callbacks:
-      failure: ! 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
-      success: Autorisé avec succès par votre compte %{kind}.
+      failure: Nous ne pouvons pas autoriser la connexion avec %{kind} parce que %{reason}.
+      success: Nous avons bien autorisé la connexion avec votre compte %{kind}.
     passwords:
       no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
-      send_instructions: Vous allez recevoir sous quelques minutes un email vous indiquant comment réinitialiser votre mot de passe.
+      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour réinitialiser votre mot de passe.
       send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
-      updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté(e).
+      updated: Votre mot de passe a été modifié. Vous êtes à présent connecté(e).
       updated_not_active: Votre mot de passe a été modifié avec succès.
+      edit:
+        title: Changer votre mot de passe
+      new:
+        description: Vous avez oubliez votre mot de passe? Pas de problème, remplissez le formulaire et vous pourrez continuer à chercher musiciens et groupes en un rien de temps.
+        title: Réinitialiser votre mot de passe
     registrations:
-      destroyed: Au revoir ! Votre compte a été annulé avec succès. Nous espérons vous revoir bientôt.
-      signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
-      signed_up_but_inactive: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte n’a pas encore été activé.
-      signed_up_but_locked: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte est verrouillé.
-      signed_up_but_unconfirmed: Un message avec un lien de confirmation vous a été envoyé par mail. Veuillez suivre ce lien pour activer votre compte.
+      destroyed: Au revoir ! Votre compte a été résilié. Nous espérons vous revoir très bientôt.
+      signed_up: Votre inscription a été effectuée. Si cette dernière est activée, une confirmation a été envoyée sur votre adresse e-mail.
+      signed_up_but_inactive: Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte n'est pas encore activé.
+      signed_up_but_locked: Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte et bloqué.
+      signed_up_but_unconfirmed: Un mail vous a été envoyé contenant un lien de confirmation. Cliquez sur le lien dans l'email pour activer votre compte.
       update_needs_confirmation: Vous avez modifié votre compte avec succès, mais nous devons vérifier votre nouvelle adresse email. Veuillez consulter vos emails et cliquer sur le lien de confirmation pour finalizer votre nouvelle adresse.
-      updated: Votre compte a été modifié avec succès.
+      updated: Vous avez mis à jour votre compte.
+      edit:
+        cancel_my_account: Effacer mon compte
+        preferences: Préférences
+        title: Modifier mon compte
+      new:
+        newsletter_agreement: En vous inscrivant, vous souscrivez à notre newsletter et à nos <a href='/terms' target='_blank'>conditions générales</a>.
+        or_signup_using: ! 'Ou inscrivez-vous avec:'
+        title: Inscrivez-vous à Emuzikos
     sessions:
-      signed_in: Connecté avec succès.
-      signed_out: Déconnecté avec succès.
-    signin_with: 
+      signed_in: Vous êtes à présent connecté(e).
+      new:
+        description: Connectez-vous à Emuzikos et commencer votre recherche de musiciens et de groupes
+        forgot_password: Vous avez oublié votre mote de passe?
+        or_login_using: ! 'Ou connectez-vous avec:'
+        remember_me: Se souvenir de moi
+        title: Connectez-vous à Emuzikos
+    signin_with: Connectez-vous avec  %{provider}
     unlocks:
-      send_instructions: Vous allez recevoir un email sous quelques minutes contenant les instructions nécessaires au déblocage de votre compte.
+      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour déverrouiller votre compte.
       send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
-      unlocked: Votre compte a été débloqué avec succès. Veuillez vous connecter.
+      unlocked: Votre compte a été déverrouillé. Vous êtes à présent connecté(e).
+    login_with: Connexion avec %{provider}
+    shared:
+      links:
+        dont_have_account_yet: Vous n'avez pas encore de compte?
+        forgot_password: Vous avez oubliez votre mot de passe?
+        go_to_recovery_page: Demandez un nouveau mote de passe.
+        have_account_already: Vous avez déjà un compte?
+    signup_with: Créez votre compte avec  %{provider}
+    use_the_normal_form: Ou utilisez le formulaire standard.
   errors:
     format: ! '%{attribute} %{message}'
     messages:
@@ -254,140 +282,142 @@ fr:
     transliterate:
       rule: 
   instruments:
-    accordion: 
-    baglama: 
-    bagpipe: 
-    banjo: 
-    bass: 
-    bombo: 
-    bouzouki: 
-    cello: 
-    charango: 
-    cithar: 
-    clarinet: 
-    computer: 
-    congas: 
-    dhoki: 
-    dholak: 
-    double_bass: 
-    drums: 
-    euphonium: 
-    flute: 
-    gatam: 
-    guitar: 
-    hang: 
-    harmonica: 
-    harmonium: 
-    harp: 
-    horn: 
-    hurdy_gurdy: 
-    keyboard: 
-    mandolin: 
-    mirdangam: 
-    ocarina: 
-    oud: 
-    percussions: 
-    piano: 
-    santoor: 
-    sarod: 
-    saxophone: 
-    saz: 
-    shennai: 
-    sitar: 
-    sousaphone: 
-    spoons: 
-    swaramandal: 
-    tablas: 
-    tambura: 
-    theremin: 
-    trombone: 
-    trompet: 
-    turntables: 
-    veena: 
-    viola: 
-    violin: 
-    voice: 
-    whistles: 
+    accordion: Accordéon
+    baglama: Baglama
+    bagpipe: Cornemuse
+    banjo: Banjo
+    bass: Basse
+    bombo: Bombo
+    bouzouki: Bouzouki
+    cello: Violoncelle
+    charango: Charango
+    cithar: Cithare
+    clarinet: Clarinette
+    computer: Ordinateur
+    congas: Congas
+    dhoki: Dhoki
+    dholak: Dholak
+    double_bass: Contrebasse
+    drums: Batterie
+    euphonium: Euphonium
+    flute: Flute
+    gatam: Gatam
+    guitar: Guitare
+    hang: Hang
+    harmonica: Harmonica
+    harmonium: Harmonium
+    harp: Harpe
+    horn: Cor
+    hurdy_gurdy: Vielle à roue
+    keyboard: Clavier
+    mandolin: Mandoline
+    mirdangam: Mirdangam
+    ocarina: Ocarina
+    oud: Oud
+    percussions: Percussions
+    piano: Piano
+    santoor: Santoor
+    sarod: Sarod
+    saxophone: Saxophone
+    saz: Saz
+    shennai: Shennai
+    sitar: Sitare
+    sousaphone: Soubassophone
+    spoons: Cuillères
+    swaramandal: Swaramandal
+    tablas: Tablas
+    tambura: Tambura
+    theremin: Thérémine
+    trombone: Trombone
+    trompet: Trompette
+    turntables: Platines
+    veena: Veena
+    viola: Alto
+    violin: Violon
+    voice: Voix
+    whistles: Flûtes
   languages:
-    english: 
-    french: 
+    english: English
+    french: français
   menu:
-    blog: 
-    connexion: 
-    help: 
-    languages: 
-    legal: 
-    login: 
-    logout: 
+    blog: Blog
+    connexion: Connexion
+    help: Aide
+    languages: langues
+    legal: légal
+    login: Connexion
+    logout: Déconnexion
     messages:
-      inbox: 
-      languages: 
-      messages: 
-    more: 
-    privacy: 
+      inbox: Boîte de réception
+      messages: Message
+    more: Extras
+    privacy: Charte de confidentialité
     profile:
-      account: 
-      authentications: 
-      edit: 
-      public: 
-      show: 
-    search: 
-    signup: 
-    terms: 
-    testimonials: 
+      account: Modifier mon compte
+      authentications: Services de connexion
+      edit: Modifier mon profil
+      public: Profil public
+      show: Profil
+    search: Annonces pour musiciens
+    signup: Inscrivez-vous
+    terms: Conditions générales
+    testimonials: Témoignages
     users:
-      contacts: 
+      contacts: Liste de contacts
+    all_users: Chercher
+    contact: Contactez-nous
+    share: Aidez-nous!
   musical_genres:
-    alternative: 
-    blues: 
-    bossa_nova: 
-    children: 
-    classical: 
-    comedy: 
-    country: 
-    dance: 
-    dubstep: 
-    easy_listening: 
-    electronic: 
-    flamenco: 
-    folk: 
-    french_popular: 
-    funk: 
-    fusion: 
-    gospel: 
-    hard-rock: 
-    hip: 
-    hip_hop: 
-    indian_classical: 
-    instrumental: 
-    irish: 
-    jazz: 
-    latino: 
-    metal: 
-    metalcore: 
-    new_age: 
-    new_wave: 
-    opera: 
-    pop: 
-    post_hardcore: 
-    post_punk: 
-    post_rock: 
-    progressive_rock: 
-    psychedelic_rock: 
-    punk: 
-    r&b: 
-    r_and_b: 
-    reggae: 
-    rock: 
-    ska: 
-    songwriter: 
-    soul: 
-    soundtrack: 
-    spoken_word: 
-    spychedelic_rock: 
-    vocal: 
-    world: 
-  musician: 
+    alternative: Alternative
+    blues: Blues
+    bossa_nova: Bossa Nova
+    children: Enfant
+    classical: Classique
+    comedy: Comédie
+    country: Country
+    dance: Dance
+    dubstep: Dubstep
+    easy_listening: Easy Listening
+    electronic: Electronique
+    flamenco: Flamenco
+    folk: Folk
+    french_popular: Chanson française
+    funk: Funk
+    fusion: Fusion
+    gospel: Gospel
+    hard-rock: Hard Rock
+    hip: Hip
+    hip_hop: Hip Hop
+    indian_classical: Classique indien
+    instrumental: Instrumental
+    irish: Irlandais
+    jazz: Jazz
+    latino: Latino
+    metal: Métal
+    metalcore: Métal Core
+    new_age: New age
+    new_wave: New Wave
+    opera: Opera
+    pop: Pop
+    post_hardcore: Post Hardcore
+    post_punk: Post punk
+    post_rock: Post Rock
+    progressive_rock: Rock progressif
+    psychedelic_rock: Rock psychédélique
+    punk: Punk
+    r&b: R&B
+    r_and_b: R&B
+    reggae: Reggae
+    rock: Rock
+    ska: Ska
+    songwriter: Chanson à textes
+    soul: Soul
+    soundtrack: Bande son
+    spoken_word: Chanté-parlé
+    spychedelic_rock: Rock psychédélique
+    vocal: Vocal
+    world: Musique du monde
+  musician: musicien
   number:
     currency:
       format:
@@ -437,59 +467,59 @@ fr:
         delimiter: ''
   pages:
     homepage:
-      description: 
+      description: Vous cherchez des musiciens ou groupes près de chez vous? Emuzikos vous aide à trouver des musiciens et former un groupe.
       home_feature:
         advantage:
-          body: 
-          title: 
+          body: En vous inscrivant sur Emuzikos, vous bénéficierez d'un profil 100% customisable, d'une boîte à message privée et d'une grande base de donnée d'annonces de musiciens, de groupes et agents.
+          title: Emuzikos, concrètement?
         external_services:
-          body: 
+          body: ! 'Nous ne voulions pas réinventer la roue. Nous avons donc intégré des services tels que:'
           services:
-            soundcloud: 
-            youtube: 
-          title: 
+            soundcloud: <strong>Soundcloud</strong> pour jouer votre musique
+            youtube: <strong>Youtube</strong> pour frimer à la télé
+          title: ! 'Nous avons aussi intégré vos services préférés! '
         no_credit_card:
-          body: 
-          title: 
+          body: ! 'Le service de recherche est entièrement gratuit. Enfin un site vraiment au service des musiciens! '
+          title: Aucune carte de crédits n'est demandée
         privacy:
-          body: 
-          title: 
+          body: Emuzikos a son propre système de messagerie interne, ce qui vous évite de diffuser vos informations personnelles sur votre profil, et d’être spammé par des robots.
+          title: Sécurité et vie privée
         sharing:
-          body: 
-          title: 
+          body: Les musiciens méritent un meilleur outil de recherche. Alors, si vous aimez la façon dont Emuzikos vous pésente les annonces pour musiciens, partagez cette page sans modération!
+          title: Partager avec d'autres musiciens!
         sign_up:
-          body: 
-          title: 
-      keywords: 
-      latest_testimonials: 
-      moto: 
+          body: ! 'Créer un compte sur Emuzikos prend moins de 60 sec. Et vous n''avez pas besoin de compléter votre profil pour pouvoir chercher et contacter des musiciens. '
+          title: Inscription rapide
+      keywords: musicien, recherche de musicien, musiciens près de chez moi, recherche de musiciens locaux
+      latest_testimonials: Derniers témoignages de musiciens
+      moto: La recherche de musiciens <strong>facile & gratuite</strong>
       sections:
         screenshots:
-          inbox: 
-          profile: 
-          search_page: 
-          title: 
+          inbox: Votre boîte à message
+          profile: Page de profil
+          search_page: Page de recherche
+          title: A quoi ça ressemble?
         testimonials:
-          title: 
-      sign_up: 
-      subtitle: 
-      title: 
-      what_people_say_about_it: 
+          title: Qu'est-ce que les musiciens en disent?
+      sign_up: Inscription
+      subtitle: Emuzikos, plus qu'un site d'annonces pour musiciens et groupes
+      title: Recherche de musiciens & groupes près de chez soi. Annonces pour musicien gratuites
+      what_people_say_about_it: Ce que les gens en disent
     privacy:
-      description: 
-      title: 
+      description: La Charte de confidentialité d'Emuzikos vous aide faire respecter votre vie privée.
+      title: Charte de confidentialité
     terms:
-      description: 
-      title: 
+      description: Les conditions générales d'Emuzikos améliore votre experience en définissant vos droits et devoirs.
+      title: Conditions générale
   search_terms:
-    mass_locate: 
-    music_style: 
+    mass_locate: code postal, ville, pays
+    music_style: Genre musical
     tabs:
-      agent: 
-      band: 
-      musician: 
-    who_plays: 
-    who_search_for: 
+      agent: agents
+      band: groupes
+      musician: musiciens
+    who_plays: son instrument
+    who_search_for: ce qui'il cherche
   support:
     array:
       last_word_connector: ! ' et '
@@ -497,7 +527,7 @@ fr:
       words_connector: ! ', '
   testimonials:
     index:
-      title: 
+      title: Témoignages
   time:
     am: am
     formats:
@@ -506,16 +536,31 @@ fr:
       short: ! '%d %b %H:%M'
     pm: pm
   tooltips:
-    password: 
+    password: Doit contenir au moins 5 caractères
   users:
     types:
-      agent: 
-      band: 
-      musician: 
+      agent: agent
+      band: groupe
+      musician: musicien
     user_types:
-      agent: 
-      band: 
-      musician: 
+      agent: agent
+      band: groupe
+      musician: musicien
+    index:
+      description: Annonces gratuites pour musiciens amateurs et professionnels. Cherchez des musiciens près de chez soi, c'est facile !
+      keywords: musicien, recherche, recherche de musiciens, musiciens près de chez soi, annonces pour musiciens
+      title: Listes des annonces pour musiciens, groupes et agents près de chez vous.
+    profile:
+      no_media_available: Pas de contenu disponible
+    show:
+      description: ! '%{username}: %{user_type} recherche un(e) %{searching_for} en %{country}'
+      is_looking_for: cherche
+      login_before_messaging: Vous devez être connecté pour pouvoir envoyer des messages
+      tabs:
+        music: Musique
+        user_infos: Infos
+        videos: Videos
+      title: Profil de %{username}
   views:
     pagination:
       first: ! '&laquo; Premier'
@@ -523,3 +568,39 @@ fr:
       next: Suivant &rsaquo;
       previous: ! '&lsaquo; Précédent'
       truncate: ! '&hellip;'
+  messages:
+    delete: Effacer
+    from: De
+    inbox:
+      description: Votre boîte à message vous permet de ne pas divulguer vos informations personnelles sur votre profil public
+      subtitle: Messages
+      title: Vos messages
+    message: Message
+    new:
+      title: Envoyer un message
+    no_messages: Vous n'avez pas de messages
+    received: Reçu le
+    sender: Envoyé par
+    sent_on: Envoyé le
+    to: A
+  registrations:
+    edit:
+      cancel_my_account: Cancel my account
+      preferences: Preferences
+      title: Edit my account
+    new:
+      newsletter_agreement: By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>.
+      or_signup_using: ! 'Or sign up using:'
+      title: Signup to Emuzikos
+    signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
+    signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+    signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
+    signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
+    updated: You updated your account successfully.
+  sessions:
+    new:
+      description: Log in on Emuzikos.com and start to search for wanted bands and musicians
+      forgot_password: Forgot your password?
+      or_login_using: ! 'Or log in using:'
+      remember_me: Remember me
+      title: Log in to your account

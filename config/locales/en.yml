@@ -13,32 +13,32 @@ en:
         user_type: user type
         username: username
         zip: zip code, city, country
-        avatar: 
-        birthdate: 
-        country: 
-        created_at: 
-        current_password: 
-        genre: 
-        invisible: 
-        last_active: 
-        last_updater: 
-        location: 
-        new_password: 
-        references: 
-        request_message: 
-        searching_for: 
-        soundcloud_username: 
-        testimonials: 
-        updated_at: 
-        visible: 
-        youtube_video_id: 
+        avatar: picture
+        birthdate: birthdate
+        country: country
+        created_at: created at
+        current_password: current password
+        genre: genre
+        invisible: invisible
+        last_active: last active
+        last_updater: last updated
+        location: location
+        new_password: new password
+        references: bands or artists you like
+        request_message: describe yourself and what you're searching for
+        searching_for: searching for
+        soundcloud_username: soundcloud username
+        testimonials: testimonials
+        updated_at: updated at
+        visible: visible
+        youtube_video_id: youtube video id
       service:
-        email: 
-        not_set: 
-        uname: 
+        email: Email
+        not_set: Not set
+        uname: Uname
       testimonial:
-        body: 
-        user: 
+        body: Body
+        user: user
   alternative: 
   baglama: 
   bagpipe: 
@@ -56,6 +56,7 @@ en:
     submit: submit
     testimonials:
       create: create testimonial
+    login: Log in
   cello: 
   charango: 
   children: 
@@ -189,30 +190,57 @@ en:
       unlock_instructions:
         subject: Unlock Instructions
     omniauth_callbacks:
-      failure: Could not authorize you from %{kind} because %{reason}.
-      success: Successfully authenticated from %{kind} account.
+      failure: Could not authorize you from %{kind} because "%{reason}".
+      success: Successfully authorized from %{kind} account.
     passwords:
       no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
       send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
       send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
-      updated: Your password was changed successfully. You are now signed in.
+      updated: Your password was changed successfully. You are now logged in.
       updated_not_active: Your password was changed successfully.
+      edit:
+        title: Change your password
+      new:
+        description: Forgot your password? No problem, just fill in the form and start search for musicians or bands again
+        title: Reset your Password
     registrations:
       destroyed: Bye! Your account was successfully cancelled. We hope to see you again soon.
-      signed_up: Welcome! You have signed up successfully.
+      signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
       signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
       signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
       signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
       update_needs_confirmation: You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.
       updated: You updated your account successfully.
+      edit:
+        cancel_my_account: Cancel my account
+        preferences: Preferences
+        title: Edit my account
+      new:
+        newsletter_agreement: By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>.
+        or_signup_using: ! 'Or sign up using:'
+        title: Signup to Emuzikos
     sessions:
-      signed_in: Signed in successfully.
-      signed_out: Signed out successfully.
+      signed_in: Logged in in successfully.
+      new:
+        description: Log in on Emuzikos.com and start to search for wanted bands and musicians
+        forgot_password: Forgot your password?
+        or_login_using: ! 'Or log in using:'
+        remember_me: Remember me
+        title: Log in to your account
     signin_with: Sign in with %{provider}
     unlocks:
       send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
       send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
-      unlocked: Your account has been unlocked successfully. Please sign in to continue.
+      unlocked: Your account was successfully unlocked. You are now logged in.
+    login_with: Log in with %{provider}
+    shared:
+      links:
+        dont_have_account_yet: Don't have an account yet?
+        forgot_password: Forgot your password?
+        go_to_recovery_page: Got to recovery page
+        have_account_already: Have an account already?
+    signup_with: Sign up with %{provider}
+    use_the_normal_form: Or use the standart form
   dhoki: 
   dholak: 
   double_bass: 
@@ -307,7 +335,6 @@ en:
     logout: logout
     messages:
       inbox: inbox
-      languages: 
       messages: messages
     more: more
     privacy: privacy Policy
@@ -324,6 +351,9 @@ en:
     users:
       contacts: contacts list
     languages: Laguages
+    all_users: Chercher
+    contact: contact
+    share: Aidez Emuzikos
   metal: 
   metalcore: 
   mirdangam: 
@@ -440,12 +470,12 @@ en:
   saxophone: 
   saz: 
   search_terms:
-    mass_locate: ! 'search area (ex: Manhattan, New York)'
+    mass_locate: zip, city, country
     music_style: ! 'Search Area (ex: Manhattan, New York)'
     tabs:
-      agent: agent
-      band: and
-      musician: musician
+      agent: agents
+      band: bands
+      musician: musicians
     who_plays: Instruments
     who_search_for: who's searching for a
   shennai: 
@@ -481,13 +511,28 @@ en:
   turntables: 
   users:
     types:
-      agent: 
-      band: 
-      musician: 
+      agent: agent
+      band: band
+      musician: musician
     user_types:
       agent: agent
       band: band
-      musician: 
+      musician: musician
+    index:
+      description: Listing of pro and amateur musicians, band classifieds or agents. Find your future band mates.
+      keywords: musician, search, musician search, local musicians, search local musician, musicians classifieds
+      title: Search all Musicians Classifieds, local bands or agents nearby.
+    profile:
+      no_media_available: No medias available
+    show:
+      description: ! '%{username}: Local %{user_type} looking for a %{searching_for} in %{country}'
+      is_looking_for: is looking for a
+      login_before_messaging: You must be logged in to be able to send a message
+      tabs:
+        music: Music
+        user_infos: Infos
+        videos: Videos
+      title: ! '%{username}''s profile'
   veena: 
   viola: 
   violin: 
@@ -606,3 +651,39 @@ en:
     vocal: Vocal
     world: World
   musician: musician
+  messages:
+    delete: Effacer
+    from: de
+    inbox:
+      description: Votre boîte à message vous permet de ne pas divulguer vos informations personnelles sur votre profil public
+      subtitle: message
+      title: Vos messages
+    message: Vos messages
+    new:
+      title: envoyer un message
+    no_messages: Pas de messages
+    received: Reçu le
+    sender: Envoyé par
+    sent_on: Envoyé le
+    to: A
+  registrations:
+    edit:
+      cancel_my_account: Effacer mon compte
+      preferences: Preferences
+      title: Edit my account
+    new:
+      newsletter_agreement: By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>.
+      or_signup_using: ! 'Or sign up using:'
+      title: Signup to Emuzikos
+    signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
+    signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+    signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
+    signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
+    updated: You updated your account successfully.
+  sessions:
+    new:
+      description: Log in on Emuzikos.com and start to search for wanted bands and musicians
+      forgot_password: Forgot your password?
+      or_login_using: ! 'Or log in using:'
+      remember_me: Remember me
+      title: Log in to your account
