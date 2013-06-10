@@ -9,7 +9,7 @@ class UserSearch < Searchlight::Search
   end
 
   def search_instruments_like
-    unless instruments.blank?
+    unless instruments_like.blank?
       search.joins(:instruments).where('instruments.name = ?', instruments_like)
     end
   end

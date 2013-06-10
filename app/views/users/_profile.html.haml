@@ -37,12 +37,12 @@
   #tab_user_infos.tab-pane.active
     - if user.request_message.present?
       %section.user-profile--info-box
-        %h4= t(:'activerecord.attributes.user.request_message')
+        %h4= t(:'activerecord.attributes.user.request_message_show')
         = simple_format(user.request_message)
 
     - if user.references.present?
       %section.user-profile--info-box
-        %h4= t(:'activerecord.attributes.user.references')
+        %h4= t(:'activerecord.attributes.user.references_show')
         %p= user.references
 
     - if user.genres.present?

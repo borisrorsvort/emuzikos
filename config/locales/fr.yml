@@ -35,17 +35,44 @@ fr:
         visible: Visible
         youtube_video_id: Numéros Identifiant la video youtube
         zip: Ville
+        references_show: Référence musicales
+        request_message_show: Annonce
   agent: agent
   band: groupe
   buttons:
     search:
-      agents: recherchez des agents
-      bands: recherchez des groupes
-      musicians: cherchez les musiciens
-    submit: envoyez
+      agents: Chercher des agents
+      bands: Chercher des groupes
+      musicians: Chercher des musiciens
+    submit: Envoyer
     testimonials:
-      create: créez le témoignagne
-    login: Connexion
+      create: Ajouter un nouveau témoignage
+      all: Retour aux témoignages
+    login: Connectez-moi
+    add_to_contact_list: Ajouter à la liste de contacts
+    all: Voir tous
+    back: Retour %{model}
+    back_to_homepage: Retour à la page d'accueil
+    cancel: Annuler
+    change_password: Sauvegarder le nouveau mot de passe
+    click_here_for_help: Cliquez ici pour demander de l'aide
+    compose: Nouveau message
+    contact: Envoyer un message
+    create: Créer
+    create_one_here: Créez en un ici
+    delete: Effacer
+    edit: Modifier
+    home_signup: Inscrivez-vous en 60 sec
+    invite_your_friends_from_fb: Invitez vos amis Facebook
+    registrations:
+      cancel_my_account: Effacer mon compte
+    remove_from_contact_list: Enlever
+    reply: Envoyez la réponse
+    send_password: Envoyer le mail de ré-initialisation de mon mot passe
+    services:
+      delete: Déconnecter ce service
+    show: Montrer
+    update: Mettre à jour
   common:
     by: par
     no_script: Vous devez avoir javascript installé
@@ -207,6 +234,7 @@ fr:
         or_login_using: ! 'Ou connectez-vous avec:'
         remember_me: Se souvenir de moi
         title: Connectez-vous à Emuzikos
+      signed_out: Déconnecté avec succès.
     signin_with: Connectez-vous avec  %{provider}
     unlocks:
       send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour déverrouiller votre compte.
@@ -586,6 +614,11 @@ fr:
           second: Copiez l'id de la video que vous trouverez dans la barre d'adresse. C'est le texte après  'watch?v=' .
           third: Coller-le dans le champ de votre profil ad-hoc
         title: Comment trouver l'id de votre video Youtube?
+    preferred:
+      language: Langage
+    prefers:
+      message_notifications: Notification lors d'un nouveau message
+      newsletters: Newsletter
   views:
     pagination:
       first: ! '&laquo; Premier'
@@ -629,3 +662,8 @@ fr:
       or_login_using: ! 'Or log in using:'
       remember_me: Remember me
       title: Log in to your account
+  simple_form:
+    'no': Non
+    'yes': Oui
+  'false': Non
+  'true': Oui

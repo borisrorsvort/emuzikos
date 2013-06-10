@@ -31,14 +31,14 @@
     .controls
       %p.help_block= (t(:'form_helpers.dont_have_a_service_account', :service => "Youtube", :scope => [:users, :edit]) + " " + link_to(t(:'buttons.create_one_here'), "http://www.youtube.com/")).html_safe
 
-    = f.input :visible, :collection => [[t('Yes'), true], [t('No'), false]], :as => :radio_buttons,  :label =>  t(:'activerecord.attributes.user.visible'), wrapper_html: {class: "btn-radio-toggles"}
+    = f.input :visible, :collection => [[t('true'), true], [t('false'), false]], :as => :radio_buttons,  :label =>  t(:'activerecord.attributes.user.visible'), wrapper_html: {class: "btn-radio-toggles"}
     .control-group
       .controls
         .alert.alert-info
           %p= t(:"visible_explanation", :scope => [:users, :edit])
     = f.input :preferred_language, :collection => [["English", "en"], ["Français", "fr"]], :as => :radio_buttons, :selected => @user.preferred_language, :label => t(:'users.preferred.language'), wrapper_html: {class: "btn-radio-toggles"}
-    = f.input :prefers_newsletters, :collection => [[t('Yes'), true], [t('No'), false]], :as => :radio_buttons,  :label => t(:"users.prefers.newsletters"), wrapper_html: {class: "btn-radio-toggles"}
-    = f.input :prefers_message_notifications, :collection => [[t('Yes'), true], [t('No'), false]], :as => :radio_buttons,  :label => t(:"users.prefers.message_notifications"), wrapper_html: {class: "btn-radio-toggles"}
+    = f.input :prefers_newsletters, :collection => [[t('true'), true], [t('false'), false]], :as => :radio_buttons,  :label => t(:"users.prefers.newsletters"), wrapper_html: {class: "btn-radio-toggles"}
+    = f.input :prefers_message_notifications, :collection => [[t('true'), true], [t('false'), false]], :as => :radio_buttons,  :label => t(:"users.prefers.message_notifications"), wrapper_html: {class: "btn-radio-toggles"}
 
   .form-actions
     = f.button :submit, t(:'buttons.update'), :class => "btn btn-primary"

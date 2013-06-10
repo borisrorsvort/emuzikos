@@ -32,6 +32,8 @@ en:
         updated_at: updated at
         visible: visible
         youtube_video_id: youtube video id
+        references_show: Musical references
+        request_message_show: About me
       service:
         email: Email
         not_set: Not set
@@ -50,13 +52,38 @@ en:
   bouzouki: 
   buttons:
     search:
-      agents: search agents
-      bands: search bands
-      musicians: search musicians
-    submit: submit
+      agents: Search agents
+      bands: Search bands
+      musicians: Search musicians
+    submit: Submit
     testimonials:
-      create: create testimonial
+      create: Add a new testimonial
+      all: Go back to Testimonials
     login: Log in
+    add_to_contact_list: Add to contact list
+    all: View all
+    back: Back to %{model}
+    back_to_homepage: Back to the home page
+    cancel: Cancel
+    change_password: Save new password
+    click_here_for_help: Click here for help
+    compose: Compose
+    contact: Send a message
+    create: Create
+    create_one_here: Create one here
+    delete: Delete
+    edit: Edit
+    home_signup: sign up in 60 sec. It's free
+    invite_your_friends_from_fb: Invite your friends from Facebook
+    registrations:
+      cancel_my_account: Cancel my account
+    remove_from_contact_list: Remove
+    reply: Submit Reply
+    send_password: Send the password reset email
+    services:
+      delete: Remove this service
+    show: Show
+    update: Update
   cello: 
   charango: 
   children: 
@@ -227,6 +254,7 @@ en:
         or_login_using: ! 'Or log in using:'
         remember_me: Remember me
         title: Log in to your account
+      signed_out: Signed out successfully.
     signin_with: Sign in with %{provider}
     unlocks:
       send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
@@ -471,7 +499,7 @@ en:
   saz: 
   search_terms:
     mass_locate: zip, city, country
-    music_style: ! 'Search Area (ex: Manhattan, New York)'
+    music_style: musical genre
     tabs:
       agent: agents
       band: bands
@@ -558,6 +586,11 @@ en:
           second: Then copy the id form the page url. That's the text after 'watch?v='
           third: Paste it in your profile youtube video id field
         title: How to find your Youtube video id?
+    preferred:
+      language: Preferred language
+    prefers:
+      message_notifications: Message notifications
+      newsletters: Neswletters
   veena: 
   viola: 
   violin: 
@@ -712,3 +745,8 @@ en:
       or_login_using: ! 'Or log in using:'
       remember_me: Remember me
       title: Log in to your account
+  simple_form:
+    'no': 'No'
+    'yes': 'Yes'
+  'false': 'No'
+  'true': 'Yes'
