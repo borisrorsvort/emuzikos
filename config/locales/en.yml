@@ -769,25 +769,25 @@ en:
   'false': 'No'
   'true': 'Yes'
   services:
-    signed_in_successful_via: Sign successful via
-    account_created: 
-    account_creation_error: 
-    added_to_account: 
-    already_linked_account: 
+    signed_in_successful_via: Signed in successfully via
+    account_created: Your account on Emuzikos has been created via %{provider}. In your <a href="%{link}">account settings</a> you can change your personal information and add a local password.
+    account_creation_error: ! ' can not be used to sign-up on Emuzikos as no valid email address has been provided. Please use another authentication provider or use local sign-up. If you already have an account, please sign-in and add %{service_route} from your profile.'
+    added_to_account: has been added to your account
+    already_linked_account: is already linked to your account.
     index:
       account:
-        plural: 
-        singular: 
-      are_you_sure: 
-      last_account_delete_warning: 
-      more_services: 
-      random_password_warning: 
-      subtitle: 
-      title: 
-    invalid_callback: 
-    invalid_data_user_id: 
-    logged_in_via: 
-    signed_in_successful: 
+        plural: account are
+        singular: account is
+      are_you_sure: Are you sure you want to remove this authentication service?
+      last_account_delete_warning: Removing the last account linked might lock you out of your account if you do not know the email/password sign-in of your local account!
+      more_services: ! 'You can connect more services to your account:'
+      random_password_warning: If you signed-up for Emuzikos via an authentication service, a random password has been set for the local password. You can request a new password using the 'Forgot your Password?' link on the sign-in page.
+      subtitle: ! 'The following %{account} connected with your local account at Emuzikos:'
+      title: Authentication services - Settings
+    invalid_callback: no service (invalid callback)
+    invalid_data_user_id: returned invalid data for the user id.
+    logged_in_via: Log in via
+    signed_in_successful: Signed in successfully!
   gflash:
     common:
       require_no_user: You must be logged out to access this page
