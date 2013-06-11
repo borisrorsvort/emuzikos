@@ -7,7 +7,3 @@ Localeapp.configure do |config|
   config.polling_environments = [:development, :staging]
   config.reloading_environments = [:development, :staging]
 end
-
-if Rails.env.staging?
-  Localeapp::CLI::Pull.new.execute
-end
