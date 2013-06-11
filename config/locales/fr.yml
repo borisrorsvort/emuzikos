@@ -542,14 +542,14 @@ fr:
       description: Les conditions générales d'Emuzikos améliore votre experience en définissant vos droits et devoirs.
       title: Conditions générale
   search_terms:
-    mass_locate: code postal, ville, pays
+    mass_locate: Code postal, ville, pays
     music_style: Genre musical
     tabs:
-      agent: agents
-      band: groupes
-      musician: musiciens
-    who_plays: son instrument
-    who_search_for: ce qui'il cherche
+      agent: Agents
+      band: Groupes
+      musician: Musiciens
+    who_plays: Instruments
+    who_search_for: Ce qui'il cherche
   support:
     array:
       last_word_connector: ! ' et '
@@ -606,7 +606,7 @@ fr:
         genre_not_on_list: Votre style ne se trouve pas dans la liste?
         instrument_not_in_list: Votre instrument ne se trouve pas dans la liste?
         personal_infos_advice: <div class='alert alert-info'>Nous vous conseillons de ne pas divulguer d'informations personnelles telles qu'un numéro de téléphone ou une adresse. Cela, afin d'éviter le vol d'informations par des robots. Préférez le système de messagerie d'Emuzikos.</div>
-        request_through_dashboard: <a href='javascript:UserVoice.showPopupWidget();' class='feedback_link'>Faites-en la demande ici</a>
+        request_through_dashboard: <a href="javascript:void(0)" data-uv-lightbox="classic_widget" data-uv-mode="feedback" data-uv-primary-color="#032d57" data-uv-link-color="#025b87" data-uv-forum-id="135874">Faites-en la demande ici</a>
       instruments_in_band_notice: <div class='alert alert-info'>Listez ici les instruments que vous jouez ou ceux déjà présents dans le groupe si vous êtes un groupe.</div>
       invisible_notice: Vérifiez que vous êtes bien 'visible' afin d'apparaître dans les résultats de recherche
       medias: Medias (optionnel)

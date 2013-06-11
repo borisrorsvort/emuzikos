@@ -500,14 +500,14 @@ en:
   saxophone: 
   saz: 
   search_terms:
-    mass_locate: zip, city, country
-    music_style: musical genre
+    mass_locate: Zip, city, country
+    music_style: Musical genre
     tabs:
-      agent: agents
-      band: bands
-      musician: musicians
+      agent: Agents
+      band: Bands
+      musician: Musicians
     who_plays: Instruments
-    who_search_for: who's searching for a
+    who_search_for: Who's searching for a
   shennai: 
   sitar: 
   ska: 
