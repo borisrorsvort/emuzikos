@@ -42,6 +42,7 @@ gem 'geocoder'
 gem 'rack-no-www'
 gem "friendly_id", "~> 4.0.0"
 gem 'impressionist'
+gem 'locale_detector'
 
 gem 'wicked'
 gem 'annotate'
