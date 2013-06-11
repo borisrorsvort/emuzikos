@@ -6,32 +6,32 @@ en:
   activerecord:
     attributes:
       user:
-        email: email
-        instruments: instruments
-        password: password
-        password_confirmation: password confirmation
-        user_type: user type
-        username: username
-        zip: zip code, city, country
-        avatar: picture
-        birthdate: birthdate
-        country: country
-        created_at: created at
-        current_password: current password
-        genre: genre
-        invisible: invisible
-        last_active: last active
-        last_updater: last updated
-        location: location
-        new_password: new password
-        references: bands or artists you like
-        request_message: describe yourself and what you're searching for
-        searching_for: searching for
-        soundcloud_username: soundcloud username
-        testimonials: testimonials
-        updated_at: updated at
-        visible: visible
-        youtube_video_id: youtube video id
+        email: Email
+        instruments: Instruments
+        password: Password
+        password_confirmation: Password confirmation
+        user_type: User type
+        username: Username
+        zip: Zip code, city, country
+        avatar: Picture
+        birthdate: Birthdate
+        country: Country
+        created_at: Created at
+        current_password: Current password
+        genre: Genre
+        invisible: Invisible
+        last_active: Last active
+        last_updater: Last updated
+        location: Location
+        new_password: New password
+        references: Bands or artists you like
+        request_message: Describe yourself and what you're searching for
+        searching_for: Searching for
+        soundcloud_username: Soundcloud username
+        testimonials: Testimonials
+        updated_at: Updated at
+        visible: Visible
+        youtube_video_id: Youtube video id
         references_show: Musical references
         request_message_show: About me
       service:
@@ -94,6 +94,8 @@ en:
   common:
     no_script: You must have Javascript installed!
     by: by
+    are_you_sure: Are you sure?
+    leave_blank: Leave blank
   computer: 
   congas: 
   country: 
@@ -546,6 +548,14 @@ en:
       agent: agent
       band: band
       musician: musician
+      bass: Bass
+      congas: Congas
+      drums: Drums
+      guitar: Guitar
+      keyboard: Keyboard
+      piano: Piano
+      violin: Violin
+      voice: Voice
     index:
       description: Listing of pro and amateur musicians, band classifieds or agents. Find your future band mates.
       keywords: musician, search, musician search, local musicians, search local musician, musicians classifieds
@@ -591,6 +601,12 @@ en:
     prefers:
       message_notifications: Message notifications
       newsletters: Neswletters
+    contacts:
+      description: Your saved contact
+      title: Your contact
+    form:
+      searching_for: Searching for
+    from: from
   veena: 
   viola: 
   violin: 
@@ -724,6 +740,8 @@ en:
     sender: Envoyé par
     sent_on: Envoyé le
     to: A
+    show:
+      title: Your messages
   registrations:
     edit:
       cancel_my_account: Effacer mon compte
@@ -750,3 +768,45 @@ en:
     'yes': 'Yes'
   'false': 'No'
   'true': 'Yes'
+  services:
+    signed_in_successful_via: 
+  gflash:
+    common:
+      require_no_user: You must be logged out to access this page
+      require_user: You must be logged in to access this page
+    friendships:
+      create:
+        success: ! ' %{user} has been added to your contact list succesfully!'
+      destroy:
+        success: ! ' %{user} has been deleted from your contact list succesfully!'
+    messages:
+      create:
+        error: Your message has not been sent. Try again
+        success: Your message was successfully sent!
+      delete_selected:
+        success: Deleted! Congrats
+    services:
+      errors:
+        authentication: Error while authenticating via %{service_route.capitalize}
+    testimonials:
+      create:
+        success: Thanks for talking good about us! Your testimonial has been sent for validation. Keep spreading the word around you :)
+      destroy:
+        success: Successfully destroyed testimonial
+      please_write: If you like our service, please take 30s to write something nice about us in the <a href='%{link}'> testimonial section.</a>
+      update:
+        success: Successfully updated testimonial
+    titles:
+      error: Error
+      notice: Notice
+      progress: Progress
+      success: Success
+      warning: Warning
+    users:
+      create:
+        error: Some informations need to be corrected
+        notice: Don't forget to complete your profile to appear in search results
+        success: Registration successful. Don't forget to complete your profile to appear in search results
+      update:
+        error: Some informations need to be corrected
+        success: Successfully updated your profile.

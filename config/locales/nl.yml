@@ -76,6 +76,8 @@ nl:
   common:
     by: 
     no_script: 
+    are_you_sure: 
+    leave_blank: 
   date:
     abbr_day_names:
     - zon
@@ -401,6 +403,8 @@ nl:
     sender: 
     sent_on: 
     to: 
+    show:
+      title: 
   musical_genres:
     alternative: 
     blues: 
@@ -650,6 +654,20 @@ nl:
       agent: 
       band: 
       musician: 
+      bass: 
+      congas: 
+      drums: 
+      guitar: 
+      keyboard: 
+      piano: 
+      violin: 
+      voice: 
+    contacts:
+      description: 
+      title: 
+    form:
+      searching_for: 
+    from: 
   views:
     pagination:
       first: 
@@ -657,3 +675,45 @@ nl:
       next: 
       previous: 
       truncate: 
+  services:
+    signed_in_successful_via: 
+  gflash:
+    common:
+      require_no_user: 
+      require_user: 
+    friendships:
+      create:
+        success: 
+      destroy:
+        success: 
+    messages:
+      create:
+        error: 
+        success: 
+      delete_selected:
+        success: 
+    services:
+      errors:
+        authentication: 
+    testimonials:
+      create:
+        success: 
+      destroy:
+        success: 
+      please_write: 
+      update:
+        success: 
+    titles:
+      error: 
+      notice: 
+      progress: 
+      success: 
+      warning: 
+    users:
+      create:
+        error: 
+        notice: 
+        success: 
+      update:
+        error: 
+        success: 

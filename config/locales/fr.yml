@@ -34,7 +34,7 @@ fr:
         username: Nom d'utilisateur
         visible: Visible
         youtube_video_id: Numéros Identifiant la video youtube
-        zip: Ville
+        zip: Code postal, Ville, Pays
         references_show: Référence musicales
         request_message_show: Annonce
   agent: agent
@@ -76,6 +76,8 @@ fr:
   common:
     by: par
     no_script: Vous devez avoir javascript installé
+    are_you_sure: 
+    leave_blank: Ne pas remplir
   date:
     abbr_day_names:
     - dim
@@ -574,6 +576,14 @@ fr:
       agent: agent
       band: groupe
       musician: musicien
+      bass: Basse
+      congas: ongas
+      drums: Batterie
+      guitar: Guitare
+      keyboard: Claviers
+      piano: Piano
+      violin: Violon
+      voice: Voix
     index:
       description: Annonces gratuites pour musiciens amateurs et professionnels. Cherchez des musiciens près de chez soi, c'est facile !
       keywords: musicien, recherche, recherche de musiciens, musiciens près de chez soi, annonces pour musiciens
@@ -619,6 +629,12 @@ fr:
     prefers:
       message_notifications: Notification lors d'un nouveau message
       newsletters: Newsletter
+    contacts:
+      description: Vos contacts
+      title: 
+    form:
+      searching_for: je recherche un(e)
+    from: de
   views:
     pagination:
       first: ! '&laquo; Premier'
@@ -641,6 +657,8 @@ fr:
     sender: Envoyé par
     sent_on: Envoyé le
     to: A
+    show:
+      title: 
   registrations:
     edit:
       cancel_my_account: Cancel my account
@@ -667,3 +685,45 @@ fr:
     'yes': Oui
   'false': Non
   'true': Oui
+  services:
+    signed_in_successful_via: 
+  gflash:
+    common:
+      require_no_user: Vous devez être connecté pour avoir accès à cette page
+      require_user: Vous devez être connecté pour avoir accès à cette page
+    friendships:
+      create:
+        success: ! '%{user} a bien été ajouté à votre liste de contacts!'
+      destroy:
+        success: ! '%{user} a bien été effacé de votre liste de contact'
+    messages:
+      create:
+        error: Your message has not been sent. Try again
+        success: Votre message a bien été envoyé!
+      delete_selected:
+        success: Message(s) effacé(s)
+    services:
+      errors:
+        authentication: Une erreur s'est produite lors de la connexion via %{service_route.capitalize}
+    testimonials:
+      create:
+        success: Merci de parler de nous! Votre témoignage doit encore être validé par un administrateur. Continuez de parler d'Emuzikos autour de vous!
+      destroy:
+        success: Votre témoignage a bien été effacé
+      please_write: Si vous aimez Emuzikos, prenez 30 sec pour donner votre avis dans la  <a href='%{link}'>rubrique témoignages</a>
+      update:
+        success: Votre témoignage a bien été modifié
+    titles:
+      error: Erreur
+      notice: Avis
+      progress: En cours
+      success: Succès
+      warning: Attention
+    users:
+      create:
+        error: Quelques informations doivent encore être corrigées
+        notice: N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche
+        success: Bienvenue! N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche
+      update:
+        error: Quelques informations doivent encore être corrigées
+        success: Votre profil a bien été mis à jour
