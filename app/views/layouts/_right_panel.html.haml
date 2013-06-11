@@ -16,7 +16,8 @@
 
       %h4.menu-section= t('menu.more')
       %ul
-        %li#Intercom= menu_item(t(:'menu.help'), false,'')
+        %li
+          %a{"data-uv-forum-id" => "135874", "data-uv-lightbox" => "classic_widget", "data-uv-link-color" => "#025b87", "data-uv-mode" => "feedback", "data-uv-primary-color" => "#032d57", :href => "javascript:void(0)"}=t(:'menu.help')
         %li= menu_item(t(:'menu.testimonials'), false,testimonials_path)
 
 

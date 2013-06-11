@@ -54,7 +54,6 @@ gem 'font-awesome-sass-rails'
 gem 'strong_parameters', git: "git://github.com/rails/strong_parameters.git"
 gem 'spinjs-rails'
 gem 'mixpanel'
-gem "intercom-rails"
 gem 'browsernizer'
 
 # gem 'chosen-rails'

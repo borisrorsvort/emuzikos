@@ -76,7 +76,7 @@ fr:
   common:
     by: par
     no_script: Vous devez avoir javascript installé
-    are_you_sure: 
+    are_you_sure: Etes-vous sûre
     leave_blank: Ne pas remplir
   date:
     abbr_day_names:
@@ -631,7 +631,7 @@ fr:
       newsletters: Newsletter
     contacts:
       description: Vos contacts
-      title: 
+      title: Vos Contacts
     form:
       searching_for: je recherche un(e)
     from: de
@@ -658,7 +658,7 @@ fr:
     sent_on: Envoyé le
     to: A
     show:
-      title: 
+      title: Vos Messages
   registrations:
     edit:
       cancel_my_account: Cancel my account
@@ -686,7 +686,7 @@ fr:
   'false': Non
   'true': Oui
   services:
-    signed_in_successful_via: 
+    signed_in_successful_via: Connexion réussie via
   gflash:
     common:
       require_no_user: Vous devez être connecté pour avoir accès à cette page
