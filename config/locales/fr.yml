@@ -686,7 +686,25 @@ fr:
   'false': Non
   'true': Oui
   services:
-    signed_in_successful_via: Connexion réussie via
+    signed_in_successful_via: Vous vous êtes bien connecté via
+    account_created: Votre compte sur Emuzikos a bien été créé via %{provider}. Vous pouvez changer votre mot de passe et infos personnelles <a href='%{link}'>ici</a>.
+    account_creation_error: ne peut être utilisé pour s'inscire sur Emuzikos parce que nous n'avons pas accès à votre email. Utilisez un autre type de connexion ou le formulaire par défaut. Si vous avez déjà un compte, connectez-vous et ajoutez %{service_route} depuis votre profil.
+    added_to_account: a été ajouté à votre compte
+    already_linked_account: est déjà lié à votre compte
+    index:
+      account:
+        plural: les comptes sont
+        singular: le compte est
+      are_you_sure: Etes vous sûr de vouloir déconnecter ce service de connexion?
+      last_account_delete_warning: Déconnecter le dernier service lié à votre compte risque de bloquer votre connection si vous ne connaissez pas votre mot de passe Emuzikos.
+      more_services: ! 'Vous pouvez utiliser ces services pour vous connecter:'
+      random_password_warning: Si vous avez créé un compte via un service de connexion, un mot de passe aléatoire vous a été attribué. Vous pouvez faire une demande d'un nouveau mot de passe depuis la page de connexion en utilisant le lien "Vous avez oubliez votre mot de passe?"
+      subtitle: ! 'Ces services de connexion sont bien connecté à votre compte Emuzikos:'
+      title: Services de connexion - Options
+    invalid_callback: pas de service (callback invalide)
+    invalid_data_user_id: a renvoyé des données invalides pour l'identifiant utilisateur
+    logged_in_via: La connexion via
+    signed_in_successful: Vous vous êtes bien connecté
   gflash:
     common:
       require_no_user: Vous devez être connecté pour avoir accès à cette page

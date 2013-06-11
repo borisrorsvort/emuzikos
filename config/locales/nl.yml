@@ -677,6 +677,24 @@ nl:
       truncate: 
   services:
     signed_in_successful_via: 
+    account_created: 
+    account_creation_error: 
+    added_to_account: 
+    already_linked_account: 
+    index:
+      account:
+        plural: 
+        singular: 
+      are_you_sure: 
+      last_account_delete_warning: 
+      more_services: 
+      random_password_warning: 
+      subtitle: 
+      title: 
+    invalid_callback: 
+    invalid_data_user_id: 
+    logged_in_via: 
+    signed_in_successful: 
   gflash:
     common:
       require_no_user: 
