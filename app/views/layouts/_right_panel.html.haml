@@ -4,7 +4,6 @@
       %h4.menu-section= t(:'menu.messages.messages')
       %ul
         %li= menu_item((t(:'menu.messages.inbox') + unread_messages_count).html_safe,'mail',user_messages_path(current_user))
-        %li= menu_item(t(:'menu.users.contacts'),'users',user_contacts_path(current_user))
 
       %h4.menu-section= t(:'menu.profile.show')
       %ul
