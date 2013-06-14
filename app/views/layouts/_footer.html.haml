@@ -13,7 +13,7 @@
 
 :javascript
   FB.init({
-    appId  : '#{AppConfig.facebook.app_id}',
+    appId  : '#{h(AppConfig.facebook.app_id)}',
     status:true,
     cookie: true,
     xfbml: true,
