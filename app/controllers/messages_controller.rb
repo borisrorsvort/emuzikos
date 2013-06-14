@@ -3,12 +3,13 @@ class MessagesController < ApplicationController
 
   def index
     if params[:mailbox] == "sent"
-      @messages = @current_user.sent_messages.visible
+      @messages = @current_user.sent_messages.page(params[:page]).per(AppConfig.site.results_per_page)
       mixpanel.track 'Message box view', { :box => "Sentbox" }
     else
-      @messages = @current_user.received_messages.visible
+      @messages = @current_user.received_messages.page(params[:page]).per(AppConfig.site.results_per_page)
       mixpanel.track 'Message box view', { :box => "Inbox" }
     end
+
     if request.xhr?
       render @messages
     end

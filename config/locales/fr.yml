@@ -584,10 +584,14 @@ fr:
       piano: Piano
       violin: Violon
       voice: Voix
+      computer: ordinateur
+      trompet: trompette
     index:
       description: Annonces gratuites pour musiciens amateurs et professionnels. Cherchez des musiciens près de chez soi, c'est facile !
       keywords: musicien, recherche, recherche de musiciens, musiciens près de chez soi, annonces pour musiciens
       title: Listes des annonces pour musiciens, groupes et agents près de chez vous.
+      invite_more_users: Invitez vos amis musiciens
+      no_users: Nous n'avons trouvé aucun utilisateurs correspondant  à votre recherche
     profile:
       no_media_available: Pas de contenu disponible
     show:
@@ -632,6 +636,7 @@ fr:
     contacts:
       description: Vos contacts
       title: Vos Contacts
+      no_users: Vous n'avez pas encore sauvegardé de contacts
     form:
       searching_for: je recherche un(e)
     from: de
@@ -659,6 +664,7 @@ fr:
     to: A
     show:
       title: Vos Messages
+    ago: Il y a %{time}
   registrations:
     edit:
       cancel_my_account: Cancel my account
@@ -745,3 +751,4 @@ fr:
       update:
         error: Quelques informations doivent encore être corrigées
         success: Votre profil a bien été mis à jour
+  somewhere_in_the_world: quelque part dans de le monde

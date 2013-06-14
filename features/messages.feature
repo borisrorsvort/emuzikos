@@ -7,14 +7,14 @@ Feature: Messages management
   Scenario: I should be able to send a message a to visible user
     Given I go to the other visible user page
     And I submit the message form
-
+  @selenium
   Scenario: I should be able to delete a message
     Given I have sent a message
     And I login as the other user
     Given I go to my inbox
     And I delete the message
     Then I should not see the message
-
+  @selenium
   Scenario: I should be able to reply to a message
     Given I have sent a message
     And I login as the other user

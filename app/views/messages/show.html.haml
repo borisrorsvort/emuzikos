@@ -6,12 +6,12 @@
   .box-header
     %span= t(:'messages.from')
     - if @message.sender
-      = @message.sender == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.sender.username), user_path(@message.sender))
+      = @message.sender == @current_user ? link_to(h(@current_user.username), user_path(@current_user)) : link_to(h(@message.sender.username), user_path(@message.sender))
     - else
       = "N/A"
     %span= t(:'messages.to')
     - if @message.recipient
-      = @message.recipient == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.recipient.username), user_path(@message.recipient))
+      = @message.recipient == @current_user ? link_to(h(@current_user.username), user_path(@current_user)) : link_to(h(@message.recipient.username), user_path(@message.recipient))
     - else
       = "N/A"
     |

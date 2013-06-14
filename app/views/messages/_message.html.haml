@@ -10,7 +10,6 @@
     %p
       = truncate(h(message.body), :length => 50, :separator => ' ')
     %p.muted
-      = h time_ago_in_words(message.created_at)
-      = t('.ago')
+      = t('messages.ago', time: h(time_ago_in_words(message.created_at)))
     = form_tag user_message_path(current_user, message), :method => :delete, class: 'message-delete-form'  do
       = submit_tag t(:'buttons.delete'), :class => "btn"

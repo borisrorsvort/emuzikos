@@ -556,10 +556,14 @@ en:
       piano: Piano
       violin: Violin
       voice: Voice
+      computer: computer
+      trompet: trompet
     index:
       description: Listing of pro and amateur musicians, band classifieds or agents. Find your future band mates.
       keywords: musician, search, musician search, local musicians, search local musician, musicians classifieds
       title: Search all Musicians Classifieds, local bands or agents nearby.
+      invite_more_users: Invite your musician friends
+      no_users: We haven't found any users that correspond to your request
     profile:
       no_media_available: No medias available
     show:
@@ -604,6 +608,7 @@ en:
     contacts:
       description: Your saved contact
       title: Your contact
+      no_users: You don't have anyone saved in your contacts list
     form:
       searching_for: Searching for
     from: from
@@ -742,6 +747,7 @@ en:
     to: A
     show:
       title: Your messages
+    ago: ! '%{time} ago'
   registrations:
     edit:
       cancel_my_account: Effacer mon compte
@@ -828,3 +834,4 @@ en:
       update:
         error: Some informations need to be corrected
         success: Successfully updated your profile.
+  somewhere_in_the_world: somewhere in the world

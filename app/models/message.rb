@@ -5,9 +5,9 @@ class Message < ActiveRecord::Base
   validates_presence_of :body
   attr_accessor :to
 
-  scope :un_read, where(:read_at => nil)
+  default_scope order("created_at DESC")
 
-  scope :visible, order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
+  scope :un_read, where(:read_at => nil)
 
   def self.total_on(date)
     where("date(created_at) = ?",date).count
