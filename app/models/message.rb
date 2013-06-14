@@ -7,6 +7,8 @@ class Message < ActiveRecord::Base
 
   scope :un_read, where(:read_at => nil)
 
+  scope :visible, order("created_at").page(params[:page]).per(AppConfig.site.results_per_page)
+
   def self.total_on(date)
     where("date(created_at) = ?",date).count
   end
