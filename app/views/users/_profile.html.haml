@@ -15,7 +15,7 @@
         - if user.avatar.present? && !  @is_remote_profile
           = image_tag user.avatar.url(:normal), :class => "span12 resizable", :alt => "#{user.username + "'s picture"}"
   - if user.geocoded?
-    .user-profile--map{class: ('user-profile--map-full' if @is_remote_profile) , style: "background: url(http://maps.googleapis.com/maps/api/staticmap?center=#{user.latitude},#{user.longitude}&zoom=10&sensor=false&markers=#{user.latitude},#{user.longitude}&size=640x150&maptype=roadmap&style=saturation:-40|hue:0x22262c|invert_lightness:true|weight:0.2|gamma:1.18&scale=2) no-repeat top center"}
+    .user-profile--map{class: ('user-profile--map-full' if @is_remote_profile) , style: "background: url(http://maps.googleapis.com/maps/api/staticmap?size=600x600&center=#{user.latitude},#{user.longitude}&zoom=12&sensor=false&markers=icon:http://cl.ly/image/11362v423514/marker.png|#{user.latitude},#{user.longitude}&size=640x150&maptype=roadmap&style=saturation:-40|hue:0x22262c|invert_lightness:true|weight:0.2|gamma:1.18&scale=1) no-repeat center center"}
   .clearfix
 
 %ul.nav.nav-tabs.nav-tabs-dark.nav-tabs-dark-profile.marginless
@@ -34,7 +34,7 @@
   %li
     %a{:href => "#tab_message", data: {toggle: "tab"}}
       %i.icon-mail
-      %span.user-profile--tab-label= t(:'messages.new.title')
+      %span.user-profile--tab-label= t(:'users.show.tabs.message')
 
 // INFOS TAB
 .tab-content.tab-content-dark.tab-content-profile

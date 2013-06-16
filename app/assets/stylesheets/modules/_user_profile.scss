@@ -27,9 +27,16 @@
 
 .user-profile--map {
   @include box-shadow(#000 0 0 20px inset);
-  background-size: auto 100% !important;
   overflow: hidden;
   min-height: 300px;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-color: $menuPanelColor;
+  background-position: 50%;
+  background-size: cover !important;
+
 }
 
 .user-profile--header--title {

@@ -602,6 +602,7 @@ fr:
         music: Musique
         user_infos: Infos
         videos: Videos
+        message: Contact
       title: Profil de %{username}
     edit:
       form_helpers:

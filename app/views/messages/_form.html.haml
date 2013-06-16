@@ -2,5 +2,4 @@
 
 = form.input :to, as: :hidden, input_html: { value: @reply_to.present? ? @reply_to : @user.id }
 = form.input :body, :as => :text, :label => false, placeholder: t(:'messages.message'), input_html: {rows: 5, style: 'width: 100%'}
-.form-actions.box-actions
-  = submit_tag t(:'buttons.reply'), :class => "btn btn-primary"
+= submit_tag t(:'buttons.reply'), :class => "btn btn-primary"
