@@ -40,8 +40,7 @@
   display: table-cell;
   text-align: center;
   margin: 0;
-  width: 33.33333333%;
-
+  width: 33.3333333%;
   &:last-child a {
     border-right: 0 !important;
   }
@@ -84,6 +83,10 @@
       @include border-radius(0px);
     }
   }
+}
+
+.nav-tabs-dark.nav-tabs-dark-profile li {
+  width: 25%;
 }
 
 .search-form--tab-label span{

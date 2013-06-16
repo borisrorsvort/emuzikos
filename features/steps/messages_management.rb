@@ -25,7 +25,9 @@ class Spinach::Features::MessagesManagement < Spinach::FeatureSteps
 
   step 'I delete the message' do
     page.should have_selector('.message')
-    click_button('Delete')
+    within('.message-delete-form') do
+      find('.delete-button').click
+    end
     page.should have_no_selector('.message')
   end
 
@@ -43,6 +45,7 @@ class Spinach::Features::MessagesManagement < Spinach::FeatureSteps
   end
 
   step 'I submit the message form' do
+    page.execute_script("$('.nav-tabs-dark-profile li:last a').click();")
     fill_in 'message_body', :with => "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
     assert find_field('message_body').value == "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
     click_button('Submit')

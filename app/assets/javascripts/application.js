@@ -68,6 +68,10 @@ App = {
 
     // Fit text
     $("h1.fitText").fitText(1, { minFontSize: '20px', maxFontSize: '28px' });
+
+    $('.message-delete-form').off('click').on('click', function(event) {
+      $(this).parents('.message-wrapper').addClass('animated fadeOutDownBig').delay(2000).hide();
+    });
   },
   currentPage: function(url) {
     $('.menu-panel-right a').off('click').on('click', function() {

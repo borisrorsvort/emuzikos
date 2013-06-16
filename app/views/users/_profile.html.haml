@@ -18,19 +18,23 @@
     .user-profile--map{class: ('user-profile--map-full' if @is_remote_profile) , style: "background: url(http://maps.googleapis.com/maps/api/staticmap?center=#{user.latitude},#{user.longitude}&zoom=10&sensor=false&markers=#{user.latitude},#{user.longitude}&size=640x150&maptype=roadmap&style=saturation:-40|hue:0x22262c|invert_lightness:true|weight:0.2|gamma:1.18&scale=2) no-repeat top center"}
   .clearfix
 
-%ul.nav.nav-tabs.nav-tabs-dark.marginless
+%ul.nav.nav-tabs.nav-tabs-dark.nav-tabs-dark-profile.marginless
   %li.active
-    %a{:href => "#tab_user_infos", rel: "tooltip", data: {toggle: "tab"}}
+    %a{:href => "#tab_user_infos", data: {toggle: "tab"}}
       %i.icon-info
       %span.user-profile--tab-label= t(:'users.show.tabs.user_infos')
   %li
-    %a{:href => "#tab_music", rel: "tooltip", data: {toggle: "tab"}}
+    %a{:href => "#tab_music", data: {toggle: "tab"}}
       %i.icon-note-beamed
       %span.user-profile--tab-label= t(:'users.show.tabs.music')
   %li
-    %a{:href => "#tab_videos", rel: "tooltip", data: {toggle: "tab"}}
+    %a{:href => "#tab_videos", data: {toggle: "tab"}}
       %i.icon-video
       %span.user-profile--tab-label= t(:'users.show.tabs.videos')
+  %li
+    %a{:href => "#tab_message", data: {toggle: "tab"}}
+      %i.icon-mail
+      %span.user-profile--tab-label= t(:'messages.new.title')
 
 // INFOS TAB
 .tab-content.tab-content-dark.tab-content-profile
@@ -61,7 +65,6 @@
             .tag-body.yellow
               %span.tag= instrument.translated_name
 
-
   // MEDIA TAB
   #tab_music.tab-pane
     - if @tracks.present?
@@ -79,12 +82,12 @@
     - else
       = t('.no_media_available')
   .clearfix
-%section#contactform
-  .profile--contacform--title
-    %h4= t(:'messages.new.title')
-  - if @current_user
-    = simple_form_for @message, :url => user_messages_path(@current_user), remote: true, :html => { :class => ""} do |f|
-      = render :partial => "messages/form", :object => f
-  - else
-    .alert.info
-      = t('users.show.login_before_messaging')
+
+  #tab_message.tab-pane
+    - if @current_user
+      = simple_form_for @message, :url => user_messages_path(@current_user), remote: true, :html => { :class => ""} do |f|
+        = render :partial => "messages/form", :object => f
+    - else
+      .alert.info
+        = t('users.show.login_before_messaging')
+

@@ -4,6 +4,7 @@ Feature: Messages management
     Given I am logged in
     And a second user exists
 
+  @selenium
   Scenario: I should be able to send a message a to visible user
     Given I go to the other visible user page
     And I submit the message form

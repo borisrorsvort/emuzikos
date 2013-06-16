@@ -1,9 +1,4 @@
-.message {
-  background-color: white;
-  border: 3px solid $grayLighter;
-  padding: $gutter-width;
-  display: block;
-  position: relative;
+.message-wrapper {
   @include border-radius($baseBorderRadius);
   &.message-inbox {
     &:hover {
@@ -15,21 +10,38 @@
       border: 3px solid lighten($menuPanelColor, 15%);
     }
   }
+  margin-bottom: 10px;
+}
+.message {
+  background-color: white;
+  padding: $gutter-width;
+  display: block;
+  position: relative;
+  width: 90%;
+  float: left;
+  @include box-sizing(border-box);
+  margin-bottom: 0;
 }
 
 .message-delete-form {
-  position: absolute;
-  top: $gutter-width;
-  right: $gutter-width;
+  @include box-sizing(border-box);
+  width: 10%;
+  float: right;
+  text-align: center;
+  margin-bottom: 0;
+  .delete-button {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: $menuPanelTextColor;
+    line-height: 118px;
+    border: none;
+    &:hover {
+      background: darken($menuPanelTextColor, 10%);
+    }
+  }
 }
 
 @include at-breakpoint($desktop-cols) {
-  .message-delete-form {
-    display: none;
-  }
-  .message:hover {
-    .message-delete-form {
-      display: inline-block;
-    }
-  }
+
 }
