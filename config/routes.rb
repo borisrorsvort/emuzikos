@@ -12,8 +12,8 @@ Emuzikos::Application.routes.draw do
 
   resources :services, :only => [:index, :destroy]
   resources :social_share
-  resources :friendships
-  resources :testimonials
+  resources :friendships, only: [:create, :destroy]
+  resources :testimonials, only: [:new, :create, :index]
   resources :users do
     match "contacts" => "users#contacts", :as => :contacts
     get 'page/:page', :action => :index, :on => :collection

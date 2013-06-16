@@ -16,9 +16,9 @@
           %span= t(:'search_terms.tabs.agent')
     .tab-content.tab-content-dark
       #tab_musician.tab-pane{class: if (@current_tab == 'musician' || @current_tab == '') then 'active' end}
-        = render :partial => "users/search_forms/search_musicians", locals: {:genres => genres, :instruments => instruments}
+        = render :partial => "users/search_forms/search_musicians", locals: {:genres => @genres, :instruments => @instruments}
       #tab_band.tab-pane{class: if @current_tab == 'band' then 'active' end}
-        = render :partial => "users/search_forms/search_bands", locals: {:genres => genres, :instruments => instruments}
+        = render :partial => "users/search_forms/search_bands", locals: {:genres => @genres, :instruments => @instruments}
       #tab_agent.tab-pane{class: if @current_tab == 'agent' then 'active' end}
-        = render :partial => "users/search_forms/search_agents", locals: {:genres => genres, :instruments => instruments}
+        = render :partial => "users/search_forms/search_agents", locals: {:genres => @genres, :instruments => @instruments}
 

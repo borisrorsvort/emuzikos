@@ -5,7 +5,7 @@
         %span= user.username.capitalize
         - if user.geocoded? &&
           %span.location-infos
-            - if user.user_type.present?
+            - if user.user_type?
               = user.translated_user_type
             = t(:'users.from')
             = user.zip
@@ -39,12 +39,12 @@
 // INFOS TAB
 .tab-content.tab-content-dark.tab-content-profile
   #tab_user_infos.tab-pane.active
-    - if user.request_message.present?
+    - if user.request_message?
       %section.user-profile--info-box
         %h4= t(:'activerecord.attributes.user.request_message_show')
         = simple_format(user.request_message)
 
-    - if user.references.present?
+    - if user.references?
       %section.user-profile--info-box
         %h4= t(:'activerecord.attributes.user.references_show')
         %p= user.references

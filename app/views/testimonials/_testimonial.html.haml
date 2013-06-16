@@ -3,12 +3,12 @@
     .media
       .pull-left
         - if testimonial.user.avatar.present?
-          = image_tag(testimonial.user.avatar.url(:gallery), class: 'media-object')
+          = image_tag(testimonial.user_avatar.url(:gallery), class: 'media-object')
         -else
           = image_tag("backgrounds/avatar-default.gif", class: 'media-object')
       .media-body
         .author.strong
           = testimonial.created_at.strftime('%b %d, %Y')
           = t(:'common.by')
-          = testimonial.user.username
+          = testimonial.user_username
         = testimonial.body

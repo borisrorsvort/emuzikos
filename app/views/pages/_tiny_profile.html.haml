@@ -10,7 +10,7 @@
       = user.username.titleize
     .tiny-profile--content--location
       = user.zip
-      - if user.country.present?
+      - if user.country?
         = ","
         = i18n_country(user)
 
