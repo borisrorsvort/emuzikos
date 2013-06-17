@@ -549,7 +549,7 @@ fr:
       band: Groupes
       musician: Musiciens
     who_plays: Instruments
-    who_search_for: Ce qui'il cherche
+    who_search_for: Ce qu'il cherche
   support:
     array:
       last_word_connector: ! ' et '

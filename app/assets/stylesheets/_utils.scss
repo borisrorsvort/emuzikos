@@ -20,6 +20,9 @@ a:active {
 }
 
 .invisible-opacity {
+  .no-cssanimations & {
+    @include opacity(100);
+  }
   @include opacity(0);
 }
 .borderless {
