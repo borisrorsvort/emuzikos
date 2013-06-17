@@ -67,7 +67,7 @@ fr:
     registrations:
       cancel_my_account: Effacer mon compte
     remove_from_contact_list: Enlever
-    reply: Envoyez la réponse
+    reply: Envoyer
     send_password: Envoyer le mail de ré-initialisation de mon mot passe
     services:
       delete: Déconnecter ce service
@@ -397,6 +397,7 @@ fr:
     all_users: Chercher
     contact: Contactez-nous
     share: Aidez-nous!
+    partners: Partenaires
   musical_genres:
     alternative: Alternative
     blues: Blues

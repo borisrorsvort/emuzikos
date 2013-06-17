@@ -78,7 +78,7 @@ en:
     registrations:
       cancel_my_account: Cancel my account
     remove_from_contact_list: Remove
-    reply: Submit Reply
+    reply: Submit
     send_password: Send the password reset email
     services:
       delete: Remove this service
@@ -384,6 +384,7 @@ en:
     all_users: Chercher
     contact: contact
     share: Aidez Emuzikos
+    partners: Partners
   metal: 
   metalcore: 
   mirdangam: 
