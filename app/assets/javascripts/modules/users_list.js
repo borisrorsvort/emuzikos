@@ -40,6 +40,7 @@ UserList = {
       nextSelector : '.pagination .next a',  // selector for the NEXT link (to page 2)
       itemSelector : '.mini-profile',     // selector for all items you'll retrieve
       bufferPx: 800,
+      localMode: true,
       animate: false,
       prefill: true
     },function(arrayOfNewElems){

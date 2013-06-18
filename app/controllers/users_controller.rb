@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
-    @users = @search.results.order("updated_at DESC, avatar_updated_at DESC").page(params[:page]).per(AppConfig.site.results_per_page)
+    @users = @search.results.order("created_at DESC, avatar_updated_at DESC").page(params[:page]).per(AppConfig.site.results_per_page)
   end
 
   def show
@@ -11,9 +11,9 @@ class UsersController < ApplicationController
     @tracks = @user.get_soundclound_tracks(@user.soundcloud_username)
     @is_remote_profile = params[:is_remote_profile] == 'true' ? true : false
 
-    if Rails.env.production?
-      impressionist(@user)
-    end
+    # if Rails.env.production?
+    #   impressionist(@user)
+    # end
     mixpanel.track 'Viewed user profile', {
       via: 'Listing'
     }

@@ -26,7 +26,6 @@ App = {
     UserList.init();
     RemoteProfile.init();
     App.removeNotificationBinding();
-    // Search.init();
   },
 
   initWizeLink: function() {
@@ -107,6 +106,7 @@ $(document)
   .off('page:done').on('page:done', function(event, $target, status, url, data) {
     App.init();
     App.currentPage();
+    UserList.init();
     App.removeAllNotifications();
     $($target).animate({scrollTop: 0}, 'fast'); // Scroll top
     $('.spinner-wrapper').hide();

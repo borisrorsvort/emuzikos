@@ -1,13 +1,6 @@
 // Search = {
 //   init: function() {
-//     // if ($('.users-list').length) {
-//     //   Search.formSubmitCallbacks();
-//     //   console.log('Search init');
-//     //   $('.search-form-users').attr('data-remote', true);
-//     // } else {
-//     //   $('.search-form-users').removeAttr('data-remote');
-//     //   Search.formSubmitUnbindCallbacks();
-//     // }
+
 //   },
 //   formSubmitCallbacks: function() {
 //     console.log('Bind Search');
