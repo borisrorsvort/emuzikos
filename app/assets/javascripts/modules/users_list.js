@@ -16,7 +16,7 @@ UserList = {
   init: function() {
     if ($(".mini-profile").length > 0) {
       UserList.animateProfiles();
-      UserList.initInfiniteLoad();
+      // UserList.initInfiniteLoad();
       UserList.resizeMiniThumb($('.mini-profile'));
     }
   },

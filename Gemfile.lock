@@ -97,6 +97,9 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.1)
       debug_inspector (>= 0.0.1)
+    bootstrap-kaminari-views (0.0.2)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap-sass-rails (2.3.1.0)
       railties (>= 3.1.0)
       sass-rails (>= 3.1.0)
@@ -520,6 +523,7 @@ DEPENDENCIES
   aws-sdk
   better_errors
   binding_of_caller
+  bootstrap-kaminari-views
   bootstrap-sass-rails
   browsernizer
   bullet
@@ -552,6 +556,7 @@ DEPENDENCIES
   httparty
   impressionist
   jquery-rails
+  kaminari
   launchy
   letter_opener
   locale_detector

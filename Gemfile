@@ -64,6 +64,8 @@ gem 'coffee-script'
 gem 'wiselinks', git: 'git://github.com/igor-alexandrov/wiselinks.git'
 
 gem 'localeapp'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 group :assets do
   gem 'uglifier'
