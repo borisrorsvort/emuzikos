@@ -1,0 +1,111 @@
+.content {
+  background-color: $content-bg-color;
+}
+
+.mini-profiles {
+  list-style-type: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.mini-profile {
+  width: 100%; // Mobile width
+  margin-bottom: $gutter-width;
+  &.faded {
+    @include opacity(50);
+  }
+}
+
+.mini-profile--inner {
+  border: none;
+  outline: none;
+  display: block;
+  position: relative;
+  background-color: $mini-profile-bg;
+  @include border-radius($baseBorderadius);
+  border: 1px solid $mini-profile-border-color;
+  img {
+    @include opacity(0);
+  }
+  &:hover {
+    // @include box-shadow(#c0c0c0 0 0 25px);
+    text-decoration: none;
+    cursor: handler;
+  }
+}
+
+.mini-profile--thumb {
+  max-height: 150px;
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  @include border-top-radius($baseBorderadius);
+  @include box-sizing(border-box);
+  @include box-shadow(rgba(255,255,255,0.5) 0 1px 1px inset);
+
+  img {
+    height: 100%;
+  }
+}
+
+.mini-profile--content {
+  @include box-sizing(border-box);
+  padding: $gutter-width;
+  font-size: emCalc(13px);
+}
+
+.icon-circle {
+  $size: 30px;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  background-color: $grayLighter;
+  @include background(linear-gradient($grayLighter, darken($grayLighter, 5%)));
+  border: 1px solid darken($grayLighter, 5%);
+  @include box-shadow(#fff 0 0 1px inset);
+  @include border-radius(999px);
+  text-align: center;
+  position: relative;
+  top: -5px;
+
+  .mini-profile--content & {
+    margin-right: 5px;
+  }
+}
+
+.user-properties {
+  margin-top: $baseLineHeight / 2;
+}
+
+.section {
+  &.user-general-infos {
+    margin-bottom: $baseLineHeight / 4;
+    h5  {
+      margin: 0;
+    }
+  }
+
+  &.user-type {
+    margin: $baseLineHeight / 2 0 $baseLineHeight;
+  }
+}
+
+@include at-breakpoint($tablet-cols) {
+  .mini-profile--thumb   {
+    @include border-radius(0px);
+    @include border-left-radius($baseBorderadius);
+    width: 20%;
+  }
+}
+
+
+.come-in {
+  transform: translateY(150px);
+  animation: come-in 0.8s ease forwards;
+}
+
+@keyframes come-in {
+  to { transform: translateY(0); }
+}

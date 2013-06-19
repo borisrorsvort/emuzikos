@@ -46,7 +46,8 @@ addons:
     pgbackups: "basic"
     releases: "basic"
     shared-database: "5mb"
-
+  staging:
+    codeship: 'test'
   production:
     stillalive:basic
     newrelic:standard

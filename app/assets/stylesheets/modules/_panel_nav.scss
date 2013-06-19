@@ -1,0 +1,48 @@
+.menu-panel {
+  ul {
+    margin: 0;
+
+    li {
+      &:last-child a{
+        border-bottom: 0;
+      }
+      &:first-child a{
+        border-top: 0;
+      }
+      a {
+        padding: 15px;
+        display: block;
+        text-transform: capitalize;
+        color: lighten($menuPanelColor, 30%);
+        text-decoration: none;
+        border-bottom: 1px solid darken($menuPanelColor, 5%);
+        border-top: 1px solid lighten($menuPanelColor, 5%);
+        @include text-shadow(darken($menuPanelColor, 2%) 0 1px 1px);
+        @include box-sizing('border-box');
+        @include transition(box-shadow 0.05s);
+        &.current,
+        &:hover {
+          @include box-shadow(lighten($menuPanelColor, 30%) 4px 0 0px inset);
+          background-color: darken($menuPanelColor, 3%);
+        }
+      }
+    }
+  }
+  .unread-count {
+    margin-left: 10px;
+  }
+}
+
+
+h4.menu-section {
+  font-size: emCalc(12px);
+  margin: 0;
+  border-bottom: 1px solid darken($menuPanelColor, 10%);
+  padding: 4px $gutter-width;
+  @include background(linear-gradient(darken($menuPanelColor, 4%), darken($menuPanelColor, 6%)));
+  font-weight: bold;
+  color: $menuPanelTextColor;
+  text-transform: uppercase;
+  @include border-top-radius($baseBorderRadius);
+
+}

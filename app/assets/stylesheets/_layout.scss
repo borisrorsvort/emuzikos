@@ -1,125 +1,275 @@
-// Base Container
+// --------------------------------------------
+// layout
+
+html,
 body {
-  padding-top: 40px;
+  width: 100%;
+  height: 100%;
 }
 
-.container-fluid[role="main"] {
-  padding-top: $gridGutterWidth;
-  padding-bottom: $gridGutterWidth;
-  background: #fff ;
-  &.nobg {
-    background: none;
+body {
+  background: $body-bg-default;
+  // overflow: hidden;
+}
+
+.container {
+  @include container;
+  overflow: hidden;
+  padding: 0;
+  background-color: $menuPanelColor;
+  @include box-sizing(border-box);
+}
+
+.menu-panel-left,
+.menu-panel-right,
+.main {
+  @include transition(.2s all ease);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 0;
+  @include border-top-radius($baseBorderRadius);
+  background: $menuPanelColor;
+}
+
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+  // -webkit-overflow-scrolling: touch;
+}
+
+// ---------------------
+// Mobile layout
+// ---------------------
+
+.menu-panel-left {
+  @include box-sizing(border-box);
+  @include span-columns($mobile-side-panel-cols);
+  @include box-shadow(#333 -3px 0 3px inset);
+  left: 0;
+  .show-right & {
+    display: none;
+    left: space($mobile-side-panel-cols) * -1;
   }
 }
 
-
-#inner_content {
-  background:#fff;
-  padding: 18px; /* for non mobiel version*/
+.menu-panel-right {
+  @include box-sizing(border-box);
+  @include span-columns($mobile-side-panel-cols);
+  right: 0;
+  .show-left & {
+    left: space($mobile-side-panel-cols);
+    display: none;
+  }
 }
-#messages.index {
-  #inner_content {
-    padding: 0 0 18px 0;
-    .button.delete {
-      margin-left: 10px;
+.main-nav {
+  @include box-sizing(border-box);
+  background: $menuPanelColor;
+}
+
+// Has to be before main cauz main overwrite the display propperty
+.menu-panel-left,
+.menu-panel-right {
+  display: none;
+}
+
+.show-left .menu-panel-left,
+.show-right .menu-panel-right {
+  display: inline;
+}
+
+.main {
+  @include box-sizing(border-box);
+  @include span-columns($mobile-cols);
+  margin-right: 0;
+  z-index: 10;
+  .show-left & {
+    left: space($mobile-side-panel-cols);
+    overflow: hidden;
+  }
+  .show-right & {
+    left: space($mobile-side-panel-cols) * -1;
+    overflow: hidden;
+  }
+}
+
+// ---------------------
+// tablet layout
+// ---------------------
+
+@include at-breakpoint($tablet-cols) {
+
+  .main {
+    @include span-columns($tablet-cols-main);
+  }
+  .menu-panel-left,
+  .menu-panel-right {
+    @include span-columns($tablet-cols-nav);
+  }
+
+  .left-panel-layout {
+    .main {
+      left: space($tablet-cols-nav);
+    }
+    .menu-panel-left {
+      display: inline;
+    }
+    &.show-right {
+      .main {
+        left: 0;
+        right: space($tablet-cols-nav);
+      }
+    }
+  }
+
+  .right-panel-layout {
+    .main {
+      right: space($tablet-cols-nav);
+    }
+    .menu-panel-right {
+      display: inline;
+    }
+    &.show-left {
+      .main {
+        right: 0;
+        left: space($tablet-cols-nav);
+      }
     }
   }
 }
-.content {
-  min-height: 400px !important;
-}
 
-form {
-  max-width: 768px;
-  .control-group {
-    textarea {
-      width: 97%;
+// ---------------------
+// Desktop layout
+// ---------------------
+
+@include at-breakpoint($desktop-cols) {
+
+  .main {
+    @include span-columns($desktop-cols-main);
+  }
+  .menu-panel-left,
+  .menu-panel-right {
+    @include span-columns($desktop-cols-nav);
+  }
+
+  .left-panel-layout,
+  .right-panel-layout {
+    .main {
+      left: space($desktop-cols-nav);
+    }
+    .menu-panel-left,
+    .menu-panel-right {
+      display: inline;
     }
   }
 }
 
+// ---------------------
+// Public desktop layout
+// ---------------------
 
-// Header / topnav
+// @include at-breakpoint($public-desktop-cols) {
+//   .public {
+//     .main {
+//       @include span-columns($public-desktop-cols-main);
+//     }
+//     .menu-panel-left,
+//     .menu-panel-right {
+//       @include span-columns($public-desktop-cols-nav);
+//     }
 
-#logo {
-  float:left;}
+//     &.left-panel-layout {
+//       .main {
+//         right: 0;
+//         left: space($public-desktop-cols-nav);
+//       }
+//       &.show-right {
+//         .main {
+//           left: 0;
+//           right: space($public-desktop-cols-nav);
+//         }
+//       }
+//     }
 
+//     &.right-panel-layout {
+//       .main {
+//         left: 0;
+//         right: space($public-desktop-cols-nav);
+//       }
+//       &.show-left {
+//         .main {
+//           right: 0;
+//           left: space($public-desktop-cols-nav);
+//         }
+//       }
+//     }
+//   }
+// }
 
-// Footer
+// ---------------------
+// General stuff
+// ---------------------
+
+header, footer {
+  @include clearfix;
+  clear: both;
+}
 
 #footer {
+  background: transparent image-url("backgrounds/bg-footer.gif");
+  min-height: 200px;
+  @include box-shadow(black 0 3px 3px inset);
+  padding: 20px;
+}
+.main {
+  @include box-sizing(border-box);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  overflow: hidden;
+}
 
-  font-size: $basefont;
-  padding: $basefont * 3;
-  .inner_footer {
-    background-color: #011120;
-    @include border-radius(5px);
-      position: relative;
-      .mixpanel_partner {
-       position: absolute;
-       top: 3px;
-       right: 20%;
-      }
-  }
-
-  &.light .inner_footer {
-    padding: 18px;
-  }
-
-  .left_links {
-    float:left;
-    width: 100%;
-  }
-  .copyright {
-    margin-top: 20px;
-    float:left;
-  }
-  a {
-    margin: 0 20px 15px 0;
-    display:block;
-    color:#666;
-    @include hover-link;
-  }
+.content {
+  $gutter-width: 1em;
+  $grid-padding : 1em;
+  @include container;
+  padding: $gutter-width;
+  padding-top: 74px;
+  @include box-sizing(border-box);
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  @extend .scrollable;
+  width: 100%;
 }
 
 
-/* HOMEPAGE
----------------------------------------- */
+//// Media query helper
 
-.centered_grid {
-  max-width: 600px;
-  padding: 0 20px;
-  margin: 0 auto;
+.alert.alert-info.alert-tablet,
+.alert.alert-info.alert-desktop,
+.alert.alert-info.alert-public {
+  display: none;
+  position: fixed;
+  z-index: 999999;
+  bottom: 0;
+  @include opacity(50);
 }
 
-
-
-// IE overlay
-#ie_warning {
-  display: block !important;
-  background: #fff;
-  width: 90%;
-  height: 400px;
-  z-index: 10000;
-  padding: 10%;
-  .inner_warning_wrapper {
-    width:  80%;
-    margin: 0 auto;
-    h2 {
-      color: #333;
-      text-shadow: none !important;
-    }
-    li {
-      float: left;
-      margin-right:  30px;
-      list-style-type: none;
-      a {
-        text-decoration: none;
-      }
-      img {
-        border: 2px #ccc solid;
-      }
-    }
+@include at-breakpoint($tablet-cols) {
+  .alert.alert-info.alert-mobile { display: none;}
+  .alert.alert-info.alert-tablet{
+    display: block;
   }
 }
+@include at-breakpoint($desktop-cols) {
+  .alert.alert-info.alert-desktop {
+    display: block;
+  }
+}
+// @include at-breakpoint($public-desktop-cols) {
+//   .alert.alert-info.alert-public {
+//     display: block;
+//   }
+// }
 

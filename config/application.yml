@@ -40,8 +40,7 @@ common: &default_settings
 
   mixpanel:
     api_key: 'ba08fcc820faf968fe94d4b7ea74d89c'
-  songkick:
-    api_key: "cApdrGD0PiCPiJyw"
+
   social:
     facebook_page_url: "http://www.facebook.com/pages/Emuzikos/169399636456395"
 

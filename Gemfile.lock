@@ -1,28 +1,25 @@
 GIT
-  remote: git://github.com/Eric-Guo/ransack.git
-  revision: 767675e38a35d15ddd05b91ac549c32ef125477f
-  specs:
-    ransack (0.7.0)
-      actionpack (~> 3.0)
-      activerecord (~> 3.0)
-      polyamorous (~> 0.5.0)
-
-GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 7a046645d165f2891555897c637aa84d06da31a0
+  revision: 05df90c74dc2bec99664d836351e6a5eced84049
   specs:
-    activeadmin (0.5.1)
+    activeadmin (0.6.0)
       arbre (>= 1.0.1)
       bourbon (>= 1.0.0)
       devise (>= 1.1.2)
       fastercsv
       formtastic (>= 2.0.0)
       inherited_resources (>= 1.3.1)
-      jquery-rails (>= 1.0.0)
+      jquery-rails (>= 1.0.0, < 3.0.0)
       kaminari (>= 0.13.0)
       meta_search (>= 0.9.2)
       rails (>= 3.0.0)
       sass (>= 3.1.0)
+
+GIT
+  remote: git://github.com/igor-alexandrov/wiselinks.git
+  revision: b8272cf2e562ca091df833a037ea2f7686292718
+  specs:
+    wiselinks (0.5.6)
 
 GIT
   remote: git://github.com/jongilbraith/simple-private-messages.git
@@ -100,14 +97,20 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.1)
       debug_inspector (>= 0.0.1)
+    bootstrap-kaminari-views (0.0.2)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap-sass-rails (2.3.1.0)
       railties (>= 3.1.0)
       sass-rails (>= 3.1.0)
-    bourbon (3.1.1)
+    bourbon (3.1.7)
       sass (>= 3.2.0)
       thor
     bourne (1.2.1)
       mocha (= 0.12.7)
+    browser (0.1.6)
+    browsernizer (0.2.1)
+      browser (~> 0.1.4)
     builder (3.0.4)
     bullet (4.4.0)
       uniform_notifier
@@ -124,10 +127,6 @@ GEM
       rails
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
-    chosen-rails (0.9.12)
-      coffee-rails (>= 3.2)
-      railties (>= 3.0)
-      sass-rails (>= 3.2)
     chunky_png (1.2.7)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -136,9 +135,6 @@ GEM
     code_analyzer (0.3.1)
       sexp_processor
     coderay (1.0.9)
-    coffee-rails (3.2.2)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -152,8 +148,6 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
-    configurable (0.7.0)
-      lazydoc (>= 1.0.0)
     country_select (1.1.3)
     daemons (1.1.9)
     database_cleaner (0.9.1)
@@ -164,12 +158,12 @@ GEM
       debugger-ruby_core_source (~> 1.2.0)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.0)
-    devise (2.2.3)
+    devise (2.2.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
-    diff-lcs (1.2.1)
+    diff-lcs (1.2.4)
     dynamic_errors (0.2.0)
       rails (>= 2.3.5)
     em-websocket (0.5.0)
@@ -207,6 +201,7 @@ GEM
       ruby-progressbar (~> 1.0.0)
     geocoder (1.1.6)
     gherkin-ruby (0.2.1)
+    gli (2.5.6)
     gritter (1.0.3)
     growl (1.0.3)
     guard (1.6.2)
@@ -242,7 +237,7 @@ GEM
       heroku (>= 2.15.0)
     highcharts-rails (2.3.5)
       railties (>= 3.1)
-    hike (1.2.1)
+    hike (1.2.3)
     hirb (0.7.1)
     hominid (3.0.5)
     httmultiparty (0.3.8)
@@ -258,14 +253,14 @@ GEM
     impressionist (1.2.0)
       httpclient (~> 2.2)
       nokogiri (~> 1.5)
-    inherited_resources (1.3.1)
+    inherited_resources (1.4.0)
       has_scope (~> 0.5.0)
-      responders (~> 0.6)
+      responders (~> 0.9)
     journey (1.0.4)
-    jquery-rails (2.2.1)
+    jquery-rails (2.3.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.7.7)
+    json (1.8.0)
     jwt (0.1.8)
       multi_json (>= 1.5)
     kaminari (0.14.1)
@@ -273,19 +268,24 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.2.0)
       addressable (~> 2.3)
-    lazydoc (1.0)
     letter_opener (1.1.0)
       launchy (~> 2.2.0)
     linecache (0.46)
       rbx-require-relative (> 0.0.4)
     listen (0.7.3)
+    locale_detector (0.3.1)
+      i18n (>= 0.5.0)
+      rails (>= 3.0.0)
+    localeapp (0.6.9)
+      gli
+      i18n
+      json
+      rest-client
+      ya2yaml
     lumberjack (1.0.2)
-    mail (2.5.3)
-      i18n (>= 0.4.0)
+    mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta-tags (1.4.1)
-      actionpack
     meta_search (1.1.3)
       actionpack (~> 3.1)
       activerecord (~> 3.1)
@@ -293,17 +293,17 @@ GEM
       polyamorous (~> 0.5.0)
     metaclass (0.0.1)
     method_source (0.8.1)
-    mime-types (1.21)
+    mime-types (1.23)
     mixpanel (3.5.2)
       escape
       json
       rack
     mocha (0.12.7)
       metaclass (~> 0.0.1)
-    multi_json (1.7.1)
+    multi_json (1.7.6)
     multi_xml (0.5.3)
     multipart-post (1.2.0)
-    mysql2 (0.3.11)
+    named (1.1.0)
     netrc (0.7.7)
     newrelic_rpm (3.5.8.72)
     nifty-generators (0.4.6)
@@ -381,7 +381,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (10.0.3)
+    rake (10.0.4)
     rb-fchange (0.0.6)
       ffi
     rb-fsevent (0.9.3)
@@ -402,7 +402,7 @@ GEM
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-instafail (0.2.4)
-    rspec-mocks (2.13.0)
+    rspec-mocks (2.13.1)
     rspec-rails (2.13.0)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -417,11 +417,16 @@ GEM
       linecache (>= 0.3)
     ruby-progressbar (1.0.2)
     rubyzip (0.9.9)
-    sass (3.2.7)
+    sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    searchlight (1.1.0)
+      named (~> 1.0)
+    select2-rails (3.3.2)
+      sass-rails (>= 3.2)
+      thor (~> 0.14)
     selenium-webdriver (2.31.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
@@ -448,7 +453,6 @@ GEM
     sinatra (1.0)
       rack (>= 1.0)
     slop (3.4.4)
-    songkickr (0.3.3)
     soundcloud (0.3.1)
       hashie
       httmultiparty (>= 0.3)
@@ -468,12 +472,9 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    squeel (1.0.18)
-      activerecord (~> 3.0)
-      activesupport (~> 3.0)
-      polyamorous (~> 0.5.0)
-    tap (1.4.0)
-      configurable (~> 0.7.0)
+    susy (1.0.8)
+      compass (>= 0.12.2)
+      sass (>= 3.2.0)
     taps (0.3.24)
       rack (>= 1.0.1)
       rest-client (>= 1.4.0, < 1.7.0)
@@ -484,13 +485,11 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
-    thor (0.17.0)
-    tilt (1.3.6)
-    treetop (1.4.12)
+    thor (0.18.1)
+    tilt (1.4.1)
+    treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (1.0.0)
-      coffee-rails
     twitter (4.6.1)
       faraday (~> 0.8, < 0.10)
       multi_json (~> 1.0)
@@ -511,6 +510,7 @@ GEM
     xml-simple (1.1.2)
     xpath (1.0.0)
       nokogiri (~> 1.3)
+    ya2yaml (0.31)
 
 PLATFORMS
   ruby
@@ -523,12 +523,14 @@ DEPENDENCIES
   aws-sdk
   better_errors
   binding_of_caller
+  bootstrap-kaminari-views
   bootstrap-sass-rails
+  browsernizer
   bullet
   capybara
   carmen
   carmen-rails
-  chosen-rails
+  coffee-script
   compass-rails
   country_select
   database_cleaner
@@ -554,12 +556,13 @@ DEPENDENCIES
   httparty
   impressionist
   jquery-rails
+  kaminari
   launchy
   letter_opener
-  meta-tags
+  locale_detector
+  localeapp
   meta_search
   mixpanel
-  mysql2
   newrelic_rpm
   nifty-generators
   omniauth
@@ -576,7 +579,6 @@ DEPENDENCIES
   rails (= 3.2.13)
   rails-footnotes (>= 3.7.5.rc4)
   rails_best_practices
-  ransack!
   rb-fchange
   rb-fsevent
   rb-inotify
@@ -584,24 +586,24 @@ DEPENDENCIES
   ruby-debug
   sass
   sass-rails
+  searchlight
+  select2-rails
   selenium-webdriver
   settingslogic
   shoulda
   simple-private-messages (= 0.0.0)!
   simple_form
   simplecov
-  songkickr
   soundcloud
   spinach-rails
   spinjs-rails
   spork
-  squeel
   strong_parameters!
-  tap
+  susy
   taps
   thin
-  turbolinks
   twitter
   uglifier
   watchr
   wicked
+  wiselinks!

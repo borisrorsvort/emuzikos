@@ -1,7 +1,5 @@
 = form.error_messages
 
-= form.input :to, as: :hidden, input_html: { value: params[:reply_to] ? params[:reply_to] : @user.id }
-= form.input :subject, :label => false, placeholder: t(:'messages.subject'), input_html: {class: "span12"}
-= form.input :body, :as => :text, :label => false, placeholder: t(:'messages.message'), input_html: {rows: 10}
-.form-actions
-  = submit_tag t(:'buttons.submit'), :class => "btn btn-primary"
+= form.input :to, as: :hidden, input_html: { value: @reply_to.present? ? @reply_to : @user.id }
+= form.input :body, :as => :text, :label => false, placeholder: t(:'messages.message'), input_html: {rows: 5, style: 'width: 100%'}
+= submit_tag t(:'buttons.reply'), :class => "btn btn-primary"

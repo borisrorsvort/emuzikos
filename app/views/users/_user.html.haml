@@ -1,31 +1,48 @@
-= link_to user_path(user), :class => "user_profile_listing" do
-  - if user.avatar.present?
-    .section
-      = image_tag(user.avatar.url(:normal))
+%li.mini-profile.media{data: {profile_url: user_path(user, is_remote_profile: true) }}
+  = link_to user, class: 'mini-profile--inner' do
+    .mini-profile--thumb.pull-left
+      - if user.avatar.present?
+        = image_tag(user.avatar.url(:medium), class: "media-object resizable", data: {'animated-class' => 'fadeIn'})
+      / - else
+      /   = image_tag("http://instasrc.com/100x100/people", class: "media-object", data: {'animated-class' => 'fadeIn'})
+    .mini-profile--content.media-body
+      .section.user-general-infos
+        .username
+          %h5
+            = user.username.titleize
+            = " - "
+            %span.muted
+              = user.zip
+              - if user.country.present?
+                = ","
+                = i18n_country(user)
 
-  .section.user_general_infos
-    .username= user.username
-    .location
-      = t(:'common.users.from') + " "
-      = user.zip + ", "
-      = i18n_country(user)
+      .section.user-type
+        .badge.badge-info.title
+          %strong= t(:"users.user_types.#{user.user_type}")
+          = t(:'users.show.is_looking_for')
+          %strong= t(:"users.user_types.#{user.searching_for}")
+      .section.user-properties.user-genre.clearfix
+        .pull-left
+          .media-object.icon-circle
+            %i.icon-tag
+        .media-body
+          %span.tag_list
+            = user.genres.collect {|i| i.translated_name}.to_sentence
 
-  .section.user_type
-    .title
-      %strong= t(:"users.types.#{user.user_type}")
-      = t(:'users.show.is_looking_for')
-      %strong= t(:"users.types.#{user.searching_for}")
-    .tag_list
-      - user.genres.each do |genre|
-        %span= t(:"musical_genres.#{genre.name}")
-
-  .section.user_instruments
-    .title
-      = t(:'activerecord.attributes.user.instruments')
-    .tag_list
-      - user.instruments.each do |instrument|
-        %span= t(:"instruments.#{instrument.name}")
-
-  .clear
-
-/ .item.w1
+      .section.user-properties.user-instruments.clearfix
+        .pull-left
+          .media-object.icon-circle
+            %i.icon-note-beamed
+        .media-body
+          %span.tag_list
+            = user.instruments.collect {|i| i.translated_name}.to_sentence
+      - if user.references.present?
+        .section.user-properties.user-musical-references.clearfix
+          .pull-left
+            .media-object.icon-circle
+              %i.icon-heart
+          .media-body
+            %span.tag_list
+              = user.references
+    .clearfix

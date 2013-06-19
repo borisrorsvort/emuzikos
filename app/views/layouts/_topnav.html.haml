@@ -1,115 +1,17 @@
-%nav.navbar.navbar-inverse.navbar-fixed-top{ :role => "navigation"}
+.top-header.navbar.navbar-inverse
   .navbar-inner
-    .container-fluid
-      %a.btn.btn-navbar
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %a.brand{:href => root_url}= image_tag 'logo.png', :alt => "Emuzikos"
-      %ul.mobile-menu
-
-        %li
-          =link_to users_url do
-            %i.icon-search.icon-white
-            = t(:'menu.all_users')
-        - if user_signed_in?
-          %li
-            = link_to user_messages_path(current_user) do
-              %i.icon-inbox
-              = t(:'menu.messages.inbox')
-          %li
-            = link_to user_messages_path(current_user, :mailbox => :sent) do
-              %i.icon-signin
-              = t(:'menu.messages.sent_messages')
-          %li
-            = link_to user_contacts_path(current_user) do
-              %i.icon-book
-              =t(:'menu.users.contacts')
-          %li
-            = link_to edit_user_path(current_user) do
-              %i.icon-pencil
-              = t(:'menu.profile.edit')
-          %li
-            = link_to user_path(current_user) do
-              %i.icon-user
-              = t(:'menu.profile.public')
-          %li.active
-            = link_to edit_user_registration_path(current_user) do
-              %i.icon-briefcase
-              = t(:'menu.profile.account')
-          %li
-            = link_to services_path, :class => "current" do
-              %i.icon-globe
-              = t(:'menu.profile.authentications')
-          %li
-            = link_to destroy_user_session_path, :class => "logout", :rel => "nofollow" do
-              %i.icon-signin
-              = t(:'menu.logout')
-        - else
-          %li
-            = link_to new_user_registration_path do
-              %i.icon-plus
-              =t(:'menu.signup')
-          %li
-            = link_to new_user_session_path do
-              %i.icon-signin
-              =t(:'menu.login')
-
-      .nav-collapse
-        %ul.nav
-          %li
-            =link_to users_url do
-              %i.icon-search.icon-white
-              = t(:'menu.all_users')
+    %ul.pull-left
+      %li
+        %a.btn-nav.toggle.toggle-close.toggle-close-left{href: "#", data: {trigger: 'close'}}
+          %i.icon-cancel
+        %a.btn-nav.left-nav-trigger.toggle{:href => "#left"}
+          %i.icon-search
+    %ul.pull-right
+      %li
+        %a.btn-nav.right-nav-trigger.toggle{:href => "#right"}
+          %i.icon-list
           - if user_signed_in?
-            %li.dropdown
-              =link_to "#", :class => "dropdown-toggle", :data => {"toggle" => "dropdown"} do
-                %i.icon-user.icon-white
-                = t(:'menu.profile.show')
-                %b.caret
-              %ul.dropdown-menu
-                %li= link_to t(:'menu.profile.edit'), edit_user_path(current_user)
-                %li= link_to t(:'menu.profile.public'),  user_path(current_user)
-                %li= link_to t(:'menu.profile.account'), edit_user_registration_path(current_user)
-                %li= link_to t(:'menu.profile.authentications'), services_path
-            %li.dropdown
-              =link_to "#", :class => "dropdown-toggle", :data => {"toggle" => "dropdown"} do
-                %i.icon-inbox.icon-white
-                = t(:'menu.messages.messages')
-                = unread_messages_count if current_user.unread_messages?
-                %b.caret
-              %ul.dropdown-menu
-                %li= link_to t(:'menu.messages.inbox'), user_messages_path(current_user), :class => "current"
-                %li= link_to t(:'menu.messages.sent_messages'), user_messages_path(current_user, :mailbox => :sent)
-                %li= link_to t(:'menu.users.contacts'), user_contacts_path(current_user)
-          %li
-            =link_to "/social_share/invite_friends" do
-              %i.icon-share.icon-white
-              = t(:'menu.share')
-        %ul.nav.pull-right
-          %li.divider-vertical
-          %li.dropdown
-            =link_to "#", :class => "dropdown-toggle", :data => {"toggle" => "dropdown"} do
-              %i.icon-comment.icon-white
-              = t(:'menu.messages.languages')
-              %b.caret
-            %ul.dropdown-menu
-              %li= link_to t(:'languages.french'), root_url(:subdomain => 'fr'), :title => t(:'footer.emuzikos_language', :language => t(:'languages.french'))
-              %li= link_to t(:'languages.english'), "#{request.protocol}#{request.domain}", :title => t(:'footer.emuzikos_language', :language => t(:'languages.english'))
-
-          - if user_signed_in?
-            %li
-              %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog (powered by UserVoice)"}
-                =t(:'menu.help')
-            %li= link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
-            %li= link_to t(:'menu.logout'), destroy_user_session_path, :class => "logout", :rel => "nofollow"
-          -else
-            %li= link_to t(:'menu.signup'),new_user_registration_path
-            %li= link_to t(:'menu.login'), new_user_session_path
-            %li
-              %a{:class => "feedback_link", :href =>"javascript:UserVoice.showPopupWidget();", :title => "Open feedback & support dialog"}
-                = t(:'menu.help')
-            %li= link_to t(:'menu.testimonials'), testimonials_path, :rel => "nofollow"
-
-
-
+            = unread_messages_count
+        %a.btn-nav.toggletoggle.toggle-close.toggle-close-right{href: "#", data: {trigger: 'close'}}
+          %i.icon-cancel
+    = link_to 'EMUZIKOS', root_path, class: "logo", data: {push: true, target: '.content'}

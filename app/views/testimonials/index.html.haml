@@ -1,14 +1,21 @@
-- title t(:'.title')
-%p
-  = link_to new_testimonial_path, :class => "btn btn-primary" do
-    %i.icon-plus.icon-white
-    = t(:'buttons.testimonials.create')
-.testimonials{ :class => (@current_user ? nil : "wide")}
-  - if !@testimonials.blank?
-    = render @testimonials
+= everywhere_js do
+  Layout.init("right-panel-layout");
 
-  -else
-    %p= t(:"#{ @current_user ? 'testimonials.no_testimonials_logged_in' : 'testimonials.no_testimonials'  }")
-.pagination
-  = paginate @testimonials
-.clear
+- set_title t(:'.title')
+
+.box
+  .box-header
+    %h1
+      = t(:'.title')
+      - if @current_user
+        = link_to new_testimonial_path, :class => "btn btn-mini pull-right", id: "new_testimonial" do
+          %i.icon-plus.icon-white
+          = t(:'buttons.testimonials.create')
+  .box-body
+    - if !@testimonials.blank?
+      = render @testimonials
+
+    -else
+      %p= t(:"#{ @current_user ? 'testimonials.no_testimonials_logged_in' : 'testimonials.no_testimonials'  }")
+  .pagination
+    = paginate @testimonials

@@ -2,7 +2,7 @@ class Testimonial < ActiveRecord::Base
   belongs_to :user
   validates_size_of :body, :within => 30...1300
 
-  delegate :username, :to => :user, :prefix => true
+  delegate :username, :avatar, :to => :user, :prefix => true
 
   attr_accessible :body, :approved
 

@@ -1,9 +1,10 @@
 source "https://rubygems.org"
-
+ruby "1.9.3"
 # Core Gems
 
 gem 'rails', '3.2.13'
-gem 'mysql2'
+gem 'pg'
+gem 'taps'
 gem "jquery-rails"
 # gem 'redis'
 
@@ -11,14 +12,13 @@ gem "devise"
 gem 'omniauth'
 gem "omniauth-facebook"
 gem "omniauth-soundcloud"
-gem "activeadmin", :git => "git://github.com/gregbell/active_admin.git"
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'meta_search'
 
 gem "airbrake"
 gem "populator"
 gem "faker"
-gem "squeel"
-gem "ransack", :git => "git://github.com/Eric-Guo/ransack.git"
+gem 'searchlight'
 gem "gritter"
 gem "haml"
 gem "sass"
@@ -34,17 +34,15 @@ gem 'country_select'
 gem 'httparty'
 gem 'carmen'
 gem 'carmen-rails'
-gem 'songkickr'
 gem "soundcloud"
 gem "hominid"
 gem 'preferences', :git => 'git://github.com/mojotech/preferences.git'
 gem 'twitter'
 gem 'geocoder'
 gem 'rack-no-www'
-gem 'pg'
-gem 'meta-tags', :require => 'meta_tags'
 gem "friendly_id", "~> 4.0.0"
 gem 'impressionist'
+gem 'locale_detector'
 
 gem 'wicked'
 gem 'annotate'
@@ -53,19 +51,27 @@ gem 'bootstrap-sass-rails'
 gem "highcharts-rails", "~> 2.3.0"
 gem "newrelic_rpm"
 gem 'font-awesome-sass-rails'
-
-gem 'turbolinks'
 gem 'strong_parameters', git: "git://github.com/rails/strong_parameters.git"
 gem 'spinjs-rails'
 gem 'mixpanel'
+gem 'browsernizer'
 
-gem 'chosen-rails'
+# gem 'chosen-rails'
+gem "select2-rails"
 gem 'thin'
+
+gem 'coffee-script'
+gem 'wiselinks', git: 'git://github.com/igor-alexandrov/wiselinks.git'
+
+gem 'localeapp'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 
 group :assets do
   gem 'uglifier'
   gem 'sass-rails'
   gem "compass-rails"
+  gem 'susy'
 end
 
 group :production do
@@ -119,5 +125,3 @@ group :test do
   gem 'rack-contrib'
   gem 'fuubar'
 end
-
-gem 'tap'

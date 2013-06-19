@@ -2,8 +2,10 @@ class Message < ActiveRecord::Base
 
   is_private_message
 
-  validates_presence_of :body, :subject
+  validates_presence_of :body
   attr_accessor :to
+
+  default_scope order("created_at DESC")
 
   scope :un_read, where(:read_at => nil)
 

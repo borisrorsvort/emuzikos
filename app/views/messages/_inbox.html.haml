@@ -1,13 +1,6 @@
-- title t(:'.title')
+- set_title t(:'.title')
 - description t(:'.description')
-- set_meta_tags :canonical => request.url
-
-
-- content_for :sub_nav do
-  %ul.nav.nav-tabs
-    %li.active= link_to t(:'menu.messages.inbox'), user_messages_path(current_user), :class => "current"
-    %li= link_to t(:'menu.messages.sent_messages'), user_messages_path(current_user, :mailbox => :sent)
-    %li= link_to t(:'menu.users.contacts'), user_contacts_path(current_user)
+- canonical request.url
 
 - if messages.size == 0
   .no_records
@@ -15,9 +8,4 @@
 
 -else
 
-  %table.table.table-striped.messages_list
-    %tbody
-      = render messages
-
-  .clear
-    = submit_tag t(:'buttons.delete'), :class => "btn btn-danger"
+  = render messages

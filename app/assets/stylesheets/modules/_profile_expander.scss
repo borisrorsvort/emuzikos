@@ -1,0 +1,14 @@
+.profile-expander {
+  background-color: $profile-expander-bg;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 49%;
+    border-bottom: 10px solid #060909;
+    border-bottom-color: inherit;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+}

@@ -1,0 +1,45 @@
+.centered-box {
+  @include span-columns($mobile-cols, $mobile-cols);
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+}
+
+.user_remember_me {
+  label,
+  .controls {
+    display: inline-block;
+  }
+  .controls {
+    position: relative;
+    top: 10px;
+    margin-left: 15px;
+  }
+}
+.share-link {
+  margin: 0 0 20px 0;
+}
+
+
+
+@include at-breakpoint($tablet-cols) {
+  .centered-box {
+    @include span-columns($tablet-cols, $tablet-cols);
+  }
+  .share-link {
+    margin: 0 0 20px 20px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+@include at-breakpoint($desktop-cols) {
+  .centered-box {
+    @include span-columns($desktop-cols-main, $desktop-cols);
+    @include squish(3,3, $desktop-cols);
+  }
+}
+
+
+
+

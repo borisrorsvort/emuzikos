@@ -1,11 +1,12 @@
+require 'faker'
+
 FactoryGirl.define do
   factory :user do
     username
     email
     password 'password'
     password_confirmation 'password'
-    zip 1050
-    country "BE"
+    zip '1050 Ixelles, Belgium'
     references 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
     request_message "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
     user_type "musician"
@@ -34,11 +35,22 @@ FactoryGirl.define do
 
   end
 
-  factory :instrument do
-    name 'guitar'
+  factory :skill do |skill|
+    skill.association(:instrument)
+    skill.association(:user)
   end
 
-  factory :genre do
-    name 'rock'
+  factory :taste do |taste|
+    taste.association(:genre)
+    taste.association(:user)
   end
+
+  factory :instrument do |i|
+    i.name "guitar"
+  end
+
+  factory :genre do |c|
+    c.name "rock"
+  end
+
 end

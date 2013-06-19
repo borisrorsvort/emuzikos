@@ -1,97 +1,22 @@
-- title t(:'.title', :username => @user.username)
+- set_title t(:'.title', :username => @user.username)
 - @nobg = true
+
+= everywhere_js do
+  Layout.init("right-panel-layout");
+
+
 - if @user.profile_completed?
-  - description t('users.show.description', username: @user.username, user_type: t(:"users.types.#{@user.user_type}"), searching_for: (@user.searching_for ? @user.searching_for : ''), country: (i18n_country(@user) rescue t(:somewhere_in_the_world)))
+  - description t('users.show.description', username: @user.username, user_type: @user.translated_user_type, searching_for: (@user.searching_for ? @user.searching_for : ''), country: (i18n_country(@user) rescue t(:somewhere_in_the_world)))
 - else
   - description t(:'.title', :username => @user.username) + " - Emuzikos"
 
-- set_meta_tags :canonical => request.url
+- canonical request.url
 
-- content_for :scripts do
-  :javascript
-    $(document).ready(function() {
-      mixpanel.track('Viewed user profile');
-      mixpanel.track_forms('#contactform form', 'Submited message form');
-    });
-
-.row-fluid
-  - if @user.avatar.present? || @user.geocoded?
-    .span3
-      %aside.profile_sidebar.profile-section
-        - if @user.avatar.present?
-          .row-fluid
-            = image_tag @user.avatar.url(:normal), :class => "span12", :alt => "#{@user.username + "'s picture"}"
-        %h1.username
-          = @user.username
-        - if current_user && current_user != @user && !current_user.is_friend_with(@user)
-          .friendly-actions
-            = link_to friendships_path(:friend_id => @user.id), :method => :post, :class => "btn add_to_contact_list" do
-              %i.icon-bookmark
-              = t(:'buttons.add_to_contact_list')
-        - unless current_user
-          .friendly-actions
-            = link_to new_user_registration_path, :class => "btn btn-primary", :title => t(:'tooltips.send_message_not_signed_in') do
-              %i.icon-envelope.icon-white
-              = t(:'buttons.contact')
-        .impressionist_count
-          = t(:'.impressions_count', :count => @user.impressionist_count(:filter=>:ip_address))
-
-        - if @user.searching_for.present?
-          %h4= t(:'activerecord.attributes.user.searching_for') + " :"
-          %p= t(:"users.types.#{@user.searching_for}")
-
-        - if @user.genres.present?
-          %h4= t(:'activerecord.attributes.user.genre')
-          .tag_list_instruments
-            - @user.genres.each do |genre|
-              .tag-body.yellow
-                %span.tag= t(:"musical_genres.#{genre.name}")
-
-        - if @user.instruments.present?
-          %h4= t(:'activerecord.attributes.user.instruments')
-          .tag_list_instruments
-            - @user.instruments.each do |instrument|
-              .tag-body.yellow
-                %span.tag= t(:"instruments.#{instrument.name}")
-
-        - if @user.references.present?
-          %h4= t(:'activerecord.attributes.user.references')
-          %p= @user.references
-
-  %div{class: "#{@user.has_medias? ? 'span5' : 'span9'}"}
-    %section.profile-section
-      %header
-        .profile-section--usermap
-          - if @user.geocoded?
-            .row-fluid
-              %img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=11&sensor=false&markers=#{@user.latitude},#{@user.longitude}&size=900x200", :class => "span12 usermap", :alt => "#{@user.username}'s location"}
-          .row-fluid
-            .span12.location_infos
-              %i.icon-globe
-              - if @user.user_type.present?
-                =t(:"users.types.#{@user.user_type}")
-              - if @user.geocoded?
-                =t(:'.from')
-                = @user.zip
-                = i18n_country(@user) rescue "N/A"
-
-      - if @user.request_message.present?
-        %h4= t(:'activerecord.attributes.user.request_message')
-        = simple_format(@user.request_message)
-
-      - if @current_user
-        %section#contactform
-          %h4= t(:'messages.new.title')
-          = simple_form_for @message, :url => user_messages_path(@current_user), :html => { :class => ""} do |f|
-            = render :partial => "messages/form", :object => f
-  - if @user.has_medias?
-    .span4
-      %section.medias.profile-section
-        - if @tracks.present?
-          - for track in @tracks do
-            %iframe{:frameborder => "no", :height => "166", :scrolling => "no", :src => "http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F#{track.id}&show_artwork=true", :width => "100%"}
-
-        - if @user.youtube_video_id?
-          .uservideo
-            %iframe{:src => "http://www.youtube.com/embed/#{@user.youtube_video_id}", :width => "320", :height => "190"}
+%section.user-profile
+  - if @is_remote_profile
+    %nav.action-bar
+      .pull-right
+        = link_to '#', class: 'close-white' do
+          %i.icon-cancel
       .clearfix
+  = render(:partial => "profile", locals: {user: @user})

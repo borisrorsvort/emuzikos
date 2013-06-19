@@ -1,0 +1,45 @@
+
+.overlay {
+  position: fixed;
+  z-index: 9999;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #fff;
+  overflow-x: auto;
+  overflow-y: scroll;
+  display: none;
+  &.visible {
+    display: block;
+  }
+  padding-top: $overlay-topbar-size;
+}
+
+.overlay--inner {
+  z-index: 2;
+  overflow: hidden;
+  position: fixed;
+  #overlay.visible.loaded & {
+    position: static;
+  }
+}
+
+.overlay--topbar {
+  background-color: $menuPanelColor;
+  padding: 0 $gutter-width;
+  position: fixed;
+  height: $overlay-topbar-size;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  @include box-sizing(border-box);
+  line-height: $overlay-topbar-size;
+  .close-white {
+    @include opacity(60);
+    &:hover {
+      @include opacity(100);
+    }
+  }
+}

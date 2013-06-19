@@ -1,0 +1,12 @@
+.action-bar {
+  background-color: $menuPanelColor;
+  padding: $gutter-width;
+  @include border-top-radius($baseBorderRadius);
+
+  .close-white {
+    @include opacity(60);
+    &:hover {
+      @include opacity(100);
+    }
+  }
+}

@@ -20,7 +20,7 @@ class Spinach::Features::Testimonials < Spinach::FeatureSteps
   end
 
   step 'I should see the testimonial on the index page' do
-    visit "/"
+    visit testimonials_path
     assert @t.approved == true
     page.should have_content @t.body
   end

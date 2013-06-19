@@ -1,0 +1,18 @@
+- if js == true
+  - if flash[:error]
+    = add_gritter(flash[:error], :image => :error, :title => 'ooops!')
+  - elsif flash[:success]
+    = add_gritter(flash[:success], :image => :success, :title => "")
+  - elsif flash[:notice]
+    = add_gritter(flash[:notice], :image => :success)
+- else
+  - if flash[:error]
+    = js add_gritter(flash[:error], :image => :error, :title => 'ooops!')
+  - elsif flash[:success]
+    = js add_gritter(flash[:success], :image => :success, :title => "")
+  - elsif flash[:notice]
+    = js add_gritter(flash[:notice], :image => :success)
+
+
+
+

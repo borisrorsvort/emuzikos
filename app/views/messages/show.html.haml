@@ -1,34 +1,27 @@
--title h(@message.subject)
-- headline h(@message.subject)
+- set_title t('.title', sender: @message.sender.username)
+= everywhere_js do
+  Layout.init("left-panel-layout");
 
-- content_for :sub_nav do
-  #actions_set
-    = link_to :back, :class => "btn back" do
-      %i.icon-arrow-left
-      = t(:'buttons.back', :model => t(:'messages.inbox.title'))
+.box
+  .box-header
+    %span= t(:'messages.from')
+    - if @message.sender
+      = @message.sender == @current_user ? link_to(h(@current_user.username), user_path(@current_user)) : link_to(h(@message.sender.username), user_path(@message.sender))
+    - else
+      = "N/A"
+    %span= t(:'messages.to')
+    - if @message.recipient
+      = @message.recipient == @current_user ? link_to(h(@current_user.username), user_path(@current_user)) : link_to(h(@message.recipient.username), user_path(@message.recipient))
+    - else
+      = "N/A"
+    |
+    %span= t(:'messages.received')
+    = @message.created_at.to_s(:long)
+    .pull-right
+      = link_to t('buttons.cancel'), user_messages_path(current_user), class: 'btn-cancel btn btn-mini', data: {push: true, target: '.content'}
 
-  .clear
-
-.well
-  %span= t(:'messages.from')
-  - if @message.sender
-    = @message.sender == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.sender.username), user_path(@message.sender))
-  - else
-    = "N/A"
-  %span= t(:'messages.to')
-  - if @message.recipient
-    = @message.recipient == @current_user ? link_to("You", user_path(@current_user)) : link_to(h(@message.recipient.username), user_path(@message.recipient))
-  - else
-    = "N/A"
-  |
-  %span= t(:'messages.received')
-  = @message.created_at.to_s(:long)
-
-
-%h4= t(:'messages.message')
-= h simple_format(@message.body)
-
-- if @message.recipient && @message.recipient == @current_user
-  .form-actions
-    = link_to t(:'buttons.reply'), new_user_message_path(@current_user, :reply_to => @message.sender.id, :old_message => @message), :class => "btn btn-primary"
-
+  .box-body
+    = simple_format(h(@message.body))
+    %hr
+    = simple_form_for @new_message, :url => user_messages_path(@current_user), :html => { :class => "form"} do |f|
+      = render :partial => "messages/form", :object => f

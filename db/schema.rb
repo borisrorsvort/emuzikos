@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120302104944) do
+ActiveRecord::Schema.define(:version => 20130606171853) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(:version => 20120302104944) do
     t.datetime "updated_at"
   end
 
+  add_index "genres", ["name"], :name => "index_genres_on_name"
+
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
     t.integer  "impressionable_id"
@@ -99,6 +101,8 @@ ActiveRecord::Schema.define(:version => 20120302104944) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "instruments", ["name"], :name => "index_instruments_on_name"
 
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
@@ -142,12 +146,16 @@ ActiveRecord::Schema.define(:version => 20120302104944) do
     t.datetime "updated_at"
   end
 
+  add_index "skills", ["user_id", "instrument_id"], :name => "index_skills_on_user_and_instrument"
+
   create_table "tastes", :force => true do |t|
     t.integer  "genre_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tastes", ["user_id", "genre_id"], :name => "index_tastes_on_user_and_genre"
 
   create_table "testimonials", :force => true do |t|
     t.text     "body"
@@ -180,14 +188,14 @@ ActiveRecord::Schema.define(:version => 20120302104944) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "remember_created_at"
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "visible",                :default => true
@@ -199,8 +207,12 @@ ActiveRecord::Schema.define(:version => 20120302104944) do
     t.integer  "impressions_count",      :default => 0
   end
 
+  add_index "users", ["latitude", "longitude"], :name => "index_users_on_latitude_longitude"
+  add_index "users", ["profile_completed"], :name => "index_users_on_profile_completed"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
+  add_index "users", ["user_type"], :name => "index_users_on_user_type"
   add_index "users", ["username", "email"], :name => "index_users_on_username_and_email", :unique => true
+  add_index "users", ["visible"], :name => "index_users_on_visible"
 
 end

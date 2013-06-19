@@ -19,7 +19,7 @@ Capybara.register_driver :poltergeist do |app|
   })
 end
 
-# Capybara.javascript_driver = :poltergeist
+Dir[Rails.root.join("features/steps/common_steps/*.rb")].each {|f| require f}
 
 begin
   DatabaseCleaner.strategy = :transaction

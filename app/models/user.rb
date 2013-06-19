@@ -31,13 +31,13 @@ class User < ActiveRecord::Base
 
   validates                         :password, :confirmation => {:unless => Proc.new { |a| a.password.blank? }}
   validates_uniqueness_of           :username
-  validates_format_of               :soundcloud_username, :with => /^[^ ]+$/, :allow_blank => true
+  validates_format_of               :soundcloud_username, :with => /\A[^ ]+\z/, :allow_blank => true
   validates_attachment_content_type :avatar, :content_type => ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], :message => "only image files are allowed"
   validates_attachment_size         :avatar, :less_than => 1.megabyte, :message => "max size is 1M"
   validates_uri_existence_of        :youtube_video_id_response, :with => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix, :on => :update, :message => "is not valid. Please check if you didn't put the whole url or your username instead of just the id"
   # validates_presence_of             :user_type, :zip, :country, :searching_for, :on => :update
 
-  after_validation :check_against_mailchimp, :if => :newsletter_preference_changed?
+  #after_validation :check_against_mailchimp, :if => :newsletter_preference_changed?
   after_validation :geocode, :if => :address_changed?
 
   has_attached_file :avatar,
@@ -53,24 +53,21 @@ class User < ActiveRecord::Base
       'development' => :s3,
       'staging' => :s3,
       'production' => :s3,
-      'test' => :filesystem,
-      'cucumber' => :filesystem
+      'test' => :filesystem
     }[Rails.env],
     :path => {
       # 'development' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
       'development' => "photos/avatars/:id/:id_:style.:extension",
       'staging' => "photos/avatars/:id/:id_:style.:extension",
       'production' => "photos/avatars/:id/:id_:style.:extension",
-      'test' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension",
-      'cucumber' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension"
+      'test' => ":rails_root/public/photos/avatars/:id/:id_:style.:extension"
     }[Rails.env],
     :url => {
       # 'development' => "/photos/avatars/:id/:id_:style.:extension",
       'development' => ":s3_domain_url",
       'staging' => ":s3_domain_url",
       'production' => ":s3_domain_url",
-      'test' => "/photos/avatars/:id/:id_:style.:extension",
-      'cucumber' => "/photos/avatars/:id/:id_:style.:extension"
+      'test' => "/photos/avatars/:id/:id_:style.:extension"
     }[Rails.env],
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :s3_headers => {'Expires' => 1.year.from_now.httpdate},
@@ -98,6 +95,10 @@ class User < ActiveRecord::Base
     where("date(users.created_at) = ?",date).count
   end
 
+  def translated_user_type
+    I18n.t("users.user_types.#{user_type}").html_safe
+  end
+
   def geocoded?
     self.latitude.present? && self.longitude.present?
   end
@@ -116,13 +117,6 @@ class User < ActiveRecord::Base
 
   def tracking_id
     "#{self.id}--#{self.email}"
-  end
-
-  def get_events(songkick_username)
-    require 'songkickr'
-    remote = Songkickr::Remote.new AppConfig.songkick.api_key
-    results = remote.events(:artist_name => songkick_username, :type => 'concert')
-    results
   end
 
   def get_soundclound_tracks(soundcloud_username)
@@ -160,35 +154,35 @@ class User < ActiveRecord::Base
       avatar.reprocess!
     end
 
-    def update_mailchimp(optin)
-      # Create a Hominid object (A wrapper to the mailchimp api), and pass in a hash from the yaml file
-      # telling which mailing list id to update with subscribe/unsubscribe notifications)
-      hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
-      list_name = AppConfig.mailchimp.list_name
+    # def update_mailchimp(optin)
+    #   # Create a Hominid object (A wrapper to the mailchimp api), and pass in a hash from the yaml file
+    #   # telling which mailing list id to update with subscribe/unsubscribe notifications)
+    #   hominid = Hominid::API.new(AppConfig.mailchimp.api_key)
+    #   list_name = AppConfig.mailchimp.list_name
 
-      begin
-        case optin
-          when 'subscribe_newsletter'
-            logger.debug("subscribing to newsletter...")
-            "success!" if hominid.list_subscribe(hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
-          when 'unsubscribe_newsletter'
-            logger.debug("unsubscribing from newsletter...")
-            "success!" if hominid.list_unsubscribe(hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
-          end
-      rescue Hominid::APIError => error
-        errors.add(:email, error.message)
-      end
-    end
+    #   begin
+    #     case optin
+    #       when 'subscribe_newsletter'
+    #         logger.debug("subscribing to newsletter...")
+    #         "success!" if hominid.list_subscribe(hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+    #       when 'unsubscribe_newsletter'
+    #         logger.debug("unsubscribing from newsletter...")
+    #         "success!" if hominid.list_unsubscribe(hominid.find_list_id_by_name(list_name), self.email, {:USERNAME => self.username}, 'html', false, true, true, false)
+    #       end
+    #   rescue Hominid::APIError => error
+    #     errors.add(:email, error.message)
+    #   end
+    # end
 
-    def check_against_mailchimp
-      self.preferred_newsletters ? update_mailchimp('subscribe_newsletter') : update_mailchimp('unsubscribe_newsletter')
-    end
+    # def check_against_mailchimp
+    #   self.preferred_newsletters ? update_mailchimp('subscribe_newsletter') : update_mailchimp('unsubscribe_newsletter')
+    # end
 
   protected
 
     def address
       if country.present? || zip.present?
-        "#{zip} #{Carmen::Country.coded(country).name}"
+        "#{zip} #{Carmen::Country.coded(country).name rescue ''}"
       end
     end
 

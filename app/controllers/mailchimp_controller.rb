@@ -9,25 +9,18 @@ class MailchimpController < ApplicationController
         unsubscribe(data)
       when "cleaned"
         logger.info "Calling Cleaned from web callback for #{data[:email]}"
-        clean(data)
+        unsubscribe(data)
     end
     render :nothing => true, :status => 200
   end
 
 protected
+
   def unsubscribe(data)
     user = User.find_by_email!(data[:email])
     user.update_attribute(:prefers_newsletters, false)
     logger.info "Mailchimp Webhook Unsubscribe: Unsubscribed user with email #{data[:email]}"
   rescue ActiveRecord::RecordNotFound
     logger.error "Mailchimp Webhook Unsubscribe: Could not find user with email #{data[:email]}"
-  end
-
-  def clean(data)
-    user = User.find_by_email!(data[:email])
-    user.update_attribute(:prefers_newsletters, false)
-    logger.info "Mailchimp Webhook Clean: Unsubscribed user with email #{data[:email]}"
-  rescue ActiveRecord::RecordNotFound
-    logger.error "Mailchimp Webhook Clean: Could not find user with email #{data[:email]}"
   end
 end

@@ -1,5 +1,26 @@
 module ApplicationHelper
 
+  def default_meta_tags
+    {
+      :description => t('pages.homepage.description'),
+      :keywords    => t('pages.homepage.keywords'),
+      :separator   => "&mdash;".html_safe,
+      :site        => "Emuzikos",
+      :reverse => true
+    }
+  end
+
+  def set_title(value)
+    content_for(:title, value)
+    wiselinks_title(value)
+  end
+
+  %w(description keywords canonical).each do |section|
+    define_method section do |value|
+      content_for(section.to_sym, value)
+    end
+  end
+
   def company
     AppConfig.company.name
   end
@@ -8,8 +29,24 @@ module ApplicationHelper
     AppConfig.site.devise
   end
 
-  def unread_bullet
-    "&bull;"
+  def resource_name
+    :user
+  end
+
+  # special for devise form outside of devise views
+  def resource
+    @resource ||= User.new
+  end
+
+  # special for devise form outside of devise views
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
+
+  def current_page_class(url)
+    if current_page?(url)
+      "current"
+    end
   end
 
   def current_user_tracking_id
@@ -35,6 +72,38 @@ module ApplicationHelper
       html << tag(:html, attrs, true)
       html << " <!--<![endif]-->\n".html_safe
       html
+    end
+  end
+
+  def facebook_button
+    link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary centered" do
+      content_tag(:i, '', class: "icon-facebook") +
+      t(:"devise.signin_with", :provider => "Facebook")
+    end
+  end
+
+  def menu_item(text, icon, link, push = true)
+    link_to link , class:  "media #{current_page_class(link)}", data: ({push: true, target: '.content'} if push == true) do
+      content = []
+      content << content_tag(:div, content_tag(:i, '', class: "icon-#{icon} media-object"), class: 'pull-left')
+      content << content_tag(:div, class: "media-body") do
+        if text
+          text
+        end
+      end
+      safe_join(content)
+    end
+  end
+
+  def everywhere_js(&block)
+    if request.wiselinks?
+      content = "<script>"+capture(&block)+"</script>"
+      content.html_safe
+    else
+      content_for :scripts do
+        wrap = "<script>$(document).ready(function($) {"+capture(&block)+"});</script>"
+        wrap.html_safe
+      end
     end
   end
 

@@ -1,43 +1,23 @@
-- title t(:'.title')
+- set_title t(:'.title')
 - description 'Sign up on Emuzikos.com and start to search for wanted bands and musicians'
-- set_meta_tags :canonical => request.url
+- canonical request.url
+= everywhere_js do
+  Layout.init("right-panel-layout public page-signup");
 
-- content_for :scripts do
-  :javascript
-    $(document).ready(function() {
-      mixpanel.track('Viewed signup page');
-    });
 
-.row-fluid{data: {:"no-turbolink" => "true"}}
-  .spacer.span3
-    &nbsp;
-  .boxy_forms.span6
-    %header.page-header
-      %h1= t(:'.title')
-
-    = link_to t(:"devise.signup_with", :provider => "Facebook"), user_omniauth_authorize_path(:facebook), :class => "btn-auth btn-facebook"
-
+.centered-box.box
+  %header.box-header
+    %h1= t(:'.title')
+    %p.muted= t(:'devise.registrations.new.newsletter_agreement').html_safe
+  .box-body
+    = link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-large" do
+      %i.icon-facebook
+      = t(:"devise.signup_with", :provider => "Facebook")
     %hr.clearfix
-    %a.normal_login_trigger{"data-target" => ".normal_login", "data-toggle" => "collapse"}= t(:"devise.use_the_normal_form")
-    .normal_login.collapse
-      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => "form-horizontal"}, :validate => true) do |f|
-        =# devise_error_messages!
-        = f.input :preferred_language, :as => :hidden, :value => request.subdomains.first.present? ? "fr" : "en"
-        = f.input :username, :label => t(:'activerecord.attributes.user.username')
-        = f.input :email, :label => t(:'activerecord.attributes.user.email')
-        = f.input :password, :label => t(:'activerecord.attributes.user.password'), :hint => t(:'tooltips.password')
-        = f.input :password_confirmation, :label => t(:'activerecord.attributes.user.password_confirmation')
-        = f.input :user_type, :collection => User::USER_TYPES, :label_method => lambda { |user_type|  t(:"users.types.#{user_type}") }, :as => :radio_buttons, wrapper_html: {class: "btn-radio-toggles"}, checked: "musician"
-        .form-actions
-          = f.submit(t(:'buttons.submit'), :type => "submit", :class => "btn btn-primary")
-      .clearfix
-    %hr.clearfix
-    #remote.services_login
-      .shared_links
-        = render  "devise/shared/links"
-    %hr.clearfix
-    %p= t(:'.newsletter_agreement').html_safe
-    .clear
-  .spacer.span3
-    &nbsp;
+    .centered-box--form
+      = render("signup_form", locals: {resource: resource})
+= render  "devise/shared/links"
+
+= everywhere_js do
+  App.initLocationAutocomplete();
 

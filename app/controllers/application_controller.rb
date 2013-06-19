@@ -2,14 +2,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :get_variables
   before_filter :mailer_set_url_options
-  before_filter :set_locale
+  before_filter :set_localization
 
   helper :all
   helper_method :current_user
+  layout :set_layout
 
   def get_variables
-    @current_path = "#{params[:controller]}_#{params[:action]}"
-    @current_user = current_user
+    @current_path   = "#{params[:controller]}_#{params[:action]}"
+    @current_user   = current_user
+    @current_tab    = params[:search][:user_type] rescue ''
+    @search         = UserSearch.new(search_params)
+    @genres         = Genre.order("name ASC")
+    @instruments    = Instrument.order("name ASC")
   end
 
   def mailer_set_url_options
@@ -33,18 +38,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def set_locale
+  def set_localization
     if @current_user
       I18n.locale = @current_user.preferred_language
     else
-      I18n.locale = extract_locale_from_subdomain || I18n.default_locale
+      extract_locale_from_subdomain_or_browser
     end
   end
 
-  def extract_locale_from_subdomain
+  def extract_locale_from_subdomain_or_browser
     parsed_locale = request.subdomains.first
-    unless request.subdomains.first.nil?
+    if !request.subdomains.first.nil?
       I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale : nil
+    else
+      set_locale # From gem detect_locale
     end
   end
 
@@ -52,7 +59,14 @@ class ApplicationController < ActionController::Base
     @mixpanel ||= Mixpanel::Tracker.new AppConfig.mixpanel.api_key, { :env => request.env }
   end
 
+  def set_layout
+    request.xhr? ? false : 'application'
+  end
+
   private
+    def search_params
+      params[:search] || {}
+    end
 
     def store_location
       session[:return_to] = request.request_uri

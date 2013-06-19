@@ -1,26 +1,109 @@
-/* RESETS */
-@import "bs_custom_variables";
-@import "twitter/bootstrap-no-sprites";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
 
-@import 'font-awesome';
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
 
+@import "compass";
+@import "compass/reset";
+@import "compass/layout/stretching";
 /* COMPASS */
 @import "compass/css3";
 @import "compass/utilities";
 
 // LIBS
-@import "chosen/chosen";
+@import "select2";
 @import "gritter";
 
-/* APPLICATION */
-@import "base";
-@import "layout";
+@import "susy";
+
+@import 'bootstrap_overwrite/variables';
+
+// Core variables and mixins
+@import "twitter/bootstrap/variables"; // Modify this for custom colors, font-sizes, etc
+@import "twitter/bootstrap/mixins";
+
+// CSS Reset
+@import "twitter/bootstrap/reset";
+
+// Grid system and page structure
+@import "twitter/bootstrap/scaffolding";
+// @import "twitter/bootstrap/grid";
+// @import "twitter/bootstrap/layouts";
+
+// Base CSS
+@import "twitter/bootstrap/type";
+@import "twitter/bootstrap/code";
+@import "twitter/bootstrap/forms";
+@import "twitter/bootstrap/tables";
+
+// Components: common
+@import "twitter/bootstrap/dropdowns";
+@import "twitter/bootstrap/wells";
+@import "twitter/bootstrap/component-animations";
+@import "twitter/bootstrap/close";
+
+// Components: Buttons & Alerts
+@import "twitter/bootstrap/buttons";
+@import "twitter/bootstrap/button-groups";
+@import "twitter/bootstrap/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+@import "twitter/bootstrap/navs";
+@import "twitter/bootstrap/navbar";
+// @import "twitter/bootstrap/breadcrumbs";
+@import "twitter/bootstrap/pagination";
+@import "twitter/bootstrap/pager";
+
+// Components: Popovers
+@import "twitter/bootstrap/modals";
+@import "twitter/bootstrap/tooltip";
+@import "twitter/bootstrap/popovers";
+
+// Components: Misc
+@import "twitter/bootstrap/thumbnails";
+@import "twitter/bootstrap/media";
+@import "twitter/bootstrap/labels-badges";
+// @import "twitter/bootstrap/progress-bars";
+@import "twitter/bootstrap/accordion";
+@import "twitter/bootstrap/carousel";
+// @import "twitter/bootstrap/hero-unit";
+
+// Utility classes
+@import "twitter/bootstrap/utilities"; // Has to be last to override when necessary
+@import 'bootstrap_overwrite/emuzikos_bootstrap';
+
+@import 'variables';
+@import "utils";
+@import 'type';
+@import 'layout';
 @import 'modules/**/*';
 @import 'sections/**/*';
-@import "main";
-@import "homepage";
 
-// /* MEDIA QUERIES */
-@import "twitter/bootstrap/responsive";
-@import "mediaqueries/480";
-@import "mediaqueries/768";
+
+.spinner-wrapper {
+  position: absolute;
+  left: 45%;
+  display: none;
+  z-index: 9999999;
+  top: 20%;
+  width: 10%;
+  height: 50px;
+  .spinner {
+    width: 100%;
+    height: 100%;
+    float: left;
+    background: #333;
+    @include opacity(80);
+    @include border-radius(3px);
+  }
+}

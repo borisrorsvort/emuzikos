@@ -1,26 +1,4 @@
-#footer.light
-  .inner_footer
-    .left_links
-      = link_to t(:'common.home'), root_path
-      = link_to t(:'menu.terms'), terms_path
-      = link_to t(:'menu.privacy'), privacy_path
-      = link_to t(:'menu.testimonials'), testimonials_path
-      = link_to t(:'menu.blog'), "http://blog.emuzikos.com/#{I18n.locale if I18n.locale == :fr}"
-      = link_to t(:'menu.search'), users_path
-
-      - unless current_user
-        = link_to t(:'menu.signup'), new_user_registration_path
-        = link_to t(:'menu.login'), new_user_session_path
-    .copyright
-      Emuzikos #{Time.now.year} | #{ t(:'common.created_by')} #{ link_to "Boris Rorsvort", "http://www.rorsvort.com", :rel => "external"}
-      = link_to "", root_url(:subdomain => 'fr'), :class => "flag fr tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'languages.french'))
-      = link_to "", "#{request.protocol}#{request.domain}", :class => "flag en tooltip", :title => t(:'footer.emuzikos_language', :language => t(:'languages.english'))
-      %a{:href => "https://mixpanel.com/f/partner"}
-        %img{:alt => "Mobile Analytics", :src => "//cdn.mxpnl.com/site_media/images/partner/badge_light.png"}/
-
-    .clearfix
-
-
+= yield :modal
 = javascript_include_tag "application"
 = render(:partial => "shared/trackings")
 = yield :javascripts
@@ -35,22 +13,14 @@
 
 :javascript
   FB.init({
-    appId  : '#{AppConfig.facebook.app_id}',
+    appId  : '#{h(AppConfig.facebook.app_id)}',
     status:true,
     cookie: true,
     xfbml: true,
     oauth: true
   });
 
-- if flash[:error]
-  = js add_gritter(flash[:error], :image => :error, :title => "Something's wrong!", :sticky => true)
--elsif flash[:alert]
-  = js add_gritter(flash[:alert], :image => :error, :title => "Something's wrong!", :sticky => true)
-- elsif flash[:notice]
-  = js add_gritter(flash[:notice], :image => :success, :sticky => true)
-
-
-= render "shared/feedback_box"
+= render partial: 'shared/flashes', locals: {js: false}
 
 %noscript
   = t(:'common.no_script')

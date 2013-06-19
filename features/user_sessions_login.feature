@@ -10,7 +10,6 @@ Feature: User sessions login
 
   @wip
   Scenario: I should be able to login with facebook
-    Given I logout
     And I login with facebook
     Then I should be the profile edit page
 

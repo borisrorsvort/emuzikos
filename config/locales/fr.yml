@@ -3,225 +3,314 @@ fr:
     attributes:
       service:
         email: Email
-        not_set: "Non défini"
+        not_set: Non défini
         uname: Nom
       testimonial:
         body: Texte
         user: Utilisateur
       user:
-        avatar: "Photo de profil"
-        birthdate: "Date de naissance"
+        avatar: Photo de profil
+        birthdate: Date de naissance
         country: Pays
-        created_at: "Créé le"
-        current_password: "Mot de passe actuel"
+        created_at: Créé le
+        current_password: Mot de passe actuel
         email: Email
-        genre: "Genres musicaux"
-        instruments: "Mes instruments"
+        genre: Genres musicaux
+        instruments: Mes instruments
         invisible: Invisible
-        last_active: "Activité récente"
-        last_updater: "Mis à jour par"
+        last_active: Activité récente
+        last_updater: Mis à jour par
         location: Localisation
-        new_password: "Nouveau mot de passe"
-        password: "Mot de passe"
-        password_confirmation: "Confirmation du mot de passe"
-        references: "Références musicales"
+        new_password: Nouveau mot de passe
+        password: Mot de passe
+        password_confirmation: Confirmation du mot de passe
+        references: Références musicales
         request_message: Annonce
-        searching_for: "Ce que je cherche"
-        songkick_username: "Nom d'utilisateur Songkick"
-        soundcloud_username: "Nom d'utilisateur SoundCloud"
-        testimonials: "Témoignages de %{user}"
-        updated_at: "Mis à jour le"
-        user_type: "Type d'utilisateur"
-        username: "Nom d'utilisateur"
+        searching_for: Ce que je cherche
+        soundcloud_username: Nom d'utilisateur SoundCloud
+        testimonials: Témoignages de %{user}
+        updated_at: Mis à jour le
+        user_type: Type d'utilisateur
+        username: Nom d'utilisateur
         visible: Visible
-        youtube_video_id: "Numéros Identifiant la video youtube"
-        zip: "Code postal"
-    errors:
-      models:
-        user:
-          attributes:
-            email:
-              blank: "ne peut pas être vide"
-            password:
-              blank: "ne peut pas être vide"
-            soundcloud_username:
-              invalid: "est invalide"
-    models:
-      messages: Messages
-      search: Recherche
-      testimonials: Témoignages
-      users: Utilisateurs
+        youtube_video_id: Numéros Identifiant la video youtube
+        zip: Code postal, Ville, Pays
+        references_show: Référence musicales
+        request_message_show: Annonce
   agent: agent
-  band: band
+  band: groupe
   buttons:
-    add_to_contact_list: "Ajouter à la liste de contacts"
-    all: "Voir tous"
-    back: "Retour %{model}"
-    back_to_homepage: "Retour à la page d'accueil"
-    cancel: Annuler
-    change_password: "Sauvegarder le nouveau mot de passe"
-    click_here_for_help: "Cliquez ici pour demander de l'aide"
-    compose: "Nouveau message"
-    contact: "Envoyer un message"
-    create: Créer
-    create_one_here: "Créez en un ici"
-    delete: Effacer
-    edit: Modifier
-    home_signup: "Inscrivez-vous en 60 sec"
-    invite_your_friends_from_fb: "Invitez vos amis Facebook"
-    login: Connectez-moi
-    registrations:
-      cancel_my_account: "Effacer mon compte"
-    remove_from_contact_list: Enlever
-    reply: Répondre
-    search: Rechercher
-    send_password: "Envoyer le mail de ré-initialisation de mon mot passe"
-    services:
-      delete: "Déconnecter ce service"
-    show: Montrer
+    search:
+      agents: Chercher des agents
+      bands: Chercher des groupes
+      musicians: Chercher des musiciens
     submit: Envoyer
     testimonials:
-      all: "Retour aux témoignages"
-      create: "Ajouter un nouveau témoignage"
-    update: "Mettre à jour"
+      create: Ajouter un nouveau témoignage
+      all: Retour aux témoignages
+    login: Connectez-moi
+    add_to_contact_list: Ajouter à la liste de contacts
+    all: Voir tous
+    back: Retour %{model}
+    back_to_homepage: Retour à la page d'accueil
+    cancel: Annuler
+    change_password: Sauvegarder le nouveau mot de passe
+    click_here_for_help: Cliquez ici pour demander de l'aide
+    compose: Nouveau message
+    contact: Contact
+    create: Créer
+    create_one_here: Créez en un ici
+    delete: Effacer
+    edit: Modifier
+    home_signup: Inscrivez-vous en 60 sec
+    invite_your_friends_from_fb: Invitez vos amis Facebook
+    registrations:
+      cancel_my_account: Effacer mon compte
+    remove_from_contact_list: Enlever
+    reply: Envoyer
+    send_password: Envoyer le mail de ré-initialisation de mon mot passe
+    services:
+      delete: Déconnecter ce service
+    show: Montrer
+    update: Mettre à jour
   common:
-    are_you_sure: "Etes-vous sûr"
-    base_title: Emuzikos
     by: par
-    created_by: "Créé par"
-    home: Accueil
-    leave_blank: "(laisser vide si vous ne désirez pas le changer)"
-    no_script: "Votre navigateur ne supporte pas Javascript!"
-    or: ou
-    please_choose: "Choisissez ..."
-    read_more: "Lire plus"
-    required: Obligatoire
-    reset: Annuler
-    users:
-      from: De
+    no_script: Vous devez avoir javascript installé
+    are_you_sure: Etes-vous sûre
+    leave_blank: Ne pas remplir
+  date:
+    abbr_day_names:
+    - dim
+    - lun
+    - mar
+    - mer
+    - jeu
+    - ven
+    - sam
+    abbr_month_names:
+    - 
+    - jan.
+    - fév.
+    - mar.
+    - avr.
+    - mai
+    - juin
+    - juil.
+    - août
+    - sept.
+    - oct.
+    - nov.
+    - déc.
+    day_names:
+    - dimanche
+    - lundi
+    - mardi
+    - mercredi
+    - jeudi
+    - vendredi
+    - samedi
+    formats:
+      default: ! '%d/%m/%Y'
+      long: ! '%e %B %Y'
+      short: ! '%e %b'
+    month_names:
+    - 
+    - janvier
+    - février
+    - mars
+    - avril
+    - mai
+    - juin
+    - juillet
+    - août
+    - septembre
+    - octobre
+    - novembre
+    - décembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: environ une heure
+        other: environ %{count} heures
+      about_x_months:
+        one: environ un mois
+        other: environ %{count} mois
+      about_x_years:
+        one: environ un an
+        other: environ %{count} ans
+      almost_x_years:
+        one: presqu'un an
+        other: presque %{count} ans
+      half_a_minute: une demi-minute
+      less_than_x_minutes:
+        one: moins d'une minute
+        other: moins de %{count} minutes
+        zero: moins d'une minute
+      less_than_x_seconds:
+        one: moins d'une seconde
+        other: moins de %{count} secondes
+        zero: moins d'une seconde
+      over_x_years:
+        one: plus d'un an
+        other: plus de %{count} ans
+      x_days:
+        one: ! '%{count} jour'
+        other: ! '%{count} jours'
+      x_minutes:
+        one: ! '%{count} minute'
+        other: ! '%{count} minutes'
+      x_months:
+        one: ! '%{count} mois'
+        other: ! '%{count} mois'
+      x_seconds:
+        one: ! '%{count} seconde'
+        other: ! '%{count} secondes'
+    prompts:
+      day: Jour
+      hour: Heure
+      minute: Minute
+      month: Mois
+      second: Seconde
+      year: Année
   devise:
     confirmations:
-      confirmed: "Votre compte a été confirmé. Vous êtes à présent connecté(e)."
-      send_instructions: "Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour confirmer votre compte."
+      confirmed: Votre compte a été confirmé. Vous êtes à présent connecté(e).
+      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour confirmer votre compte.
+      send_paranoid_instructions: Si votre email existe sur notre base de données, vous recevrez sous quelques minutes un message avec des instructions pour confirmer votre compte.
     failure:
-      already_authenticated: "Vous êtes déjà connecté."
-      inactive: "Votre compte n’a pas encore été activé."
-      invalid: "Pseudo ou mot de passe invalide."
-      invalid_token: "Jeton d’authentification invalide."
-      locked: "Votre compte est verrouillé."
-      timeout: "Votre session a expiré, veuillez vous connecter de nouveau afin de continuer."
-      unauthenticated: "Vous devez vous connecter ou vous inscrire avant de continuer."
-      unconfirmed: "Vous devez confirmer votre compte avant de continuer."
-    login_with: "Connexion avec %{provider}"
+      already_authenticated: Vous êtes déjà connecté.
+      inactive: Votre compte n’a pas encore été activé.
+      invalid: Pseudo ou mot de passe invalide.
+      invalid_token: Jeton d’authentification invalide.
+      locked: Votre compte est verrouillé.
+      not_found_in_database: Email ou mot de passe incorrect.
+      timeout: Votre session a expiré, veuillez vous connecter de nouveau afin de continuer.
+      unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
+      unconfirmed: Vous devez confirmer votre compte avant de continuer.
     mailer:
       confirmation_instructions:
-        subject: "Instructions de confirmation"
+        subject: Instructions de confirmation
       reset_password_instructions:
-        subject: "Instructions de réinitialisation de mot de passe"
+        subject: Instructions de réinitialisation de mot de passe
       unlock_instructions:
-        subject: "Instructions de déverrouillage"
+        subject: Instructions de déverrouillage
     omniauth_callbacks:
-      failure: "Nous ne pouvons pas autoriser la connexion avec %{kind} parce que \"%{reason}\"."
-      success: "Nous avons bien autorisé la connexion avec votre compte %{kind}."
+      failure: Nous ne pouvons pas autoriser la connexion avec %{kind} parce que %{reason}.
+      success: Nous avons bien autorisé la connexion avec votre compte %{kind}.
     passwords:
+      no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
+      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour réinitialiser votre mot de passe.
+      send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
+      updated: Votre mot de passe a été modifié. Vous êtes à présent connecté(e).
+      updated_not_active: Votre mot de passe a été modifié avec succès.
       edit:
-        title: "Changer votre mot de passe"
+        title: Changer votre mot de passe
       new:
-        description: "Vous avez oubliez votre mot de passe? Pas de problème, remplissez le formulaire et vous pourrez continuer à chercher musiciens et groupes en un rien de temps."
-        title: "Réinitialiser votre mot de passe"
-      send_instructions: "Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour réinitialiser votre mot de passe."
-      updated: "Votre mot de passe a été modifié. Vous êtes à présent connecté(e)."
+        description: Vous avez oubliez votre mot de passe? Pas de problème, remplissez le formulaire et vous pourrez continuer à chercher musiciens et groupes en un rien de temps.
+        title: Réinitialiser votre mot de passe
     registrations:
-      destroyed: "Au revoir ! Votre compte a été résilié. Nous espérons vous revoir très bientôt."
+      destroyed: Au revoir ! Votre compte a été résilié. Nous espérons vous revoir très bientôt.
+      signed_up: Votre inscription a été effectuée. Si cette dernière est activée, une confirmation a été envoyée sur votre adresse e-mail.
+      signed_up_but_inactive: Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte n'est pas encore activé.
+      signed_up_but_locked: Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte et bloqué.
+      signed_up_but_unconfirmed: Un mail vous a été envoyé contenant un lien de confirmation. Cliquez sur le lien dans l'email pour activer votre compte.
+      update_needs_confirmation: Vous avez modifié votre compte avec succès, mais nous devons vérifier votre nouvelle adresse email. Veuillez consulter vos emails et cliquer sur le lien de confirmation pour finalizer votre nouvelle adresse.
+      updated: Vous avez mis à jour votre compte.
       edit:
-        cancel_my_account: "Effacer mon compte"
+        cancel_my_account: Effacer mon compte
         preferences: Préférences
-        title: "Modifier mon compte"
+        title: Modifier mon compte
       new:
-        newsletter_agreement: "En vous inscrivant, vous souscrivez à notre newsletter et à nos <a href='/terms' target='_blank'>conditions générales</a>."
-        or_signup_using: "Ou inscrivez-vous avec:"
-        title: "Inscrivez-vous à Emuzikos"
-      signed_up: "Votre inscription a été effectuée. Si cette dernière est activée, une confirmation a été envoyée sur votre adresse e-mail."
-      signed_up_but_inactive: "Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte n'est pas encore activé."
-      signed_up_but_locked: "Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte et bloqué."
-      signed_up_but_unconfirmed: "Un mail vous a été envoyé contenant un lien de confirmation. Cliquez sur le lien dans l'email pour activer votre compte."
-      updated: "Vous avez mis à jour votre compte."
+        newsletter_agreement: En vous inscrivant, vous souscrivez à notre newsletter et à nos <a href='/terms' target='_blank'>conditions générales</a>.
+        or_signup_using: ! 'Ou inscrivez-vous avec:'
+        title: Inscrivez-vous à Emuzikos
     sessions:
+      signed_in: Vous êtes à présent connecté(e).
       new:
-        description: "Connectez-vous à Emuzikos et commencer votre recherche de musiciens et de groupes"
-        forgot_password: "Vous avez oublié votre mote de passe?"
-        or_login_using: "Ou connectez-vous avec:"
-        remember_me: "Se souvenir de moi"
-        title: "Connectez-vous à Emuzikos"
-      signed_in: "Vous êtes à présent connecté(e)."
-      signed_out: "Vous êtes à présent déconnecté(e)."
+        description: Connectez-vous à Emuzikos et commencer votre recherche de musiciens et de groupes
+        forgot_password: Vous avez oublié votre mote de passe?
+        or_login_using: ! 'Ou connectez-vous avec:'
+        remember_me: Se souvenir de moi
+        title: Connectez-vous à Emuzikos
+      signed_out: Déconnecté avec succès.
+    signin_with: Connectez-vous avec  %{provider}
+    unlocks:
+      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour déverrouiller votre compte.
+      send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
+      unlocked: Votre compte a été déverrouillé. Vous êtes à présent connecté(e).
+    login_with: Connexion avec %{provider}
     shared:
       links:
-        dont_have_account_yet: "Vous n'avez pas encore de compte?"
-        forgot_password: "Vous avez oubliez votre mot de passe?"
-        go_to_recovery_page: "Demandez un nouveau mote de passe."
-        have_account_already: "Vous avez déjà un compte?"
-    signup_with: "Créez votre compte avec  %{provider}"
-    signin_with: "Connectez-vous avec  %{provider}"
-    unlocks:
-      send_instructions: "Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour déverrouiller votre compte."
-      unlocked: "Votre compte a été déverrouillé. Vous êtes à présent connecté(e)."
-    use_the_normal_form: "Ou utilisez le formulaire standard"
+        dont_have_account_yet: Vous n'avez pas encore de compte?
+        forgot_password: Vous avez oubliez votre mot de passe?
+        go_to_recovery_page: Demandez un nouveau mote de passe.
+        have_account_already: Vous avez déjà un compte?
+    signup_with: Créez votre compte avec  %{provider}
+    use_the_normal_form: Ou utilisez le formulaire standard.
   errors:
+    format: ! '%{attribute} %{message}'
     messages:
-      already_confirmed: "a déjà été confirmé"
-      expired: "a expiré, demandez-en un nouveau"
-      not_found: introuvable
-      not_locked: "n’a pas été verrouillé"
+      accepted: doit être accepté(e)
+      already_confirmed: a déjà été confirmé(e)
+      blank: doit être rempli(e)
+      confirmation: ne concorde pas avec la confirmation
+      confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
+      empty: doit être rempli(e)
+      equal_to: doit être égal à %{count}
+      even: doit être pair
+      exclusion: n'est pas disponible
+      expired: est périmé, veuillez en demander un autre
+      greater_than: doit être supérieur à %{count}
+      greater_than_or_equal_to: doit être supérieur ou égal à %{count}
+      inclusion: n'est pas inclus(e) dans la liste
+      invalid: n'est pas valide
+      less_than: doit être inférieur à %{count}
+      less_than_or_equal_to: doit être inférieur ou égal à %{count}
+      not_a_number: n'est pas un nombre
+      not_an_integer: doit être un nombre entier
+      not_found: n’a pas été trouvé(e)
+      not_locked: n’était pas verrouillé(e)
       not_saved:
-        one: "1 erreur a empêché %{resource} d'être sauvegardé."
-        other: "%{count} erreurs ont empêché %{resource} d'être sauvegardé"
-  footer:
-    emuzikos_language: "Eumzikos en %{language}"
-  gflash:
-    common:
-      require_no_user: "Vous devez être connecté pour avoir accès à cette page"
-      require_user: "Vous devez être connecté pour avoir accès à cette page"
-    friendships:
-      create:
-        success: "%{user} a bien été ajouté à votre liste de contacts!"
-      destroy:
-        success: "%{user} a bien été effacé de votre liste de contact"
-    messages:
-      create:
-        success: "Votre message a bien été envoyé!"
-      delete_selected:
-        success: "Message(s) effacé(s)"
-    services:
-      errors:
-        authentication: "Une erreur s'est produite lors de la connexion via %{service_route.capitalize}"
-    testimonials:
-      create:
-        success: "Merci de parler de nous! Votre témoignage doit encore être validé par un administrateur. Continuez de parler d'Emuzikos autour de vous!"
-      destroy:
-        success: "Votre témoignage a bien été effacé"
-      please_write: "Si vous aimez Emuzikos, prenez 30 sec pour donner votre avis dans la  <a href='%{link}'>rubrique témoignages</a>"
-      update:
-        success: "Votre témoignage a bien été modifié"
-    titles:
-      error: Erreur
-      notice: Avis
-      progress: "En cours"
-      success: Succès
-      warning: Attention
-    users:
-      create:
-        error: "Quelques informations doivent encore être corrigées"
-        notice: "N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche"
-        success: "Bienvenue! N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche"
-      update:
-        error: "Quelques informations doivent encore être corrigées"
-        success: "Votre profil a bien été mis à jour"
-  ie_warning:
-    click_to_download: "Il suffit de cliquer <strong>sur l'icône du navigateur</strong> correspondant pour se rendre à sa page de téléchargement."
-    description: "Afin d'obtenir la meilleure expérience de navigation possible sur notre site web, nous vous recommandons de <strong>mettre à jour</strong> votre navigateur ou d'en choisir un autre."
-    popular_browsers_choice: "Une liste des navigateurs les plus populaires se trouve ci-dessous."
-    title: "Saviez-vous que votre version d'Internet Explorer est périmée?"
+        one: ! 'une erreur a empêché ce (ou cette) %{resource} d’être enregistré(e) :'
+        other: ! '%{count} erreurs ont empêché ce (ou cette) %{resource} d’être enregistré(e) :'
+      odd: doit être impair
+      record_invalid: ! 'La validation a échoué : %{errors}'
+      taken: n'est pas disponible
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+    template:
+      body: ! 'Veuillez vérifier les champs suivants : '
+      header:
+        one: ! 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreur'
+        other: ! 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: ! '%{entry_name}  <b>%{first} - %{last}</b> sur <b>%{total}</b> au total'
+      one_page:
+        display_entries:
+          one: <b>%{count}</b> %{entry_name}
+          other: <b>tous les %{count}</b> %{entry_name}
+    select:
+      prompt: Veuillez sélectionner
+    submit:
+      create: Créer un(e) %{model}
+      submit: Enregistrer ce(tte) %{model}
+      update: Modifier ce(tte) %{model}
+  i18n:
+    transliterate:
+      rule: 
   instruments:
     accordion: Accordéon
     baglama: Baglama
@@ -249,7 +338,7 @@ fr:
     harmonium: Harmonium
     harp: Harpe
     horn: Cor
-    hurdy_gurdy: "Vielle à roue"
+    hurdy_gurdy: Vielle à roue
     keyboard: Clavier
     mandolin: Mandoline
     mirdangam: Mirdangam
@@ -277,309 +366,393 @@ fr:
     violin: Violon
     voice: Voix
     whistles: Flûtes
-  laguages:
-    english: Anglais
-    french: Français
   languages:
-    english: Anglais
-    french: Français
+    english: English
+    french: français
   menu:
-    all_users: Chercher
     blog: Blog
-    contact: Contactez-nous
+    connexion: Connexion
     help: Aide
+    languages: langues
+    legal: légal
     login: Connexion
     logout: Déconnexion
     messages:
-      inbox: "Boîte de réception"
-      languages: Langue
+      inbox: Boîte de réception
       messages: Message
-      sent_messages: "Messages envoyés"
-    privacy: "Charte de confidentialité"
+    more: Extras
+    privacy: Charte de confidentialité
     profile:
-      account: "Modifier mon compte"
-      authentications: "Services de connexion"
-      edit: "Modifier mon profil"
-      public: "Profil public"
+      account: Modifier mon compte
+      authentications: Services de connexion
+      edit: Modifier mon profil
+      public: Profil public
       show: Profil
-    search: "Annonces pour musiciens"
-    share: Aidez-nous!
+    search: Annonces pour musiciens
     signup: Inscrivez-vous
-    terms: "Conditions générales"
+    terms: Conditions générales
     testimonials: Témoignages
     users:
-      contacts: "Liste de contacts"
-  messages:
-    delete: Effacer
-    from: De
-    inbox:
-      description: "Votre boîte à message vous permet de ne pas divulguer vos informations personnelles sur votre profil public"
-      subtitle: Messages
-      title: "Vos messages"
-    message: Message
-    new:
-      title: "Envoyer un message"
-    no_messages: "Vous n'avez pas de messages"
-    received: "Reçu le"
-    sender: "Envoyé par"
-    sent:
-      subtitle: "Messages envoyés"
-      title: "Vos messages"
-    sent_on: "Envoyé le"
-    subject: Sujet
-    to: A
+      contacts: Liste de contacts
+    all_users: Chercher
+    contact: Contactez-nous
+    share: Aidez-nous!
+    partners: Partenaires
   musical_genres:
     alternative: Alternative
     blues: Blues
-    bossa_nova: "Bossa Nova"
+    bossa_nova: Bossa Nova
     children: Enfant
     classical: Classique
     comedy: Comédie
     country: Country
     dance: Dance
     dubstep: Dubstep
-    easy_listening: "Easy Listening"
+    easy_listening: Easy Listening
     electronic: Electronique
     flamenco: Flamenco
     folk: Folk
-    french_popular: "Chanson française"
+    french_popular: Chanson française
     funk: Funk
     fusion: Fusion
     gospel: Gospel
-    hard-rock: "Hard Rock"
+    hard-rock: Hard Rock
     hip: Hip
-    hip_hop: "Hip Hop"
-    indian_classical: "Classique indien"
+    hip_hop: Hip Hop
+    indian_classical: Classique indien
     instrumental: Instrumental
     irish: Irlandais
     jazz: Jazz
     latino: Latino
     metal: Métal
-    metalcore: "Métal Core"
-    new_age: "New age"
-    new_wave: "New Wave"
+    metalcore: Métal Core
+    new_age: New age
+    new_wave: New Wave
     opera: Opera
     pop: Pop
-    post_hardcore: "Post Hardcore"
-    post_punk: "Post punk"
-    post_rock: "Post Rock"
-    progressive_rock: "Rock progressif"
-    psychedelic_rock: "Rock psychédélique"
+    post_hardcore: Post Hardcore
+    post_punk: Post punk
+    post_rock: Post Rock
+    progressive_rock: Rock progressif
+    psychedelic_rock: Rock psychédélique
     punk: Punk
     r&b: R&B
     r_and_b: R&B
     reggae: Reggae
     rock: Rock
     ska: Ska
-    songwriter: "Chanson à textes"
+    songwriter: Chanson à textes
     soul: Soul
-    soundtrack: "Bande son"
+    soundtrack: Bande son
     spoken_word: Chanté-parlé
-    spychedelic_rock: "Rock psychédélique"
+    spychedelic_rock: Rock psychédélique
     vocal: Vocal
-    world: "Musique du monde"
-  musician: musician
+    world: Musique du monde
+  musician: musicien
+  number:
+    currency:
+      format:
+        delimiter: ! ' '
+        format: ! '%n %u'
+        precision: 2
+        separator: ! ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: ! ' '
+      precision: 3
+      separator: ! ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: milliard
+          million: million
+          quadrillion: million de milliards
+          thousand: millier
+          trillion: billion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: octet
+            other: octets
+          gb: Go
+          kb: ko
+          mb: Mo
+          tb: To
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
   pages:
     homepage:
-      description: "Vous cherchez des musiciens ou groupes près de chez vous? Emuzikos vous aide à trouver des musiciens et former un groupe."
+      description: Vous cherchez des musiciens ou groupes près de chez vous? Emuzikos vous aide à trouver des musiciens et former un groupe.
       home_feature:
         advantage:
-          body: "En vous inscrivant sur Emuzikos, vous bénéficierez d'un profil 100% customisable, d'une boîte à message privée et d'une grande base de donnée d'annonces de musiciens, de groupes et agents."
-          title: "Emuzikos, concrètement?"
+          body: En vous inscrivant sur Emuzikos, vous bénéficierez d'un profil 100% customisable, d'une boîte à message privée et d'une grande base de donnée d'annonces de musiciens, de groupes et agents.
+          title: Emuzikos, concrètement?
         external_services:
-          body: "Nous ne voulions pas réinventer la roue. Nous avons donc intégré des services tels que:"
+          body: ! 'Nous ne voulions pas réinventer la roue. Nous avons donc intégré des services tels que:'
           services:
-            songkick: "<strong>Songkick</strong> pour annoncer vos concerts"
-            soundcloud: "<strong>Soundcloud</strong> pour jouer votre musique"
-            youtube: "<strong>Youtube</strong> pour frimer à la télé"
-          title: "Nous avons aussi intégré vos services préférés! "
+            soundcloud: <strong>Soundcloud</strong> pour jouer votre musique
+            youtube: <strong>Youtube</strong> pour frimer à la télé
+          title: ! 'Nous avons aussi intégré vos services préférés! '
         no_credit_card:
-          body: "Le service de recherche est entièrement gratuit. Enfin un site vraiment au service des musiciens! "
-          title: "Aucune carte de crédits n'est demandée"
+          body: ! 'Le service de recherche est entièrement gratuit. Enfin un site vraiment au service des musiciens! '
+          title: Aucune carte de crédits n'est demandée
         privacy:
-          body: "Emuzikos a son propre système de messagerie interne, ce qui vous évite de diffuser vos informations personnelles sur votre profil, et d’être spammé par des robots."
-          title: "Sécurité et vie privée"
+          body: Emuzikos a son propre système de messagerie interne, ce qui vous évite de diffuser vos informations personnelles sur votre profil, et d’être spammé par des robots.
+          title: Sécurité et vie privée
         sharing:
-          body: "Les musiciens méritent un meilleur outil de recherche. Alors, si vous aimez la façon dont Emuzikos vous pésente les annonces pour musiciens, partagez cette page sans modération!"
-          title: "Partager avec d'autres musiciens!"
+          body: Les musiciens méritent un meilleur outil de recherche. Alors, si vous aimez la façon dont Emuzikos vous pésente les annonces pour musiciens, partagez cette page sans modération!
+          title: Partager avec d'autres musiciens!
         sign_up:
-          body: "Créer un compte sur Emuzikos prend moins de 60 sec. Et vous n'avez pas besoin de compléter votre profil pour pouvoir chercher et contacter des musiciens. "
-          title: "Inscription rapide"
-      keywords: "musicien, recherche de musicien, musiciens près de chez moi, recherche de musiciens locaux"
-      latest_testimonials: "Derniers témoignages de musiciens"
-      moto: "La recherche de musiciens <strong>facile & gratuite</strong>"
+          body: ! 'Créer un compte sur Emuzikos prend moins de 60 sec. Et vous n''avez pas besoin de compléter votre profil pour pouvoir chercher et contacter des musiciens. '
+          title: Inscription rapide
+      keywords: musicien, recherche de musicien, musiciens près de chez moi, recherche de musiciens locaux
+      latest_testimonials: Derniers témoignages de musiciens
+      moto: La recherche de musiciens <strong>facile & gratuite</strong>
       sections:
         screenshots:
-          inbox: "Votre boîte à message"
-          profile: "Page de profil"
-          search_page: "Page de recherche"
-          title: "A quoi ça ressemble?"
+          inbox: Votre boîte à message
+          profile: Page de profil
+          search_page: Page de recherche
+          title: A quoi ça ressemble?
         testimonials:
-          title: "Qu'est-ce que les musiciens en disent?"
-      subtitle: "Emuzikos, plus qu'un site d'annonces pour musiciens et groupes"
-      title: "Recherche de musiciens & groupes près de chez soi. Annonces pour musicien gratuites"
+          title: Qu'est-ce que les musiciens en disent?
+      sign_up: Inscription
+      subtitle: Emuzikos, plus qu'un site d'annonces pour musiciens et groupes
+      title: Recherche de musiciens & groupes près de chez soi. Annonces pour musicien gratuites
+      what_people_say_about_it: Ce que les gens en disent
     privacy:
-      description: "La Charte de confidentialité d'Emuzikos vous aide faire respecter votre vie privée."
-      title: "Charte de confidentialité"
+      description: La Charte de confidentialité d'Emuzikos vous aide faire respecter votre vie privée.
+      title: Charte de confidentialité
     terms:
-      description: "Les conditions générales d'Emuzikos améliore votre experience en définissant vos droits et devoirs."
-      title: "Conditions générale"
-  pagination:
-    loading_more_results: "Chargement en cours"
+      description: Les conditions générales d'Emuzikos améliore votre experience en définissant vos droits et devoirs.
+      title: Conditions générale
   search_terms:
-    title: Qui recherchez-vous?
+    mass_locate: Code postal, ville, pays
+    music_style: Genre musical
     tabs:
-      musician: Musician
-      band: Band
-      agent: Agent
-    country: Pays
-    i_search_a: "Je cherche un"
-    mass_locate: "Votre ville ou région (ex: Paris ou Loire)"
-    music_style: "Genre musical"
-    user_type: "Je suis un"
-    who_plays: "Instrument joué"
-    who_search_for: "qui cherche un(e)"
-  services:
-    account_created: "Votre compte sur Emuzikos a bien été créé via %{provider}. Vous pouvez changer votre mot de passe et infos personnelles <a href='%{link}'>ici</a>."
-    account_creation_error: "ne peut être utilisé pour s'inscire sur Emuzikos parce que nous n'avons pas accès à votre email. Utilisez un autre type de connexion ou le formulaire par défaut. Si vous avez déjà un compte, connectez-vous et ajoutez %{service_route} depuis votre profil."
-    added_to_account: "a été ajouté à votre compte"
-    already_linked_account: "est déjà lié à votre compte"
-    index:
-      account:
-        plural: "les comptes sont"
-        singular: "le compte est"
-      are_you_sure: "Etes vous sûr de vouloir déconnecter ce service de connexion?"
-      last_account_delete_warning: "Déconnecter le dernier service lié à votre compte risque de bloquer votre connection si vous ne connaissez pas votre mot de passe Emuzikos."
-      more_services: "Vous pouvez utiliser ces services pour vous connecter:"
-      random_password_warning: "Si vous avez créé un compte via un service de connexion, un mot de passe aléatoire vous a été attribué. Vous pouvez faire une demande d'un nouveau mot de passe depuis la page de connexion en utilisant le lien \"Vous avez oubliez votre mot de passe?\""
-      subtitle: "Ces services de connexion sont bien connecté à votre compte Emuzikos:"
-      title: "Services de connexion - Options"
-    invalid_callback: "pas de service (callback invalide)"
-    invalid_data_user_id: "a renvoyé des données invalides pour l'identifiant utilisateur"
-    logged_in_via: "La connexion via"
-    signed_in_successful: "Vous vous êtes bien connecté"
-    signed_in_successful_via: "Vous vous êtes bien connecté via"
-  social_share:
-    invite_friends:
-      invite_your_friends_from_fb: "Invites tes amis"
-      invite_your_friends_from_fb_popup: "Je viens de découvrir cette application pour chercher des musiciens et groupes près de chez toi. Rejoins-moi!"
-      leave_comment: "Laisses-nous un commantaire "
-      donate: "Aides-nous en faisant un don"
-      meta_description: "Votre profil complété, il est temps d'en parler à vos amis"
-      subtitle: "Aimez, partagez, commentez ou invitez vos amis"
-      title: "Nous avons besoin de vous! Aidez-nous à faire grandir la communauté!"
-  souncloud_player: "Lecteur SoundCloud"
+      agent: Agents
+      band: Groupes
+      musician: Musiciens
+    who_plays: Instruments
+    who_search_for: Ce qu'il cherche
   support:
     array:
-      last_word_connector: " et "
-      two_words_connector: " et "
-      words_connector: ", "
-  tables:
-    headings:
-      actions: Actions
+      last_word_connector: ! ' et '
+      two_words_connector: ! ' et '
+      words_connector: ! ', '
   testimonials:
     index:
       title: Témoignages
-    new:
-      title: "Nouveau témoignages"
-    no_testimonials: "Il n'y a pas de témoignages. Revenez bientôt"
-    no_testimonials_logged_in: "Il n'y a pas de témoignages. Pourquoi n'en écrireriez-vous pas un?"
+  time:
+    am: am
+    formats:
+      default: ! '%d %B %Y %H:%M:%S'
+      long: ! '%A %d %B %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: pm
   tooltips:
-    back_to_home: "Retour à l'accueil"
-    email: "Doit être une adresse email valide"
-    password: "Doit contenir au moins 5 caractères"
-    send_message_not_signed_in: "Vous devez créer un compte ou vous connecter pour pouvoir envoyer un message"
+    password: Doit contenir au moins 5 caractères
   users:
-    contacts:
-      description: "Tout vos contacts"
-      no_users: "Vous n'avez pas encore de contacts dans votre liste"
-      title: "Liste de contacts"
-    credentials: Informations
+    types:
+      agent: agent
+      band: groupe
+      musician: musicien
+    user_types:
+      agent: agent
+      band: groupe
+      musician: musicien
+      bass: Basse
+      congas: ongas
+      drums: Batterie
+      guitar: Guitare
+      keyboard: Claviers
+      piano: Piano
+      violin: Violon
+      voice: Voix
+      computer: ordinateur
+      trompet: trompette
+      saxophone: 
+      trombone: 
+    index:
+      description: Annonces gratuites pour musiciens amateurs et professionnels. Cherchez des musiciens près de chez soi, c'est facile !
+      keywords: musicien, recherche, recherche de musiciens, musiciens près de chez soi, annonces pour musiciens
+      title: Listes des annonces pour musiciens, groupes et agents près de chez vous.
+      invite_more_users: Invitez vos amis musiciens
+      no_users: Nous n'avons trouvé aucun utilisateurs correspondant  à votre recherche
+    profile:
+      no_media_available: Pas de contenu disponible
+    show:
+      description: ! '%{username}: %{user_type} recherche un(e) %{searching_for} en %{country}'
+      is_looking_for: cherche
+      login_before_messaging: Vous devez être connecté pour pouvoir envoyer des messages
+      tabs:
+        music: Musique
+        user_infos: Infos
+        videos: Videos
+        message: Contact
+      title: Profil de %{username}
     edit:
       form_helpers:
-        dont_find_youtube_video_id: "Vous ne trouvez pas le numéro identifiant la video Youtube?"
-        dont_have_a_service_account: "Vous n'avez pas de compte %{service}?"
-        genre_not_on_list: "Votre style ne se trouve pas dans la liste?"
-        instrument_not_in_list: "Votre instrument ne se trouve pas dans la liste?"
-        personal_infos_advice: "<div class='alert alert-info'>Nous vous conseillons de ne pas divulguer d'informations personnelles telles qu'un numéro de téléphone ou une adresse. Cela, afin d'éviter le vol d'informations par des robots. Préférez le système de messagerie d'Emuzikos.</div>"
-        request_through_dashboard: "<a href='javascript:UserVoice.showPopupWidget();' class='feedback_link'>Faites-en la demande ici</a>"
-      instruments_in_band_notice: "<div class='alert alert-info'>Listez ici les instruments que vous jouez ou ceux déjà présents dans le groupe si vous êtes un groupe.</div>"
-      invisible_notice: "Vérifiez que vous êtes bien 'visible' afin d'apparaître dans les résultats de recherche"
-      medias: "Medias (optionnel)"
-      meta_description: "Modification du profil de  %{username}. Musicien, groupe ou agent"
-      profile_complete_notice: "Félicitations, votre profil est complet!"
-      profile_not_complete_notice: "Pour apparaître dans les résultats de recherche, vous devez compléter votre profil (à l'exception de la section 'médias')."
-      title: "Modifier mon profil"
+        dont_find_youtube_video_id: Vous ne trouvez pas le numéro identifiant la video Youtube?
+        dont_have_a_service_account: Vous n'avez pas de compte %{service}?
+        genre_not_on_list: Votre style ne se trouve pas dans la liste?
+        instrument_not_in_list: Votre instrument ne se trouve pas dans la liste?
+        personal_infos_advice: <div class='alert alert-info'>Nous vous conseillons de ne pas divulguer d'informations personnelles telles qu'un numéro de téléphone ou une adresse. Cela, afin d'éviter le vol d'informations par des robots. Préférez le système de messagerie d'Emuzikos.</div>
+        request_through_dashboard: <a href="javascript:void(0)" data-uv-lightbox="classic_widget" data-uv-mode="feedback" data-uv-primary-color="#032d57" data-uv-link-color="#025b87" data-uv-forum-id="135874">Faites-en la demande ici</a>
+      instruments_in_band_notice: <div class='alert alert-info'>Listez ici les instruments que vous jouez ou ceux déjà présents dans le groupe si vous êtes un groupe.</div>
+      invisible_notice: Vérifiez que vous êtes bien 'visible' afin d'apparaître dans les résultats de recherche
+      medias: Medias (optionnel)
+      meta_description: Modification du profil de  %{username}. Musicien, groupe ou agent
+      profile_complete_notice: Félicitations, votre profil est complet!
+      profile_not_complete_notice: Pour apparaître dans les résultats de recherche, vous devez compléter votre profil (à l'exception de la section 'médias').
+      title: Modifier mon profil
       tracks: Pistes
-      visible_explanation: "Quand vous êtes 'visible', vous apparaîtrez dans les recherches si votre profil est complet (sauf 'Médias') et vice versa."
-      visible_notice: "Vous apparaissez dans les résultats de recherche!"
+      visible_explanation: Quand vous êtes 'visible', vous apparaîtrez dans les recherches si votre profil est complet (sauf 'Médias') et vice versa.
+      visible_notice: Vous apparaissez dans les résultats de recherche!
       youtube_video_id_help:
         steps:
-          first: "Aller sur la page de la video Youtube"
-          fourth: "Appuyer sur 'Mettre à jour'"
-          second: "Copiez l'id de la video que vous trouverez dans la barre d'adresse. C'est le texte après  'watch?v=' ."
-          third: "Coller-le dans le champ de votre profil ad-hoc"
-        title: "Comment trouver l'id de votre video Youtube?"
-    form:
-      searching_for: "Ce que je recherche"
-    index:
-      description: "Annonces gratuites pour musiciens amateurs et professionnels. Cherchez des musiciens près de chez soi, c'est facile !"
-      invite_more_users: "Invitez plus d'utilisateurs sur Emuzikos et aidez la communauté à grandir!"
-      keywords: "musicien, recherche, recherche de musiciens, musiciens près de chez soi, annonces pour musiciens"
-      no_users: "Nous n'avons pu trouver aucun utilisateur correspondant à votre recherche."
-      processing_search: "Recherche en cours"
-      title: "Listes des annonces pour musiciens, groupes et agents près de chez vous."
-    location: Localisation
-    musician_infos: "Vos Informations"
-    notifications: Notifications
+          first: Aller sur la page de la video Youtube
+          fourth: Appuyer sur 'Mettre à jour'
+          second: Copiez l'id de la video que vous trouverez dans la barre d'adresse. C'est le texte après  'watch?v=' .
+          third: Coller-le dans le champ de votre profil ad-hoc
+        title: Comment trouver l'id de votre video Youtube?
     preferred:
       language: Langage
     prefers:
-      message_notifications: "Notification lors d'un nouveau message"
+      message_notifications: Notification lors d'un nouveau message
       newsletters: Newsletter
-    show:
-      description: "%{username}: %{user_type} recherche un(e) %{searching_for} en %{country}"
-      donate: "Nous avons besoin de vous! Faites une donation"
-      events: "Evénements futurs"
-      from: de
-      impressions_count:
-        one: "1 personne a visité ce profil"
-        other: "%{count} personnes ont visité ce profil"
-      is_looking_for: cherche
-      music: musique
-      tabs:
-        user_events: Evénements
-        user_infos: Infos
-        user_medias: Médias
-      title: "Profil de %{username}"
-      to_play: "pour jouer"
-      tracks: Pistes
-      users_nearby: "Autres utilisateurs proches"
-      youtube_video: "Vidéo Youtube"
-    types:
-      agent: Agent
-      baglama: baglama
-      band: Groupe
-      bass: Basse
-      cithar: Cithare
-      computer: Ordinateur
-      drums: Batterie
-      flute: Flute
-      guitar: Guitare
-      keyboard: Claviers
-      musician: Musicien
-      piano: Piano
-      saxophone: Saxophone
-      tablas: Tablas
-      trombone: Trombone
-      violin: Violon
-      voice: Voix
-      whistles: Flûtes
-    your_classified_infos: "Votre annonce"
+    contacts:
+      description: Vos contacts
+      title: Vos Contacts
+      no_users: Vous n'avez pas encore sauvegardé de contacts
+    form:
+      searching_for: je recherche un(e)
+    from: de
   views:
     pagination:
-      first: Premier
-      last: Dernière
-      next: Suivante
-      previous: Précédent
-      truncate: "..."
+      first: ! '&laquo; Premier'
+      last: Dernier &raquo;
+      next: Suivant &rsaquo;
+      previous: ! '&lsaquo; Précédent'
+      truncate: ! '&hellip;'
+  messages:
+    delete: Effacer
+    from: De
+    inbox:
+      description: Votre boîte à message vous permet de ne pas divulguer vos informations personnelles sur votre profil public
+      subtitle: Messages
+      title: Vos messages
+    message: Message
+    new:
+      title: Envoyer un message
+    no_messages: Vous n'avez pas de messages
+    received: Reçu le
+    sender: Envoyé par
+    sent_on: Envoyé le
+    to: A
+    show:
+      title: Vos Messages
+    ago: Il y a %{time}
+  registrations:
+    edit:
+      cancel_my_account: Cancel my account
+      preferences: Preferences
+      title: Edit my account
+    new:
+      newsletter_agreement: By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>.
+      or_signup_using: ! 'Or sign up using:'
+      title: Signup to Emuzikos
+    signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
+    signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+    signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
+    signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
+    updated: You updated your account successfully.
+  sessions:
+    new:
+      description: Log in on Emuzikos.com and start to search for wanted bands and musicians
+      forgot_password: Forgot your password?
+      or_login_using: ! 'Or log in using:'
+      remember_me: Remember me
+      title: Log in to your account
+  simple_form:
+    'no': Non
+    'yes': Oui
+  'false': Non
+  'true': Oui
+  services:
+    signed_in_successful_via: Vous vous êtes bien connecté via
+    account_created: Votre compte sur Emuzikos a bien été créé via %{provider}. Vous pouvez changer votre mot de passe et infos personnelles <a href='%{link}'>ici</a>.
+    account_creation_error: ne peut être utilisé pour s'inscire sur Emuzikos parce que nous n'avons pas accès à votre email. Utilisez un autre type de connexion ou le formulaire par défaut. Si vous avez déjà un compte, connectez-vous et ajoutez %{service_route} depuis votre profil.
+    added_to_account: a été ajouté à votre compte
+    already_linked_account: est déjà lié à votre compte
+    index:
+      account:
+        plural: les comptes sont
+        singular: le compte est
+      are_you_sure: Etes vous sûr de vouloir déconnecter ce service de connexion?
+      last_account_delete_warning: Déconnecter le dernier service lié à votre compte risque de bloquer votre connection si vous ne connaissez pas votre mot de passe Emuzikos.
+      more_services: ! 'Vous pouvez utiliser ces services pour vous connecter:'
+      random_password_warning: Si vous avez créé un compte via un service de connexion, un mot de passe aléatoire vous a été attribué. Vous pouvez faire une demande d'un nouveau mot de passe depuis la page de connexion en utilisant le lien "Vous avez oubliez votre mot de passe?"
+      subtitle: ! 'Ces services de connexion sont bien connecté à votre compte Emuzikos:'
+      title: Services de connexion - Options
+    invalid_callback: pas de service (callback invalide)
+    invalid_data_user_id: a renvoyé des données invalides pour l'identifiant utilisateur
+    logged_in_via: La connexion via
+    signed_in_successful: Vous vous êtes bien connecté
+  gflash:
+    common:
+      require_no_user: Vous devez être connecté pour avoir accès à cette page
+      require_user: Vous devez être connecté pour avoir accès à cette page
+    friendships:
+      create:
+        success: ! '%{user} a bien été ajouté à votre liste de contacts!'
+      destroy:
+        success: ! '%{user} a bien été effacé de votre liste de contact'
+    messages:
+      create:
+        error: Your message has not been sent. Try again
+        success: Votre message a bien été envoyé!
+      delete_selected:
+        success: Message(s) effacé(s)
+    services:
+      errors:
+        authentication: Une erreur s'est produite lors de la connexion via %{service_route.capitalize}
+    testimonials:
+      create:
+        success: Merci de parler de nous! Votre témoignage doit encore être validé par un administrateur. Continuez de parler d'Emuzikos autour de vous!
+      destroy:
+        success: Votre témoignage a bien été effacé
+      please_write: Si vous aimez Emuzikos, prenez 30 sec pour donner votre avis dans la  <a href='%{link}'>rubrique témoignages</a>
+      update:
+        success: Votre témoignage a bien été modifié
+    titles:
+      error: Erreur
+      notice: Avis
+      progress: En cours
+      success: Succès
+      warning: Attention
+    users:
+      create:
+        error: Quelques informations doivent encore être corrigées
+        notice: N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche
+        success: Bienvenue! N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche
+      update:
+        error: Quelques informations doivent encore être corrigées
+        success: Votre profil a bien été mis à jour
+  somewhere_in_the_world: quelque part dans de le monde
