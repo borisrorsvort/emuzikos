@@ -21,13 +21,13 @@
   %link{:href => "/favicon.ico", :rel => "shortcut icon"}/
   = render partial: 'shared/mobile_icons'
 
-  /[if lt IE 9]
-    %script{:src => "http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"}
-
   = csrf_meta_tag
   = wiselinks_meta_tag
-  = javascript_include_tag "polyfills"
   = stylesheet_link_tag "application"
 
   = yield :stylesheets
   = yield :head
+
+  = javascript_include_tag "polyfills"
+  /[if lt IE 9]
+    %script{:src => "http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"}
