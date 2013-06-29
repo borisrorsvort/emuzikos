@@ -22,4 +22,10 @@ ActiveAdmin.register Testimonial do
     testimonial.approve!
     redirect_to :back, :notice => "Approved!"
   end
+
+  controller do
+    def permitted_params
+      params.permit!
+    end
+  end
 end
