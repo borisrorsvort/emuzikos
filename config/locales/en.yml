@@ -1,39 +1,6 @@
 en:
-  i18n:
-    transliterate:
-      rule: {}
-  accordion: 
   activerecord:
     attributes:
-      user:
-        email: Email
-        instruments: Instruments
-        password: Password
-        password_confirmation: Password confirmation
-        user_type: User type
-        username: Username
-        zip: Zip code, city, country
-        avatar: Picture
-        birthdate: Birthdate
-        country: Country
-        created_at: Created at
-        current_password: Current password
-        genre: Genre
-        invisible: Invisible
-        last_active: Last active
-        last_updater: Last updated
-        location: Location
-        new_password: New password
-        references: Bands or artists you like
-        request_message: Describe yourself and what you're searching for
-        searching_for: Searching for
-        soundcloud_username: Soundcloud username
-        testimonials: Testimonials
-        updated_at: Updated at
-        visible: Visible
-        youtube_video_id: Youtube video id
-        references_show: Musical references
-        request_message_show: About me
       service:
         email: Email
         not_set: Not set
@@ -41,25 +8,38 @@ en:
       testimonial:
         body: Body
         user: user
-  alternative: 
-  baglama: 
-  bagpipe: 
-  banjo: 
-  bass: 
-  blues: 
-  bombo: 
-  bossa_nova: 
-  bouzouki: 
+      user:
+        avatar: Picture
+        birthdate: Birthdate
+        country: Country
+        created_at: Created at
+        current_password: Current password
+        email: Email
+        genre: Genre
+        instruments: Instruments
+        invisible: Invisible
+        last_active: Last active
+        last_updater: Last updated
+        location: Location
+        new_password: New password
+        password: Password
+        password_confirmation: Password confirmation
+        references: Bands or artists you like
+        references_show: Musical references
+        request_message: Describe yourself and what you're searching for
+        request_message_show: About me
+        searching_for: Searching for
+        soundcloud_username: Soundcloud username
+        testimonials: Testimonials
+        updated_at: Updated at
+        user_type: User type
+        username: Username
+        visible: Visible
+        youtube_video_id: Youtube video id
+        zip: Zip code, city, country
+  agent: agent
+  band: band
   buttons:
-    search:
-      agents: Search agents
-      bands: Search bands
-      musicians: Search musicians
-    submit: Submit
-    testimonials:
-      create: Add a new testimonial
-      all: Go back to Testimonials
-    login: Log in
     add_to_contact_list: Add to contact list
     all: View all
     back: Back to %{model}
@@ -75,31 +55,29 @@ en:
     edit: Edit
     home_signup: sign up in 60 sec. It's free
     invite_your_friends_from_fb: Invite your friends from Facebook
+    login: Log in
     registrations:
       cancel_my_account: Cancel my account
     remove_from_contact_list: Remove
     reply: Submit
+    search:
+      agents: Search agents
+      bands: Search bands
+      musicians: Search musicians
     send_password: Send the password reset email
     services:
       delete: Remove this service
     show: Show
+    submit: Submit
+    testimonials:
+      all: Go back to Testimonials
+      create: Add a new testimonial
     update: Update
-  cello: 
-  charango: 
-  children: 
-  cithar: 
-  clarinet: 
-  classical: 
-  comedy: 
   common:
-    no_script: You must have Javascript installed!
-    by: by
     are_you_sure: Are you sure?
+    by: by
     leave_blank: Leave blank
-  computer: 
-  congas: 
-  country: 
-  dance: 
+    no_script: You must have Javascript installed!
   date:
     abbr_day_names:
     - Sun
@@ -211,6 +189,7 @@ en:
       timeout: Your session expired, please sign in again to continue.
       unauthenticated: You need to sign in or sign up before continuing.
       unconfirmed: You have to confirm your account before continuing.
+    login_with: Log in with %{provider}
     mailer:
       confirmation_instructions:
         subject: Confirmation instructions
@@ -222,24 +201,18 @@ en:
       failure: Could not authorize you from %{kind} because "%{reason}".
       success: Successfully authorized from %{kind} account.
     passwords:
-      no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
-      send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
-      send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
-      updated: Your password was changed successfully. You are now logged in.
-      updated_not_active: Your password was changed successfully.
       edit:
         title: Change your password
       new:
         description: Forgot your password? No problem, just fill in the form and start search for musicians or bands again
         title: Reset your Password
+      no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
+      send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
+      send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
+      updated: Your password was changed successfully. You are now logged in.
+      updated_not_active: Your password was changed successfully.
     registrations:
       destroyed: Bye! Your account was successfully cancelled. We hope to see you again soon.
-      signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
-      signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
-      signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
-      signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
-      update_needs_confirmation: You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.
-      updated: You updated your account successfully.
       edit:
         cancel_my_account: Cancel my account
         preferences: Preferences
@@ -248,36 +221,34 @@ en:
         newsletter_agreement: By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>.
         or_signup_using: ! 'Or sign up using:'
         title: Signup to Emuzikos
+      signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
+      signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+      signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
+      signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
+      update_needs_confirmation: You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.
+      updated: You updated your account successfully.
     sessions:
-      signed_in: Logged in in successfully.
       new:
         description: Log in on Emuzikos.com and start to search for wanted bands and musicians
         forgot_password: Forgot your password?
         or_login_using: ! 'Or log in using:'
         remember_me: Remember me
         title: Log in to your account
+      signed_in: Logged in in successfully.
       signed_out: Signed out successfully.
-    signin_with: Sign in with %{provider}
-    unlocks:
-      send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
-      send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
-      unlocked: Your account was successfully unlocked. You are now logged in.
-    login_with: Log in with %{provider}
     shared:
       links:
         dont_have_account_yet: Don't have an account yet?
         forgot_password: Forgot your password?
         go_to_recovery_page: Got to recovery page
         have_account_already: Have an account already?
+    signin_with: Sign in with %{provider}
     signup_with: Sign up with %{provider}
+    unlocks:
+      send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
+      send_paranoid_instructions: If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.
+      unlocked: Your account was successfully unlocked. You are now logged in.
     use_the_normal_form: Or use the standart form
-  dhoki: 
-  dholak: 
-  double_bass: 
-  drums: 
-  dubstep: 
-  easy_listening: 
-  electronic: 
   errors:
     format: ! '%{attribute} %{message}'
     messages:
@@ -321,45 +292,131 @@ en:
       header:
         one: 1 error prohibited this %{model} from being saved
         other: ! '%{count} errors prohibited this %{model} from being saved'
-  euphonium: 
-  flamenco: 
-  flute: 
-  folk: 
-  french_popular: 
-  funk: 
-  fusion: 
-  gatam: 
-  gospel: 
-  guitar: 
-  hang: 
-  hard-rock: 
-  harmonica: 
-  harmonium: 
-  harp: 
+  'false': 'No'
+  gflash:
+    common:
+      require_no_user: You must be logged out to access this page
+      require_user: You must be logged in to access this page
+    friendships:
+      create:
+        success: ! ' %{user} has been added to your contact list succesfully!'
+      destroy:
+        success: ! ' %{user} has been deleted from your contact list succesfully!'
+    messages:
+      create:
+        error: Your message has not been sent. Try again
+        success: Your message was successfully sent!
+      delete_selected:
+        success: Deleted! Congrats
+    services:
+      errors:
+        authentication: Error while authenticating via %{service_route.capitalize}
+    testimonials:
+      create:
+        success: Thanks for talking good about us! Your testimonial has been sent for validation. Keep spreading the word around you :)
+      destroy:
+        success: Successfully destroyed testimonial
+      please_write: If you like our service, please take 30s to write something nice about us in the <a href='%{link}'> testimonial section.</a>
+      update:
+        success: Successfully updated testimonial
+    titles:
+      error: Error
+      notice: Notice
+      progress: Progress
+      success: Success
+      warning: Warning
+    users:
+      create:
+        error: Some informations need to be corrected
+        notice: Don't forget to complete your profile to appear in search results
+        success: Registration successful. Don't forget to complete your profile to appear in search results
+      update:
+        error: Some informations need to be corrected
+        success: Successfully updated your profile.
   helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total
+      one_page:
+        display_entries:
+          one: Displaying <b>%{count}</b> %{entry_name}
+          other: Displaying <b>all %{count}</b> %{entry_name}
+          zero: No %{entry_name} found
     select:
       prompt: Please select
     submit:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
-  hip_hop: 
-  horn: 
-  hurdy_gurdy: 
-  indian_classical: 
-  instrumental: 
-  irish: 
-  jazz: 
-  keyboard: 
+  i18n:
+    transliterate:
+      rule: {}
+  instruments:
+    accordion: Accordion
+    baglama: Baglama
+    bagpipe: Bag Pipe
+    banjo: Banjo
+    bass: Bass
+    bombo: Bombo
+    bouzouki: Bouzouki
+    cello: Cello
+    charango: Charango
+    cithar: Cithar
+    clarinet: Clarinet
+    computer: Computer
+    congas: Congas
+    dhoki: Dhoki
+    dholak: Dholak
+    double_bass: Double bass
+    drums: Drums
+    euphonium: Euphonium
+    flute: Flute
+    gatam: Gatam
+    guitar: Guitar
+    hang: Hang
+    harmonica: Harmonica
+    harmonium: Harmonium
+    harp: Harp
+    horn: Horn
+    hurdy_gurdy: Hurdy Gurdy
+    keyboard: Keyboard
+    mandolin: Mandolin
+    mirdangam: Mirdangam
+    ocarina: Ocarina
+    oud: Oud
+    percussions: Percussions
+    piano: Piano
+    rockabilly: Rockabilly
+    santoor: Santoor
+    sarod: Sarod
+    saxophone: Saxophone
+    saz: Saz
+    shennai: Shennai
+    sitar: Sitar
+    sousaphone: Sousaphone
+    spoons: Spoons
+    swaramandal: Swaramandal
+    tablas: Tablas
+    tambura: Tambura
+    theremin: Theremin
+    trombone: Trombone
+    trompet: Trompet
+    turntables: Turntables
+    veena: Veena
+    viola: Viola
+    violin: Violin
+    voice: Voice
+    whistles: Whistles
   languages:
     english: english
     french: français
-  latino: 
-  mandolin: 
   menu:
+    all_users: Chercher
     blog: blog
     connexion: connexion
+    contact: contact
     help: help
+    languages: Laguages
     legal: legal
     login: login
     logout: logout
@@ -367,6 +424,7 @@ en:
       inbox: inbox
       messages: messages
     more: more
+    partners: Partners
     privacy: privacy Policy
     profile:
       account: edit my account
@@ -375,21 +433,85 @@ en:
       public: my public profile
       show: profile
     search: musicians classifieds
+    share: Aidez Emuzikos
     signup: sign up
     terms: Terms of agreement
     testimonials: Testimonials
     users:
       contacts: contacts list
-    languages: Laguages
-    all_users: Chercher
-    contact: contact
-    share: Aidez Emuzikos
-    partners: Partners
-  metal: 
-  metalcore: 
-  mirdangam: 
-  new_age: 
-  new_wave: 
+  messages:
+    ago: ! '%{time} ago'
+    delete: Effacer
+    from: de
+    inbox:
+      description: Votre boîte à message vous permet de ne pas divulguer vos informations personnelles sur votre profil public
+      subtitle: message
+      title: Vos messages
+    message: Vos messages
+    new:
+      title: envoyer un message
+    no_messages: Pas de messages
+    received: Reçu le
+    sender: Envoyé par
+    sent_on: Envoyé le
+    show:
+      title: Your messages
+    to: A
+  musical_genres:
+    alternative: Alternative
+    blues: Blues
+    bossa_nova: Bossa Nova
+    children: Children
+    classical: Classical
+    comedy: Comedy
+    country: Country
+    dance: Dance
+    dubstep: Dubstep
+    easy_listening: Easy Listening
+    electronic: Electronic
+    flamenco: Flamenco
+    folk: Folk
+    french_popular: French Popular
+    funk: Funk
+    fusion: Fusion
+    gospel: Gospel
+    hard-rock: Hard Rock
+    hardcore: Hardcore
+    hip: Hip
+    hip_hop: Hip Hop
+    indian_classical: Indian Classical
+    instrumental: Instrumental
+    irish: Irish
+    jazz: Jazz
+    latino: Latino
+    metal: Metal
+    metalcore: Metal Core
+    new_age: New Age
+    new_wave: New Wave
+    opera: Opera
+    pop: Pop
+    post_hardcore: Post Hardcore
+    post_punk: Post punk
+    post_rock: Post rock
+    progressive_metal: Progressive Metal
+    progressive_rock: Progressive Rock
+    psychedelic_rock: Psychedelic Rock
+    punk: Punk
+    r&b: R&B
+    r_and_b: R&B
+    reggae: Reggae
+    rock: Rock
+    rock_and_roll: Rock and Roll
+    ska: Ska
+    songwriter: Song Writer
+    soul: Soul
+    soundtrack: Soundtrack
+    spoken_word: Spoken Word
+    spychedelic_rock: Psychedelic Rock
+    swing: Swing
+    vocal: Vocal
+    world: World
+  musician: musician
   number:
     currency:
       format:
@@ -437,9 +559,6 @@ en:
     precision:
       format:
         delimiter: ''
-  ocarina: 
-  opera: 
-  oud: 
   pages:
     homepage:
       description: Looking for a local musician or band mates? Search and submit musicians classifieds
@@ -466,10 +585,6 @@ en:
           body: Creating an account takes less than 60 sec.  With just a couple of basic details, you  can start searching musicians band or agents. As you add more information, you become easier to find by other users.
           title: Simple & minimal sign up process
       keywords: musician, search, musician search, local musicians, search local musician
-      sign_up: Create your profile
-      subtitle: Emuzikos, more than a musicians classifieds site
-      title: The first easy way to find local musicians. Free musicians classifieds
-      what_people_say_about_it: What people say about it
       latest_testimonials: Latest musician's testimonials
       moto: The first <strong>easy</strong> way to find <strong>local</strong> musicians
       sections:
@@ -480,26 +595,30 @@ en:
           title: How does it look like?
         testimonials:
           title: What people are saying about it?
+      sign_up: Create your profile
+      subtitle: Emuzikos, more than a musicians classifieds site
+      title: The first easy way to find local musicians. Free musicians classifieds
+      what_people_say_about_it: What people say about it
     privacy:
       description: The privacy policy of Emuzikos help you use the site by defining the scope of your privacy
       title: Privacy Policy
     terms:
       description: The terms of agreements of Emuzikos help you use the site by defining the scope of your rights
       title: Terms of Agreement
-  percussions: 
-  piano: 
-  pop: 
-  post_hardcore: 
-  post_rock: 
-  progressive_rock: 
-  punk: 
-  r&b: 
-  reggae: 
-  rock: 
-  santoor: 
-  sarod: 
-  saxophone: 
-  saz: 
+  registrations:
+    edit:
+      cancel_my_account: Effacer mon compte
+      preferences: Preferences
+      title: Edit my account
+    new:
+      newsletter_agreement: By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>.
+      or_signup_using: ! 'Or sign up using:'
+      title: Signup to Emuzikos
+    signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
+    signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+    signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
+    signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
+    updated: You updated your account successfully.
   search_terms:
     mass_locate: Zip, city, country
     music_style: Musical genre
@@ -509,25 +628,45 @@ en:
       musician: Musicians
     who_plays: Instruments
     who_search_for: Who's searching for a
-  shennai: 
-  sitar: 
-  ska: 
-  songwriter: 
-  soul: 
-  soundtrack: 
-  sousaphone: 
-  spoken_word: 
-  spoons: 
-  spychedelic_rock: 
+  services:
+    account_created: Your account on Emuzikos has been created via %{provider}. In your <a href="%{link}">account settings</a> you can change your personal information and add a local password.
+    account_creation_error: ! ' can not be used to sign-up on Emuzikos as no valid email address has been provided. Please use another authentication provider or use local sign-up. If you already have an account, please sign-in and add %{service_route} from your profile.'
+    added_to_account: has been added to your account
+    already_linked_account: is already linked to your account.
+    index:
+      account:
+        plural: account are
+        singular: account is
+      are_you_sure: Are you sure you want to remove this authentication service?
+      last_account_delete_warning: Removing the last account linked might lock you out of your account if you do not know the email/password sign-in of your local account!
+      more_services: ! 'You can connect more services to your account:'
+      random_password_warning: If you signed-up for Emuzikos via an authentication service, a random password has been set for the local password. You can request a new password using the 'Forgot your Password?' link on the sign-in page.
+      subtitle: ! 'The following %{account} connected with your local account at Emuzikos:'
+      title: Authentication services - Settings
+    invalid_callback: no service (invalid callback)
+    invalid_data_user_id: returned invalid data for the user id.
+    logged_in_via: Log in via
+    signed_in_successful: Signed in successfully!
+    signed_in_successful_via: Signed in successfully via
+  sessions:
+    new:
+      description: Log in on Emuzikos.com and start to search for wanted bands and musicians
+      forgot_password: Forgot your password?
+      or_login_using: ! 'Or log in using:'
+      remember_me: Remember me
+      title: Log in to your account
+  simple_form:
+    'no': 'No'
+    'yes': 'Yes'
+  somewhere_in_the_world: somewhere in the world
   support:
     array:
       last_word_connector: ! ', and '
       two_words_connector: ! ' and '
       words_connector: ! ', '
-  swaramandal: 
-  tablas: 
-  tambura: 
-  theremin: 
+  testimonials:
+    index:
+      title: Testimonials
   time:
     am: am
     formats:
@@ -537,48 +676,12 @@ en:
     pm: pm
   tooltips:
     password: Must contains at least 5 characters
-  trombone: 
-  trompet: 
-  turntables: 
+  'true': 'Yes'
   users:
-    types:
-      agent: agent
-      band: band
-      musician: musician
-    user_types:
-      agent: agent
-      band: band
-      musician: musician
-      bass: Bass
-      congas: Congas
-      drums: Drums
-      guitar: Guitar
-      keyboard: Keyboard
-      piano: Piano
-      violin: Violin
-      voice: Voice
-      computer: computer
-      trompet: trompet
-      saxophone: saxophone
-      trombone: trombone
-    index:
-      description: Listing of pro and amateur musicians, band classifieds or agents. Find your future band mates.
-      keywords: musician, search, musician search, local musicians, search local musician, musicians classifieds
-      title: Search all Musicians Classifieds, local bands or agents nearby.
-      invite_more_users: Invite your musician friends
-      no_users: We haven't found any users that correspond to your request
-    profile:
-      no_media_available: No medias available
-    show:
-      description: ! '%{username}: Local %{user_type} looking for a %{searching_for} in %{country}'
-      is_looking_for: is looking for a
-      login_before_messaging: You must be logged in to be able to send a message
-      tabs:
-        music: Music
-        user_infos: Infos
-        videos: Videos
-        message: Conctact
-      title: ! '%{username}''s profile'
+    contacts:
+      description: Your saved contact
+      no_users: You don't have anyone saved in your contacts list
+      title: Your contact
     edit:
       form_helpers:
         dont_find_youtube_video_id: Don't find your Youtube video id?
@@ -604,244 +707,56 @@ en:
           second: Then copy the id form the page url. That's the text after 'watch?v='
           third: Paste it in your profile youtube video id field
         title: How to find your Youtube video id?
+    form:
+      searching_for: Searching for
+    from: from
+    index:
+      description: Listing of pro and amateur musicians, band classifieds or agents. Find your future band mates.
+      invite_more_users: Invite your musician friends
+      keywords: musician, search, musician search, local musicians, search local musician, musicians classifieds
+      no_users: We haven't found any users that correspond to your request
+      title: Search all Musicians Classifieds, local bands or agents nearby.
     preferred:
       language: Preferred language
     prefers:
       message_notifications: Message notifications
       newsletters: Neswletters
-    contacts:
-      description: Your saved contact
-      title: Your contact
-      no_users: You don't have anyone saved in your contacts list
-    form:
-      searching_for: Searching for
-    from: from
-  veena: 
-  viola: 
-  violin: 
-  vocal: 
-  voice: 
-  whistles: 
-  world: 
-  testimonials:
-    index:
-      title: Testimonials
-  agent: agent
-  band: band
-  instruments:
-    accordion: Accordion
-    baglama: Baglama
-    bagpipe: Bag Pipe
-    banjo: Banjo
-    bass: Bass
-    bombo: Bombo
-    bouzouki: Bouzouki
-    cello: Cello
-    charango: Charango
-    cithar: Cithar
-    clarinet: Clarinet
-    computer: Computer
-    congas: Congas
-    dhoki: Dhoki
-    dholak: Dholak
-    double_bass: Double bass
-    drums: Drums
-    euphonium: Euphonium
-    flute: Flute
-    gatam: Gatam
-    guitar: Guitar
-    hang: Hang
-    harmonica: Harmonica
-    harmonium: Harmonium
-    harp: Harp
-    horn: Horn
-    hurdy_gurdy: Hurdy Gurdy
-    keyboard: Keyboard
-    mandolin: Mandolin
-    mirdangam: Mirdangam
-    ocarina: Ocarina
-    oud: Oud
-    percussions: Percussions
-    piano: Piano
-    santoor: Santoor
-    sarod: Sarod
-    saxophone: Saxophone
-    saz: Saz
-    shennai: Shennai
-    sitar: Sitar
-    sousaphone: Sousaphone
-    spoons: Spoons
-    swaramandal: Swaramandal
-    tablas: Tablas
-    tambura: Tambura
-    theremin: Theremin
-    trombone: Trombone
-    trompet: Trompet
-    turntables: Turntables
-    veena: Veena
-    viola: Viola
-    violin: Violin
-    voice: Voice
-    whistles: Whistles
-    hardcore: Hardcore
-    post_rock: Post rock
-    progressive_metal: Progressive Metal
-    rock_and_roll: Rock and Roll
-    rockabilly: Rockabilly
-    swing: Swing
-  musical_genres:
-    alternative: Alternative
-    blues: Blues
-    bossa_nova: Bossa Nova
-    children: Children
-    classical: Classical
-    comedy: Comedy
-    country: Country
-    dance: Dance
-    dubstep: Dubstep
-    easy_listening: Easy Listening
-    electronic: Electronic
-    flamenco: Flamenco
-    folk: Folk
-    french_popular: French Popular
-    funk: Funk
-    fusion: Fusion
-    gospel: Gospel
-    hard-rock: Hard Rock
-    hip: Hip
-    hip_hop: Hip Hop
-    indian_classical: Indian Classical
-    instrumental: Instrumental
-    irish: Irish
-    jazz: Jazz
-    latino: Latino
-    metal: Metal
-    metalcore: Metal Core
-    new_age: New Age
-    new_wave: New Wave
-    opera: Opera
-    pop: Pop
-    post_hardcore: Post Hardcore
-    post_punk: Post punk
-    post_rock: Post Rock
-    progressive_rock: Progressive Rock
-    psychedelic_rock: Psychedelic Rock
-    punk: Punk
-    r&b: R&B
-    r_and_b: R&B
-    reggae: Reggae
-    rock: Rock
-    ska: Ska
-    songwriter: Song Writer
-    soul: Soul
-    soundtrack: Soundtrack
-    spoken_word: Spoken Word
-    spychedelic_rock: Psychedelic Rock
-    vocal: Vocal
-    world: World
-  musician: musician
-  messages:
-    delete: Effacer
-    from: de
-    inbox:
-      description: Votre boîte à message vous permet de ne pas divulguer vos informations personnelles sur votre profil public
-      subtitle: message
-      title: Vos messages
-    message: Vos messages
-    new:
-      title: envoyer un message
-    no_messages: Pas de messages
-    received: Reçu le
-    sender: Envoyé par
-    sent_on: Envoyé le
-    to: A
+    profile:
+      no_media_available: No medias available
     show:
-      title: Your messages
-    ago: ! '%{time} ago'
-  registrations:
-    edit:
-      cancel_my_account: Effacer mon compte
-      preferences: Preferences
-      title: Edit my account
-    new:
-      newsletter_agreement: By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>.
-      or_signup_using: ! 'Or sign up using:'
-      title: Signup to Emuzikos
-    signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
-    signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
-    signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
-    signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
-    updated: You updated your account successfully.
-  sessions:
-    new:
-      description: Log in on Emuzikos.com and start to search for wanted bands and musicians
-      forgot_password: Forgot your password?
-      or_login_using: ! 'Or log in using:'
-      remember_me: Remember me
-      title: Log in to your account
-  simple_form:
-    'no': 'No'
-    'yes': 'Yes'
-  'false': 'No'
-  'true': 'Yes'
-  services:
-    signed_in_successful_via: Signed in successfully via
-    account_created: Your account on Emuzikos has been created via %{provider}. In your <a href="%{link}">account settings</a> you can change your personal information and add a local password.
-    account_creation_error: ! ' can not be used to sign-up on Emuzikos as no valid email address has been provided. Please use another authentication provider or use local sign-up. If you already have an account, please sign-in and add %{service_route} from your profile.'
-    added_to_account: has been added to your account
-    already_linked_account: is already linked to your account.
-    index:
-      account:
-        plural: account are
-        singular: account is
-      are_you_sure: Are you sure you want to remove this authentication service?
-      last_account_delete_warning: Removing the last account linked might lock you out of your account if you do not know the email/password sign-in of your local account!
-      more_services: ! 'You can connect more services to your account:'
-      random_password_warning: If you signed-up for Emuzikos via an authentication service, a random password has been set for the local password. You can request a new password using the 'Forgot your Password?' link on the sign-in page.
-      subtitle: ! 'The following %{account} connected with your local account at Emuzikos:'
-      title: Authentication services - Settings
-    invalid_callback: no service (invalid callback)
-    invalid_data_user_id: returned invalid data for the user id.
-    logged_in_via: Log in via
-    signed_in_successful: Signed in successfully!
-  gflash:
-    common:
-      require_no_user: You must be logged out to access this page
-      require_user: You must be logged in to access this page
-    friendships:
-      create:
-        success: ! ' %{user} has been added to your contact list succesfully!'
-      destroy:
-        success: ! ' %{user} has been deleted from your contact list succesfully!'
-    messages:
-      create:
-        error: Your message has not been sent. Try again
-        success: Your message was successfully sent!
-      delete_selected:
-        success: Deleted! Congrats
-    services:
-      errors:
-        authentication: Error while authenticating via %{service_route.capitalize}
-    testimonials:
-      create:
-        success: Thanks for talking good about us! Your testimonial has been sent for validation. Keep spreading the word around you :)
-      destroy:
-        success: Successfully destroyed testimonial
-      please_write: If you like our service, please take 30s to write something nice about us in the <a href='%{link}'> testimonial section.</a>
-      update:
-        success: Successfully updated testimonial
-    titles:
-      error: Error
-      notice: Notice
-      progress: Progress
-      success: Success
-      warning: Warning
-    users:
-      create:
-        error: Some informations need to be corrected
-        notice: Don't forget to complete your profile to appear in search results
-        success: Registration successful. Don't forget to complete your profile to appear in search results
-      update:
-        error: Some informations need to be corrected
-        success: Successfully updated your profile.
-  somewhere_in_the_world: somewhere in the world
+      description: ! '%{username}: Local %{user_type} looking for a %{searching_for} in %{country}'
+      is_looking_for: is looking for a
+      login_before_messaging: You must be logged in to be able to send a message
+      tabs:
+        message: Conctact
+        music: Music
+        user_infos: Infos
+        videos: Videos
+      title: ! '%{username}''s profile'
+    types:
+      agent: agent
+      band: band
+      musician: musician
+    user_types:
+      agent: agent
+      band: band
+      bass: Bass
+      computer: computer
+      congas: Congas
+      drums: Drums
+      guitar: Guitar
+      keyboard: Keyboard
+      musician: musician
+      piano: Piano
+      saxophone: saxophone
+      trombone: trombone
+      trompet: trompet
+      violin: Violin
+      voice: Voice
+  views:
+    pagination:
+      first: ! '&laquo; First'
+      last: Last &raquo;
+      next: Next &rsaquo;
+      previous: ! '&lsaquo; Prev'
+      truncate: ! '&hellip;'

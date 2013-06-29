@@ -25,7 +25,9 @@ fr:
         password: Mot de passe
         password_confirmation: Confirmation du mot de passe
         references: Références musicales
+        references_show: Référence musicales
         request_message: Annonce
+        request_message_show: Annonce
         searching_for: Ce que je cherche
         soundcloud_username: Nom d'utilisateur SoundCloud
         testimonials: Témoignages
@@ -35,20 +37,9 @@ fr:
         visible: Visible
         youtube_video_id: Numéros Identifiant la video youtube
         zip: Code postal, Ville, Pays
-        references_show: Référence musicales
-        request_message_show: Annonce
   agent: agent
   band: groupe
   buttons:
-    search:
-      agents: Chercher des agents
-      bands: Chercher des groupes
-      musicians: Chercher des musiciens
-    submit: Envoyer
-    testimonials:
-      create: Ajouter un nouveau témoignage
-      all: Retour aux témoignages
-    login: Connectez-moi
     add_to_contact_list: Ajouter à la liste de contacts
     all: Voir tous
     back: Retour %{model}
@@ -64,20 +55,29 @@ fr:
     edit: Modifier
     home_signup: Inscrivez-vous en 60 sec
     invite_your_friends_from_fb: Invitez vos amis Facebook
+    login: Connectez-moi
     registrations:
       cancel_my_account: Effacer mon compte
     remove_from_contact_list: Enlever
     reply: Envoyer
+    search:
+      agents: Chercher des agents
+      bands: Chercher des groupes
+      musicians: Chercher des musiciens
     send_password: Envoyer le mail de ré-initialisation de mon mot passe
     services:
       delete: Déconnecter ce service
     show: Montrer
+    submit: Envoyer
+    testimonials:
+      all: Retour aux témoignages
+      create: Ajouter un nouveau témoignage
     update: Mettre à jour
   common:
-    by: par
-    no_script: Vous devez avoir javascript installé
     are_you_sure: Etes-vous sûre
+    by: par
     leave_blank: Ne pas remplir
+    no_script: Vous devez avoir javascript installé
   date:
     abbr_day_names:
     - dim
@@ -191,6 +191,7 @@ fr:
       timeout: Votre session a expiré, veuillez vous connecter de nouveau afin de continuer.
       unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
       unconfirmed: Vous devez confirmer votre compte avant de continuer.
+    login_with: Connexion avec %{provider}
     mailer:
       confirmation_instructions:
         subject: Instructions de confirmation
@@ -202,24 +203,18 @@ fr:
       failure: Nous ne pouvons pas autoriser la connexion avec %{kind} parce que %{reason}.
       success: Nous avons bien autorisé la connexion avec votre compte %{kind}.
     passwords:
-      no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
-      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour réinitialiser votre mot de passe.
-      send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
-      updated: Votre mot de passe a été modifié. Vous êtes à présent connecté(e).
-      updated_not_active: Votre mot de passe a été modifié avec succès.
       edit:
         title: Changer votre mot de passe
       new:
         description: Vous avez oubliez votre mot de passe? Pas de problème, remplissez le formulaire et vous pourrez continuer à chercher musiciens et groupes en un rien de temps.
         title: Réinitialiser votre mot de passe
+      no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
+      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour réinitialiser votre mot de passe.
+      send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
+      updated: Votre mot de passe a été modifié. Vous êtes à présent connecté(e).
+      updated_not_active: Votre mot de passe a été modifié avec succès.
     registrations:
       destroyed: Au revoir ! Votre compte a été résilié. Nous espérons vous revoir très bientôt.
-      signed_up: Votre inscription a été effectuée. Si cette dernière est activée, une confirmation a été envoyée sur votre adresse e-mail.
-      signed_up_but_inactive: Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte n'est pas encore activé.
-      signed_up_but_locked: Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte et bloqué.
-      signed_up_but_unconfirmed: Un mail vous a été envoyé contenant un lien de confirmation. Cliquez sur le lien dans l'email pour activer votre compte.
-      update_needs_confirmation: Vous avez modifié votre compte avec succès, mais nous devons vérifier votre nouvelle adresse email. Veuillez consulter vos emails et cliquer sur le lien de confirmation pour finalizer votre nouvelle adresse.
-      updated: Vous avez mis à jour votre compte.
       edit:
         cancel_my_account: Effacer mon compte
         preferences: Préférences
@@ -228,28 +223,33 @@ fr:
         newsletter_agreement: En vous inscrivant, vous souscrivez à notre newsletter et à nos <a href='/terms' target='_blank'>conditions générales</a>.
         or_signup_using: ! 'Ou inscrivez-vous avec:'
         title: Inscrivez-vous à Emuzikos
+      signed_up: Votre inscription a été effectuée. Si cette dernière est activée, une confirmation a été envoyée sur votre adresse e-mail.
+      signed_up_but_inactive: Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte n'est pas encore activé.
+      signed_up_but_locked: Vous vous êtes bien enregistré, mais nous n'avons pas pu vous connecter car votre compte et bloqué.
+      signed_up_but_unconfirmed: Un mail vous a été envoyé contenant un lien de confirmation. Cliquez sur le lien dans l'email pour activer votre compte.
+      update_needs_confirmation: Vous avez modifié votre compte avec succès, mais nous devons vérifier votre nouvelle adresse email. Veuillez consulter vos emails et cliquer sur le lien de confirmation pour finalizer votre nouvelle adresse.
+      updated: Vous avez mis à jour votre compte.
     sessions:
-      signed_in: Vous êtes à présent connecté(e).
       new:
         description: Connectez-vous à Emuzikos et commencer votre recherche de musiciens et de groupes
         forgot_password: Vous avez oublié votre mote de passe?
         or_login_using: ! 'Ou connectez-vous avec:'
         remember_me: Se souvenir de moi
         title: Connectez-vous à Emuzikos
+      signed_in: Vous êtes à présent connecté(e).
       signed_out: Déconnecté avec succès.
-    signin_with: Connectez-vous avec  %{provider}
-    unlocks:
-      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour déverrouiller votre compte.
-      send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
-      unlocked: Votre compte a été déverrouillé. Vous êtes à présent connecté(e).
-    login_with: Connexion avec %{provider}
     shared:
       links:
         dont_have_account_yet: Vous n'avez pas encore de compte?
         forgot_password: Vous avez oubliez votre mot de passe?
         go_to_recovery_page: Demandez un nouveau mote de passe.
         have_account_already: Vous avez déjà un compte?
+    signin_with: Connectez-vous avec  %{provider}
     signup_with: Créez votre compte avec  %{provider}
+    unlocks:
+      send_instructions: Vous allez recevoir dans quelques minutes un e-mail contenant les instructions pour déverrouiller votre compte.
+      send_paranoid_instructions: Si votre compte existe, vous recevrez un email indiquant comment le déverrouiller sous quelques minutes.
+      unlocked: Votre compte a été déverrouillé. Vous êtes à présent connecté(e).
     use_the_normal_form: Ou utilisez le formulaire standard.
   errors:
     format: ! '%{attribute} %{message}'
@@ -294,6 +294,47 @@ fr:
       header:
         one: ! 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreur'
         other: ! 'Impossible d''enregistrer ce(tte) %{model} : %{count} erreurs'
+  'false': Non
+  gflash:
+    common:
+      require_no_user: Vous devez être connecté pour avoir accès à cette page
+      require_user: Vous devez être connecté pour avoir accès à cette page
+    friendships:
+      create:
+        success: ! '%{user} a bien été ajouté à votre liste de contacts!'
+      destroy:
+        success: ! '%{user} a bien été effacé de votre liste de contact'
+    messages:
+      create:
+        error: Your message has not been sent. Try again
+        success: Votre message a bien été envoyé!
+      delete_selected:
+        success: Message(s) effacé(s)
+    services:
+      errors:
+        authentication: Une erreur s'est produite lors de la connexion via %{service_route.capitalize}
+    testimonials:
+      create:
+        success: Merci de parler de nous! Votre témoignage doit encore être validé par un administrateur. Continuez de parler d'Emuzikos autour de vous!
+      destroy:
+        success: Votre témoignage a bien été effacé
+      please_write: Si vous aimez Emuzikos, prenez 30 sec pour donner votre avis dans la  <a href='%{link}'>rubrique témoignages</a>
+      update:
+        success: Votre témoignage a bien été modifié
+    titles:
+      error: Erreur
+      notice: Avis
+      progress: En cours
+      success: Succès
+      warning: Attention
+    users:
+      create:
+        error: Quelques informations doivent encore être corrigées
+        notice: N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche
+        success: Bienvenue! N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche
+      update:
+        error: Quelques informations doivent encore être corrigées
+        success: Votre profil a bien été mis à jour
   helpers:
     page_entries_info:
       more_pages:
@@ -346,6 +387,7 @@ fr:
     oud: Oud
     percussions: Percussions
     piano: Piano
+    rockabilly: Rockabilly
     santoor: Santoor
     sarod: Sarod
     saxophone: Saxophone
@@ -366,18 +408,14 @@ fr:
     violin: Violon
     voice: Voix
     whistles: Flûtes
-    hardcore: Hardcore
-    post_rock: Post rock
-    progressive_metal: Métal progressif
-    rock_and_roll: Rock and Roll
-    rockabilly: Rockabilly
-    swing: Swing
   languages:
     english: English
     french: français
   menu:
+    all_users: Chercher
     blog: Blog
     connexion: Connexion
+    contact: Contactez-nous
     help: Aide
     languages: langues
     legal: légal
@@ -387,6 +425,7 @@ fr:
       inbox: Boîte de réception
       messages: Message
     more: Extras
+    partners: Partenaires
     privacy: Charte de confidentialité
     profile:
       account: Modifier mon compte
@@ -395,15 +434,30 @@ fr:
       public: Profil public
       show: Profil
     search: Annonces pour musiciens
+    share: Aidez-nous!
     signup: Inscrivez-vous
     terms: Conditions générales
     testimonials: Témoignages
     users:
       contacts: Liste de contacts
-    all_users: Chercher
-    contact: Contactez-nous
-    share: Aidez-nous!
-    partners: Partenaires
+  messages:
+    ago: Il y a %{time}
+    delete: Effacer
+    from: De
+    inbox:
+      description: Votre boîte à message vous permet de ne pas divulguer vos informations personnelles sur votre profil public
+      subtitle: Messages
+      title: Vos messages
+    message: Message
+    new:
+      title: Envoyer un message
+    no_messages: Vous n'avez pas de messages
+    received: Reçu le
+    sender: Envoyé par
+    sent_on: Envoyé le
+    show:
+      title: Vos Messages
+    to: A
   musical_genres:
     alternative: Alternative
     blues: Blues
@@ -423,6 +477,7 @@ fr:
     fusion: Fusion
     gospel: Gospel
     hard-rock: Hard Rock
+    hardcore: Hardcore
     hip: Hip
     hip_hop: Hip Hop
     indian_classical: Classique indien
@@ -438,7 +493,8 @@ fr:
     pop: Pop
     post_hardcore: Post Hardcore
     post_punk: Post punk
-    post_rock: Post Rock
+    post_rock: Post rock
+    progressive_metal: Métal progressif
     progressive_rock: Rock progressif
     psychedelic_rock: Rock psychédélique
     punk: Punk
@@ -446,12 +502,14 @@ fr:
     r_and_b: R&B
     reggae: Reggae
     rock: Rock
+    rock_and_roll: Rock and Roll
     ska: Ska
     songwriter: Chanson à textes
     soul: Soul
     soundtrack: Bande son
     spoken_word: Chanté-parlé
     spychedelic_rock: Rock psychédélique
+    swing: Swing
     vocal: Vocal
     world: Musique du monde
   musician: musicien
@@ -548,6 +606,20 @@ fr:
     terms:
       description: Les conditions générales d'Emuzikos améliore votre experience en définissant vos droits et devoirs.
       title: Conditions générale
+  registrations:
+    edit:
+      cancel_my_account: Cancel my account
+      preferences: Preferences
+      title: Edit my account
+    new:
+      newsletter_agreement: By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>.
+      or_signup_using: ! 'Or sign up using:'
+      title: Signup to Emuzikos
+    signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
+    signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
+    signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
+    signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
+    updated: You updated your account successfully.
   search_terms:
     mass_locate: Code postal, ville, pays
     music_style: Genre musical
@@ -557,6 +629,37 @@ fr:
       musician: Musiciens
     who_plays: Instruments
     who_search_for: Ce qu'il cherche
+  services:
+    account_created: Votre compte sur Emuzikos a bien été créé via %{provider}. Vous pouvez changer votre mot de passe et infos personnelles <a href='%{link}'>ici</a>.
+    account_creation_error: ne peut être utilisé pour s'inscire sur Emuzikos parce que nous n'avons pas accès à votre email. Utilisez un autre type de connexion ou le formulaire par défaut. Si vous avez déjà un compte, connectez-vous et ajoutez %{service_route} depuis votre profil.
+    added_to_account: a été ajouté à votre compte
+    already_linked_account: est déjà lié à votre compte
+    index:
+      account:
+        plural: les comptes sont
+        singular: le compte est
+      are_you_sure: Etes vous sûr de vouloir déconnecter ce service de connexion?
+      last_account_delete_warning: Déconnecter le dernier service lié à votre compte risque de bloquer votre connection si vous ne connaissez pas votre mot de passe Emuzikos.
+      more_services: ! 'Vous pouvez utiliser ces services pour vous connecter:'
+      random_password_warning: Si vous avez créé un compte via un service de connexion, un mot de passe aléatoire vous a été attribué. Vous pouvez faire une demande d'un nouveau mot de passe depuis la page de connexion en utilisant le lien "Vous avez oubliez votre mot de passe?"
+      subtitle: ! 'Ces services de connexion sont bien connecté à votre compte Emuzikos:'
+      title: Services de connexion - Options
+    invalid_callback: pas de service (callback invalide)
+    invalid_data_user_id: a renvoyé des données invalides pour l'identifiant utilisateur
+    logged_in_via: La connexion via
+    signed_in_successful: Vous vous êtes bien connecté
+    signed_in_successful_via: Vous vous êtes bien connecté via
+  sessions:
+    new:
+      description: Log in on Emuzikos.com and start to search for wanted bands and musicians
+      forgot_password: Forgot your password?
+      or_login_using: ! 'Or log in using:'
+      remember_me: Remember me
+      title: Log in to your account
+  simple_form:
+    'no': Non
+    'yes': Oui
+  somewhere_in_the_world: quelque part dans de le monde
   support:
     array:
       last_word_connector: ! ' et '
@@ -574,45 +677,12 @@ fr:
     pm: pm
   tooltips:
     password: Doit contenir au moins 5 caractères
+  'true': Oui
   users:
-    types:
-      agent: agent
-      band: groupe
-      musician: musicien
-    user_types:
-      agent: agent
-      band: groupe
-      musician: musicien
-      bass: Basse
-      congas: ongas
-      drums: Batterie
-      guitar: Guitare
-      keyboard: Claviers
-      piano: Piano
-      violin: Violon
-      voice: Voix
-      computer: ordinateur
-      trompet: trompette
-      saxophone: saxophone
-      trombone: trombone
-    index:
-      description: Annonces gratuites pour musiciens amateurs et professionnels. Cherchez des musiciens près de chez soi, c'est facile !
-      keywords: musicien, recherche, recherche de musiciens, musiciens près de chez soi, annonces pour musiciens
-      title: Listes des annonces pour musiciens, groupes et agents près de chez vous.
-      invite_more_users: Invitez vos amis musiciens
-      no_users: Nous n'avons trouvé aucun utilisateurs correspondant  à votre recherche
-    profile:
-      no_media_available: Pas de contenu disponible
-    show:
-      description: ! '%{username}: %{user_type} recherche un(e) %{searching_for} en %{country}'
-      is_looking_for: cherche
-      login_before_messaging: Vous devez être connecté pour pouvoir envoyer des messages
-      tabs:
-        music: Musique
-        user_infos: Infos
-        videos: Videos
-        message: Contact
-      title: Profil de %{username}
+    contacts:
+      description: Vos contacts
+      no_users: Vous n'avez pas encore sauvegardé de contacts
+      title: Vos Contacts
     edit:
       form_helpers:
         dont_find_youtube_video_id: Vous ne trouvez pas le numéro identifiant la video Youtube?
@@ -638,18 +708,52 @@ fr:
           second: Copiez l'id de la video que vous trouverez dans la barre d'adresse. C'est le texte après  'watch?v=' .
           third: Coller-le dans le champ de votre profil ad-hoc
         title: Comment trouver l'id de votre video Youtube?
+    form:
+      searching_for: je recherche un(e)
+    from: de
+    index:
+      description: Annonces gratuites pour musiciens amateurs et professionnels. Cherchez des musiciens près de chez soi, c'est facile !
+      invite_more_users: Invitez vos amis musiciens
+      keywords: musicien, recherche, recherche de musiciens, musiciens près de chez soi, annonces pour musiciens
+      no_users: Nous n'avons trouvé aucun utilisateurs correspondant  à votre recherche
+      title: Listes des annonces pour musiciens, groupes et agents près de chez vous.
     preferred:
       language: Langage
     prefers:
       message_notifications: Notification lors d'un nouveau message
       newsletters: Newsletter
-    contacts:
-      description: Vos contacts
-      title: Vos Contacts
-      no_users: Vous n'avez pas encore sauvegardé de contacts
-    form:
-      searching_for: je recherche un(e)
-    from: de
+    profile:
+      no_media_available: Pas de contenu disponible
+    show:
+      description: ! '%{username}: %{user_type} recherche un(e) %{searching_for} en %{country}'
+      is_looking_for: cherche
+      login_before_messaging: Vous devez être connecté pour pouvoir envoyer des messages
+      tabs:
+        message: Contact
+        music: Musique
+        user_infos: Infos
+        videos: Videos
+      title: Profil de %{username}
+    types:
+      agent: agent
+      band: groupe
+      musician: musicien
+    user_types:
+      agent: agent
+      band: groupe
+      bass: Basse
+      computer: ordinateur
+      congas: ongas
+      drums: Batterie
+      guitar: Guitare
+      keyboard: Claviers
+      musician: musicien
+      piano: Piano
+      saxophone: saxophone
+      trombone: trombone
+      trompet: trompette
+      violin: Violon
+      voice: Voix
   views:
     pagination:
       first: ! '&laquo; Premier'
@@ -657,108 +761,3 @@ fr:
       next: Suivant &rsaquo;
       previous: ! '&lsaquo; Précédent'
       truncate: ! '&hellip;'
-  messages:
-    delete: Effacer
-    from: De
-    inbox:
-      description: Votre boîte à message vous permet de ne pas divulguer vos informations personnelles sur votre profil public
-      subtitle: Messages
-      title: Vos messages
-    message: Message
-    new:
-      title: Envoyer un message
-    no_messages: Vous n'avez pas de messages
-    received: Reçu le
-    sender: Envoyé par
-    sent_on: Envoyé le
-    to: A
-    show:
-      title: Vos Messages
-    ago: Il y a %{time}
-  registrations:
-    edit:
-      cancel_my_account: Cancel my account
-      preferences: Preferences
-      title: Edit my account
-    new:
-      newsletter_agreement: By registering you subscribe to our newsletter and agree with the <a href='/terms' target='_blank'>Terms & Conditions</a>.
-      or_signup_using: ! 'Or sign up using:'
-      title: Signup to Emuzikos
-    signed_up: Welcome! You have signed up successfully. Please complete your profile to appear in search results
-    signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
-    signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
-    signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please open the link to activate your account.
-    updated: You updated your account successfully.
-  sessions:
-    new:
-      description: Log in on Emuzikos.com and start to search for wanted bands and musicians
-      forgot_password: Forgot your password?
-      or_login_using: ! 'Or log in using:'
-      remember_me: Remember me
-      title: Log in to your account
-  simple_form:
-    'no': Non
-    'yes': Oui
-  'false': Non
-  'true': Oui
-  services:
-    signed_in_successful_via: Vous vous êtes bien connecté via
-    account_created: Votre compte sur Emuzikos a bien été créé via %{provider}. Vous pouvez changer votre mot de passe et infos personnelles <a href='%{link}'>ici</a>.
-    account_creation_error: ne peut être utilisé pour s'inscire sur Emuzikos parce que nous n'avons pas accès à votre email. Utilisez un autre type de connexion ou le formulaire par défaut. Si vous avez déjà un compte, connectez-vous et ajoutez %{service_route} depuis votre profil.
-    added_to_account: a été ajouté à votre compte
-    already_linked_account: est déjà lié à votre compte
-    index:
-      account:
-        plural: les comptes sont
-        singular: le compte est
-      are_you_sure: Etes vous sûr de vouloir déconnecter ce service de connexion?
-      last_account_delete_warning: Déconnecter le dernier service lié à votre compte risque de bloquer votre connection si vous ne connaissez pas votre mot de passe Emuzikos.
-      more_services: ! 'Vous pouvez utiliser ces services pour vous connecter:'
-      random_password_warning: Si vous avez créé un compte via un service de connexion, un mot de passe aléatoire vous a été attribué. Vous pouvez faire une demande d'un nouveau mot de passe depuis la page de connexion en utilisant le lien "Vous avez oubliez votre mot de passe?"
-      subtitle: ! 'Ces services de connexion sont bien connecté à votre compte Emuzikos:'
-      title: Services de connexion - Options
-    invalid_callback: pas de service (callback invalide)
-    invalid_data_user_id: a renvoyé des données invalides pour l'identifiant utilisateur
-    logged_in_via: La connexion via
-    signed_in_successful: Vous vous êtes bien connecté
-  gflash:
-    common:
-      require_no_user: Vous devez être connecté pour avoir accès à cette page
-      require_user: Vous devez être connecté pour avoir accès à cette page
-    friendships:
-      create:
-        success: ! '%{user} a bien été ajouté à votre liste de contacts!'
-      destroy:
-        success: ! '%{user} a bien été effacé de votre liste de contact'
-    messages:
-      create:
-        error: Your message has not been sent. Try again
-        success: Votre message a bien été envoyé!
-      delete_selected:
-        success: Message(s) effacé(s)
-    services:
-      errors:
-        authentication: Une erreur s'est produite lors de la connexion via %{service_route.capitalize}
-    testimonials:
-      create:
-        success: Merci de parler de nous! Votre témoignage doit encore être validé par un administrateur. Continuez de parler d'Emuzikos autour de vous!
-      destroy:
-        success: Votre témoignage a bien été effacé
-      please_write: Si vous aimez Emuzikos, prenez 30 sec pour donner votre avis dans la  <a href='%{link}'>rubrique témoignages</a>
-      update:
-        success: Votre témoignage a bien été modifié
-    titles:
-      error: Erreur
-      notice: Avis
-      progress: En cours
-      success: Succès
-      warning: Attention
-    users:
-      create:
-        error: Quelques informations doivent encore être corrigées
-        notice: N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche
-        success: Bienvenue! N'oubliez pas de compléter votre profil pour apparaître dans les résultats de recherche
-      update:
-        error: Quelques informations doivent encore être corrigées
-        success: Votre profil a bien été mis à jour
-  somewhere_in_the_world: quelque part dans de le monde
