@@ -387,7 +387,6 @@ fr:
     oud: Oud
     percussions: Percussions
     piano: Piano
-    rockabilly: Rockabilly
     santoor: Santoor
     sarod: Sarod
     saxophone: Saxophone
@@ -503,6 +502,7 @@ fr:
     reggae: Reggae
     rock: Rock
     rock_and_roll: Rock and Roll
+    rockabilly: Rockabilly
     ska: Ska
     songwriter: Chanson à textes
     soul: Soul
