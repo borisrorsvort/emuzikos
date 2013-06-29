@@ -1,10 +1,7 @@
 ActiveAdmin.register Instrument do
-  index do
-    column :id
-    column :name
-    column "Used by", :sortable do |instrument|
-      content_tag(:span, instrument.used_by_counter)
-    end
-    default_actions
+  collection_action :index, :method => :get do
+    scope = Instrument.scoped
+    @collection = scope.page() if params[:q].blank?
+    @search = scope.metasearch(clean_search_params(params[:q]))
   end
 end

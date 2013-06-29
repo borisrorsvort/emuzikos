@@ -1,10 +1,7 @@
 ActiveAdmin.register Genre do
-	index do
-   column :id
-   column :name
-   column "Used by", :sortable do |genre|
-     content_tag(:span, genre.used_by_counter)
-   end
-   default_actions
- end
+  collection_action :index, :method => :get do
+    scope = Genre.scoped
+    @collection = scope.page() if params[:q].blank?
+    @search = scope.metasearch(clean_search_params(params[:q]))
+  end
 end

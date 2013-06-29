@@ -3,12 +3,10 @@ ActiveAdmin.register Testimonial do
   scope :unapproved
   filter :approved, :as => :select
 
-  index do
-    column  :body  # Calls #my_body on each resource
-    column :approve do |testimonial|
-      link_to "Approve", approve_admin_testimonial_path(testimonial), :class => 'title'
-    end
-    default_actions
+  collection_action :index, :method => :get do
+    scope = Testimonial.scoped
+    @collection = scope.page() if params[:q].blank?
+    @search = scope.metasearch(clean_search_params(params[:q]))
   end
 
   form do |f|
