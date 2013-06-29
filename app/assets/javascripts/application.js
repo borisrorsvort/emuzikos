@@ -26,6 +26,7 @@ App = {
     UserList.init();
     RemoteProfile.init();
     App.removeNotificationBinding();
+    console.log('================ App initialized =================');
   },
 
   initWizeLink: function() {
