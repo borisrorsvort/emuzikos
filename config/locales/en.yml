@@ -559,8 +559,8 @@ en:
       voice: Voice
       computer: computer
       trompet: trompet
-      saxophone: 
-      trombone: 
+      saxophone: saxophone
+      trombone: trombone
     index:
       description: Listing of pro and amateur musicians, band classifieds or agents. Find your future band mates.
       keywords: musician, search, musician search, local musicians, search local musician, musicians classifieds
@@ -683,6 +683,12 @@ en:
     violin: Violin
     voice: Voice
     whistles: Whistles
+    hardcore: Hardcore
+    post_rock: Post rock
+    progressive_metal: Progressive Metal
+    rock_and_roll: Rock and Roll
+    rockabilly: Rockabilly
+    swing: Swing
   musical_genres:
     alternative: Alternative
     blues: Blues

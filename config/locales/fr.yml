@@ -28,7 +28,7 @@ fr:
         request_message: Annonce
         searching_for: Ce que je cherche
         soundcloud_username: Nom d'utilisateur SoundCloud
-        testimonials: Témoignages de %{user}
+        testimonials: Témoignages
         updated_at: Mis à jour le
         user_type: Type d'utilisateur
         username: Nom d'utilisateur
@@ -366,6 +366,12 @@ fr:
     violin: Violon
     voice: Voix
     whistles: Flûtes
+    hardcore: Hardcore
+    post_rock: Post rock
+    progressive_metal: Métal progressif
+    rock_and_roll: Rock and Roll
+    rockabilly: Rockabilly
+    swing: Swing
   languages:
     english: English
     french: français
@@ -587,8 +593,8 @@ fr:
       voice: Voix
       computer: ordinateur
       trompet: trompette
-      saxophone: 
-      trombone: 
+      saxophone: saxophone
+      trombone: trombone
     index:
       description: Annonces gratuites pour musiciens amateurs et professionnels. Cherchez des musiciens près de chez soi, c'est facile !
       keywords: musicien, recherche, recherche de musiciens, musiciens près de chez soi, annonces pour musiciens
