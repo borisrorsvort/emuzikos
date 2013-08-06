@@ -1,3 +1,3 @@
-AFTER DEPLOY:
+# Emuzikos
 
-heroku jammit:add  (https://github.com/chebyte/heroku-jammit)
+[![Code Climate](https://codeclimate.com/repos/515beacc13d63711db00f561/badges/57c6394b2fef2eaaee80/gpa.png)](https://codeclimate.com/repos/515beacc13d63711db00f561/feed)
