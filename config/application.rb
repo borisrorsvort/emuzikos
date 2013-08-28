@@ -21,7 +21,7 @@ module Emuzikos
 
     config.assets.enabled = true
 
-    config.assets.precompile += %w( active_admin.css active_admin.js active_admin/print.css highcharts.js )
+    config.assets.precompile += %w( active_admin.css active_admin.js active_admin/print.css highcharts.js polyfills.js ie_js_pack.js )
 
     #config.assets.precompile << /(^[^_]|\/[^_])[^\/]*/
     config.autoload_paths << "#{config.root}/lib"
