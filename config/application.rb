@@ -33,9 +33,6 @@ module Emuzikos
     #   Devise::UnlocksController.layout "home"
     #   Devise::PasswordsController.layout "home"
     # end
-    if Rails.env.production?
-      config.middleware.insert_before Rack::Lock, Rack::NoWWW
-    end
     # config.active_record.whitelist_attributes = false
   end
 end
