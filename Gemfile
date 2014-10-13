@@ -39,7 +39,6 @@ gem "hominid"
 gem 'preferences', :git => 'git://github.com/mojotech/preferences.git'
 gem 'twitter'
 gem 'geocoder'
-gem 'rack-no-www'
 gem "friendly_id", "~> 4.0.0"
 gem 'impressionist'
 gem 'locale_detector'
@@ -112,13 +111,6 @@ group :development, :test do
   gem 'quiet_assets'
   gem "better_errors"
   gem "binding_of_caller"
-
-  platforms :mri_18 do
-    gem "ruby-debug"
-  end
-  platforms :mri_19 do
-    gem 'debugger'
-  end
 end
 
 group :test do
