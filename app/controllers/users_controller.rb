@@ -11,13 +11,11 @@ class UsersController < ApplicationController
     @tracks = @user.get_soundclound_tracks(@user.soundcloud_username)
     @is_remote_profile = params[:is_remote_profile] == 'true' ? true : false
 
-    # if Rails.env.production?
-    #   impressionist(@user)
-    # end
-    mixpanel.track 'Viewed user profile', {
-      via: 'Listing'
-    }
-    unless request.xhr?
+    if !request.xhr?
+      mixpanel.track 'Viewed user profile', {
+        via: 'Listing'
+      }
+    else
       if request.path != user_path(@user)
         redirect_to @user, status: :moved_permanently
       else
