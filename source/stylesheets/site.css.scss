@@ -1,0 +1,30 @@
+@charset "utf-8";
+@import "normalize";
+
+body {
+  font-size: 100%;
+  background-image: image_url('images/bg_footer_pattern.png');
+  color: #fff;
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto 0;
+  padding: 10px;
+}
+
+h1 {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  margin: 20px 0 40px;
+  font-style: 6em;
+}
+
+p {
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+.text-center {
+  text-align: center;
+}

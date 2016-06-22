@@ -1,9 +1,0 @@
-= everywhere_js do
-  Layout.init("right-panel-layout");
-
-- if params[:mailbox] == "sent"
-  = render "sent", :messages => @messages, :innner_content_class => "no_padding"
-- else
-  = render "inbox", :messages => @messages, :innner_content_class => "no_padding"
-
-= paginate @messages

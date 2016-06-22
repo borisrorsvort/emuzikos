@@ -1,1 +1,0 @@
-Geocoder.configure(:lookup => :yandex)

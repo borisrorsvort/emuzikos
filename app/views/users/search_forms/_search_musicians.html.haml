@@ -1,7 +1,0 @@
-= form_for @search, :url => users_path, :html => {:method => :get, id: "search-form-musicians", class: "search-form-users",  data: {push: true}} do |f|
-  .searchbar-field.hidden= f.text_field :user_type, :value => "musician", :placeholder => t(:'search_terms.mass_locate'), class: 'no-chosen'
-  .searchbar-field= f.select :instruments_like, instruments.collect{|i| [ i.translated_name, i.name ]}, {:include_blank => t(:'search_terms.who_plays')}
-  .searchbar-field= f.select :genres_like, genres.map{|g| [g.translated_name, g.name ]}, {:include_blank => t(:'search_terms.music_style')}
-  .searchbar-field= f.select :searching_for, grouped_options_for_select(searching_for_grouped_options, (params[:search][:searching_for] rescue "")), {:include_blank => t(:'search_terms.who_search_for')}
-  .searchbar-field= f.text_field :location, :placeholder => t(:'search_terms.mass_locate')
-  .searchbar-field= f.submit(t(:'buttons.search.musicians'),:name => nil, :class => "btn btn-primary")
